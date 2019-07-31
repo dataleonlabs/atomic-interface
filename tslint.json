@@ -1,0 +1,36 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "defaultSeverity": "warning",
+  "linterOptions": {
+    "exclude": [
+      "./src/**/*.test.tsx",
+      "node_modules/**/*.ts",
+      "./src/serviceWorker.ts",
+      "./src/react-app-env.d.ts",
+      "styleguide/**/*.*",
+      "./docs/**/*.*",
+      "styleguide.*.js"
+    ]
+  },
+  "rules": {
+    "interface-name": false,
+    "no-any": true,
+    "ordered-imports": false,
+    "no-console": true,
+    "member-access": false,
+    "object-literal-sort-keys": false,
+    "forin": false,
+    "require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": false,
+          "ClassDeclaration": false,
+          "ArrowFunctionExpression": false,
+          "FunctionExpression": false
+        }
+      }
+    ]
+  }
+}

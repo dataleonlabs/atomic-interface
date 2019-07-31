@@ -1,21 +1,14 @@
 {
   "name": "ui-kit",
   "version": "0.1.0",
+  "main": "dist/index.js",
   "private": true,
-  "dependencies": {
-    "@types/jest": "24.0.16",
-    "@types/node": "12.6.8",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "typescript": "3.5.3"
-  },
   "scripts": {
-    "start": "react-scripts start",
+    "lint": "./node_modules/.bin/tslint --project ./",
+    "global": "npm install -g yarn nyc react-scripts-ts",
+    "test:local": "react-scripts test --verbose --watchAll --env=jsdom",
+    "test": "react-scripts test --watchAll=false --verbose --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -31,6 +24,50 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@types/node": "12.6.8",
+    "@types/react": "16.8.23",
+    "@types/react-dom": "16.8.5",
+    "@types/reactstrap": "^8.0.1",
+    "@types/styled-components": "^4.1.18",
+    "formik": "^1.5.8",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "reactstrap": "^8.0.1",
+    "styled-components": "^4.3.2",
+    "typescript": "3.5.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.16",
+    "@types/sinon": "^7.0.13",
+    "chai": "^4.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
+    "jest-html-reporter": "^2.5.0",
+    "sinon": "^7.3.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0"
+  },
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "text-summary",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "src/presentations/elements/**/*.ts",
+      "src/presentations/elements/**/*.tsx",
+      "src/presentations/widgets/ConfigurationTree/**/*.tsx"
     ]
   }
 }
