@@ -4,6 +4,7 @@
   "linterOptions": {
     "exclude": [
       "./src/**/*.test.tsx",
+      "./src/**/*.stories.tsx",
       "node_modules/**/*.ts",
       "./src/serviceWorker.ts",
       "./src/react-app-env.d.ts",

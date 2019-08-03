@@ -26,7 +26,8 @@
     "experimentalDecorators": true,
     "jsx": "preserve",
     "rootDirs": [
-      "src"
+      "src",
+      "stories"
     ]
   },
   "include": [
