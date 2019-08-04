@@ -16,17 +16,7 @@
   "rules": {
     "no-any": true,
     "ordered-imports": false,
-    "require-jsdoc": [
-      "error",
-      {
-        "require": {
-          "FunctionDeclaration": true,
-          "MethodDefinition": true,
-          "ClassDeclaration": true,
-          "ArrowFunctionExpression": true,
-          "FunctionExpression": true
-        }
-      }
-    ]
+    "require-jsdoc": true,
+    "interface-name": false,
   }
 }

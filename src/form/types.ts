@@ -1,10 +1,10 @@
 import * as React from 'react'
 
 export interface IForm {
-  field: IValues | IFieldConfiguration,
+  field: Values | IFieldConfiguration,
   form?: {
-    touched: { [key: string]: IValues },
-    errors: { [key: string]: IValues }
+    touched: { [key: string]: Values },
+    errors: { [key: string]: Values }
   }
 }
 
@@ -91,15 +91,15 @@ export interface IFieldConfiguration {
   async?: boolean;
 }
 
-export interface IValues {
-  [key: string]: string | boolean | number | IValues | string[] | boolean[] | number[] | IValues[]
+export interface Values {
+  [key: string]: string | boolean | number | Values | string[] | boolean[] | number[] | Values[]
 }
 
 export interface IOutput {
   [key: string]: boolean | IOutput
 }
 
-export interface IProps {
+export interface Props {
   /** Specify the different fields that will be displayed in the Form */
   fields: IFieldConfiguration[]
 
@@ -110,10 +110,10 @@ export interface IProps {
   onSubmitFailed?: () => void
 
   /** Handle a function when the submit was succeded */
-  onSubmitSucceded?: (values: IValues) => void
+  onSubmitSucceded?: (values: Values) => void
 
   /** Handle a function when the submit is actived */
-  onSubmit?: (values: IValues) => void
+  onSubmit?: (values: Values) => void
 
   /** Adds the different messages for the add button, the edit button and the title */
   messages?: {
@@ -126,7 +126,7 @@ export interface IProps {
   description?: React.ReactNode
 
   /** Values recovered after Form submission */
-  values?: IValues
+  values?: Values
 
   /** Display a customize button, this will overwrite the default button */
   customButton?: (ref: string) => React.ReactNode
@@ -157,6 +157,6 @@ export interface IProps {
   onChange?: (row: { [key: string]: string | boolean | number }) => void
 }
 
-export interface IState {
-  row: IValues
+export interface State {
+  row: Values
 }

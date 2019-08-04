@@ -4,10 +4,10 @@ import { ErrorMessage, Field, Formik } from 'formik';
 import { Button, Col, Form, FormFeedback, FormGroup, FormText, Label } from 'reactstrap';
 import InputRender from './controls/Input';
 import TextareaRender from './controls/Textarea';
-import { IFieldConfiguration, IProps, IState, IValues } from './types'
+import { IFieldConfiguration, Props, State, Values } from './types'
 
-const validate = (values: IValues) => {
-  const errors: IValues = {};
+const validate = (values: Values) => {
+  const errors: Values = {};
   if (!values.email) {
     errors.email = 'Required';
   } else if (
@@ -18,7 +18,7 @@ const validate = (values: IValues) => {
   return errors;
 };
 
-const onSubmit = (values: IValues, { setSubmitting }: { setSubmitting: (v: boolean) => void }) => {
+const onSubmit = (values: Values, { setSubmitting }: { setSubmitting: (v: boolean) => void }) => {
   setTimeout(() => {
     alert(JSON.stringify(values, null, 2));
     setSubmitting(false);
@@ -38,8 +38,8 @@ const wrapperGridCol = (component: JSX.Element, field: IFieldConfiguration) => {
 /**
  * Layout form
  */
-class Layout extends React.Component<IProps, IState> {
-  public static defaultProps: Partial<IProps> = {
+class Layout extends React.Component<Props, State> {
+  public static defaultProps: Partial<Props> = {
     className: '',
   }
 
