@@ -1,30 +1,29 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import InputRender from './InputRender';
+import Textarea from './index';
 import { Col } from 'reactstrap';
 
-storiesOf('Forms|Input', module)
+storiesOf('Forms|Textarea', module)
   .add('Example', () => (
     <React.Fragment>
         <Col sm={4} style={{marginTop: 30, marginLeft: 30 }}>
-          <h4>Input</h4>
-          <InputRender
+          <h4>Textarea</h4>
+        <Textarea
             field={{
               placeholder: "Example",
-              right: 'EUR'
+              maxRows: 5
             }}
           />
         </Col>
     </React.Fragment>
-  )).add('With left and right', () => (
+  )).add('With maxRows', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Input</h4>
-        <InputRender
+        <h4>Textarea</h4>
+        <Textarea
           field={{
-            placeholder: "example.com",
-            left: 'https://',
-            right: '.com'
+            placeholder: "Example maxRows 10",
+            maxRows: 10
           }}
         />
       </Col>

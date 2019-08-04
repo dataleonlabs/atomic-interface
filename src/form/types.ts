@@ -1,5 +1,13 @@
 import * as React from 'react'
 
+export interface IForm {
+  field: { [key: string]: string | number | Values },
+  form?: {
+    touched: { [key: string]: Values },
+    errors: { [key: string]: Values }
+  }
+}
+
 export interface FieldConfiguration {
   name: string
   type?:
@@ -66,6 +74,21 @@ export interface FieldConfiguration {
 
   /** Disabled field */
   disabled?: boolean
+
+  /** Texearea Called whenever the textarea resizes */
+  onResize?: (e: Event) => void;
+
+  /** Texearea Minimum number of visible rows */
+  rows?: React.HTMLProps<HTMLTextAreaElement>["rows"];
+
+  /** Texearea Maximum number of visible rows */
+  maxRows?: number;
+
+  /** Texearea Initialize `autosize` asynchronously.
+   * Enable it if you are using StyledComponents
+   * This is forced to true when `maxRows` is set.
+   */
+  async?: boolean;
 }
 
 export interface Values {

@@ -19,6 +19,7 @@
     "ordered-imports": false,
     "no-console": true,
     "member-access": false,
+    "curly": false,
     "object-literal-sort-keys": false,
     "forin": false,
     "require-jsdoc": [

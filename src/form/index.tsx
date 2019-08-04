@@ -3,7 +3,8 @@ import React from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
 import { Props, State, Values, FieldConfiguration } from './types'
 import { Label, Form, Col, FormGroup, FormText, FormFeedback, Button } from 'reactstrap';
-import InputRender from './InputRender';
+import InputRender from './controls/Input';
+import TextareaRender from './controls/Textarea';
 
 const validate = (values: Values) => {
   const errors: Values = {};
@@ -34,9 +35,23 @@ const wrapperGridCol = (component: JSX.Element, field: FieldConfiguration) => {
 };
 
 
+/**
+ * Layout form
+ */
 class Layout extends React.Component<Props, State> {
   public static defaultProps: Partial<Props> = {
     className: '',
+  }
+
+  /**
+   * Select field to render
+   * @param type type of current field
+   */
+  renderField(type: string | undefined) {
+    if (type === 'textarea') return TextareaRender;
+
+    // Default field is text input for: 'text', 'email', 'number', 'password', 'color'
+    return InputRender;
   }
 
   render() {
@@ -63,19 +78,15 @@ class Layout extends React.Component<Props, State> {
                           {field.label}
                         </Label>
                       )}
-                      {['text', 'email', 'number', 'password', 'color'].includes(field.type || '') && (
-                        <React.Fragment>
-                          <Field
-                            {...field}
-                            type={field.type}
-                            name={field.name}
-                            placeholder={field.placeholder}
-                            id={field.name}
-                            render={InputRender}
-                            bsSize={field.size || 'md'}
-                          />
-                        </React.Fragment>
-                      )}
+                      <Field
+                        {...field}
+                        type={field.type}
+                        name={field.name}
+                        placeholder={field.placeholder}
+                        id={field.name}
+                        render={this.renderField(field.type)}
+                        bsSize={field.size || 'md'}
+                      />
                       <ErrorMessage component={FormFeedback} name={field.name} />
                       {field.help && <FormText>{field.help}</FormText>}
                     </FormGroup>, field)}

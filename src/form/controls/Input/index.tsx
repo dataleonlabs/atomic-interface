@@ -1,24 +1,8 @@
 // Render Prop
 import React from 'react';
-import { Values } from './types'
-import { Input, Col, InputGroup, InputGroupAddon } from 'reactstrap';
-
-interface IForm {
-  field: { [key: string]: string | number },
-  form?: {
-    touched: { [key: string]: Values },
-    errors: { [key: string]: Values }
-  }
-}
-
-/**
- * wrap function for grid bootstrap
- * @param component compenent receive data
- * @param field wrap function data
- */
-const wrapperGridCol = (component: JSX.Element, elt: IForm ) => {
-  return elt.field.grid ? <Col sm={elt.field.grid}>{component}</Col> : component;
-};
+import { IForm } from '../../types'
+import { wrapperGridCol } from '../../helpers'
+import { Input as InputBootstrap, InputGroup, InputGroupAddon } from 'reactstrap';
 
 
 /**
@@ -44,12 +28,12 @@ const wrapperInputGroup = (component: JSX.Element, elt: IForm) => {
 /**
  * InputRender render element
  */
-const InputRender = ({ field }: IForm) => (
+const Input = ({ field }: IForm) => (
   <React.Fragment>
     {wrapperGridCol(
-      wrapperInputGroup(<Input {...field} />, { field })
+      wrapperInputGroup(<InputBootstrap {...field} />, { field })
     , { field })}
   </React.Fragment>
 )
 
-export default InputRender;
+export default Input;

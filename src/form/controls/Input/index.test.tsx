@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
-import InputRender from './InputRender'
+import InputRender from './index'
 import { InputGroup, InputGroupAddon } from 'reactstrap';
 
 describe('<InputRender />', () => {
