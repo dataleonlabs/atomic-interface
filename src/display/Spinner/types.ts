@@ -1,4 +1,4 @@
-import { SpinnerProps } from "reactstrap";
+import { SpinnerProps as SpinnerPropsBase } from "reactstrap";
 
 /**
 * This component using bootstrap lib https://reactstrap.github.io/components/spinners/
@@ -6,7 +6,7 @@ import { SpinnerProps } from "reactstrap";
 * <Spinner type="grow" color="dark" />
 */
 
-export interface Props extends SpinnerProps {
+export interface SpinnerProps extends SpinnerPropsBase {
 
 }
 

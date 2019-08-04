@@ -20,7 +20,7 @@ export interface TabItem {
     slug?: string
 }
 
-export interface Props {
+export interface TabsProps {
     /** A function invoked when a tab is clicked by the user */
     onChange?: (value: number, element: any) => void
 }

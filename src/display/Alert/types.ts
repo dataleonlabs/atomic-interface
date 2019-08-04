@@ -1,4 +1,4 @@
-import { Alert } from "reactstrap";
+import { AlertProps as AlertPropsBase } from "reactstrap";
 
 /**
  * Follow documentation https://reactstrap.github.io/components/alerts/
@@ -8,7 +8,7 @@ import { Alert } from "reactstrap";
  *  </Alert>
  */
 
-export interface Props extends Alert {
+export interface AlertProps extends AlertPropsBase {
 
     /** Colors alert */
     color?:

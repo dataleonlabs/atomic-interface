@@ -1,4 +1,4 @@
-import { BadgeProps } from "reactstrap";
+import { BadgeProps as BadgePropsBase } from "reactstrap";
 
 /**
 * This component using bootstrap lib https://reactstrap.github.io/components/badge/
@@ -8,7 +8,7 @@ import { BadgeProps } from "reactstrap";
 * </Badge>
 */
 
-export interface Props extends BadgeProps {
+export interface BadgeProps extends BadgePropsBase {
 
 }
 

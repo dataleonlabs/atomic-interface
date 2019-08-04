@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Props } from './types'
+import { TextProps as Props } from './types'
 
 // Sample for ago formting
 // import TimeAgo from 'timeago-react'

@@ -1,4 +1,4 @@
-import { UncontrolledDropdownProps, DropdownItemProps } from "reactstrap";
+import { UncontrolledDropdownProps, DropdownItemProps as DropdownItemPropsBase } from "reactstrap";
 
 /**
  * Follow documentation https://reactstrap.github.io/components/dropdowns/
@@ -10,14 +10,14 @@ import { UncontrolledDropdownProps, DropdownItemProps } from "reactstrap";
  * </Dropdown>
  */
 
-export interface Item extends DropdownItemProps {
+export interface DropdownItemProps extends DropdownItemPropsBase {
     
     /** Content in DropdownToggle */
     content: string | JSX.Element
 
 }
 
-export interface Props extends UncontrolledDropdownProps {
+export interface DropdownProps extends UncontrolledDropdownProps {
 
     /** Content in DropdownToggle */
     title?: string

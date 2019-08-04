@@ -1,4 +1,4 @@
-import { ToastProps } from "reactstrap";
+import { ToastProps as ToastPropsBase } from "reactstrap";
 
 /**
 * This component using bootstrap lib https://reactstrap.github.io/components/toasts/
@@ -8,7 +8,7 @@ import { ToastProps } from "reactstrap";
 *   </Toast>
 */
 
-export interface Props extends ToastProps {
+export interface ToastProps extends ToastPropsBase {
 
 }
 

@@ -1,4 +1,4 @@
-import { TooltipProps } from "reactstrap";
+import { TooltipProps as TooltipPropsBase } from "reactstrap";
 
 /**
 * This component using bootstrap lib https://reactstrap.github.io/components/toasts/
@@ -8,7 +8,7 @@ import { TooltipProps } from "reactstrap";
 * </Tooltip>
 */
 
-export interface Props extends TooltipProps {
+export interface TooltipProps extends TooltipPropsBase {
 
 }
 

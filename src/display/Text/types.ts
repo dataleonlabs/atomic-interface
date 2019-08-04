@@ -6,7 +6,7 @@
 * </Text>
 */
 
-export interface Props {
+export interface TextProps {
 
     /** Type of current text: default is text */
     type?: 'text' | 'number' | 'date' | 'money' | 'ago'

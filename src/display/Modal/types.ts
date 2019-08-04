@@ -1,4 +1,4 @@
-import { ModalProps, ButtonProps } from "reactstrap";
+import { ModalProps as ModalPropsBase, ButtonProps } from "reactstrap";
 
 /**
 * This component using bootstrap lib https://reactstrap.github.io/components/modals/
@@ -16,7 +16,7 @@ export interface ModalButtonProps extends ButtonProps {
 }
 
 
-export interface Props extends ModalProps {
+export interface ModalProps extends ModalPropsBase {
 
     /** Content in header, disable when is undefined */
     header?: string | JSX.Element
