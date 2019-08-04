@@ -1,6 +1,6 @@
 // Render Prop
 import React from 'react';
-import { IForm } from '../../types'
+import { IForm, Values } from '../../types'
 import { wrapperGridCol } from '../../helpers'
 import { Input as InputBootstrap, InputGroup, InputGroupAddon } from 'reactstrap';
 
@@ -31,7 +31,7 @@ const wrapperInputGroup = (component: JSX.Element, elt: IForm) => {
 const Input = ({ field }: IForm) => (
   <React.Fragment>
     {wrapperGridCol(
-      wrapperInputGroup(<InputBootstrap {...field} />, { field })
+      wrapperInputGroup(<InputBootstrap {...field as Values } />, { field })
     , { field })}
   </React.Fragment>
 )

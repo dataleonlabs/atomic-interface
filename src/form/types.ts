@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export interface IForm {
-  field: { [key: string]: string | number | Values },
+  field: Values | FieldConfiguration,
   form?: {
     touched: { [key: string]: Values },
     errors: { [key: string]: Values }
