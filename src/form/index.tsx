@@ -53,18 +53,18 @@ class Layout extends React.Component<Props, State> {
                 <React.Fragment key={key}>
                   {wrapperGridCol(
                     <FormGroup inline={field.inline}>
+                      {!field.hideLabel && field.label && (
+                        <Label
+                          size={field.size || 'md'}
+                          for={field.name}
+                          className={field.className}
+                          sm={field.labelGrid || 12}
+                        >
+                          {field.label}
+                        </Label>
+                      )}
                       {['text', 'email', 'number', 'password', 'color'].includes(field.type || '') && (
                         <React.Fragment>
-                          {!field.hideLabel && field.label && (
-                            <Label
-                              size={field.size || 'md'}
-                              for={field.name}
-                              className={field.className}
-                              sm={field.labelGrid || 12}
-                            >
-                              {field.label}
-                            </Label>
-                          )}
                           <Field
                             {...field}
                             type={field.type}
