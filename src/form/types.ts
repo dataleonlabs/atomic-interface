@@ -1,14 +1,14 @@
 import * as React from 'react'
 
 export interface IForm {
-  field: Values | FieldConfiguration,
+  field: IValues | IFieldConfiguration,
   form?: {
-    touched: { [key: string]: Values },
-    errors: { [key: string]: Values }
+    touched: { [key: string]: IValues },
+    errors: { [key: string]: IValues }
   }
 }
 
-export interface FieldConfiguration {
+export interface IFieldConfiguration {
   name: string
   type?:
     | 'text'
@@ -91,17 +91,17 @@ export interface FieldConfiguration {
   async?: boolean;
 }
 
-export interface Values {
-  [key: string]: string | boolean | number | Values | string[] | boolean[] | number[] | Values[]
+export interface IValues {
+  [key: string]: string | boolean | number | IValues | string[] | boolean[] | number[] | IValues[]
 }
 
-export interface Output {
-  [key: string]: boolean | Output
+export interface IOutput {
+  [key: string]: boolean | IOutput
 }
 
-export interface Props {
+export interface IProps {
   /** Specify the different fields that will be displayed in the Form */
-  fields: FieldConfiguration[]
+  fields: IFieldConfiguration[]
 
   /** Indicates whether the style of fields is inline or not */
   inline?: boolean
@@ -110,10 +110,10 @@ export interface Props {
   onSubmitFailed?: () => void
 
   /** Handle a function when the submit was succeded */
-  onSubmitSucceded?: (values: Values) => void
+  onSubmitSucceded?: (values: IValues) => void
 
   /** Handle a function when the submit is actived */
-  onSubmit?: (values: Values) => void
+  onSubmit?: (values: IValues) => void
 
   /** Adds the different messages for the add button, the edit button and the title */
   messages?: {
@@ -126,7 +126,7 @@ export interface Props {
   description?: React.ReactNode
 
   /** Values recovered after Form submission */
-  values?: Values
+  values?: IValues
 
   /** Display a customize button, this will overwrite the default button */
   customButton?: (ref: string) => React.ReactNode
@@ -157,6 +157,6 @@ export interface Props {
   onChange?: (row: { [key: string]: string | boolean | number }) => void
 }
 
-export interface State {
-  row: Values
+export interface IState {
+  row: IValues
 }

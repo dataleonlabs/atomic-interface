@@ -14,23 +14,17 @@
     ]
   },
   "rules": {
-    "interface-name": false,
     "no-any": true,
     "ordered-imports": false,
-    "no-console": true,
-    "member-access": false,
-    "curly": false,
-    "object-literal-sort-keys": false,
-    "forin": false,
     "require-jsdoc": [
       "error",
       {
         "require": {
           "FunctionDeclaration": true,
-          "MethodDefinition": false,
-          "ClassDeclaration": false,
-          "ArrowFunctionExpression": false,
-          "FunctionExpression": false
+          "MethodDefinition": true,
+          "ClassDeclaration": true,
+          "ArrowFunctionExpression": true,
+          "FunctionExpression": true
         }
       }
     ]

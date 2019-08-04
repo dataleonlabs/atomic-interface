@@ -1,13 +1,13 @@
 // Render Prop
 import React from 'react';
-import { Formik, Field, ErrorMessage } from 'formik';
-import { Props, State, Values, FieldConfiguration } from './types'
-import { Label, Form, Col, FormGroup, FormText, FormFeedback, Button } from 'reactstrap';
+import { ErrorMessage, Field, Formik } from 'formik';
+import { Button, Col, Form, FormFeedback, FormGroup, FormText, Label } from 'reactstrap';
 import InputRender from './controls/Input';
 import TextareaRender from './controls/Textarea';
+import { IFieldConfiguration, IProps, IState, IValues } from './types'
 
-const validate = (values: Values) => {
-  const errors: Values = {};
+const validate = (values: IValues) => {
+  const errors: IValues = {};
   if (!values.email) {
     errors.email = 'Required';
   } else if (
@@ -18,7 +18,7 @@ const validate = (values: Values) => {
   return errors;
 };
 
-const onSubmit = (values: Values, { setSubmitting }: { setSubmitting: (v: boolean) => void }) => {
+const onSubmit = (values: IValues, { setSubmitting }: { setSubmitting: (v: boolean) => void }) => {
   setTimeout(() => {
     alert(JSON.stringify(values, null, 2));
     setSubmitting(false);
@@ -30,7 +30,7 @@ const onSubmit = (values: Values, { setSubmitting }: { setSubmitting: (v: boolea
  * @param component compenent receive data
  * @param field wrap function data
  */
-const wrapperGridCol = (component: JSX.Element, field: FieldConfiguration) => {
+const wrapperGridCol = (component: JSX.Element, field: IFieldConfiguration) => {
   return field.grid ? <Col sm={field.grid}>{component}</Col> : component;
 };
 
@@ -38,8 +38,8 @@ const wrapperGridCol = (component: JSX.Element, field: FieldConfiguration) => {
 /**
  * Layout form
  */
-class Layout extends React.Component<Props, State> {
-  public static defaultProps: Partial<Props> = {
+class Layout extends React.Component<IProps, IState> {
+  public static defaultProps: Partial<IProps> = {
     className: '',
   }
 
@@ -47,14 +47,16 @@ class Layout extends React.Component<Props, State> {
    * Select field to render
    * @param type type of current field
    */
-  renderField(type: string | undefined) {
-    if (type === 'textarea') return TextareaRender;
+  public renderField(type: string | undefined) {
+    if (type === 'textarea') {
+      return TextareaRender;
+    }
 
     // Default field is text input for: 'text', 'email', 'number', 'password', 'color'
     return InputRender;
   }
 
-  render() {
+  public render() {
     return (
       <div>
         <Formik
@@ -64,7 +66,7 @@ class Layout extends React.Component<Props, State> {
         >
           {({ isSubmitting }) => (
             <Form inline={this.props.inline} className={this.props.className}>
-              {this.props.fields.map((field: FieldConfiguration, key: number) => (
+              {this.props.fields.map((field: IFieldConfiguration, key: number) => (
                 <React.Fragment key={key}>
                   {wrapperGridCol(
                     <FormGroup inline={field.inline}>
