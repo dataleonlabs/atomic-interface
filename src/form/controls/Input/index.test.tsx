@@ -1,17 +1,21 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
-import InputRender from './index'
+import Input from './index'
 import { InputGroup, InputGroupAddon } from 'reactstrap';
+import Form from './../../index'
 
-describe('<InputRender />', () => {
+describe('<Input />', () => {
   it('U-TEST-1 - test input render with addon', () => {
     const wrapper = enzyme.mount(
-      <InputRender
-        field={{
-          left: 'test',
-          right: 'test'
-        }}
-      />
+      <Form>
+        {(props) => (
+          <Input
+            name={'email'}
+            leftAddon={'test'}
+            rightAddon={'test'}
+          />
+        )}
+      </Form>
     )
 
     expect(wrapper.find(InputGroup)).toHaveLength(1)
@@ -20,11 +24,11 @@ describe('<InputRender />', () => {
 
   it('U-TEST-2 - test input render with addon left ', () => {
     const wrapper = enzyme.mount(
-      <InputRender
-        field={{
-          left: 'test',
-        }}
-      />
+      <Form>
+        {(props) => (
+          <Input name={'email'} leftAddon={'test'} />
+        )}
+      </Form>
     )
 
     expect(wrapper.find(InputGroup)).toHaveLength(1)
@@ -33,9 +37,11 @@ describe('<InputRender />', () => {
 
   it('U-TEST-3 - test input render without addon ', () => {
     const wrapper = enzyme.mount(
-      <InputRender
-        field={{}}
-      />
+      <Form>
+        {(props) => (
+          <Input name={'email'} />
+        )}
+      </Form>
     )
 
     expect(wrapper.find(InputGroup)).toHaveLength(0)

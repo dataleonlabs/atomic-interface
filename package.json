@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/tslint --project ./",
     "global": "npm install -g yarn nyc react-scripts-ts",
-    "test:local": "react-scripts test --verbose --watchAll --env=jsdom",
-    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll=false --verbose --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
+    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --verbose --watchAll --env=jsdom",
+    "test:integration": "SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll=false --verbose --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "start": "start-storybook -p 6006 -c .storybook",

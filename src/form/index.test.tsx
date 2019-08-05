@@ -1,80 +1,57 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
+import Textarea from './controls/Textarea/index'
+import Input from './controls/Input/index'
 import Form from './index'
-import { Field } from 'formik';
-import { Label, FormGroup, FormText, Col } from 'reactstrap';
+import TextareaAutosize from 'react-autosize-textarea';
+import { Label } from 'reactstrap';
+import { Form as FormFormik, Formik, Field } from 'formik';
 
-describe('<FormLayout />', () => {
-  it('U-TEST-1 - renders field component', () => {
+describe('<Form />', () => {
+  it('U-TEST-1 - testarea render with max rows', () => {
     const wrapper = enzyme.mount(
-      <Form
-        fields={[
-          {
-            type: 'text', name: 'name-test'
-          }
-        ]}
-      />
+      <Form>
+        {(props) => (
+          <Textarea name='text' maxRows={20} />
+        )}
+      </Form>
     )
-
-    expect(wrapper.find(Field)).toHaveLength(1)
-    expect(wrapper.find(Field).props().name).toEqual('name-test')
-    expect(wrapper.find(Field).props().type).toEqual('text')
+    expect(wrapper.find(TextareaAutosize)).toHaveLength(1)
     expect(wrapper.find(Label)).toHaveLength(0)
-    expect(wrapper.find(FormGroup)).toHaveLength(1)
-    expect(wrapper.find(FormText)).toHaveLength(0)
+    expect(wrapper.find(FormFormik)).toHaveLength(1)
+    expect(wrapper.find(Formik)).toHaveLength(1)
   })
 
-  it('U-TEST-2 - renders label and help component', () => {
+  it('U-TEST-2 - testarea with label', () => {
     const wrapper = enzyme.mount(
-      <Form
-        fields={[
-          {
-            type: 'text', name: 'name-test',
-            label: 'label', help: 'help'
-          }
-        ]}
-      />
+      <Form>
+        {(props) => (
+          <Textarea name='text' maxRows={20} label={'text'} />
+        )}
+      </Form>
     )
-
+    expect(wrapper.find(TextareaAutosize)).toHaveLength(1)
     expect(wrapper.find(Label)).toHaveLength(1)
-    expect(wrapper.find(FormGroup)).toHaveLength(1)
-    expect(wrapper.find(FormText)).toHaveLength(1)
+    expect(wrapper.find(FormFormik)).toHaveLength(1)
+    expect(wrapper.find(Formik)).toHaveLength(1)
   })
 
-  it('U-TEST-3 - hidden label', () => {
+  it('U-TEST-3 - multiple fields', () => {
     const wrapper = enzyme.mount(
-      <Form
-        fields={[
-          {
-            type: 'text', name: 'name-test',
-            label: 'label', help: 'help', hideLabel: true
-          }
-        ]}
-      />
+      <Form>
+        {(props) => (
+          <>
+            <Input name='text' maxRows={20} />
+            <Textarea name='text' maxRows={20} label={'text'} />
+          </>
+        )}
+      </Form>
     )
-
-    expect(wrapper.find(Label)).toHaveLength(0)
-    expect(wrapper.find(FormGroup)).toHaveLength(1)
-    expect(wrapper.find(FormText)).toHaveLength(1)
-    expect(wrapper.find(Field).props().type).toEqual('text')
-  })
-
-  it('U-TEST-4 - test grid input', () => {
-    const wrapper = enzyme.mount(
-      <Form
-        fields={[
-          {
-            type: 'text', name: 'name-test',
-            label: 'label', help: 'help', hideLabel: true, labelGrid: 4, inputGrid: 10, grid: 6
-          }
-        ]}
-      />
-    )
-
-    expect(wrapper.find(Label)).toHaveLength(0)
-    expect(wrapper.find(FormGroup)).toHaveLength(1)
-    expect(wrapper.find(FormText)).toHaveLength(1)
-    expect(wrapper.find(Field).props().name).toEqual('name-test')
-    expect(wrapper.find(Col)).toHaveLength(1)
+    expect(wrapper.find(TextareaAutosize)).toHaveLength(1)
+    expect(wrapper.find(Field)).toHaveLength(2)
+    expect(wrapper.find(Input)).toHaveLength(1)
+    expect(wrapper.find(Label)).toHaveLength(1)
+    expect(wrapper.find(FormFormik)).toHaveLength(1)
+    expect(wrapper.find(Formik)).toHaveLength(1)
   })
 })

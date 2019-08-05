@@ -1,6 +1,5 @@
 import * as enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import { Values } from './form/types';
 
 // const fetchMock = require('jest-fetch-mock')
 
@@ -17,7 +16,7 @@ const localStorageMock = (() => {
     getItem: (key: string) => {
       return store[key] || null
     },
-    setItem: (key: string, value: Values) => {
+    setItem: (key: string, value: string) => {
       store[key] = value.toString()
     },
     clear: () => {
