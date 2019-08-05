@@ -10,12 +10,13 @@ describe('<Textarea />', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(props) => (
-          <Textarea name='text' required={true} help="text help"/>
+          <Textarea name='text' required={true} help="text help" />
         )}
       </Form>
     )
     expect(wrapper.find(TextareaAutosize)).toHaveLength(1)
     expect(wrapper.find(Label)).toHaveLength(0)
+    expect(wrapper.text()).toContain('text help')
   })
 
   it('U-TEST-2 - testarea with label', () => {
