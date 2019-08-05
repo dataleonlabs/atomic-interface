@@ -5,7 +5,7 @@ import DropDown from './index';
 import DropDownItem from './DropdownItem';
 
 
-class RenderDropDown extends React.Component<{ divider: Boolean }> {
+class RenderDropDown extends React.Component<{ divider?: Boolean }, { dropdownOpen: boolean }> {
 
   state = {
     dropdownOpen: false
