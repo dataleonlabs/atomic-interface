@@ -1,7 +1,8 @@
 import React from 'react';
-import { Field, ErrorMessage, FieldProps } from 'formik';
-import { Input as InputBootstrap, Label, FormGroup, InputGroup, InputGroupAddon, FormText, FormFeedback } from 'reactstrap';
+import { Field, FieldProps } from 'formik';
+import { Input as InputBootstrap, InputGroup, InputGroupAddon } from 'reactstrap';
 import { InputProps as Props } from './props';
+import Control from '../../Control';
 
 /**
  * wrap function for grid bootstrap
@@ -26,10 +27,7 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
  * Input render element
  */
 const Input = (props: Props) => (
-  <FormGroup inline={props.inline}>
-    {props.label && (
-      <Label for={props.name} sm={props.labelSize || 12}> {props.label} </Label>
-    )}
+  <Control {...props}>
     <Field
       {...props}
       id={props.name}
@@ -40,9 +38,7 @@ const Input = (props: Props) => (
         </React.Fragment>
       )}
     />
-    <ErrorMessage component={FormFeedback} name={props.name} />
-    {props.help && <FormText>{props.help}</FormText>}
-  </FormGroup>
+  </Control>
 )
 
 export default Input;

@@ -1,17 +1,14 @@
 import React from 'react';
-import { Field, ErrorMessage, FieldProps } from 'formik';
-import { Label, FormGroup, FormText, FormFeedback } from 'reactstrap';
+import { Field, FieldProps } from 'formik';
 import { TextareaProps as Props } from './props';
 import TextareaAutosize from 'react-autosize-textarea';
+import Control from '../../Control';
 
 /**
  * Textarea render element
  */
 const Textarea = (props: Props) => (
-  <FormGroup inline={props.inline}>
-    {props.label && (
-      <Label for={props.name} sm={props.labelSize || 12}> {props.label} </Label>
-    )}
+  <Control {...props}>
     <Field
       {...props}
       id={props.name}
@@ -25,9 +22,7 @@ const Textarea = (props: Props) => (
         />
       )}
     />
-    <ErrorMessage component={FormFeedback} name={props.name} />
-    {props.help && <FormText>{props.help}</FormText>}
-  </FormGroup>
+  </Control>
 )
 
 export default Textarea;

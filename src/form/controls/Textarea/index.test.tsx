@@ -10,7 +10,7 @@ describe('<Textarea />', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(props) => (
-          <Textarea name='text' maxRows={20}/>
+          <Textarea name='text' required={true} help="text help"/>
         )}
       </Form>
     )
