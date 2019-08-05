@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Alert from './index';
 import { Col } from 'reactstrap';
 
-storiesOf('Forms|Alert', module)
+storiesOf('Display|Alert', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
