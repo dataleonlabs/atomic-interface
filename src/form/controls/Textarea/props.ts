@@ -1,4 +1,4 @@
-import { InputProps } from '../Input/types';
+import { InputProps } from '../Input/props';
 
 /**
 * This component using https://github.com/buildo/react-autosize-textarea

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, ErrorMessage, FieldProps } from 'formik';
 import { Input as InputBootstrap, Label, FormGroup, InputGroup, InputGroupAddon, FormText, FormFeedback } from 'reactstrap';
-import { InputProps as Props } from './types';
+import { InputProps as Props } from './props';
 
 /**
  * wrap function for grid bootstrap

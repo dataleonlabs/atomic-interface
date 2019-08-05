@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form as FormFormik, FormikProps, Formik } from 'formik';
-import { Props } from './types'
+import { Props } from './props'
 
 /**
  * Form 

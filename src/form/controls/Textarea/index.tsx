@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, ErrorMessage, FieldProps } from 'formik';
 import { Label, FormGroup, FormText, FormFeedback } from 'reactstrap';
-import { TextareaProps as Props } from './types';
+import { TextareaProps as Props } from './props';
 import TextareaAutosize from 'react-autosize-textarea';
 
 /**
