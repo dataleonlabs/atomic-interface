@@ -7,7 +7,7 @@ import React from 'react'
  * <Table data=[]>
  *    <Column field="id">Id</Column>
  *    <Column field="name">Product Name</Column>
- * </Form>
+ * </Table>
  */
 
 export interface TableColumnProps {
