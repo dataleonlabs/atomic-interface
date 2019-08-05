@@ -14,7 +14,7 @@ import { FormikConfig } from 'formik';
  * </Form>
  */
 
-export interface Props extends FormikConfig<{}> {
+export interface FormProps extends FormikConfig<{}> {
 
   /** Indicates whether the style of fields is inline or not */
   inline?: boolean
