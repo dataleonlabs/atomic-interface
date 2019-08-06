@@ -11,7 +11,7 @@ describe('<Toast/>', () => {
         This is a toast with a success icon — check it out!
       </Toast>
     );
-    expect(wrapper.find(Toast)).toHaveLength(1);
+    expect(wrapper.find(StrapToast)).toHaveLength(1);
   })
 
 })
