@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+import { TabContentProps as TabContentPropsBase } from "reactstrap"
 
 /**
 * This component using bootstrap lib https://reactstrap.github.io/components/tabs/
@@ -14,14 +16,23 @@ export interface TabItem {
     title: string
 
     /** Indicate whether this tab is active */
-    active?: boolean
+    disabled?: boolean
 
     /** Route path */
     slug?: string
+
+    /* add children */
+    children?: ReactNode
 }
 
 export interface TabsProps {
     /** A function invoked when a tab is clicked by the user */
     onChange?: (value: number, element: any) => void
+
+    /* add children */
+    children?: ReactNode
+
+    /* Get Active tab */
+    activeTab?:number
 }
 
