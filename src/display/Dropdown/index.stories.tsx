@@ -5,17 +5,8 @@ import DropDown from './index';
 import DropDownItem from './DropdownItem';
 
 
-class RenderDropDown extends React.Component<{ divider?: Boolean }, { dropdownOpen: boolean }> {
+class RenderDropDown extends React.Component<{ divider?: Boolean }> {
 
-  state = {
-    dropdownOpen: false
-  }
-
-  toggle = () => {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen,
-    }));
-  }
 
   render() {
     return (

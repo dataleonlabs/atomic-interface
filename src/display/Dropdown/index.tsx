@@ -14,11 +14,10 @@ const DropDown = (props: Props) => {
     setIsOpen(!isOpen)
   }
 
-
   return (
     <StrapDropdown isOpen={isOpen} toggle={toggle} {...props}>
       <>
-        <DropdownToggle caret={props.caret}>
+        <DropdownToggle caret={props.caret||undefined}>
           {props.title}
         </DropdownToggle>
         <DropdownMenu>
