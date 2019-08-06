@@ -9,16 +9,20 @@ import Button from './ModalButton'
 
 const Modal = (props: Props) => (
   <StrapModal {...props} >
-    <ModalHeader {...props}>
-      {props.header}
-    </ModalHeader>
+    {props.header && (
+      <ModalHeader {...props}>
+        {props.header}
+      </ModalHeader>
+    )}
     <ModalBody>
       {props.children}
     </ModalBody>
-    <ModalFooter>
-      {props.ok && <Button {...props.ok} />}
-      {props.cancel && <Button {...props.cancel} />}
-    </ModalFooter>
+    {(props.ok || props.cancel) && (
+      <ModalFooter>
+        {props.ok && <Button {...props.ok} />}
+        {props.cancel && <Button {...props.cancel} />}
+      </ModalFooter>
+    )}
   </StrapModal>
 )
 

@@ -17,12 +17,13 @@ describe('<Modal />', () => {
 
   it('U-TEST-2 - modal render with button', () => {
     const wrapper = enzyme.mount(
-      <Modal header="modal" ok={{label:'submit'}} >
+      <Modal header="modal" ok={{label:'submit'}} cancel={{label:'close'}} >
         this is demo 
       </Modal>
     )
     expect(wrapper.find(strapModal)).toHaveLength(1);
     expect(wrapper.props().ok).toEqual({label:'submit'});
+    expect(wrapper.props().cancel).toEqual({label:'close'});
     
   })
 
