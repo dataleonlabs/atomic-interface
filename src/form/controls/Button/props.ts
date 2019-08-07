@@ -7,5 +7,11 @@ import { ButtonProps as ButtonPropsBase } from 'react-native';
 */
 
 export interface ButtonProps extends ButtonPropsBase {
+    name: string
+    /** spinner displayed on right*/
+    renderspinner?: boolean
+    /** Disabled field */
+    disabled?: boolean
+    color?:string
 
 }

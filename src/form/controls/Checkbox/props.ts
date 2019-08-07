@@ -7,5 +7,11 @@ import { InputProps } from '../Input/props';
 */
 
 export interface CheckbokProps extends InputProps {
-
+    name: string
+    /** label displayed on right*/
+    label?: string | JSX.Element
+    /** Disabled field */
+    disabled?: boolean
+      /** Radio with label on right and tooltip on label */
+    tooltip?: string | JSX.Element
 }
