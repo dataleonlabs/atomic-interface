@@ -1,101 +1,204 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
-import BootstrapTable from 'react-bootstrap-table-next';
 import Table from './index'
 import Column from './Column'
+
+
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
+import {
+  DraggableRow,
+  DraggableCell,
+  DraggableContainer
+} from './style'
+
+
+const {
+  Table: TableBase,
+  Head,
+  HeaderCell,
+  SortableCell,
+  Body,
+  Row,
+  Cell
+} = require('@zendeskgarden/react-tables');
 
 describe('<Table />', () => {
   it('U-TEST-1 - test simple table', () => {
     const wrapper = enzyme.mount(
-      <Table data={[]}>
+      <Table data={[{ id: 1 }]}>
         <Column field={'id'}>Id</Column>
         <Column field={'firstName'}>First Name</Column>
         <Column field={'lastName'}>Last Name</Column>
       </Table>
     )
 
-    expect(wrapper.find(BootstrapTable)).toHaveLength(1)
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
 
     // Not used in compilaton
     expect(wrapper.find(Column)).toHaveLength(0)
-
-    // Testing data
-    expect((
-      wrapper.find(BootstrapTable).props() as { columns: object[]}
-    ).columns)
-    .toEqual([
-      { dataField: 'id', text: 'Id'},
-      { dataField: 'firstName', text: 'First Name' },
-      { dataField: 'lastName', text: 'Last Name' },
-    ])
+    expect(wrapper.find(HeaderCell)).toHaveLength(3)
+    expect(wrapper.find(Cell)).toHaveLength(3)
+    expect(wrapper.find(Row)).toHaveLength(1)
   })
 
-  it('U-TEST-2 - test simple with formater', () => {
-    const formatter = (cell: string, row: string) => {
-      return <span>{row}</span>;
-    };
-
+  it('U-TEST-2 - test stripped', () => {
     const wrapper = enzyme.mount(
-      <Table data={[]}>
-        <Column field={'id'}>Id</Column>
-        <Column field={'firstName'}>First Name</Column>
-        <Column field={'lastName'} formatter={formatter}>Last Name</Column>
-      </Table>
-    )
-
-    expect(wrapper.find(BootstrapTable)).toHaveLength(1)
-
-    // Not used in compilaton
-    expect(wrapper.find(Column)).toHaveLength(0)
-
-    // Testing data
-    expect((
-      wrapper.find(BootstrapTable).props() as { columns: object[] }
-    ).columns)
-      .toEqual([
-        { dataField: 'id', text: 'Id' },
-        { dataField: 'firstName', text: 'First Name' },
-        { dataField: 'lastName', text: 'Last Name', formatter },
-      ])
-  })
-
-  it('U-TEST-3 - test with select column', () => {
-    const wrapper = enzyme.mount(
-      <Table data={[]} selectable={true}>
+      <Table data={[{ id: 1 }]} striped={true}>
         <Column field={'id'}>Id</Column>
         <Column field={'firstName'}>First Name</Column>
         <Column field={'lastName'}>Last Name</Column>
       </Table>
     )
 
-    expect(wrapper.find(BootstrapTable)).toHaveLength(1)
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
 
     // Not used in compilaton
     expect(wrapper.find(Column)).toHaveLength(0)
-
-    // Check select row display
-    expect(wrapper.find('.table .selection-input-4')).toHaveLength(2);
-
-    // Testing data
-    expect((
-      wrapper.find(BootstrapTable).props() as { columns: object[] }
-    ).columns)
-      .toEqual([
-        { dataField: 'id', text: 'Id' },
-        { dataField: 'firstName', text: 'First Name' },
-        { dataField: 'lastName', text: 'Last Name' },
-      ])
+    expect(wrapper.find(HeaderCell)).toHaveLength(3)
+    expect(wrapper.find(Cell)).toHaveLength(3)
+    expect(wrapper.find(Row)).toHaveLength(1)
+    expect(wrapper.props().striped).toEqual(true)
   })
 
-  it('U-TEST-4 - test hide coloumn', () => {
+  it('U-TEST-3 - test size large', () => {
     const wrapper = enzyme.mount(
-      <Table data={[]} selectable={true} hideHeader={true}>
+      <Table data={[{ id: 1 }]} rowSize={'large'}>
         <Column field={'id'}>Id</Column>
         <Column field={'firstName'}>First Name</Column>
         <Column field={'lastName'}>Last Name</Column>
       </Table>
     )
-    expect(wrapper.find('.table .HideHeader')).toHaveLength(2);
 
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
+
+    // Not used in compilaton
+    expect(wrapper.find(Column)).toHaveLength(0)
+    expect(wrapper.find(HeaderCell)).toHaveLength(3)
+    expect(wrapper.find(Cell)).toHaveLength(3)
+    expect(wrapper.find(Row)).toHaveLength(1)
+    expect(wrapper.props().rowSize).toEqual('large')
+  })
+
+  it('U-TEST-4 - test size small', () => {
+    const wrapper = enzyme.mount(
+      <Table data={[{ id: 1 }]} rowSize={'small'}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
+
+    // Not used in compilaton
+    expect(wrapper.find(Column)).toHaveLength(0)
+    expect(wrapper.find(HeaderCell)).toHaveLength(3)
+    expect(wrapper.find(Cell)).toHaveLength(3)
+    expect(wrapper.find(Row)).toHaveLength(1)
+    expect(wrapper.props().rowSize).toEqual('small')
+  })
+
+  it('U-TEST-5 - test disabledSelected', () => {
+    const wrapper = enzyme.mount(
+      <Table data={[{ id: 1 }]} rowSize={'small'} disabledSelected={[1]}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
+
+    // Not used in compilaton
+    expect(wrapper.find(Column)).toHaveLength(0)
+    expect(wrapper.find(HeaderCell)).toHaveLength(3)
+    expect(wrapper.find(Cell)).toHaveLength(3)
+    expect(wrapper.find(Row)).toHaveLength(1)
+    expect(wrapper.props().disabledSelected).toEqual([1])
+  })
+
+  it('U-TEST-6 - test hide header', () => {
+    const wrapper = enzyme.mount(
+      <Table data={[{ id: 1 }]} rowSize={'small'} hideHeader={true}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(0)
+    expect(wrapper.find(HeaderCell)).toHaveLength(0)
+  })
+
+  it('U-TEST-7 - test sortable', () => {
+    const wrapper = enzyme.mount(
+      <Table sortable={true} data={[{ id: 1 }]} rowSize={'small'} disabledSelected={[1]}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
+
+    // Not used in compilaton
+    expect(wrapper.find(Column)).toHaveLength(0)
+    expect(wrapper.find(HeaderCell)).toHaveLength(3)
+    expect(wrapper.find(Cell)).toHaveLength(3)
+    expect(wrapper.find(SortableCell)).toHaveLength(3)
+  })
+
+  it('U-TEST-8 - test draggable', () => {
+    const wrapper = enzyme.mount(
+      <Table draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
+
+    // Not used in compilaton
+    expect(wrapper.find(Column)).toHaveLength(0)
+    expect(wrapper.find(HeaderCell)).toHaveLength(4)
+    expect(wrapper.find(DragDropContext)).toHaveLength(1)
+    expect(wrapper.find(Droppable)).toHaveLength(1)
+    expect(wrapper.find(Draggable)).toHaveLength(2)
+    expect(wrapper.find(DraggableRow)).toHaveLength(2)
+    expect(wrapper.find(DraggableCell)).toHaveLength(8) // rows + dots
+    expect(wrapper.find(DraggableContainer)).toHaveLength(2) // dots
+  })
+
+  it('U-TEST-9 - test empty', () => {
+    const wrapper = enzyme.mount(
+      <Table draggable={true} data={[]}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
+    expect(wrapper.find(DraggableCell)).toHaveLength(0) // rows + dots
+    expect(wrapper.find(Draggable)).toHaveLength(0)
   })
 })

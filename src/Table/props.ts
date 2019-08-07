@@ -50,11 +50,17 @@ export interface TableProps {
   /** Display or hide the selected column */
   selectable?: boolean
 
+  /** Display or hide the selected column */
+  onSelected?: (rows: string[]) => void
+
   /** Selected item */
   disabledSelected?: string[] | number[]
 
   /** Sortable table display */
   sortable?: boolean
+
+  /** onSorted event */
+  onSorted?: (params: { direction: string, field: string }) => void
 
   /* Scrollable tables can be enabled with the scrollable prop.
   This defines the height of the <Body> element. */
@@ -69,15 +75,15 @@ export interface TableProps {
   /** Add drag and drop feature */
   draggable?: boolean
 
+  /** Drag end event */
+  onDragEnd?: (values: Values[]) => void
+
   /** noDataIndication */
   noDataIndication?: JSX.Element | string
-
-  /* On select row value */
-  onSelected?: (values: Values[], ids?: string[]) => void
-
-  /** Trigger when table change */
-  onChange?: (values: Values[]) => void
   
   /* Pagination */
   pagination?: boolean
+
+  /** Trigger when table change */
+  onPaginated?: (values: Values[]) => void
 }

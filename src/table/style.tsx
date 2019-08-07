@@ -1,6 +1,6 @@
 
 import styled from 'styled-components'
-import { Row, Cell } from '@zendeskgarden/react-tables';
+const { Row, Cell } = require('@zendeskgarden/react-tables');
 
 export const DraggableRow = styled(Row)`
   ${props =>
