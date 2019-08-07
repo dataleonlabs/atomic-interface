@@ -6,7 +6,7 @@ import { TabItem as Props } from './props';
  * TabItem render element
  */
 
-const TabItem = (props: Props) => {
+const TabItem /* istanbul ignore next  */ = (props: Props) => {
   return (
     <TabPane  {...props}>
       {props.children}
