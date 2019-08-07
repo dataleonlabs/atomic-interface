@@ -1,12 +1,14 @@
 import React from 'react';
 import { TableProps as Props, Values } from './props'
 import { CustomInput } from 'reactstrap';
+import Loader from './loader';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import {
   DraggableRow,
   DraggableCell,
-  DraggableContainer
+  DraggableContainer,
+  StyledNoContent
 } from './style'
 
 /**
@@ -405,40 +407,45 @@ class Table extends React.Component<Props, State> {
                   </HeaderRow>
                 </Head>
               )}
-              <Droppable droppableId="droppable">
-                {(provided: any, droppableSnapshot: any) => {
-                  return (
-                    <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>
-                      {this.state.items.map((item: any, index: any) => (
-                        <Draggable key={item.id} draggableId={item.id} index={index}>
-                          {(provided: any, snapshot: any) => (
-                            <DraggableRow
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
+              {(this.props.loading === true) ? <Loader /> : (
+                  <Droppable droppableId="droppable">
+                    {(provided: any, droppableSnapshot: any) => {
+                      return (
+                        <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>
+                          {this.state.items.map((item: any, index: any) => (
+                            <Draggable key={item.id} draggableId={item.id} index={index}>
+                              {(provided: any, snapshot: any) => (
+                                <DraggableRow
+                                  ref={provided.innerRef}
+                                  {...provided.draggableProps}
 
-                              isDragging={snapshot.isDragging}
-                              isDraggingOver={droppableSnapshot.isDraggingOver}
-                              hovered={snapshot.isDragging}
-                              focused={
-                                droppableSnapshot.isDraggingOver ? /* istanbul ignore next */ snapshot.isDragging : undefined
-                              }
-                              {...provided.draggableProps.style}
-                              {...provided.draggableProps}
-                            >
-                              <>
-                                {this.cellsDragable(item, snapshot, provided, index)}
-                              </>
-                            </DraggableRow>
-                          )}
-                        </Draggable>
-                      ))}
-                      {provided.placeholder}
-                    </Body>
-                  );
-                }}
-              </Droppable>
+                                  isDragging={snapshot.isDragging}
+                                  isDraggingOver={droppableSnapshot.isDraggingOver}
+                                  hovered={snapshot.isDragging}
+                                  focused={
+                                    droppableSnapshot.isDraggingOver ? /* istanbul ignore next */ snapshot.isDragging : undefined
+                                  }
+                                  {...provided.draggableProps.style}
+                                  {...provided.draggableProps}
+                                >
+                                  <>
+                                    {this.cellsDragable(item, snapshot, provided, index)}
+                                  </>
+                                </DraggableRow>
+                              )}
+                            </Draggable>
+                          ))}
+                          {provided.placeholder}
+                        </Body>
+                      );
+                    }}
+                  </Droppable>
+              )}
             </TableBase>
           </DragDropContext>
+            {((this.props.loading !== true) && (this.props.data.length === 0)) && (
+              <StyledNoContent>{this.props.noContentIndication || 'Not found'}</StyledNoContent>
+            )}
           {contentPagination}
         </>
         </ThemeProvider>
@@ -456,14 +463,19 @@ class Table extends React.Component<Props, State> {
               </HeaderRow>
             </Head>
           )}
-          <Body>
-            {this.props.data.map((row: any, index) => (
-              <Row key={index} selected={this.state.selected[row.id]} striped={this.props.striped && index % 2 === 0}>
-                {this.cells(row)}
-              </Row>
-            ))}
-          </Body>
+            {(this.props.loading === true) ? <Loader /> : (
+              <Body>
+                {this.props.data.map((row: any, index) => (
+                  <Row key={index} selected={this.state.selected[row.id]} striped={this.props.striped && index % 2 === 0}>
+                    {this.cells(row)}
+                  </Row>
+                ))}
+              </Body>
+            )}
         </TableBase>
+          {((this.props.loading !== true) && (this.props.data.length === 0)) && (
+            <StyledNoContent>{this.props.noContentIndication || 'Not found'}</StyledNoContent>
+          )}
         {contentPagination}
       </>
       </ThemeProvider>

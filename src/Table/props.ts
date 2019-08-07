@@ -93,4 +93,7 @@ export interface TableProps {
     /** Trigger when table change */
     onChange?: (page: number) => void
   }
+
+  /** no content indication */
+  noContentIndication?: string
 }

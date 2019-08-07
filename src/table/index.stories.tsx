@@ -147,4 +147,15 @@ storiesOf('Table|Table', module)
         </Table>
       </Col>
     </React.Fragment>
+  )).add('With loading', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table</h4>
+        <Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+          <Column field={'id'}>Id</Column>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
   ))

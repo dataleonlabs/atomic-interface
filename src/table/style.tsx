@@ -27,3 +27,9 @@ export const DraggableContainer = styled.div`
     outline: none;
   }
 `;
+
+export const StyledNoContent = styled.div`
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+`;

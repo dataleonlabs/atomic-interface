@@ -2,9 +2,12 @@ import * as React from 'react'
 import * as enzyme from 'enzyme'
 import Table from './index'
 import Column from './Column'
-
+import ContentLoader from 'react-content-loader'
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import {
+  StyledNoContent
+} from './style'
 
 import {
   DraggableRow,
@@ -218,6 +221,7 @@ describe('<Table />', () => {
 
     expect(wrapper.find(TableBase)).toHaveLength(1)
     expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(StyledNoContent)).toHaveLength(1)
     expect(wrapper.find(Body)).toHaveLength(1)
     expect(wrapper.find(DraggableCell)).toHaveLength(0) // rows + dots
     expect(wrapper.find(Draggable)).toHaveLength(0)
@@ -238,5 +242,27 @@ describe('<Table />', () => {
     expect(wrapper.find(DraggableCell)).toHaveLength(0) // rows + dots
     expect(wrapper.find(Draggable)).toHaveLength(0)
     expect(wrapper.find(Pagination)).toHaveLength(1)
+  })
+
+  it('U-TEST-12 - test loading', () => {
+    const wrapper = enzyme.mount(
+      <Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(0)
+
+    // Not used in compilaton
+    expect(wrapper.find(Column)).toHaveLength(0)
+    expect(wrapper.find(HeaderCell)).toHaveLength(5)
+    expect(wrapper.find(Draggable)).toHaveLength(0)
+    expect(wrapper.find(DraggableContainer)).toHaveLength(0)
+    expect(wrapper.find(ContentLoader)).toHaveLength(1)
+    
   })
 })
