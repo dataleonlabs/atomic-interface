@@ -19,7 +19,7 @@ const Tabs = (props: Props) => {
                 return (
                   <NavItem>
                     <NavLink
-                      onClick={(_element) => { (!child.props.disabled && props.onChange) && props.onChange(index, _element) }}
+                      onClick={(_element) => { /* istanbul ignore next  */ (!child.props.disabled && props.onChange) && props.onChange(index, _element) }}
                       className={classnames({ active: props.activeTab === index })}
                     >
                       {child.props.title}
@@ -29,6 +29,7 @@ const Tabs = (props: Props) => {
                 )
               }
             }
+            /* istanbul ignore next  */
             return null
           })
 
@@ -53,6 +54,7 @@ const Tabs = (props: Props) => {
                 )
               }
             }
+            /* istanbul ignore next  */
             return null
           })
 

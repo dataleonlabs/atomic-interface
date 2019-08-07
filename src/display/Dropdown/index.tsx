@@ -9,15 +9,17 @@ import { DropdownProps as Props } from './props';
 const DropDown = (props: Props) => {
 
   const [isOpen, setIsOpen] = useState(false)
-
+  
+  /* istanbul ignore next  */
   function toggle() {
     setIsOpen(!isOpen)
   }
 
+
   return (
     <StrapDropdown isOpen={isOpen} toggle={toggle} {...props}>
       <>
-        <DropdownToggle caret={props.caret||undefined}>
+        <DropdownToggle caret={props.caret}>
           {props.title}
         </DropdownToggle>
         <DropdownMenu>

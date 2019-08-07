@@ -9,6 +9,7 @@ import { TooltipProps as Props } from './props';
 const Tooltip = (props: Props) => {
   const [tooltipOpen, setTooltipOpen] = React.useState(false);
 
+  /* istanbul ignore next  */
   function toggle() {
     setTooltipOpen(!tooltipOpen)
   }
