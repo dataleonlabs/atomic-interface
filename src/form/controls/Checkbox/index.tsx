@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
-import { Input as InputBootstrap, FormGroup, Tooltip,Label,UncontrolledTooltip } from 'reactstrap';
+import { Input as InputBootstrap, FormGroup,Label,UncontrolledTooltip } from 'reactstrap';
 import { CheckbokProps as Props } from './props';
 import Control from '../../Control';
 
