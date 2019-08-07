@@ -13,6 +13,7 @@ import {
  * Include tables styling at the root of your application
  */
 import '@zendeskgarden/react-tables/dist/styles.css';
+import '@zendeskgarden/react-pagination/dist/styles.css';
 
 const {
   Table: TableBase,
@@ -24,6 +25,9 @@ const {
   Row,
   Cell
 } = require('@zendeskgarden/react-tables');
+
+const { Pagination } = require('@zendeskgarden/react-pagination');
+const { ThemeProvider } = require('@zendeskgarden/react-theming');
 
 
 export interface State {
@@ -45,10 +49,10 @@ export interface State {
  * Table
  */
 class Table extends React.Component<Props, State> {
-  
+
   public static defaultProps: Partial<Props> = {
     hideHeader: false,
-    pagination: true,
+    pagination: false,
     disabledSelected: [],
     selectable: false,
     sortable: false,
@@ -66,15 +70,15 @@ class Table extends React.Component<Props, State> {
       id: 2,
       firstName: 'test2',
       lastName: 'test2',
-      }, {
-        id: 3,
-        firstName: 'test2',
-        lastName: 'test2',
-      }, {
-        id: 4,
-        firstName: 'test2',
-        lastName: 'test2',
-      }],
+    }, {
+      id: 3,
+      firstName: 'test2',
+      lastName: 'test2',
+    }, {
+      id: 4,
+      firstName: 'test2',
+      lastName: 'test2',
+    }],
     sortField: '',
     sortDirection: 'asc' as State['sortDirection']
   }
@@ -103,7 +107,7 @@ class Table extends React.Component<Props, State> {
    * @param selectedRows selected rows
    * @param rows  current rows
    */
-  public isSelectAllIndeterminate (selectedRows: State['selected'], rows: Values[]) {
+  public isSelectAllIndeterminate(selectedRows: State['selected'], rows: Values[]) {
     const numSelectedRows = Object.keys(selectedRows).length;
     return numSelectedRows > 0 && numSelectedRows < rows.length;
   };
@@ -113,7 +117,7 @@ class Table extends React.Component<Props, State> {
   * @param selectedRows selected rows
   * @param rows  current rows
   */
-  public isSelectAllChecked (selectedRows: State['selected'], rows: Values[]) {
+  public isSelectAllChecked(selectedRows: State['selected'], rows: Values[]) {
     return Object.keys(selectedRows).length === rows.length;
   };
 
@@ -133,41 +137,41 @@ class Table extends React.Component<Props, State> {
     return defaultWidth;
   }
 
- /**
- * wrap for drag and drop
- * @param component 
- * @param props 
- */
+  /**
+  * wrap for drag and drop
+  * @param component 
+  * @param props 
+  */
   wrapperSortable = (component: JSX.Element, child: any) => {
     if ((this.props.sortable === true) && (child.props.sortable !== false)) {
       return (
         <SortableCell
-            scope="col"
-            key={child.props.field}
-            minimum {...child.props}
-            width={`${(child.props.width || this.getDefaultWidth())}%`}
-            onClick={() => {
+          scope="col"
+          key={child.props.field}
+          minimum {...child.props}
+          width={`${(child.props.width || this.getDefaultWidth())}%`}
+          onClick={() => {
 
-              if (this.state.sortField !== child.props.field) {
-                return this.setState({ sortDirection: 'desc', sortField: child.props.field });
-              }
-
-              const { sortDirection } = this.state;
-              if (sortDirection === 'asc') {
-                this.setState({ sortDirection: 'desc', sortField: child.props.field });
-              } else {
-                this.setState({ sortDirection: 'asc', sortField: child.props.field });
-              }
-
-              if (typeof this.props.onSorted === 'function') {
-                this.props.onSorted({ direction: sortDirection, field: child.props.field });
-              }
-            }}
-            sort={
-              (this.state.sortField === child.props.field) ?
-              this.state.sortDirection : 'asc'
+            if (this.state.sortField !== child.props.field) {
+              return this.setState({ sortDirection: 'desc', sortField: child.props.field });
             }
-          >
+
+            const { sortDirection } = this.state;
+            if (sortDirection === 'asc') {
+              this.setState({ sortDirection: 'desc', sortField: child.props.field });
+            } else {
+              this.setState({ sortDirection: 'asc', sortField: child.props.field });
+            }
+
+            if (typeof this.props.onSorted === 'function') {
+              this.props.onSorted({ direction: sortDirection, field: child.props.field });
+            }
+          }}
+          sort={
+            (this.state.sortField === child.props.field) ?
+              this.state.sortDirection : 'asc'
+          }
+        >
           {child.props.children || child.props.field}
         </SortableCell>
       )
@@ -199,9 +203,9 @@ class Table extends React.Component<Props, State> {
   }
 
 
- /**
- * Render columns
- */
+  /**
+  * Render columns
+  */
   private colonns = () => {
     const columns: JSX.Element[] = [];
 
@@ -253,8 +257,8 @@ class Table extends React.Component<Props, State> {
         if (child.props && child.props.field) {
           const column = this.wrapperSortable(
             <HeaderCell key={child.props.field} minimum {...child.props} width={`${(child.props.width || this.getDefaultWidth())}%`}>
-                {child.props.children || child.props.field}
-              </HeaderCell>
+              {child.props.children || child.props.field}
+            </HeaderCell>
             , child);
           columns.push(column);
         }
@@ -302,7 +306,7 @@ class Table extends React.Component<Props, State> {
       if (React.isValidElement(child)) {
         if (child.props && child.props.field) {
           let cellValue = row[child.props.field];
-          
+
           // format cell value
           if ((typeof child.props.formatter === 'function')) {
             cellValue = child.props.formatter(cellValue, row);
@@ -384,57 +388,78 @@ class Table extends React.Component<Props, State> {
   }
 
   render() {
+    let contentPagination = <></>;
+
+    // Disable pagination
+    if (typeof this.props.pagination === 'object') {
+      contentPagination = (
+        <>
+          <div style={{ height: 16 }} />
+          <Pagination
+            totalPages={Math.floor((this.props.pagination.total || 0) / 10)}
+            currentPage={this.props.pagination.currentPage}
+            onStateChange={this.props.pagination.onChange}
+          />
+        </>
+      )
+    }
     if (this.props.draggable === true) {
       return (
-        <DragDropContext onDragEnd={this.onDragEnd}>
-          <TableBase scrollable={this.props.scrollable ? `${this.props.scrollable}px` : undefined} size={this.props.rowSize === 'default' ? undefined : this.props.rowSize}>
-            {(this.props.hideHeader !== true) && (
-              <Head>
-                <HeaderRow>
-                  {this.colonns()}
-                </HeaderRow>
-              </Head>
-            )}
-            <Droppable droppableId="droppable">
-              {(provided: any, droppableSnapshot: any) => {
-                return (
-                  <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>
-                    {this.state.items.map((item: any, index: any) => (
-                      <Draggable key={item.id} draggableId={item.id} index={index}>
-                        {(provided: any, snapshot: any) => (
-                          <DraggableRow
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
+        <ThemeProvider>
+        <>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <TableBase scrollable={this.props.scrollable ? `${this.props.scrollable}px` : undefined} size={this.props.rowSize === 'default' ? undefined : this.props.rowSize}>
+              {(this.props.hideHeader !== true) && (
+                <Head>
+                  <HeaderRow>
+                    {this.colonns()}
+                  </HeaderRow>
+                </Head>
+              )}
+              <Droppable droppableId="droppable">
+                {(provided: any, droppableSnapshot: any) => {
+                  return (
+                    <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>
+                      {this.state.items.map((item: any, index: any) => (
+                        <Draggable key={item.id} draggableId={item.id} index={index}>
+                          {(provided: any, snapshot: any) => (
+                            <DraggableRow
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
 
-                            isDragging={snapshot.isDragging}
-                            isDraggingOver={droppableSnapshot.isDraggingOver}
-                            hovered={snapshot.isDragging}
-                            focused={
-                              droppableSnapshot.isDraggingOver ? snapshot.isDragging : undefined
-                            }
-                            {...provided.draggableProps.style}
-                            {...provided.draggableProps}
-                          >
-                            <>
-                              {this.cellsDragable(item, snapshot, provided, index)}
-                            </>
-                          </DraggableRow>
-                        )}
-                      </Draggable>
-                    ))}
-                    {provided.placeholder}
-                  </Body>
-                );
-              }}
-            </Droppable>
-          </TableBase>
-      </DragDropContext>
-      );      
+                              isDragging={snapshot.isDragging}
+                              isDraggingOver={droppableSnapshot.isDraggingOver}
+                              hovered={snapshot.isDragging}
+                              focused={
+                                droppableSnapshot.isDraggingOver ? snapshot.isDragging : undefined
+                              }
+                              {...provided.draggableProps.style}
+                              {...provided.draggableProps}
+                            >
+                              <>
+                                {this.cellsDragable(item, snapshot, provided, index)}
+                              </>
+                            </DraggableRow>
+                          )}
+                        </Draggable>
+                      ))}
+                      {provided.placeholder}
+                    </Body>
+                  );
+                }}
+              </Droppable>
+            </TableBase>
+          </DragDropContext>
+          {contentPagination}
+        </>
+        </ThemeProvider>
+      );
     }
 
-
     return (
-      <TableBase scrollable={this.props.scrollable ? `${this.props.scrollable}px`: undefined} size={this.props.rowSize === 'default' ? undefined : this.props.rowSize}>
+      <ThemeProvider>
+      <>
+        <TableBase scrollable={this.props.scrollable ? `${this.props.scrollable}px` : undefined} size={this.props.rowSize === 'default' ? undefined : this.props.rowSize}>
           {(this.props.hideHeader !== true) && (
             <Head>
               <HeaderRow>
@@ -450,6 +475,9 @@ class Table extends React.Component<Props, State> {
             ))}
           </Body>
         </TableBase>
+        {contentPagination}
+      </>
+      </ThemeProvider>
     );
   }
 }

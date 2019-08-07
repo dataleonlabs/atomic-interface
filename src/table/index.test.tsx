@@ -22,6 +22,7 @@ const {
   Row,
   Cell
 } = require('@zendeskgarden/react-tables');
+const { Pagination } = require('@zendeskgarden/react-pagination');
 
 describe('<Table />', () => {
   it('U-TEST-1 - test simple table', () => {
@@ -200,5 +201,22 @@ describe('<Table />', () => {
     expect(wrapper.find(Body)).toHaveLength(1)
     expect(wrapper.find(DraggableCell)).toHaveLength(0) // rows + dots
     expect(wrapper.find(Draggable)).toHaveLength(0)
+  })
+
+  it('U-TEST-10 - test pagination', () => {
+    const wrapper = enzyme.mount(
+      <Table draggable={true} data={[]} pagination={{ currentPage: 1, total: 10 }}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
+    expect(wrapper.find(DraggableCell)).toHaveLength(0) // rows + dots
+    expect(wrapper.find(Draggable)).toHaveLength(0)
+    expect(wrapper.find(Pagination)).toHaveLength(1)
   })
 })

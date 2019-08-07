@@ -2137,6 +2137,13 @@
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
 
+"@zendeskgarden/react-pagination@^6.3.1":
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-pagination/-/react-pagination-6.3.1.tgz#42041c4d45275b69aa417b8b70eb11ae527a3413"
+  dependencies:
+    "@zendeskgarden/react-selection" "^6.2.0"
+    classnames "^2.2.5"
+
 "@zendeskgarden/react-selection@^6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@zendeskgarden/react-selection/-/react-selection-6.2.0.tgz#b4eca02973d58d6ef4da4918af2fd5c795311a12"

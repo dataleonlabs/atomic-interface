@@ -29,6 +29,7 @@
     ]
   },
   "dependencies": {
+    "@zendeskgarden/react-pagination": "^6.3.1",
     "@zendeskgarden/react-tables": "^6.3.1",
     "@zendeskgarden/react-theming": "^6.2.0",
     "bootstrap": "^4.3.1",

@@ -82,8 +82,15 @@ export interface TableProps {
   noDataIndication?: JSX.Element | string
   
   /* Pagination */
-  pagination?: boolean
+  pagination?: false | {
 
-  /** Trigger when table change */
-  onPaginated?: (values: Values[]) => void
+    /** Current page */
+    currentPage?: number,
+
+    /** Total element in databases */
+    total?: number,
+
+    /** Trigger when table change */
+    onChange?: (page: number) => void
+  }
 }
