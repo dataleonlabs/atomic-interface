@@ -5,6 +5,6 @@ import { TableColumnProps as Props } from './props'
 /**
  * TableColumn
  */
-const TableColumn = (props: Props) => (<></>)
+const TableColumn = /* istanbul ignore next */ (props: Props) => (<></>)
 
 export default TableColumn;

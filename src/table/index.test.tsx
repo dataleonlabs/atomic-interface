@@ -163,9 +163,9 @@ describe('<Table />', () => {
     expect(wrapper.find(SortableCell)).toHaveLength(3)
   })
 
-  it('U-TEST-8 - test draggable', () => {
+  it('U-TEST-8 - test selectable', () => {
     const wrapper = enzyme.mount(
-      <Table draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+      <Table selectable={true} sortable={true} data={[{ id: 1 }]} rowSize={'small'} disabledSelected={[1]}>
         <Column field={'id'}>Id</Column>
         <Column field={'firstName'}>First Name</Column>
         <Column field={'lastName'}>Last Name</Column>
@@ -179,15 +179,35 @@ describe('<Table />', () => {
     // Not used in compilaton
     expect(wrapper.find(Column)).toHaveLength(0)
     expect(wrapper.find(HeaderCell)).toHaveLength(4)
+    expect(wrapper.find(Cell)).toHaveLength(4)
+    expect(wrapper.find(SortableCell)).toHaveLength(3)
+  })
+
+  it('U-TEST-9 - test draggable', () => {
+    const wrapper = enzyme.mount(
+      <Table selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+        <Column field={'id'}>Id</Column>
+        <Column field={'firstName'}>First Name</Column>
+        <Column field={'lastName'}>Last Name</Column>
+      </Table>
+    )
+
+    expect(wrapper.find(TableBase)).toHaveLength(1)
+    expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(Body)).toHaveLength(1)
+
+    // Not used in compilaton
+    expect(wrapper.find(Column)).toHaveLength(0)
+    expect(wrapper.find(HeaderCell)).toHaveLength(5)
     expect(wrapper.find(DragDropContext)).toHaveLength(1)
     expect(wrapper.find(Droppable)).toHaveLength(1)
     expect(wrapper.find(Draggable)).toHaveLength(2)
     expect(wrapper.find(DraggableRow)).toHaveLength(2)
-    expect(wrapper.find(DraggableCell)).toHaveLength(8) // rows + dots
+    expect(wrapper.find(DraggableCell)).toHaveLength(10) // rows + dots
     expect(wrapper.find(DraggableContainer)).toHaveLength(2) // dots
   })
 
-  it('U-TEST-9 - test empty', () => {
+  it('U-TEST-10 - test empty', () => {
     const wrapper = enzyme.mount(
       <Table draggable={true} data={[]}>
         <Column field={'id'}>Id</Column>
@@ -203,7 +223,7 @@ describe('<Table />', () => {
     expect(wrapper.find(Draggable)).toHaveLength(0)
   })
 
-  it('U-TEST-10 - test pagination', () => {
+  it('U-TEST-11 - test pagination', () => {
     const wrapper = enzyme.mount(
       <Table draggable={true} data={[]} pagination={{ currentPage: 1, total: 10 }}>
         <Column field={'id'}>Id</Column>

@@ -26,7 +26,8 @@
       "src",
       "stories"
     ],
-    "noEmit": true
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": [
     "src"
