@@ -11,9 +11,9 @@ import { UncontrolledDropdownProps, DropdownItemProps as DropdownItemPropsBase }
  */
 
 export interface DropdownItemProps extends DropdownItemPropsBase {
-    
+
     /** Content in DropdownToggle */
-    content: string | JSX.Element
+    children?: string | JSX.Element
 
 }
 
@@ -24,5 +24,6 @@ export interface DropdownProps extends UncontrolledDropdownProps {
 
     /** Caret in DropdownToggle */
     caret?: boolean
+   
 }
 

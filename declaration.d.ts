@@ -1,1 +1,1 @@
-declare module 'babel-plugin-require-context-hook'
+declare module '@zendeskgarden/react-tables';
