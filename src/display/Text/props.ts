@@ -1,34 +1,47 @@
-
 /**
 * @example
 * <Text useWordBoundary={30} trucanteType={'right'} capitalizeFirstLetter={true}>
-*    Try to select this text!
+*   Try to select this text!
 * </Text>
 */
 
 export interface TextProps {
 
-    /** Type of current text: default is text */
-    type?: 'text' | 'number' | 'date' | 'money' | 'ago'
+    /** Type of current text: default is text
+    * date: use momentjs
+    * currency and number https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/NumberFormat
+    * 
+    */
+    type?: 'text' | 'number' | 'date' | 'currency' | 'ago'
 
     /**
-     * String to format dependency to type
-     * For ago format must be 'fr' or 'en'
-     */
+    * String to format dependency to type
+    * For ago format must be 'eu' or 'en'
+    * format "dd/MM/YYYY hh:mm"
+    * format for currency: EUR USD etc...
+    */
     format?: string | object | 'fr' | 'en'
 
-    /** Tooltip to display in balise */
+    /**
+    * String to  for locale
+    */
+    locale?: string
+
+    /* Tooltip to display in balise */
     tooltip?: string
 
-    /** Number of letters to display before cutting the sentence with a "..." */
+    // Only text
+    /* Number of letters to display before cutting the sentence with a "..." */
     useWordBoundary?: number
 
-    /** Trucante type */
+    // Only text
+    /* Trucante type */
     trucanteType?: 'right' | 'middle'
 
-    /** Displays the first letter of the text in uppercase */
+    // Only text
+    /* Displays the first letter of the text in uppercase */
     capitalizeFirstLetter?: boolean
 
-    /** Text default or use Bootstrap Help Input */
-    style?: 'default' | 'help'
+    /* Text default or use Bootstrap Help Input */
+    textStyle?: 'default' | 'help'
 }
