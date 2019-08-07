@@ -1,6 +1,8 @@
 import * as React from 'react'
-
+import moment from 'moment';
+import { FormText, Label } from 'reactstrap';
 import { TextProps as Props } from './props'
+import Tooltip from '../Tooltip';
 
 // Sample for ago formting
 // import TimeAgo from 'timeago-react'
@@ -9,6 +11,16 @@ import { TextProps as Props } from './props'
 // register('fr_FR', localeFRFunc)
 // register('en', localeENFunc)
 
+function makeId(length: number = 5) {
+  var result = 'y';
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 const capitalizeFirstLetter = (str: string) => {
   if (!str) {
     return ''
@@ -16,11 +28,7 @@ const capitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-export const truncate = (
-  text: any,
-  n: number = 20,
-  isCapitalizeFirstLetter: boolean = false,
-) => {
+export const truncate = (text: any, n: number = 20, isCapitalizeFirstLetter: boolean = false) => {
   text = String(text)
   if (isCapitalizeFirstLetter) {
     text = capitalizeFirstLetter(text)
@@ -31,7 +39,13 @@ export const truncate = (
   return text.length > n ? `${text.substr(0, n - 1)}...` : text
 }
 
-export const truncateMiddle = (fullStr: any, strLen: number, separator: string) => {
+export const truncateMiddle = (fullStr: any, strLen: number, separator: string, isCapitalizeFirstLetter: boolean = false) => {
+  fullStr = String(fullStr)
+
+  if (isCapitalizeFirstLetter) {
+    fullStr = capitalizeFirstLetter(fullStr)
+  }
+
   if (fullStr.length <= strLen) {
     return fullStr;
   }
@@ -41,42 +55,81 @@ export const truncateMiddle = (fullStr: any, strLen: number, separator: string) 
   const frontChars = Math.ceil(charsToShow / 2);
   const backChars = Math.floor(charsToShow / 2);
 
-  return fullStr.substr(0, frontChars) +
-    separator +
-    fullStr.substr(fullStr.length - backChars);
+
+  return fullStr.substr(0, frontChars) + separator + fullStr.substr(fullStr.length - backChars);
 };
+
+export const getText = (props: any) => {
+  return props.children &&
+    React.Children.map(props.children, child => {
+      if (React.isValidElement(child)) {
+        return child
+      }
+
+      if (props.type === 'text' && props.trucanteType === 'middle') {
+        return truncateMiddle(child, props.useWordBoundary || 20, '...', props.capitalizeFirstLetter)
+      }
+      if (props.type === 'text' && props.trucanteType === 'right') {
+        return truncate(child, props.useWordBoundary, props.capitalizeFirstLetter)
+      }
+      if (props.type === 'text' && props.capitalizeFirstLetter) {
+        return capitalizeFirstLetter(child)
+      }
+      if (props.type === 'text') {
+        return child
+      }
+      if (props.type === 'date') {
+        return moment(child).format(props.format) === 'Invalid date' ? child : moment(child).format(props.format)
+      }
+
+      if (props.type === 'ago') {
+        return moment(child).fromNow() === 'Invalid date' ? child : moment(child).fromNow()
+      }
+
+      if (props.type === 'currency') {
+        try {
+          if (isNaN(child)) {
+            return child
+          }
+          if(props.format){
+            return new Intl.NumberFormat(undefined, { style: 'currency', currency: props.format }).format(child)
+          }
+          return new Intl.NumberFormat('en-IN').format(child)
+        } catch (error) {
+          return new Intl.NumberFormat('en-IN').format(child)
+        }
+        
+      }
+
+    })
+}
+
+
 
 /**
  * Text
  */
 export default class Text extends React.Component<Props> {
+  static defaultProps: Props;
 
   render() {
+    const TextStyle: React.ReactType = this.props.textStyle === 'help' ? FormText : Label;
+    const id = `${makeId()}`;
     return (
-      <span
-        title={this.props.tooltip || String(this.props.tooltip || '')}
-      >
-        {this.props.children &&
-          React.Children.map(this.props.children, child => {
-            if (React.isValidElement(child)) {
-              return child
-            }
+      <>
+        <TextStyle id={id}>
+          {getText(this.props)}
+        </TextStyle>
 
-            if (this.props.trucanteType === 'middle') {
-              return truncateMiddle(
-                child,
-                this.props.useWordBoundary || 20,
-                '...'
-              )
-            }
-
-            return truncate(
-              child,
-              this.props.useWordBoundary,
-              this.props.capitalizeFirstLetter,
-            )
-          })}
-      </span>
+        {this.props.tooltip && (<Tooltip target={id}>
+          {this.props.tooltip}
+        </Tooltip>)}
+      </>
     )
   }
+}
+
+Text.defaultProps = {
+  textStyle: 'default',
+  type: 'text'
 }
