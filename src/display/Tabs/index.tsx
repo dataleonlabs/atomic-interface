@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
-import { TabContent, Nav, NavItem, TabPane, Row, Col, NavLink } from 'reactstrap';
+import { TabContent, Nav, NavItem, TabPane, NavLink } from 'reactstrap';
 import { TabsProps as Props } from './props';
+import { element } from 'prop-types';
 
 
 /**
@@ -9,6 +10,17 @@ import { TabsProps as Props } from './props';
  */
 
 const Tabs = (props: Props) => {
+  
+  const [active, setActive] = useState(Number(props.activeTab || 1))
+
+  /* istanbul ignore next  */
+  function onClick(index: number, _element: any, child: JSX.Element) {
+    setActive(index)
+    if ((!child.props.disabled && props.onChange) && (typeof props.onChange === 'function')) {
+      props.onChange(index, _element);
+    }
+  }
+
   return (
     <>
       <Nav tabs>
@@ -19,11 +31,10 @@ const Tabs = (props: Props) => {
                 return (
                   <NavItem>
                     <NavLink
-                      onClick={(_element) => { /* istanbul ignore next  */ (!child.props.disabled && props.onChange) && props.onChange(index, _element) }}
-                      className={classnames({ active: props.activeTab === index })}
+                      onClick={(_element) => { onClick(index, element, child) }}
+                      className={classnames({ active: active === index })}
                     >
                       {child.props.title}
-
                     </NavLink>
                   </NavItem>
                 )
@@ -32,34 +43,24 @@ const Tabs = (props: Props) => {
             /* istanbul ignore next  */
             return null
           })
-
         }
-
-
       </Nav>
       <TabContent activeTab={props.activeTab || 0}>
         {
           React.Children.map(props.children, (child, index) => {
             if (React.isValidElement(child)) {
-              if (child.props && child.props.title) {
+              if (child.props && child.props.title && (child.props.disabled !== true)) {
                 return (
                   <TabPane tabId={index}>
-                    <Row>
-                      <Col sm="12">
-                        <h4>{child.props.children}</h4>
-                      </Col>
-                    </Row>
+                    {child.props.children}
                   </TabPane>
-
                 )
               }
             }
             /* istanbul ignore next  */
             return null
           })
-
         }
-        {props.children}
       </TabContent>
     </>
   )

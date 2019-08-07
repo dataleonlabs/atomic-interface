@@ -6,10 +6,7 @@ import Popover from './../Popover'
 const HelpIcon = (props: Props) => (
   <>
     <HelpCircle id="help-icon" />
-    <Popover
-      {...props}
-      target="help-icon"
-    >
+    <Popover {...props} target="help-icon" >
       {props.children}
     </Popover>
   </>

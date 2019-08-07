@@ -1,6 +1,7 @@
 import React from 'react';
 import { Toast as StrapToast } from 'reactstrap';
 import { ToastProps as Props } from './props';
+import { ToastHeader, ToastBody } from 'reactstrap';
 
 /**
  * Toast render element
@@ -9,7 +10,10 @@ import { ToastProps as Props } from './props';
 const Toast = (props: Props) => {
   return (
     <StrapToast {...props} >
-      {props.children}
+      <ToastHeader toggle={props.toggle}>{props.title}</ToastHeader>
+      <ToastBody>
+        {props.children}
+      </ToastBody>
     </StrapToast>
   )
 }

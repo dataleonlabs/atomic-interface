@@ -1,7 +1,7 @@
 /**
 * @example
 * <Text useWordBoundary={30} trucanteType={'right'} capitalizeFirstLetter={true}>
-* Try to select this text!
+*   Try to select this text!
 * </Text>
 */
 
@@ -21,6 +21,11 @@ export interface TextProps {
     * format for currency: EUR USD etc...
     */
     format?: string | object | 'fr' | 'en'
+
+    /**
+    * String to  for locale
+    */
+    locale?: string
 
     /* Tooltip to display in balise */
     tooltip?: string

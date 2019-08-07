@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { TabContentProps as TabContentPropsBase } from "reactstrap"
 
 /**
 * This component using bootstrap lib https://reactstrap.github.io/components/tabs/

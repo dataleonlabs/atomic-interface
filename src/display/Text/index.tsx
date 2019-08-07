@@ -79,11 +79,11 @@ export const getText = (props: any) => {
         return child
       }
       if (props.type === 'date') {
-        return moment(child).format(props.format) === 'Invalid date' ? child : moment(child).format(props.format)
+        return moment(new Date(child)).locale(props.locale).format(props.format) === 'Invalid date' ? child : moment(new Date(child)).locale(props.locale).format(props.format)
       }
 
       if (props.type === 'ago') {
-        return moment(child).fromNow() === 'Invalid date' ? child : moment(child).fromNow()
+        return moment(new Date(child)).locale(props.locale).fromNow() === 'Invalid date' ? child : moment(new Date(child)).locale(props.locale).fromNow()
       }
 
       if (props.type === 'currency') {
@@ -91,12 +91,9 @@ export const getText = (props: any) => {
           if (isNaN(child)) {
             return child
           }
-          if(props.format){
-            return new Intl.NumberFormat(undefined, { style: 'currency', currency: props.format }).format(child)
-          }
-          return new Intl.NumberFormat('en-IN').format(child)
+          return new Intl.NumberFormat(props.locale, { style: 'currency', currency: props.format }).format(child)
         } catch (error) {
-          return new Intl.NumberFormat('en-IN').format(child)
+          return new Intl.NumberFormat(props.locale).format(child)
         }
         
       }
@@ -110,7 +107,12 @@ export const getText = (props: any) => {
  * Text
  */
 export default class Text extends React.Component<Props> {
-  static defaultProps: Props;
+
+  public static defaultProps: Partial<Props> = {
+    textStyle: 'default',
+    locale: 'fr-FR',
+    type: 'text'
+  }
 
   render() {
     const TextStyle: React.ReactType = this.props.textStyle === 'help' ? FormText : Label;
@@ -127,9 +129,4 @@ export default class Text extends React.Component<Props> {
       </>
     )
   }
-}
-
-Text.defaultProps = {
-  textStyle: 'default',
-  type: 'text'
 }
