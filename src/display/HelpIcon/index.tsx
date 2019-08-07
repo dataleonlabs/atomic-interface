@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { HelpIconProps as Props } from './props'
-import Popover from './../Popover/index'
+import { HelpCircle } from 'react-feather';
+import Popover from './../Popover'
 
 const HelpIcon = (props: Props) => (
   <>
-    <span className={'Style'} id="help-icon">?</span>
+    <HelpCircle id="help-icon" />
     <Popover
       {...props}
       target="help-icon"

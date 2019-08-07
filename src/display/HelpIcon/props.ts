@@ -12,5 +12,7 @@ export interface HelpIconProps extends PopoverProps {
 
     /** Content in header, disable when is undefined */
     header?: string | JSX.Element
+
+    target?: string | HTMLElement;
 }
 
