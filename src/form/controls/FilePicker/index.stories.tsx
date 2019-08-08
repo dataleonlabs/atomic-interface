@@ -96,26 +96,4 @@ storiesOf('Forms|FilePicker', module)
         </Form>
       </Col>
     </React.Fragment>
-  )).add('With error color', () => (
-    <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>FilePicker</h4>
-        <Form
-          onSubmit={(values) => {
-            console.log(values);
-          }}
-        >
-          {(props) => (
-            <>
-              <FilePicker
-                name={'image'}
-                label={'Here you can choose file'}
-                onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
-              />
-              <button type="submit" >Submit</button>
-            </>
-          )}
-        </Form>
-      </Col>
-    </React.Fragment>
   ))

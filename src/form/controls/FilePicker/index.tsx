@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
-import { Input as InputBootstrap, } from 'reactstrap';
+import { CustomInput as FilePickerBootstrap, } from 'reactstrap';
 import { FilePickerProps as Props } from './props';
 import Control from '../../Control';
 
@@ -26,7 +26,7 @@ const FilePicker = (props: Props) => {
         id={props.name}
         render={({ field }: FieldProps<{}>) => (
           <React.Fragment>
-            {wrapperFilePicker(<InputBootstrap type="file" {...rest} />, props)}
+            {wrapperFilePicker(<FilePickerBootstrap type="file" {...rest} />, props)}
           </React.Fragment>
         )}
       />
