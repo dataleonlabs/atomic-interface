@@ -20,6 +20,7 @@ storiesOf('Forms|Select', module)
               <Select
                 isClearable
                 creatable
+                isMulti
                 name={'favorite'}
                 meta={{
                   options
@@ -30,28 +31,42 @@ storiesOf('Forms|Select', module)
         </Col>
       </React.Fragment>
     )
-  })
-  .add('tooltip beside label', () => {
-    const options = [
+  }).add('With Group', () => {
+    const colourOptions = [
       { value: 'chocolate', label: 'Chocolate' },
       { value: 'strawberry', label: 'Strawberry' },
       { value: 'vanilla', label: 'Vanilla' },
     ];
+
+    const flavourOptions = [
+      { value: 'vanilla', label: <strong>vanilla</strong>, rating: 'safe' },
+      { value: 'chocolate', label: 'Chocolate', rating: 'good' },
+      { value: 'strawberry', label: 'Strawberry', rating: 'wild' },
+      { value: 'salted-caramel', label: 'Salted Caramel', rating: 'crazy' },
+    ];
+    const groupedOptions = [
+      {
+        label: 'Colours',
+        options: colourOptions,
+      },
+      {
+        label: 'Flavours',
+        options: flavourOptions,
+      },
+    ];
     return (
       <React.Fragment>
         <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-          <h4>Select Multiple</h4>
+          <h4>Select</h4>
           <Form>
             {(props) => (
               <Select
                 isClearable
                 creatable
                 isMulti
-                tooltip={'you can select multiple option'}
                 name={'favorite'}
-                label="Favorite"
                 meta={{
-                  options
+                  options: groupedOptions
                 }}
               />
             )}
