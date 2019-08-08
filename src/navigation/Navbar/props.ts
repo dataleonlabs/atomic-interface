@@ -24,9 +24,12 @@ export interface NavbarProps extends NavbarPropsBase {
 export interface NavbarBrandProps extends NavbarBrandPropsBase {
 
 }
-
+interface NavBarObject { 
+    name:string 
+    route:string 
+ } 
 export interface NavProps extends NavPropsBase {
-
+children:Array<NavBarObject>
 }
 
 export interface NavItemProps extends NavItemPropsBase {
