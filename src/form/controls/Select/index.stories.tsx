@@ -47,6 +47,7 @@ storiesOf('Forms|Select', module)
                 isClearable
                 creatable
                 isMulti
+                tooltip={'you can select multiple option'}
                 name={'favorite'}
                 label="Favorite"
                 meta={{
