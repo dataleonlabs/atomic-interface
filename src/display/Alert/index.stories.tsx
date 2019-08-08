@@ -6,12 +6,12 @@ import { Col } from 'reactstrap';
 storiesOf('UI Elements|Alert', module)
   .add('Example', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Alert</h4>
-        <Alert icon={true} color="primary">
-          Demo Of Alert Box with Icon
+        <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+          <h4>Alert</h4>
+          <Alert icon={true} color="primary">
+            Demo Of Alert Box with Icon
         </Alert>
-      </Col>
+        </Col>
     </React.Fragment>
   ))
   .add('Without Icon', () => (

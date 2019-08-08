@@ -6,23 +6,6 @@ import { SelectProps as Props } from './props';
 import Control from '../../Control';
 
 /**
- * wrap function for grid bootstrap
- * @param component compenent receive data
- * @param field wrap function data
- */
-const wrapperSelect = (component: JSX.Element, field: Props) => {
-  if (false) {
-    return (
-      <>
-        {component}
-      </>
-    );
-  }
-  return component;
-};
-
-
-/**
  * Select render element
  */
 const Select = (props: Props) => {
@@ -35,7 +18,7 @@ const Select = (props: Props) => {
         id={props.name}
         render={({ field }: FieldProps<{}>) => (
           <React.Fragment>
-            {wrapperSelect(<CustomSelect {...field} options={props.meta.options} {...props} />, props)}
+            <CustomSelect {...field} options={props.meta.options} {...props} />
           </React.Fragment>
         )}
       />
