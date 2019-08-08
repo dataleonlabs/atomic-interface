@@ -1,48 +1,19 @@
 import React from 'react';
-import { Field, FieldProps } from 'formik';
-import { Button, FormGroup,Spinner } from 'reactstrap';
+import { Button as ButtonBase, Spinner } from 'reactstrap';
 import { ButtonProps as Props } from './props';
-import Control from '../../Control';
+import { StyledButton } from './style';
 
 /**
- * wrap function for grid bootstrap
- * @param component compenent receive data
- * @param field wrap function data
+ * Button render element
  */
-const wrapperInputGroup = (component: JSX.Element, field: Props) => {
-
-    return (
-      <FormGroup >
-      
-        {component}
-        {field.renderspinner && <Spinner size="sm" color="primary" />}
-
-      </FormGroup>
-    );
-};
-
-
-/**
- * CheckBox render element
- */
-const ButtonComponent = (props: Props) => (
-  <Control {...props}>
-    <Field
-      {...props}
-      id={props.name}
-      render={({ field }: FieldProps<{}>) => (
-        <React.Fragment
-        >
-          {wrapperInputGroup(
-          <Button 
-          title={props.name}
-          color="primary"
-          disabled={(props.disabled || false)}
-          {...field} >{props.name}</Button>, props)}        
-        </React.Fragment>
-      )}
-    />
-  </Control>
+const Button = (props: Props) => (
+  <StyledButton>
+    <ButtonBase {...props} disabled={props.disabled || props.loading}>
+      {props.icon && <span className={`Icon ${props.size || 'md'}`}>{props.icon}</span>}
+      {props.children}
+      {props.loading && <Spinner className="Spinner" size={'sm'} />}
+    </ButtonBase>
+  </StyledButton>
 )
 
-export default ButtonComponent;
+export default Button;

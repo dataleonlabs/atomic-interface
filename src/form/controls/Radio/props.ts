@@ -1,4 +1,4 @@
-import {InputProps as InputPropsBase } from '../Input/props';
+import { InputProps } from '../Input/props';
 
 /**
 * This component using https://reactstrap.github.io/components/form/ : CustomInput
@@ -6,13 +6,6 @@ import {InputProps as InputPropsBase } from '../Input/props';
 *   <Radio name={'firstName'} label={'First Name'}>
 */
 
-export interface RadioProps extends InputPropsBase {
-    name: string
-    /** label displayed on right*/
-    label?: string | JSX.Element
-    /** Disabled field */
-    disabled?: boolean
-      /** Radio with label on right and tooltip on label */
-    tooltip?: string | JSX.Element
+export interface RadioProps extends InputProps {
 
 }

@@ -1,24 +1,18 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
-import Radio from './index'
-import { FormGroup,Label, Tooltip } from 'reactstrap';
+import Checkbox from './index'
+import { Label } from 'reactstrap';
 import Form from './../../index'
 
-describe('<Input />', () => {
+describe('<Checkbox />', () => {
   it('U-TEST-1 - test checkbox render with label', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(props) => (
-          <Radio
-            name={'test'}
-            renderlabel={'test'}
-            disabled={false}
-          />
-          
+          <Checkbox name={'test'} disabled={false} />
         )}
       </Form>
     )
-    expect(wrapper.find(FormGroup)).toHaveLength(2)
     expect(wrapper.find(Label)).toHaveLength(1)
   })
 
@@ -26,31 +20,21 @@ describe('<Input />', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(props) => (
-          <Radio name={'test'} disabled={true} />
+          <Checkbox name={'test'} disabled={true} />
         )}
       </Form>
     )
-
-    expect(wrapper.find(FormGroup)).toHaveLength(2)
+    expect(wrapper.find(Label)).toHaveLength(1)
   })
 
   it('U-TEST-3 - test render with tooltip beside label ', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(props) => (
-          <Radio
-          name={'test'}
-          renderlabel={'test'}
-          disabled={false}
-          // tooltip={'test'}
-        />
+          <Checkbox name={'test'} disabled={false} />
         )}
       </Form>
     )
-
-    
-    expect(wrapper.find(FormGroup)).toHaveLength(2)
     expect(wrapper.find(Label)).toHaveLength(1)
-    // expect(wrapper.find(Tooltip)).toHaveLength(2)
   })
 })

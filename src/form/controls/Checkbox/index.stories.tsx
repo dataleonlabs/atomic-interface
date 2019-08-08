@@ -11,9 +11,10 @@ storiesOf('Forms|Checkbox', module)
           <h4>Checkbox</h4>
         <Form>
           {(props) => (
-            <Checkbox name='checkbox'
-            renderlabel="Checkbox"
-          />
+            <>
+              <Checkbox name='gender' label={'Check this custom checkbox'}/>
+              <Checkbox name='gender2' label={'Or this one'} />
+            </>
           )}
         </Form>
         </Col>
@@ -24,28 +25,12 @@ storiesOf('Forms|Checkbox', module)
       <h4>Checkbox</h4>
         <Form>
           {(props) => (
-            <Checkbox
-              name='checkbox'
-              renderlabel="Checkbox"
-              disabled={true}      
-            />
+            <>
+              <Checkbox name='gender' label={'Check this custom checkbox'} />
+              <Checkbox disabled name='gender2' label={'Or this one'} />
+            </>
           )}
         </Form>
       </Col>
     </React.Fragment>
-  )).add('Test tooltip beside label', () => (
-    <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Checkbox</h4>
-        <Form>
-          {(props) => (
-            <Checkbox
-              name='checkbox'
-              tooltip='test'
-              renderlabel="Checkbox"     
-            />
-          )}
-        </Form>
-      </Col>
-    </React.Fragment>
-  ));
+  ))

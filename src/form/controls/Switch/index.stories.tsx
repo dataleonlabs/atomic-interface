@@ -11,9 +11,7 @@ storiesOf('Forms|Switch', module)
           <h4>Switch</h4>
         <Form>
           {(props) => (
-            <Switch name='switch'
-            renderlabel="Switch"
-          />
+            <Switch name='switch' label="Turn on this custom switch"/>
           )}
         </Form>
         </Col>
@@ -24,26 +22,7 @@ storiesOf('Forms|Switch', module)
       <h4>Switch</h4>
         <Form>
           {(props) => (
-            <Switch
-              name='switch'
-              renderlabel="Switch"
-              disabled={true}      
-            />
-          )}
-        </Form>
-      </Col>
-    </React.Fragment>
-  )).add('Test tooltip beside label', () => (
-    <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Switch</h4>
-        <Form>
-          {(props) => (
-            <Switch
-              name='switch'
-              tooltip='test'
-              renderlabel="Switch"
-            
+            <Switch name='switch' label="Can't click this label to turn on!" disabled={true}      
             />
           )}
         </Form>

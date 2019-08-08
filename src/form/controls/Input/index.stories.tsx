@@ -11,7 +11,7 @@ storiesOf('Forms|Input', module)
           <h4>Input</h4>
         <Form>
           {(props) => (
-            <Input name={'email'} />
+            <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'}/>
           )}
         </Form>
         </Col>
@@ -27,6 +27,17 @@ storiesOf('Forms|Input', module)
               leftAddon={'test'}
               rightAddon={'EUR'}
             />
+          )}
+        </Form>
+      </Col>
+    </React.Fragment>
+  )).add('With error', () => (
+    <React.Fragment>
+      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Input</h4>
+        <Form>
+          {(props) => (
+            <Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
           )}
         </Form>
       </Col>
