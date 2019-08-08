@@ -47,9 +47,6 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "@types/react-content-loader": "^3.1.4",
-    "react-scripts": "3.0.1",
-    "typescript": "^3.5.3",
     "@babel/core": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
@@ -68,6 +65,7 @@
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
     "@types/react-beautiful-dnd": "^11.0.2",
+    "@types/react-content-loader": "^3.1.4",
     "@types/react-dom": "16.8.5",
     "@types/react-select": "^3.0.2",
     "@types/reactstrap": "^8.0.1",
@@ -84,13 +82,14 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "faker": "^4.1.0",
     "fork-ts-checker-webpack-plugin": "^1.4.3",
-    "husky": "^3.0.2",
+    "husky": "^3.0.3",
     "jest": "^24.8.0",
     "jest-html-reporter": "^2.5.0",
     "postcss-loader": "^3.0.0",
     "react-docgen-typescript": "^1.12.5",
     "react-docgen-typescript-loader": "^3.1.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-scripts": "3.0.1",
     "require-context.macro": "^1.1.0",
     "sinon": "^7.3.2",
     "style-loader": "^0.23.1",
@@ -100,6 +99,7 @@
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
+    "typescript": "^3.5.3",
     "url-loader": "^2.1.0"
   },
   "jest": {
