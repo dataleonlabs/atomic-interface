@@ -26,7 +26,7 @@ const FilePicker = (props: Props) => {
         id={props.name}
         render={({ field }: FieldProps<{}>) => (
           <React.Fragment>
-            {wrapperFilePicker(<FilePickerBootstrap type="file" {...rest} />, props)}
+            {wrapperFilePicker(<FilePickerBootstrap  {...rest} type="file" />, props)}
           </React.Fragment>
         )}
       />
