@@ -26,13 +26,13 @@ import { SearchBarProps as Props } from './props';
  */
 
 const wrapperSearchBar = (component: JSX.Element, field: Props) => {
-  const PrependIcon = field.leftAddon || <Search />
+  const PrependIcon = field.leftAddonIcon || <Search />
+  const PrependString = field.leftAddonString || 'search'
   return (
     <InputGroup>
-      <InputGroupAddon addonType="prepend" >
-        <span className="input-group-text">
-          {PrependIcon}
-        </span>
+      <InputGroupAddon addonType="prepend" tag='button' >
+        {PrependIcon}
+        {PrependString}
       </InputGroupAddon>
       {component}
     </InputGroup>
