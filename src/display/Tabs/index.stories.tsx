@@ -9,7 +9,7 @@ storiesOf('Display|Tabs', module)
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Tabs</h4>
-        <Tabs activeTab={1}>
+        <Tabs activeTab={0} onChange={(i) => i}>
           <TabItem title={"One"}>Foo Action</TabItem>
           <TabItem title={"Two"}>Bar Action</TabItem>
           <TabItem title={"Three"}>Quo Action</TabItem>
@@ -21,8 +21,8 @@ storiesOf('Display|Tabs', module)
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Tabs</h4>
-        <Tabs activeTab={3} onChange={(i) => i}>
-          <TabItem title={"One"}>Foo Action</TabItem>
+        <Tabs activeTab={0} onChange={(i) => i}>
+          <TabItem title={"One"} >Foo Action</TabItem>
           <TabItem title={"Two"} disabled >Bar Action</TabItem>
           <TabItem title={"Three"}>Quo Action</TabItem>
         </Tabs>
