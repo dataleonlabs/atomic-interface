@@ -11,13 +11,6 @@ import Control from '../../Control';
  * @param field wrap function data
  */
 const wrapperSelect = (component: JSX.Element, field: Props) => {
-  if (false) {
-    return (
-      <>
-        {component}
-      </>
-    );
-  }
   return component;
 };
 
