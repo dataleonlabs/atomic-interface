@@ -31,8 +31,7 @@ const wrapperSearchBar = (component: JSX.Element, field: Props) => {
   return (
     <InputGroup>
       <InputGroupAddon addonType="prepend" tag='button' >
-        {PrependIcon}
-        {PrependString}
+        <span style={{marginRight:'5px'}}>{PrependIcon}</span>{PrependString}
       </InputGroupAddon>
       {component}
     </InputGroup>
