@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import NavBar from './index';
 import { Col } from 'reactstrap';
- import {Input,Navbar,NavbarBrand,Button} from 'reactstrap';
+ import {Input,Navbar,NavbarBrand} from 'reactstrap';
+ import {Menu} from 'react-feather';
 storiesOf('Navigation|Navbar', module)
   .add('Example', () => (
     <React.Fragment>
@@ -31,7 +32,8 @@ storiesOf('Navigation|Navbar', module)
         <h4>Navbar with right icon</h4>
         <Navbar color="light">
           <NavBar />
-          <Button color="primary">Add</Button>
+          <Menu />
+          {/* <Button color="primary">Add</Button> */}
         </Navbar>
       </Col>
     </React.Fragment>
