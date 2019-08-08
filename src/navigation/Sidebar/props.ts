@@ -6,6 +6,7 @@ import {
 } from "reactstrap";
 
 /**
+ * This component must use https://reactstrap.github.io/components/navs/ with vertical
  * @example
  *    <Sidebar expand={false}>
  *       <SidebarBrand>reactstrap</SidebarBrand>
