@@ -15,7 +15,6 @@ describe('<Select />', () => {
         {(props) => (
           <Select
             isClearable
-            creatable
             isMulti
             name={'favorite'}
             meta={{
