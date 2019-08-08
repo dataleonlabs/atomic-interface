@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Badge from './index';
 import { Col } from 'reactstrap';
 
-storiesOf('Display|Badge', module)
+storiesOf('UI Elements|Badge', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>

@@ -32,7 +32,7 @@ class ToastDismissExample extends React.Component {
   }
 }
 
-storiesOf('Display|Toast', module)
+storiesOf('UI Elements|Toast', module)
   .add('Example', () => (
     <ToastDismissExample />
   ))

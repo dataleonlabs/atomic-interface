@@ -5,7 +5,7 @@ import { Col, Button } from 'reactstrap';
 
 
 
-storiesOf('Display|Tooltip', module)
+storiesOf('UI Elements|Tooltip', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>

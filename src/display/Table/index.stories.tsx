@@ -14,7 +14,7 @@ for (let index = 0; index < 10; index++) {
     email: faker.internet.email(),
   });
 }
-storiesOf('Table|Table', module)
+storiesOf('UI Elements|Table', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>

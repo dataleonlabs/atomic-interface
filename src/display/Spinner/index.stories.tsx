@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Spinner from './index';
 import { Col } from 'reactstrap';
 
-storiesOf('Display|Spinner', module)
+storiesOf('UI Elements|Spinner', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>

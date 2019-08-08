@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Progress from './index';
 import { Col } from 'reactstrap';
 
-storiesOf('Display|Progress', module)
+storiesOf('UI Elements|Progress', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
