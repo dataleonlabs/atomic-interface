@@ -11,12 +11,12 @@ import { element } from 'prop-types';
 
 const Tabs = (props: Props) => {
   
-  const [active, setActive] = useState(Number(props.activeTab || 1))
+  const [active, setActive] = useState(Number(props.activeTab || 0))
 
   /* istanbul ignore next  */
   function onClick(index: number, _element: any, child: JSX.Element) {
-    setActive(index)
     if ((!child.props.disabled && props.onChange) && (typeof props.onChange === 'function')) {
+      setActive(index)
       props.onChange(index, _element);
     }
   }
@@ -45,7 +45,7 @@ const Tabs = (props: Props) => {
           })
         }
       </Nav>
-      <TabContent activeTab={props.activeTab || 0}>
+      <TabContent activeTab={active}>
         {
           React.Children.map(props.children, (child, index) => {
             if (React.isValidElement(child)) {
