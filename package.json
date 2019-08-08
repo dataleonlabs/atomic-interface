@@ -43,12 +43,12 @@
     "react-content-loader": "^4.2.2",
     "react-dom": "^16.8.6",
     "react-feather": "^2.0.3",
-    "react-scripts": "3.0.1",
     "reactstrap": "^8.0.1",
-    "styled-components": "^4.3.2",
-    "typescript": "^3.5.3"
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
+    "react-scripts": "3.0.1",
+    "typescript": "^3.5.3",
     "@babel/core": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",

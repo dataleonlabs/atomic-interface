@@ -12,12 +12,12 @@ describe('<Button />', () => {
         <Button>primary</Button>
       </>
     )
-    expect(wrapper.find(ButtonBase)).toHaveLength(1)
+    expect(wrapper.find(ButtonBase)).toHaveLength(2)
   })
 
   it('U-TEST-2 - test button render with loading ', () => {
     const wrapper = enzyme.mount(
-      <Button>primary</Button>
+      <Button loading={true}>primary</Button>
     )
 
     expect(wrapper.find(ButtonBase)).toHaveLength(1)
@@ -31,6 +31,6 @@ describe('<Button />', () => {
 
     expect(wrapper.find(ButtonBase)).toHaveLength(1)
     expect(wrapper.find(Info)).toHaveLength(1)
-    expect(wrapper.find(Spinner)).toHaveLength(1)
+    expect(wrapper.find(Spinner)).toHaveLength(0)
   })
 })
