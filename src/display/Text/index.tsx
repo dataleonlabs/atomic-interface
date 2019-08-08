@@ -3,6 +3,7 @@ import moment from 'moment';
 import { FormText, Label } from 'reactstrap';
 import { TextProps as Props } from './props'
 import Tooltip from '../Tooltip';
+import { makeId } from '../../utils';
 
 // Sample for ago formting
 // import TimeAgo from 'timeago-react'
@@ -11,15 +12,7 @@ import Tooltip from '../Tooltip';
 // register('fr_FR', localeFRFunc)
 // register('en', localeENFunc)
 
-function makeId(length: number = 5) {
-  var result = 'y';
-  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
+
 
 const capitalizeFirstLetter = (str: string) => {
   if (!str) /* istanbul ignore next  */ {
@@ -95,7 +88,7 @@ export const getText = (props: any) => {
         } catch (error) {
           return new Intl.NumberFormat(props.locale).format(child)
         }
-        
+
       }
 
     })
