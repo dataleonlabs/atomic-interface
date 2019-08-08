@@ -4,7 +4,7 @@ import { Col } from 'reactstrap';
 import Tabs from './index';
 import TabItem from './TabItem';
 
-storiesOf('Display|Tabs', module)
+storiesOf('UI Elements|Tabs', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>

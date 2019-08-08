@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
 import Radio from './index'
-import { Label } from 'reactstrap';
+import { CustomInput } from 'reactstrap';
 import Form from './../../index'
 
 describe('<Radio />', () => {
@@ -18,7 +18,7 @@ describe('<Radio />', () => {
         )}
       </Form>
     )
-    expect(wrapper.find(Label)).toHaveLength(1)
+    expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 
   it('U-TEST-2 - test input render with disabled ', () => {
@@ -30,7 +30,7 @@ describe('<Radio />', () => {
       </Form>
     )
 
-    expect(wrapper.find(Label)).toHaveLength(0)
+    expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 
   it('U-TEST-3 - test render with tooltip beside label ', () => {
@@ -45,6 +45,6 @@ describe('<Radio />', () => {
         )}
       </Form>
     )    
-    expect(wrapper.find(Label)).toHaveLength(1)
+    expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 })
