@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarProps as Props} from './props';
+import { SidebarProps as Props,SidebarBrandProps as BrandProps,SidebarItemProps as ItemProps, SidebarNavProps as NavProps, SidebarNavLinkProps as NavLinkProps} from './props';
 import {Navbar, NavItem,Nav,Input,Button,NavbarBrand,NavLink} from 'reactstrap';
 
 /**
@@ -8,44 +8,37 @@ import {Navbar, NavItem,Nav,Input,Button,NavbarBrand,NavLink} from 'reactstrap';
 const Sidebar = (props: Props) => (
   <div>
    
-    <SidebarNav/>
+    <SidebarNav link={props.link} name={props.name} />
     
   </div>
-  
 
 )
-const SidebarNav = (props: Props) => (
-  <div>
+const SidebarNav = (props: NavProps) => (
+
    
    <Nav vertical>
-        <SidebarNavItem/>
-    </Nav>
-    
-  </div>
-
+        <SidebarNavItem link={props.link} name={props.name}/>
+   </Nav>
+  
 )
 
-const SidebarNavItem = (props: Props) => (
-  <div>
+const SidebarNavItem = (props:ItemProps ) => (
+  
           <NavItem>
-            <SidebarNavLink/>
+            <SidebarNavLink link={props.link} name={props.name}/>
           </NavItem>
-   
-  </div>
+)
+
+const SidebarNavLink= (props: NavLinkProps) => (
+ 
+    <NavLink href={props.link}>name</NavLink>  
+ 
+)
+const SidebarNavBrand= (props: BrandProps) => (
+  
+    <NavbarBrand href={props.link}>{props.name}</NavbarBrand> 
+
 
 )
 
-const SidebarNavLink= (props: Props) => (
-  <div>
-    <NavLink href="#">Link</NavLink>  
-  </div>
-
-)
-const SidebarNavBrand= (props: Props) => (
-  <div>
-    <NavbarBrand href="#">reactstrap</NavbarBrand> 
-  </div>
-
-)
-
-export default Sidebar;
+export {Sidebar,SidebarNavBrand,SidebarNavLink,SidebarNavItem,SidebarNav};

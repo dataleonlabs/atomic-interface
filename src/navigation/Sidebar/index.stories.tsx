@@ -1,56 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import NavBar from './index';
+import {Sidebar, SidebarNav,SidebarNavItem,SidebarNavLink} from './index';
 import { Col } from 'reactstrap';
-storiesOf('Navigation|Navbar', module)
+storiesOf('Navigation|Sidebar', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Navbar</h4>
-           <NavBar
-               routeOne="Home"
-               routeTwo="Our Mission"
-           />
-      </Col>
-    </React.Fragment>
- )).add('With searchbar', () => (
-    <React.Fragment>
-      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Navbar with searchbar</h4>
-        
-        
-          <NavBar 
-            renderSearch={true}
-            routeOne="Home"
-            routeTwo="Our Mission"
-          />
-      
-      </Col>
-    </React.Fragment>
-  )).add('With right button', () => (
-    <React.Fragment>
-          <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Navbar with right icon</h4>
-      
-          <NavBar 
-            renderRightButton={true} 
-            routeOne="Home"
-            routeTwo="Our Mission"/>
+        <h4>Sidebar</h4>
+        <Sidebar link="#" name="Nav1"> 
           
-     
+      </Sidebar>
       </Col>
     </React.Fragment>
-  
-  )).add('With Brand', () => (
-    <React.Fragment>
-      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Navbar with Brand</h4>
-
-       
-          <NavBar renderBrand={true} 
-            routeOne="Home"
-            routeTwo="Our Mission"/>
-    
-      </Col>
-    </React.Fragment>
-  ));
+ ));

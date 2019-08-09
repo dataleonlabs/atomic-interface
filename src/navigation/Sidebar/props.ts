@@ -2,7 +2,8 @@ import {
     NavbarBrandProps as NavbarBrandPropsBase,
     NavProps as NavPropsBase,
     NavItemProps as NavItemPropsBase,
-    NavbarProps as NavbarPropsBase
+    NavbarProps as NavbarPropsBase,
+    NavLinkProps as NavLinkPropsBase
 } from "reactstrap";
 
 /**
@@ -28,7 +29,8 @@ export interface SidebarBrandProps extends NavbarBrandPropsBase {
 }
 
 export interface SidebarNavProps extends NavPropsBase {
-
+    link:string
+    name:string
 }
 
 export interface SidebarItemProps extends NavItemPropsBase {
@@ -38,8 +40,13 @@ export interface SidebarItemProps extends NavItemPropsBase {
 
     /** A function invoked when a tab is clicked by the user */
     onClick?: () => void
+    link:string
+    name:string
 }
-
+export interface SidebarNavLinkProps extends NavLinkPropsBase {
+    link:string
+    name:string
+}
 
 export interface SidebarNavGroupProps {
 
