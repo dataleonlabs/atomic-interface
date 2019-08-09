@@ -22,6 +22,9 @@ import {
 export interface SidebarProps extends NavbarPropsBase {
     /** Disable test or only icon on side bar */
     icon?: boolean 
+
+    // /** children content in Sidebar */
+    // children: JSX.Element | JSX.Element[]
 }
 
 export interface SidebarBrandProps extends NavbarBrandPropsBase {
@@ -29,8 +32,7 @@ export interface SidebarBrandProps extends NavbarBrandPropsBase {
 }
 
 export interface SidebarNavProps extends NavPropsBase {
-    link:string
-    name:string
+ 
 }
 
 export interface SidebarItemProps extends NavItemPropsBase {
@@ -40,15 +42,17 @@ export interface SidebarItemProps extends NavItemPropsBase {
 
     /** A function invoked when a tab is clicked by the user */
     onClick?: () => void
-    link:string
-    name:string
+    
 }
 export interface SidebarNavLinkProps extends NavLinkPropsBase {
-    link:string
-    name:string
+
 }
 
 export interface SidebarNavGroupProps {
-
+ // /** children content in Sidebar */
+     children: JSX.Element | JSX.Element[]
+     
+    //  set title of SidebarNavGroup
+    title?:string | undefined
 }
 
