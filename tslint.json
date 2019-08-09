@@ -6,6 +6,7 @@
       "./src/**/*.test.tsx",
       "./src/**/*.stories.tsx",
       "./samples",
+      "node_modules",
       "node_modules/**/*.ts",
       "./src/serviceWorker.ts",
       "./src/react-app-env.d.ts",
