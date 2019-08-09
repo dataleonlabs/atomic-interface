@@ -23,4 +23,7 @@ export interface AlertProps extends AlertPropsBase {
 
     /** Add icon to left: feathericons info for custom icon when true */
     icon?: boolean | JSX.Element
+
+    // Children 
+    children: string | JSX.Element
 }
