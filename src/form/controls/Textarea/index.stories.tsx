@@ -6,18 +6,18 @@ import Form from './../../index'
 storiesOf('Forms|Textarea', module)
   .add('Example', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+      <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Textarea</h4>
         <Form>
           {(props) => (
-            <Textarea name='text' />
+            <Textarea placeholder={'Example content with Textarea'} name='text' />
           )}
         </Form>
       </Col>
     </React.Fragment>
   )).add('With maxRows', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+      <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Textarea</h4>
         <Form>
           {(props) => (

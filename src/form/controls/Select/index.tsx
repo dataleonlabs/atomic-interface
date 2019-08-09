@@ -1,15 +1,14 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
-import SelectBase from 'react-select';
-import CreatableSelect from 'react-select/creatable';
 import { SelectProps as Props } from './props';
 import Control from '../../Control';
+import { StyledSelectBase, StyledCreatableSelect } from './style'
 
 /**
  * Select render element
  */
 const Select = (props: Props) => {
-  const CustomSelect:React.ReactType = props.creatable ? CreatableSelect : SelectBase;
+  const CustomSelect: React.ReactType = props.creatable ? StyledCreatableSelect : StyledSelectBase;
 
   return (
     <Control {...props}>
@@ -18,7 +17,12 @@ const Select = (props: Props) => {
         id={props.name}
         render={({ field }: FieldProps<{}>) => (
           <React.Fragment>
-            <CustomSelect {...field} options={props.meta.options} {...props} />
+            <CustomSelect
+              className='react-select-container' and classNamePrefix="react-select"
+              {...field}
+              options={props.meta.options}
+              {...props}
+            />
           </React.Fragment>
         )}
       />

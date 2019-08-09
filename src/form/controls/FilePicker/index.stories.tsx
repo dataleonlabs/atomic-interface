@@ -19,9 +19,12 @@ storiesOf('Forms|FilePicker', module)
               <FilePicker
                 name={'image'}
                 label={'Picture'}
-                onChange={(event) => { props.setFieldValue('image', event.currentTarget.files[0]) }}
+                onChange={(event) => {
+                  if (event.currentTarget.files) {
+                    props.setFieldValue('image', event.currentTarget.files[0])
+                  }
+                }}
               />
-              <button type="submit" >Submit</button>
             </>
           )}
         </Form>
@@ -44,7 +47,6 @@ storiesOf('Forms|FilePicker', module)
                 multiple
                 onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
               />
-              <button type="submit" >Submit</button>
             </>
           )}
         </Form>
@@ -67,7 +69,6 @@ storiesOf('Forms|FilePicker', module)
                 disabled
                 onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
               />
-              <button type="submit" >Submit</button>
             </>
           )}
         </Form>
@@ -90,7 +91,6 @@ storiesOf('Forms|FilePicker', module)
                 tooltip={'select picture'}
                 onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
               />
-              <button type="submit" >Submit</button>
             </>
           )}
         </Form>

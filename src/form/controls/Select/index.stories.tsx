@@ -13,7 +13,7 @@ storiesOf('Forms|Select', module)
     ];
     return (
       <React.Fragment>
-        <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+        <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
           <h4>Select</h4>
           <Form>
             {(props) => (
@@ -56,7 +56,7 @@ storiesOf('Forms|Select', module)
     ];
     return (
       <React.Fragment>
-        <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+        <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
           <h4>Select</h4>
           <Form>
             {(props) => (

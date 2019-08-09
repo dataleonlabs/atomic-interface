@@ -1,8 +1,9 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
-import { Input as InputBootstrap, InputGroup, InputGroupAddon } from 'reactstrap';
+import { InputGroup } from 'reactstrap';
 import { InputProps as Props } from './props';
 import Control from '../../Control';
+import { StyledInputBootstrap, StyledInputGroupAddonRight, StyledInputGroupAddonLeft } from './style';
 
 /**
  * wrap function for grid bootstrap
@@ -13,9 +14,9 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
   if ((field.leftAddon || field.rightAddon)) {
     return (
       <InputGroup>
-        {field.leftAddon && <InputGroupAddon addonType="prepend">{field.leftAddon}</InputGroupAddon>}
+        {field.leftAddon && <StyledInputGroupAddonLeft addonType="prepend">{field.leftAddon}</StyledInputGroupAddonLeft>}
         {component}
-        {field.rightAddon && <InputGroupAddon addonType="append">{field.rightAddon}</InputGroupAddon>}
+        {field.rightAddon && <StyledInputGroupAddonRight addonType="append">{field.rightAddon}</StyledInputGroupAddonRight>}
       </InputGroup>
     );
   }
@@ -33,9 +34,9 @@ const Input = (props: Props) => (
       id={props.name}
       bsSize={props.controlSize || 'md'}
       render={({ field }: FieldProps<{}>) => (
-        <React.Fragment>
-          {wrapperInputGroup(<InputBootstrap {...field} />, props)}
-        </React.Fragment>
+        <>
+          {wrapperInputGroup(<StyledInputBootstrap placeholder={props.placeholder} {...field} />, props)}
+        </>
       )}
     />
   </Control>
