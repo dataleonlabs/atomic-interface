@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-// import  {Styles}  from './typography'
+import Typography from './typography'
 
 storiesOf('Utils', module)
   .add('Example', () => (
     <React.Fragment>
    
-        <h4>Hello</h4>
+        <Typography />
          
      
     </React.Fragment>
