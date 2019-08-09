@@ -102,12 +102,12 @@ export const getText = (props: any) => {
 export default class Text extends React.Component<Props> {
 
   public static defaultProps: Partial<Props> = {
-    textStyle: 'default',
     locale: 'fr-FR',
+    textStyle: 'default',
     type: 'text'
   }
 
-  render() {
+  public render() {
     const TextStyle: React.ReactType = this.props.textStyle === 'help' ? FormText : Label;
     const id = `${makeId()}`;
     return (

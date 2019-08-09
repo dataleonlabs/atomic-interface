@@ -135,29 +135,31 @@ class Table extends React.Component<Props, State> {
    */
   public wrapperSortable = (component: JSX.Element, child: any) /* istanbul ignore next */ => {
     if ((this.props.sortable === true) && (child.props.sortable !== false)) {
+      const onClick = () => {
+
+        if (this.state.sortField !== child.props.field) {
+          return this.setState({ sortDirection: 'desc', sortField: child.props.field });
+        }
+
+        const { sortDirection } = this.state;
+        if (sortDirection === 'asc') {
+          this.setState({ sortDirection: 'desc', sortField: child.props.field });
+        } else {
+          this.setState({ sortDirection: 'asc', sortField: child.props.field });
+        }
+
+        if (typeof this.props.onSorted === 'function') {
+          this.props.onSorted({ direction: sortDirection, field: child.props.field });
+        }
+      };
+
       return (
         <SortableCell
           scope="col"
           key={child.props.field}
           minimum={true} {...child.props}
           width={`${(child.props.width || this.getDefaultWidth())}%`}
-          onClick={() => {
-
-            if (this.state.sortField !== child.props.field) {
-              return this.setState({ sortDirection: 'desc', sortField: child.props.field });
-            }
-
-            const { sortDirection } = this.state;
-            if (sortDirection === 'asc') {
-              this.setState({ sortDirection: 'desc', sortField: child.props.field });
-            } else {
-              this.setState({ sortDirection: 'asc', sortField: child.props.field });
-            }
-
-            if (typeof this.props.onSorted === 'function') {
-              this.props.onSorted({ direction: sortDirection, field: child.props.field });
-            }
-          }}
+          onClick={onClick}
           sort={
             (this.state.sortField === child.props.field) ?
               this.state.sortDirection : 'asc'
@@ -208,36 +210,37 @@ class Table extends React.Component<Props, State> {
     }
     // If selected row
     if (this.props.selectable === true) {
+      const onChange = /* istanbul ignore next */ (e: any): any => {
+        if (e.target.checked) {
+          const selected = this.props.data.reduce((accum, value) => {
+            const disabledSelected = (this.props.disabledSelected || []) as any[];
+            if (disabledSelected.includes(value.id as any) === false) {
+              accum[value.id as string] = true;
+            } else {
+              accum[value.id as string] = false;
+            }
+            return accum;
+          }, {}) as Values;
+
+          this.setState({ selected: Object(selected) });
+          if (typeof this.props.onSelected === 'function') {
+            this.props.onSelected(Object.keys(selected));;
+          }
+        } else {
+          if (typeof this.props.onSelected === 'function') {
+            this.props.onSelected([]);;
+          }
+
+          this.setState({ selected: {} });
+        }
+      }
       columns.push(
         <HeaderCell width={`4%`} key={'key-selc-0'}>
           <CustomInput
             type={'checkbox'}
             id={'id0'}
             checked={this.isSelectAllChecked(this.state.selected, this.props.data)}
-            onChange={/* istanbul ignore next */ (e: any): any => {
-              if (e.target.checked) {
-                const selected = this.props.data.reduce((accum, value) => {
-                  const disabledSelected = (this.props.disabledSelected || []) as any[];
-                  if (disabledSelected.includes(value.id as any) === false) {
-                    accum[value.id as string] = true;
-                  } else {
-                    accum[value.id as string] = false;
-                  }
-                  return accum;
-                }, {}) as Values;
-
-                this.setState({ selected: Object(selected) });
-                if (typeof this.props.onSelected === 'function') {
-                  this.props.onSelected(Object.keys(selected));;
-                }
-              } else {
-                if (typeof this.props.onSelected === 'function') {
-                  this.props.onSelected([]);;
-                }
-
-                this.setState({ selected: {} });
-              }
-            }}
+            onChange={onChange}
           />
         </HeaderCell>
       )
@@ -272,6 +275,20 @@ class Table extends React.Component<Props, State> {
     if (this.props.selectable === true) {
     /* istanbul ignore next */
       const disabledSelected = (this.props.disabledSelected || []) as any[];
+      const onChange = /* istanbul ignore next */ (e: any) => {
+        const selected = Object.assign({}, this.state.selected);
+
+        if (e.target.checked) {
+          selected[row.id] = true;
+        } else {
+          delete selected[row.id];
+        }
+
+        if (typeof this.props.onSelected === 'function') {
+          this.props.onSelected(Object.keys(selected));;
+        }
+        this.setState({ selected });
+      }
       cells.push(
         <Cell width={`4%`} key={'key-cell-0'}>
           <CustomInput
@@ -279,20 +296,7 @@ class Table extends React.Component<Props, State> {
             disabled={disabledSelected.includes(row.id) === true ? true : /* istanbul ignore next */ false}
             id={row.id}
             checked={this.state.selected[row.id] ? /* istanbul ignore next */ true : false}
-            onChange={/* istanbul ignore next */ (e: any) => {
-              const selected = Object.assign({}, this.state.selected);
-
-              if (e.target.checked) {
-                selected[row.id] = true;
-              } else {
-                delete selected[row.id];
-              }
-
-              if (typeof this.props.onSelected === 'function') {
-                this.props.onSelected(Object.keys(selected));;
-              }
-              this.setState({ selected });
-            }}
+            onChange={onChange}
           />
         </Cell>
       )
@@ -339,6 +343,17 @@ class Table extends React.Component<Props, State> {
     // If selected row
     if (this.props.selectable === true) {
       const disabledSelected = (this.props.disabledSelected || /* istanbul ignore next */ []) as any[];
+      const onChange = /* istanbul ignore next */ (e: any) => {
+        const selected = Object.assign({}, this.state.selected);
+
+        if (e.target.checked) {
+          selected[row.id] = true;
+        } else {
+          delete selected[row.id];
+        }
+
+        this.setState({ selected });
+      };
       cells.push(
         <DraggableCell key={'key-drag-0'} width={`4%`} isDragging={snapshot.isDragging}>
           <CustomInput
@@ -346,17 +361,7 @@ class Table extends React.Component<Props, State> {
             disabled={disabledSelected.includes(row.id) === true ? /* istanbul ignore next */ true : false}
             id={row.id}
             checked={this.state.selected[row.id] ? /* istanbul ignore next */ true : false}
-            onChange={/* istanbul ignore next */ (e: any) => {
-              const selected = Object.assign({}, this.state.selected);
-
-              if (e.target.checked) {
-                selected[row.id] = true;
-              } else {
-                delete selected[row.id];
-              }
-
-              this.setState({ selected });
-            }}
+            onChange={onChange}
           />
         </DraggableCell>
       )
@@ -374,7 +379,7 @@ class Table extends React.Component<Props, State> {
           }
 
           const cell = (
-            <DraggableCell key={`dnd-cell-${index}-${childProps.field}`} truncate {...childProps} isDragging={snapshot.isDragging} width={`${(childProps.width || this.getDefaultWidth())}%`}>
+            <DraggableCell key={`dnd-cell-${index}-${childProps.field}`} truncate={true} {...childProps} isDragging={snapshot.isDragging} width={`${(childProps.width || this.getDefaultWidth())}%`}>
               {cellValue}
             </DraggableCell>
           );
@@ -422,10 +427,10 @@ class Table extends React.Component<Props, State> {
                         <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>
                           {this.state.items.map((item: any, index: any) => (
                             <Draggable key={item.id} draggableId={item.id} index={index}>
-                              {(provided: any, snapshot: any) => (
+                              {(prov: any, snapshot: any) => (
                                 <DraggableRow
-                                  ref={provided.innerRef}
-                                  {...provided.draggableProps}
+                                  ref={prov.innerRef}
+                                  {...prov.draggableProps}
 
                                   isDragging={snapshot.isDragging}
                                   isDraggingOver={droppableSnapshot.isDraggingOver}
@@ -433,11 +438,11 @@ class Table extends React.Component<Props, State> {
                                   focused={
                                     droppableSnapshot.isDraggingOver ? /* istanbul ignore next */ snapshot.isDragging : undefined
                                   }
-                                  {...provided.draggableProps.style}
-                                  {...provided.draggableProps}
+                                  {...prov.draggableProps.style}
+                                  {...prov.draggableProps}
                                 >
                                   <>
-                                    {this.cellsDragable(item, snapshot, provided, index)}
+                                    {this.cellsDragable(item, snapshot, prov, index)}
                                   </>
                                 </DraggableRow>
                               )}

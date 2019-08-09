@@ -16,7 +16,8 @@ class Form extends React.Component<Props> {
         <Formik {...this.props}>
           {(props: FormikProps<{}>) => (
             <FormFormik>
-              {(typeof this.props.children === 'function') && (this.props.children as Function)(props)}
+              {(typeof this.props.children === 'function')
+                && (this.props.children as /* tslint:disable */ Function /* tslint:enable */)(props)}
             </FormFormik>
           )}
         </Formik>

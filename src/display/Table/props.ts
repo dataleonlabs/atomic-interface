@@ -41,10 +41,10 @@ export interface TableProps {
   /** Display in table */
   children: JSX.Element | JSX.Element[]
 
-  //Add striped css
+  // Add striped css
   striped?: boolean
 
-  //Add striped css
+  // Add striped css
   rowSize?: 'default' | 'small' | 'large'
 
   /** Display or hide the selected column */
