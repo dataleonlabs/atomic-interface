@@ -1,3 +1,3 @@
 
-// Form
-export { default as Form } from './form/index';
+// Display
+export { default as Alert } from './display/Alert';

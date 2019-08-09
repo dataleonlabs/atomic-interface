@@ -49,7 +49,7 @@ const SearchBar = (props: Props) => {
       id={props.name}
       render={({ field }: FieldProps<{}>) => (
         <React.Fragment>
-          {wrapperSearchBar(<SearchBarBootstrap  {...rest} type="search" />, props)}
+          {wrapperSearchBar(<SearchBarBootstrap  {...rest} {...field} type="search" />, props)}
         </React.Fragment>
       )}
     />

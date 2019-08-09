@@ -214,10 +214,11 @@ class Table extends React.Component<Props, State> {
             type={'checkbox'}
             id={'id0'}
             checked={this.isSelectAllChecked(this.state.selected, this.props.data)}
-            onChange={/* istanbul ignore next */ (e: any) => {
+            onChange={/* istanbul ignore next */ (e: any): any => {
               if (e.target.checked) {
                 const selected = this.props.data.reduce((accum, value) => {
-                  if ((this.props.disabledSelected || []).indexOf(value.id as any) === -1) {
+                  const disabledSelected = (this.props.disabledSelected || []) as any[];
+                  if (disabledSelected.includes(value.id as any) === false) {
                     accum[value.id as string] = true;
                   } else {
                     accum[value.id as string] = false;
@@ -246,10 +247,11 @@ class Table extends React.Component<Props, State> {
 
     React.Children.map(this.props.children, (child) => {
       if (React.isValidElement(child)) {
-        if (child.props && child.props.field) {
+        const childProps = child.props as any;
+        if (childProps && childProps.field) {
           const column = this.wrapperSortable(
-            <HeaderCell key={child.props.field} minimum {...child.props} width={`${(child.props.width || this.getDefaultWidth())}%`}>
-              {child.props.children || /* istanbul ignore next */ child.props.field}
+            <HeaderCell key={childProps.field} minimum {...childProps} width={`${(childProps.width || this.getDefaultWidth())}%`}>
+              {childProps.children || /* istanbul ignore next */ childProps.field}
             </HeaderCell>
             , child);
           columns.push(column);
@@ -268,11 +270,13 @@ class Table extends React.Component<Props, State> {
 
     // If selected row
     if (this.props.selectable === true) {
+    /* istanbul ignore next */
+      const disabledSelected = (this.props.disabledSelected || []) as any[];
       cells.push(
         <Cell width={`4%`} key={'key-cell-0'}>
           <CustomInput
             type={'checkbox'}
-            disabled={(this.props.disabledSelected || /* istanbul ignore next */[]).indexOf(row.id) > -1 ? true : /* istanbul ignore next */ false}
+            disabled={disabledSelected.includes(row.id) === true ? true : /* istanbul ignore next */ false}
             id={row.id}
             checked={this.state.selected[row.id] ? /* istanbul ignore next */ true : false}
             onChange={/* istanbul ignore next */ (e: any) => {
@@ -296,16 +300,17 @@ class Table extends React.Component<Props, State> {
 
     React.Children.map(this.props.children, child => {
       if (React.isValidElement(child)) {
-        if (child.props && child.props.field) {
-          let cellValue = row[child.props.field];
+        const childProps = child.props as any;
+        if (childProps && childProps.field) {
+          let cellValue = row[childProps.field];
 
           // format cell value
-          if ((typeof child.props.formatter === 'function')) /* istanbul ignore next */ {
-            cellValue = child.props.formatter(cellValue, row);
+          if ((typeof childProps.formatter === 'function')) /* istanbul ignore next */ {
+            cellValue = childProps.formatter(cellValue, row);
           }
 
           const cell = (
-            <Cell key={child.props.field} truncate {...child.props} width={`${(child.props.width || this.getDefaultWidth())}%`}>
+            <Cell key={childProps.field} truncate {...childProps} width={`${(childProps.width || this.getDefaultWidth())}%`}>
               {cellValue}
             </Cell>
           );
@@ -333,11 +338,12 @@ class Table extends React.Component<Props, State> {
 
     // If selected row
     if (this.props.selectable === true) {
+      const disabledSelected = (this.props.disabledSelected || /* istanbul ignore next */ []) as any[];
       cells.push(
         <DraggableCell key={'key-drag-0'} width={`4%`} isDragging={snapshot.isDragging}>
           <CustomInput
             type={'checkbox'}
-            disabled={(this.props.disabledSelected || /* istanbul ignore next */[]).indexOf(row.id) > -1 ? /* istanbul ignore next */ true : false}
+            disabled={disabledSelected.includes(row.id) === true ? /* istanbul ignore next */ true : false}
             id={row.id}
             checked={this.state.selected[row.id] ? /* istanbul ignore next */ true : false}
             onChange={/* istanbul ignore next */ (e: any) => {
@@ -356,18 +362,19 @@ class Table extends React.Component<Props, State> {
       )
     }
 
-    React.Children.map(this.props.children, child => {
+    React.Children.map(this.props.children, (child) => {
       if (React.isValidElement(child)) {
-        if (child.props && child.props.field) {
-          let cellValue = row[child.props.field];
+        const childProps = child.props as any;
+        if (childProps && childProps.field) {
+          let cellValue = row[childProps.field];
 
           // format cell value
-          if ((typeof child.props.formatter === 'function')) /* istanbul ignore next */ {
-            cellValue = child.props.formatter(cellValue, row);
+          if ((typeof childProps.formatter === 'function')) /* istanbul ignore next */ {
+            cellValue = childProps.formatter(cellValue, row);
           }
 
           const cell = (
-            <DraggableCell key={`dnd-cell-${index}-${child.props.field}`} truncate {...child.props} isDragging={snapshot.isDragging} width={`${(child.props.width || this.getDefaultWidth())}%`}>
+            <DraggableCell key={`dnd-cell-${index}-${childProps.field}`} truncate {...childProps} isDragging={snapshot.isDragging} width={`${(childProps.width || this.getDefaultWidth())}%`}>
               {cellValue}
             </DraggableCell>
           );

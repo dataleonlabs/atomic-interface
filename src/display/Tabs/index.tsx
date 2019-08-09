@@ -28,14 +28,15 @@ const Tabs = (props: Props) => {
         {
           React.Children.map(props.children, (child, index) => {
             if (React.isValidElement(child)) {
-              if (child.props && child.props.title) {
+              const childProps = child.props as any;
+              if (childProps && childProps.title) {
                 return (
                   <StyledNavItem>
                     <NavLink
                       onClick={/* istanbul ignore next  */ (_element) /* istanbul ignore next  */ => { onClick(index, element, child) }}
                       className={classnames({ active: active === index })}
                     >
-                      {child.props.title}
+                      {childProps.title}
                     </NavLink>
                   </StyledNavItem>
                 )
@@ -48,12 +49,13 @@ const Tabs = (props: Props) => {
       </StyledNav>
       <TabContent activeTab={active}>
         {
-          React.Children.map(props.children, (child, index) => {
+          React.Children.map(props.children, (child, index: number) => {
             if (React.isValidElement(child)) {
-              if (child.props && child.props.title && (child.props.disabled !== true)) {
+              const childProps = child.props as any;
+              if (child.props && childProps.title && (childProps.disabled !== true)) {
                 return (
                   <TabPane tabId={index}>
-                    {child.props.children}
+                    {childProps.children}
                   </TabPane>
                 )
               }

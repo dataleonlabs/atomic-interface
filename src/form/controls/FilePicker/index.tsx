@@ -5,17 +5,6 @@ import { FilePickerProps as Props } from './props';
 import Control from '../../Control';
 
 /**
- * wrap function for grid bootstrap
- * @param component compenent receive data
- * @param field wrap function data
- */
-const wrapperFilePicker = (component: JSX.Element, field: Props) => {
-
-  return component;
-};
-
-
-/**
  * FilePicker render element
  */
 const FilePicker = (props: Props) => {
@@ -24,9 +13,9 @@ const FilePicker = (props: Props) => {
     <Control {...props}>
       <Field
         id={props.name}
-        render={({ field }: FieldProps<{}>) => (
+        render={(_: FieldProps<{}>) => (
           <React.Fragment>
-            {wrapperFilePicker(<FilePickerBootstrap {...rest} id={props.name} type="file" />, props)}
+            <FilePickerBootstrap {...rest} id={props.name} type="file" />
           </React.Fragment>
         )}
       />
