@@ -21,6 +21,9 @@ import {
 export interface SidebarProps extends NavbarPropsBase {
     /** Disable test or only icon on side bar */
     icon?: boolean 
+
+    /** children content in Sidebar */
+    children: JSX.Element | JSX.Element[]
 }
 
 export interface SidebarBrandProps extends NavbarBrandPropsBase {
