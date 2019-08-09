@@ -54,23 +54,23 @@ export interface State {
 class Table extends React.Component<Props, State> {
 
   public static defaultProps: Partial<Props> = {
+    disabledSelected: [],
+    draggable: false,
     hideHeader: false,
     pagination: false,
-    disabledSelected: [],
     selectable: false,
     sortable: false,
     striped: false,
-    draggable: false,
   }
 
-  state = {
-    selected: {},
+  public state = {
     items: [],
-    sortField: '',
-    sortDirection: 'asc' as State['sortDirection']
+    selected: {},
+    sortDirection: 'asc' as State['sortDirection'],
+    sortField: ''
   }
 
-  async componentDidMount() {
+  public async componentDidMount() {
     if (this.props.draggable === true) {
       this.setState({
         items: this.props.data,
@@ -129,17 +129,17 @@ class Table extends React.Component<Props, State> {
   }
 
   /**
-  * wrap for drag and drop
-  * @param component 
-  * @param props 
-  */
-  wrapperSortable = (component: JSX.Element, child: any) /* istanbul ignore next */ => {
+   * wrap for drag and drop
+   * @param component 
+   * @param props 
+   */
+  public wrapperSortable = (component: JSX.Element, child: any) /* istanbul ignore next */ => {
     if ((this.props.sortable === true) && (child.props.sortable !== false)) {
       return (
         <SortableCell
           scope="col"
           key={child.props.field}
-          minimum {...child.props}
+          minimum={true} {...child.props}
           width={`${(child.props.width || this.getDefaultWidth())}%`}
           onClick={() => {
 
@@ -171,7 +171,7 @@ class Table extends React.Component<Props, State> {
   }
 
   /* istanbul ignore next */
-  onDragEnd = (result: any) => {
+  public onDragEnd = (result: any) => {
     if (!result.destination) {
       return;
     }
@@ -196,14 +196,14 @@ class Table extends React.Component<Props, State> {
 
 
   /**
-  * Render columns
-  */
-  private colonns = () => {
+   * Render columns
+   */
+  public colonns = () => {
     const columns: JSX.Element[] = [];
 
     if (this.props.draggable === true) {
       columns.push(
-        <HeaderCell minimum key={'key-col-0'} />
+        <HeaderCell minimum={true} key={'key-col-0'} />
       )
     }
     // If selected row
@@ -250,7 +250,7 @@ class Table extends React.Component<Props, State> {
         const childProps = child.props as any;
         if (childProps && childProps.field) {
           const column = this.wrapperSortable(
-            <HeaderCell key={childProps.field} minimum {...childProps} width={`${(childProps.width || this.getDefaultWidth())}%`}>
+            <HeaderCell key={childProps.field} minimum={true} {...childProps} width={`${(childProps.width || this.getDefaultWidth())}%`}>
               {childProps.children || /* istanbul ignore next */ childProps.field}
             </HeaderCell>
             , child);
@@ -265,7 +265,7 @@ class Table extends React.Component<Props, State> {
   /**
    * Render cell
    */
-  private cells = (row: any) => {
+  public cells = (row: any) => {
     const cells: JSX.Element[] = [];
 
     // If selected row
@@ -310,7 +310,7 @@ class Table extends React.Component<Props, State> {
           }
 
           const cell = (
-            <Cell key={childProps.field} truncate {...childProps} width={`${(childProps.width || this.getDefaultWidth())}%`}>
+            <Cell key={childProps.field} truncate={true} {...childProps} width={`${(childProps.width || this.getDefaultWidth())}%`}>
               {cellValue}
             </Cell>
           );
@@ -325,11 +325,11 @@ class Table extends React.Component<Props, State> {
   /**
    * Render cell cellsDragable
    */
-  private cellsDragable = (row: any, snapshot: any, provided: any, index: number) => {
+  public cellsDragable = (row: any, snapshot: any, provided: any, index: number) => {
     const cells: JSX.Element[] = [];
 
     cells.push(
-      <DraggableCell minimum key={`dnd-cell-${index}`}>
+      <DraggableCell minimum={true} key={`dnd-cell-${index}`}>
         <DraggableContainer id={`dnd-${index}`} {...provided.dragHandleProps}>
           ::
           </DraggableContainer>
@@ -386,7 +386,7 @@ class Table extends React.Component<Props, State> {
     return cells;
   }
 
-  render() {
+  public render() {
     let contentPagination = <></>;
 
     // Disable pagination
