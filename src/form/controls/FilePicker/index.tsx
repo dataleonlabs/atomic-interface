@@ -9,16 +9,15 @@ import Control from '../../Control';
  */
 const FilePicker = (props: Props) => {
   const { value, ...rest } = props;
+  const renderField = (_: FieldProps<{}>) => (
+    <React.Fragment>
+      <FilePickerBootstrap {...rest} id={props.name} type="file" />
+    </React.Fragment>
+  );
+
   return (
     <Control {...props}>
-      <Field
-        id={props.name}
-        render={(_: FieldProps<{}>) => (
-          <React.Fragment>
-            <FilePickerBootstrap {...rest} id={props.name} type="file" />
-          </React.Fragment>
-        )}
-      />
+      <Field id={props.name} render={renderField} />
     </Control>
   )
 }

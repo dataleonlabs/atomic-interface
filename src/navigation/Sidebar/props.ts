@@ -23,7 +23,7 @@ export interface SidebarProps extends NavbarPropsBase {
     icon?: boolean 
 
     /** children content in Sidebar */
-    children: JSX.Element | JSX.Element[]
+    children: string | JSX.Element | JSX.Element[]
 }
 
 export interface SidebarBrandProps extends NavbarBrandPropsBase {

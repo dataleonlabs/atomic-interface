@@ -8,7 +8,7 @@ describe('<Switch />', () => {
   it('U-TEST-1 - test Switch render with label', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Switch
             name={'test'}
             label={'test'}
@@ -24,7 +24,7 @@ describe('<Switch />', () => {
   it('U-TEST-2 - test Switch render with disabled ', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Switch name={'test'} disabled={true} />
         )}
       </Form>

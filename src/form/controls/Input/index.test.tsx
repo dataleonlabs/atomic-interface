@@ -8,7 +8,7 @@ describe('<Input />', () => {
   it('U-TEST-1 - test input render with addon', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Input
             name={'email'}
             leftAddon={'test'}
@@ -25,7 +25,7 @@ describe('<Input />', () => {
   it('U-TEST-2 - test input render with addon left ', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Input name={'email'} leftAddon={'test'} />
         )}
       </Form>
@@ -38,7 +38,7 @@ describe('<Input />', () => {
   it('U-TEST-3 - test input render without addon ', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Input name={'email'} />
         )}
       </Form>

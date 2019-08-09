@@ -102,10 +102,10 @@ class Table extends React.Component<Props, State> {
   };
 
   /**
-  * isSelectAllChecked
-  * @param selectedRows selected rows
-  * @param rows  current rows
-  */
+   * isSelectAllChecked
+   * @param selectedRows selected rows
+   * @param rows  current rows
+   */
 /* istanbul ignore next */
   public isSelectAllChecked(selectedRows: State['selected'], rows: Values[]) {
     return Object.keys(selectedRows).length === rows.length;

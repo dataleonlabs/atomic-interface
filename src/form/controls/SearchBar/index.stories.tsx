@@ -11,7 +11,7 @@ storiesOf('Forms|SearchBar', module)
         <h4>SearchBar</h4>
         <br />
         <Form>
-          {(props) => (
+          {(_) => (
             <SearchBar
               name={'search'}
               placeholder={'search'}

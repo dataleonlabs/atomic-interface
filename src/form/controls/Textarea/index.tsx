@@ -7,23 +7,26 @@ import Control from '../../Control';
 /**
  * Textarea render element
  */
-const Textarea = (props: Props) => (
-  <Control {...props}>
-    <Field
-      {...props}
-      id={props.name}
-      bsSize={props.controlSize || 'md'}
-      render={({ field }: FieldProps<{}>) => (
-        <StyledTextareaAutosize
-          rows={Number(props.rows || 5)}
-          maxRows={Number(props.maxRows || 10)}
-          className="form-control"
-          placeholder={String(props.placeholder || '')}
-          {...field}
-        />
-      )}
+const Textarea = (props: Props) => {
+  const renderField = ({ field }: FieldProps<{}>) => (
+    <StyledTextareaAutosize
+      rows={Number(props.rows || 5)}
+      maxRows={Number(props.maxRows || 10)}
+      className="form-control"
+      placeholder={String(props.placeholder || '')}
+      {...field}
     />
-  </Control>
-)
+  );
+  return (
+    <Control {...props}>
+      <Field
+        {...props}
+        id={props.name}
+        bsSize={props.controlSize || 'md'}
+        render={renderField}
+      />
+    </Control>
+  )
+}
 
 export default Textarea;

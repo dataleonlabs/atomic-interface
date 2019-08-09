@@ -8,7 +8,7 @@ describe('<Radio />', () => {
   it('U-TEST-1 - test radio render with label', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Radio
             name={'test'}
             label={'test'}
@@ -24,7 +24,7 @@ describe('<Radio />', () => {
   it('U-TEST-2 - test input render with disabled ', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Radio name={'test'} disabled={true} />
         )}
       </Form>
@@ -36,7 +36,7 @@ describe('<Radio />', () => {
   it('U-TEST-3 - test render with tooltip beside label ', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Radio
           name={'test'}
           label={'test'}

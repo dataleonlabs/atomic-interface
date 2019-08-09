@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
-import { Input as SearchBarBootstrap, InputGroup, InputGroupAddon } from 'reactstrap';
 import { Search } from 'react-feather';
+import { Input as SearchBarBootstrap, InputGroup, InputGroupAddon } from 'reactstrap';
 import { SearchBarProps as Props } from './props';
 
 /**
@@ -44,15 +44,14 @@ const wrapperSearchBar = (component: JSX.Element, field: Props) => {
  */
 const SearchBar = (props: Props) => {
   const { value, ...rest } = props;
+  const renderField = ({ field }: FieldProps<{}>) => (
+    <React.Fragment>
+      {wrapperSearchBar(<SearchBarBootstrap  {...rest} {...field} type="search" />, props)}
+    </React.Fragment>
+  );
+
   return (
-    <Field
-      id={props.name}
-      render={({ field }: FieldProps<{}>) => (
-        <React.Fragment>
-          {wrapperSearchBar(<SearchBarBootstrap  {...rest} {...field} type="search" />, props)}
-        </React.Fragment>
-      )}
-    />
+    <Field id={props.name} render={renderField} />
   )
 }
 

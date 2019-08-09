@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "outDir": "./lib",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
-    "outDir": "lib",
     "pretty": true,
     "skipLibCheck": true,
     "sourceMap": true,
@@ -31,13 +31,8 @@
       "src",
       "stories"
     ],
+    "baseUrl": ".",
     "noEmit": true,
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "isolatedModules": true
   },
   "include": [
