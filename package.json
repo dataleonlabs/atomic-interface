@@ -1,14 +1,14 @@
 {
-  "name": "ui-kit",
+  "name": "atomic-interface",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "private": true,
   "scripts": {
     "lint": "./node_modules/.bin/tslint --project ./",
     "global": "npm install -g commitizen yarn nyc jest",
     "test": "jest --verbose --watchAll --env=jsdom",
     "test:integration": "jest --watchAll=false --verbose --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
-    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
+    "lib": "rm -rf ./lib && tsc --p tsconfig.prod.json",
     "start": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "release": "standard-version"

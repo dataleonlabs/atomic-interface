@@ -6,13 +6,13 @@
       "dom",
       "dom.iterable",
       "esnext"
-    ], 
-    "module": "esnext",
-    "allowJs": true,
+    ],
+    "module": "commonjs",
     "pretty": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "sourceRoot": "src",
+    "allowJs": true,
     "esModuleInterop": true,
     "noFallthroughCasesInSwitch": false,
     "allowSyntheticDefaultImports": true,
@@ -27,15 +27,10 @@
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "jsx": "preserve",
-    "rootDirs": [
-      "src",
-      "stories"
-    ],
-    "noEmit": true,
-    "isolatedModules": true
+    "rootDirs": ["src"]
   },
   "include": [
-    "src"
+    "./src/**/*"
   ],
   "exclude": [
     "node_modules",
