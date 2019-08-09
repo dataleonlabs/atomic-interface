@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarProps as Props } from './props';
+import { SidebarProps as Props} from './props';
 import {Navbar, NavItem,Nav,Input,Button,NavbarBrand,NavLink} from 'reactstrap';
 
 /**
@@ -24,6 +24,7 @@ const SidebarNav = (props: Props) => (
   </div>
 
 )
+
 const SidebarNavItem = (props: Props) => (
   <div>
           <NavItem>
@@ -33,9 +34,16 @@ const SidebarNavItem = (props: Props) => (
   </div>
 
 )
+
 const SidebarNavLink= (props: Props) => (
   <div>
     <NavLink href="#">Link</NavLink>  
+  </div>
+
+)
+const SidebarNavBrand= (props: Props) => (
+  <div>
+    <NavbarBrand href="#">reactstrap</NavbarBrand> 
   </div>
 
 )
