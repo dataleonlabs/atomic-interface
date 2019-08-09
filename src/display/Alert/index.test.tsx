@@ -7,7 +7,7 @@ import { Info } from 'react-feather';
 describe('<Alert />', () => {
   it('U-TEST-1 - alert render with icon true', () => {
     const wrapper = enzyme.mount(
-      <Alert color="primary" icon={true} />
+      <Alert icon={true} color="primary"> Demo Of Alert Box with Icon</Alert>
     )
     expect(wrapper.find(strapAlert)).toHaveLength(1);
     expect(wrapper.props().icon).toEqual(true);
@@ -16,7 +16,7 @@ describe('<Alert />', () => {
   
   it('U-TEST-2 - alert render with icon false', () => {
     const wrapper = enzyme.mount(
-      <Alert color="primary" icon={false} />
+      <Alert icon={false} color="primary"> Demo Of Alert Box with Icon</Alert>
       )
       
       expect(wrapper.find(strapAlert)).toHaveLength(1);
@@ -25,7 +25,7 @@ describe('<Alert />', () => {
 
   it('U-TEST-3 - alert render with color is primary', () => {
     const wrapper = enzyme.mount(
-      <Alert color="primary" icon={false} />
+      <Alert icon={false} color="primary"> Demo Of Alert Box with Icon</Alert>
       )
       
       expect(wrapper.find(strapAlert)).toHaveLength(1);
