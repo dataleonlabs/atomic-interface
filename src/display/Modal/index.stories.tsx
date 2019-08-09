@@ -57,7 +57,7 @@ class ModalExample extends React.Component<{ showFooter?: Boolean }> {
 
 }
 
-storiesOf('Display|Modal', module)
+storiesOf('UI Elements|Modal', module)
   .add('Example', () => (
     <ModalExample />
   ))

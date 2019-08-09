@@ -3,14 +3,12 @@ import { storiesOf } from '@storybook/react';
 import Badge from './index';
 import { Col } from 'reactstrap';
 
-storiesOf('Display|Badge', module)
+storiesOf('UI Elements|Badge', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Pills</h4>
-        <Badge color="primary">
-          Primary
-        </Badge>
+        <h4>Badge</h4>
+        <h5><Badge color="primary">Primary</Badge></h5>
       </Col>
     </React.Fragment>
   ))
@@ -18,9 +16,9 @@ storiesOf('Display|Badge', module)
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Pills</h4>
-        <Badge color="success" pill>
+        <h5><Badge color="success" pill>
           Info
-        </Badge>
+        </Badge></h5>
       </Col>
     </React.Fragment>
   ))

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
 import Switch from './index'
-import { Label } from 'reactstrap';
+import { CustomInput } from 'reactstrap';
 import Form from './../../index'
 
 describe('<Switch />', () => {
@@ -18,7 +18,7 @@ describe('<Switch />', () => {
         )}
       </Form>
     )
-    expect(wrapper.find(Label)).toHaveLength(1)
+    expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 
   it('U-TEST-2 - test Switch render with disabled ', () => {
@@ -30,7 +30,7 @@ describe('<Switch />', () => {
       </Form>
     )
 
-    expect(wrapper.find(Label)).toHaveLength(0)
+    expect(wrapper.find(CustomInput)).toHaveLength(1)
 
   })
 })

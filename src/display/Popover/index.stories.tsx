@@ -29,7 +29,7 @@ class PopoverExample extends React.Component<{ placement?: Popper.Placement }> {
 
 }
 
-storiesOf('Display|Popover', module)
+storiesOf('UI Elements|Popover', module)
   .add('Example', () => (
     <PopoverExample />
   ))

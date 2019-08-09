@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
 import Checkbox from './index'
-import { Label } from 'reactstrap';
+import { CustomInput } from 'reactstrap';
 import Form from './../../index'
 
 describe('<Checkbox />', () => {
@@ -13,7 +13,7 @@ describe('<Checkbox />', () => {
         )}
       </Form>
     )
-    expect(wrapper.find(Label)).toHaveLength(1)
+    expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 
   it('U-TEST-2 - test checkbox render with disabled ', () => {
@@ -24,7 +24,7 @@ describe('<Checkbox />', () => {
         )}
       </Form>
     )
-    expect(wrapper.find(Label)).toHaveLength(1)
+    expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 
   it('U-TEST-3 - test render with tooltip beside label ', () => {
@@ -35,6 +35,6 @@ describe('<Checkbox />', () => {
         )}
       </Form>
     )
-    expect(wrapper.find(Label)).toHaveLength(1)
+    expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 })

@@ -8,7 +8,7 @@ import { StyledButton } from './style';
  */
 const Button = (props: Props) => (
   <StyledButton>
-    <ButtonBase {...props} disabled={props.disabled || props.loading}>
+    <ButtonBase {...props} disabled={props.disabled || props.loading} loading={props.loading === true ? 'true': 'false'}>
       {props.icon && <span className={`Icon ${props.size || 'md'}`}>{props.icon}</span>}
       {props.children}
       {props.loading && <Spinner className="Spinner" size={'sm'} />}

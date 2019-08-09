@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Dropdown as StrapDropdown, DropdownToggle, DropdownMenu } from 'reactstrap';
+import { Dropdown as StrapDropdown, DropdownToggle } from 'reactstrap';
 import { DropdownProps as Props } from './props';
+import { StyledDropdownMenu } from './style';
 
 /**
  * DropDown render element
@@ -22,9 +23,9 @@ const DropDown = (props: Props) => {
         <DropdownToggle caret={props.caret}>
           {props.title}
         </DropdownToggle>
-        <DropdownMenu>
+        <StyledDropdownMenu>
           {props.children}
-        </DropdownMenu>
+        </StyledDropdownMenu>
       </>
     </StrapDropdown>
   )

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Text from './index';
 import { Col } from 'reactstrap';
 
-storiesOf('Display|Text', module)
+storiesOf('UI Elements|Text', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>

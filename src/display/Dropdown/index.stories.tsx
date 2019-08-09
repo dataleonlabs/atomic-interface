@@ -27,7 +27,7 @@ class RenderDropDown extends React.Component<{ divider?: Boolean }> {
 
 }
 
-storiesOf('Display|DropDown', module)
+storiesOf('UI Elements|DropDown', module)
   .add('Example', () => (
     <RenderDropDown />
   ))

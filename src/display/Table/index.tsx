@@ -8,7 +8,9 @@ import {
   DraggableRow,
   DraggableCell,
   DraggableContainer,
-  StyledNoContent
+  StyledNoContent,
+  StyledRow,
+  StyledHeaderRow,
 } from './style'
 
 /**
@@ -24,7 +26,6 @@ const {
   HeaderCell,
   SortableCell,
   Body,
-  Row,
   Cell
 } = require('@zendeskgarden/react-tables');
 
@@ -317,7 +318,7 @@ class Table extends React.Component<Props, State> {
   }
 
   /**
-   * Render cell
+   * Render cell cellsDragable
    */
   private cellsDragable = (row: any, snapshot: any, provided: any, index: number) => {
     const cells: JSX.Element[] = [];
@@ -458,17 +459,17 @@ class Table extends React.Component<Props, State> {
           <TableBase scrollable={this.props.scrollable ? /* istanbul ignore next */ `${this.props.scrollable}px` : undefined} size={this.props.rowSize === 'default' ? /* istanbul ignore next */ undefined : this.props.rowSize}>
           {(this.props.hideHeader !== true) && (
             <Head>
-              <HeaderRow>
+              <StyledHeaderRow>
                 {this.colonns()}
-              </HeaderRow>
+              </StyledHeaderRow>
             </Head>
           )}
             {(this.props.loading === true) ? <Loader /> : (
               <Body>
                 {this.props.data.map((row: any, index) => (
-                  <Row key={index} selected={this.state.selected[row.id]} striped={this.props.striped && index % 2 === 0}>
+                  <StyledRow key={index} selected={this.state.selected[row.id]} striped={this.props.striped && index % 2 === 0}>
                     {this.cells(row)}
-                  </Row>
+                  </StyledRow>
                 ))}
               </Body>
             )}
