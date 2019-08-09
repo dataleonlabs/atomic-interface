@@ -26,7 +26,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "experimentalDecorators": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "rootDirs": ["src"]
   },
   "include": [
