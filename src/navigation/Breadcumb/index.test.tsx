@@ -1,31 +1,29 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
-import Breadcrumbs from './index';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import Breadcrumb from './index'
+import { Breadcrumb as BreadcrumbBase,BreadcrumbItem } from 'reactstrap';
 
-
-describe('<Breadscrumbs />', () => {
-  it('U-TEST-1 - Breadcrumb Render', () => {
+describe('<Breadcrumb />', () => {
+  it('U-TEST-1 - test breadcrumb render', () => {
     const wrapper = enzyme.mount(
-      <Breadcrumbs>
-        <Breadcrumb >
-          <BreadcrumbItem />
-         </Breadcrumb>
-        </Breadcrumbs>
+      <>
+       <Breadcrumb>
+          <BreadcrumbItem>Home</BreadcrumbItem>
+       </Breadcrumb>
+      </>
     )
-    expect(wrapper.find(Breadcrumb)).toHaveLength(1)
-    expect(wrapper.find(BreadcrumbItem)).toHaveLength(3)
+    expect(wrapper.find(BreadcrumbBase)).toHaveLength(1)
+    expect(wrapper.find(BreadcrumbItem)).toHaveLength(1)
   })
 
-  it('U-TEST-2 - Breadcrumb With disable', () => {
+  it('U-TEST-2 - test breadcrumb render with disabled ', () => {
     const wrapper = enzyme.mount(
-      <Breadcrumbs >
-        <Breadcrumb>
-          <BreadcrumbItem />
-        </Breadcrumb>
-      </Breadcrumbs>
+      <Breadcrumb>
+        <BreadcrumbItem active={false}></BreadcrumbItem>
+      </Breadcrumb>
     )
-    expect(wrapper.find(Breadcrumb)).toHaveLength(1)
-    expect(wrapper.find(BreadcrumbItem)).toHaveLength(3)
+
+    expect(wrapper.find(BreadcrumbBase)).toHaveLength(1)
+    expect(wrapper.find(BreadcrumbItem)).toHaveLength(1)
   })
 })

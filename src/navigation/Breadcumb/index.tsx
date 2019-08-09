@@ -1,21 +1,16 @@
 import React from 'react';
+import { Breadcrumb as BreadcrumbBase } from 'reactstrap';
 import { BreadcrumbProps as Props } from './props';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
-
+import { StyledBreadcrumb } from './style';
 
 /**
- * BradScrumb render element
+ * Breadcrumb render element
  */
-const Breadcrumbs= (props: Props) => {
-  return(
-    <Breadcrumb
-    {...props}>
-   
-        <BreadcrumbItem> <a href="#">Story</a></BreadcrumbItem>
-        <BreadcrumbItem> <a href="#">Navigation</a></BreadcrumbItem>
-        <BreadcrumbItem  active>Breadcrumb</BreadcrumbItem>
-   
-     </Breadcrumb>
-  )
-}
-export default Breadcrumbs;
+const Breadcrumb = (props: Props) => (
+  <StyledBreadcrumb>
+    <BreadcrumbBase {...props} >
+    </BreadcrumbBase>
+  </StyledBreadcrumb>
+)
+
+export default Breadcrumb;
