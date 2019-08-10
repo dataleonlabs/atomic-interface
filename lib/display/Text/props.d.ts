@@ -27,4 +27,6 @@ export interface TextProps {
     trucanteType?: 'right' | 'middle';
     capitalizeFirstLetter?: boolean;
     textStyle?: 'default' | 'help';
+    /** Colors alert */
+    color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'gray';
 }
