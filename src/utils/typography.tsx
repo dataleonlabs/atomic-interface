@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../index';
 
 
 /**
@@ -107,7 +108,7 @@ const Typography = () => (
 
             <div style={{ width: '100%' }}>
                 <div style={{ float: 'left' }}>
-                    <button value='BUTTON LABLE' style={{ fontSize: '12px' }}>BUTTON LABLE</button></div>
+                    <Button value='Button label' color="primary" style={{ fontSize: '12px' }}>Button label</Button></div>
                 <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
                     <p style={{ fontSize: '12px' }}>12px</p>
                 </div>
