@@ -5,7 +5,7 @@ export const StyledNavbar = styled(Navbar)`
   background-color: #fff!important;
   border-bottom: solid 1px #F1F1F1!important;
   .nav-link {
-    color: #212529;
+    color: #212529!important;
   }
   .nav-item {
     button {
