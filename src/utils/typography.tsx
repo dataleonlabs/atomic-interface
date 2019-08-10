@@ -15,152 +15,130 @@ const Typography = () => (
             <p>An Adptable Foundation</p>
         </div>
 
-        <div style={{ width: '100%' ,padding: '2%'}}>
+        <div style={{ width: '100%', padding: '2%' }}>
             <div style={{ float: 'left', width: "50%", paddingRight: "5%" }}>
                 <p>Heading 3</p>
 
                 <p style={{ color: 'green' }}>
-                    This paragraph
-                    contains  a lot of spaces
-                    in the source         code,
-                    but the  browser
-                    but the browser
-                    ignores it. This paragraph
-                    contains a lot of spaces
-                    in the source  code,but the  browser
-                    but the browser
-                    ignores it. 
+                    Create a list with all possible keywords that fit to your product,services orbussiness field.
+                    The more the better.So you will get also a lot of keywords which you must pay for only the minimal.
 </p>
 
-                <p style={{ color: 'green',paddingTop:'5%' }}>
-                    This paragraph
-                    contains         a lot of spaces
-                    in the source         code,
-                    but the        browser
-                    ignores it.  This paragraph
-                    contains         a lot of spaces
-                    in the source         code,
+                <p style={{ color: 'green', paddingTop: '5%' }}>
+                    Benifit frommisspelling in i\orser to find keywords which your competitors didnot think of For example if you have aemergencyservices,
+                    do not only bid for "emergency" but also for "imergency" 
 </p>
             </div>
             <div style={{ paddingRight: '5%' }}>
                 <p>Heading 4</p>
                 <p style={{ color: 'green' }}>
-                    This paragraph
-                       contains         a lot of spaces
-                       in the source         code,
-                       but the        browser   T
-                       ignores it.   his paragraph
-                       contains         a lot of spaces
-                       in the source         code,
-                       but the        browser   T
-               </p>
-                <p >Heading 5</p>
-                <p style={{ marginTop: '0px',display:'block' }}>This paragraph
-                     contains         a lot of spaces
-                     in the source         code,
-                     but the        browser   T
-                     ignores it.   his paragraph
-                     contains         a lot of spaces
-                     in the source         code
+                Create a list with all possible keywords that fit to your product,services orbussiness field.
+                The more the better.So you will get also a lot of keywords which you must pay for only the minimal.
+
+             </p>
+                <p  style={{marginTop:"5%"}}>Heading 5</p>
+                <p style={{ marginTop: '0px', display: 'block' }}>
+                Create a list with all possible keywords that fit to your product,services orbussiness field.
                </p>
             </div>
         </div>
-        <div style={{ width: '100%', marginTop: '5%'  }}>
-            <div style={{ width: '100%',  }}>
+        <div style={{ width: '100%', marginTop: '5%' }}>
+            <div style={{ width: '100%', }}>
                 <div style={{ float: 'left' }}>
                     <h1>H1/Rubick regular</h1></div>
                 <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    40px
+                    <p style={{ fontSize: '30px' }}>30px</p>
                 </div>
-                <div style={{ clear: 'both'  }} ></div>
+                <div style={{ clear: 'both' }} ></div>
             </div>
             <hr />
-            <div style={{  width: '100%' }}>
+            <div style={{ width: '100%' }}>
                 <div style={{ float: 'left' }}>
                     <h2>H2/Rubick regular</h2></div>
                 <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='26px'>26px</font>
+                    <p style={{ fontSize: '26px' }}>26px</p>
                 </div>
-                <div style={{ clear: 'both',  }} ></div>
+                <div style={{ clear: 'both' }} ></div>
             </div><hr />
-            
 
-            <div style={{ width: '100%'}}>
+
+            <div style={{ width: '100%' }}>
                 <div style={{ float: 'left' }}>
                     <h3>H3/Rubick regular</h3></div>
                 <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='20px'>20px</font>
+                    <p style={{ fontSize: '20px' }}>20px</p>
                 </div>
-                <div style={{ clear: 'both',  }} ></div>
+                <div style={{ clear: 'both' }} ></div>
             </div>
-        <hr />
+            <hr />
 
 
-            <div style={{  width: '100%' }}>
+            <div style={{ width: '100%' }}>
                 <div style={{ float: 'left' }}>
                     <h4>H4/Rubick regular</h4></div>
                 <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='18px'>18px</font>
+                    <p style={{ fontSize: '18px' }}>18px</p>
                 </div>
-                <div style={{ clear: 'both',  }} ></div>
+                <div style={{ clear: 'both' }} ></div>
             </div>
 
-<hr />
+            <hr />
 
             <div style={{ width: '100%' }}>
                 <div style={{ float: 'left' }}>
                     <h5>H5/Rubick regular</h5></div>
                 <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='16px'>16px</font>
+                    <p style={{ fontSize: '16px' }}>16px</p>
                 </div>
-                <div style={{ clear: 'both',  }} ></div>
+                <div style={{ clear: 'both' }} ></div>
             </div>
-<hr />
+            <hr />
 
-
-            <div style={{  width: '100%' }}>
-                <div style={{ float: 'left' }}>
-                    <caption>caption</caption></div>
-                <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='14px'>14px</font>
-                </div>
-                <div style={{ clear: 'both',  }} ></div>
-            </div>
-<hr />
-
-            <div style={{  width: '100%' }}>
-                <div style={{ float: 'left' }}>
-                    <button value='BUTTON LABLE' style={{ fontSize: '12px' }}>BUTTON LABLE</button></div>
-                <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='12px'>12px</font>
-                </div>
-                <div style={{ clear: 'both',  }} ></div>
-            </div>
-<hr />
-
-            <div style={{  width: '100%' }}>
-                <div style={{ float: 'left' }}>
-                    <font size="14px">Text/Rubic light</font></div>
-                <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='14px'>14px</font>
-                </div>
-                <div style={{ clear: 'both',  }} ></div>
-            </div>
-<hr />
 
             <div style={{ width: '100%' }}>
                 <div style={{ float: 'left' }}>
-                    <a href='#'> Text Link</a></div>
+                    <caption>caption</caption></div>
                 <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='14px'>14px</font>
+                    <p style={{ fontSize: '14px' }}>14px</p>
                 </div>
-                <div style={{ clear: 'both',  }} ></div>
+                <div style={{ clear: 'both' }} ></div>
             </div>
             <hr />
+
+            <div style={{ width: '100%' }}>
+                <div style={{ float: 'left' }}>
+                    <button value='BUTTON LABLE' style={{ fontSize: '12px' }}>BUTTON LABLE</button></div>
+                <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
+                    <p style={{ fontSize: '12px' }}>12px</p>
+                </div>
+                <div style={{ clear: 'both', }} ></div>
+            </div>
+            <hr />
+
+            <div style={{ width: '100%' }}>
+                <div style={{ float: 'left' }}>
+                    <p style={{ fontSize: '14px' }}>Text/Rubic light</p></div>
+                    <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
+
+                        <p style={{ fontSize: '14px' }}>14px</p>
+                    </div>
+                    <div style={{ clear: 'both', }} ></div>
+                </div>
+                <hr />
+
+                <div style={{ width: '100%' }}>
+                    <div style={{ float: 'left' }}>
+                        <a href='#'> Text Link</a></div>
+                    <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
+                        <p style={{ fontSize: '14px' }}>14px</p>
+                    </div>
+                    <div style={{ clear: 'both' }} ></div>
+                </div>
+                <hr />
+            </div>
+
         </div>
 
-    </div>
-
-)
-
-export default Typography;
+        )
+        
+        export default Typography;
