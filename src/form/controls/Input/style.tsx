@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Input as InputBootstrap, InputGroupAddon } from 'reactstrap';
 
 export const StyledInputBootstrap = styled(InputBootstrap)`    
-    border-radius: 0px!important;
+    border-radius: 3px!important;
     border: 2px solid #dfe3e9;
     border-radius: 0px; 
     font-size: 0.9rem;
@@ -16,7 +16,7 @@ export const StyledInputBootstrap = styled(InputBootstrap)`
 `;
 
 export const StyledInputGroupAddonRight = styled(InputGroupAddon)`  
-  border-radius: 0px!important;
+  border-radius: 3px!important;
   .input-group-text {
     background-color: #fcfcfc;
     border: 2px solid #dfe3e9;
@@ -27,7 +27,7 @@ export const StyledInputGroupAddonRight = styled(InputGroupAddon)`
 `;
 
 export const StyledInputGroupAddonLeft = styled(InputGroupAddon)`   
-  border-radius: 0px!important;
+  border-radius: 3px!important;
   .input-group-text {
     background-color: #fcfcfc;
     border: 2px solid #dfe3e9;

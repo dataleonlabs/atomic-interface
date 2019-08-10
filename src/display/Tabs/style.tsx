@@ -4,7 +4,7 @@ import { NavItem, Nav } from 'reactstrap';
 
 
 export const StyledNavItem = styled(NavItem)`
-border-radius: 0px!important;
+border-radius: 3px!important;
   .nav-link {
     cursor: pointer
   }
