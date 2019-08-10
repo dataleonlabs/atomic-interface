@@ -3,7 +3,7 @@ import { BreadcrumbProps as BreadcrumbPropsBase, BreadcrumbItemProps as Breadcru
 /**
  * Tihs component use bootstrap: documentation https://reactstrap.github.io/components/breadcrumbs/
  * @example
- *   <Breadcrumb tag="a">
+ *   <Breadcrumb>
  *      <BreadcrumbItem><a href="#">Home</a></BreadcrumbItem>
  *      <BreadcrumbItem active>Library</BreadcrumbItem>
  *   </Breadcrumb>
@@ -14,7 +14,6 @@ export interface BreadcrumbItemProps extends BreadcrumbItemPropsBase {
 }
 
 export interface BreadcrumbProps extends BreadcrumbPropsBase {
-
-      
+    loading?: boolean
 }
 

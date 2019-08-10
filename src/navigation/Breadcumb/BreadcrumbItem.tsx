@@ -3,9 +3,8 @@ import { BreadcrumbItem as BreadcrumbItemBase } from 'reactstrap';
 import { BreadcrumbItemProps as Props } from './props';
 
 /**
- * SidebarBrand render element
+ * BreadcrumbItem render element
  */
-
 const BreadcrumbItem = (props: Props) => (
   <BreadcrumbItemBase {...props}> {props.children}</BreadcrumbItemBase>
 )

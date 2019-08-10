@@ -2,8 +2,9 @@ import {
     NavbarBrandProps as NavbarBrandPropsBase,
     NavProps as NavPropsBase,
     NavItemProps as NavItemPropsBase,
-    NavbarProps as NavbarPropsBase
+    NavbarProps as NavbarPropsBase    
 } from "reactstrap";
+import { ReactNode } from "react";
 
 /**
  * Tihs component use bootstrap: documentation https://reactstrap.github.io/components/navbar/
@@ -18,20 +19,41 @@ import {
  */
 
 export interface NavbarProps extends NavbarPropsBase {
-
+    children?: ReactNode
 }
 
-export interface NavbarBrandProps extends NavbarBrandPropsBase {
-
+export interface NavbarBrandProps extends NavbarBrandPropsBase {    
+    linkURL?: any;
+    children?: ReactNode
 }
 
 export interface NavProps extends NavPropsBase {
+    /* add children */
+    children?: ReactNode
+}
 
+export interface NavLinkProps {        
+    linkURL?: any;
+
+    /* add children */
+    children?: ReactNode
+}
+
+export interface CollapseProps {
+    /* add children */
+    children?: ReactNode
+    isOpen?:boolean;
+    id?:any;
+}
+
+export interface NavbarTogglerProps {    
+    /** A function invoked when a tab is clicked by the user */
+    onClick?: () => void;    
+    className?:any;
 }
 
 export interface NavItemProps extends NavItemPropsBase {
-
-    /** A function invoked when a tab is clicked by the user */
-    onClick?: () => void
+    /* add children */
+    children?: ReactNode
 }
 
