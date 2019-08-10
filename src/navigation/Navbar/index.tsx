@@ -1,38 +1,18 @@
 import React from 'react';
 import { NavbarProps as Props } from './props';
-import {Navbar, NavItem,Nav,Input,Button,NavbarBrand} from 'reactstrap';
+import { StyledNavbar } from './style';
 
 /**
- * Navbar render element
+ * NavBar render element
  */
-const NavBar = (props: Props) => (
-  <div>
-   
-    {props.renderSearch &&
-    <Input 
-    type="search"
-    name="search"
-    id="Search"
-    placeholder="search"/> }
-    <div>
-     <Navbar {...props}>
-        <Nav  navbar>
-        <NavItem>{props.routeOne}</NavItem>
-        <NavItem>{props.routeTwo}</NavItem>
-        </Nav>
-    </Navbar>
-    {props.renderRightButton &&
-      <Button color="primary">Add</Button>
-    }
-    </div>
-   
-    {
-      props.renderBrand &&  <NavbarBrand href="#">reactstrap</NavbarBrand>
-    }
-    
-  </div>
+const Navbar = (props: Props) => {
   
+  return (
+    <StyledNavbar {...props} color="light" light={true} expand="md">
+      {props.children}
+    </StyledNavbar>
+  )
+}
 
-)
+export default Navbar;
 
-export default NavBar;

@@ -4,7 +4,7 @@ import { UncontrolledPopover } from 'reactstrap';
 
 
 export const StyledUncontrolledPopover = styled(UncontrolledPopover)`
-border-radius: 0px!important;
+border-radius: 3px!important;
   .popover {
     border: 1px solid #f5f5f5!important;
     .popover-inner {

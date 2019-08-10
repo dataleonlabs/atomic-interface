@@ -3,98 +3,134 @@ import { storiesOf } from '@storybook/react';
 import Sidebar from './index'
 import SidebarNav from './SidebarNav'
 import SidebarNavItem from './SidebarNavItem'
-import { Col } from 'reactstrap';
-import { HelpCircle } from 'react-feather'; 
+import { HelpCircle, Database, Grid, Folder, GitMerge, Eye, Watch, Linkedin, ExternalLink } from 'react-feather';
 import SidebarBrand from './SidebarBrand';
-import SidebarNavGroup from './SidebarNavGroup';
+import SidebarNavHeader from './SidebarNavHeader';
+import SidebarNavIcon from './SidebarNavIcon';
+import SidebarNavText from './SidebarNavText';
+import Badge from '../../display/Badge';
 
 storiesOf('Navigation|Sidebar', module)
- .add('Example', () => (
-  <React.Fragment>
-    <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Sidebar</h4>
-      <Sidebar>
-      <SidebarBrand href="/">Reactstrap</SidebarBrand>
-      <SidebarNav color="faded" light={true} vertical={true}> 
-            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={18}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>UI-Kit</SidebarNavItem>
-        </SidebarNav>
-      </Sidebar>
-        
-    </Col>
-  </React.Fragment>
-))
-.add('With group', () => (
-  <React.Fragment>
-    <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Sidebar</h4>
-      <Sidebar>
-      <SidebarBrand href="/">Reactstrap</SidebarBrand>
-      <SidebarNav color="faded" light={true} vertical={true}> 
-            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={18}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>UI-Kit</SidebarNavItem>
-            <SidebarNavGroup title="Products">
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Payments</SidebarNavItem>
-        </SidebarNavGroup>
-        </SidebarNav>
-        
-      </Sidebar>
-        
-    </Col>
-  </React.Fragment>
-))
-.add('With With badge ', () => (
-  <React.Fragment>
-    <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Sidebar</h4>
-
-      <Sidebar>
-      <SidebarBrand href="/">Reactstrap</SidebarBrand>
-        <SidebarNav color="faded" light={true} vertical={true}>   
-            <SidebarNavItem active={true} link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>UI-Kit</SidebarNavItem>
-           
-        </SidebarNav>
-      </Sidebar>
-        
-    </Col>
-  </React.Fragment>
-))
-.add('With only icons ', () => (
-  <React.Fragment>
-    <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Sidebar</h4>
-      <Sidebar>
-         <SidebarBrand href="/">Reactstrap</SidebarBrand>
-         <SidebarNav color="faded" light={true} vertical={true}> 
-            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
-        </SidebarNav>
-      </Sidebar>
-        
-    </Col>
-  </React.Fragment>
-));
+  .add('Example', () => (
+    <Sidebar>
+      <SidebarBrand>Atomic Interface</SidebarBrand>
+      <SidebarNav>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Database size={23} /></SidebarNavIcon>
+          <SidebarNavText>Dashboard</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Grid size={23} /></SidebarNavIcon>
+          <SidebarNavText>Transaction</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem active>
+          <SidebarNavIcon type="left"><Folder size={23} /></SidebarNavIcon>
+          <SidebarNavText>Products</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><GitMerge size={23} /></SidebarNavIcon>
+          <SidebarNavText>Payments</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavHeader>Catalogs</SidebarNavHeader>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Eye size={23} /></SidebarNavIcon>
+          <SidebarNavText>Stocks</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Watch size={23} /></SidebarNavIcon>
+          <SidebarNavText>Link</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Linkedin size={23} /></SidebarNavIcon>
+          <SidebarNavText>UI-Kit</SidebarNavText>
+        </SidebarNavItem>
+      </SidebarNav>
+    </Sidebar>
+  ))
+  .add('With group', () => (
+    <Sidebar>
+      <SidebarBrand>Atomic Interface</SidebarBrand>
+      <SidebarNav>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Database size={23} /></SidebarNavIcon>
+          <SidebarNavText>Dashboard</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Grid size={23} /></SidebarNavIcon> 
+          <SidebarNavText>Transaction</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem active>
+          <SidebarNavIcon type="left"><Folder size={23} /></SidebarNavIcon> 
+          <SidebarNavText>Products</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><GitMerge size={23} /></SidebarNavIcon> 
+          <SidebarNavText>Payments</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavHeader>Catalogs</SidebarNavHeader>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Eye size={23} /></SidebarNavIcon>
+          <SidebarNavText>Stocks</SidebarNavText>
+          </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Watch size={23} /></SidebarNavIcon>
+          <SidebarNavText>Link</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Linkedin size={23} /></SidebarNavIcon>
+          <SidebarNavText>UI-Kit</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><HelpCircle size={23} /></SidebarNavIcon>
+          <SidebarNavText><a href="https://google.com">Help</a></SidebarNavText>
+          <SidebarNavIcon type="right"><ExternalLink size={17} /></SidebarNavIcon>
+        </SidebarNavItem>
+      </SidebarNav>
+    </Sidebar>
+  )).add('With badge', () => (
+    <Sidebar>
+      <SidebarBrand>Atomic Interface</SidebarBrand>
+      <SidebarNav>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Database size={23} /></SidebarNavIcon>
+          <SidebarNavText>Dashboard</SidebarNavText>
+          <SidebarNavIcon type="right">
+            <Badge color="primary" pill={true}>9+</Badge>
+          </SidebarNavIcon>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Grid size={23} /></SidebarNavIcon>
+          <SidebarNavText>Transaction</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Folder size={23} /></SidebarNavIcon>
+          <SidebarNavText>Products</SidebarNavText>
+          <SidebarNavIcon type="right">
+            <Badge color="danger">59</Badge>
+          </SidebarNavIcon>
+        </SidebarNavItem>
+        <SidebarNavItem active>
+          <SidebarNavIcon type="left"><GitMerge size={23} /></SidebarNavIcon>
+          <SidebarNavText>Payments</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavHeader>Catalogs</SidebarNavHeader>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Eye size={23} /></SidebarNavIcon>
+          <SidebarNavText>Stocks</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Watch size={23} /></SidebarNavIcon>
+          <SidebarNavText>Link</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><Linkedin size={23} /></SidebarNavIcon>
+          <SidebarNavText>UI-Kit</SidebarNavText>
+        </SidebarNavItem>
+        <SidebarNavItem>
+          <SidebarNavIcon type="left"><HelpCircle size={23} /></SidebarNavIcon>
+          <SidebarNavText><a href="https://google.com">Help</a></SidebarNavText>
+          <SidebarNavIcon type="right"><ExternalLink size={17} /></SidebarNavIcon>
+        </SidebarNavItem>
+      </SidebarNav>
+    </Sidebar>
+  ));

@@ -5,14 +5,10 @@ import { NavbarBrand } from 'reactstrap';
 /**
  * SidebarBrand render element
  */
-
-const SidebarBrand = (props: Props) => {
-
-  return (
-    <NavbarBrand {...props}>
-        {props.children}
-    </NavbarBrand>
-  )
-}
+const SidebarBrand = (props: Props) => (
+  <NavbarBrand {...props}>
+    {props.children}
+  </NavbarBrand>
+)
 
 export default SidebarBrand;

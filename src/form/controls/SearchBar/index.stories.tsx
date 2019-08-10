@@ -20,4 +20,20 @@ storiesOf('Forms|SearchBar', module)
         </Form>
       </Col>
     </React.Fragment>
+  )).add('For Navbar ', () => (
+    <React.Fragment>
+      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>SearchBar</h4>
+        <br />
+        <Form>
+          {(_) => (
+            <SearchBar
+              name={'search'}
+              placeholder={'search'}
+              navBar={true}
+            />
+          )}
+        </Form>
+      </Col>
+    </React.Fragment>
   ))

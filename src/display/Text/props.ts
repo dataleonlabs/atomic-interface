@@ -44,4 +44,17 @@ export interface TextProps {
 
     /* Text default or use Bootstrap Help Input */
     textStyle?: 'default' | 'help'
+
+    /** Colors alert */
+    color?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'light'
+    | 'dark'
+    | 'gray'
+    
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 import { Search } from 'react-feather';
-import { Input as SearchBarBootstrap, InputGroup, InputGroupAddon } from 'reactstrap';
+import { InputGroup } from 'reactstrap';
 import { SearchBarProps as Props } from './props';
+import { StyledInputSearchBootstrap, StyledInputSearchGroupAddonLeft } from './style';
 
 /**
  * wrap function for grid bootstrap
@@ -10,48 +11,31 @@ import { SearchBarProps as Props } from './props';
  * @param field wrap function data
  */
 
-/*
-  style for search icon
-   border: 1px solid #ced4da;
-   border-radius: .25rem;
-   border-top-left-radius: 0;
-   border-bottom-left-radius: 0;
-   border-right: none;
-   display: flex;
-   align-items: center;
-   padding-left: 5px; 
-
-   style for input
-   border-left: none;
- */
-
-const wrapperSearchBar = (component: JSX.Element, field: Props) => {
-  const PrependIcon = field.leftAddonIcon || <Search />
-  const PrependString = field.leftAddonString || 'search'
-  return (
-    <InputGroup>
-      <InputGroupAddon addonType="prepend" tag='button' >
-        <span style={{marginRight:'5px'}}>{PrependIcon}</span>{PrependString}
-      </InputGroupAddon>
-      {component}
-    </InputGroup>
-  );
-};
-
-
 /**
  * SearchBar render element
  */
 const SearchBar = (props: Props) => {
-  const { value, ...rest } = props;
+  const PrependIcon = props.leftAddonIcon || <Search />
+  const PrependString = props.leftAddonString || 'search'
+
   const renderField = ({ field }: FieldProps<{}>) => (
     <React.Fragment>
-      {wrapperSearchBar(<SearchBarBootstrap  {...rest} {...field} type="search" />, props)}
+      <InputGroup>
+        <StyledInputSearchGroupAddonLeft addonType="prepend" navbar={props.navBar}>
+          <div className="input-group-text"><span style={{ marginRight: '5px' }}>{PrependIcon}</span>{PrependString}</div>
+        </StyledInputSearchGroupAddonLeft>
+        <StyledInputSearchBootstrap placeholder={props.placeholder} {...field} navbar={props.navBar} type={props.closeIcon ? "search" : "input"} />
+      </InputGroup>
     </React.Fragment>
   );
 
   return (
-    <Field id={props.name} render={renderField} />
+    <Field
+      {...props}
+      id={props.name}
+      bsSize={props.controlSize || 'md'}
+      render={renderField}
+    />
   )
 }
 

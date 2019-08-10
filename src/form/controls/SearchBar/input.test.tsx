@@ -8,14 +8,16 @@ describe('<SearchBar />', () => {
   
   it('U-TEST-1 - test SearchBar render with addon', () => {
     const wrapper = enzyme.mount(
-      <Form>
-        {(_) => (
-          <SearchBar
-            name={'email'}
-            placeholder={'search'}
-          />
-        )}
-      </Form>
+      <div>
+        <Form>
+          {(_) => (
+            <SearchBar
+              name={'email'}
+              placeholder={'Search products in catalogs...'}
+            />
+          )}
+        </Form>
+      </div>
     )
 
     expect(wrapper.find(InputGroup)).toHaveLength(1)

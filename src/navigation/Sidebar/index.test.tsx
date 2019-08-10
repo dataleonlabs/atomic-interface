@@ -2,111 +2,111 @@ import * as React from 'react'
 import * as enzyme from 'enzyme'
 import Sidebar from './index'
 import SidebarBrand from './SidebarBrand'
-import { NavbarBrand, Nav,Navbar,NavItem,NavLink,Badge,ListGroup } from 'reactstrap';
-import SidebarNav from './SidebarNav';
+import { NavbarBrand, Nav, NavItem, NavLink, Badge } from 'reactstrap';
+import SidebarNav from './SidebarNav'
 import SidebarNavItem from './SidebarNavItem'
-import { HelpCircle } from 'react-feather'; 
-import SidebarNavGroup from './SidebarNavGroup'
+import { HelpCircle, Database, Grid, Folder, GitMerge, Eye, Watch, Linkedin, ExternalLink } from 'react-feather';
+import SidebarNavHeader from './SidebarNavHeader';
+import SidebarNavIcon from './SidebarNavIcon';
+import SidebarNavText from './SidebarNavText';
 
 
 describe('<Sidebar />', () => {
-  
   it('U-TEST-1 - rendering sidebar', () => {
     const wrapper = enzyme.mount(
       <Sidebar>
-          <SidebarBrand href="/">reactstrap</SidebarBrand>
-        <SidebarNav>   
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
+        <SidebarBrand href="/">reactstrap</SidebarBrand>
+        <SidebarNav>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Database size={23} /></SidebarNavIcon>
+            <SidebarNavText>Dashboard</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Grid size={23} /></SidebarNavIcon>
+            <SidebarNavText>Transaction</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem active>
+            <SidebarNavIcon type="left"><Folder size={23} /></SidebarNavIcon>
+            <SidebarNavText>Products</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><GitMerge size={23} /></SidebarNavIcon>
+            <SidebarNavText>Payments</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Eye size={23} /></SidebarNavIcon>
+            <SidebarNavText>Stocks</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Watch size={23} /></SidebarNavIcon>
+            <SidebarNavText>Link</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Linkedin size={23} /></SidebarNavIcon>
+            <SidebarNavText>UI-Kit</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><HelpCircle size={23} /></SidebarNavIcon>
+            <SidebarNavText><a href="https://google.com">Help</a></SidebarNavText>
+            <SidebarNavIcon type="right"><ExternalLink size={17} /></SidebarNavIcon>
+          </SidebarNavItem>
         </SidebarNav>
       </Sidebar>
     )
     expect(wrapper.find(Nav)).toHaveLength(1)
     expect(wrapper.find(NavbarBrand)).toHaveLength(1)
-    expect(wrapper.find(Navbar)).toHaveLength(1)
-    expect(wrapper.find(NavItem)).toHaveLength(7)
-    expect(wrapper.find(NavLink)).toHaveLength(7)
-    expect(wrapper.find(HelpCircle)).toHaveLength(7)
+    expect(wrapper.find(NavItem)).toHaveLength(8)
+    expect(wrapper.find(NavLink)).toHaveLength(0)
+    expect(wrapper.find(HelpCircle)).toHaveLength(1)
 
-  }),it('U-TEST-2 - rendering sidebar with group', () => {
+  })
+  
+  it('U-TEST-2 - rendering sidebar with group', () => {
     const wrapper = enzyme.mount(
       <Sidebar>
-      <SidebarBrand href="/">reactstrap</SidebarBrand>
-        <SidebarNav>   
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
-           
-        </SidebarNav>
-        <SidebarNavGroup>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-        </SidebarNavGroup>
-      </Sidebar>
-    )
-    expect(wrapper.find(Nav)).toHaveLength(1)
-    expect(wrapper.find(NavbarBrand)).toHaveLength(1)
-    expect(wrapper.find(Navbar)).toHaveLength(1)
-    expect(wrapper.find(NavItem)).toHaveLength(11)
-    expect(wrapper.find(Badge)).toHaveLength(11)
-    expect(wrapper.find(HelpCircle)).toHaveLength(11)
-    expect(wrapper.find(ListGroup)).toHaveLength(1)
-  }),
-  it('U-TEST-3 - rendering sidebar with badge', () => {
-    const wrapper = enzyme.mount(
-      <Sidebar>
-      <SidebarBrand href="/">reactstrap</SidebarBrand>
-        <SidebarNav>   
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
-           
+        <SidebarBrand href="/">reactstrap</SidebarBrand>
+        <SidebarNav>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Database size={23} /></SidebarNavIcon>
+            <SidebarNavText>Dashboard</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Grid size={23} /></SidebarNavIcon>
+            <SidebarNavText>Transaction</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem active>
+            <SidebarNavIcon type="left"><Folder size={23} /></SidebarNavIcon>
+            <SidebarNavText>Products</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><GitMerge size={23} /></SidebarNavIcon>
+            <SidebarNavText>Payments</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavHeader>Catalogs</SidebarNavHeader>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Eye size={23} /></SidebarNavIcon>
+            <SidebarNavText>Stocks</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Watch size={23} /></SidebarNavIcon>
+            <SidebarNavText>Link</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><Linkedin size={23} /></SidebarNavIcon>
+            <SidebarNavText>UI-Kit</SidebarNavText>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarNavIcon type="left"><HelpCircle size={23} /></SidebarNavIcon>
+            <SidebarNavText><a href="https://google.com">Help</a></SidebarNavText>
+            <SidebarNavIcon type="right"><ExternalLink size={17} /></SidebarNavIcon>
+          </SidebarNavItem>
         </SidebarNav>
       </Sidebar>
     )
     expect(wrapper.find(Nav)).toHaveLength(1)
     expect(wrapper.find(NavbarBrand)).toHaveLength(1)
-    expect(wrapper.find(NavbarBrand)).toHaveLength(1)
-    expect(wrapper.find(Navbar)).toHaveLength(1)
-    expect(wrapper.find(NavItem)).toHaveLength(7)
-    expect(wrapper.find(Badge)).toHaveLength(7)
-    expect(wrapper.find(HelpCircle)).toHaveLength(7)
-  }),
-  it('U-TEST-4 - rendering sidebar with icons only', () => {
-    const wrapper = enzyme.mount(
-      <Sidebar>
-      <SidebarBrand href="/">reactstrap</SidebarBrand>
-        <SidebarNav>   
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
-           
-        </SidebarNav>
-      </Sidebar>
-    )
-    expect(wrapper.find(Nav)).toHaveLength(1)
-    expect(wrapper.find(Navbar)).toHaveLength(1)
-    expect(wrapper.find(NavItem)).toHaveLength(7)
-    expect(wrapper.find(Badge)).toHaveLength(7)
-    expect(wrapper.find(HelpCircle)).toHaveLength(7)
+    expect(wrapper.find(NavItem)).toHaveLength(8)
+    expect(wrapper.find(Badge)).toHaveLength(0)
+    expect(wrapper.find(SidebarNavHeader)).toHaveLength(1)
   })
 })

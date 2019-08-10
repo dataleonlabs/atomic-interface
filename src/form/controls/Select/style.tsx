@@ -5,9 +5,9 @@ import CreatableSelect from 'react-select/creatable';
 
 export const StyledSelectBase = styled(SelectBase)`
     * {       
-      border-radius: 0px!important;
+      border-radius: 3px!important;
     }
-  border-radius: 0px!important;
+  border-radius: 3px!important;
   > div:first-child {
       border: 1px solid #dfe3e9;
       border-radius: 0px; 
@@ -22,15 +22,15 @@ export const StyledSelectBase = styled(SelectBase)`
 
   .react-select__control--is-focused, .react-select__control--is-focused:hover {
       border: 1px solid #80bdff;
-      border-radius: 0px!important;
+      border-radius: 3px!important;
   }
 `;
 
 export const StyledCreatableSelect = styled(CreatableSelect)`
     * {       
-      border-radius: 0px!important;
+      border-radius: 3px!important;
     }
-    border-radius: 0px!important;
+    border-radius: 3px!important;
   > div:first-child {
       border: 1px solid #dfe3e9;
       border-radius: 0px; 
@@ -45,6 +45,6 @@ export const StyledCreatableSelect = styled(CreatableSelect)`
   
   .react-select__control--is-focused, .react-select__control--is-focused:hover {
      border: 1px solid #80bdff;
-     border-radius: 0px!important;
+     border-radius: 3px!important;
   }
 `;

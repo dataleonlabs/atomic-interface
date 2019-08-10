@@ -11,4 +11,5 @@ export interface BadgeProps extends BadgePropsBase {
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
     /** Enable pill: pill show when true */
     pill?: boolean;
+    children: string | JSX.Element;
 }

@@ -17,7 +17,7 @@ export interface GlobalStyleProps {
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
   body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif!important;
     background-color: ${(props) => props.theme && props.theme.bodyBackgroundColor};
     font-size: 0.9rem;
 
@@ -36,8 +36,8 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
         outline: 0!important;
     }
 
-    .card, .btn, .form-control, .dropdown-menu, .modal-content, .badge, .progress, .toast {
-        border-radius: 0px!important;
+    .card, .btn, .dropdown-menu, .modal-content, .progress, .toast {
+        border-radius: 3px!important;
     }
 
   }
