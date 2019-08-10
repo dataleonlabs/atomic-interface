@@ -1,15 +1,14 @@
 {
-  "name": "ui-kit",
+  "name": "atomic-interface",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "private": true,
   "scripts": {
     "lint": "./node_modules/.bin/tslint --project ./",
-    "global": "npm install -g commitizen yarn nyc react-scripts-ts",
-    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --verbose --watchAll --env=jsdom",
-    "test:integration": "SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll=false --verbose --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
+    "global": "npm install -g commitizen yarn nyc jest",
+    "test": "jest --verbose --watchAll --env=jsdom",
+    "test:integration": "jest --watchAll=false --verbose --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
+    "build": "rm -rf ./lib && tsc --p tsconfig.prod.json",
     "start": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "release": "standard-version"
@@ -67,7 +66,7 @@
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/faker": "^4.1.5",
-    "@types/jest": "^24.0.16",
+    "@types/jest": "^24.0.17",
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
     "@types/react-beautiful-dnd": "^11.0.2",
@@ -87,15 +86,16 @@
     "cz-conventional-changelog": "^3.0.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
     "faker": "^4.1.0",
     "fork-ts-checker-webpack-plugin": "^1.4.3",
     "husky": "^3.0.2",
+    "jest-css-modules": "^2.1.0",
     "jest-html-reporter": "^2.5.0",
     "postcss-loader": "^3.0.0",
     "react-docgen-typescript": "^1.12.5",
     "react-docgen-typescript-loader": "^3.1.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "react-scripts": "3.0.1",
     "require-context.macro": "^1.1.0",
     "sinon": "^7.3.2",
     "standard-version": "^7.0.0",
@@ -107,19 +107,8 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.3",
-    "url-loader": "^2.1.0"
-  },
-  "jest": {
-    "coverageReporters": [
-      "lcov",
-      "text-summary",
-      "html"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.tsx",
-      "!src/**/*.stories.tsx",
-      "!src/**/*.test.tsx"
-    ]
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.1"
   },
   "config": {
     "commitizen": {

@@ -12,7 +12,7 @@ describe('<Select />', () => {
     ];
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Select
             isClearable
             isMulti
@@ -39,7 +39,7 @@ describe('<Select />', () => {
     ];
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Select
             isClearable
             creatable

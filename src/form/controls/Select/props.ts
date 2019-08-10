@@ -1,10 +1,10 @@
 import { InputProps } from '../Input/props';
 
 /**
-* This component using https://github.com/JedWatson/react-select
-* @example
-*   <Select name={'gender'} label={'Gender'}>
-*/
+ * This component using https://github.com/JedWatson/react-select
+ * @example
+ *   <Select name={'gender'} label={'Gender'}>
+ */
 
 export interface SelectProps extends InputProps {
     /** All props for the react select */

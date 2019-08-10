@@ -32,26 +32,26 @@ describe('<Sidebar />', () => {
     expect(wrapper.find(NavItem)).toHaveLength(7)
     expect(wrapper.find(NavLink)).toHaveLength(7)
     expect(wrapper.find(HelpCircle)).toHaveLength(7)
-    
+
   }),it('U-TEST-2 - rendering sidebar with group', () => {
     const wrapper = enzyme.mount(
       <Sidebar>
       <SidebarBrand href="/">reactstrap</SidebarBrand>
         <SidebarNav>   
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
            
         </SidebarNav>
         <SidebarNavGroup>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
         </SidebarNavGroup>
       </Sidebar>
     )
@@ -69,8 +69,8 @@ describe('<Sidebar />', () => {
       <SidebarBrand href="/">reactstrap</SidebarBrand>
         <SidebarNav>   
             <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
             <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
             <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
             <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
@@ -92,13 +92,13 @@ describe('<Sidebar />', () => {
       <Sidebar>
       <SidebarBrand href="/">reactstrap</SidebarBrand>
         <SidebarNav>   
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
+            <SidebarNavItem link="#"  icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
            
         </SidebarNav>
       </Sidebar>

@@ -14,7 +14,7 @@ storiesOf('Navigation|Sidebar', module)
     <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
       <h4>Sidebar</h4>
       <Sidebar>
-      <SidebarBrand href="/">reactstrap</SidebarBrand>
+      <SidebarBrand href="/">Reactstrap</SidebarBrand>
       <SidebarNav color="faded" light={true} vertical={true}> 
             <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
             <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
@@ -34,7 +34,7 @@ storiesOf('Navigation|Sidebar', module)
     <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
       <h4>Sidebar</h4>
       <Sidebar>
-      <SidebarBrand href="/">reactstrap</SidebarBrand>
+      <SidebarBrand href="/">Reactstrap</SidebarBrand>
       <SidebarNav color="faded" light={true} vertical={true}> 
             <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
             <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
@@ -44,10 +44,10 @@ storiesOf('Navigation|Sidebar', module)
             <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
             <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
             <SidebarNavGroup title="Products">
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
         </SidebarNavGroup>
         </SidebarNav>
         
@@ -62,15 +62,15 @@ storiesOf('Navigation|Sidebar', module)
       <h4>Sidebar</h4>
 
       <Sidebar>
-      <SidebarBrand href="/">reactstrap</SidebarBrand>
+      <SidebarBrand href="/">Reactstrap</SidebarBrand>
         <SidebarNav color="faded" light={true} vertical={true}>   
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" badge="light" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
+            <SidebarNavItem active={true} link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
            
         </SidebarNav>
       </Sidebar>
@@ -83,9 +83,9 @@ storiesOf('Navigation|Sidebar', module)
     <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
       <h4>Sidebar</h4>
       <Sidebar>
-         <SidebarBrand href="/">reactstrap</SidebarBrand>
+         <SidebarBrand href="/">Reactstrap</SidebarBrand>
          <SidebarNav color="faded" light={true} vertical={true}> 
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
+            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
             <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
             <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
             <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>

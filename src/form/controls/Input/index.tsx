@@ -27,19 +27,22 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
 /**
  * Input render element
  */
-const Input = (props: Props) => (
-  <Control {...props}>
-    <Field
-      {...props}
-      id={props.name}
-      bsSize={props.controlSize || 'md'}
-      render={({ field }: FieldProps<{}>) => (
-        <>
-          {wrapperInputGroup(<StyledInputBootstrap placeholder={props.placeholder} {...field} />, props)}
-        </>
-      )}
-    />
-  </Control>
-)
+const Input = (props: Props) => {
+  const renderField = ({ field }: FieldProps<{}>) => (
+    <>
+      {wrapperInputGroup(<StyledInputBootstrap placeholder={props.placeholder} {...field} />, props)}
+    </>
+  );
+  return (
+    <Control {...props}>
+      <Field
+        {...props}
+        id={props.name}
+        bsSize={props.controlSize || 'md'}
+        render={renderField}
+      />
+    </Control>
+  )
+}
 
 export default Input;

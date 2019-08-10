@@ -1,3 +1,7 @@
 
-// Form
-export { default as Form } from './form/index';
+
+// Display
+export { default as Alert } from './display/Alert/index';
+
+// Utils
+export { default as ThemeProvider } from './utils/ThemeProvider';

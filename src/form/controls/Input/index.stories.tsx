@@ -13,7 +13,7 @@ storiesOf('Forms|Input', module)
         <Col sm={4} style={{marginTop: 30, marginLeft: 30 }}>
           <h4>Input</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'}/>
           )}
         </Form>
@@ -24,7 +24,7 @@ storiesOf('Forms|Input', module)
       <Col sm={5} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Input</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <>
             <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
             <Input
@@ -46,7 +46,7 @@ storiesOf('Forms|Input', module)
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Input</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
           )}
         </Form>

@@ -50,7 +50,7 @@ class ThemeProvider extends React.Component {
     }
   }
 
-  render() {
+  public render() {
     const { children, ...theme } = this.props;
     return (
       <ThemeProviderBase theme={theme as any}>

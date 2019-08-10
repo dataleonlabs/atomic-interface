@@ -10,7 +10,7 @@ storiesOf('Forms|Switch', module)
         <Col sm={4} style={{marginTop: 30, marginLeft: 30 }}>
           <h4>Switch</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <Switch name='switch' label="Turn on this custom switch"/>
           )}
         </Form>
@@ -21,7 +21,7 @@ storiesOf('Forms|Switch', module)
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
       <h4>Switch</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <Switch name='switch' label="Can't click this label to turn on!" disabled={true}      
             />
           )}

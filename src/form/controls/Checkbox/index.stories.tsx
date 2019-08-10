@@ -10,7 +10,7 @@ storiesOf('Forms|Checkbox', module)
         <Col sm={4} style={{marginTop: 30, marginLeft: 30 }}>
           <h4>Checkbox</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <>
               <Checkbox name='gender' label={'Check this custom checkbox'}/>
               <Checkbox name='gender2' label={'Or this one'} />
@@ -24,7 +24,7 @@ storiesOf('Forms|Checkbox', module)
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
       <h4>Checkbox</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <>
               <Checkbox name='gender' label={'Check this custom checkbox'} />
               <Checkbox disabled name='gender2' label={'Or this one'} />

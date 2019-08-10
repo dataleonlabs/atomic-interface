@@ -23,8 +23,8 @@ export interface SidebarProps extends NavbarPropsBase {
     /** Disable test or only icon on side bar */
     icon?: boolean 
 
-    // /** children content in Sidebar */
-    // children: JSX.Element | JSX.Element[]
+    /** children content in Sidebar */
+    children: string | JSX.Element | JSX.Element[]
 }
 
 export interface SidebarBrandProps extends NavbarBrandPropsBase {
@@ -42,6 +42,7 @@ export interface SidebarItemProps extends NavItemPropsBase {
 
     /** A function invoked when a tab is clicked by the user */
     onClick?: () => void
+    
     
 }
 export interface SidebarNavLinkProps extends NavLinkPropsBase {

@@ -51,6 +51,36 @@ nav.sidebar
 {
   display: block;
 }
+.sidebar #title
+{
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: bold;
+  color: brown;
+  margin-top: 8px;
+}
+
+.sidebar ul ul li a.badge svg
+{
+  margin-right: 5px;
+  margin-left: 10px;
+
+}
 
 
+.sidebar #itemname
+{
+  marginRight:'5px',
+  float:'right',
+}
+// remove and keep in stories
+.sidebar ul ul li a.badge
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100px;
+  text-align: left;
+  
+}
+ 
 `;

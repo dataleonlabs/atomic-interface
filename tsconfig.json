@@ -1,18 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
+    "outDir": "./lib",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "module": "esnext",
+    "pretty": true,
     "skipLibCheck": true,
+    "sourceMap": true,
+    "sourceRoot": "src",
+    "allowJs": true,
     "esModuleInterop": true,
+    "noFallthroughCasesInSwitch": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "noUnusedParameters": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noImplicitAny": true,
@@ -20,15 +26,16 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "experimentalDecorators": true,
-    "jsx": "preserve",
-    "rootDirs": [
-      "src",
-      "stories"
-    ],
-    "noEmit": true,
-    "isolatedModules": true
+    "jsx": "react",
+    "rootDirs": ["src"]
   },
   "include": [
-    "src"
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.stories.tsx",
+    "src/**/*.test.tsx",
+    "src/setupTests.ts"
   ]
 }

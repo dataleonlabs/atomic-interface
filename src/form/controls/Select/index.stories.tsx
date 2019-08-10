@@ -16,7 +16,7 @@ storiesOf('Forms|Select', module)
         <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
           <h4>Select</h4>
           <Form>
-            {(props) => (
+            {(_) => (
               <Select
                 isClearable
                 creatable
@@ -59,7 +59,7 @@ storiesOf('Forms|Select', module)
         <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
           <h4>Select</h4>
           <Form>
-            {(props) => (
+            {(_) => (
               <Select
                 isClearable
                 creatable

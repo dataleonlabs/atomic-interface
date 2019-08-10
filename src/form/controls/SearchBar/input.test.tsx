@@ -9,7 +9,7 @@ describe('<SearchBar />', () => {
   it('U-TEST-1 - test SearchBar render with addon', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <SearchBar
             name={'email'}
             placeholder={'search'}

@@ -13,14 +13,14 @@ const localStorageMock = (() => {
   let store = {}
 
   return {
+    clear: () => {
+      store = {}
+    },
     getItem: (key: string) => {
       return store[key] || null
     },
     setItem: (key: string, value: string) => {
       store[key] = value.toString()
-    },
-    clear: () => {
-      store = {}
     },
   }
 })()
@@ -31,9 +31,9 @@ Object.defineProperty(window, 'localStorage', {
 
 const createRangeMock = () => {
   return {
+    getBoundingClientRect: jest.fn(),
     setEnd: jest.fn(),
     setStart: jest.fn(),
-    getBoundingClientRect: jest.fn(),
   }
 }
 

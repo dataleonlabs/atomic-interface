@@ -7,7 +7,7 @@ describe('<FilePicker />', () => {
   it('U-TEST-1 - test filepicker render with d  disabled', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <FilePicker
             name={'image'}
             label={'Picture'}
@@ -26,7 +26,7 @@ describe('<FilePicker />', () => {
     document.body.appendChild(div);
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <FilePicker
             name={'image'}
             label={'Picture'}

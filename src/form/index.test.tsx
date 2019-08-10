@@ -11,7 +11,7 @@ describe('<Form />', () => {
   it('U-TEST-1 - testarea render with max rows', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Textarea name='text' maxRows={20} />
         )}
       </Form>
@@ -25,7 +25,7 @@ describe('<Form />', () => {
   it('U-TEST-2 - testarea with label', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Textarea name='text' maxRows={20} label={'text'} />
         )}
       </Form>
@@ -39,7 +39,7 @@ describe('<Form />', () => {
   it('U-TEST-3 - multiple fields', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <>
             <Input name='text' maxRows={20} />
             <Textarea name='text' maxRows={20} label={'text'} />

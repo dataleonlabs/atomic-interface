@@ -10,7 +10,7 @@ const SidebarNavGroup = (props: Props) => {
 
   return (
       <div>
-          <h2>{props.title}</h2>
+          <h2 id="title">{props.title}</h2>
           <ListGroup  {...props}>
             {props.children}
          </ListGroup>

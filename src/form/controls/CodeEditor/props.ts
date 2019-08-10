@@ -1,10 +1,10 @@
 import { InputProps } from '../Input/props';
 
 /**
-* This component using https://github.com/microsoft/monaco-editor
-* @example
-*   <CodeEditor name={'function'} label={'Function code'}>
-*/
+ * This component using https://github.com/microsoft/monaco-editor
+ * @example
+ *   <CodeEditor name={'function'} label={'Function code'}>
+ */
 
 export type Mode =
     | 'javascript'

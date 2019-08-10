@@ -11,7 +11,7 @@ const SidebarNavGroupItem = (props: Props) => {
 
   return (
     <StyledListGroupItem>
-    <ListGroupItem  {...props}>
+    <ListGroupItem  {...props} className="SideBarGroup">
         {props.children}
     </ListGroupItem>
     </StyledListGroupItem>

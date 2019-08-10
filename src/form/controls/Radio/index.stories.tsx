@@ -10,7 +10,7 @@ storiesOf('Forms|Radio', module)
         <Col sm={4} style={{marginTop: 30, marginLeft: 30 }}>
           <h4>Radio</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <Radio name='radio' label="Radio Button"
           />
           )}
@@ -22,7 +22,7 @@ storiesOf('Forms|Radio', module)
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
       <h4>Radio</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <Radio
               name='radio'
               label="Radio Button"

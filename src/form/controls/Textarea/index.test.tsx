@@ -9,7 +9,7 @@ describe('<Textarea />', () => {
   it('U-TEST-1 - testarea render with max rows', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Textarea name='text' required={true} help="text help" />
         )}
       </Form>
@@ -22,7 +22,7 @@ describe('<Textarea />', () => {
   it('U-TEST-2 - testarea with label', () => {
     const wrapper = enzyme.mount(
       <Form>
-        {(props) => (
+        {(_) => (
           <Textarea name='text' maxRows={20} label={'text'} />
         )}
       </Form>

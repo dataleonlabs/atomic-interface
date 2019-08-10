@@ -9,7 +9,7 @@ storiesOf('Forms|Textarea', module)
       <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Textarea</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <Textarea placeholder={'Example content with Textarea'} name='text' />
           )}
         </Form>
@@ -20,7 +20,7 @@ storiesOf('Forms|Textarea', module)
       <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Textarea</h4>
         <Form>
-          {(props) => (
+          {(_) => (
             <Textarea placeholder={'Example maxRows 10'} name='text' maxRows={10} />
           )}
         </Form>
