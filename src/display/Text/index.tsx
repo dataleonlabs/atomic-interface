@@ -110,9 +110,10 @@ export default class Text extends React.Component<Props> {
   public render() {
     const TextStyle: React.ReactType = this.props.textStyle === 'help' ? FormText : Label;
     const id = `${makeId()}`;
+  
     return (
       <>
-        <TextStyle id={id}>
+        <TextStyle id={id} {...this.props}>
           {getText(this.props)}
         </TextStyle>
 
