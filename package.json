@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lint": "./node_modules/.bin/tslint --project ./",
-    "global": "npm install -g commitizen yarn nyc jest",
+    "global": "npm install -g commitizen yarn nyc jest husky",
     "test": "jest --verbose --watchAll --env=jsdom",
     "test:integration": "jest --watchAll=false --verbose --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
     "build": "rm -rf ./lib && tsc --p tsconfig.prod.json",
