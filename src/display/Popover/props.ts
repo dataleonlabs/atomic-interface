@@ -1,16 +1,16 @@
-import { PopoverProps as PopoverPropsBase } from "reactstrap";
+import {  UncontrolledPopoverProps as UncontrolledPopoverPropsBase, } from "reactstrap";
 
 /**
-* This component Using bootstrap lib https://reactstrap.github.io/components/popovers/
-* @example
-* <Popover placement="right" target="Popover1" header={'text header'}>
-*   Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-* </Popover>
-*/
+ * This component Using bootstrap lib https://reactstrap.github.io/components/popovers/
+ * @example
+ * <Popover placement="right" target="Popover1" header={'text header'}>
+ *   Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+ * </Popover>
+ */
 
-export interface PopoverProps extends PopoverPropsBase {
+export interface PopoverProps extends UncontrolledPopoverPropsBase {
 
     /** Content in header, disable when is undefined */
-    header?: string | JSX.Element
+    header?: string | JSX.Element,
 }
 

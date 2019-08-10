@@ -6,7 +6,7 @@ import { FormikConfig } from 'formik';
  * This component using formik lib https://jaredpalmer.com/formik/docs/api/formik
  * @example
  * <Form>
- *   {(props) => (
+ *   {(_) => (
  *     <Email name="email" placeholder="Email" />
  *     <Password name="password" placeholder="Email" />
  *     <Buttom>Submit</Buttom>

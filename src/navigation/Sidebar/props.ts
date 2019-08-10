@@ -6,6 +6,7 @@ import {
 } from "reactstrap";
 
 /**
+ * This component must use https://reactstrap.github.io/components/navs/ with vertical
  * @example
  *    <Sidebar expand={false}>
  *       <SidebarBrand>reactstrap</SidebarBrand>
@@ -20,6 +21,9 @@ import {
 export interface SidebarProps extends NavbarPropsBase {
     /** Disable test or only icon on side bar */
     icon?: boolean 
+
+    /** children content in Sidebar */
+    children: string | JSX.Element | JSX.Element[]
 }
 
 export interface SidebarBrandProps extends NavbarBrandPropsBase {

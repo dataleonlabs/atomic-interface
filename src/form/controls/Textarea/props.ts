@@ -1,10 +1,10 @@
 import { InputProps } from '../Input/props';
 
 /**
-* This component using https://github.com/buildo/react-autosize-textarea
-* @example
-*   <Textarea name={'firstName'} label={'First Name'}>
-*/
+ * This component using https://github.com/buildo/react-autosize-textarea
+ * @example
+ *   <Textarea name={'firstName'} label={'First Name'}>
+ */
 
 export interface TextareaProps extends InputProps {
 

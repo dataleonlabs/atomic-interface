@@ -1,10 +1,10 @@
 import { InputProps as InputPropsBase } from 'reactstrap';
 
 /**
-* This component using bootstrap lib https://reactstrap.github.io/components/form/
-* @example
-*   <Input name={'firstName'} label={'First Name'}>
-*/
+ * This component using bootstrap lib https://reactstrap.github.io/components/form/
+ * @example
+ *   <Input name={'firstName'} label={'First Name'}>
+ */
 
 export interface InputProps extends InputPropsBase {
   name: string

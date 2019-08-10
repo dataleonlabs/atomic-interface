@@ -7,7 +7,7 @@ import React from 'react';
 const Typography = () => (
     <div style={{ height: '100%', margin: '5%' }}>
         <div style={{ height: '80%', padding: '2%' }}>
-            <p>Typography</p>
+            <h1>Typography</h1>
             <hr />
         </div>
         <div style={{ padding: '2%' }}>
@@ -70,7 +70,7 @@ const Typography = () => (
                 <div style={{ float: 'left' }}>
                     <h1>H1/Rubick regular</h1></div>
                 <div style={{ marginTop: '2%', float: 'right', paddingRight: '5%' }}>
-                    <font size='30px'>30px</font>
+                    40px
                 </div>
                 <div style={{ clear: 'both'  }} ></div>
             </div>

@@ -2,12 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Typography from './typography'
 
-storiesOf('Utils', module)
-  .add('Example', () => (
+storiesOf('Get started|Typography', module)
+  .add('Typography', () => (
     <React.Fragment>
-   
-        <Typography />
-         
-     
+      <Typography />
     </React.Fragment>
  ));
