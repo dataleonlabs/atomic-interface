@@ -1,17 +1,15 @@
 import { 
-    NavbarBrandProps as NavbarBrandPropsBase,
     NavProps as NavPropsBase,
     NavItemProps as NavItemPropsBase,
-    NavbarProps as NavbarPropsBase    
+    NavbarProps as NavbarPropsBase
 } from "reactstrap";
-import { ReactNode } from "react";
 
 /**
  * Tihs component use bootstrap: documentation https://reactstrap.github.io/components/navbar/
  * @example
  *    <Navbar color="light" light expand="md">
  *       <NavbarBrand href="/">reactstrap</NavbarBrand>
- *       <Nav className="ml-auto" navbar>
+ *       <Nav className="ml-auto">
  *         <NavItem>Components</NavItem>
  *         <NavItem>GitHub</NavItem>
  *       </Nav>
@@ -19,41 +17,39 @@ import { ReactNode } from "react";
  */
 
 export interface NavbarProps extends NavbarPropsBase {
-    children?: ReactNode
+    /** Children */
+    children: NavItemProps
 }
 
-export interface NavbarBrandProps extends NavbarBrandPropsBase {    
-    linkURL?: any;
-    children?: ReactNode
+export interface NavbarBrandProps {
+
+    className?: string;
+    href?: string;
+
+    /** trigger on click */ 
+    onClick?: React.MouseEventHandler<any>;
+
+    /** Children */
+    children: string | JSX.Element | Element
 }
 
 export interface NavProps extends NavPropsBase {
-    /* add children */
-    children?: ReactNode
-}
 
-export interface NavLinkProps {        
-    linkURL?: any;
-
-    /* add children */
-    children?: ReactNode
-}
-
-export interface CollapseProps {
-    /* add children */
-    children?: ReactNode
-    isOpen?:boolean;
-    id?:any;
-}
-
-export interface NavbarTogglerProps {    
-    /** A function invoked when a tab is clicked by the user */
-    onClick?: () => void;    
-    className?:any;
 }
 
 export interface NavItemProps extends NavItemPropsBase {
-    /* add children */
-    children?: ReactNode
+
 }
 
+export interface NavLinkProps {        
+    tag?: React.ReactType;
+    innerRef?: React.Ref<HTMLAnchorElement>;
+    disabled?: boolean;
+    active?: boolean;
+    className?: string;
+    onClick?: React.MouseEventHandler<any>;
+    href?: string;
+    
+    /** Children */
+    children: string | JSX.Element | Element
+}

@@ -1,79 +1,117 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import NavbarBase from './index'
-import NavBase from './NavBase'
-import NavItemBase from './NavItemBase'
-import NavbarBrandBase from './NavbarBrandBase'
-import NavLinkBase from './NavLinkBase'
-import NavbarTogglerBase from './NavbarTogglerBase'
-import CollapseBase from './CollapseBase'
+import Navbar from './index'
+import Nav from './Nav'
+import NavItem from './NavItem'
+import NavbarBrand from './NavbarBrand'
+import NavLink from './NavLink'
 import Form from './../../form/index'
-import Input from './../../form/controls/Input/index'
+import Breadcrumb from '../Breadcumb';
+import BreadcrumbItem from '../Breadcumb/BreadcrumbItem';
+import Button from '../../form/controls/Button';
+import { User, Save, Users } from 'react-feather';
+import SearchBar from '../../form/controls/SearchBar';
 
 
 storiesOf('Navigation|Navbar', module)
-  .add('Test navbar render', () => (    
+  .add('Example', () => (
     <React.Fragment>
-      <NavbarBase>
-        <NavBase className="ml-auto" navbar>
-          <NavItemBase>
-            <NavLinkBase linkURL={"http://yahoo.com"}>Yahoo</NavLinkBase>
-          </NavItemBase>
-          <NavItemBase>
-            <NavLinkBase linkURL={"http://google.com"}>Google</NavLinkBase>
-          </NavItemBase>
-        </NavBase>
-      </NavbarBase>
+      <Navbar>
+        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+        <Nav>
+          <NavItem>
+            <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href={"http://google.com"}>Google</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
     </React.Fragment>
-  )).add('Test navbar With brand', () => (    
+  )).add('With breadcrumb loading', () => (
     <React.Fragment>
-      <NavbarBase>                          
-        <NavbarBrandBase linkURL={"http://google.com"}>Google</NavbarBrandBase>
-        <NavBase className="ml-auto" navbar>
-          <NavItemBase>
-            <NavLinkBase linkURL={"http://yahoo.com"}>Yahoo</NavLinkBase>
-          </NavItemBase>
-          <NavItemBase>
-            <NavLinkBase linkURL={"http://google.com"}>Google</NavLinkBase>
-          </NavItemBase>
-        </NavBase>
-      </NavbarBase>
+      <Navbar>
+        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+        <Breadcrumb loading={true}>
+          <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+          <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+        </Breadcrumb>
+        <Nav>
+          <NavItem>
+            <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href={"http://google.com"}>Google</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
     </React.Fragment>
-  )).add('Test Navbar With icons rights', () => (        
+  )).add('With bredcrumb', () => (
     <React.Fragment>
-      <NavbarBase>                          
-      <NavbarBrandBase linkURL={"http://google.com"}>Google</NavbarBrandBase>
-      <NavbarTogglerBase className="mr-2" />
-      <CollapseBase id={"colTest"} isOpen={false}>
-        <NavBase className="ml-auto" navbar>
-          <NavItemBase>
-            <NavLinkBase linkURL={"http://yahoo.com"}>Yahoo</NavLinkBase>
-          </NavItemBase>
-          <NavItemBase>
-            <NavLinkBase linkURL={"http://google.com"}>Google</NavLinkBase>
-          </NavItemBase>
-        </NavBase>
-      </CollapseBase>
-    </NavbarBase>
+      <Navbar>
+        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+        <Breadcrumb>
+          <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+          <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+        </Breadcrumb>
+        <Nav>
+          <NavItem>
+            <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href={"http://google.com"}>Google</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
+    </React.Fragment>
+  )).add('With buttons rights', () => (
+    <React.Fragment>
+      <Navbar>
+        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+        <Breadcrumb>
+          <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+          <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+        </Breadcrumb>
+        <Nav>
+          <NavItem>
+            <Button icon={<User size={18} />} color="primary">Add user</Button>
+          </NavItem>
+          <NavItem>
+            <Button icon={<Save size={18} />} color="warning">Save</Button>
+          </NavItem>
+        </Nav>
+      </Navbar>
     </React.Fragment>
   )).add('Test Navbar With search bar', () => (
     <React.Fragment>
-      <NavbarBase>                          
-      <NavbarBrandBase linkURL={"http://google.com"}>Google</NavbarBrandBase>            
-      <NavBase className="ml-auto" navbar>
-        <NavItemBase>
-          <NavLinkBase linkURL={"http://yahoo.com"}>Yahoo</NavLinkBase>
-        </NavItemBase>
-        <NavItemBase>
-          <NavLinkBase linkURL={"http://google.com"}>Google</NavLinkBase>
-        </NavItemBase>
-      </NavBase>
-      <Form>
-          {(props) => (
-            <Input name={'search'} placeholder={'Enter Keyword'} />
-          )}
-        </Form>      
-    </NavbarBase>
+      <Navbar>
+        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+        <div style={{ width: '100%' }}>
+          <Form>
+            {(props) => (
+              <SearchBar
+                navBar={true}
+                name={'search'}
+                width={500}
+                placeholder={'Enter keyword search all products in catalog'}
+              />
+            )}
+          </Form>
+        </div>
+        <Nav>
+          <NavItem>
+            <NavLink><Users size={24} /></NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href={"http://google.com"}>Google</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
     </React.Fragment>
   ));
-  

@@ -15,7 +15,7 @@ function withGlobalStyles(storyFn) {
 }
 
 configure(() => {
-  req.keys().sort().forEach(filename => req(filename));
+  req.keys().forEach(filename => req(filename));
 }, module);
 
 addDecorator(withGlobalStyles);

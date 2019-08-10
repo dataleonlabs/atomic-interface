@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as enzyme from 'enzyme'
 import Breadcrumb from './index';
 import BreadcrumbItem from './BreadcrumbItem';
-import { BreadcrumbItem as BreadcrumbItemBase } from 'reactstrap';
+import { Breadcrumb as BreadcrumbBase, BreadcrumbItem as BreadcrumbItemBase } from 'reactstrap';
 import Loader from './loader';
 
 describe('<Breadcrumb />', () => {
@@ -40,7 +40,7 @@ describe('<Breadcrumb />', () => {
         <BreadcrumbItem active={true}>Breadcrumb</BreadcrumbItem>
       </Breadcrumb>
     )
-    expect(wrapper.find(Breadcrumb)).toHaveLength(0)
+    expect(wrapper.find(BreadcrumbBase)).toHaveLength(0)
     expect(wrapper.find(BreadcrumbItem)).toHaveLength(0)
     expect(wrapper.find(Loader)).toHaveLength(1)
   })

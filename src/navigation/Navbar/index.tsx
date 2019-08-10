@@ -1,19 +1,18 @@
 import React from 'react';
-import { Navbar} from 'reactstrap';
-import { NavbarProps as navbarProps } from './props';
+import { NavbarProps as Props } from './props';
+import { StyledNavbar } from './style';
 
 /**
  * NavBar render element
  */
-const NavbarBase = (props: navbarProps) => (  
-    <>
-    <div>
-    <Navbar>
-        {props.children}
-    </Navbar>
-    </div>
-    </>
-)
+const Navbar = (props: Props) => {
+  
+  return (
+    <StyledNavbar {...props} color="light" light={true} expand="md">
+      {props.children}
+    </StyledNavbar>
+  )
+}
 
-export default NavbarBase;
+export default Navbar;
 

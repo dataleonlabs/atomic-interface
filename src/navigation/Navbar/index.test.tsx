@@ -1,108 +1,101 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme'
-import NavbarBase from './index'
-import NavBase from './NavBase'
-import NavItemBase from './NavItemBase'
-import NavbarBrandBase from './NavbarBrandBase'
-import NavLinkBase from './NavLinkBase'
-import NavbarTogglerBase from './NavbarTogglerBase'
-import CollapseBase from './CollapseBase'
+import Navbar from './index'
+import Nav from './Nav'
+import NavItem from './NavItem'
+import NavbarBrand from './NavbarBrand'
+import NavLink from './NavLink'
 import Form from './../../form/index'
 import Input from './../../form/controls/Input/index'
-import {InputGroup, NavLink ,NavItem, Collapse, NavbarToggler, Navbar, Nav, NavbarBrand } from 'reactstrap';
+import { InputGroup, NavLink as NavLinkBase, NavItem as NavItemBase, Navbar as NavbarBase, Nav as NavBase, NavbarBrand as NavbarBrandBase } from 'reactstrap';
 
 describe('<NavBar />', () => {
   it('U-TEST-1 - test Navbar render', () => {
     const wrapper = enzyme.mount(
-      <NavbarBase>
-      <NavBase className="ml-auto" navbar>
-        <NavItemBase>
-          <NavLinkBase linkURL={"http://yahoo.com"}>Yahoo</NavLinkBase>
-        </NavItemBase>
-        <NavItemBase>
-          <NavLinkBase linkURL={"http://google.com"}>Google</NavLinkBase>
-        </NavItemBase>
-      </NavBase>
-    </NavbarBase>
+      <Navbar>
+        <Nav>
+          <NavItem>
+            <NavLink href="http://yahoo.com">Yahoo</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="http://google.com">Google</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
     )
-    expect(wrapper.find(Navbar)).toHaveLength(1);    
+    expect(wrapper.find(Navbar)).toHaveLength(1);
     expect(wrapper.find(Nav)).toHaveLength(1);
-    expect(wrapper.find(NavItem)).toHaveLength(2);    
-    expect(wrapper.find(NavLink)).toHaveLength(2);    
-  })  
+    expect(wrapper.find(NavItem)).toHaveLength(2);
+    expect(wrapper.find(NavLinkBase)).toHaveLength(2);
+  })
 })
 
 
 it('U-TEST-2 - test Navbar with NavbarBrand render', () => {
   const wrapper = enzyme.mount(
-    <NavbarBase>
-      <NavbarBrandBase linkURL={"http://google.com"}>Google</NavbarBrandBase>
-      <NavBase className="ml-auto" navbar>
-        <NavItemBase>
-          <NavLinkBase linkURL={"http://yahoo.com"}>Yahoo</NavLinkBase>
-        </NavItemBase>
-        <NavItemBase>
-          <NavLinkBase linkURL={"http://google.com"}>Google</NavLinkBase>
-        </NavItemBase>
-      </NavBase>
-    </NavbarBase>
+    <Navbar>
+      <NavbarBrand href="http://google.com">Google</NavbarBrand>
+      <Nav>
+        <NavItem>
+          <NavLink href="http://yahoo.com">Yahoo</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="http://google.com">Google</NavLink>
+        </NavItem>
+      </Nav>
+    </Navbar>
   )
-  expect(wrapper.find(NavbarBrand)).toHaveLength(1);
-  expect(wrapper.find(Navbar)).toHaveLength(1);
+  expect(wrapper.find(NavbarBrandBase)).toHaveLength(1);
+  expect(wrapper.find(NavbarBase)).toHaveLength(1);
   expect(wrapper.find(Nav)).toHaveLength(1);
-  expect(wrapper.find(NavItem)).toHaveLength(2);
+  expect(wrapper.find(NavItemBase)).toHaveLength(2);
   expect(wrapper.find(NavLink)).toHaveLength(2);
 })
 
 it('U-TEST-3 - Test navbar rendering with icons rights', () => {
   const wrapper = enzyme.mount(
-    <NavbarBase>
-      <NavbarBrandBase linkURL={"http://google.com"}>Google</NavbarBrandBase>
-      <NavbarTogglerBase className="mr-2" />
-      <CollapseBase>
-        <NavBase className="ml-auto" navbar>
-          <NavItemBase>
-            <NavLinkBase linkURL={"http://yahoo.com"}>Yahoo</NavLinkBase>
-          </NavItemBase>
-          <NavItemBase>
-            <NavLinkBase linkURL={"http://google.com"}>Google</NavLinkBase>
-          </NavItemBase>
-        </NavBase>
-      </CollapseBase>
-    </NavbarBase>
+    <Navbar>
+      <NavbarBrand href="http://google.com">Google</NavbarBrand>
+        <Nav>
+          <NavItem>
+            <NavLink href="http://yahoo.com">Yahoo</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="http://google.com">Google</NavLink>
+          </NavItem>
+        </Nav>
+    </Navbar>
   )
   expect(wrapper.find(NavbarBrand)).toHaveLength(1);
   expect(wrapper.find(Navbar)).toHaveLength(1);
   expect(wrapper.find(Nav)).toHaveLength(1);
   expect(wrapper.find(NavItem)).toHaveLength(2);
   expect(wrapper.find(NavLink)).toHaveLength(2);
-  expect(wrapper.find(NavbarToggler)).toHaveLength(1);
-  expect(wrapper.find(Collapse)).toHaveLength(1);
 })
 
 it('U-TEST-4 - Test navbar rendering with search bar', () => {
   const wrapper = enzyme.mount(
-    <NavbarBase>
-      <NavbarBrandBase linkURL={"http://google.com"}>Google</NavbarBrandBase>      
-      <NavBase className="ml-auto" navbar>
-        <NavItemBase>
-          <NavLinkBase linkURL={"http://yahoo.com"}>Yahoo</NavLinkBase>
-        </NavItemBase>
-        <NavItemBase>
-          <NavLinkBase linkURL={"http://google.com"}>Google</NavLinkBase>
-        </NavItemBase>
-      </NavBase>
+    <Navbar>
+      <NavbarBrand href="http://google.com">Google</NavbarBrand>
+      <Nav>
+        <NavItem>
+          <NavLink href="http://yahoo.com">Yahoo</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="http://google.com">Google</NavLink>
+        </NavItem>
+      </Nav>
       <Form>
-        {(props) => (
+        {(_) => (
           <Input name={'search'} />
         )}
       </Form>
-    </NavbarBase>
+    </Navbar>
   )
   expect(wrapper.find(NavbarBrand)).toHaveLength(1);
   expect(wrapper.find(Navbar)).toHaveLength(1);
-  expect(wrapper.find(Nav)).toHaveLength(1);
+  expect(wrapper.find(NavBase)).toHaveLength(1);
   expect(wrapper.find(NavItem)).toHaveLength(2);
-  expect(wrapper.find(NavLink)).toHaveLength(2);    
+  expect(wrapper.find(NavLink)).toHaveLength(2);
   expect(wrapper.find(InputGroup)).toHaveLength(0);
 })
