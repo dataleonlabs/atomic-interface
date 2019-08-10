@@ -8,4 +8,9 @@ import { InputProps } from '../Input/props';
 
 export interface SearchBarProps extends InputProps {
 
+    /** If for Navbar */
+    navBar?: boolean
+
+    /** Disable close icon */
+    closeIcon?: boolean
 }

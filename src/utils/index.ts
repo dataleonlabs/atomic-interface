@@ -1,5 +1,3 @@
- import makeId from './makeId';
 
- export {
-   makeId
- }
+export { default as makeId } from './makeId';
+export { default as ThemeProvider } from './ThemeProvider';

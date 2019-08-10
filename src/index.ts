@@ -1,5 +1,4 @@
 
-
 // Display
 export { default as Alert } from './display/Alert';
 export { default as Badge } from './display/Badge';
@@ -31,6 +30,16 @@ export { default as Select } from './form/controls/Select';
 export { default as Switch } from './form/controls/Switch';
 export { default as Textarea } from './form/controls/Textarea';
 
+// Navigation
+export { default as Breadcumb } from './navigation/Breadcumb';
+export { default as BreadcrumbItem } from './navigation/Breadcumb/BreadcrumbItem';
+
+export { default as Navbar } from './navigation/Navbar';
+export { default as NavbarBrand } from './navigation/Navbar/';
+export { default as Nav } from './navigation/Navbar/Nav';
+export { default as NavItem } from './navigation/Navbar/NavItem';
+export { default as NavLink } from './navigation/Navbar/NavLink';
 
 // Utils
-export { default as ThemeProvider } from './utils/ThemeProvider';
+export { ThemeProvider } from './utils';
+export { makeId } from './utils';

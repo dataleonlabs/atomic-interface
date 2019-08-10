@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
         outline: 0!important;
     }
 
-    .card, .btn, .form-control, .dropdown-menu, .modal-content, .badge, .progress, .toast {
+    .card, .btn, .dropdown-menu, .modal-content, .badge, .progress, .toast {
         border-radius: 3px!important;
     }
 

@@ -14,6 +14,6 @@ export interface BreadcrumbItemProps extends BreadcrumbItemPropsBase {
 }
 
 export interface BreadcrumbProps extends BreadcrumbPropsBase {
-
+    loading?: boolean
 }
 
