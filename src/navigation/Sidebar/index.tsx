@@ -1,6 +1,7 @@
 import React from 'react';
 import { SidebarProps as Props } from './props';
 import { Navbar } from 'reactstrap';
+import {StyledSidebarNav} from './styles'
 
 /**
  * Sidebar render element
@@ -9,9 +10,11 @@ import { Navbar } from 'reactstrap';
 const Sidebar = (props: Props) => {
 
   return (
-    <Navbar {...props}>
+    <StyledSidebarNav>
+    <Navbar className="sidebar" {...props}>
         {props.children}
     </Navbar>
+    </StyledSidebarNav>
   )
 }
 

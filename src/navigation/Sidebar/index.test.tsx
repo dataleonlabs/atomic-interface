@@ -32,6 +32,7 @@ describe('<Sidebar />', () => {
     expect(wrapper.find(NavItem)).toHaveLength(7)
     expect(wrapper.find(NavLink)).toHaveLength(7)
     expect(wrapper.find(HelpCircle)).toHaveLength(7)
+    
   }),it('U-TEST-2 - rendering sidebar with group', () => {
     const wrapper = enzyme.mount(
       <Sidebar>
