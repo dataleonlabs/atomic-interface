@@ -22,5 +22,8 @@ export interface BadgeProps extends BadgePropsBase {
 
    /** Enable pill: pill show when true */
    pill?: boolean
+
+   // Children 
+   children: string | JSX.Element
 }
 
