@@ -10,6 +10,7 @@ border-radius: 0px!important;
     border: 1px solid rgba(0,0,0,.1);
   }
 `;
+
 export const StyledNavLink = styled(NavLink)`
 
   ul.nav-link.active {
@@ -51,36 +52,7 @@ nav.sidebar
 {
   display: block;
 }
-.sidebar #title
-{
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: bold;
-  color: brown;
-  margin-top: 8px;
-}
-
-.sidebar ul ul li a.badge svg
-{
-  margin-right: 5px;
-  margin-left: 10px;
-
-}
 
 
-.sidebar #itemname
-{
-  marginRight:'5px',
-  float:'right',
-}
-// remove and keep in stories
-.sidebar ul ul li a.badge
-{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 100px;
-  text-align: left;
-  
-}
  
 `;

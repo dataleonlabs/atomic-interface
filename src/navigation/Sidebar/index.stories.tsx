@@ -16,13 +16,13 @@ storiesOf('Navigation|Sidebar', module)
       <Sidebar>
       <SidebarBrand href="/">Reactstrap</SidebarBrand>
       <SidebarNav color="faded" light={true} vertical={true}> 
-            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
+            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={18}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Stocks</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Link</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>UI-Kit</SidebarNavItem>
         </SidebarNav>
       </Sidebar>
         
@@ -36,18 +36,18 @@ storiesOf('Navigation|Sidebar', module)
       <Sidebar>
       <SidebarBrand href="/">Reactstrap</SidebarBrand>
       <SidebarNav color="faded" light={true} vertical={true}> 
-            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
+            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={18}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Stocks</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Link</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>UI-Kit</SidebarNavItem>
             <SidebarNavGroup title="Products">
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}>Payments</SidebarNavItem>
         </SidebarNavGroup>
         </SidebarNav>
         
@@ -64,13 +64,13 @@ storiesOf('Navigation|Sidebar', module)
       <Sidebar>
       <SidebarBrand href="/">Reactstrap</SidebarBrand>
         <SidebarNav color="faded" light={true} vertical={true}>   
-            <SidebarNavItem active={true} link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Dashboard</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Transaction</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Products</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Payments</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Stocks</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>Link</SidebarNavItem>
-            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={12}/>}>UI-Kit</SidebarNavItem>
+            <SidebarNavItem active={true} link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Dashboard</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Transaction</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Products</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Payments</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Stocks</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>Link</SidebarNavItem>
+            <SidebarNavItem link="#" badge="secondary" icon={ <HelpCircle color="red" size={18}/>}>UI-Kit</SidebarNavItem>
            
         </SidebarNav>
       </Sidebar>
@@ -85,13 +85,13 @@ storiesOf('Navigation|Sidebar', module)
       <Sidebar>
          <SidebarBrand href="/">Reactstrap</SidebarBrand>
          <SidebarNav color="faded" light={true} vertical={true}> 
-            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
-            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={12}/>}></SidebarNavItem>
+            <SidebarNavItem active={true} link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
+            <SidebarNavItem link="#" icon={ <HelpCircle color="red" size={18}/>}></SidebarNavItem>
         </SidebarNav>
       </Sidebar>
         
