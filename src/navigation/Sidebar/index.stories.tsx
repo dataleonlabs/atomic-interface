@@ -1,136 +1,136 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Sidebar from './index'
-import SidebarNav from './SidebarNav'
-import SidebarNavItem from './SidebarNavItem'
+import Nav from './Nav'
+import NavItem from './NavItem'
 import { HelpCircle, Database, Grid, Folder, GitMerge, Eye, Watch, Linkedin, ExternalLink } from 'react-feather';
-import SidebarBrand from './SidebarBrand';
-import SidebarNavHeader from './SidebarNavHeader';
-import SidebarNavIcon from './SidebarNavIcon';
-import SidebarNavText from './SidebarNavText';
+import Brand from './Brand';
+import NavHeader from './NavHeader';
+import NavIcon from './NavIcon';
+import NavText from './NavText';
 import Badge from '../../display/Badge';
 
 storiesOf('Navigation|Sidebar', module)
   .add('Example', () => (
     <Sidebar>
-      <SidebarBrand>Atomic Interface</SidebarBrand>
-      <SidebarNav>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Database size={23} /></SidebarNavIcon>
-          <SidebarNavText>Dashboard</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Grid size={23} /></SidebarNavIcon>
-          <SidebarNavText>Transaction</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem active>
-          <SidebarNavIcon type="left"><Folder size={23} /></SidebarNavIcon>
-          <SidebarNavText>Products</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><GitMerge size={23} /></SidebarNavIcon>
-          <SidebarNavText>Payments</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavHeader>Catalogs</SidebarNavHeader>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Eye size={23} /></SidebarNavIcon>
-          <SidebarNavText>Stocks</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Watch size={23} /></SidebarNavIcon>
-          <SidebarNavText>Link</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Linkedin size={23} /></SidebarNavIcon>
-          <SidebarNavText>UI-Kit</SidebarNavText>
-        </SidebarNavItem>
-      </SidebarNav>
+      <Brand>Atomic Interface</Brand>
+      <Nav>
+        <NavItem>
+          <NavIcon type="left"><Database size={23} /></NavIcon>
+          <NavText>Dashboard</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Grid size={23} /></NavIcon>
+          <NavText>Transaction</NavText>
+        </NavItem>
+        <NavItem active>
+          <NavIcon type="left"><Folder size={23} /></NavIcon>
+          <NavText>Products</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><GitMerge size={23} /></NavIcon>
+          <NavText>Payments</NavText>
+        </NavItem>
+        <NavHeader>Catalogs</NavHeader>
+        <NavItem>
+          <NavIcon type="left"><Eye size={23} /></NavIcon>
+          <NavText>Stocks</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Watch size={23} /></NavIcon>
+          <NavText>Link</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Linkedin size={23} /></NavIcon>
+          <NavText>UI-Kit</NavText>
+        </NavItem>
+      </Nav>
     </Sidebar>
   ))
   .add('With group', () => (
     <Sidebar>
-      <SidebarBrand>Atomic Interface</SidebarBrand>
-      <SidebarNav>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Database size={23} /></SidebarNavIcon>
-          <SidebarNavText>Dashboard</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Grid size={23} /></SidebarNavIcon> 
-          <SidebarNavText>Transaction</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem active>
-          <SidebarNavIcon type="left"><Folder size={23} /></SidebarNavIcon> 
-          <SidebarNavText>Products</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><GitMerge size={23} /></SidebarNavIcon> 
-          <SidebarNavText>Payments</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavHeader>Catalogs</SidebarNavHeader>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Eye size={23} /></SidebarNavIcon>
-          <SidebarNavText>Stocks</SidebarNavText>
-          </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Watch size={23} /></SidebarNavIcon>
-          <SidebarNavText>Link</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Linkedin size={23} /></SidebarNavIcon>
-          <SidebarNavText>UI-Kit</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><HelpCircle size={23} /></SidebarNavIcon>
-          <SidebarNavText><a href="https://google.com">Help</a></SidebarNavText>
-          <SidebarNavIcon type="right"><ExternalLink size={17} /></SidebarNavIcon>
-        </SidebarNavItem>
-      </SidebarNav>
+      <Brand>Atomic Interface</Brand>
+      <Nav>
+        <NavItem>
+          <NavIcon type="left"><Database size={23} /></NavIcon>
+          <NavText>Dashboard</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Grid size={23} /></NavIcon> 
+          <NavText>Transaction</NavText>
+        </NavItem>
+        <NavItem active>
+          <NavIcon type="left"><Folder size={23} /></NavIcon> 
+          <NavText>Products</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><GitMerge size={23} /></NavIcon> 
+          <NavText>Payments</NavText>
+        </NavItem>
+        <NavHeader>Catalogs</NavHeader>
+        <NavItem>
+          <NavIcon type="left"><Eye size={23} /></NavIcon>
+          <NavText>Stocks</NavText>
+          </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Watch size={23} /></NavIcon>
+          <NavText>Link</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Linkedin size={23} /></NavIcon>
+          <NavText>UI-Kit</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><HelpCircle size={23} /></NavIcon>
+          <NavText><a href="https://google.com">Help</a></NavText>
+          <NavIcon type="right"><ExternalLink size={17} /></NavIcon>
+        </NavItem>
+      </Nav>
     </Sidebar>
   )).add('With badge', () => (
     <Sidebar>
-      <SidebarBrand>Atomic Interface</SidebarBrand>
-      <SidebarNav>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Database size={23} /></SidebarNavIcon>
-          <SidebarNavText>Dashboard</SidebarNavText>
-          <SidebarNavIcon type="right">
+      <Brand>Atomic Interface</Brand>
+      <Nav>
+        <NavItem>
+          <NavIcon type="left"><Database size={23} /></NavIcon>
+          <NavText>Dashboard</NavText>
+          <NavIcon type="right">
             <Badge color="primary" pill={true}>9+</Badge>
-          </SidebarNavIcon>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Grid size={23} /></SidebarNavIcon>
-          <SidebarNavText>Transaction</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Folder size={23} /></SidebarNavIcon>
-          <SidebarNavText>Products</SidebarNavText>
-          <SidebarNavIcon type="right">
+          </NavIcon>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Grid size={23} /></NavIcon>
+          <NavText>Transaction</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Folder size={23} /></NavIcon>
+          <NavText>Products</NavText>
+          <NavIcon type="right">
             <Badge color="danger">59</Badge>
-          </SidebarNavIcon>
-        </SidebarNavItem>
-        <SidebarNavItem active>
-          <SidebarNavIcon type="left"><GitMerge size={23} /></SidebarNavIcon>
-          <SidebarNavText>Payments</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavHeader>Catalogs</SidebarNavHeader>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Eye size={23} /></SidebarNavIcon>
-          <SidebarNavText>Stocks</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Watch size={23} /></SidebarNavIcon>
-          <SidebarNavText>Link</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><Linkedin size={23} /></SidebarNavIcon>
-          <SidebarNavText>UI-Kit</SidebarNavText>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarNavIcon type="left"><HelpCircle size={23} /></SidebarNavIcon>
-          <SidebarNavText><a href="https://google.com">Help</a></SidebarNavText>
-          <SidebarNavIcon type="right"><ExternalLink size={17} /></SidebarNavIcon>
-        </SidebarNavItem>
-      </SidebarNav>
+          </NavIcon>
+        </NavItem>
+        <NavItem active>
+          <NavIcon type="left"><GitMerge size={23} /></NavIcon>
+          <NavText>Payments</NavText>
+        </NavItem>
+        <NavHeader>Catalogs</NavHeader>
+        <NavItem>
+          <NavIcon type="left"><Eye size={23} /></NavIcon>
+          <NavText>Stocks</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Watch size={23} /></NavIcon>
+          <NavText>Link</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Linkedin size={23} /></NavIcon>
+          <NavText>UI-Kit</NavText>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><HelpCircle size={23} /></NavIcon>
+          <NavText><a href="https://google.com">Help</a></NavText>
+          <NavIcon type="right"><ExternalLink size={17} /></NavIcon>
+        </NavItem>
+      </Nav>
     </Sidebar>
   ));

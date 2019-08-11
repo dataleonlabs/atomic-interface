@@ -3,12 +3,12 @@ import { SidebarProps as Props } from './props';
 import { NavbarBrand } from 'reactstrap';
 
 /**
- * SidebarBrand render element
+ * Brand render element
  */
-const SidebarBrand = (props: Props) => (
+const Brand = (props: Props) => (
   <NavbarBrand {...props}>
     {props.children}
   </NavbarBrand>
 )
 
-export default SidebarBrand;
+export default Brand;

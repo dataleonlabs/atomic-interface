@@ -10,12 +10,12 @@ import {
  * This component must use https://reactstrap.github.io/components/navs/ with vertical
  * @example
  *    <Sidebar expand={false}>
- *       <SidebarBrand>reactstrap</SidebarBrand>
- *       <SidebarNav>
- *         <SidebarNavHeader>Group separator</SidebarNavHeader>
- *         <SidebarNavItem>Components</SidebarNavItem>
- *         <SidebarNavItem>Context</SidebarNavItem>
- *       </SidebarNav>
+ *       <Brand>reactstrap</Brand>
+ *       <Nav>
+ *         <NavHeader>Group separator</NavHeader>
+ *         <NavItem>Components</NavItem>
+ *         <NavItem>Context</NavItem>
+ *       </Nav>
  *    </Sidebar>
  */
 
@@ -27,15 +27,15 @@ export interface SidebarProps extends NavbarPropsBase {
     children: string | JSX.Element | JSX.Element[]
 }
 
-export interface SidebarBrandProps extends NavbarBrandPropsBase {
+export interface BrandProps extends NavbarBrandPropsBase {
 
 }
 
-export interface SidebarNavProps extends NavPropsBase {
+export interface NavProps extends NavPropsBase {
 
 }
 
-export interface SidebarItemProps extends NavItemPropsBase {
+export interface ItemProps extends NavItemPropsBase {
 
     /** icon disable */
     icon?: JSX.Element
@@ -44,20 +44,20 @@ export interface SidebarItemProps extends NavItemPropsBase {
     onClick?: () => void
 }
 
-export interface SidebarNavLinkProps extends NavLinkPropsBase {
+export interface NavLinkProps extends NavLinkPropsBase {
 
 }
 
-export interface SidebarNavHeaderProps {
-    // /** children content in SidebarNavItemHeaderProps */
+export interface NavHeaderProps {
+    // /** children content in NavItemHeaderProps */
     children: string | JSX.Element | JSX.Element[]
 }
 
-export interface SidebarNavIconProps {
+export interface NavIconProps {
     type: 'left' | 'right'
     children: string | JSX.Element
 }
 
-export interface SidebarNavTextProps {
+export interface NavTextProps {
     children: string | JSX.Element
 }
