@@ -47,7 +47,7 @@ export const StyledSidebar = styled.div`
   .nav-item.active {
     .nav-link {
       color: #007bff;
-      background-color: rgb(0, 123, 255, 0.05);
+      background-color: rgba(0, 123, 255, 0.05);
       border-left: solid 3px #007bff!important;
       .sidebar-item-text {
         color: #007bff;
@@ -63,7 +63,7 @@ export const StyledSidebar = styled.div`
     padding-left: 1.95rem;
   }
 
-  .SidebarNavHeader {
+  .NavHeader {
     display: block;
     padding: 1.2rem 1rem;
     cursor: pointer;
