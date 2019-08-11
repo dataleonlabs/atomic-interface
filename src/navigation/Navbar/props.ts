@@ -34,7 +34,6 @@ export interface NavbarBrandProps {
 }
 
 export interface NavProps extends NavPropsBase {
-
 }
 
 export interface NavItemProps extends NavItemPropsBase {

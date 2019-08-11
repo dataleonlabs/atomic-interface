@@ -40,6 +40,14 @@ export { default as Nav } from './navigation/Navbar/Nav';
 export { default as NavItem } from './navigation/Navbar/NavItem';
 export { default as NavLink } from './navigation/Navbar/NavLink';
 
+// Sidebar
+export { default as Sidebar } from './navigation/Sidebar';
+export { default as SidebarBrand } from './navigation/Sidebar/Brand';
+export { default as SidebarBrandNav } from './navigation/Sidebar/Nav';
+export { default as SidebarBrandNavItem } from './navigation/Sidebar/NavItem';
+export { default as SidebarBrandNavText } from './navigation/Sidebar/NavText';
+export { default as SidebarBrandNavIcon } from './navigation/Sidebar/NavIcon';
+
 // Utils
 export { ThemeProvider } from './utils';
 export { makeId } from './utils';

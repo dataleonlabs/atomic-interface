@@ -1,40 +1,41 @@
-import { 
+import {
     NavbarBrandProps as NavbarBrandPropsBase,
     NavProps as NavPropsBase,
     NavItemProps as NavItemPropsBase,
-    NavbarProps as NavbarPropsBase
+    NavbarProps as NavbarPropsBase,
+    NavLinkProps as NavLinkPropsBase
 } from "reactstrap";
 
 /**
  * This component must use https://reactstrap.github.io/components/navs/ with vertical
  * @example
  *    <Sidebar expand={false}>
- *       <SidebarBrand>reactstrap</SidebarBrand>
- *       <SidebarNav>
- *         <SidebarNavGroup>Group separator</SidebarNavGroup>
- *         <SidebarNavItem icon={<Icon/>}>Components</SidebarNavItem>
- *         <SidebarNavItem icon={<Icon/>}>Context</SidebarNavItem>
- *       </SidebarNav>
+ *       <Brand>reactstrap</Brand>
+ *       <Nav>
+ *         <NavHeader>Group separator</NavHeader>
+ *         <NavItem>Components</NavItem>
+ *         <NavItem>Context</NavItem>
+ *       </Nav>
  *    </Sidebar>
  */
 
 export interface SidebarProps extends NavbarPropsBase {
     /** Disable test or only icon on side bar */
-    icon?: boolean 
+    icon?: boolean
 
     /** children content in Sidebar */
     children: string | JSX.Element | JSX.Element[]
 }
 
-export interface SidebarBrandProps extends NavbarBrandPropsBase {
+export interface BrandProps extends NavbarBrandPropsBase {
 
 }
 
-export interface SidebarNavProps extends NavPropsBase {
+export interface NavProps extends NavPropsBase {
 
 }
 
-export interface SidebarItemProps extends NavItemPropsBase {
+export interface ItemProps extends NavItemPropsBase {
 
     /** icon disable */
     icon?: JSX.Element
@@ -43,8 +44,20 @@ export interface SidebarItemProps extends NavItemPropsBase {
     onClick?: () => void
 }
 
-
-export interface SidebarNavGroupProps {
+export interface NavLinkProps extends NavLinkPropsBase {
 
 }
 
+export interface NavHeaderProps {
+    // /** children content in NavItemHeaderProps */
+    children: string | JSX.Element | JSX.Element[]
+}
+
+export interface NavIconProps {
+    type: 'left' | 'right'
+    children: string | JSX.Element
+}
+
+export interface NavTextProps {
+    children: string | JSX.Element
+}

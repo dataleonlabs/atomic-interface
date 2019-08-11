@@ -21,10 +21,10 @@ const SearchBar = (props: Props) => {
   const renderField = ({ field }: FieldProps<{}>) => (
     <React.Fragment>
       <InputGroup>
-        <StyledInputSearchGroupAddonLeft addonType="prepend" navBar={props.navBar}>
+        <StyledInputSearchGroupAddonLeft addonType="prepend" navbar={props.navBar}>
           <div className="input-group-text"><span style={{ marginRight: '5px' }}>{PrependIcon}</span>{PrependString}</div>
         </StyledInputSearchGroupAddonLeft>
-        <StyledInputSearchBootstrap placeholder={props.placeholder} {...field} navBar={props.navBar} type={props.closeIcon ? "search" : "input"} />
+        <StyledInputSearchBootstrap placeholder={props.placeholder} {...field} navbar={props.navBar} type={props.closeIcon ? "search" : "input"} />
       </InputGroup>
     </React.Fragment>
   );

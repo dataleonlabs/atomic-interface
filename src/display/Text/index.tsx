@@ -113,7 +113,7 @@ export default class Text extends React.Component<Props> {
   
     return (
       <>
-        <TextStyle id={id} {...this.props}>
+        <TextStyle id={id}>
           {getText(this.props)}
         </TextStyle>
 

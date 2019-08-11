@@ -1,18 +1,15 @@
 import React from 'react';
 import { SidebarProps as Props } from './props';
-import { Nav } from 'reactstrap';
+import { StyledSidebar } from './style'
 
 /**
  * Sidebar render element
  */
 
-const Sidebar = (props: Props) => {
-
-  return (
-    <Nav {...props}>
-        {props.children}
-    </Nav>
-  )
-}
+const Sidebar = (props: Props) => (
+  <StyledSidebar>
+    {props.children}
+  </StyledSidebar>
+)
 
 export default Sidebar;
