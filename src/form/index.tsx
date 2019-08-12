@@ -1,6 +1,7 @@
 import React from 'react';
-import { Form as FormFormik, FormikProps, Formik } from 'formik';
+import { FormikProps, Formik } from 'formik';
 import { FormProps as Props } from './props'
+import { Form as FormBase } from 'reactstrap';
 
 /**
  * Form 
@@ -14,12 +15,19 @@ class Form extends React.Component<Props> {
     return (
       <div>
         <Formik {...this.props}>
-          {(props: FormikProps<{}>) => (
-            <FormFormik>
-              {(typeof this.props.children === 'function')
-                && (this.props.children as /* tslint:disable */ Function /* tslint:enable */)(props)}
-            </FormFormik>
-          )}
+          {(props: FormikProps<{}>) => {
+            const onSubmit = (event: any) => {
+              event.preventDefault();
+              props.handleSubmit(event);
+              props.setSubmitting(true);
+            }
+            return (
+              <FormBase onSubmit={onSubmit}>
+                {(typeof this.props.children === 'function')
+                  && (this.props.children as /* tslint:disable */ Function /* tslint:enable */)(props)}
+              </FormBase>
+            );
+          }}
         </Formik>
       </div>
     )

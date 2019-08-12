@@ -22,9 +22,7 @@ storiesOf('Forms|Select', module)
                 creatable
                 isMulti
                 name={'favorite'}
-                meta={{
-                  options
-                }}
+                options={options}
               />
             )}
           </Form>
@@ -65,9 +63,7 @@ storiesOf('Forms|Select', module)
                 creatable
                 isMulti
                 name={'favorite'}
-                meta={{
-                  options: groupedOptions
-                }}
+                options={groupedOptions}
               />
             )}
           </Form>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
-import { InputGroup } from 'reactstrap';
+import { InputGroup, FormGroup, FormText } from 'reactstrap';
 import { InputProps as Props } from './props';
 import Control from '../../Control';
 import { StyledInputBootstrap, StyledInputGroupAddonRight, StyledInputGroupAddonLeft } from './style';
@@ -28,20 +28,31 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
  * Input render element
  */
 const Input = (props: Props) => {
-  const renderField = ({ field }: FieldProps<{}>) => (
+  const renderField = ({ field, form: { submitCount, errors } }: FieldProps<{}>) => (
     <>
-      {wrapperInputGroup(<StyledInputBootstrap placeholder={props.placeholder} {...field} />, props)}
+      {wrapperInputGroup(
+        <StyledInputBootstrap
+          placeholder={props.placeholder}
+          {...field}
+          invalid={submitCount > 0 && (errors[props.name] ? true : false)}
+        />
+        , props)}
+      {submitCount > 0 && (errors[props.name] ? true : false)
+        && <FormText color="danger">{errors[props.name]}</FormText>
+      }
     </>
   );
   return (
-    <Control {...props}>
-      <Field
-        {...props}
-        id={props.name}
-        bsSize={props.controlSize || 'md'}
-        render={renderField}
-      />
-    </Control>
+    <FormGroup>
+      <Control {...props}>
+        <Field
+          {...props}
+          id={props.name}
+          bsSize={props.controlSize || 'md'}
+          render={renderField}
+        />
+      </Control>
+    </FormGroup>
   )
 }
 

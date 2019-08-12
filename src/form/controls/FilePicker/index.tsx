@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
-import { CustomInput as FilePickerBootstrap, } from 'reactstrap';
+import { CustomInput as FilePickerBootstrap, FormText, } from 'reactstrap';
 import { FilePickerProps as Props } from './props';
 import Control from '../../Control';
 
@@ -9,9 +9,19 @@ import Control from '../../Control';
  */
 const FilePicker = (props: Props) => {
   const { value, ...rest } = props;
-  const renderField = (_: FieldProps<{}>) => (
+  const renderField = ({ field, form: { submitCount, errors } }: FieldProps<{}>) => (
     <React.Fragment>
-      <FilePickerBootstrap {...rest} id={props.name} type="file" />
+      <FilePickerBootstrap
+        {...rest}
+        id={props.name}
+        type="file"
+        invalid={submitCount > 0 && (errors[props.name] ? true : false)}
+        onChange={field.onChange}
+        onBlur={field.onBlur}
+      />
+      {submitCount > 0 && (errors[props.name] ? true : false)
+        && <FormText color="danger">{errors[props.name]}</FormText>
+      }
     </React.Fragment>
   );
 
