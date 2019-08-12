@@ -28,7 +28,7 @@ export { default as Textarea } from './form/controls/Textarea';
 export { default as Breadcumb } from './navigation/Breadcumb';
 export { default as BreadcrumbItem } from './navigation/Breadcumb/BreadcrumbItem';
 export { default as Navbar } from './navigation/Navbar';
-export { default as NavbarBrand } from './navigation/Navbar/';
+export { default as NavbarBrand } from './navigation/Navbar/NavbarBrand';
 export { default as Nav } from './navigation/Navbar/Nav';
 export { default as NavItem } from './navigation/Navbar/NavItem';
 export { default as NavLink } from './navigation/Navbar/NavLink';
