@@ -4,7 +4,8 @@ import styled from 'styled-components'
 export const StyledSidebar = styled.div`
   flex-direction: column;
   width: 250px;
-  border-right: solid 1px #eee;
+  border-right: solid 2px #eee;
+  height: 100vh;
 
   .icon-nav-left {
   }
