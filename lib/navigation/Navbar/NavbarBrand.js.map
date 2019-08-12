@@ -1,0 +1,1 @@
+{"version":3,"file":"NavbarBrand.js","sourceRoot":"src/","sources":["navigation/Navbar/NavbarBrand.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAE1B,OAAO,EAAE,WAAW,IAAI,eAAe,EAAE,MAAM,YAAY,CAAC;AAE5D;;GAEG;AACH,MAAM,WAAW,GAAG,CAAC,KAAY,EAAE,EAAE;IACnC,OAAO,CACL,oBAAC,eAAe,oBAAK,KAAK;;QAAI,KAAK,CAAC,QAAQ,CAAmB,CAChE,CAAA;AACH,CAAC,CAAA;AAED,eAAe,WAAW,CAAC"}
