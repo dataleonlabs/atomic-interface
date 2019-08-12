@@ -1,11 +1,13 @@
 
 import styled from 'styled-components'
 
+
+
 export const StyledSidebar = styled.div`
   flex-direction: column;
   width: 250px;
   border-right: solid 2px #eee;
-  height: 100vh;
+  // height:100vh
 
   .icon-nav-left {
   }
@@ -74,4 +76,8 @@ export const StyledSidebar = styled.div`
     padding-bottom: 0.4rem;
     color: #777;
   }
+  // //added to break vertical line to solve header cut issue
+  // .SidebarNav li.hover{
+  //   border-right: solid 2px #4D99F7;
+  // }
 `;

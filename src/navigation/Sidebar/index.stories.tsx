@@ -133,4 +133,61 @@ storiesOf('Navigation|Sidebar', module)
         </NavItem>
       </Nav>
     </Sidebar>
+  )).add('With loader', () => (
+    <Sidebar>
+      <Brand>Atomic Interface</Brand>
+      <Nav>
+        <NavItem loading={true}>
+          <NavIcon type="left"><Database size={23} /></NavIcon>
+          <NavText>Dashboard</NavText>
+          <NavIcon type="right">
+            <Badge color="primary" pill={true}>9+</Badge>
+          </NavIcon>
+        </NavItem>
+        <NavItem loading={true}>
+          <NavIcon type="left"><Grid size={23} /></NavIcon>
+          <NavText>Transaction</NavText>
+        </NavItem>
+        <NavItem loading={true}>
+          <NavIcon type="left"><Folder size={23} /></NavIcon>
+          <NavText>Products</NavText>
+          <NavIcon type="right">
+            <Badge color="danger">59</Badge>
+          </NavIcon>
+        </NavItem>
+        <NavItem active loading={true}>
+          <NavIcon type="left"><GitMerge size={23} /></NavIcon>
+          <NavText>Payments</NavText>
+        </NavItem>
+      </Nav>
+    </Sidebar>
+  ))
+  .add('with only icon', () => (
+    <Sidebar iconsOnly={true}>
+     
+      <Nav>
+        <NavItem>
+          <NavIcon type="left"><Database size={23} /></NavIcon>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Grid size={23} /></NavIcon>
+        </NavItem>
+        <NavItem active>
+          <NavIcon type="left"><Folder size={23} /></NavIcon>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><GitMerge size={23} /></NavIcon>
+        </NavItem>
+       
+        <NavItem>
+          <NavIcon type="left"><Eye size={23} /></NavIcon> 
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Watch size={23} /></NavIcon>
+        </NavItem>
+        <NavItem>
+          <NavIcon type="left"><Linkedin size={23} /></NavIcon>
+        </NavItem>
+      </Nav>
+    </Sidebar>
   ));
