@@ -40,3 +40,4 @@ export { default as SidebarBrandNavText } from './navigation/Sidebar/NavText';
 export { default as SidebarBrandNavIcon } from './navigation/Sidebar/NavIcon';
 export { ThemeProvider } from './utils';
 export { makeId } from './utils';
+export { Container, Row, Col } from 'reactstrap';
