@@ -37,6 +37,7 @@ export { default as SidebarBrand } from './navigation/Sidebar/Brand';
 export { default as SidebarNav } from './navigation/Sidebar/Nav';
 export { default as SidebarNavItem } from './navigation/Sidebar/NavItem';
 export { default as SidebarNavText } from './navigation/Sidebar/NavText';
+export { default as SidebarNavHeader } from './navigation/Sidebar/NavHeader';
 export { default as SidebarNavIcon } from './navigation/Sidebar/NavIcon';
 export { ThemeProvider } from './utils';
 export { makeId } from './utils';
