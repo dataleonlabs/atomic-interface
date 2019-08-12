@@ -9,4 +9,5 @@ export interface ButtonProps extends ButtonPropsBase {
     icon?: JSX.Element;
     /** spinner displayed on right */
     loading?: boolean;
+    children: string | JSX.Element | JSX.Element[] | Element;
 }
