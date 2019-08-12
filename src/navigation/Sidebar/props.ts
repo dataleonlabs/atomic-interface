@@ -42,6 +42,7 @@ export interface ItemProps extends NavItemPropsBase {
 
     /** A function invoked when a tab is clicked by the user */
     onClick?: () => void
+    children: string | JSX.Element | JSX.Element[]
 }
 
 export interface NavLinkProps extends NavLinkPropsBase {
@@ -55,7 +56,7 @@ export interface NavHeaderProps {
 
 export interface NavIconProps {
     type: 'left' | 'right'
-    children: string | JSX.Element
+    children: string | JSX.Element | JSX.Element[]
 }
 
 export interface NavTextProps {
