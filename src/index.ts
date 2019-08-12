@@ -17,6 +17,7 @@ export { default as TabItem } from './display/Tabs/TabItem';
 export { default as Text } from './display/Text';
 export { default as Toast } from './display/Toast';
 export { default as Tooltip } from './display/Tooltip';
+export { default as Panel } from './display/Panel';
 
 // Form
 export { default as Form } from './form';
