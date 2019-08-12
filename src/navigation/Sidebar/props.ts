@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     NavbarBrandProps as NavbarBrandPropsBase,
     NavProps as NavPropsBase,
@@ -59,6 +60,6 @@ export interface NavIconProps {
     children: string | JSX.Element | JSX.Element[]
 }
 
-export interface NavTextProps {
-    children: string | JSX.Element
+export interface NavTextProps extends React.HTMLAttributes<HTMLElement> {
+    children: any
 }

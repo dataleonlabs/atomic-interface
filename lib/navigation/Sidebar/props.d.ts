@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavbarBrandProps as NavbarBrandPropsBase, NavProps as NavPropsBase, NavItemProps as NavItemPropsBase, NavbarProps as NavbarPropsBase, NavLinkProps as NavLinkPropsBase } from "reactstrap";
 /**
  * This component must use https://reactstrap.github.io/components/navs/ with vertical
@@ -37,6 +38,6 @@ export interface NavIconProps {
     type: 'left' | 'right';
     children: string | JSX.Element | JSX.Element[];
 }
-export interface NavTextProps {
-    children: string | JSX.Element;
+export interface NavTextProps extends React.HTMLAttributes<HTMLElement> {
+    children: any;
 }
