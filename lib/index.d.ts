@@ -76,4 +76,3 @@ export { makeId } from './utils';
 export { default as Query } from './utils/Query';
 export { QueryProps } from './utils/Query/props';
 export { Container, Row, Col } from 'reactstrap';
-export { ContainerProps, RowProps, ColProps } from 'reactstrap';

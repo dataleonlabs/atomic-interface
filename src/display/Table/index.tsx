@@ -20,6 +20,7 @@ import {
  */
 import '@zendeskgarden/react-tables/dist/styles.css';
 import '@zendeskgarden/react-pagination/dist/styles.css';
+import { makeId } from "../../utils/index";
 
 const {
   Table: TableBase,
@@ -208,7 +209,7 @@ class Table extends React.Component<Props, State> {
 
     if (this.props.draggable === true) {
       columns.push(
-        <HeaderCell minimum={true} key={'key-col-0'} />
+        <HeaderCell minimum={true} key={`key-col-0-${makeId()}`} />
       )
     }
     // If selected row
@@ -238,7 +239,7 @@ class Table extends React.Component<Props, State> {
         }
       }
       columns.push(
-        <HeaderCell width={`4%`} key={'key-selc-0'}>
+        <HeaderCell width={`4%`} key={`key-selc-0-${makeId()}`}>
           <CustomInput
             type={'checkbox'}
             id={'id0'}
@@ -293,7 +294,7 @@ class Table extends React.Component<Props, State> {
         this.setState({ selected });
       }
       cells.push(
-        <Cell width={`4%`} key={'key-cell-0'}>
+        <Cell width={`4%`} key={`key-cell-0-${makeId()}`}>
           <CustomInput
             type={'checkbox'}
             disabled={disabledSelected.includes(row.id) === true ? true : /* istanbul ignore next */ false}
@@ -336,8 +337,8 @@ class Table extends React.Component<Props, State> {
     const cells: JSX.Element[] = [];
 
     cells.push(
-      <DraggableCell minimum={true} key={`dnd-cell-${index}`}>
-        <DraggableContainer id={`dnd-${index}`} {...provided.dragHandleProps}>
+      <DraggableCell minimum={true} key={`dnd-cell-${index}-${makeId()}`}>
+        <DraggableContainer id={`dnd-${index}-${makeId()}`} {...provided.dragHandleProps}>
           ::
           </DraggableContainer>
       </DraggableCell>
@@ -358,7 +359,7 @@ class Table extends React.Component<Props, State> {
         this.setState({ selected });
       };
       cells.push(
-        <DraggableCell key={'key-drag-0'} width={`4%`} isDragging={snapshot.isDragging}>
+        <DraggableCell key={`key-drag-0-${makeId()}`} width={`4%`} isDragging={snapshot.isDragging}>
           <CustomInput
             type={'checkbox'}
             disabled={disabledSelected.includes(row.id) === true ? /* istanbul ignore next */ true : false}
@@ -382,7 +383,7 @@ class Table extends React.Component<Props, State> {
           }
 
           const cell = (
-            <DraggableCell key={`dnd-cell-${index}-${childProps.field}`} truncate={true} {...childProps} isDragging={snapshot.isDragging} width={`${(childProps.width || this.getDefaultWidth())}%`}>
+            <DraggableCell key={`dnd-cell-${index}-${childProps.field}-${makeId()}`} truncate={true} {...childProps} isDragging={snapshot.isDragging} width={`${(childProps.width || this.getDefaultWidth())}%`}>
               {cellValue}
             </DraggableCell>
           );
@@ -424,7 +425,7 @@ class Table extends React.Component<Props, State> {
                 </Head>
               )}
               {(this.props.loading === true) ? <Loader /> : (
-                  <Droppable droppableId="droppable">
+                  <Droppable droppableId={`droppable-${makeId()}`}>
                     {(provided: any, droppableSnapshot: any) => {
                       return (
                         <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>

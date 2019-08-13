@@ -127,4 +127,3 @@ export { QueryProps } from './utils/Query/props';
 
 // Order lib
 export { Container, Row, Col } from 'reactstrap';
-export { ContainerProps, RowProps, ColProps } from 'reactstrap';
