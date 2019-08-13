@@ -56,6 +56,7 @@ export interface State {
 class Table extends React.Component<Props, State> {
 
   public static defaultProps: Partial<Props> = {
+    data: [],
     disabledSelected: [],
     draggable: false,
     hideHeader: false,
@@ -75,7 +76,7 @@ class Table extends React.Component<Props, State> {
   public async componentDidMount() {
     if (this.props.draggable === true) {
       this.setState({
-        items: this.props.data,
+        items: this.props.data || [],
       })
     }
   }
@@ -214,7 +215,7 @@ class Table extends React.Component<Props, State> {
     if (this.props.selectable === true) {
       const onChange = /* istanbul ignore next */ (e: any): any => {
         if (e.target.checked) {
-          const selected = this.props.data.reduce((accum, value) => {
+          const selected = (this.props.data || []).reduce((accum, value) => {
             const disabledSelected = (this.props.disabledSelected || []) as any[];
             if (disabledSelected.includes(value.id as any) === false) {
               accum[value.id as string] = true;
@@ -241,7 +242,7 @@ class Table extends React.Component<Props, State> {
           <CustomInput
             type={'checkbox'}
             id={'id0'}
-            checked={this.isSelectAllChecked(this.state.selected, this.props.data)}
+            checked={this.isSelectAllChecked(this.state.selected, this.props.data || [])}
             onChange={onChange}
           />
         </HeaderCell>
@@ -458,7 +459,7 @@ class Table extends React.Component<Props, State> {
               )}
             </TableBase>
           </DragDropContext>
-            {((this.props.loading !== true) && (this.props.data.length === 0)) && (
+            {((this.props.loading !== true) && ((this.props.data || []).length === 0)) && (
               <StyledNoContent>{this.props.noContentIndication || 'Not found'}</StyledNoContent>
             )}
           {contentPagination}
@@ -480,7 +481,7 @@ class Table extends React.Component<Props, State> {
           )}
             {(this.props.loading === true) ? <Loader /> : (
               <Body>
-                {this.props.data.map((row: any, index) => (
+                {(this.props.data || []).map((row: any, index) => (
                   <StyledRow key={index} selected={this.state.selected[row.id]} striped={this.props.striped && index % 2 === 0}>
                     {this.cells(row)}
                   </StyledRow>
@@ -488,7 +489,7 @@ class Table extends React.Component<Props, State> {
               </Body>
             )}
         </TableBase>
-          {((this.props.loading !== true) && (this.props.data.length === 0)) && (
+          {((this.props.loading !== true) && ((this.props.data || []).length === 0)) && (
             <StyledNoContent>{this.props.noContentIndication || 'Not found'}</StyledNoContent>
           )}
         {contentPagination}
