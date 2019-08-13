@@ -13,7 +13,7 @@ describe('<TableCollection />', () => {
         resolve({
           status: 200,
           json() {
-            return { data: { id: 1, name: 'Title' } };
+            return { data: [{ id: 1, name: 'Title' }] };
           },
         });
       });
@@ -31,6 +31,6 @@ describe('<TableCollection />', () => {
     )
 
     expect(wrapper.find(TableCollection)).toHaveLength(1)
-    expect(wrapper.find(Column)).toHaveLength(1)
+    expect(wrapper.find(Column)).toHaveLength(0) // wait rendering
   })
 })

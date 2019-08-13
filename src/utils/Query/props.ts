@@ -10,8 +10,14 @@
 
 export interface Response {
     onLoading: boolean
+    loaded: boolean
     error: any | null
     data: any | null
+}
+
+export interface Stats {
+    contentRendered: null | any
+    onRendering: boolean
 }
 
 export interface Props {
@@ -30,13 +36,16 @@ export interface Props {
     type: 'create' | 'update' | 'delete' | 'findOne' | 'findAll' | 'count'
 
     /** Parameters for yap-sdk */
-    values?: any
-    where?: any
+    values?: { [key:string]: any }
+    where?: { [key: string]: any }
     limit?: number
     offset?: number
     projection?: string[]
     orderWay?: 'asc' | 'desc'
     orderBy?: string
+    onLoading?: () => void
+    onLoaded?: (p: any) => void
+    onError?: (error: any) => void
 
     // Children 
     children: (p: Response) => any

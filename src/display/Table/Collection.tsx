@@ -6,12 +6,6 @@ import Alert from '../Alert/index';
 
 class Collection extends React.Component<Props> {
 
-  public columns = () => {
-    if (this.props.children) {
-      return this.props.children;
-    }
-  }
-
   public render() {
     const {children, ...rest} = this.props
     return (
