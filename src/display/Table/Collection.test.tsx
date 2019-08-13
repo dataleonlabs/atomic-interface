@@ -22,7 +22,7 @@ describe('<TableCollection />', () => {
     const wrapper = enzyme.mount(
       <TableCollection apiKey="xxx" apiUrl="test"
           type="findAll"
-          model="user"
+          model="Playlist"
       >
         <Column field={'id'}>Id</Column>
         <Column field={'firstName'}>First Name</Column>

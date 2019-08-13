@@ -94,7 +94,9 @@ describe('<Table />', () => {
     const wrapper = enzyme.mount(
       <Table data={[{ id: 1 }]} rowSize={'small'}>
         <Column field={'id'}>Id</Column>
-        <Column field={'firstName'}>First Name</Column>
+        <Column field={'firstName'} formatter={(cell, row) => {
+          return <span>{row.firstName} {row.lastName} User</span>;
+        }}>First Name</Column>
         <Column field={'lastName'}>Last Name</Column>
       </Table>
     )
