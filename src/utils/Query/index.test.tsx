@@ -7,9 +7,8 @@ import sinon from 'sinon';
 const gb = global as any;
 
 describe('<Query />', () => {
-  it('U-TEST-1 - Testing query callback', () => {
+  it('U-TEST-1 - Testing query component', () => {
     const response = sinon.spy() as any;
-
     // Mock fetch data
     gb.fetch = jest.fn().mockImplementation(() => {
       return new Promise((resolve, _) => {
@@ -29,6 +28,6 @@ describe('<Query />', () => {
     )
 
     expect(wrapper.find(Query)).toHaveLength(1);
-    expect(Response).toHaveProperty('callCount', 2);
+    expect(response).toHaveProperty('callCount', 1);
   })
 })
