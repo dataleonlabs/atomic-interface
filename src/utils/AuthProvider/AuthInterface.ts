@@ -2,6 +2,14 @@
 /**
  * Follow documentation https://aws-amplify.github.io/docs/js/authentication#sign-in
  */
+
+export interface completeNewPassword {
+    user: any, // the User Object
+    newPassword: string, // the new password
+    meta?: { [key: string]: any }, // OPTIONAL, the required attributes
+    mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA' // MFA Type e.g. SMS_MFA, SOFTWARE_TOKEN_MFA
+}
+
 export default interface AuthInterface {
 
     /** Configure object */
@@ -29,12 +37,7 @@ export default interface AuthInterface {
      * and then trigger the following function with a button click
      * For example, the email and phone_number are required attributes
      */
-    completeNewPassword: (
-        user: any, // the User Object
-        newPassword: string, // the new password
-        meta?: { [key: string]: any }, // OPTIONAL, the required attributes
-        mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA' // MFA Type e.g. SMS_MFA, SOFTWARE_TOKEN_MFA
-    ) => false | object;
+    completeNewPassword: (p: completeNewPassword) => false | object;
 
     /**
      * logout function
