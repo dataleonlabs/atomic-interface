@@ -6,7 +6,7 @@
 export default interface AuthInterface {
 
     /** Configure object */
-    configure: (object: any) => false | object;
+    configure: (options: any) => false | object;
 
     /**
      * When signing in with user name and password,
@@ -41,5 +41,5 @@ export default interface AuthInterface {
      * logout function
      * follow https://aws-amplify.github.io/docs/js/authentication#sign-out
      */
-    logout: (p: { global?: boolean }) => boolean;
+    signOut: () => void;
 }
