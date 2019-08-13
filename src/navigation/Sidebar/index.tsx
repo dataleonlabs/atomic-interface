@@ -7,7 +7,7 @@ import { StyledSidebar } from './style'
  */
 
 const Sidebar = (props: Props) => (
-  <StyledSidebar style={{width:props.iconsOnly?100:250}}>
+  <StyledSidebar className={`sidebar-container-${props.iconsOnly}`}>
     {props.children}
   </StyledSidebar>
 )

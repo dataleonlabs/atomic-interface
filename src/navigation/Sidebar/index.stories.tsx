@@ -3,17 +3,19 @@ import { storiesOf } from '@storybook/react';
 import Sidebar from './index'
 import Nav from './Nav'
 import NavItem from './NavItem'
-import { HelpCircle, Database, Grid, Folder, GitMerge, Eye, Watch, Linkedin, ExternalLink } from 'react-feather';
+import {ChevronLeft,AlignJustify, HelpCircle, Database, Grid, Folder, GitMerge, Eye, Watch, Linkedin, ExternalLink } from 'react-feather';
 import Brand from './Brand';
 import NavHeader from './NavHeader';
 import NavIcon from './NavIcon';
 import NavText from './NavText';
 import Badge from '../../display/Badge';
+import BrandIcon from './BrandIcon'
 
 storiesOf('Navigation|Sidebar', module)
   .add('Example', () => (
     <Sidebar>
       <Brand>Atomic Interface</Brand>
+      <BrandIcon icon={<AlignJustify size={23} />} type='open'></BrandIcon>
       <Nav>
         <NavItem>
           <NavIcon type="left"><Database size={23} /></NavIcon>
@@ -50,6 +52,7 @@ storiesOf('Navigation|Sidebar', module)
   .add('With group', () => (
     <Sidebar>
       <Brand>Atomic Interface</Brand>
+      <BrandIcon icon={<AlignJustify size={23} />} type='open'></BrandIcon>
       <Nav>
         <NavItem>
           <NavIcon type="left"><Database size={23} /></NavIcon>
@@ -90,6 +93,7 @@ storiesOf('Navigation|Sidebar', module)
   )).add('With badge', () => (
     <Sidebar>
       <Brand>Atomic Interface</Brand>
+      <BrandIcon icon={<AlignJustify size={23} />} type='open'></BrandIcon>
       <Nav>
         <NavItem>
           <NavIcon type="left"><Database size={23} /></NavIcon>
@@ -136,6 +140,7 @@ storiesOf('Navigation|Sidebar', module)
   )).add('With loader', () => (
     <Sidebar>
       <Brand>Atomic Interface</Brand>
+      <BrandIcon icon={<AlignJustify size={23} />} type='open'></BrandIcon>
       <Nav>
         <NavItem loading={true}>
           <NavIcon type="left"><Database size={23} /></NavIcon>
@@ -164,7 +169,7 @@ storiesOf('Navigation|Sidebar', module)
   ))
   .add('with only icon', () => (
     <Sidebar iconsOnly={true}>
-     
+        <BrandIcon icon={<ChevronLeft size={23} />} type='close'></BrandIcon>
       <Nav>
         <NavItem>
           <NavIcon type="left"><Database size={23} /></NavIcon>

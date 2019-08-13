@@ -21,5 +21,4 @@ export const StyledLoader = styled.div`
   width: 200px;
 `;
 
-
 export default Loader
