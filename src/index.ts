@@ -12,6 +12,7 @@ export { default as Progress } from './display/Progress';
 export { default as Spinner } from './display/Spinner';
 export { default as Table } from './display/Table';
 export { default as TableColumn } from './display/Table/Column';
+export { default as TableCollection } from './display/Table/Collection';
 export { default as Tabs } from './display/Tabs';
 export { default as TabItem } from './display/Tabs/TabItem';
 export { default as Text } from './display/Text';
@@ -53,6 +54,7 @@ export { default as SidebarNavIcon } from './navigation/Sidebar/NavIcon';
 // Utils
 export { ThemeProvider } from './utils';
 export { makeId } from './utils';
+export { default as Query } from './utils/Query';
 
 // Order lib
 export { Container, Row, Col } from 'reactstrap';
