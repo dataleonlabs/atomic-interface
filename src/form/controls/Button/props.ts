@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonProps as ButtonPropsBase } from "reactstrap";
-import { Props as QueryProps } from "../../../utils/Query/props";
+import { QueryProps } from "../../../utils/Query/props";
 
 /**
  * This component using https://reactstrap.github.io/components/form/ : CustomInput

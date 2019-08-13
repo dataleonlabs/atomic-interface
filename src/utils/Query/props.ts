@@ -20,7 +20,7 @@ export interface Stats {
     onRendering: boolean
 }
 
-export interface Props {
+export interface QueryProps {
     /**
      * 
      * @param apiKey apikey service

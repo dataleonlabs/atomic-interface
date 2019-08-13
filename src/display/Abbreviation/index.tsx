@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Props from './props'
+import { AbbreviationProps as Props } from './props'
 import { StyledAbbreviation } from './style'
 
 export default function Abbreviation({ children }: Props) {

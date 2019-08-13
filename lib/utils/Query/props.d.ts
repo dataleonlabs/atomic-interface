@@ -17,7 +17,7 @@ export interface Stats {
     contentRendered: null | any;
     onRendering: boolean;
 }
-export interface Props {
+export interface QueryProps {
     /**
      *
      * @param apiKey apikey service

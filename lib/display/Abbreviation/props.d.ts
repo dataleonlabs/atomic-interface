@@ -3,6 +3,6 @@
  * @example
  *  <Abbreviation>hello test</Abbreviation>
  */
-export default interface Props {
+export interface AbbreviationProps {
     children: string;
 }

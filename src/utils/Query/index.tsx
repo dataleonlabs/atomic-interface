@@ -1,5 +1,5 @@
 import React from 'react';
-import { Props, Stats } from './props';
+import { QueryProps as Props, Stats } from './props';
 import { APIGatewayFetch } from 'yap-sdk';
 
 class Query extends React.Component<Props, Stats> {

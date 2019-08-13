@@ -1,4 +1,4 @@
-import { Props } from "../../utils/Query/props";
+import { QueryProps } from "../../utils/Query/props";
 /**
  * This component using garden.zendesk https://garden.zendesk.com/react-components/tables
  * @example
@@ -66,6 +66,6 @@ export interface TableProps {
     /** no content indication */
     noContentIndication?: string;
 }
-export interface TableCollectionProps extends TableProps, Props {
+export interface TableCollectionProps extends TableProps, QueryProps {
     children: any | undefined;
 }

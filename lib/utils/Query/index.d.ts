@@ -1,5 +1,5 @@
 import React from 'react';
-import { Props, Stats } from './props';
+import { QueryProps as Props, Stats } from './props';
 declare class Query extends React.Component<Props, Stats> {
     static defaultProps: Partial<Props>;
     state: {
