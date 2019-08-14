@@ -30,6 +30,7 @@ declare class Table extends React.Component<Props, State> {
         sortField: string;
     };
     componentDidMount(): Promise<void>;
+    componentDidUpdate(prevProps: any): Promise<void>;
     /**
      * Ordering array
      */

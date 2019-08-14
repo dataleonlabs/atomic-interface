@@ -49,13 +49,12 @@ class Query extends React.Component<Props, Stats> {
         }
       }
     } catch (error) {
-
       if (typeof this.props.onError === 'function') {
-        await this.props.onError(error);
+        await this.props.onError(error && error.error ? error.error : error);
       }
 
       if (typeof children === 'function') {
-        const contentRendered = children({ data: null, error, onLoading: false, loaded: true });
+        const contentRendered = children({ data: null, error: error && error.error ? error.error : error, onLoading: false, loaded: true });
         if (contentRendered) {
           this.setState({ contentRendered, onRendering: true });
         }

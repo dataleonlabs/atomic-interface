@@ -4,6 +4,9 @@ import { Col } from 'reactstrap';
 import Column from './Column';
 import Table from './index';
 import faker from 'faker'
+import TableCollection from './Collection'
+import Query from '../../utils/Query';
+import { APIGatewayFetch } from 'yap-sdk';
 
 const assets: any[] = [];
 for (let index = 0; index < 10; index++) {
