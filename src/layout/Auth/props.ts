@@ -9,10 +9,11 @@
  * </Auth>
  */
 
+
 export interface AuthProps {
 
     /** Provider for login, logout, or confirm password */
-    provider: InterfaceAuthProvider
+   // provider: InterfaceAuthProvider
 }
 
 export interface AuthHeaderProps {
