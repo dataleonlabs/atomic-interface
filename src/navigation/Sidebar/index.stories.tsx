@@ -15,7 +15,6 @@ storiesOf('Navigation|Sidebar', module)
   .add('Example', () => (
     <Sidebar>
       <Brand>Atomic Interface</Brand>
-      <BrandIcon icon={<AlignJustify size={23} />} type='open'></BrandIcon>
       <Nav>
         <NavItem>
           <NavIcon type="left"><Database size={23} /></NavIcon>
@@ -52,7 +51,6 @@ storiesOf('Navigation|Sidebar', module)
   .add('With group', () => (
     <Sidebar>
       <Brand>Atomic Interface</Brand>
-      <BrandIcon icon={<AlignJustify size={23} />} type='open'></BrandIcon>
       <Nav>
         <NavItem>
           <NavIcon type="left"><Database size={23} /></NavIcon>
@@ -93,7 +91,6 @@ storiesOf('Navigation|Sidebar', module)
   )).add('With badge', () => (
     <Sidebar>
       <Brand>Atomic Interface</Brand>
-      <BrandIcon icon={<AlignJustify size={23} />} type='open'></BrandIcon>
       <Nav>
         <NavItem>
           <NavIcon type="left"><Database size={23} /></NavIcon>
@@ -140,7 +137,6 @@ storiesOf('Navigation|Sidebar', module)
   )).add('With loader', () => (
     <Sidebar>
       <Brand>Atomic Interface</Brand>
-      <BrandIcon icon={<AlignJustify size={23} />} type='open'></BrandIcon>
       <Nav>
         <NavItem loading={true}>
           <NavIcon type="left"><Database size={23} /></NavIcon>
@@ -168,8 +164,7 @@ storiesOf('Navigation|Sidebar', module)
     </Sidebar>
   ))
   .add('with only icon', () => (
-    <Sidebar iconsOnly={true}>
-        <BrandIcon icon={<ChevronLeft size={23} />} type='close'></BrandIcon>
+    <Sidebar icon={true}>
       <Nav>
         <NavItem>
           <NavIcon type="left"><Database size={23} /></NavIcon>

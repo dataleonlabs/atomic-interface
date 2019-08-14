@@ -10,6 +10,8 @@ export const StyledSidebar = styled.div`
   position:relative;
 
   .icon-nav-left {
+    text-align:center
+  
   }
 
   .sidebar-item-text {
@@ -31,7 +33,7 @@ export const StyledSidebar = styled.div`
   }
 
   .nav-link {
-    padding: 0.7rem 1rem;
+    padding:0.7rem 0.7rem;
     font-size: 1rem;
     cursor: pointer;
     border-left: solid 3px #fff;
@@ -41,7 +43,8 @@ export const StyledSidebar = styled.div`
     }
 
     svg:first-child {
-      margin-right: 20px;
+      // margin-right: 20px;
+      margin-right: 10px;
       margin-left: 10px;
     }
   }
@@ -83,10 +86,11 @@ export const StyledSidebar = styled.div`
     top: 15px;
     background: white;
     color: #007bff;
+  
   }
   .brand-icon-open{
     position: absolute;
-    right: -15px;
+    right: -17px;
     border: 2px solid #007bff;
     border-radius: 100%;
     top: 15px;
@@ -96,12 +100,34 @@ export const StyledSidebar = styled.div`
   }
 
 
-  &.sidebar-container-true {
-    width:100px
+  &.sidebarContainerTrue {
+    
     border-right: solid 2px #007bff;
+ 
   }
 
-  &.sidebar-container-false{
-    width:250px
+  &.sidebarContainerFalse{
+
   }
+
+  .emptyElement{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 5px;
+    height: 400px;
+    background: transparent;
+  }
+
+  &.sidebarContainer{
+    width:80px !important;
+    text-align:center !important;
+  }
+  &.sidebarContainer {
+
+  .SidebarNav .sidebar-item-text,.NavHeader,.navbar-brand{
+    display:none;
+  }
+}
+
 `;

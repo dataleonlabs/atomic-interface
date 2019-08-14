@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{MouseEvent} from 'react';
 import {
     NavbarBrandProps as NavbarBrandPropsBase,
     NavProps as NavPropsBase,
@@ -64,6 +64,7 @@ export interface NavIconProps {
 
 export interface NavTextProps extends React.HTMLAttributes<HTMLElement> {
     children: any
+    icon?: boolean
 }
 
 export interface BrandIconProps {
