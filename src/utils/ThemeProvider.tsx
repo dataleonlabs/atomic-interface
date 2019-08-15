@@ -1,7 +1,6 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider as ThemeProviderBase } from 'styled-components';
-import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
-
+const bootstrap = require('bootstrap/dist/css/bootstrap.min.css');
 
 export interface GlobalStyleProps {
 
