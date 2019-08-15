@@ -2,7 +2,6 @@ import React from 'react';
 import { FormikProps, Formik } from 'formik';
 import { FormProps as Props } from './props'
 import { Form as FormBase } from 'reactstrap';
-const FormikObserver = require('formik-observer');
 
 /**
  * Form 
@@ -24,12 +23,10 @@ class Form extends React.Component<Props> {
             }
             return (
               <FormBase onSubmit={onSubmit}>
-                {(typeof this.props.children === 'function')
-                  && (this.props.children as /* tslint:disable */ Function /* tslint:enable */)(props)
+                {(typeof this.props.children === 'function') &&
+                  (this.props.children as /* tslint:disable */ Function /* tslint:enable */)(props)
                 }
-                {(typeof this.props.onChange === "function") &&
-                  < FormikObserver onChange={this.props.onChange} />
-                }
+
               </FormBase>
             );
           }}
