@@ -8,7 +8,7 @@ import { StyledNavbar } from './style';
 const Navbar = (props: Props) => {
   
   return (
-    <StyledNavbar {...props} expand="md">
+    <StyledNavbar {...props} expand="md" size={props.size}>
       {props.children}
     </StyledNavbar>
   )

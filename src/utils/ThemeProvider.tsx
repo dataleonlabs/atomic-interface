@@ -1,6 +1,6 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider as ThemeProviderBase } from 'styled-components';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export interface GlobalStyleProps {
@@ -15,6 +15,7 @@ export interface GlobalStyleProps {
 }
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
+${bootstrap}
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
   body {
     font-family: 'IBM Plex Sans', sans-serif!important;
@@ -36,7 +37,11 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
         outline: 0!important;
     }
 
-    .card, .btn, .dropdown-menu, .modal-content, .progress, .toast {
+    .card, .dropdown-menu, .modal-content, .progress, .toast, .custom-file-label, .custom-file-label::after {
+        border-radius: 0px!important;
+    }
+
+    .btn {
         border-radius: 3px!important;
     }
 
@@ -55,7 +60,7 @@ class ThemeProvider extends React.Component {
     return (
       <ThemeProviderBase theme={theme as any}>
         <>
-          <GlobalStyle  />
+          <GlobalStyle theme={theme} />
           {this.props.children}
         </>
       </ThemeProviderBase>
