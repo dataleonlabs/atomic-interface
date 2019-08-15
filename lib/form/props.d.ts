@@ -18,4 +18,5 @@ export interface FormProps extends FormikConfig<{}> {
     title?: React.ReactNode;
     /** The description will be placed just below the title if specified */
     description?: React.ReactNode;
+    onChange?: (values: any) => void;
 }

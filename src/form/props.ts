@@ -24,4 +24,7 @@ export interface FormProps extends FormikConfig<{}> {
 
   /** The description will be placed just below the title if specified */
   description?: React.ReactNode
+  
+  /* onChange function */
+  onChange?: (values: any) => void
 }

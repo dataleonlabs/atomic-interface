@@ -5617,6 +5617,14 @@ format@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
 
+formik-observer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/formik-observer/-/formik-observer-1.0.1.tgz#da0943851d37aab65a4e70b255a4e4d54af31ebc"
+  integrity sha1-2glDhR03qrZaTnCyVaTk1UrzHrw=
+  dependencies:
+    lodash.debounce "^4.0.8"
+    lodash.isequal "^4.5.0"
+
 formik@^1.5.8:
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/formik/-/formik-1.5.8.tgz#eee8cd345effe46839bc748c7f920486f12f14b0"
