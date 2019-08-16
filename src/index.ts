@@ -84,9 +84,9 @@ export { default as Textarea } from './form/controls/Textarea';
 export { TextareaProps } from './form/controls/Textarea/props';
 
 // Navigation
-export { default as Breadcumb } from './navigation/Breadcumb';
-export { default as BreadcrumbItem } from './navigation/Breadcumb/BreadcrumbItem';
-export { BreadcrumbProps, BreadcrumbItemProps } from './navigation/Breadcumb/props';
+export { default as Breadcrumb } from './navigation/Breadcrumb';
+export { default as BreadcrumbItem } from './navigation/Breadcrumb/BreadcrumbItem';
+export { BreadcrumbProps, BreadcrumbItemProps } from './navigation/Breadcrumb/props';
 
 export { default as Navbar } from './navigation/Navbar';
 export { default as NavbarBrand } from './navigation/Navbar/NavbarBrand';
