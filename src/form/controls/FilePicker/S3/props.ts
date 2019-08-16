@@ -1,3 +1,5 @@
+import { ButtonProps } from "../../Button/props";
+
 /**
  * This component using https://reactstrap.github.io/components/form/ : CustomInput
  * @example
@@ -18,16 +20,19 @@ export interface State {
   errorMessage: string
 }
 
-export interface Props extends ReactS3Uploader {
+export interface Props {
 
   /** Signed url */
   signingUrl: string
 
+  /** Signed method */
+  signingUrlMethod: 'PUT' | 'GET'
+
   /** Signed server */
-  server: string 
+  server: string
 
   /** Acl upload aws */
-  XAmzAcl?: string
+  XAmzAcl?: 'private' | 'public-read' | 'public-read-write' | 'aws-exec-read' | 'authenticated-read' | 'bucket-owner-read' | 'bucket-owner-full-control'
 
   /** The label that will be displayed */
   label: string
@@ -39,7 +44,7 @@ export interface Props extends ReactS3Uploader {
   onUploadFinish: (
     data: {
       name: string
-      value: { id: string; key: string; name: string }
+      value: { id?: string; key: string; name: string }
       error: boolean
     },
   ) => void
@@ -56,4 +61,5 @@ export interface Props extends ReactS3Uploader {
   value?: { id?: string; key?: string; name?: string }
 
   showLink?: boolean
+  buttonProps?: ButtonProps
 }

@@ -63,6 +63,7 @@
     "react-content-loader": "^4.2.2",
     "react-dom": "^16.8.6",
     "react-feather": "^2.0.3",
+    "react-s3-uploader": "^4.8.0",
     "react-select": "^3.0.4",
     "reactstrap": "^8.0.1",
     "styled-components": "^4.3.2",

@@ -1,70 +1,29 @@
-import * as React from 'react'
-import styled from 'styled-components'
-import ReactS3Uploader from 'react-s3-uploader'
+import * as React from 'react';
+const ReactS3Uploader = require('react-s3-uploader');
+import {
+  StyledButtonLabel, StyledIconUpload,
+  StyledImageUploader, StyledUploadBtnWrapper
+} from './style';
+import { Props, State } from './props'
 
-import { API_URL } from 'src/parameters'
-import { getHeaders } from 'src/utils/graph'
-import { create } from 'src/utils/graph/GraphExplorer'
-import Button from 'src/presentations/elements/Button'
-import File from 'src/presentations/collections/File'
-import Text from 'src/presentations/elements/Text'
-import { Props, State } from './types'
+import { Text, Button } from '../../../../../src'
 
 
 export function getHeaders() {
   const headers = {
     Accept: 'application/json',
-    'Content-Type': 'application/json',
     Authorization: '',
+    'Content-Type': 'application/json',
   }
   return headers
 }
 
-const StyledImageUploader = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
 
-  .Label {
-    font-weight: 500;
-    color: #333;
-  }
 
-  .FileWrapper {
-    margin-top: 10px;
-  }
-`
+class FilePickerS3 extends React.PureComponent<Props> {
 
-const StyledUploadBtnWrapper = styled.div`
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  margin-top: ${(props: { label?: string }) => (props.label ? '10px' : '0')};
-  cursor: pointer !important;
-  input[type='file'] {
-    font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    cursor: pointer !important;
-  }
-`
-
-const StyledIconUpload = styled.span`
-  margin-right: 10px !important;
-  display: inline-block;
-  vertical-align: bottom;
-`
-
-const StyledButtonLabel = styled.span`
-  width: 36px !important;
-  text-align: center !important;
-  display: inline-block;
-`
-
-class ImageUploader extends React.PureComponent<Props, State> {
   public static defaultProps: Partial<Props> = {
+    XAmzAcl: 'private',
     multipleFiles: true,
     value: {
       key: '',
@@ -72,118 +31,116 @@ class ImageUploader extends React.PureComponent<Props, State> {
     },
   }
 
-  state: State = {
-    loading: false,
-    progress: 0,
+  public state: State = {
     error: false,
     errorMessage: '',
+    loading: false,
+    progress: 0,
   }
 
-  onClick = () => {
+  public getSignedUrl = (file: any, callback: any) => {
+
+    fetch(`${this.props.server}${this.props.signingUrl}?key=${file.name}&contentType=${file.type}&type=${'put'}`)
+      .then(data => data.json())
+      .then(data => {
+        callback(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+  public onClick = () => {
     // onClick button
   }
 
-  onSignedUrl = () => {
+  public onSignedUrl = () => {
     this.setState({ loading: true })
   }
 
-  onUploadProgress = (progress: number) => {
+  public onUploadProgress = (progress: number) => {
     this.setState({ progress })
   }
 
-  onUploadError = (e: any) => {
+  public onUploadError = (e: any) => {
     this.setState({
       error: true,
-      loading: false,
       errorMessage: e,
+      loading: false,
     })
   }
 
-  onUploadFinish = async (params: any) => {
+  public onUploadFinish = async (params: any) => {
     try {
       const values = {
-        name: params.originalFilename,
         key: params.filename,
+        name: params.originalFilename,
       }
 
-      this.setState({ loading: false, progress: 0 }, async () => {
-        const res: any = await create({
-          target: 'File',
-          alias: 'row',
-          values,
-        })
+      this.setState({ loading: false, progress: 0 })
 
-        this.props.onUploadFinish({
-          name: this.props.name,
-          value: { ...values, id: res.row.id },
-          error: false,
-        })
+      this.props.onUploadFinish({
+        error: false,
+        name: this.props.name,
+        value: { ...values },
       })
     } catch (e) {
       this.setState({
         error: true,
-        loading: false,
         errorMessage: e.message,
+        loading: false,
       })
     }
   }
 
-  render() {
+  public render() {
     return (
-      <StyledImageUploader>
-        <span className="Label">{this.props.label}</span>
-        <StyledUploadBtnWrapper label={this.props.label}>
-          <Button
-            loading={this.state.loading}
-            size="small"
-            themeColor="primary"
-            label={
+      <>
+        <StyledImageUploader>
+          <span className="Label">{this.props.label}</span>
+          <StyledUploadBtnWrapper label={this.props.label}>
+            <Button
+              loading={this.state.loading}
+              onClick={this.onClick}
+              {...this.props.buttonProps}
+            >
               <>
                 <StyledIconUpload />
-                {i18n.t('Upload image')}
+                {'Upload image'}
                 {this.state.loading && (
                   <StyledButtonLabel>{this.state.progress}%</StyledButtonLabel>
                 )}
               </>
-            }
-            onClick={this.onClick}
-          />
-          <ReactS3Uploader
-            multiple={this.props.multipleFiles}
-            signingUrl={this.props.signingUrl}
-            signingUrlMethod={this.props.signingUrlMethod}
-            accept={this.props.accept}
-            s3path="/"
-            onSignedUrl={this.onSignedUrl}
-            onProgress={this.onUploadProgress}
-            onError={this.onUploadError}
-            onFinish={this.onUploadFinish}
-            signingUrlHeaders={{ ...getHeaders() }}
-            signingUrlQueryParams={{ type: 'PUT' }}
-            uploadRequestHeaders={{ 'x-amz-acl': this.props.XAmzAcl }} // this is the default
-            contentDisposition="auto"
-            server={this.props.server}
-            autoUpload={true}
-          />
-        </StyledUploadBtnWrapper>
-        {this.state.error === true && (
-          <Text className="clr-red ft-small" useWordBoundary={30}>
-            {this.state.errorMessage}
-          </Text>
-        )}
-        {typeof this.props.value === 'object' && (
-          <div className="FileWrapper">
-            <File
-              fileId={this.props.value.id}
-              fileKey={this.props.value.key}
-              fileName={this.props.value.name}
-              showLink={this.props.showLink}
+            </Button>
+            <ReactS3Uploader
+              multiple={this.props.multipleFiles}
+              signingUrl={this.props.signingUrl}
+              signingUrlMethod={this.props.signingUrlMethod}
+              getSignedUrl={this.getSignedUrl}
+              accept={this.props.accept}
+              s3path="/"
+              onSignedUrl={this.onSignedUrl}
+              onProgress={this.onUploadProgress}
+              onError={this.onUploadError}
+              onFinish={this.onUploadFinish}
+              signingUrlHeaders={{ ...getHeaders() }}
+              signingUrlQueryParams={{ type: 'PUT' }}
+              uploadRequestHeaders={{ 'x-amz-acl': this.props.XAmzAcl }} // this is the default
+              contentDisposition="auto"
+              server={this.props.server}
+              autoUpload={true}
             />
-          </div>
-        )}
-      </StyledImageUploader>
+          </StyledUploadBtnWrapper>
+          {this.state.error === true && (
+            <Text>
+              {this.state.errorMessage}
+            </Text>
+          )}
+
+        </StyledImageUploader>
+      </>
     )
   }
 }
 
-export default ImageUploader
+export default FilePickerS3
