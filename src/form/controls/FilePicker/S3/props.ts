@@ -1,3 +1,9 @@
+/**
+ * This component using https://reactstrap.github.io/components/form/ : CustomInput
+ * @example
+ *   <FilePickerS3 name="image" label="Picture" onUploadFinish={(data) => void}>
+ */
+
 export interface State {
   /** on loading */
   loading: boolean
@@ -12,7 +18,17 @@ export interface State {
   errorMessage: string
 }
 
-export interface Props {
+export interface Props extends ReactS3Uploader {
+
+  /** Signed url */
+  signingUrl: string
+
+  /** Signed server */
+  server: string 
+
+  /** Acl upload aws */
+  XAmzAcl?: string
+
   /** The label that will be displayed */
   label: string
 

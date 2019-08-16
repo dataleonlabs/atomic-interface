@@ -150,8 +150,8 @@ class ImageUploader extends React.PureComponent<Props, State> {
           />
           <ReactS3Uploader
             multiple={this.props.multipleFiles}
-            signingUrl="/s3/sign"
-            signingUrlMethod="GET"
+            signingUrl={this.props.signingUrl}
+            signingUrlMethod={this.props.signingUrlMethod}
             accept={this.props.accept}
             s3path="/"
             onSignedUrl={this.onSignedUrl}
@@ -160,9 +160,9 @@ class ImageUploader extends React.PureComponent<Props, State> {
             onFinish={this.onUploadFinish}
             signingUrlHeaders={{ ...getHeaders() }}
             signingUrlQueryParams={{ type: 'PUT' }}
-            uploadRequestHeaders={{ 'x-amz-acl': 'public-read' }} // this is the default
+            uploadRequestHeaders={{ 'x-amz-acl': this.props.XAmzAcl }} // this is the default
             contentDisposition="auto"
-            server={API_URL}
+            server={this.props.server}
             autoUpload={true}
           />
         </StyledUploadBtnWrapper>
