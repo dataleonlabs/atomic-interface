@@ -6,8 +6,8 @@ import NavItem from './NavItem'
 import NavbarBrand from './NavbarBrand'
 import NavLink from './NavLink'
 import Form from './../../form/index'
-import Breadcrumb from '../Breadcumb';
-import BreadcrumbItem from '../Breadcumb/BreadcrumbItem';
+import Breadcrumb from '../Breadcrumb';
+import BreadcrumbItem from '../Breadcrumb/BreadcrumbItem';
 import Button from '../../form/controls/Button';
 import { User, Save, Users } from 'react-feather';
 import SearchBar from '../../form/controls/SearchBar';
