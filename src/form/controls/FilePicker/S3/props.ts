@@ -1,4 +1,5 @@
-import { ButtonProps } from "../../Button/props";
+import React from 'react';
+import { FilePickerProps } from '../props';
 
 /**
  * This component using https://reactstrap.github.io/components/form/ : CustomInput
@@ -13,6 +14,8 @@ export interface State {
   /** On progress upload */
   progress: number
 
+  fileName: string
+
   /** If error */
   error: boolean
 
@@ -20,10 +23,13 @@ export interface State {
   errorMessage: string
 }
 
-export interface Props {
+export interface Props extends FilePickerProps {
 
   /** Signed url */
   signingUrl: string
+
+  /** Active filename with uuidv4 */
+  uuid?: boolean
 
   /** Signed method */
   signingUrlMethod: 'PUT' | 'GET'
@@ -41,13 +47,7 @@ export interface Props {
   name: string
 
   /** Handle a function when the input file is changed */
-  onUploadFinish: (
-    data: {
-      name: string
-      value: { id?: string; key: string; name: string }
-      error: boolean
-    },
-  ) => void
+  onUploadFinish?: (name: string) => void
 
   /** Upload multiple files */
   multipleFiles?: boolean
@@ -55,11 +55,15 @@ export interface Props {
   /** Accept files */
   accept?: string
 
-  /**
-   * The value that contain a filename on string and the data on string
-   */
-  value?: { id?: string; key?: string; name?: string }
+  outline?: boolean;
+  block?: boolean;
+  color?: string;
+  size?: any;
+  id?: string;
+  style?: React.CSSProperties;
 
-  showLink?: boolean
-  buttonProps?: ButtonProps
+  /** icon displayed on left */
+  icon?: JSX.Element
+
+  children: string | JSX.Element | JSX.Element[] | Element
 }

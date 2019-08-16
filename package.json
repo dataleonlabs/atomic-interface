@@ -48,6 +48,7 @@
     "@types/reactstrap": "^8.0.1",
     "@types/sinon": "^7.0.13",
     "@types/styled-components": "^4.1.18",
+    "@types/uuidv4": "^2.0.0",
     "@types/yup": "^0.26.22",
     "@zendeskgarden/react-pagination": "^6.3.1",
     "@zendeskgarden/react-tables": "^6.3.1",
@@ -67,6 +68,7 @@
     "react-select": "^3.0.4",
     "reactstrap": "^8.0.1",
     "styled-components": "^4.3.2",
+    "uuidv4": "^4.0.0",
     "yap-sdk": "^1.2.0",
     "yup": "^0.27.0"
   },

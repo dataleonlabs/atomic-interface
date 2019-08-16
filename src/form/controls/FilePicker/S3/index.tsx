@@ -1,13 +1,15 @@
 import * as React from 'react';
 const ReactS3Uploader = require('react-s3-uploader');
 import {
-  StyledButtonLabel, StyledIconUpload,
   StyledImageUploader, StyledUploadBtnWrapper
 } from './style';
 import { Props, State } from './props'
 
 import { Text, Button } from '../../../../../src'
-
+import { FieldProps, Field } from 'formik';
+import Control from '../../../Control';
+import { FormText } from 'reactstrap';
+import uuidv4 from 'uuidv4';
 
 export function getHeaders() {
   const headers = {
@@ -18,36 +20,40 @@ export function getHeaders() {
   return headers
 }
 
-
-
 class FilePickerS3 extends React.PureComponent<Props> {
 
   public static defaultProps: Partial<Props> = {
     XAmzAcl: 'private',
     multipleFiles: true,
-    value: {
-      key: '',
-      name: '',
-    },
+    uuid: true
   }
 
   public state: State = {
     error: false,
     errorMessage: '',
+    fileName: '',
     loading: false,
     progress: 0,
   }
 
   public getSignedUrl = (file: any, callback: any) => {
 
-    fetch(`${this.props.server}${this.props.signingUrl}?key=${file.name}&contentType=${file.type}&type=${'put'}`)
-      .then(data => data.json())
-      .then(data => {
-        callback(data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    let fileName = file.name;
+    if (this.props.uuid === true) {
+      const ext = file.name.split('.').pop();
+      fileName = `${uuidv4().toLocaleUpperCase()}.${ext}`;
+    }
+
+    this.setState({ fileName }, () => {
+      fetch(`${this.props.server}${this.props.signingUrl}?key=${fileName}&contentType=${file.type}&type=put&acl=${this.props.XAmzAcl}`)
+        .then(data => data.json())
+        .then(data => {
+          callback({ signedUrl: data.data });
+        })
+        .catch(error => {
+          this.setState(error);
+        });
+    })
   }
 
   public onClick = () => {
@@ -70,19 +76,13 @@ class FilePickerS3 extends React.PureComponent<Props> {
     })
   }
 
-  public onUploadFinish = async (params: any) => {
+  public onUploadFinish = (setFieldValue: FieldProps<{}>['form']['setFieldValue']) => async () => {
     try {
-      const values = {
-        key: params.filename,
-        name: params.originalFilename,
-      }
-
-      this.setState({ loading: false, progress: 0 })
-
-      this.props.onUploadFinish({
-        error: false,
-        name: this.props.name,
-        value: { ...values },
+      this.setState({ loading: false, progress: 0 }, () => {
+        setFieldValue(this.props.name, this.state.fileName);
+        if (typeof this.props.onUploadFinish === 'function') {
+          this.props.onUploadFinish(this.state.fileName);
+        }
       })
     } catch (e) {
       this.setState({
@@ -93,36 +93,50 @@ class FilePickerS3 extends React.PureComponent<Props> {
     }
   }
 
-  public render() {
+
+  public renderField = ({ field, form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
+    const {
+      outline,
+      block,
+      color,
+      size,
+      id,
+      style,
+      icon,
+    } = this.props;
+    const { value, ...rest } = field;
     return (
       <>
         <StyledImageUploader>
-          <span className="Label">{this.props.label}</span>
           <StyledUploadBtnWrapper label={this.props.label}>
             <Button
               loading={this.state.loading}
-              onClick={this.onClick}
-              {...this.props.buttonProps}
+              outline={outline}
+              block={block}
+              color={color}
+              disabled={(this.state.loading || 0) > 0 ? true : false}
+              size={size}
+              icon={icon}
+              id={id}
+              style={style}
+              type={'button'}
             >
               <>
-                <StyledIconUpload />
-                {'Upload image'}
-                {this.state.loading && (
-                  <StyledButtonLabel>{this.state.progress}%</StyledButtonLabel>
-                )}
+                {this.props.children} {this.state.progress ? `- ${this.state.progress}%` : ''}
               </>
             </Button>
             <ReactS3Uploader
+              {...rest}
               multiple={this.props.multipleFiles}
               signingUrl={this.props.signingUrl}
-              signingUrlMethod={this.props.signingUrlMethod}
+              signingUrlMethod="PUT"
               getSignedUrl={this.getSignedUrl}
               accept={this.props.accept}
               s3path="/"
               onSignedUrl={this.onSignedUrl}
               onProgress={this.onUploadProgress}
               onError={this.onUploadError}
-              onFinish={this.onUploadFinish}
+              onFinish={this.onUploadFinish(setFieldValue)}
               signingUrlHeaders={{ ...getHeaders() }}
               signingUrlQueryParams={{ type: 'PUT' }}
               uploadRequestHeaders={{ 'x-amz-acl': this.props.XAmzAcl }} // this is the default
@@ -137,8 +151,20 @@ class FilePickerS3 extends React.PureComponent<Props> {
             </Text>
           )}
 
+          {submitCount > 0 && (errors[this.props.name] ? true : false)
+            && <FormText color="danger">{errors[this.props.name]}</FormText>
+          }
+
         </StyledImageUploader>
       </>
+    )
+  }
+
+  public render() {
+    return (
+      <Control {...this.props}>
+        <Field id={this.props.name} render={this.renderField} />
+      </Control>
     )
   }
 }
