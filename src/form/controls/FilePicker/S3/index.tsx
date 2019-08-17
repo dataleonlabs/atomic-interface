@@ -4,12 +4,12 @@ import {
   StyledImageUploader, StyledUploadBtnWrapper
 } from './style';
 import { FilePickerS3Props as Props, State } from './props'
-
-import { Text, Button } from '../../../../../src'
 import { FieldProps, Field } from 'formik';
 import Control from '../../../Control';
 import { FormText } from 'reactstrap';
 import uuidv4 from 'uuidv4';
+import Text from '../../../../display/Text';
+import Button from '../../../../form/controls/Button';
 
 export function getHeaders() {
   const headers = {
