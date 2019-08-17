@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { FilePickerS3Props as Props, State } from './props';
+import { DropzoneS3Props as Props, State } from './props';
 import { FieldProps } from 'formik';
 export declare function getHeaders(): {
     Accept: string;
     Authorization: string;
     'Content-Type': string;
 };
-declare class FilePickerS3 extends React.PureComponent<Props> {
+declare class DropzoneS3 extends React.PureComponent<Props> {
     static defaultProps: Partial<Props>;
     state: State;
     getSignedUrl: (file: any, callback: any) => void;
@@ -18,7 +18,7 @@ declare class FilePickerS3 extends React.PureComponent<Props> {
         (field: never, value: any, shouldValidate?: boolean | undefined): void;
         (field: string, value: any): void;
     }) => () => Promise<void>;
-    renderField: ({ field, form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => JSX.Element;
+    renderField: ({ form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => JSX.Element;
     render(): JSX.Element;
 }
-export default FilePickerS3;
+export default DropzoneS3;

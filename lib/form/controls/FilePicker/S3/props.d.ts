@@ -16,7 +16,7 @@ export interface State {
     /** Error message */
     errorMessage: string;
 }
-export interface Props extends FilePickerProps {
+export interface FilePickerS3Props extends FilePickerProps {
     /** Signed url */
     signingUrl: string;
     /** Active filename with uuidv4 */
