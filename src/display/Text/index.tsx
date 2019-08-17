@@ -4,7 +4,8 @@ import { FormText, Label } from 'reactstrap';
 import { TextProps as Props } from './props'
 import Tooltip from '../Tooltip';
 import { makeId } from '../../utils';
-
+const momentDurationFormatSetup = require("moment-duration-format");
+momentDurationFormatSetup(moment);
 // Sample for ago formting
 // import TimeAgo from 'timeago-react'
 // import { register } from 'timeago.js'
@@ -73,6 +74,10 @@ export const getText = (props: any) => {
       }
       if (props.type === 'date') {
         return moment(new Date(child)).locale(props.locale).format(props.format) === 'Invalid date' ? child : moment(new Date(child)).locale(props.locale).format(props.format)
+      }
+
+      if (props.type === 'duration') {
+        return (moment.duration(Number(child), "seconds") as any).format(props.format);
       }
 
       if (props.type === 'ago') {

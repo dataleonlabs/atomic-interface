@@ -1,20 +1,21 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Col } from 'reactstrap';
-import FilePickerS3 from './index'
+import DropzoneS3 from './index'
 import { CloudRain } from 'react-feather';
 import Form from '../../..';
 
 
 storiesOf('Forms|S3', module)
-  .add('FilePicker', () => (
+  .add('Dropzone', () => (
     <React.Fragment>
       <Form>
         {({ values }) => (
           <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-            <h4>FilePickerS3</h4>
-            <FilePickerS3
+            <h4>DropzoneS3</h4>
+            <DropzoneS3
               name="myfile"
+              s3Url={"http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"}
               color="primary"
               size={'md'}
               multipleFiles={true}
@@ -26,7 +27,7 @@ storiesOf('Forms|S3', module)
               signingUrl="/dev/test-signed"
               signingUrlMethod="PUT"
               XAmzAcl="public-read"
-            ><span>Upload your files with S3</span></FilePickerS3>
+            ><span>Upload your files with S3</span></DropzoneS3>
             <code>values: {JSON.stringify(values)}</code><br />
           </Col>
         )}

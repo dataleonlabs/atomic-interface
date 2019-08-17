@@ -13,6 +13,7 @@
     "sourceMap": true,
     "sourceRoot": "src",
     "allowJs": true,
+    "baseUrl": "./",
     "esModuleInterop": true,
     "noFallthroughCasesInSwitch": false,
     "allowSyntheticDefaultImports": true,

@@ -121,4 +121,16 @@ describe('<Text/>', () => {
     expect(wrapper.find(Text).text()).toContain('€');
   })
 
+  it('U-TEST-8 - Text rendering with duration format', () => {
+    const wrapper = enzyme.mount(
+      <Text type="duration" format="ss [secs]">
+        15
+      </Text>
+    );
+    expect(wrapper.find(Text)).toHaveLength(1);
+    expect(wrapper.props().type).toEqual('duration');
+    expect(wrapper.props().format).toEqual('ss [secs]');
+    expect(wrapper.find(Text).text()).toContain('15 secs');
+  })
+
 })
