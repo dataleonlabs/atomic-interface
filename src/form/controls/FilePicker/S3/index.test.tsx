@@ -17,7 +17,7 @@ describe('<FilePickerS3 />', () => {
             icon={<CloudRain size={15} />}
             label="Files"
             outline={true}
-            onUploadFinish={(data) => { }}
+            onUploadFinish={() => { }}
             server="https://3dgzy3koke.execute-api.eu-west-3.amazonaws.com"
             signingUrl="/dev/test-signed"
             signingUrlMethod="PUT"

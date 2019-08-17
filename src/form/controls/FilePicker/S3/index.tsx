@@ -3,7 +3,7 @@ const ReactS3Uploader = require('react-s3-uploader');
 import {
   StyledImageUploader, StyledUploadBtnWrapper
 } from './style';
-import { Props, State } from './props'
+import { FilePickerS3Props as Props, State } from './props'
 
 import { Text, Button } from '../../../../../src'
 import { FieldProps, Field } from 'formik';

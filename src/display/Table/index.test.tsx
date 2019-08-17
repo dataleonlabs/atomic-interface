@@ -255,8 +255,8 @@ describe('<Table />', () => {
       </Table>
     )
 
-    expect(wrapper.find(TableBase)).toHaveLength(1)
     expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(TableBase)).toHaveLength(0)
     expect(wrapper.find(Body)).toHaveLength(0)
 
     // Not used in compilaton

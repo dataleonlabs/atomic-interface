@@ -83,12 +83,10 @@ class Table extends React.Component<Props, State> {
   }
 
   public async componentDidUpdate(prevProps: any) {
-    if (this.props.draggable === true) {
-      if (this.props.data !== prevProps.data) {
-        this.setState({
-          items: this.props.data || [],
-        })
-      }
+    if (this.props.data !== prevProps.data) {
+      this.setState({
+        items: this.props.data || [],
+      })
     }
   }
 

@@ -10,11 +10,11 @@ storiesOf('Forms|FilePickerS3', module)
   .add('Example', () => (
     <React.Fragment>
       <Form>
-        {(_) => (
+        {({ values }) => (
           <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
             <h4>FilePickerS3</h4>
             <FilePickerS3
-              name="image"
+              name="myfile"
               color="primary"
               size={'md'}
               multipleFiles={true}
@@ -27,6 +27,7 @@ storiesOf('Forms|FilePickerS3', module)
               signingUrlMethod="PUT"
               XAmzAcl="public-read"
             ><span>Upload your files with S3</span></FilePickerS3>
+            <code>values: {JSON.stringify(values)}</code><br />
           </Col>
         )}
       </Form>

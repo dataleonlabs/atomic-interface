@@ -23,7 +23,7 @@ export interface State {
   errorMessage: string
 }
 
-export interface Props extends FilePickerProps {
+export interface FilePickerS3Props extends FilePickerProps {
 
   /** Signed url */
   signingUrl: string
