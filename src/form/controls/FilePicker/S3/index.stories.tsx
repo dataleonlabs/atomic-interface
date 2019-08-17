@@ -6,13 +6,13 @@ import { CloudRain } from 'react-feather';
 import Form from '../../..';
 
 
-storiesOf('Forms|S3', module)
-  .add('FilePicker', () => (
+storiesOf('Forms|FilePicker', module)
+  .add('S3', () => (
     <React.Fragment>
       <Form>
         {({ values }) => (
           <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-            <h4>FilePickerS3</h4>
+            <h4>FilePicker forAWS S3</h4>
             <FilePickerS3
               name="myfile"
               color="primary"

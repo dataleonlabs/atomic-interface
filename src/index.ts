@@ -65,9 +65,11 @@ export { CheckboxProps } from './form/controls/Checkbox/props';
 export { default as FilePicker } from './form/controls/FilePicker';
 export { FilePickerProps } from './form/controls/FilePicker/props';
 
-
 export { default as FilePickerS3 } from './form/controls/FilePicker/S3';
 export { FilePickerS3Props } from './form/controls/FilePicker/S3/props';
+
+export { default as DropzoneS3 } from './form/controls/Dropzone/S3';
+export { DropzoneS3Props } from './form/controls/Dropzone/S3/props';
 
 export { default as Input } from './form/controls/Input';
 export { InputProps } from './form/controls/Input/props';

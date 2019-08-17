@@ -6,13 +6,13 @@ import { CloudRain } from 'react-feather';
 import Form from '../../..';
 
 
-storiesOf('Forms|S3', module)
-  .add('Dropzone', () => (
+storiesOf('Forms|Dropzone', module)
+  .add('S3', () => (
     <React.Fragment>
       <Form>
         {({ values }) => (
           <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-            <h4>DropzoneS3</h4>
+            <h4>Dropzone for AWS S3</h4>
             <DropzoneS3
               name="myfile"
               s3Url={"http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"}
