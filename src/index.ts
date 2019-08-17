@@ -6,6 +6,9 @@ export { AbbreviationProps } from './display/Abbreviation/props';
 export { default as Alert } from './display/Alert';
 export { AlertProps } from './display/Alert/props';
 
+export { default as Profil } from './display/Profil';
+export { ProfilProps } from './display/Profil/props';
+
 export { default as Badge } from './display/Badge';
 export { BadgeProps } from './display/Badge/props';
 
