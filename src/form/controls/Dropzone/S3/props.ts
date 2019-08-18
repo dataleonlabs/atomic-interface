@@ -13,6 +13,8 @@ export interface State {
   /** On progress upload */
   progress: number
 
+  uploaded: boolean
+
   fileName: string
 
   /** If error */

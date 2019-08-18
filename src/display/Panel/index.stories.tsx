@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Col, Button } from 'reactstrap';
 import Panel from './index';
 
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 export default class UploadDisplay extends React.Component<any> {
 
   public renderFileUpload = (_: any, i: number) => {
-    const fileName = this.props.fileName as string;
+    const fileName = (this.props.fileName || this.props.value) as string;
     let url = `${this.props.s3Url}/${fileName}`;
 
     if (typeof this.props.onDiplay === 'function') {
@@ -21,7 +21,16 @@ export default class UploadDisplay extends React.Component<any> {
   }
 
   public render() {
-    const { uploadedFiles, progress } = this.props as any;
+    const { uploadedFiles, progress, value, uploaded } = this.props as any;
+    // For edit value
+    if (value && !uploadedFiles.length && !uploaded) {
+      return (
+        <div className={`Dropzone ${uploadedFiles.length ? "dropped" : ""}`}>
+          {this.renderFileUpload(null, 0)}
+        </div>
+      )
+    }
+
     return (
       <div className={`Dropzone ${uploadedFiles.length ? "dropped" :""}`}>
         {!uploadedFiles.length && !progress && <div className="DropText">{this.props.children}</div>}

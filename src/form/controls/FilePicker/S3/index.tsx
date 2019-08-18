@@ -24,7 +24,8 @@ class FilePickerS3 extends React.PureComponent<Props> {
 
   public static defaultProps: Partial<Props> = {
     XAmzAcl: 'private',
-    multipleFiles: true,
+    multipleFiles: false,
+    signingUrlMethod: 'PUT',
     uuid: true
   }
 

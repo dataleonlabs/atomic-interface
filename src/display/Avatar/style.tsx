@@ -1,14 +1,14 @@
 
 import styled from 'styled-components'
-import { ProfilProps } from './props';
+import { AvatarProps } from './props';
 
-const sizeFunc = ({ size }: ProfilProps ) => {
+const sizeFunc = ({ size }: AvatarProps ) => {
   if (size === 'sm') { return '40px' }
   if (size === 'lg') { return '70px' }
   return `50px`;
 };
 
-export const StyledImage = styled.span<{ size: ProfilProps['size'] }>`
+export const StyledImage = styled.span<{ size: AvatarProps['size'] }>`
   width: ${sizeFunc};;
   height: ${sizeFunc};;
   display: inline-block;

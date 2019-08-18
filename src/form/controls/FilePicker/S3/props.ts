@@ -32,7 +32,7 @@ export interface FilePickerS3Props extends FilePickerProps {
   uuid?: boolean
 
   /** Signed method */
-  signingUrlMethod: 'PUT' | 'GET'
+  signingUrlMethod?: 'PUT' | 'GET'
 
   /** Signed server */
   server: string

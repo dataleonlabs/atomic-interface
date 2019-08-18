@@ -21,7 +21,8 @@ class DropzoneS3 extends React.PureComponent<Props> {
 
   public static defaultProps: Partial<Props> = {
     XAmzAcl: 'private',
-    multipleFiles: true,
+    multipleFiles: false,
+    signingUrlMethod: 'PUT',
     uuid: true
   }
 
@@ -31,6 +32,7 @@ class DropzoneS3 extends React.PureComponent<Props> {
     fileName: '',
     loading: false,
     progress: 0,
+    uploaded: false,
   }
 
   public getSignedUrl = (file: any, callback: any) => {
@@ -75,7 +77,7 @@ class DropzoneS3 extends React.PureComponent<Props> {
 
   public onUploadFinish = (setFieldValue: FieldProps<{}>['form']['setFieldValue']) => async () => {
     try {
-      this.setState({ loading: false, progress: 0 }, () => {
+      this.setState({ loading: false, uploaded: true, progress: 0 }, () => {
         setFieldValue(this.props.name, this.state.fileName);
         if (typeof this.props.onUploadFinish === 'function') {
           this.props.onUploadFinish(this.state.fileName);
@@ -90,7 +92,7 @@ class DropzoneS3 extends React.PureComponent<Props> {
     }
   }
 
-  public renderField = ({ form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
+  public renderField = ({ field, form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
     return (
       <>
         <StyledDropzoneS3Uploader
@@ -102,7 +104,7 @@ class DropzoneS3 extends React.PureComponent<Props> {
           onProgress={this.onUploadProgress}
           key={1}
         >
-          <UploadDisplay {...this.props} fileName={this.state.fileName} progress={this.state.progress}>
+          <UploadDisplay {...this.props} uploaded={this.state.uploaded} fileName={this.state.fileName} value={field.value[this.props.name]} progress={this.state.progress}>
             {this.props.children}
           </UploadDisplay>
         </StyledDropzoneS3Uploader>
