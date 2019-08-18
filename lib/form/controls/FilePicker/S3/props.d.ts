@@ -22,7 +22,7 @@ export interface FilePickerS3Props extends FilePickerProps {
     /** Active filename with uuidv4 */
     uuid?: boolean;
     /** Signed method */
-    signingUrlMethod: 'PUT' | 'GET';
+    signingUrlMethod?: 'PUT' | 'GET';
     /** Signed server */
     server: string;
     /** Acl upload aws */

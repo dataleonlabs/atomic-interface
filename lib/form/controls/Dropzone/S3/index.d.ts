@@ -18,7 +18,7 @@ declare class DropzoneS3 extends React.PureComponent<Props> {
         (field: never, value: any, shouldValidate?: boolean | undefined): void;
         (field: string, value: any): void;
     }) => () => Promise<void>;
-    renderField: ({ form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => JSX.Element;
+    renderField: ({ field, form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => JSX.Element;
     render(): JSX.Element;
 }
 export default DropzoneS3;
