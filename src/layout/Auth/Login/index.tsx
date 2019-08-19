@@ -13,11 +13,11 @@ const Login = (bodyProps: BodyProps, headerProps: HeaderProps, footerProps: Foot
                 <CardHeader>{headerProps.children}</CardHeader>
                 <CardBody>
                     <Form>
-                        <Input name='username' type='text' placeholder='Enter Username'>
+                        <Input name='email' type='text' placeholder='Enter Email'>
                         </Input>
                         <Input name='password' type='password' placeholder='Enter Password'>
                         </Input>
-                        <Button name='btnSubmti' type='submit'>Login</Button>
+                        <Button>Login</Button>
                     </Form>
                 </CardBody>
                 <CardFooter>{footerProps.children}</CardFooter>
@@ -29,11 +29,11 @@ const Login = (bodyProps: BodyProps, headerProps: HeaderProps, footerProps: Foot
                 <CardHeader>{headerProps.children}</CardHeader>
                 <CardBody>
                     <Form>
-                        <Input name='email' type='text' placeholder='Enter Email'>
+                        <Input name='newpassword' type='password' placeholder='Enter New Password'>
                         </Input>
-                        <Input name='password' type='password' placeholder='Enter New Password'>
+                        <Input name='confirmpassword' type='password' placeholder='Enter Confirm Password'>
                         </Input>
-                        <Button name='btnSubmti' type='submit'>Save Password</Button>
+                        <Button>Save Password</Button>
                     </Form>
                 </CardBody>
                 <CardFooter>{footerProps.children}</CardFooter>
@@ -45,11 +45,9 @@ const Login = (bodyProps: BodyProps, headerProps: HeaderProps, footerProps: Foot
                 <CardHeader>{headerProps.children}</CardHeader>
                 <CardBody>
                     <Form>
-                        <Input name='username' type='text' placeholder='Enter Username'>
-                        </Input>
                         <Input name='code' type='text' placeholder='Enter Code'>
                         </Input>
-                        <Button name='btnSubmti' type='submit'>Submit</Button>
+                        <Button>Submit</Button>
                     </Form>
                 </CardBody>
                 <CardFooter>{footerProps.children}</CardFooter>
