@@ -17,7 +17,7 @@ const Login = (bodyProps: BodyProps, headerProps: HeaderProps, footerProps: Foot
                         </Input>
                         <Input name='password' type='password' placeholder='Enter Password'>
                         </Input>
-                        <Button>Login</Button>
+                        <Button>Submit</Button>
                     </Form>
                 </CardBody>
                 <CardFooter>{footerProps.children}</CardFooter>
@@ -33,7 +33,7 @@ const Login = (bodyProps: BodyProps, headerProps: HeaderProps, footerProps: Foot
                         </Input>
                         <Input name='confirmpassword' type='password' placeholder='Enter Confirm Password'>
                         </Input>
-                        <Button>Save Password</Button>
+                        <Button>Submit</Button>
                     </Form>
                 </CardBody>
                 <CardFooter>{footerProps.children}</CardFooter>
