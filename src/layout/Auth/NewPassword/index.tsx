@@ -3,10 +3,10 @@ import { AuthProps as AuthPropsProvider } from '../props';
 import { Card } from 'reactstrap';
 
 //Login Form Component
-const Login = (authProps: AuthPropsProvider) => {
+const NewPassword = (authProps: AuthPropsProvider) => {
     <Card>
         {authProps.children}
     </Card>
 }
-export default Login;
+export default NewPassword;
 

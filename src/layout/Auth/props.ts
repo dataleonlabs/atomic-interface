@@ -25,17 +25,6 @@ export interface AuthHeaderProps {
     children: string | JSX.Element | JSX.Element[]
 }
 
-export interface AuthBodyProps {
-
-    /** 
-     * Component form display for manage authentification
-     * Default is login
-     * When user select. Example newPassword
-     *  - Create form and add fields email, password and button
-     */
-    component: 'login' | 'newPassword' | 'confirmSignIn'
-}
-
 export interface AuthFooterProps {
 
     /** Children is added directly in login component */
