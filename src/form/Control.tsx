@@ -1,6 +1,5 @@
 import React from 'react';
-import { ErrorMessage } from 'formik';
-import { Label, FormGroup, FormText, FormFeedback } from 'reactstrap';
+import { Label, FormGroup, FormText } from 'reactstrap';
 import { InputProps } from './controls/Input/props';
 import Tooltip from '../display/Tooltip';
 import { makeId } from '../utils';
@@ -45,7 +44,6 @@ const Control = (props: Props) => {
         </>
       )}
       {props.children}
-      <ErrorMessage component={FormFeedback} name={props.name} />
       {props.help && <FormText>{props.help}</FormText>}
     </StyledControl>
   )

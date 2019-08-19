@@ -11,12 +11,7 @@ export default class AWSCognitoLoginProvier implements AuthInterface  {
     }
         
     async signIn(p: {email:string, password: string}){        
-        try {
-            const user = await Auth.signIn(p.email, p.password);        
-            return user;
-        } catch (e) {
-            return "SignInErrorInIndex: "+e;
-        }
+        return Auth.signIn(p.email, p.password);
     }
     
 

@@ -94,7 +94,9 @@ describe('<Table />', () => {
     const wrapper = enzyme.mount(
       <Table data={[{ id: 1 }]} rowSize={'small'}>
         <Column field={'id'}>Id</Column>
-        <Column field={'firstName'}>First Name</Column>
+        <Column field={'firstName'} formatter={(_, row) => {
+          return <span>{row.firstName} {row.lastName} User</span>;
+        }}>First Name</Column>
         <Column field={'lastName'}>Last Name</Column>
       </Table>
     )
@@ -253,8 +255,8 @@ describe('<Table />', () => {
       </Table>
     )
 
-    expect(wrapper.find(TableBase)).toHaveLength(1)
     expect(wrapper.find(Head)).toHaveLength(1)
+    expect(wrapper.find(TableBase)).toHaveLength(0)
     expect(wrapper.find(Body)).toHaveLength(0)
 
     // Not used in compilaton

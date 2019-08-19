@@ -4,8 +4,8 @@ import Textarea from './controls/Textarea/index'
 import Input from './controls/Input/index'
 import Form from './index'
 import TextareaAutosize from 'react-autosize-textarea';
-import { Label } from 'reactstrap';
-import { Form as FormFormik, Formik, Field } from 'formik';
+import { Label, Form as FormBase } from 'reactstrap';
+import { Formik, Field } from 'formik';
 
 describe('<Form />', () => {
   it('U-TEST-1 - testarea render with max rows', () => {
@@ -18,7 +18,7 @@ describe('<Form />', () => {
     )
     expect(wrapper.find(TextareaAutosize)).toHaveLength(1)
     expect(wrapper.find(Label)).toHaveLength(0)
-    expect(wrapper.find(FormFormik)).toHaveLength(1)
+    expect(wrapper.find(FormBase)).toHaveLength(1)
     expect(wrapper.find(Formik)).toHaveLength(1)
   })
 
@@ -32,7 +32,7 @@ describe('<Form />', () => {
     )
     expect(wrapper.find(TextareaAutosize)).toHaveLength(1)
     expect(wrapper.find(Label)).toHaveLength(1)
-    expect(wrapper.find(FormFormik)).toHaveLength(1)
+    expect(wrapper.find(FormBase)).toHaveLength(1)
     expect(wrapper.find(Formik)).toHaveLength(1)
   })
 
@@ -51,7 +51,7 @@ describe('<Form />', () => {
     expect(wrapper.find(Field)).toHaveLength(2)
     expect(wrapper.find(Input)).toHaveLength(1)
     expect(wrapper.find(Label)).toHaveLength(1)
-    expect(wrapper.find(FormFormik)).toHaveLength(1)
+    expect(wrapper.find(FormBase)).toHaveLength(1)
     expect(wrapper.find(Formik)).toHaveLength(1)
   })
 })

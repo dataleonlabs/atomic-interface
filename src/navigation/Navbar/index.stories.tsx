@@ -6,8 +6,8 @@ import NavItem from './NavItem'
 import NavbarBrand from './NavbarBrand'
 import NavLink from './NavLink'
 import Form from './../../form/index'
-import Breadcrumb from '../Breadcumb';
-import BreadcrumbItem from '../Breadcumb/BreadcrumbItem';
+import Breadcrumb from '../Breadcrumb';
+import BreadcrumbItem from '../Breadcrumb/BreadcrumbItem';
 import Button from '../../form/controls/Button';
 import { User, Save, Users } from 'react-feather';
 import SearchBar from '../../form/controls/SearchBar';
@@ -114,4 +114,24 @@ storiesOf('Navigation|Navbar', module)
         </Nav>
       </Navbar>
     </React.Fragment>
+  )).add('Test Navbar With big size', () => (
+    <React.Fragment>
+      <Navbar size="lg">
+        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+        <Breadcrumb>
+          <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+          <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+        </Breadcrumb>
+        <Nav>
+          <NavItem>
+            <Button icon={<User size={18} />} color="primary">Add user</Button>
+          </NavItem>
+          <NavItem>
+            <Button icon={<Save size={18} />} color="warning">Save</Button>
+          </NavItem>
+        </Nav>
+      </Navbar>
+    </React.Fragment>
   ));
+

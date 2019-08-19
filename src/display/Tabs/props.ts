@@ -10,7 +10,7 @@ import { ReactNode } from "react";
  * </Tabs>
  */
 
-export interface TabItem {
+export interface TabItemProps {
     /** String displayed on the nav tab */
     title: string
 
