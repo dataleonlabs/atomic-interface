@@ -16,7 +16,7 @@ export interface AuthProps {
     /** Provider for login, logout, or confirm password */
    // provider: InterfaceAuthProvider
    /** Children is added directly in respective component */   
-   children: JSX.Element[]
+   children: JSX.Element | JSX.Element[]
 }
 
 export interface AuthHeaderProps {
