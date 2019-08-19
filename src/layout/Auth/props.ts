@@ -1,3 +1,4 @@
+import { Component } from "react";
 
 /**
  * Using form component
@@ -14,6 +15,8 @@ export interface AuthProps {
 
     /** Provider for login, logout, or confirm password */
    // provider: InterfaceAuthProvider
+   /** Children is added directly in login component */
+   children: any;
 }
 
 export interface AuthHeaderProps {
