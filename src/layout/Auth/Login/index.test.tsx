@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as enzyme from 'enzyme';
 import Auth from './index';
-import AuthBody from './AuthBody';
-import AuthHeader from './AuthHeader';
-import AuthFooter from './AuthFooter';
+import AuthBody from './Body';
+import AuthHeader from './Header';
+import AuthFooter from './Footer';
 
 
 describe('<Auth />', () => {
