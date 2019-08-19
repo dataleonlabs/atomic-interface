@@ -15,18 +15,18 @@ export interface AuthProps {
 
     /** Provider for login, logout, or confirm password */
    // provider: InterfaceAuthProvider
-   /** Children is added directly in login component */
-   children: any;
+   /** Children is added directly in respective component */   
+   children: JSX.Element[]
 }
 
 export interface AuthHeaderProps {
 
-    /** Children is added directly in login component */
+    /** Children is added directly in header component */
     children: string | JSX.Element | JSX.Element[]
 }
 
 export interface AuthFooterProps {
 
-    /** Children is added directly in login component */
+    /** Children is added directly in footer component */
     children: string | JSX.Element | JSX.Element[]
 }

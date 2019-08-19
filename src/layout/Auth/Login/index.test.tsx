@@ -6,7 +6,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 
 
-describe('<Auth />', () => {
+describe('<Auth/Login />', () => {
   it('U-TEST-1 - Test login', () => {
     const wrapper = enzyme.mount(            
         <Login>

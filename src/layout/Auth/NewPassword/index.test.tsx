@@ -6,7 +6,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 
 
-describe('<Auth />', () => {
+describe('<Auth/New Password />', () => {
   it('U-TEST-1 - Test NewPassword', () => {
     const wrapper = enzyme.mount(            
         <NewPassword>

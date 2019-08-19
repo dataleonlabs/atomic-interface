@@ -6,14 +6,14 @@ import Header from '../Header';
 import Footer from '../Footer';
 
 
-describe('<Auth />', () => {
+describe('<Auth/Confirm Sign In />', () => {
   it('U-TEST-1 - Test ConfrimSignIn', () => {
-    const wrapper = enzyme.mount(            
+    const wrapper = enzyme.mount(      
         <ConfrimSignIn>
           <Header>ConfrimSignIn Form</Header>
           <Body></Body>
           <Footer>Submit</Footer>
-        </ConfrimSignIn>
+        </ConfrimSignIn>     
     )
     //expect(wrapper.find(Navbar)).toHaveLength(1);    
   })

@@ -4,9 +4,11 @@ import { Card } from 'reactstrap';
 
 //Login Form Component
 const Login = (authProps: AuthPropsProvider) => {
-    <Card>
-        {authProps.children}
-    </Card>
+    return (
+        <Card>
+            {authProps.children}
+        </Card>
+    )
 }
 export default Login;
 
