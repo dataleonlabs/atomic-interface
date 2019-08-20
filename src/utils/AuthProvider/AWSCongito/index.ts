@@ -19,7 +19,7 @@ export default class AWSCognitoLoginProvier implements AuthInterface  {
         return Auth.confirmSignIn(p.user, p.newPassword, 'SMS_MFA');
     }
 
-    completeNewPassword(p: {user: any, newPassword: string, meta?: { [key: string]: any }, mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA'}){
+    async completeNewPassword(p: {user: any, newPassword: string, meta?: { [key: string]: any }, mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA'}){
         return Auth.completeNewPassword(p.user, p.newPassword, p.mfaType);
     }
 

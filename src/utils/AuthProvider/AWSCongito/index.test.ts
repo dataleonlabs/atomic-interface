@@ -4,65 +4,135 @@ import AWSCognitoLoginProvier from './index';
 
 
 describe('AWSCognitoLoginProvier', () => {
-  
-  // it('U-TEST-1 - Test configure with AWS Cognito', () => {
-  //   ///    
-  //   const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
 
-  //   const configResult = awsCognitoLoginProvier.configure({
+  const poolId = 'eu-central-1_5jBnZEuMX';
+  const poolWebClientId = '543up50u5glbg9qlpkuhop779t';
+  const regionName = 'eu-central-1';
 
-  //     // OPTIONAL - Amazon Cognito User Pool ID
-  //     userPoolId: 'eu-central-1_5jBnZEuMX',
+  it('U-TEST-1 - Test configure with AWS Cognito', () => {
+        
+    const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
 
-  //     userPoolWebClientId: '4uoj4raljocr52so5rgnmkgq53',
+    const configResult = awsCognitoLoginProvier.configure({
 
-  //     // REQUIRED - Amazon Cognito Region
-  //     region: 'eu-central-1',
-      
-  //   });
+      // OPTIONAL - Amazon Cognito User Pool ID
+      userPoolId: poolId,
 
-  //   // In place of 0 we can write response to match
-  //   expect(JSON.stringify(configResult)).toContain('eu-central-1_5jBnZEuMX');
-  // })
+      userPoolWebClientId: poolWebClientId,
 
+      // REQUIRED - Amazon Cognito Region
+      region: regionName,
 
-  it('U-TEST-2 - Test login', async () => {    
+    });
+    expect(JSON.stringify(configResult)).toContain(poolId);
+  })
+
+  it.only('U-TEST-2 - Test login', async () => {
     const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
     awsCognitoLoginProvier.configure({
 
       // OPTIONAL - Amazon Cognito User Pool ID
-      userPoolId: 'eu-central-1_5jBnZEuMX',
+      userPoolId: poolId,
 
-      userPoolWebClientId: '543up50u5glbg9qlpkuhop779t',
+      userPoolWebClientId: poolWebClientId,
 
       // REQUIRED - Amazon Cognito Region
-      region: 'eu-central-1',
+      region: regionName,
 
     });
- 
+
     let signInResult;
     try {
-      const signInCredentials= {email: 'gerard@youngapp.co', password: '8NL4:@x&W-Zs[q}]'}
+      const signInCredentials = { email: 'gerard@youngapp.co', password: "78eDfpUETV(Hh)'C" }
       signInResult = await awsCognitoLoginProvier.signIn(signInCredentials);
       console.info(signInResult, "signInResult");
     } catch (e) {
-      signInResult ="SignInErrorInTestCase: "+e;
+      signInResult = e;
     }
-    // In place of 0 we can write response to match
-    // expect(JSON.stringify(signInResult)).toContain('SMS_MFA' || 'SOFTWARE_TOKEN_MFA');
+    expect(JSON.stringify(signInResult)).toContain('sadsaNotAuthorizedException');
   })
 
-  // it('U-TEST-2 - Test logout', () => {
-  //   const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
-    
-  //   const logoutResult = awsCognitoLoginProvier.signOut();
-  //   console.log(logoutResult);
+  it('U-TEST-3 - Test error NotAuthorizedException', async () => {
+    const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
+    awsCognitoLoginProvier.configure({
 
-  //   // In place of 0 we can write response to match
-  //   expect(logoutResult).toContain('Success');
-    
-  // })
+      // OPTIONAL - Amazon Cognito User Pool ID
+      userPoolId: poolId,
 
-  
+      userPoolWebClientId: poolWebClientId,
+
+      // REQUIRED - Amazon Cognito Region
+      region: regionName,
+
+    });
+
+    let signInResult;
+    try {
+      const signInCredentials = { email: 'gerard@youngapp.co', password: '8NL4:@x&W-Zs[q}]' }
+      signInResult = await awsCognitoLoginProvier.signIn(signInCredentials);
+      console.info(signInResult, "signInResult");
+    } catch (e) {
+      signInResult = e;
+    }
+    expect(signInResult.code).toContain('NotAuthorizedException');
+  })
+
+  it('U-TEST-4 - Test error UserNotFoundException', async () => {
+    const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
+    awsCognitoLoginProvier.configure({
+
+      // OPTIONAL - Amazon Cognito User Pool ID
+      userPoolId: poolId,
+
+      userPoolWebClientId: poolWebClientId,
+
+      // REQUIRED - Amazon Cognito Region
+      region: regionName,
+
+    });
+
+    let signInResult;
+    try {
+      const signInCredentials = { email: 'gerarddfdfdf@youngapp.co', password: '8NL4:@x&W-Zs[q}]' }
+      signInResult = await awsCognitoLoginProvier.signIn(signInCredentials);
+      console.info(signInResult, "signInResult");
+
+    } catch (e) {
+      signInResult = e;
+    }
+    expect(signInResult.code).toContain('UserNotFoundException');
+  })
+
+  it('U-TEST-5 - Test completeNewPassword', async () => {
+    const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
+    awsCognitoLoginProvier.configure({
+
+      // OPTIONAL - Amazon Cognito User Pool ID
+      userPoolId: poolId,
+
+      userPoolWebClientId: poolWebClientId,
+
+      // REQUIRED - Amazon Cognito Region
+      region: regionName,
+
+    });
+
+    let signInResult;
+   // let resetPasswordResult;
+    try {
+      const signInCredentials = { email: 'gerard@youngapp.co', password: "78eDfpUETV(Hh)'C" }
+      signInResult = await awsCognitoLoginProvier.signIn(signInCredentials);
+      console.info(signInResult, "signInResult");
+      if (signInResult.challengeName === 'NEW_PASSWORD_REQUIRED') {
+        //const resetPasswordInputDetails = { user: signInResult, newPassword: '85L4:@x&W-Zs[q}]' }
+        //resetPasswordResult = await awsCognitoLoginProvier.completeNewPassword(resetPasswordInputDetails);
+      }else{
+       // resetPasswordResult=signInResult;
+      }
+    } catch (e) {
+      //resetPasswordResult = e;
+    }
+    expect(JSON.stringify(signInResult)).toContain('UserNfdsfdsfotFoundException');
+  })
 
 });
