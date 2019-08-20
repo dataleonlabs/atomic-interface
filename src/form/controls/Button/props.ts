@@ -13,4 +13,7 @@ export interface ButtonProps extends ButtonPropsBase {
 
     /** spinner displayed on right */
     loading?: boolean
+
+    /** trigger on click */ 
+    onClick?: React.MouseEventHandler<any>;
 }

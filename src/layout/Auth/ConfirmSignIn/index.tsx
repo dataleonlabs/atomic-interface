@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { AuthProps as AuthPropsProvider } from '../props';
-import { Card } from 'reactstrap';
+import { StyledCard } from './style';
 
 //Login Form Component
 const ConfirmSignIn = (authProps: AuthPropsProvider) => {
     return (
-        <Card>
+        <StyledCard style={{border: "none", fontFamily: 'sans-serif', marginLeft: 20, marginRight: 20}}>
             {authProps.children}
-        </Card>
+        </StyledCard>
     )
 }
 export default ConfirmSignIn;

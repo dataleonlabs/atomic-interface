@@ -12,7 +12,6 @@ import Button from '../../form/controls/Button';
 import { User, Save, Users } from 'react-feather';
 import SearchBar from '../../form/controls/SearchBar';
 
-
 storiesOf('Navigation|Navbar', module)
   .add('Example', () => (
     <React.Fragment>
