@@ -1,5 +1,5 @@
 import React from 'react';
-import { UncontrolledAlert as StrapAlert } from 'reactstrap';
+import { Alert as StrapAlert } from 'reactstrap';
 import { Info } from 'react-feather';
 import { AlertProps as Props } from './props';
 import { StyledAlert } from './style';

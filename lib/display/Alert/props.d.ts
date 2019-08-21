@@ -1,4 +1,4 @@
-import { UncontrolledAlertProps as AlertPropsBase } from "reactstrap";
+import { AlertProps as AlertPropsBase } from "reactstrap";
 /**
  * Follow documentation https://reactstrap.github.io/components/alerts/
  * @example
