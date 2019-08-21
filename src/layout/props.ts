@@ -31,7 +31,7 @@ export interface AuthProps {
 
    provider: {
        /** Type of provider login */
-       type: 'aws-cognito'
+       type: 'aws-cognito',
 
        /**
         * Credentials of provider example for aws-cognito
@@ -71,7 +71,29 @@ export interface LoginProps extends AuthProps {
     code?: InputProps
 
     buttonLogin?: ButtonProps // Label is different
-    buttonConfirmSignIn?: ButtonProps
+    buttonConfirmSignIn?: ButtonProps    
+    buttonNewPassword?: ButtonProps /* Set Label Save Password */
+
+    /* Set new password */
+    newPassword: InputProps
+
+    /* Set Confrim New Password Label */
+    confirmNewPassword: InputProps
+
+    /* Set Login Error Message */
+    messageWrongLogin: string
+
+    /* Set New Password Info Message */
+    messageNewPasswordRequired: string
+
+    /* Set New Password Error Message */
+    messageNewPasswordError: string
+
+    /* Set Confirm Sign In Info Message */
+    messageConfirmSignIn: string
+
+    /* Set Confirm Sign In Error Message */
+    messageConfirmSignInError: string
 }
 
 export interface NewPasswordProps extends AuthProps {

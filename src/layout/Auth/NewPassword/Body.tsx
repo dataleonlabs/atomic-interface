@@ -28,6 +28,7 @@ const Body = (bodyProps: Props, buttonProps: ButtonProps) => {
         placeholder: 'Enter New Password',
         required: true
     }
+    
 
     return (
         <CardBody>
