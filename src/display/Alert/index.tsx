@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert as StrapAlert } from 'reactstrap';
+import { UncontrolledAlert as StrapAlert } from 'reactstrap';
 import { Info } from 'react-feather';
 import { AlertProps as Props } from './props';
 import { StyledAlert } from './style';
@@ -10,7 +10,7 @@ import { StyledAlert } from './style';
 
 const Alert = (props: Props) => (
   <StyledAlert>
-    <StrapAlert color={props.color}>
+    <StrapAlert color={props.color} {...props}>
       <>
         {props.icon === true && <Info size={20} style={{ marginRight: '5px' }} />}
         <span className="Text">{props.children}</span>
