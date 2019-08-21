@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AuthHeaderTitleProps as HeaderTitleProps } from '../props';
+import { AuthHeaderTitleProps as HeaderTitleProps } from '../../../props';
 import { StyledCardTitle } from './style';
 
 //Login Form Component

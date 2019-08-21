@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AuthFooterProps as FotterProps } from '../props';
+import { AuthFooterProps as FotterProps } from '../../../props';
 import { StyledCardFooter } from './style';
 
 //Login Form Component

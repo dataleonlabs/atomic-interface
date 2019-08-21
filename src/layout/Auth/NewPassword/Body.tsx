@@ -3,34 +3,45 @@ import Button from '../../../form/controls/Button/index';
 import Input from '../../../form/controls/Input/index';
 import Form from '../../../form/index';
 import { CardBody } from 'reactstrap';
-import {NewPasswordBodyProps as Props} from '../../props'
+import {NewPasswordBodyProps as Props, AuthButon as ButtonProps} from '../../props'
 
-const Body = (bodyProps: Props) => {
+const Body = (bodyProps: Props, buttonProps: ButtonProps) => {
+
+    buttonProps.defaultProps = {
+        block: true, 
+        color: 'primary',
+        buttonLable: 'Submit'
+    }
+
+    bodyProps.newPassword.defaultProps = {
+        label: 'Confirm Password',
+        type: 'password',
+        name: 'confirmPassword',
+        placeholder: 'Enter Confirm Password',
+        required: true
+    }
+
+    bodyProps.password.defaultProps = {
+        label: 'New Password',
+        type: 'password',
+        name: 'newPassword',
+        placeholder: 'Enter New Password',
+        required: true
+    }
+
     return (
         <CardBody>
             <Form>
                 {(_) => (
                     <>
-                        <Input name='newpassword' type='password' required={true} label={bodyProps.newPasswordLabel} placeholder={bodyProps.newPasswordPlaceholder}>
-                        </Input>
-                        <Input name='confirmpassword' type='password' required={true} label={bodyProps.confirmPasswordLabel} placeholder={bodyProps.confirmPasswordPlaceholder}>
-                        </Input>
-                        <Button color={bodyProps.color} block={bodyProps.block}>{bodyProps.buttonLable}</Button>
+                        <Input {...bodyProps.password} />                        
+                        <Input {...bodyProps.newPassword} />                        
+                        <Button {...buttonProps}>{buttonProps.buttonLable}</Button>
                     </>
                 )}
             </Form>
         </CardBody>
     )
-}
-
-Body.defaultProps = {
-    block: true,
-    newPasswordLabel: 'New Password',
-    newPasswordPlaceholder: 'Enter New Password',
-    confirmPasswordLabel: 'Confirm Password',
-    confirmPasswordPlaceholder: 'Enter Confirm Password',
-    color: "primary",
-    buttonLable: 'Submit'
 }
 
 export default Body;

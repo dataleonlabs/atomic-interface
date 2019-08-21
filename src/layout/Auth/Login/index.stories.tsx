@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Login from './index';
 import Body from './Body';
-import Header from '../Header/Header';
-import HeaderTitle from '../Header/Title';
-import HeaderSubTitle from '../Header/SubTitle';
+import Header from '../components/Header/Header';
+import HeaderTitle from '../components/Header/Title';
+import HeaderSubTitle from '../components/Header/SubTitle';
 import { Col, Container, Row } from 'reactstrap';
 
 storiesOf('Auth|Login', module)

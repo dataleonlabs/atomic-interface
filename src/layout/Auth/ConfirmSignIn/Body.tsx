@@ -3,21 +3,36 @@ import Button from '../../../form/controls/Button/index';
 import Input from '../../../form/controls/Input/index';
 import Form from '../../../form/index';
 import { CardBody } from 'reactstrap';
-import { ConfirmSignInBodyProps as Props } from '../props'
+import { ConfirmSignInBodyProps as Props, AuthButon as ButtonProps } from '../../props'
 
-const Body = (bodyProps: Props) => {
+const Body = (bodyProps: Props, buttonProps: ButtonProps) => {
+    
     const validate = function validateLoginForm() {
         alert('This is Test Alert');
     };
+
+    buttonProps.defaultProps = {
+        block: true, 
+        color: 'primary',
+        buttonLable: 'Click To Verify'
+    }
+
+    bodyProps.code.defaultProps = {
+        label: 'Verification Code',
+        type: 'text',
+        name: 'code',
+        placeholder: 'Enter Your Code',
+        required: true
+    }
+    
 
     return (
         <CardBody>
             <Form>
                 {(_) => (
                     <>
-                        <Input name='code' type='text' label={bodyProps.codeLabel} required={true} placeholder={bodyProps.codePlaceholder}>
-                        </Input>
-                        <Button onClick={validate} color={bodyProps.color} block={bodyProps.block}>{bodyProps.buttonLable}</Button>
+                        <Input {...bodyProps.code} />                        
+                        <Button onClick={validate} {...buttonProps}>{buttonProps.buttonLable}</Button>
                     </>
                 )}
             </Form>
@@ -25,12 +40,5 @@ const Body = (bodyProps: Props) => {
     )
 }
 
-Body.defaultProps = {
-    block: true,
-    codeLabel: 'Verification Code',
-    codePlaceholder: 'Enter Your Code',
-    color: "primary",
-    buttonLable: 'Click To Verify'
-}
 export default Body;
 

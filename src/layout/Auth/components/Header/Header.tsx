@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AuthHeaderProps as HeaderProps } from '../props';
+import { AuthHeaderProps as HeaderProps } from '../../../props';
 import { StyledCardHeader } from './style';
 
 //Login Form Component

@@ -3,17 +3,40 @@ import Button from '../../../form/controls/Button/index';
 import Input from '../../../form/controls/Input/index';
 import Form from '../../../form/index';
 import { CardBody } from 'reactstrap';
-import { LoginBodyProps as Props } from '../../props'
+import { LoginBodyProps as Props, AuthButon as AuthButtonProps } from '../../props'
 
-const Body = (bodyProps: Props) => {
+const Body = (bodyProps: Props, buttonProps: AuthButtonProps) => {
+
+    buttonProps.defaultProps = {
+        block: true, 
+        color: 'primary',
+        buttonLable: 'Sign In'
+    }
+
+    bodyProps.email.defaultProps = {
+        label: 'Email',
+        type: 'text',
+        name: 'email',
+        placeholder: 'Enter Email',
+        required: true
+    }
+
+    bodyProps.password.defaultProps = {
+        label: 'Password',
+        type: 'password',
+        name: 'password',
+        placeholder: 'Enter Password',
+        required: true
+    }
+
     return (
         <CardBody>
             <Form>
                 {(_) => (
                     <>
-                        <Input name='email' type='text' label={bodyProps.usernameLabel} required={true} placeholder={bodyProps.usernameLabel} />
-                        <Input name='password' type='password' label={bodyProps.passwordLabel} required={true} placeholder={bodyProps.passwordPlaceholder} />
-                        <Button color={bodyProps.color} block={bodyProps.block}>{bodyProps.buttonLable}</Button>
+                        <Input {...bodyProps.email} />
+                        <Input {...bodyProps.password} />
+                        <Button {...buttonProps}>{buttonProps.buttonLable}</Button>
                     </>
                 )}
             </Form>
@@ -21,14 +44,5 @@ const Body = (bodyProps: Props) => {
     )
 }
 
-Body.defaultProps = {
-    block: true,
-    usernameLabel: 'Email',
-    usernamePlaceholder: 'Enter Email',
-    passwordLabel: 'Password',
-    passwordPlaceholder: 'Enter Password',
-    color: "primary",
-    buttonLable: 'Sign In'
-}
 export default Body;
 
