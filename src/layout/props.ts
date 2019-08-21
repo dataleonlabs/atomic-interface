@@ -4,14 +4,13 @@ import { InputProps } from "src/form/controls/Input/props";
 /**
  * Using form component
  * @example login
- * <Login provider={{ type: "aws-cognito", credentials: { ... }}}>
+ * <Login
+ *  provider={{ type: "aws-cognito", credentials: { ... }}}
+ * >
  *   <LoginHeader>
  *       <LoginHeaderTitle>Login</LoginHeaderTitle>
  *       <LoginHeaderSubTitle>Login SubTitle</LoginHeaderSubTitle>
  *   </LoginHeader>
- *   <LoginBody>
- *       <LoginButton>Login</LoginButton>
- *   </LoginBody>
  *   <LoginFooter>Young App - Copyright 2019</LoginFooter>
  * </Login>
  * 
@@ -21,23 +20,8 @@ import { InputProps } from "src/form/controls/Input/props";
  *       <LoginHeaderTitle>Login</NewPasswordHeaderTitle>
  *       <NewPasswordHeaderSubTitle>Login SubTitle</NewPasswordHeaderSubTitle>
  *   </NewPasswordHeader>
- *   <NewPasswordBody>
- *       <NewPasswordButton>Login</NewPasswordButton>
- *   </NewPasswordBody>
  *   <NewPasswordFooter>Young App - Copyright 2019</NewPasswordFooter>
  * </NewPassword>
- * 
- * @example new confirm Signin
- * <ConfirmSignIn provider={{ type: "aws-cognito", credentials: { ... }}}>
- *   <ConfirmSignInHeader>
- *       <LoginHeaderTitle>Login</ConfirmSignInHeaderTitle>
- *       <ConfirmSignInHeaderSubTitle>Login SubTitle</ConfirmSignInHeaderSubTitle>
- *   </ConfirmSignInHeader>
- *   <ConfirmSignInBody>
- *       <ConfirmSignInButton>Login</ConfirmSignInButton>
- *   </ConfirmSignInBody>
- *   <ConfirmSignInFooter>Young App - Copyright 2019</ConfirmSignInFooter>
- * </ConfirmSignIn>
  */
 
 /** Provider for login, logout, or confirm password */
@@ -75,25 +59,27 @@ export interface AuthHeaderProps {
 export interface AuthHeaderTitleProps extends HTMLDivElement {}
 export interface AuthHeaderSubTitleProps extends HTMLDivElement {}
 export interface AuthFooterProps extends HTMLDivElement {}
-export interface AuthButon extends ButtonProps { }
 
-export interface LoginBodyProps extends HTMLDivElement {
+export interface LoginProps extends AuthProps {
     /* Set Username */
-    email: InputProps
+    email?: InputProps
 
     /** Set label */
-    password: InputProps
-}
+    password?: InputProps
 
-export interface ConfirmSignInBodyProps extends HTMLDivElement {
     /* Set code */
-    code: InputProps
+    code?: InputProps
+
+    buttonLogin?: ButtonProps // Label is different
+    buttonConfirmSignIn?: ButtonProps
 }
 
-export interface NewPasswordBodyProps extends HTMLDivElement {
+export interface NewPasswordProps extends AuthProps {
     /* Set password */
     password: InputProps
 
     /* Set newPassword */
     newPassword: InputProps
+
+    button?: ButtonProps
 }
