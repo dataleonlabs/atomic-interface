@@ -5,6 +5,7 @@ export const StyledSidebar = styled.div`
   flex-direction: column;
   width: 250px;
   border-right: solid 1px #eee;
+  height: 100vh;
 
   .icon-nav-left {
   }
@@ -30,7 +31,7 @@ export const StyledSidebar = styled.div`
 
   .nav-link {
     padding: 0.7rem 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
     border-left: solid 3px #fff;
     &:hover {

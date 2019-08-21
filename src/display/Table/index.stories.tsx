@@ -4,6 +4,9 @@ import { Col } from 'reactstrap';
 import Column from './Column';
 import Table from './index';
 import faker from 'faker'
+import TableCollection from './Collection'
+import Query from '../../utils/Query';
+import { APIGatewayFetch } from 'yap-sdk';
 
 const assets: any[] = [];
 for (let index = 0; index < 10; index++) {
@@ -95,7 +98,7 @@ storiesOf('UI Elements|Table', module)
   )).add('With sortable', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
+        <h4>Table 1</h4>
         <Table data={assets} sortable={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
@@ -118,6 +121,12 @@ storiesOf('UI Elements|Table', module)
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Table</h4>
+        <Table data={assets} draggable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+        <h4>Table 2</h4>
         <Table data={assets} draggable={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>

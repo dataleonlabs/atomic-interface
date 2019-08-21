@@ -12,7 +12,7 @@ export interface TextProps {
      * currency and number https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/NumberFormat
      * 
      */
-    type?: 'text' | 'number' | 'date' | 'currency' | 'ago'
+    type?: 'text' | 'number' | 'date' | 'currency' | 'ago' | 'duration'
 
     /**
      * String to format dependency to type

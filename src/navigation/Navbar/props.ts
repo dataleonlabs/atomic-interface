@@ -19,6 +19,7 @@ import {
 export interface NavbarProps extends NavbarPropsBase {
     /** Children */
     children: NavItemProps
+    size?: 'md' | 'lg'
 }
 
 export interface NavbarBrandProps {

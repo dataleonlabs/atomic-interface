@@ -23,7 +23,6 @@ export interface DropdownProps extends UncontrolledDropdownProps {
     title?: string
 
     /** Caret in DropdownToggle */
-    caret?: boolean
-   
+    caret?: boolean   
 }
 

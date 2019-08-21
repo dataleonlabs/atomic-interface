@@ -20,6 +20,7 @@ import {
  */
 import '@zendeskgarden/react-tables/dist/styles.css';
 import '@zendeskgarden/react-pagination/dist/styles.css';
+import { makeId } from "../../utils/index";
 
 const {
   Table: TableBase,
@@ -56,6 +57,7 @@ export interface State {
 class Table extends React.Component<Props, State> {
 
   public static defaultProps: Partial<Props> = {
+    data: [],
     disabledSelected: [],
     draggable: false,
     hideHeader: false,
@@ -75,7 +77,15 @@ class Table extends React.Component<Props, State> {
   public async componentDidMount() {
     if (this.props.draggable === true) {
       this.setState({
-        items: this.props.data,
+        items: this.props.data || [],
+      })
+    }
+  }
+
+  public async componentDidUpdate(prevProps: any) {
+    if (this.props.data !== prevProps.data) {
+      this.setState({
+        items: this.props.data || [],
       })
     }
   }
@@ -83,7 +93,7 @@ class Table extends React.Component<Props, State> {
   /**
    * Ordering array
    */
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public reorder = (list: any[], startIndex: number, endIndex: number) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -108,7 +118,7 @@ class Table extends React.Component<Props, State> {
    * @param selectedRows selected rows
    * @param rows  current rows
    */
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public isSelectAllChecked(selectedRows: State['selected'], rows: Values[]) {
     return Object.keys(selectedRows).length === rows.length;
   };
@@ -207,14 +217,14 @@ class Table extends React.Component<Props, State> {
 
     if (this.props.draggable === true) {
       columns.push(
-        <HeaderCell minimum={true} key={'key-col-0'} />
+        <HeaderCell minimum={true} key={`key-col-0-${makeId()}`} />
       )
     }
     // If selected row
     if (this.props.selectable === true) {
       const onChange = /* istanbul ignore next */ (e: any): any => {
         if (e.target.checked) {
-          const selected = this.props.data.reduce((accum, value) => {
+          const selected = (this.props.data || []).reduce((accum, value) => {
             const disabledSelected = (this.props.disabledSelected || []) as any[];
             if (disabledSelected.includes(value.id as any) === false) {
               accum[value.id as string] = true;
@@ -237,11 +247,11 @@ class Table extends React.Component<Props, State> {
         }
       }
       columns.push(
-        <HeaderCell width={`4%`} key={'key-selc-0'}>
+        <HeaderCell width={`4%`} key={`key-selc-0-${makeId()}`}>
           <CustomInput
             type={'checkbox'}
             id={'id0'}
-            checked={this.isSelectAllChecked(this.state.selected, this.props.data)}
+            checked={this.isSelectAllChecked(this.state.selected, this.props.data || [])}
             onChange={onChange}
           />
         </HeaderCell>
@@ -256,7 +266,7 @@ class Table extends React.Component<Props, State> {
         if (childProps && childProps.field) {
           const column = this.wrapperSortable(
             <HeaderCell key={childProps.field} minimum={true} {...childProps} width={`${(childProps.width || this.getDefaultWidth())}%`}>
-              {childProps.children || /* istanbul ignore next */ childProps.field}
+              {childProps.children}
             </HeaderCell>
             , child);
           columns.push(column);
@@ -275,7 +285,7 @@ class Table extends React.Component<Props, State> {
 
     // If selected row
     if (this.props.selectable === true) {
-    /* istanbul ignore next */
+      /* istanbul ignore next */
       const disabledSelected = (this.props.disabledSelected || []) as any[];
       const onChange = /* istanbul ignore next */ (e: any) => {
         const selected = Object.assign({}, this.state.selected);
@@ -292,7 +302,7 @@ class Table extends React.Component<Props, State> {
         this.setState({ selected });
       }
       cells.push(
-        <Cell width={`4%`} key={'key-cell-0'}>
+        <Cell width={`4%`} key={`key-cell-0-${makeId()}`}>
           <CustomInput
             type={'checkbox'}
             disabled={disabledSelected.includes(row.id) === true ? true : /* istanbul ignore next */ false}
@@ -335,8 +345,8 @@ class Table extends React.Component<Props, State> {
     const cells: JSX.Element[] = [];
 
     cells.push(
-      <DraggableCell minimum={true} key={`dnd-cell-${index}`}>
-        <DraggableContainer id={`dnd-${index}`} {...provided.dragHandleProps}>
+      <DraggableCell minimum={true} key={`dnd-cell-${index}-${makeId()}`}>
+        <DraggableContainer id={`dnd-${index}-${makeId()}`} {...provided.dragHandleProps}>
           ::
           </DraggableContainer>
       </DraggableCell>
@@ -344,7 +354,7 @@ class Table extends React.Component<Props, State> {
 
     // If selected row
     if (this.props.selectable === true) {
-      const disabledSelected = (this.props.disabledSelected || /* istanbul ignore next */ []) as any[];
+      const disabledSelected = (this.props.disabledSelected || /* istanbul ignore next */[]) as any[];
       const onChange = /* istanbul ignore next */ (e: any) => {
         const selected = Object.assign({}, this.state.selected);
 
@@ -357,7 +367,7 @@ class Table extends React.Component<Props, State> {
         this.setState({ selected });
       };
       cells.push(
-        <DraggableCell key={'key-drag-0'} width={`4%`} isDragging={snapshot.isDragging}>
+        <DraggableCell key={`key-drag-0-${makeId()}`} width={`4%`} isDragging={snapshot.isDragging}>
           <CustomInput
             type={'checkbox'}
             disabled={disabledSelected.includes(row.id) === true ? /* istanbul ignore next */ true : false}
@@ -381,7 +391,7 @@ class Table extends React.Component<Props, State> {
           }
 
           const cell = (
-            <DraggableCell key={`dnd-cell-${index}-${childProps.field}`} truncate={true} {...childProps} isDragging={snapshot.isDragging} width={`${(childProps.width || this.getDefaultWidth())}%`}>
+            <DraggableCell key={`dnd-cell-${index}-${childProps.field}-${makeId()}`} truncate={true} {...childProps} isDragging={snapshot.isDragging} width={`${(childProps.width || this.getDefaultWidth())}%`}>
               {cellValue}
             </DraggableCell>
           );
@@ -409,68 +419,10 @@ class Table extends React.Component<Props, State> {
         </>
       )
     }
-    if (this.props.draggable === true) {
+
+    if (this.props.loading === true) {
       return (
-        <ThemeProvider>
         <>
-          <DragDropContext onDragEnd={this.onDragEnd}>
-              <TableBase scrollable={this.props.scrollable ? /* istanbul ignore next */ `${this.props.scrollable}px` : /* istanbul ignore next */ undefined} size={this.props.rowSize === 'default' ? /* istanbul ignore next */ undefined : this.props.rowSize}>
-              {(this.props.hideHeader !== true) && (
-                <Head>
-                  <HeaderRow>
-                    {this.colonns()}
-                  </HeaderRow>
-                </Head>
-              )}
-              {(this.props.loading === true) ? <Loader /> : (
-                  <Droppable droppableId="droppable">
-                    {(provided: any, droppableSnapshot: any) => {
-                      return (
-                        <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>
-                          {this.state.items.map((item: any, index: any) => (
-                            <Draggable key={item.id} draggableId={item.id} index={index}>
-                              {(prov: any, snapshot: any) => (
-                                <DraggableRow
-                                  ref={prov.innerRef}
-                                  {...prov.draggableProps}
-
-                                  isDragging={snapshot.isDragging}
-                                  isDraggingOver={droppableSnapshot.isDraggingOver}
-                                  hovered={snapshot.isDragging}
-                                  focused={
-                                    droppableSnapshot.isDraggingOver ? /* istanbul ignore next */ snapshot.isDragging : undefined
-                                  }
-                                  {...prov.draggableProps.style}
-                                  {...prov.draggableProps}
-                                >
-                                  <>
-                                    {this.cellsDragable(item, snapshot, prov, index)}
-                                  </>
-                                </DraggableRow>
-                              )}
-                            </Draggable>
-                          ))}
-                          {provided.placeholder}
-                        </Body>
-                      );
-                    }}
-                  </Droppable>
-              )}
-            </TableBase>
-          </DragDropContext>
-            {((this.props.loading !== true) && (this.props.data.length === 0)) && (
-              <StyledNoContent>{this.props.noContentIndication || 'Not found'}</StyledNoContent>
-            )}
-          {contentPagination}
-        </>
-        </ThemeProvider>
-      );
-    }
-
-    return (
-      <ThemeProvider>
-      <>
-          <TableBase scrollable={this.props.scrollable ? /* istanbul ignore next */ `${this.props.scrollable}px` : undefined} size={this.props.rowSize === 'default' ? /* istanbul ignore next */ undefined : this.props.rowSize}>
           {(this.props.hideHeader !== true) && (
             <Head>
               <StyledHeaderRow>
@@ -478,21 +430,91 @@ class Table extends React.Component<Props, State> {
               </StyledHeaderRow>
             </Head>
           )}
-            {(this.props.loading === true) ? <Loader /> : (
-              <Body>
-                {this.props.data.map((row: any, index) => (
-                  <StyledRow key={index} selected={this.state.selected[row.id]} striped={this.props.striped && index % 2 === 0}>
-                    {this.cells(row)}
-                  </StyledRow>
-                ))}
-              </Body>
+          <Loader />
+        </>
+      )
+    }
+
+    if (this.props.draggable === true) {
+      return (
+        <ThemeProvider>
+          <>
+            <DragDropContext onDragEnd={this.onDragEnd}>
+              <TableBase scrollable={this.props.scrollable ? /* istanbul ignore next */ `${this.props.scrollable}px` : /* istanbul ignore next */ undefined} size={this.props.rowSize === 'default' ? /* istanbul ignore next */ undefined : this.props.rowSize}>
+                {(this.props.hideHeader !== true) && (
+                  <Head>
+                    <HeaderRow>
+                      {this.colonns()}
+                    </HeaderRow>
+                  </Head>
+                )}
+                <Droppable droppableId={`droppable-${makeId()}`}>
+                  {(provided: any, droppableSnapshot: any) => {
+                    return (
+                      <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>
+                        {this.state.items.map((item: any, index: any) => (
+                          <Draggable key={item.id} draggableId={item.id} index={index}>
+                            {(prov: any, snapshot: any) => (
+                              <DraggableRow
+                                ref={prov.innerRef}
+                                {...prov.draggableProps}
+
+                                isDragging={snapshot.isDragging}
+                                isDraggingOver={droppableSnapshot.isDraggingOver}
+                                hovered={snapshot.isDragging}
+                                focused={
+                                  droppableSnapshot.isDraggingOver ? /* istanbul ignore next */ snapshot.isDragging : undefined
+                                }
+                                {...prov.draggableProps.style}
+                                {...prov.draggableProps}
+                              >
+                                <>
+                                  {this.cellsDragable(item, snapshot, prov, index)}
+                                </>
+                              </DraggableRow>
+                            )}
+                          </Draggable>
+                        ))}
+                        {provided.placeholder}
+                      </Body>
+                    );
+                  }}
+                </Droppable>
+              </TableBase>
+            </DragDropContext>
+            {(((this.props.data || []).length === 0)) && (
+              <StyledNoContent>{this.props.noContentIndication || 'Not found'}</StyledNoContent>
             )}
-        </TableBase>
-          {((this.props.loading !== true) && (this.props.data.length === 0)) && (
+            {contentPagination}
+          </>
+        </ThemeProvider>
+      );
+    }
+
+    return (
+      <ThemeProvider>
+        <>
+          <TableBase scrollable={this.props.scrollable ? /* istanbul ignore next */ `${this.props.scrollable}px` : undefined} size={this.props.rowSize === 'default' ? /* istanbul ignore next */ undefined : this.props.rowSize}>
+            {(this.props.hideHeader !== true) && (
+              <Head>
+                <StyledHeaderRow>
+                  {this.colonns()}
+                </StyledHeaderRow>
+              </Head>
+            )}
+            <Body>
+              {(this.props.data || []).map((row: any, index) => (
+                <StyledRow key={index} selected={this.state.selected[row.id]} striped={this.props.striped && index % 2 === 0}>
+                  {this.cells(row)}
+                </StyledRow>
+              ))}
+            </Body>
+          </TableBase>
+          {(((this.props.data || []).length === 0)) && (
             <StyledNoContent>{this.props.noContentIndication || 'Not found'}</StyledNoContent>
           )}
-        {contentPagination}
-      </>
+          {contentPagination}
+        </>
       </ThemeProvider>
     );
   }
