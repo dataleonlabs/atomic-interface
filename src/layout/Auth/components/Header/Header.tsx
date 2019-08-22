@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { AuthHeaderProps as HeaderProps } from '../../../props';
+import { AuthHeaderProps as Props } from '../../../props';
 import { StyledCardHeader } from './style';
 
 //Login Form Component
-const Header = (headerProps: HeaderProps) => {
+const Header = (props: Props) => {
     return (
-        <StyledCardHeader>{headerProps.children}</StyledCardHeader>
+        <StyledCardHeader>{props.children}</StyledCardHeader>
     )
 }
 export default Header;

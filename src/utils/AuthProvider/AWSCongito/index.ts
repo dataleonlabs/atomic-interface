@@ -30,11 +30,16 @@ export default class AWSCognito implements AuthInterface {
 
     /**
      * @param p.user current user object
-     * @param p.newPassword new password user for resetting
+     * @param p.code verification code for verification of account
      * @param p.meta meta information additionnals for aws account user
      */
-    public confirmSignIn(p: { user: any, newPassword: string, meta?: { [key: string]: any }, mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA' }) {
-        return Auth.confirmSignIn(p.user, p.newPassword, 'SMS_MFA');
+    public async confirmSignIn(p: { user: any, code: string, meta?: { [key: string]: any }, mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA' }) {
+        try{
+            return await Auth.confirmSignIn(p.user, p.code, 'SMS_MFA');
+        }catch(e){
+            return e;
+        }
+        
     }
 
     /**

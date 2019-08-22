@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { AuthFooterProps as FotterProps } from '../../../props';
+import { AuthFooterProps as Props } from '../../../props';
 import { StyledCardFooter } from './style';
 
 //Login Form Component
-const Footer = (footerProps: FotterProps) => {
+const Footer = (props: Props) => {
     return (           
-        <StyledCardFooter>{footerProps.children}</StyledCardFooter>
+        <StyledCardFooter>{props.children}</StyledCardFooter>
     )
 }
 export default Footer;

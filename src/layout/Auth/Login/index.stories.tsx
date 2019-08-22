@@ -8,7 +8,7 @@ import { Col, Container, Row} from 'reactstrap';
 import { type } from 'os';
 import { placeholder } from '@babel/types';
 
-storiesOf('Auth|Login', module)
+storiesOf('Layout|Auth', module)
   .add('Example with Default Props', () => (
     <React.Fragment>
       <Container fluid={true} style={{backgroundColor: "#f8fafb", height: 850}}>
@@ -19,7 +19,7 @@ storiesOf('Auth|Login', module)
               <Header>
                 <HeaderTitle>Sign in</HeaderTitle>
                 <HeaderSubTitle>Please login to account with your credentials</HeaderSubTitle>
-              </Header>                            
+              </Header>
             </Login>
           </Col>
           <Col md={3}></Col>

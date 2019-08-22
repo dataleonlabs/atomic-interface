@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { AuthHeaderSubTitleProps as HeaderSubTitleProps } from '../../../props';
+import { AuthHeaderSubTitleProps as Props } from '../../../props';
 import { StyledCardSubTitle } from './style';
 
 //Login Form Component
-const Header = (headerSubTitleProps: HeaderSubTitleProps) => {
+const Header = (props: Props) => {
     return (
-        <StyledCardSubTitle>{headerSubTitleProps.children}</StyledCardSubTitle>
+        <StyledCardSubTitle>{props.children}</StyledCardSubTitle>
     )
 }
 export default Header;
