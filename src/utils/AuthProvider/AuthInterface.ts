@@ -20,7 +20,7 @@ export default interface AuthInterface {
      */
     confirmSignIn: (p: {
         user: any, // Return object from Auth.signIn()
-        newPassword: string, // the new password
+        code: string, // the verification code
         meta?: { [key: string]: any }, // OPTIONAL, the required attributes
         mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA' // MFA Type e.g. SMS_MFA, SOFTWARE_TOKEN_MFA
     }) => false | object;

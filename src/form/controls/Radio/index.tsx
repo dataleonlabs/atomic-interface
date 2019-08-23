@@ -24,7 +24,6 @@ const Radio = (props: Props) => {
     </React.Fragment>
   );
 
-
   return (
     <Control {...props} label={undefined}>
       <Field
