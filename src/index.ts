@@ -69,6 +69,9 @@ export { CheckboxProps } from './form/controls/Checkbox/props';
 export { default as FilePicker } from './form/controls/FilePicker';
 export { FilePickerProps } from './form/controls/FilePicker/props';
 
+export { default as FieldArray } from './form/controls/FieldArray';
+export { FieldArrayProps } from './form/controls/FieldArray/props';
+
 export { default as FilePickerS3 } from './form/controls/FilePicker/S3';
 export { FilePickerS3Props } from './form/controls/FilePicker/S3/props';
 

@@ -1,87 +1,104 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 // import { FormCollectionProps as Props } from './props';
 import { APIGatewayFetch } from 'yap-sdk';
 import Form from './index';
 
-const FormCollection = (props: any) => {
-  const [values, setValues] = useState({})
-  const { children, ...rest } = props;
+interface State {
+  values: any
+}
+
+/**
+ * FormCollection
+ */
+class FormCollection extends React.Component<any, State> {
+  public static defaultProps: Partial<any> = {
+  }
+
+  public state = {
+    values: {},
+  }
+
+  public async componentDidMount() {
+    await this.onLoad();
+  }
 
   /* istanbul ignore next  */
-  async function onLoad() {
+  public onLoad = async () => {
+    const { children, ...rest } = this.props;
     try {
-      if (props.id) {
-        if (typeof props.onLoading === 'function') {
-          await props.onLoading();
+      if (this.props.id) {
+        if (typeof this.props.onLoading === 'function') {
+          await this.props.onLoading();
         }
 
         // Get content to display
-        const api = new APIGatewayFetch({ apiKey: props.apiKey, apiUrl: props.apiUrl });
+        const api = new APIGatewayFetch({ apiKey: this.props.apiKey, apiUrl: this.props.apiUrl });
         const data = await api.findOne({
           ...rest,
-          where: { ...rest.where, id: props.id }
+          where: { ...rest.where, id: this.props.id }
         });
 
-        setValues(data);
-        if (typeof props.onLoaded === 'function') {
-          await props.onLoaded(data);
+        this.setState({ values: data });
+        if (typeof this.props.onLoaded === 'function') {
+          await this.props.onLoaded(data);
         }
       }
     } catch (error) {
-      if (typeof props.onError === 'function') {
-        await props.onError(error);
+      if (typeof this.props.onError === 'function') {
+        await this.props.onError(error);
       }
     }
   }
 
   /* istanbul ignore next  */
-  async function onSave() {
+  public onSave = async () => {
+    const { children, ...rest } = this.props;
     try {
-      const api = new APIGatewayFetch({ apiKey: props.apiKey, apiUrl: props.apiUrl });
-      if (props.id) {
+      const api = new APIGatewayFetch({ apiKey: this.props.apiKey, apiUrl: this.props.apiUrl });
+      if (this.props.id) {
         const data = await api.update({
           ...rest,
-          values,
-          where: { ...rest.where, id: props.id }
+          values: this.state.values,
+          where: { ...rest.where, id: this.props.id }
         });
-        if (typeof props.onSave === 'function') {
-          await props.onSave(data);
+        if (typeof this.props.onSave === 'function') {
+          await this.props.onSave(data);
         }
       } else {
         const data = await api.create({
           ...rest,
-          values,
+          values: this.state.values,
           where: { ...rest.where }
         });
-        if (typeof props.onSave === 'function') {
-          await props.onSave(data);
+        if (typeof this.props.onSave === 'function') {
+          await this.props.onSave(data);
         }
       }
     } catch (error) {
-      if (typeof props.onError === 'function') {
-        await props.onError(error);
+      if (typeof this.props.onError === 'function') {
+        await this.props.onError(error);
       }
     }
   }
 
-  useEffect(() => {
-    onLoad(); 
-  }, []);
-
-  const onSubmit = (vals: any) => {
-    setValues(vals);
-    onSave();
+  public onSubmit = (vals: any) => {
+    this.setState({ values: vals }, async () => {
+      await this.onSave();
+    })
   }
 
-  return (
-    <Form
-      {...rest}
-      initialValues={{ ...rest.initialValues, ...values }}
-      onSubmit={onSubmit}
-    >
-      {children}
-    </Form>
-  )
+  public render() {
+    const { children, ...rest } = this.props;
+    return (
+      <Form
+        {...rest}
+        initialValues={{ ...rest.initialValues, ...this.state.values }}
+        onSubmit={this.onSubmit}
+      >
+        {children}
+      </Form>
+    )
+  }
 }
 
 export default FormCollection

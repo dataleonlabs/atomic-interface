@@ -1,10 +1,9 @@
 {
-  "name": "atomic-interface",
-  "version": "1.0.0",
+  "name": "@youngapp/atomic-interface",
+  "version": "1.0.1",
   "main": "lib/index.js",
-  "private": true,
   "scripts": {
-    "lint": "./node_modules/.bin/tslint --project ./",
+    "lint": "tslint --project ./",
     "global": "npm install -g commitizen yarn nyc jest husky",
     "test": "jest --verbose --watchAll --env=jsdom",
     "test:integration": "jest --watchAll=false --verbose --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
@@ -129,5 +128,16 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/youngapp/ui-kit.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/youngapp/ui-kit#readme"
 }
