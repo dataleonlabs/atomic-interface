@@ -1,6 +1,6 @@
 {
   "name": "@youngapp/atomic-interface",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "scripts": {
     "lint": "tslint --project ./",
