@@ -56,7 +56,8 @@ export { PanelProps } from './display/Panel/props';
 
 // Form
 export { default as Form } from './form';
-export { FormProps } from './form/props';
+export { default as FormCollection } from './form/Collection';
+export { FormProps, FormCollectionProps } from './form/props';
 
 export { default as Button } from './form/controls/Button';
 export { default as ButtonCollection } from './form/controls/Button/Collection';

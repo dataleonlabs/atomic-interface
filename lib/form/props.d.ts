@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormikConfig } from 'formik';
+import { QueryProps } from 'src/utils/Query/props';
 /**
  * This component using formik lib https://jaredpalmer.com/formik/docs/api/formik
  * @example
@@ -18,4 +19,9 @@ export interface FormProps extends FormikConfig<{}> {
     title?: React.ReactNode;
     /** The description will be placed just below the title if specified */
     description?: React.ReactNode;
+}
+export interface FormCollectionProps extends QueryProps, FormProps {
+    children: any;
+    id?: string;
+    onSave?: (p: any) => void;
 }
