@@ -45,11 +45,12 @@ pipelines:
           - yarn test:integration
           - yarn build
           - yarn release
-          - npm publish
+          # - npm publish
           - git push --follow-tags origin master
+          - git remote show origin
           - git remote update
           - git fetch 
-          - git checkout --track origin/develop
+          - git checkout -b develop origin/develop
           - git merge --no-ff master
           - git push origin develop
 
