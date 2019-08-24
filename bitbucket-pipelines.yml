@@ -29,7 +29,7 @@ pipelines:
           - yarn build-storybook
           - aws s3 sync --delete ./coverage s3://reports.qa.youngapp.co/uikit/coverage --acl bucket-owner-full-control --acl public-read
           - aws s3 sync --delete ./test-report s3://reports.qa.youngapp.co/uikit/report --acl bucket-owner-full-control --acl public-read
-          - aws s3 sync --delete ./storybook s3://reports.qa.youngapp.co/uikit/storybook --acl bucket-owner-full-control --acl public-read
+          - aws s3 sync --delete ./storybook-static s3://reports.qa.youngapp.co/uikit/storybook --acl bucket-owner-full-control --acl public-read
     master:
       - step:
          deployment: production
