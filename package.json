@@ -10,7 +10,7 @@
     "build": "rm -rf ./lib && tsc --p tsconfig.prod.json",
     "start": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
-    "release": "standard-version"
+    "release": "standard-version  --commit-all --release-as minor --git-tag-fallback false  -m 'chore(release): %s ' -m '[skip ci]'"
   },
   "eslintConfig": {
     "extends": "react-app"
