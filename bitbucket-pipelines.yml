@@ -45,7 +45,7 @@ pipelines:
           - yarn test:integration
           - yarn build
           - yarn release
-          # - npm publish
+          - npm publish
           - git push --follow-tags origin master
           - git fetch --unshallow
           - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
