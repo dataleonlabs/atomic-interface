@@ -18,7 +18,7 @@
   "standard-version": {
     "scripts": {
       "postbump": "git add package.json",
-      "precommit": "echo \"chore(release): %s ' -m '[skip ci]\""
+      "precommit": "echo \"chore(release): [skip ci]\""
     }
   },
   "husky": {

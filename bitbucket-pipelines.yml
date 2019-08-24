@@ -42,8 +42,10 @@ pipelines:
           - yarn test
           - yarn build
           - yarn release
-          - git push --follow-tags origin master
+          - export NPM_TOKEN="2e54affd-eb69-4d58-b4ba-4dbe373410ba"
+          - source ~/.profile
           - npm publish
+          - git push --follow-tags origin master
           - git checkout develop
           - git merge --no-ff master
           - git push origin develop
