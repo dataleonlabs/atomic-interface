@@ -47,3 +47,4 @@ test-report
 # documentations
 styleguide
 storybook-static
+.nyc_output

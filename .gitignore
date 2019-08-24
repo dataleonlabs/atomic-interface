@@ -33,3 +33,4 @@ test-report
 styleguide
 storybook-static
 lib
+.nyc_output
