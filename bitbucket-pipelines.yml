@@ -45,9 +45,12 @@ pipelines:
           - yarn test:integration
           - yarn build
           - yarn release
-          - npm publish
+          # - npm publish
           - git push --follow-tags origin master
-          - git checkout develop
+          - git fetch --unshallow
+          - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+          - git fetch origin
+          - git checkout --track origin/develop
           - git merge --no-ff master
           - git push origin develop
 
