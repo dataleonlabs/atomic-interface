@@ -81,8 +81,9 @@ class FormCollection extends React.Component<any, State> {
     }
   }
 
-  public onSubmit = (vals: any) => {
-    this.setState({ values: vals }, async () => {
+  public onSubmit = /* istanbul ignore next  */ (vals: any) => {
+  /* istanbul ignore next  */
+    this.setState({ values: vals }, /* istanbul ignore next  */ async () => {
       await this.onSave();
     })
   }

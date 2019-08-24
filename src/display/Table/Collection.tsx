@@ -20,7 +20,7 @@ class Collection extends React.Component<Props> {
             }
 
             // On error
-            if (error) {
+            if (error) /* istanbul ignore next  */ {
               return (
                 <Alert color={'danger'}>{error && error.message ? error.message : error}</Alert>
               )

@@ -17,7 +17,8 @@ pipelines:
           - yarn install
           - mkdir -p .docs
           - yarn lint
-          - yarn test
+          - yarn test:integration
+          - nyc check-coverage --lines 95 --functions 95 --branches 85 --statements 95
           - mkdir test-report
           - mv test-report.html test-report/index.html
           - apt-get update && apt-get install -y python-dev
@@ -39,7 +40,8 @@ pipelines:
           - yarn run global
           - yarn install
           - yarn lint
-          - yarn test
+          - yarn test:integration
+          - nyc check-coverage --lines 95 --functions 95 --branches 85 --statements 95
           - yarn build
           - yarn release
           - export NPM_TOKEN="2e54affd-eb69-4d58-b4ba-4dbe373410ba"

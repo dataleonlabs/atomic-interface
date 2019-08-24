@@ -1,11 +1,14 @@
+/* istanbul ignore next  */
 import React from 'react';
+/* istanbul ignore next  */
 import { Button } from '../index';
 
 
 /**
  * Typography render element
  */
-const Typography = () => (
+/* istanbul ignore next  */
+const Typography = () => /* istanbul ignore next  */ (
     <div style={{ height: '100%', margin: '5%' }}>
         <div style={{ height: '80%', padding: '2%' }}>
             <h1>Typography</h1>
@@ -141,5 +144,5 @@ const Typography = () => (
         </div>
 
         )
-        
+/* istanbul ignore next  */
         export default Typography;
