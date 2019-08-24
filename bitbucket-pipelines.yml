@@ -47,7 +47,9 @@ pipelines:
           - yarn release
           - npm publish
           - git push --follow-tags origin master
-          - git checkout develop
+          - git remote update
+          - git fetch 
+          - git checkout --track origin/develop
           - git merge --no-ff master
           - git push origin develop
 
