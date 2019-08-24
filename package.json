@@ -1,6 +1,6 @@
 {
   "name": "@youngapp/atomic-interface",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "lib/index.js",
   "scripts": {
     "lint": "tslint --project ./",
@@ -10,7 +10,7 @@
     "build": "rm -rf ./lib && tsc --p tsconfig.prod.json",
     "start": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
-    "release": "standard-version  --commit-all -m 'chore(release): %s ' -m '[skip ci]'"
+    "release": "standard-version  --no-verify --commit-all --release-as minor --git-tag-fallback false"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -18,7 +18,7 @@
   "standard-version": {
     "scripts": {
       "postbump": "git add package.json",
-      "precommit": "echo \"[skip ci]\""
+      "precommit": "echo \"chore(release): %s ' -m '[skip ci]\""
     }
   },
   "husky": {
