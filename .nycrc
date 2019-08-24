@@ -3,6 +3,9 @@
         ".ts",
         ".tsx"
     ],
+    "exclude": [
+        "src/**/*.stories.tsx"
+    ],
     "reporter": [
         "lcov",
         "text-summary",

@@ -4,6 +4,9 @@
   "linterOptions": {
     "exclude": [
       "./src/**/*.test.tsx",
+      "./src/**/*.stories.tsx",
+      "./samples",
+      "node_modules",
       "node_modules/**/*.ts",
       "./src/serviceWorker.ts",
       "./src/react-app-env.d.ts",
@@ -13,13 +16,14 @@
     ]
   },
   "rules": {
-    "interface-name": false,
-    "no-any": true,
+    "no-var-requires": false,
     "ordered-imports": false,
-    "no-console": true,
-    "member-access": false,
-    "object-literal-sort-keys": false,
-    "forin": false,
+    "prefer-const": [
+      true,
+      {
+        "destructuring": "all"
+      }
+    ],
     "require-jsdoc": [
       "error",
       {
@@ -31,6 +35,8 @@
           "FunctionExpression": false
         }
       }
-    ]
+    ],
+    "no-empty-interface": false,
+    "interface-name": false
   }
 }

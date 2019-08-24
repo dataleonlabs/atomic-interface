@@ -1,6 +1,5 @@
 import * as enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import { Values } from './form/types';
 
 // const fetchMock = require('jest-fetch-mock')
 
@@ -14,14 +13,14 @@ const localStorageMock = (() => {
   let store = {}
 
   return {
+    clear: () => {
+      store = {}
+    },
     getItem: (key: string) => {
       return store[key] || null
     },
-    setItem: (key: string, value: Values) => {
+    setItem: (key: string, value: string) => {
       store[key] = value.toString()
-    },
-    clear: () => {
-      store = {}
     },
   }
 })()
@@ -32,9 +31,9 @@ Object.defineProperty(window, 'localStorage', {
 
 const createRangeMock = () => {
   return {
+    getBoundingClientRect: jest.fn(),
     setEnd: jest.fn(),
     setStart: jest.fn(),
-    getBoundingClientRect: jest.fn(),
   }
 }
 

@@ -23,6 +23,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+storybook-static
 
 # git
 test-report.html
@@ -30,3 +31,6 @@ test-report
 
 # documentations
 styleguide
+storybook-static
+lib
+.nyc_output
