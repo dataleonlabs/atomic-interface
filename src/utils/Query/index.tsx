@@ -20,8 +20,10 @@ class Query extends React.Component<Props, Stats> {
     await this.fetch();
   }
 
-  public async componentDidUpdate() {
-    await this.fetch();
+  public async componentDidUpdate(prevProps:Props) {
+    if (prevProps.reloadKey !== this.props.reloadKey) {
+      await this.fetch();
+    }
   }
 
   public fetch = async () => {
