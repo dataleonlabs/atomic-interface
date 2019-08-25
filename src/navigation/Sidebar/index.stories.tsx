@@ -3,13 +3,12 @@ import { storiesOf } from '@storybook/react';
 import Sidebar from './index'
 import Nav from './Nav'
 import NavItem from './NavItem'
-import {ChevronLeft,AlignJustify, HelpCircle, Database, Grid, Folder, GitMerge, Eye, Watch, Linkedin, ExternalLink } from 'react-feather';
+import { HelpCircle, Database, Grid, Folder, GitMerge, Eye, Watch, Linkedin, ExternalLink } from 'react-feather';
 import Brand from './Brand';
 import NavHeader from './NavHeader';
 import NavIcon from './NavIcon';
 import NavText from './NavText';
 import Badge from '../../display/Badge';
-import BrandIcon from './BrandIcon'
 
 storiesOf('Navigation|Sidebar', module)
   .add('Example', () => (
@@ -57,22 +56,22 @@ storiesOf('Navigation|Sidebar', module)
           <NavText>Dashboard</NavText>
         </NavItem>
         <NavItem>
-          <NavIcon type="left"><Grid size={23} /></NavIcon> 
+          <NavIcon type="left"><Grid size={23} /></NavIcon>
           <NavText>Transaction</NavText>
         </NavItem>
         <NavItem active>
-          <NavIcon type="left"><Folder size={23} /></NavIcon> 
+          <NavIcon type="left"><Folder size={23} /></NavIcon>
           <NavText>Products</NavText>
         </NavItem>
         <NavItem>
-          <NavIcon type="left"><GitMerge size={23} /></NavIcon> 
+          <NavIcon type="left"><GitMerge size={23} /></NavIcon>
           <NavText>Payments</NavText>
         </NavItem>
         <NavHeader>Catalogs</NavHeader>
         <NavItem>
           <NavIcon type="left"><Eye size={23} /></NavIcon>
           <NavText>Stocks</NavText>
-          </NavItem>
+        </NavItem>
         <NavItem>
           <NavIcon type="left"><Watch size={23} /></NavIcon>
           <NavText>Link</NavText>
@@ -160,6 +159,24 @@ storiesOf('Navigation|Sidebar', module)
           <NavIcon type="left"><GitMerge size={23} /></NavIcon>
           <NavText>Payments</NavText>
         </NavItem>
+        <NavHeader>Catalogs</NavHeader>
+        <NavItem loading={true}>
+          <NavIcon type="left"><Eye size={23} /></NavIcon>
+          <NavText>Stocks</NavText>
+        </NavItem>
+        <NavItem loading={true}>
+          <NavIcon type="left"><Watch size={23} /></NavIcon>
+          <NavText>Link</NavText>
+        </NavItem>
+        <NavItem loading={true}>
+          <NavIcon type="left"><Linkedin size={23} /></NavIcon>
+          <NavText>UI-Kit</NavText>
+        </NavItem>
+        <NavItem loading={true}>
+          <NavIcon type="left"><HelpCircle size={23} /></NavIcon>
+          <NavText><a href="https://google.com">Help</a></NavText>
+          <NavIcon type="right"><ExternalLink size={17} /></NavIcon>
+        </NavItem>
       </Nav>
     </Sidebar>
   ))
@@ -178,9 +195,9 @@ storiesOf('Navigation|Sidebar', module)
         <NavItem>
           <NavIcon type="left"><GitMerge size={23} /></NavIcon>
         </NavItem>
-       
+
         <NavItem>
-          <NavIcon type="left"><Eye size={23} /></NavIcon> 
+          <NavIcon type="left"><Eye size={23} /></NavIcon>
         </NavItem>
         <NavItem>
           <NavIcon type="left"><Watch size={23} /></NavIcon>
