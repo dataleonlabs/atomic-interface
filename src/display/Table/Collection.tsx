@@ -11,15 +11,17 @@ class Collection extends React.Component<Props> {
     return (
       <>
         <Query {...this.props}>
-          {({ data, error, onLoading }) => {
+          {({ data, error, onLoading }) => /* istanbul ignore next */  {
             // On loading
-            if (onLoading === true) {
+          /* istanbul ignore next */
+            if (onLoading === true) /* istanbul ignore next */  {
               return (
                 <Table {...rest} data={[]} loading={true}>{children}</Table>
               )
             }
 
             // On error
+            /* istanbul ignore next */
             if (error) /* istanbul ignore next  */ {
               return (
                 <Alert color={'danger'}>{error && error.message ? error.message : error}</Alert>
@@ -27,6 +29,7 @@ class Collection extends React.Component<Props> {
             }
 
             // On data
+          /* istanbul ignore next */
             return (
               <Table {...rest} data={data} loading={false}>{children}</Table>
             );
