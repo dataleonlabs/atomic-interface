@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "tslint --project ./",
     "global": "npm install -g standard-version commitizen yarn nyc jest husky",
-    "test": "jest --verbose --watchAll --env=jsdom --coverage  --runInBand",
+    "test": "jest --verbose --watchAll --env=jsdom",
     "test:integration": "jest --watchAll=false --verbose --env=jsdom  --runInBand --coverage --testResultsProcessor ./node_modules/jest-html-reporter",
     "build": "rm -rf ./lib && tsc --p tsconfig.prod.json",
     "start": "start-storybook -p 6006 -c .storybook",
@@ -39,6 +39,9 @@
     ]
   },
   "dependencies": {
+    "@devexpress/dx-react-core": "^2.0.3",
+    "@devexpress/dx-react-grid": "^2.0.3",
+    "@devexpress/dx-react-grid-bootstrap4": "^2.0.3",
     "@types/classnames": "^2.2.9",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",

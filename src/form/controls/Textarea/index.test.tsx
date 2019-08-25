@@ -6,7 +6,7 @@ import TextareaAutosize from 'react-autosize-textarea';
 import { Label } from 'reactstrap';
 
 describe('<Textarea />', () => {
-  it('U-TEST-1 - testarea render with max rows', () => {
+  it('U-TEST-1 - Max Rows', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
@@ -19,7 +19,7 @@ describe('<Textarea />', () => {
     expect(wrapper.text()).toContain('text help')
   })
 
-  it('U-TEST-2 - testarea with label', () => {
+  it('U-TEST-2 - Label', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (

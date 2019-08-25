@@ -8,7 +8,7 @@ import { XSquare } from 'react-feather';
 import { Col, Row } from 'reactstrap';
 
 describe('<FieldArray />', () => {
-  it('U-TEST-1 - test FieldArray render', () => {
+  it('U-TEST-1 FieldArray render', () => {
     const wrapper = enzyme.mount(
       <Form
         initialValues={{ friends: [{ "name": "", "age": "" }] }}

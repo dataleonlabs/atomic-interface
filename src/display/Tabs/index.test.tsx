@@ -7,7 +7,7 @@ import { TabContent, TabPane } from 'reactstrap';
 
 describe('<Tabs/>', () => {
 
-  it('U-TEST-1 - Tabs render', () => {
+  it('U-TEST-1 - Tabs', () => {
     const wrapper = enzyme.mount(
       <Tabs >
         <TabItem title={"One"}>Foo Action</TabItem>
@@ -21,7 +21,7 @@ describe('<Tabs/>', () => {
     expect(wrapper.find(TabPane)).toHaveLength(3);
   })
 
-  it('U-TEST-2 - Tabs rendering with disable tab', () => {
+  it('U-TEST-2 - Disable Tab', () => {
     const wrapper = enzyme.mount(
       <Tabs >
         <TabItem title={"One"}>Foo Action</TabItem>

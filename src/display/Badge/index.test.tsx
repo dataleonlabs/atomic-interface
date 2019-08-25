@@ -4,7 +4,7 @@ import Badge from './index'
 import { Badge as strapBadge } from 'reactstrap';
 
 describe('<Badge />', () => {
-  it('U-TEST-1 - badge render with color primary', () => {
+  it('U-TEST-1 - Color Primary', () => {
     const wrapper = enzyme.mount(
       <Badge color="primary"  />
     )
@@ -12,7 +12,7 @@ describe('<Badge />', () => {
     expect(wrapper.props().color).toEqual('primary');
   })
   
-  it('U-TEST-2 - alert rendering with pill', () => {
+  it('U-TEST-2 - Pill', () => {
     const wrapper = enzyme.mount(
       <Badge color="primary" pill={true} />
       )
