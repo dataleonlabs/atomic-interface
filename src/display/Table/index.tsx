@@ -12,6 +12,7 @@ import {
 	DragDropProvider,
 	TableColumnResizing,
 	TableColumnVisibility,
+	TableColumnReordering,
 	TableFixedColumns,
 } from '@devexpress/dx-react-grid-bootstrap4';
 
@@ -25,7 +26,6 @@ import {
 	PagingState,
 	IntegratedSelection,
 	SelectionState,
-	TableColumnReordering,
 	VirtualTableState
 } from "@devexpress/dx-react-grid";
 
@@ -63,11 +63,11 @@ class TableAdvanced extends React.Component<Props, State> {
 		selectable: false,
 		sortable: false,
 		striped: false,
+		loading: false,
 		fixedLeftColumns: [],
 		fixedRightColumns: [],
 		selectByRowClick: false,
-		showSelectAll: true,
-		columnOrdering: []
+		showSelectAll: true
 	}
 
 	public state = {
@@ -105,7 +105,7 @@ class TableAdvanced extends React.Component<Props, State> {
 				const childProps = child.props as any;
 				if (childProps && childProps.field) {
 					columns.push({
-						columnName: childProps.children,
+						columnName: childProps.field,
 						...childProps,
 					});
 				}
@@ -120,16 +120,16 @@ class TableAdvanced extends React.Component<Props, State> {
 	public rows = () => {
 		const rows: any[] = [];
 
-		(this.props.data || /* istanbul ignore next  */[]).map((row: any, index: number) => {
+		(this.props.data || /* istanbul ignore next  */[]).map((row: any) => {
 
 			let counter = 0;
 			React.Children.map(this.props.children, child => {
 				if (React.isValidElement(child)) {
-					counter++
+					counter++;
 				}
 			});
 
-			React.Children.map(this.props.children, child => {
+			React.Children.map(this.props.children, (child: any, index: number) => {
 				if (React.isValidElement(child)) {
 					const childProps = child.props as any;
 					if (childProps && childProps.field) {
@@ -186,9 +186,10 @@ class TableAdvanced extends React.Component<Props, State> {
 		return (
 			<StyledTable hideHeader={this.props.hideHeader}>
 				<Grid
-					rows={this.rows()}
+					rows={this.props.loading ? [] : this.rows()}
 					columns={this.columns()}
 				>
+					
 					{this.props.sortable && <SortingState
 						defaultSorting={[{ columnName: columnExtensions[0].columnName, direction: 'asc' }]}
 						sorting={[{ columnName: this.state.sortField, direction: this.state.sortDirection }]}
@@ -197,7 +198,7 @@ class TableAdvanced extends React.Component<Props, State> {
 					{this.props.sortable && <IntegratedSorting />}
 
 					{this.props.pagination && <PagingState
-						currentPage={this.props.pagination.currentPage}
+						currentPage={this.props.pagination.currentPage || 0}
 						onCurrentPageChange={this.props.pagination.onChange}
 						pageSize={this.props.pagination.pageSize}
 						onPageSizeChange={this.props.pagination.onSizeChange}
@@ -220,6 +221,7 @@ class TableAdvanced extends React.Component<Props, State> {
 						getRows={this.getRemoteRows}
 						infiniteScrolling={false}
 					/>}
+				
 					{this.props.striped ?
 						<TableBase tableComponent={TableComponent} columnExtensions={columnExtensions} />
 						:
@@ -231,12 +233,11 @@ class TableAdvanced extends React.Component<Props, State> {
 						onColumnWidthsChange={this.props.onColumnResizing}
 					/>}
 
-					{
-						this.props.columnOrdering && <TableColumnReordering
-							order={this.props.columnOrdering.length === 0 ? columnExtensions.map(v => v.columnName) : this.props.columnOrdering}
+					{this.props.columnOrdering && <TableColumnReordering
+						order={this.props.columnOrdering.length === 0 ? columnExtensions.map(v => v.columnName) : this.props.columnOrdering}
 							onOrderChange={this.props.onColumnOrdering}
 						/>}
-
+					
 					<TableHeaderRow
 						showSortingControls={this.props.sortable === true}
 					/>
@@ -250,12 +251,14 @@ class TableAdvanced extends React.Component<Props, State> {
 					{this.props.selectable && <TableSelection
 						selectByRowClick={this.props.selectByRowClick}
 						showSelectAll={this.props.showSelectAll}
+						highlightRow={true}
 					/>}
 
 					{(this.props.fixedLeftColumns || this.props.fixedRightColumns) && <TableFixedColumns
 						leftColumns={this.props.fixedLeftColumns}
 						rightColumns={this.props.fixedRightColumns}
 					/>}
+					
 				</Grid>
 			</StyledTable>
 		);

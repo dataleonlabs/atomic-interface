@@ -48,6 +48,22 @@ storiesOf('UI Elements|Table', module)
       </Col>
     </React.Fragment>
   ))
+  .add('Empty', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Empty</h4>
+        <p>
+          Table allows empty table display
+        </p>
+        <hr />
+        <Table data={[]} selectable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  ))
   .add('Customize the Appearance', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
@@ -225,23 +241,6 @@ storiesOf('UI Elements|Table', module)
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-
-  .add('Empty', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Empty</h4>
-        <p>
-          Table allows empty table display
-        </p>
-        <hr />
-        <Table data={[]} selectable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
         </Table>
       </Col>
     </React.Fragment>
