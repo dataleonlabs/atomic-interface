@@ -76,11 +76,11 @@ export interface TableProps {
   /** Ordering item */
   columnOrdering?: string[]
 
+  /** onColumnOrdering */
+  onColumnOrdering?: (p: string[]) => void
+
   /** Resizing */
   columnResizing?: boolean;
-
-  /** pageSizes */
-  pageSizes?: PagingPanelProps['pageSizes']
 
   /** fixedLeftColumns */
   fixedLeftColumns?: string[]
@@ -93,6 +93,9 @@ export interface TableProps {
 
   /** In controlled mode, pass the hidden column names to the */
   hiddenColumnNames?: string[]
+
+  /** In controlled mode, pass the hidden column names to the */
+  onHiddenColumnNames?: () => void
 
   /** Set the TableSelection plugin’s selectByRowClick property to true to check/uncheck a checkbox by a row click as demonstrated in the following example */
   selectByRowClick?: boolean;
@@ -137,6 +140,9 @@ export interface TableProps {
     pageSize?: number
 
     onSizeChange?: (size: number) => void
+
+    /** pageSizes */
+    pageSizes?: PagingPanelProps['pageSizes']
   }
 
   /** no content indication */
