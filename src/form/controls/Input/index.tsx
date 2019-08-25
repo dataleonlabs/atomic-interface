@@ -14,9 +14,9 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
   if ((field.leftAddon || field.rightAddon)) {
     return (
       <InputGroup>
-        {field.leftAddon && <StyledInputGroupAddonLeft addonType="prepend">{field.leftAddon}</StyledInputGroupAddonLeft>}
+        {field.leftAddon && <StyledInputGroupAddonLeft addonType="prepend"><span className="input-group-text">{field.leftAddon}</span></StyledInputGroupAddonLeft>}
         {component}
-        {field.rightAddon && <StyledInputGroupAddonRight addonType="append">{field.rightAddon}</StyledInputGroupAddonRight>}
+        {field.rightAddon && <StyledInputGroupAddonRight addonType="append"><span className="input-group-text">{field.rightAddon}</span></StyledInputGroupAddonRight>}
       </InputGroup>
     );
   }
