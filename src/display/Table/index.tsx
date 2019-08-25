@@ -4,7 +4,7 @@ import React from 'react';
 import { TableProps as Props } from './props'
 import { StyledTable } from "./style";
 import { Grid, VirtualTable as TableBase, TableHeaderRow, PagingPanel, TableSelection, DragDropProvider, TableColumnResizing, TableColumnVisibility, TableFixedColumns } from '@devexpress/dx-react-grid-bootstrap4';
-import { Column, TableColumnWidthInfo, SortingState, IntegratedSorting, Sorting, IntegratedPaging, PagingState, IntegratedSelection, SelectionState, TableColumnReordering } from "@devexpress/dx-react-grid";
+import { Column, TableColumnWidthInfo, SortingState, IntegratedSorting, Sorting, IntegratedPaging, PagingState, IntegratedSelection, SelectionState, TableColumnReordering, VirtualTableState } from "@devexpress/dx-react-grid";
 
 const TableComponent = ({ ...restProps }) => (
 	<TableBase.Table
@@ -155,6 +155,10 @@ class TableAdvanced extends React.Component<Props, State> {
 		this.setState({ selected: items });
 	}
 
+	public getRemoteRows = () => {
+		//
+	}
+
 	public render() {
 		const columnExtensions = this.tableColumnExtensions();
 		return (
@@ -187,6 +191,15 @@ class TableAdvanced extends React.Component<Props, State> {
 						{this.props.selectable && <IntegratedSelection />}
 
 						{this.props.columnOrdering && <DragDropProvider />}
+
+						{this.props.loading && <VirtualTableState
+							loading={this.props.loading}
+							totalRowCount={9}
+							pageSize={9}
+							skip={9}
+							getRows={this.getRemoteRows}
+							infiniteScrolling={false}
+						/>}
 						{this.props.striped ?
 							<TableBase tableComponent={TableComponent} columnExtensions={columnExtensions} />
 							:
