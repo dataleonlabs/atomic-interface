@@ -15,7 +15,7 @@ for (let index = 0; index < 10; index++) {
   });
 }
 storiesOf('UI Elements|TableAdvanced', module)
-  .add('Example', () => (
+  .add('Basic', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Table</h4>
@@ -26,115 +26,23 @@ storiesOf('UI Elements|TableAdvanced', module)
         </Table>
       </Col>
     </React.Fragment>
-  )).add('With striped', () => (
+  ))
+  .add('Loading', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} striped={true}>
+        <h4>Table - Loading</h4>
+        <Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+          <Column field={'id'}>Id</Column>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
         </Table>
       </Col>
     </React.Fragment>
-  )).add('With row size large', () => (
+  ))
+  .add('Empty', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} striped={true} rowSize={'large'}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With row size small', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} striped={false} rowSize={'small'}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With select row', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} selectable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With select row and disabledSelected', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} selectable={true} disabledSelected={[4, 6]}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With hide header', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} hideHeader={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With sortable', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table 1</h4>
-        <Table data={assets} sortable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With scrollable', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} sortable={true} scrollable={150}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With drag and drop', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} draggable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-        <h4>Table 2</h4>
-        <Table data={assets} draggable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With empty table', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
+        <h4>Table - Empty</h4>
         <Table data={[]} selectable={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
@@ -142,25 +50,108 @@ storiesOf('UI Elements|TableAdvanced', module)
         </Table>
       </Col>
     </React.Fragment>
-  )).add('With pagination', () => (
+  ))
+  .add('Striped', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+        <h4>Table - Striped</h4>
+        <Table data={assets} striped={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'}>Email</Column>
         </Table>
       </Col>
     </React.Fragment>
-  )).add('With loading', () => (
+  )).add('Sizing', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
-          <Column field={'id'}>Id</Column>
+        <h4>Table - Sizing</h4>
+        <Table data={assets} striped={true} rowSize={'large'}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Smail</h4>
+        <Table data={assets} striped={false} rowSize={'small'}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('Selection', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Selection</h4>
+        <Table data={assets} selectable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Disabled</h4>
+        <Table data={assets} selectable={true} disabledSelected={[4, 6]}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('Hide Header', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Hide Header</h4>
+        <Table data={assets} hideHeader={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('Sorting', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Sorting</h4>
+        <Table data={assets} sortable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('Scrollable', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Scrollable</h4>
+        <Table data={assets} sortable={true} scrollable={150}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('Drag And Drop', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Drag And Drop</h4>
+        <Table data={assets} draggable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('Paging', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Paging</h4>
+        <Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
         </Table>
       </Col>
     </React.Fragment>

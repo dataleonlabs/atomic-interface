@@ -64,7 +64,7 @@ storiesOf('UI Elements|Table', module)
       </Col>
     </React.Fragment>
   ))
-  .add('Customize the Appearance', () => (
+  .add('Customize', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Table - Customize the Appearance</h4>
