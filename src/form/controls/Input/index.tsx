@@ -33,6 +33,7 @@ const Input = (props: Props) => {
       {wrapperInputGroup(
         <StyledInputBootstrap
           placeholder={props.placeholder}
+          {...props}
           {...field}
           invalid={submitCount > 0 && (errors[props.name] ? true : false)}
         />

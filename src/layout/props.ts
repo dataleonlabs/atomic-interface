@@ -53,14 +53,15 @@ export interface AuthProps {
 
 export interface AuthHeaderProps {
     /** Children is added directly in header component */
-    children: JSX.Element | JSX.Element[]
+    children: string | JSX.Element | JSX.Element[]
 }
 
-export interface AuthHeaderTitleProps extends HTMLDivElement {}
-export interface AuthHeaderSubTitleProps extends HTMLDivElement {}
-export interface AuthFooterProps extends HTMLDivElement {}
+export interface AuthHeaderTitleProps extends AuthHeaderProps {}
+export interface AuthHeaderSubTitleProps extends AuthHeaderProps {}
+export interface AuthFooterProps extends AuthHeaderProps {}
 
 export interface LoginProps extends AuthProps {
+
     /* Set Username */
     email?: InputProps
 
