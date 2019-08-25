@@ -263,3 +263,18 @@ storiesOf('UI Elements|Table', module)
       </Col>
     </React.Fragment>
   ))
+  .add('Searching', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Searching</h4>
+        <p>
+          The Table component supports searching data programmatically or using the value an end user types in the corresponding Search Panel editor.
+        </p>
+        <Table searchable={true} showToolbar={true} data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  ))

@@ -29,6 +29,8 @@ export interface TableColumnProps {
   /** Width column */
   width?: number
 
+  togglingEnabled?: boolean
+
   /* tslint:disable */
   formatter?: (cell: string, row: any) => JSX.Element
   /* tslint:enable */
@@ -153,6 +155,14 @@ export interface TableProps {
 
   /** Drag end event */
   onDragEnd?: (values: Values[]) => void
+
+  /** see toolbar */
+  showToolbar?: boolean
+
+  /** Search element */
+  searchable?: boolean
+
+  onSearch?: (value: string) => void
 
 }
 

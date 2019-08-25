@@ -14,6 +14,9 @@ import {
 	TableColumnVisibility,
 	TableColumnReordering,
 	TableFixedColumns,
+	Toolbar,
+	ColumnChooser,
+	SearchPanel,
 } from '@devexpress/dx-react-grid-bootstrap4';
 
 import {
@@ -26,7 +29,8 @@ import {
 	PagingState,
 	IntegratedSelection,
 	SelectionState,
-	VirtualTableState
+	VirtualTableState,
+	SearchState
 } from "@devexpress/dx-react-grid";
 
 const TableComponent = ({ ...restProps }) => (
@@ -67,6 +71,7 @@ class TableAdvanced extends React.Component<Props, State> {
 		fixedLeftColumns: [],
 		fixedRightColumns: [],
 		selectByRowClick: false,
+		showToolbar: true,
 		showSelectAll: true
 	}
 
@@ -222,6 +227,10 @@ class TableAdvanced extends React.Component<Props, State> {
 						infiniteScrolling={false}
 					/>}
 				
+					{this.props.searchable && <SearchState
+						onValueChange={this.props.onSearch}
+					/>}
+
 					{this.props.striped ?
 						<TableBase tableComponent={TableComponent} columnExtensions={columnExtensions} />
 						:
@@ -245,6 +254,8 @@ class TableAdvanced extends React.Component<Props, State> {
 					{this.props.hiddenColumnNames && <TableColumnVisibility
 						hiddenColumnNames={this.props.hiddenColumnNames}
 						onHiddenColumnNamesChange={this.props.onHiddenColumnNames}
+						columnExtensions={columnExtensions as any}
+						defaultHiddenColumnNames={columnExtensions as any}
 					/>}
 
 					{this.props.pagination && <PagingPanel pageSizes={this.props.pagination.pageSizes || [10, 30, 100]} />}
@@ -258,6 +269,10 @@ class TableAdvanced extends React.Component<Props, State> {
 						leftColumns={this.props.fixedLeftColumns}
 						rightColumns={this.props.fixedRightColumns}
 					/>}
+
+					{this.props.showToolbar && (this.props.hiddenColumnNames || this.props.searchable) && <Toolbar />}
+					{this.props.showToolbar && this.props.hiddenColumnNames && <ColumnChooser />}
+					{this.props.showToolbar && this.props.searchable && <SearchPanel />}
 					
 				</Grid>
 			</StyledTable>
