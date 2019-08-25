@@ -17,6 +17,7 @@ interface State {
   newPasswordError: boolean,
   confirmSignInError: boolean,
   validationSchema: {},
+  loading: boolean,
   status?: "LOGIN" | "MFA" | "NEW_PASSWORD_REQUIRED"
 }
 
@@ -88,6 +89,7 @@ class Login extends React.Component<Props, State> {
     loginError: false,
     newPasswordError: false,
     confirmSignInError: false,
+    loading: false,
     status: 'LOGIN' as "LOGIN" | "MFA" | "NEW_PASSWORD_REQUIRED"
   }
 
@@ -133,39 +135,41 @@ class Login extends React.Component<Props, State> {
 
   public onSubmit = async (event: any) => {
     if (this.props.provider.type === "aws-cognito") {
-      const awsCognito = new AWSCognito();
-      awsCognito.configure(this.props.provider.credentials);
-      if (this.state.status === "LOGIN" || this.state.status === null) {
-        const resSignIn = await awsCognito.signIn({ email: event.email, password: event.password });
-        if (resSignIn && resSignIn.challangeName === 'SMS_MFA' ||
-          resSignIn.challengeName === 'SOFTWARE_TOKEN_MFA') {
-          this.setState({ userResponse: resSignIn, status: "MFA" }, this.setValidation)          
-        } else if (resSignIn && resSignIn.challangeName === 'NEW_PASSWORD_REQUIRED') {
-          this.setState({ userResponse: resSignIn, status: "NEW_PASSWORD_REQUIRED" }, this.setValidation)
-        } else {
-          if (resSignIn && resSignIn.code) {
-            this.setState({ loginError: true })
+      this.setState({ loading: true }, async () => {
+        const awsCognito = new AWSCognito();
+        awsCognito.configure(this.props.provider.credentials);
+        if (this.state.status === "LOGIN" || this.state.status === null) {
+          const resSignIn = await awsCognito.signIn({ email: event.email, password: event.password });
+          if (resSignIn && resSignIn.challangeName === 'SMS_MFA' ||
+            resSignIn.challengeName === 'SOFTWARE_TOKEN_MFA') {
+            this.setState({ loading: false, userResponse: resSignIn, status: "MFA" }, this.setValidation)
+          } else if (resSignIn && resSignIn.challangeName === 'NEW_PASSWORD_REQUIRED') {
+            this.setState({ loading: false, userResponse: resSignIn, status: "NEW_PASSWORD_REQUIRED" }, this.setValidation)
+          } else {
+            if (resSignIn && resSignIn.code) {
+              this.setState({ loading: false, loginError: true })
+            } else if (typeof this.props.onCompleted === "function") {
+              this.props.onCompleted(resSignIn);
+            }
+          }
+        } else if (this.state.status === "MFA") {
+          const confrimSignInInputDetails = { user: this.state.userResponse, code: event.code }
+          const resConfirmSign = await awsCognito.confirmSignIn(confrimSignInInputDetails);
+          if (resConfirmSign && resConfirmSign.code) {
+            this.setState({ loading: false, confirmSignInError: true })
           } else if (typeof this.props.onCompleted === "function") {
-            this.props.onCompleted(resSignIn);
+            this.props.onCompleted(resConfirmSign);
+          }
+        } else if (this.state.status === "NEW_PASSWORD_REQUIRED") {
+          const resetPasswordInputDetails = { user: this.state.userResponse, newPassword: event.confirmPassword }
+          const resNewPassword = await awsCognito.completeNewPassword(resetPasswordInputDetails);
+          if (resNewPassword && resNewPassword.code) {
+            this.setState({ loading: false, newPasswordError: true })
+          } else if (typeof this.props.onCompleted === "function") {
+            this.props.onCompleted(resNewPassword);
           }
         }
-      } else if (this.state.status === "MFA") {
-        const confrimSignInInputDetails = { user: this.state.userResponse, code: event.code }
-        const resConfirmSign = await awsCognito.confirmSignIn(confrimSignInInputDetails);
-        if (resConfirmSign && resConfirmSign.code) {
-          this.setState({ confirmSignInError: true })
-        } else if (typeof this.props.onCompleted === "function") {
-          this.props.onCompleted(resConfirmSign);
-        }
-      } else if (this.state.status === "NEW_PASSWORD_REQUIRED") {
-        const resetPasswordInputDetails = { user: this.state.userResponse, newPassword: event.confirmPassword }
-        const resNewPassword = await awsCognito.completeNewPassword(resetPasswordInputDetails);
-        if (resNewPassword && resNewPassword.code) {
-          this.setState({ newPasswordError: true })
-        } else if (typeof this.props.onCompleted === "function") {
-          this.props.onCompleted(resNewPassword);
-        }
-      }
+      })
     }
   }
 
@@ -194,14 +198,14 @@ class Login extends React.Component<Props, State> {
                             <Input {...this.props.email} name="email" type="text" />
                             <Input {...this.props.password} name="password" type="password" />
                             {this.state.loginError === true && <Alert icon={true} color="danger">{this.props.messageWrongLogin}</Alert>}
-                          <Button {...this.props.buttonLogin} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonLogin || {}).children}</Button>
+                          <Button {...this.props.buttonLogin} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonLogin || {}).children}</Button>
                           </>}
                         {this.state.status === "MFA" &&
                           <>
                             <Alert icon={true} color="info">{this.props.messageConfirmSignIn}</Alert>
                             <Input {...this.props.code} name="code" type="text" />
                             {this.state.confirmSignInError === true && <Alert icon={true} color="danger">{this.props.messageConfirmSignInError}</Alert>}
-                          <Button {...this.props.buttonConfirmSignIn} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonConfirmSignIn || {}).children}</Button>
+                          <Button {...this.props.buttonConfirmSignIn} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonConfirmSignIn || {}).children}</Button>
                           </>}
                         {this.state.status === "NEW_PASSWORD_REQUIRED" &&
                           <>
@@ -209,7 +213,7 @@ class Login extends React.Component<Props, State> {
                             <Input {...this.props.newPassword} name="newPassword" type="password" />
                             <Input {...this.props.confirmNewPassword} name="confirmPassword" type="password" />
                             {this.state.newPasswordError === true && <Alert icon={true} color="danger">{this.props.messageNewPasswordError}</Alert>}
-                          <Button {...this.props.buttonNewPassword} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonNewPassword || {}).children}</Button>
+                          <Button {...this.props.buttonNewPassword} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonNewPassword || {}).children}</Button>
                           </>}
                         {/* footer */}
                         {React.Children.map(this.props.children, (child, key: number) => {
