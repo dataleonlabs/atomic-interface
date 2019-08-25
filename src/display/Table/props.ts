@@ -97,10 +97,13 @@ export interface TableProps {
   hiddenColumnNames?: string[]
 
   /** In controlled mode, pass the hidden column names to the */
-  onHiddenColumnNames?: () => void
+  onHiddenColumnNamesChange?: (columns: string[]) => void
 
   /** Set the TableSelection plugin’s selectByRowClick property to true to check/uncheck a checkbox by a row click as demonstrated in the following example */
   selectByRowClick?: boolean;
+
+  /** Toolbar */
+  toolbarComponent?: JSX.Element
 
   /** Display or hide the selected column */
   onSelected?: (rows: string[]) => void
@@ -164,6 +167,8 @@ export interface TableProps {
 
   onSearch?: (value: string) => void
 
+  /** Banded Columns */
+  columnBands?: any[]
 }
 
 export interface TableCollectionProps extends TableProps, QueryProps {

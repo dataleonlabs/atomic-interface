@@ -5,7 +5,7 @@ import { CustomInput } from 'reactstrap';
 import Form from './../../index'
 
 describe('<Switch />', () => {
-  it('U-TEST-1 - test Switch render with label', () => {
+  it('U-TEST-1 Switch render with label', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
@@ -21,7 +21,7 @@ describe('<Switch />', () => {
     expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 
-  it('U-TEST-2 - test Switch render with disabled ', () => {
+  it('U-TEST-2 Switch render with disabled ', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (

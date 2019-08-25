@@ -4,9 +4,9 @@ import styled from 'styled-components'
 export const StyledTable = styled.div<any>`
   .table thead th {
     ${props => props.hideHeader ? 'display: none' : ''};
-    border-top-color: transparent!important;
+    /* border-top-color: transparent!important;
     border-left-color: transparent!important;
-    border-right-color: transparent!important;
+    border-right-color: transparent!important; */
   }
 
   .card-header:first-child {
@@ -19,5 +19,13 @@ export const StyledTable = styled.div<any>`
     border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
     border-top: solid 2px rgba(0,0,0,.03);
     background-color: #fff;
+  }
+
+  .d-flex.ml-auto {
+    display: none!important;
+  }
+
+  .Toolbar-custom {
+    margin-left: 15px;
   }
 `;

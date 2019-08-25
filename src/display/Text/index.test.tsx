@@ -4,7 +4,7 @@ import Text from './index'
 
 describe('<Text/>', () => {
 
-  it('U-TEST-1 - Text render', () => {
+  it('U-TEST-1 - Text', () => {
     const wrapper = enzyme.mount(
       <Text>
         this is render text
@@ -14,7 +14,7 @@ describe('<Text/>', () => {
     expect(wrapper.find(Text).text()).toEqual('this is render text');
   })
 
-  it('U-TEST-2 - Text render with text help', () => {
+  it('U-TEST-2 - Text Help', () => {
     const wrapper = enzyme.mount(
       <>
         <Text textStyle="help" >
@@ -29,7 +29,7 @@ describe('<Text/>', () => {
     expect(wrapper.find(Text).get(0).props.textStyle).toEqual('help');
   })
 
-  it('U-TEST-3 - Text rendering with date format', () => {
+  it('U-TEST-3 - Date format', () => {
     const wrapper = enzyme.mount(
       <Text textStyle="help" type="date" format="DD MMM">
         2017-1-27
@@ -41,7 +41,7 @@ describe('<Text/>', () => {
     expect(wrapper.props().format).toEqual('DD MMM');
   })
 
-  it('U-TEST-4 - Text rendering with money format', () => {
+  it('U-TEST-4 - Money format', () => {
     const wrapper = enzyme.mount(
       <Text textStyle="help" type="currency" format="EUR">
         1000
@@ -53,7 +53,7 @@ describe('<Text/>', () => {
     expect(wrapper.find(Text).text()).toContain('€');
   })
 
-  it('U-TEST-5 - Text rendering with duration format', () => {
+  it('U-TEST-5 - Duration Format', () => {
     const wrapper = enzyme.mount(
       <Text textStyle="help" type="ago" >
         2017-1-27
@@ -65,7 +65,7 @@ describe('<Text/>', () => {
     expect(wrapper.text()).toContain('ans');
   })
 
-  it('U-TEST-5 - Text rendering with valid', () => {
+  it('U-TEST-5 - With Valid', () => {
     const wrapper = enzyme.mount(
       <>
         <Text textStyle="help" type="ago" >
@@ -85,7 +85,7 @@ describe('<Text/>', () => {
     expect(wrapper.find(Text).get(0).props.type).toEqual('ago');
   })
 
-  it('U-TEST-6 - Text rendering with InValid Data', () => {
+  it('U-TEST-6 - InValid Data', () => {
     const wrapper = enzyme.mount(
       <>
         <Text textStyle="help" type="currency" format="EURQ">
@@ -109,7 +109,7 @@ describe('<Text/>', () => {
     expect(wrapper.find(Text).get(0).props.type).toEqual('currency');
   })
 
-  it('U-TEST-7 - Text rendering with money format', () => {
+  it('U-TEST-7 - Money Format', () => {
     const wrapper = enzyme.mount(
       <Text textStyle="help" type="currency" format="EUR">
         1000
@@ -121,7 +121,7 @@ describe('<Text/>', () => {
     expect(wrapper.find(Text).text()).toContain('€');
   })
 
-  it('U-TEST-8 - Text rendering with duration format', () => {
+  it('U-TEST-8 - Duration Format', () => {
     const wrapper = enzyme.mount(
       <Text type="duration" format="ss [secs]">
         15

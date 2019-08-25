@@ -5,7 +5,7 @@ import { Progress as StrapProgress } from 'reactstrap';
 
 describe('<Progress/>', () => {
 
-  it('U-TEST-1 - Progress render', () => {
+  it('U-TEST-1 - Progress', () => {
     const wrapper = enzyme.mount(
       <Progress value={25} />
     );
@@ -13,7 +13,7 @@ describe('<Progress/>', () => {
     expect(wrapper.props().value).toEqual(25);
   })
 
-  it('U-TEST-2 - Progress render with 60%', () => {
+  it('U-TEST-2 - Progress 60%', () => {
     const wrapper = enzyme.mount(
       <Progress value={60} />
     );

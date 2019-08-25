@@ -10,7 +10,7 @@ import { act } from 'react-dom/test-utils';
 const gb = global as any;
 
 describe('<FormCollection />', () => {
-  it('U-TEST-1 - Testing form collection', () => {
+  it('U-TEST-1 - Collection', () => {
     const event = sinon.spy() as any;
     // Mock fetch data
     gb.fetch = jest.fn().mockImplementation(() => {

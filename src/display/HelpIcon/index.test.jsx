@@ -3,8 +3,7 @@ import * as enzyme from 'enzyme'
 import HelpIcon from './index'
 
 describe('<HelpIcon/>', () => {
-
-  it('U-TEST-1 - Helpicon render', () => {
+  it('U-TEST-1 - Helpicon', () => {
     const div = document.createElement('div');
     document.body.appendChild(div);
     const wrapper = enzyme.mount(

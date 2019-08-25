@@ -5,7 +5,7 @@ import ModalButton from './ModalButton'
 import { Modal as strapModal , Button  } from 'reactstrap';
 
 describe('<Modal />', () => {
-  it('U-TEST-1 - modal render', () => {
+  it('U-TEST-1 - Modal', () => {
     const wrapper = enzyme.mount(
       <Modal header="modal" >
         this is demo 
@@ -15,7 +15,7 @@ describe('<Modal />', () => {
     
   })
 
-  it('U-TEST-2 - modal render with button', () => {
+  it('U-TEST-2 - Button', () => {
     const wrapper = enzyme.mount(
       <Modal header="modal" ok={{label:'submit'}} cancel={{label:'close'}} >
         this is demo 
@@ -27,7 +27,7 @@ describe('<Modal />', () => {
     
   })
 
-  it('U-TEST-3 - modalbutton render', () => {
+  it('U-TEST-3 - Button 2', () => {
     const wrapper = enzyme.mount(
       <ModalButton label="submit" />
     )

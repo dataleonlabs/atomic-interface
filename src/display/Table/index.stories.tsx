@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Col } from 'reactstrap';
 import Column from './Column';
@@ -14,6 +14,24 @@ for (let index = 0; index < 20; index++) {
     email: faker.internet.email(),
   });
 }
+
+const HiddenColumnNames = () => {
+  const [hiddenColumnNames, setHiddenColumnNames] = useState(['email']);
+
+  return (
+    <Table
+      onHiddenColumnNamesChange={setHiddenColumnNames}
+      data={assets}
+      hiddenColumnNames={hiddenColumnNames}
+      searchable={true}
+    >
+      <Column field={'firstName'} togglingEnabled={false}>First Name</Column>
+      <Column field={'lastName'}>Last Name</Column>
+      <Column field={'email'} sortable={false}>Email</Column>
+    </Table>
+  );
+};
+
 storiesOf('UI Elements|Table', module)
   .add('Basic Example', () => (
     <React.Fragment>
@@ -21,7 +39,7 @@ storiesOf('UI Elements|Table', module)
         <h4>Table - Getting Started</h4>
         <p>
           Table is a component that displays table data from a local or remote source.
-          It supports paging, sorting, filtering, grouping and other data shaping options, row selection, and data editing. 
+          It supports paging, sorting, filtering, grouping and other data shaping options, row selection, and data editing.
         </p>
         <hr />
         <Table data={assets} striped={false}>
@@ -97,29 +115,6 @@ storiesOf('UI Elements|Table', module)
       </Col>
     </React.Fragment>
   ))
-  // .add('With row size large', () => (
-  //   <React.Fragment>
-  //     <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-  //       <h4>Table</h4>
-  //       <Table data={assets} striped={true} rowSize={'large'}>
-  //         <Column field={'firstName'}>First Name</Column>
-  //         <Column field={'lastName'}>Last Name</Column>
-  //         <Column field={'email'}>Email</Column>
-  //       </Table>
-  //     </Col>
-  //   </React.Fragment>
-  // )).add('With row size small', () => (
-  //   <React.Fragment>
-  //     <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-  //       <h4>Table</h4>
-  //       <Table data={assets} striped={false} rowSize={'small'}>
-  //         <Column field={'firstName'}>First Name</Column>
-  //         <Column field={'lastName'}>Last Name</Column>
-  //         <Column field={'email'}>Email</Column>
-  //       </Table>
-  //     </Col>
-  //   </React.Fragment>
-  // ))
   .add('Selection', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
@@ -173,7 +168,7 @@ storiesOf('UI Elements|Table', module)
           The Table component supports sorting data by one or several column values. Use the corresponding plugins and UI (column headers and Group Panel) to manage the sorting state and sort data programmatically.
           Click several columns while holding Shift to sort data by these columns. Clicking a column while holding Ctrl (Cmd for MacOS) cancels sorting by this column.
         </p>
-        <hr/>
+        <hr />
         <Table data={assets} sortable={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
@@ -204,11 +199,7 @@ storiesOf('UI Elements|Table', module)
         <h4>Table - Column Visibility</h4>
         <p>A Table component provides the capability to hide or show table columns at runtime.</p>
         <hr />
-        <Table data={assets} selectable={true} sortable={true} columnOrdering={[]} hiddenColumnNames={['email']}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
+        <HiddenColumnNames />
       </Col>
     </React.Fragment>
   ))
@@ -222,22 +213,6 @@ storiesOf('UI Elements|Table', module)
         </p>
         <hr />
         <Table data={assets} selectable={true} sortable={true} columnOrdering={[]} fixedLeftColumns={['firstName']}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Loading', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Loading</h4>
-        <p>
-          The loading property should indicate whether there is an active request. Once the request is completed, pass the loaded data to the Taable plugin’s rows property.
-        </p>
-        <hr/>
-        <Table data={assets} selectable={true} loading={true} sortable={true} columnOrdering={[]} fixedLeftColumns={['firstName']}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'} sortable={false}>Email</Column>
@@ -271,6 +246,29 @@ storiesOf('UI Elements|Table', module)
           The Table component supports searching data programmatically or using the value an end user types in the corresponding Search Panel editor.
         </p>
         <Table searchable={true} showToolbar={true} data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  ))
+  .add('Banded Columns', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Banded Columns</h4>
+        <p>
+          The Table allows you to organize column headers into bands.
+        </p>
+        <Table columnBands={[
+          {
+            title: 'User Profil',
+            children: [
+              { columnName: 'firstName' },
+              { columnName: 'lastName' },
+            ],
+          }
+        ]} searchable={true} showToolbar={true} data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'}>Email</Column>

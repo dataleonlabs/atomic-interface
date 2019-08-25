@@ -28,7 +28,7 @@ const {
 const { Pagination } = require('@zendeskgarden/react-pagination');
 
 describe('<TableAdvanced />', () => {
-  it('U-TEST-1 - test simple table', () => {
+  it('U-TEST-1 - Simple table', () => {
     const wrapper = enzyme.mount(
       <Table data={[{ id: 1 }]}>
         <Column field={'id'}>Id</Column>
@@ -48,7 +48,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.find(Row)).toHaveLength(1)
   })
 
-  it('U-TEST-2 - test stripped', () => {
+  it('U-TEST-2 - Stripped', () => {
     const wrapper = enzyme.mount(
       <Table data={[{ id: 1 }]} striped={true}>
         <Column field={'id'}>Id</Column>
@@ -69,7 +69,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.props().striped).toEqual(true)
   })
 
-  it('U-TEST-3 - test size large', () => {
+  it('U-TEST-3 - Size Large', () => {
     const wrapper = enzyme.mount(
       <Table data={[{ id: 1 }]} rowSize={'large'}>
         <Column field={'id'}>Id</Column>
@@ -90,7 +90,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.props().rowSize).toEqual('large')
   })
 
-  it('U-TEST-4 - test size small', () => {
+  it('U-TEST-4 - Size Small', () => {
     const wrapper = enzyme.mount(
       <Table data={[{ id: 1 }]} rowSize={'small'}>
         <Column field={'id'}>Id</Column>
@@ -113,7 +113,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.props().rowSize).toEqual('small')
   })
 
-  it('U-TEST-5 - test disabledSelected', () => {
+  it('U-TEST-5 - Disabled Selected', () => {
     const wrapper = enzyme.mount(
       <Table data={[{ id: 1 }]} rowSize={'small'} disabledSelected={[1]}>
         <Column field={'id'}>Id</Column>
@@ -134,7 +134,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.props().disabledSelected).toEqual([1])
   })
 
-  it('U-TEST-6 - test hide header', () => {
+  it('U-TEST-6 - Hide Header', () => {
     const wrapper = enzyme.mount(
       <Table data={[{ id: 1 }]} rowSize={'small'} hideHeader={true}>
         <Column field={'id'}>Id</Column>
@@ -148,7 +148,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.find(HeaderCell)).toHaveLength(0)
   })
 
-  it('U-TEST-7 - test sortable', () => {
+  it('U-TEST-7 - Sortable', () => {
     const wrapper = enzyme.mount(
       <Table sortable={true} data={[{ id: 1 }]} rowSize={'small'} disabledSelected={[1]}>
         <Column field={'id'}>Id</Column>
@@ -168,7 +168,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.find(SortableCell)).toHaveLength(3)
   })
 
-  it('U-TEST-8 - test selectable', () => {
+  it('U-TEST-8 - Selectable', () => {
     const wrapper = enzyme.mount(
       <Table selectable={true} sortable={true} data={[{ id: 1 }]} rowSize={'small'} disabledSelected={[1]}>
         <Column field={'id'}>Id</Column>
@@ -188,7 +188,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.find(SortableCell)).toHaveLength(3)
   })
 
-  it('U-TEST-9 - test draggable', () => {
+  it('U-TEST-9 - Draggable', () => {
     const wrapper = enzyme.mount(
       <Table selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
         <Column field={'id'}>Id</Column>
@@ -212,7 +212,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.find(DraggableContainer)).toHaveLength(2) // dots
   })
 
-  it('U-TEST-10 - test empty', () => {
+  it('U-TEST-10 - Empty', () => {
     const wrapper = enzyme.mount(
       <Table draggable={true} data={[]}>
         <Column field={'id'}>Id</Column>
@@ -229,7 +229,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.find(Draggable)).toHaveLength(0)
   })
 
-  it('U-TEST-11 - test pagination', () => {
+  it('U-TEST-11 - Pagination', () => {
     const wrapper = enzyme.mount(
       <Table draggable={true} data={[]} pagination={{ currentPage: 1, total: 10 }}>
         <Column field={'id'}>Id</Column>
@@ -246,7 +246,7 @@ describe('<TableAdvanced />', () => {
     expect(wrapper.find(Pagination)).toHaveLength(1)
   })
 
-  it('U-TEST-12 - test loading', () => {
+  it('U-TEST-12 - Loading', () => {
     const wrapper = enzyme.mount(
       <Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
         <Column field={'id'}>Id</Column>
