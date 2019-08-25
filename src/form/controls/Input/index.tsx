@@ -28,20 +28,24 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
  * Input render element
  */
 const Input = (props: Props) => {
-  const renderField = ({ field, form: { submitCount, errors } }: FieldProps<{}>) => (
-    <>
-      {wrapperInputGroup(
-        <StyledInputBootstrap
-          placeholder={props.placeholder}
-          {...field}
-          invalid={submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)}
-        />
-        , props)}
-      {submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
-        && /* istanbul ignore next  */ <FormText color="danger">{errors[props.name]}</FormText>
-      }
-    </>
-  );
+  const renderField = ({ field, form: { submitCount, errors } }: FieldProps<{}>) => {
+    const { leftAddon, rightAddon, maxRows, inline, ...rest } = props;
+    return (
+      <>
+        {wrapperInputGroup(
+          <StyledInputBootstrap
+            placeholder={props.placeholder}
+            {...rest}
+            {...field}
+            invalid={submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)}
+          />
+          , props)}
+        {submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
+          && /* istanbul ignore next  */ <FormText color="danger">{errors[props.name]}</FormText>
+        }
+      </>
+    )
+  };
   return (
     <FormGroup>
       <Control {...props}>
