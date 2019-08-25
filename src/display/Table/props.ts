@@ -1,4 +1,6 @@
 import { QueryProps } from "../../utils/Query/props";
+import { TableColumnWidthInfo } from "@devexpress/dx-react-grid";
+import { PagingPanelProps } from "@devexpress/dx-react-grid-bootstrap4";
 
 /**
  * This component using garden.zendesk https://garden.zendesk.com/react-components/tables
@@ -22,7 +24,7 @@ export interface TableColumnProps {
   label?: string
 
   /** Width column */
-  field: 'name' | 'email' | 'description' | 'email ' | string
+  field: 'name' | 'email' | 'description' | 'email' | 'title' | string
 
   /** Width column */
   width?: number
@@ -36,10 +38,26 @@ export interface TableColumnProps {
 
   /** Sortable table display */
   sortable?: boolean
+
+  /** Allows you to specify the column alignment. */
+  align?: 'left' | 'center' | 'right'
+
+  /**
+   * The Grid cuts off values that do not fit in a cell.
+   * Set the column extensions’ wordWrapEnabled property 
+   * to true to enable word wrap for these columns.
+   */
+  wordWrapEnabled?: boolean
+}
+
+export interface TableAdvancedColumnProps extends TableColumnProps {
 }
 
 export interface TableProps {
   
+  // id
+  id?: string
+
   /** data rows */
   data?: Values[]
 
@@ -49,11 +67,35 @@ export interface TableProps {
   // Add striped css
   striped?: boolean
 
-  // Add striped css
-  rowSize?: 'default' | 'small' | 'large'
-
   /** Display or hide the selected column */
   selectable?: boolean
+
+  /** Perform the following steps to enable the Select All capability */
+  showSelectAll?: boolean
+
+  /** Ordering item */
+  columnOrdering?: string[]
+
+  /** Resizing */
+  columnResizing?: boolean;
+
+  /** pageSizes */
+  pageSizes?: PagingPanelProps['pageSizes']
+
+  /** fixedLeftColumns */
+  fixedLeftColumns?: string[]
+
+  /** fixedRightColumns */
+  fixedRightColumns?: string[]
+
+  /** pass the column widths to the TableColumnResizing */
+  onColumnResizing?: (columns: TableColumnWidthInfo[]) => void
+
+  /** In controlled mode, pass the hidden column names to the */
+  hiddenColumnNames?: string[]
+
+  /** Set the TableSelection plugin’s selectByRowClick property to true to check/uncheck a checkbox by a row click as demonstrated in the following example */
+  selectByRowClick?: boolean;
 
   /** Display or hide the selected column */
   onSelected?: (rows: string[]) => void
@@ -74,17 +116,11 @@ export interface TableProps {
   /** display the header or not */
   hideHeader?: boolean
 
-  /** data rows */
+  /** loading */
   loading?: boolean
 
-  /** Add drag and drop feature */
-  draggable?: boolean
-
-  /** Drag end event */
-  onDragEnd?: (values: Values[]) => void
-
-  /** noDataIndication */
-  noDataIndication?: JSX.Element | string
+  /** Add for advanced */
+  rowSize?: 'default' | 'small' | 'large'
   
   /* Pagination */
   pagination?: false | {
@@ -97,13 +133,23 @@ export interface TableProps {
 
     /** Trigger when table change */
     onChange?: (page: number) => void
+
+    pageSize?: number
+
+    onSizeChange?: (size: number) => void
   }
 
   /** no content indication */
-  noContentIndication?: string
+  noContentIndication?: JSX.Element | string
+
+  /** Add drag and drop feature */
+  draggable?: boolean
+
+  /** Drag end event */
+  onDragEnd?: (values: Values[]) => void
+
 }
 
 export interface TableCollectionProps extends TableProps, QueryProps {
-
   children: any | undefined;
 }
