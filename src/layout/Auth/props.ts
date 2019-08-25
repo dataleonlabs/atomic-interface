@@ -1,4 +1,4 @@
-import { ButtonProps } from "../form/controls/Button/props";
+import { ButtonProps } from "../../form/controls/Button/props";
 import { InputProps } from "src/form/controls/Input/props";
 
 /**

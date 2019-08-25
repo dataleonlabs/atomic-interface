@@ -1,6 +1,6 @@
 import * as React from 'react';
 import 'whatwg-fetch';
-import { LoginProps as Props } from '../../props';
+import { LoginProps as Props } from '../props';
 import { Form, Alert } from '../../../index';
 import Input from '../../../form/controls/Input/index';
 import Button from '../../../form/controls/Button/index';

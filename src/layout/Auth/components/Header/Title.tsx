@@ -2,7 +2,7 @@
 import * as React from 'react'
 
 /* istanbul ignore next  */
-import { AuthHeaderTitleProps as Props } from '../../../props';
+import { AuthHeaderTitleProps as Props } from '../../props';
 
 /* istanbul ignore next  */
 import { StyledCardTitle } from './style';

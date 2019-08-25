@@ -1,7 +1,7 @@
 /* istanbul ignore next  */
 import * as React from 'react'
 /* istanbul ignore next  */
-import { AuthHeaderSubTitleProps as Props } from '../../../props';
+import { AuthHeaderSubTitleProps as Props } from '../../props';
 /* istanbul ignore next  */
 import { StyledCardSubTitle } from './style';
 
