@@ -6,7 +6,7 @@ import Table from './index';
 import faker from 'faker'
 
 const assets: any[] = [];
-for (let index = 0; index < 10; index++) {
+for (let index = 0; index < 20; index++) {
   assets.push({
     id: `usr_${index + 1}`,
     firstName: faker.name.firstName(),

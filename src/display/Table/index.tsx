@@ -3,8 +3,31 @@ import "regenerator-runtime/runtime";
 import React from 'react';
 import { TableProps as Props } from './props'
 import { StyledTable } from "./style";
-import { Grid, VirtualTable as TableBase, TableHeaderRow, PagingPanel, TableSelection, DragDropProvider, TableColumnResizing, TableColumnVisibility, TableFixedColumns } from '@devexpress/dx-react-grid-bootstrap4';
-import { Column, TableColumnWidthInfo, SortingState, IntegratedSorting, Sorting, IntegratedPaging, PagingState, IntegratedSelection, SelectionState, TableColumnReordering, VirtualTableState } from "@devexpress/dx-react-grid";
+import {
+	Grid,
+	VirtualTable as TableBase,
+	TableHeaderRow,
+	PagingPanel,
+	TableSelection,
+	DragDropProvider,
+	TableColumnResizing,
+	TableColumnVisibility,
+	TableFixedColumns,
+} from '@devexpress/dx-react-grid-bootstrap4';
+
+import {
+	Column,
+	TableColumnWidthInfo,
+	SortingState,
+	IntegratedSorting,
+	Sorting,
+	IntegratedPaging,
+	PagingState,
+	IntegratedSelection,
+	SelectionState,
+	TableColumnReordering,
+	VirtualTableState
+} from "@devexpress/dx-react-grid";
 
 const TableComponent = ({ ...restProps }) => (
 	<TableBase.Table
@@ -52,7 +75,6 @@ class TableAdvanced extends React.Component<Props, State> {
 		sortDirection: 'asc' as State['sortDirection'],
 		sortField: ''
 	}
-
 
   /**
    * Render columns
@@ -162,82 +184,79 @@ class TableAdvanced extends React.Component<Props, State> {
 	public render() {
 		const columnExtensions = this.tableColumnExtensions();
 		return (
-			<StyledTable>
-				<>
-					<Grid
-						rows={this.rows()}
-						columns={this.columns()}
-					>
+			<StyledTable hideHeader={this.props.hideHeader}>
+				<Grid
+					rows={this.rows()}
+					columns={this.columns()}
+				>
+					{this.props.sortable && <SortingState
+						defaultSorting={[{ columnName: columnExtensions[0].columnName, direction: 'asc' }]}
+						sorting={[{ columnName: this.state.sortField, direction: this.state.sortDirection }]}
+						onSortingChange={this.onSortingChange}
+					/>}
+					{this.props.sortable && <IntegratedSorting />}
 
-						{this.props.sortable && <SortingState
-							defaultSorting={[{ columnName: columnExtensions[0].columnName, direction: 'asc' }]}
-							sorting={[{ columnName: this.state.sortField, direction: this.state.sortDirection }]}
-							onSortingChange={this.onSortingChange}
-						/>}
-						{this.props.sortable && <IntegratedSorting />}
+					{this.props.pagination && <PagingState
+						currentPage={this.props.pagination.currentPage}
+						onCurrentPageChange={this.props.pagination.onChange}
+						pageSize={this.props.pagination.pageSize}
+						onPageSizeChange={this.props.pagination.onSizeChange}
+					/>}
+					{this.props.pagination && <IntegratedPaging />}
 
-						{this.props.pagination && <PagingState
-							currentPage={this.props.pagination.currentPage}
-							onCurrentPageChange={this.props.pagination.onChange}
-							pageSize={this.props.pagination.pageSize}
-							onPageSizeChange={this.props.pagination.onSizeChange}
-						/>}
-						{this.props.pagination && <IntegratedPaging />}
+					{this.props.selectable && <SelectionState
+						selection={this.state.selected}
+						onSelectionChange={this.setSelection}
+					/>}
+					{this.props.selectable && <IntegratedSelection />}
 
-						{this.props.selectable && <SelectionState
-							selection={this.state.selected}
-							onSelectionChange={this.setSelection}
-						/>}
-						{this.props.selectable && <IntegratedSelection />}
+					{this.props.columnOrdering && <DragDropProvider />}
 
-						{this.props.columnOrdering && <DragDropProvider />}
+					{this.props.loading && <VirtualTableState
+						loading={this.props.loading}
+						totalRowCount={9}
+						pageSize={9}
+						skip={9}
+						getRows={this.getRemoteRows}
+						infiniteScrolling={false}
+					/>}
+					{this.props.striped ?
+						<TableBase tableComponent={TableComponent} columnExtensions={columnExtensions} />
+						:
+						<TableBase columnExtensions={columnExtensions} />
+					}
 
-						{this.props.loading && <VirtualTableState
-							loading={this.props.loading}
-							totalRowCount={9}
-							pageSize={9}
-							skip={9}
-							getRows={this.getRemoteRows}
-							infiniteScrolling={false}
-						/>}
-						{this.props.striped ?
-							<TableBase tableComponent={TableComponent} columnExtensions={columnExtensions} />
-							:
-							<TableBase columnExtensions={columnExtensions}/>
-						}
+					{this.props.columnResizing && <TableColumnResizing
+						columnWidths={columnExtensions}
+						onColumnWidthsChange={this.props.onColumnResizing}
+					/>}
 
-						{this.props.columnResizing && <TableColumnResizing
-							columnWidths={columnExtensions}
-							onColumnWidthsChange={this.props.onColumnResizing}
-						/>}
-
-						{
-							this.props.columnOrdering && <TableColumnReordering
-								order={this.props.columnOrdering.length === 0 ? columnExtensions.map(v => v.columnName) : this.props.columnOrdering}
-								onOrderChange={this.props.onColumnOrdering}
+					{
+						this.props.columnOrdering && <TableColumnReordering
+							order={this.props.columnOrdering.length === 0 ? columnExtensions.map(v => v.columnName) : this.props.columnOrdering}
+							onOrderChange={this.props.onColumnOrdering}
 						/>}
 
-						<TableHeaderRow
-							showSortingControls={this.props.sortable === true}
-						/>
+					<TableHeaderRow
+						showSortingControls={this.props.sortable === true}
+					/>
 
-						{this.props.hiddenColumnNames && <TableColumnVisibility
-							hiddenColumnNames={this.props.hiddenColumnNames}
-							onHiddenColumnNamesChange={this.props.onHiddenColumnNames}
-						/>}
+					{this.props.hiddenColumnNames && <TableColumnVisibility
+						hiddenColumnNames={this.props.hiddenColumnNames}
+						onHiddenColumnNamesChange={this.props.onHiddenColumnNames}
+					/>}
 
-						{this.props.pagination && <PagingPanel pageSizes={this.props.pagination.pageSizes || [10, 30, 100]} />}
-						{this.props.selectable && <TableSelection
-							selectByRowClick={this.props.selectByRowClick}
-							showSelectAll={this.props.showSelectAll}
-						/>}
+					{this.props.pagination && <PagingPanel pageSizes={this.props.pagination.pageSizes || [10, 30, 100]} />}
+					{this.props.selectable && <TableSelection
+						selectByRowClick={this.props.selectByRowClick}
+						showSelectAll={this.props.showSelectAll}
+					/>}
 
-						{(this.props.fixedLeftColumns || this.props.fixedRightColumns) && <TableFixedColumns
-							leftColumns={this.props.fixedLeftColumns}
-							rightColumns={this.props.fixedRightColumns}
-						/>}
-					</Grid>
-				</>
+					{(this.props.fixedLeftColumns || this.props.fixedRightColumns) && <TableFixedColumns
+						leftColumns={this.props.fixedLeftColumns}
+						rightColumns={this.props.fixedRightColumns}
+					/>}
+				</Grid>
 			</StyledTable>
 		);
 	}
