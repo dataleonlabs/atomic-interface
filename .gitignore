@@ -31,3 +31,6 @@ test-report
 
 # documentations
 styleguide
+storybook-static
+lib
+.nyc_output

@@ -48,11 +48,14 @@ class Query extends React.Component<Props, Stats> {
           this.setState({ contentRendered, onRendering: true });
         }
       }
-    } catch (error) {
+    } catch (error) /* istanbul ignore next */ {
+    /* istanbul ignore if */
       if (typeof this.props.onError === 'function') {
+      /* istanbul ignore next */
         await this.props.onError(error && error.error ? error.error : error);
       }
 
+    /* istanbul ignore next */
       if (typeof children === 'function') {
         const contentRendered = children({ data: null, error: error && error.error ? error.error : error, onLoading: false, loaded: true });
         if (contentRendered) {
