@@ -1,4 +1,4 @@
-import React,{MouseEvent} from 'react';
+import React from 'react';
 import {
     NavbarBrandProps as NavbarBrandPropsBase,
     NavProps as NavPropsBase,
@@ -25,9 +25,7 @@ export interface SidebarProps extends NavbarPropsBase {
     icon?: boolean
 
     /** children content in Sidebar */
-    children: string | JSX.Element | JSX.Element[]
-
-    
+    children: string | JSX.Element | JSX.Element[]    
 }
 
 export interface BrandProps extends NavbarBrandPropsBase {

@@ -14,6 +14,7 @@ interface State {
   hover: boolean;
   collapse: boolean;
 }
+
 class Sidebar extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
