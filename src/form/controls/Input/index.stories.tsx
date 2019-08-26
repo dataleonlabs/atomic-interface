@@ -4,7 +4,7 @@ import Input from './index';
 import { Col } from 'reactstrap';
 import Form from './../../index';
 import Button from './../Button'
-import { User } from 'react-feather';
+import { User, UserPlus } from 'react-feather';
 // import { User } from 'react-feather';
 
 storiesOf('Forms|Input', module)
@@ -48,6 +48,17 @@ storiesOf('Forms|Input', module)
         <Form>
           {(_) => (
             <Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+          )}
+        </Form>
+      </Col>
+    </React.Fragment>
+  )).add('With icon left', () => (
+    <React.Fragment>
+      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Input</h4>
+        <Form>
+          {(_) => (
+            <Input leftAddon={<UserPlus />} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
           )}
         </Form>
       </Col>

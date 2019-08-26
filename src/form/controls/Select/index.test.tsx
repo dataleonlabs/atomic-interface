@@ -4,7 +4,7 @@ import Select from './index';
 import Form from './../../index'
 
 describe('<Select />', () => {
-  it('U-TEST-1 - test Select render with render with multiple select option', () => {
+  it('U-TEST-1 - Multiple Select Options', () => {
     const options = [
       { value: 'chocolate', label: 'Chocolate' },
       { value: 'strawberry', label: 'Strawberry' },
@@ -29,7 +29,7 @@ describe('<Select />', () => {
     expect(wrapper.find(Select).get(0).props.isMulti).toEqual(true)
   })
 
-  it('U-TEST-2 - test select render with tooltip beside label ', () => {
+  it('U-TEST-2 - Tooltip Beside Label ', () => {
     const div = document.createElement('div');
     document.body.appendChild(div);
     const options = [

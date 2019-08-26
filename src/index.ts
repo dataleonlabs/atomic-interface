@@ -56,7 +56,8 @@ export { PanelProps } from './display/Panel/props';
 
 // Form
 export { default as Form } from './form';
-export { FormProps } from './form/props';
+export { default as FormCollection } from './form/Collection';
+export { FormProps, FormCollectionProps } from './form/props';
 
 export { default as Button } from './form/controls/Button';
 export { default as ButtonCollection } from './form/controls/Button/Collection';
@@ -67,6 +68,9 @@ export { CheckboxProps } from './form/controls/Checkbox/props';
 
 export { default as FilePicker } from './form/controls/FilePicker';
 export { FilePickerProps } from './form/controls/FilePicker/props';
+
+export { default as FieldArray } from './form/controls/FieldArray';
+export { FieldArrayProps } from './form/controls/FieldArray/props';
 
 export { default as FilePickerS3 } from './form/controls/FilePicker/S3';
 export { FilePickerS3Props } from './form/controls/FilePicker/S3/props';
@@ -133,6 +137,22 @@ export { ThemeProvider } from './utils';
 export { makeId } from './utils';
 export { default as Query } from './utils/Query';
 export { QueryProps } from './utils/Query/props';
+export { default as AuthInterface } from './utils/AuthProvider/AuthInterface';
+
+// Layout
+export { default as Login } from './layout/Auth/Login';
+export { default as LoginHeader } from './layout/Auth/components/Header';
+export { default as LoginHeaderTitle } from './layout/Auth/components/Header/Title';
+export { default as LoginHeaderSubTitle } from './layout/Auth/components/Header/SubTitle';
+export { default as LoginFooter } from './layout/Auth/components/Footer';
+export {
+    AuthProps,
+    AuthHeaderProps,
+    AuthFooterProps,
+    AuthHeaderSubTitleProps,
+    AuthHeaderTitleProps,
+    LoginProps
+} from './layout/Auth/props';
 
 // Order lib
 export { Container, Row, Col } from 'reactstrap';

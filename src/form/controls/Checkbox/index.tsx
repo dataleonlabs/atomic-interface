@@ -16,10 +16,10 @@ const CheckBox = (props: Props) => {
         {...props}
         id={props.id || props.name}
         label={props.label}
-        invalid={submitCount > 0 && (errors[props.name] ? true : false)}
+        invalid={submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)}
         type='checkbox'
       />
-      {submitCount > 0 && (errors[props.name] ? true : false)
+      {submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
         && <FormText color="danger">{errors[props.name]}</FormText>
       }
     </React.Fragment>

@@ -6,7 +6,7 @@ import { Breadcrumb as BreadcrumbBase, BreadcrumbItem as BreadcrumbItemBase } fr
 import Loader from './loader';
 
 describe('<Breadcrumb />', () => {
-  it('U-TEST-1 - Breadcrumb Render', () => {
+  it('U-TEST-1 - Breadcrumb', () => {
     const wrapper = enzyme.mount(
       <Breadcrumb>
         <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
@@ -19,7 +19,7 @@ describe('<Breadcrumb />', () => {
     expect(wrapper.find(BreadcrumbItemBase)).toHaveLength(3)
   })
 
-  it('U-TEST-2 - with Breadcrumb active', () => {
+  it('U-TEST-2 - Active', () => {
     const wrapper = enzyme.mount(
       <Breadcrumb>
         <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
@@ -32,7 +32,7 @@ describe('<Breadcrumb />', () => {
     expect(wrapper.contains(<BreadcrumbItem active={true}>Breadcrumb</BreadcrumbItem>)).toEqual(true)
   })
 
-  it('U-TEST-3 - with Breadcrumb loading', () => {
+  it('U-TEST-3 - Loading', () => {
     const wrapper = enzyme.mount(
       <Breadcrumb loading={true}>
         <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>

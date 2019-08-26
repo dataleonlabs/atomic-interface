@@ -5,7 +5,7 @@ import Form from '../../..';
 import { CloudRain } from 'react-feather';
 
 describe('<DropzoneS3 />', () => {
-  it('U-TEST-1 - test Dropzone render with d  disabled', () => {
+  it('U-TEST-1 - Dropzone', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (

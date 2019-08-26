@@ -4,7 +4,7 @@ import Panel from './index'
 import { Card as strapPanel , CardHeader  } from 'reactstrap';
 
 describe('<Panel />', () => {
-  it('U-TEST-1 - test rendering pane', () => {
+  it('U-TEST-1 - Pane', () => {
     const wrapper = enzyme.mount(
       <Panel>
         this is demo 
@@ -15,7 +15,7 @@ describe('<Panel />', () => {
     
   })
 
-  it('U-TEST-2 - with title', () => {
+  it('U-TEST-2 - Title', () => {
     const wrapper = enzyme.mount(
       <Panel title="modal" >
         this is demo 

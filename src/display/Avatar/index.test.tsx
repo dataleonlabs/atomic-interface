@@ -3,7 +3,7 @@ import * as enzyme from 'enzyme'
 import Avatar from './index'
 
 describe('<Avatar />', () => {
-  it('U-TEST-1 - test with one and two', () => {
+  it('U-TEST-1 - One and two', () => {
     const wrapper = enzyme.mount(
       <>
       <Avatar />
@@ -13,7 +13,7 @@ describe('<Avatar />', () => {
     expect(wrapper.find(Avatar)).toHaveLength(2);
   })
 
-  it('U-TEST-2 - test image', () => {
+  it('U-TEST-2 - Image', () => {
     const wrapper = enzyme.mount(
       <Avatar />
     )

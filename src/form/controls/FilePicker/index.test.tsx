@@ -4,7 +4,7 @@ import FilePicker from './index'
 import Form from './../../index'
 
 describe('<FilePicker />', () => {
-  it('U-TEST-1 - test filepicker render with d  disabled', () => {
+  it('U-TEST-1 filepicker render with d  disabled', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
@@ -21,7 +21,7 @@ describe('<FilePicker />', () => {
     expect(wrapper.find(FilePicker).get(0).props.disabled).toEqual(true)
   })
 
-  it('U-TEST-2 - test filepicker render tooltip beside label ', () => {
+  it('U-TEST-2 filepicker render tooltip beside label ', () => {
     const div = document.createElement('div');
     document.body.appendChild(div);
     const wrapper = enzyme.mount(
