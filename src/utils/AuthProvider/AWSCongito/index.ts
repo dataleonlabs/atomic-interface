@@ -21,9 +21,9 @@ export default class AWSCognito implements AuthInterface {
      * @param p.password password user
      */
     public async signIn(p: { email: string, password: string }) {
-        try{
+        try {
             return await Auth.signIn(p.email, p.password);
-        }catch(e){
+        } catch (e) {
             return e;
         }
     }
@@ -34,12 +34,12 @@ export default class AWSCognito implements AuthInterface {
      * @param p.meta meta information additionnals for aws account user
      */
     public async confirmSignIn(p: { user: any, code: string, meta?: { [key: string]: any }, mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA' }) {
-        try{
+        try {
             return await Auth.confirmSignIn(p.user, p.code, 'SMS_MFA');
-        }catch(e){
+        } catch (e) {
             return e;
         }
-        
+
     }
 
     /**
@@ -48,11 +48,11 @@ export default class AWSCognito implements AuthInterface {
      * @param p.meta meta information additionnals for aws account user
      */
     public async completeNewPassword(p: { user: any, newPassword: string, meta?: { [key: string]: any }, mfaType?: 'SMS_MFA' | 'SOFTWARE_TOKEN_MFA' }) {
-        try{
+        try {
             return await Auth.completeNewPassword(p.user, p.newPassword, p.mfaType);
-        }catch(e){
+        } catch (e) {
             return e;
-        }        
+        }
     }
 
     /**
@@ -61,4 +61,29 @@ export default class AWSCognito implements AuthInterface {
     public signOut() {
         Auth.signOut();
     };
+
+
+    /**
+     * @param p.username account usenrame    
+     */
+    public async forgotPassword(p: { username: string }) {
+        try {
+            return await Auth.forgotPassword(p.username);
+        } catch (e) {
+            return e;
+        }
+    }
+
+    /**
+     * @param p.username username of account
+     * @param p.code verification code for verification of account
+     * @param p.newPassword new password to set for account
+     */
+    public async forgotPasswordSubmit(p: { username: string, code: string, newPassword: string }) {
+        try {
+            return await Auth.forgotPasswordSubmit(p.username, p.code, p.newPassword);
+        } catch (e) {
+            return e;
+        }
+    }
 }

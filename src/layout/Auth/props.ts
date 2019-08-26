@@ -95,6 +95,37 @@ export interface LoginProps extends AuthProps {
 
     /* Set Confirm Sign In Error Message */
     messageConfirmSignInError: string
+
+    /* display forgot password link */
+    displayForgotlink?: true|false
+}
+
+
+export interface ForgotPasswordProps extends AuthProps {
+
+    /* Set Username */
+    email?: InputProps    
+
+    /* Set code */
+    code?: InputProps
+
+    buttonRecoverPassword?: ButtonProps // Label is different       
+    buttonSubmitPassword?: ButtonProps /* Set Label Save Password */
+
+    /* Set new password */
+    newPassword: InputProps
+
+    /* Set Confrim New Password Label */
+    confirmNewPassword: InputProps
+
+    /* Set Wrong Username Error Message */
+    messageWrongEmail: string
+
+    /* Set New Password Info Message */
+    messageNewPasswordRequired: string
+
+    /* Set New Password Error Message */
+    messageNewPasswordError: string
 }
 
 export interface NewPasswordProps extends AuthProps {

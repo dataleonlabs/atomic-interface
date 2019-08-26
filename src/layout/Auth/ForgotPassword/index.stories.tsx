@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Login from './index';
+import ForgotPassword from './index';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import HeaderTitle from '../components/Header/Title';
 import HeaderSubTitle from '../components/Header/SubTitle';
 
-storiesOf('Layout|Login', module)
+storiesOf('Layout|Forgot Password', module)
   .add('Example', () => (
     <React.Fragment>
-      <Login
+      <ForgotPassword
         provider={{
           type: "aws-cognito",
           credentials: {
@@ -20,15 +20,15 @@ storiesOf('Layout|Login', module)
         }}>
         <Header>
           <HeaderTitle>
-            <span>Sign in</span>
+            <span>Forgot Password</span>
           </HeaderTitle>
           <HeaderSubTitle>
-            <span>Please login to account with your credentials</span>
+            <span>Please enter your registered email ID.</span>
           </HeaderSubTitle>
         </Header>
         <Footer>
           <span>Copyright 2019</span>
         </Footer>
-      </Login>
+      </ForgotPassword>
     </React.Fragment>
   ));
