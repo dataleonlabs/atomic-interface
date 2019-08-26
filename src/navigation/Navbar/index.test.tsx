@@ -10,7 +10,7 @@ import Input from './../../form/controls/Input/index'
 import { InputGroup, NavLink as NavLinkBase, NavItem as NavItemBase, Navbar as NavbarBase, Nav as NavBase, NavbarBrand as NavbarBrandBase } from 'reactstrap';
 
 describe('<NavBar />', () => {
-  it('U-TEST-1 - test Navbar render', () => {
+  it('U-TEST-1 - Navbar', () => {
     const wrapper = enzyme.mount(
       <Navbar>
         <Nav>
@@ -31,7 +31,7 @@ describe('<NavBar />', () => {
 })
 
 
-it('U-TEST-2 - test Navbar with NavbarBrand render', () => {
+it('U-TEST-2 - Navbar With NavbarBrand', () => {
   const wrapper = enzyme.mount(
     <Navbar>
       <NavbarBrand href="http://google.com">Google</NavbarBrand>
@@ -52,7 +52,7 @@ it('U-TEST-2 - test Navbar with NavbarBrand render', () => {
   expect(wrapper.find(NavLink)).toHaveLength(2);
 })
 
-it('U-TEST-3 - Test navbar rendering with icons rights', () => {
+it('U-TEST-3 - Navbar With Icons Rights', () => {
   const wrapper = enzyme.mount(
     <Navbar>
       <NavbarBrand href="http://google.com">Google</NavbarBrand>
@@ -73,7 +73,7 @@ it('U-TEST-3 - Test navbar rendering with icons rights', () => {
   expect(wrapper.find(NavLink)).toHaveLength(2);
 })
 
-it('U-TEST-4 - Test navbar rendering with search bar', () => {
+it('U-TEST-4 - Navbar With Search Bar', () => {
   const wrapper = enzyme.mount(
     <Navbar>
       <NavbarBrand href="http://google.com">Google</NavbarBrand>

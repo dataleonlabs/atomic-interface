@@ -5,7 +5,7 @@ import { Toast as StrapToast } from 'reactstrap';
 
 describe('<Toast/>', () => {
 
-  it('U-TEST-1 - Toast render', () => {
+  it('U-TEST-1 - Toast', () => {
     const wrapper = enzyme.mount(
       <Toast>
         This is a toast with a success icon — check it out!

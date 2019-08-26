@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider as ThemeProviderBase } from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css';
 
 export interface GlobalStyleProps {
 

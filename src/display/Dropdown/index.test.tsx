@@ -6,7 +6,7 @@ import DropdownItem from './DropdownItem';
 import { Dropdown as strapDropDown, DropdownItem as strapDropDownItem } from 'reactstrap';
 
 describe('<DropDown />', () => {
-  it('U-TEST-1 - dropdown render', () => {
+  it('U-TEST-1 - Dropdown', () => {
     // sinon.spy(DropDown., 'toggle');
 
     const wrapper = enzyme.mount(
@@ -25,7 +25,7 @@ describe('<DropDown />', () => {
     
   })
 
-  it('U-TEST-2 - dropdown render with divider', () => {
+  it('U-TEST-2 - Divider', () => {
     const wrapper = enzyme.mount(
       <DropDown title="DropDown" >
         <DropdownItem> header>Header</DropdownItem>

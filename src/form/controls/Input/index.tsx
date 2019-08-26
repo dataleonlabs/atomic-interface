@@ -14,9 +14,9 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
   if ((field.leftAddon || field.rightAddon)) {
     return (
       <InputGroup>
-        {field.leftAddon && <StyledInputGroupAddonLeft addonType="prepend">{field.leftAddon}</StyledInputGroupAddonLeft>}
+        {field.leftAddon && <StyledInputGroupAddonLeft addonType="prepend"><span className="input-group-text">{field.leftAddon}</span></StyledInputGroupAddonLeft>}
         {component}
-        {field.rightAddon && <StyledInputGroupAddonRight addonType="append">{field.rightAddon}</StyledInputGroupAddonRight>}
+        {field.rightAddon && <StyledInputGroupAddonRight addonType="append"><span className="input-group-text">{field.rightAddon}</span></StyledInputGroupAddonRight>}
       </InputGroup>
     );
   }
@@ -28,20 +28,24 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
  * Input render element
  */
 const Input = (props: Props) => {
-  const renderField = ({ field, form: { submitCount, errors } }: FieldProps<{}>) => (
-    <>
-      {wrapperInputGroup(
-        <StyledInputBootstrap
-          placeholder={props.placeholder}
-          {...field}
-          invalid={submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)}
-        />
-        , props)}
-      {submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
-        && /* istanbul ignore next  */ <FormText color="danger">{errors[props.name]}</FormText>
-      }
-    </>
-  );
+  const renderField = ({ field, form: { submitCount, errors } }: FieldProps<{}>) => {
+    const { leftAddon, rightAddon, maxRows, inline, ...rest } = props;
+    return (
+      <>
+        {wrapperInputGroup(
+          <StyledInputBootstrap
+            placeholder={props.placeholder}
+            {...rest}
+            {...field}
+            invalid={submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)}
+          />
+          , props)}
+        {submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
+          && /* istanbul ignore next  */ <FormText color="danger">{errors[props.name]}</FormText>
+        }
+      </>
+    )
+  };
   return (
     <FormGroup>
       <Control {...props}>

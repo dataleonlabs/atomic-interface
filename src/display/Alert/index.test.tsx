@@ -5,7 +5,7 @@ import { Alert as strapAlert } from 'reactstrap';
 import { Info } from 'react-feather';
 
 describe('<Alert />', () => {
-  it('U-TEST-1 - alert render with icon true', () => {
+  it('U-TEST-1 - Icon True', () => {
     const wrapper = enzyme.mount(
       <Alert icon={true} color="primary"> Demo Of Alert Box with Icon</Alert>
     )
@@ -14,7 +14,7 @@ describe('<Alert />', () => {
     expect(wrapper.find(Info)).toHaveLength(1)
   })
   
-  it('U-TEST-2 - alert render with icon false', () => {
+  it('U-TEST-2 - Icon False', () => {
     const wrapper = enzyme.mount(
       <Alert icon={false} color="primary"> Demo Of Alert Box with Icon</Alert>
       )
@@ -23,7 +23,7 @@ describe('<Alert />', () => {
       expect(wrapper.props().icon).toEqual(false);
   })
 
-  it('U-TEST-3 - alert render with color is primary', () => {
+  it('U-TEST-3 - Color Primary', () => {
     const wrapper = enzyme.mount(
       <Alert icon={false} color="primary"> Demo Of Alert Box with Icon</Alert>
       )
