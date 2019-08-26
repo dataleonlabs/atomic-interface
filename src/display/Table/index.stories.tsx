@@ -52,6 +52,167 @@ storiesOf('UI Elements|Table', module)
         </pre>
       </Col>
     </React.Fragment>
+  )).add('Sortable', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Sortable</h4>
+        <br/>
+        <p>Add <code>sortable={`true`}</code> for sortable columns.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Table data={assets} sortable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} sortable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>
+          `}
+        </pre>
+      </Col>
+    </React.Fragment>
+  )).add('Selectable', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Selectable</h4>
+        <br/>
+        <p>Add <code>selectable={`true`}</code> to enable the selection checkbox for each row.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Table data={assets} selectable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} selectable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>
+          `}
+        </pre>
+      </Col>
+    </React.Fragment>
+  )).add('Draggable', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Selectable</h4>
+        <br/>
+        <p>Add <code>draggable={`true`}</code> to enable the drag and drop functionality.</p>
+        <hr/>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <br/>
+        <h4>Table 1</h4>
+        <Table data={assets} draggable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+        <h4>Table 2</h4>
+        <Table data={assets} draggable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<h4>Table 1</h4>
+<Table data={assets} draggable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>
+<h4>Table 2</h4>
+<Table data={assets} draggable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>
+          `}
+        </pre>
+      </Col>
+    </React.Fragment>
+  )).add('Scrollable', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Selectable</h4>
+        <br/>
+        <p>Add <code>scrollable={150}</code> to enable the scrolling option for the table content.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Table data={assets} sortable={true} scrollable={150}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} sortable={true} scrollable={150}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>
+          `}
+        </pre>
+      </Col>
+    </React.Fragment>
+  )).add('Paginated', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Paginated</h4>
+        <br/>
+        <p>Add <code>pagination={`{{ currentPage: 1, total: 1000 }}`}</code> to enable the pagination at the bottom of table.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>
+          `}
+        </pre>
+      </Col>
+    </React.Fragment>
   )).add('With striped', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
@@ -85,17 +246,6 @@ storiesOf('UI Elements|Table', module)
         </Table>
       </Col>
     </React.Fragment>
-  )).add('With select row', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} selectable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
   )).add('With select row and disabledSelected', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
@@ -118,61 +268,11 @@ storiesOf('UI Elements|Table', module)
         </Table>
       </Col>
     </React.Fragment>
-  )).add('With sortable', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table 1</h4>
-        <Table data={assets} sortable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With scrollable', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} sortable={true} scrollable={150}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With drag and drop', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} draggable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-        <h4>Table 2</h4>
-        <Table data={assets} draggable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
   )).add('With empty table', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Table</h4>
         <Table data={[]} selectable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  )).add('With pagination', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
-        <Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'}>Email</Column>
