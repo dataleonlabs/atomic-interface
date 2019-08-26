@@ -66,6 +66,7 @@ export const StyledSidebar = styled.div`
     cursor: pointer;
     margin-right: 0;
     padding-left: 1.95rem;
+    background: #D4E6F1
   }
   .NavHeader {
     display: block;
@@ -80,43 +81,28 @@ export const StyledSidebar = styled.div`
 
   .brand-icon-close{
     position: absolute;
-    right: -15px;
     border: 2px solid #007bff;
     border-radius: 100%;
-    top: 15px;
     background: white;
-    color: #007bff;
-  
+    color: grey !important;
+    padding:2px;
+    right: 25px;
   }
   .brand-icon-open{
     position: absolute;
-    right: -17px;
     border: 2px solid #007bff;
     border-radius: 100%;
-    top: 15px;
     background: white;
-    color:grey !important;
+    color: grey !important;
     padding:2px;
+    right: 25px;
   }
-
-
-  &.sidebarContainerTrue {
-    
-    border-right: solid 2px #007bff;
- 
-  }
-
-  &.sidebarContainerFalse{
-
-  }
-
-  .emptyElement{
+  .sideBarTransition{
     position: absolute;
-    top: 0;
-    right: -10px;
-    width: 5px;
-    height: 400px;
-    background: transparent;
+    background: #CACFD2;
+    width: inherit;
+    height: 40px;
+    padding: 3px;
   }
 
   &.sidebarContainer{
@@ -124,10 +110,18 @@ export const StyledSidebar = styled.div`
     text-align:center !important;
   }
   &.sidebarContainer {
-
-  .SidebarNav .sidebar-item-text,.NavHeader,.navbar-brand{
-    display:none;
+    .SidebarNav .sidebar-item-text,.icon-nav-right {
+      display:none;
+    }
+    .navbar-brand {
+      font-size: 0 !important;
+      color: transparent !important;
+      height: 68.38px;
+    }
+    .NavHeader {
+      font-size: 0 !important;
+      color: transparent !important;
+      height: 49.58px;
+    }
   }
-}
-
 `;
