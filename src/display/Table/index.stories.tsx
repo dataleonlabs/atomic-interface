@@ -18,15 +18,38 @@ for (let index = 0; index < 10; index++) {
   });
 }
 storiesOf('UI Elements|Table', module)
-  .add('Example', () => (
+  .add('Basic Example', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table</h4>
+        <h2>Table Basic</h2>
+        <br/>
+        <hr/>
+        <p>Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap. Read the <a href="https://getbootstrap.com/docs/4.2/components/spinners/" target="blank">Official Bootstrap Documentation</a> for a full list of instructions and other options.</p>
+        <br/>
+        <h4>Basic Example</h4>
+        <br/>
+        <p>Using the most basic table markup, here’s how <code>.table</code> based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <Table data={assets} striped={false}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'}>Email</Column>
         </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} striped={false}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>
+          `}
+        </pre>
       </Col>
     </React.Fragment>
   )).add('With striped', () => (

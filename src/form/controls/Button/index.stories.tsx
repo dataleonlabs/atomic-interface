@@ -5,10 +5,18 @@ import { Col } from 'reactstrap';
 import { Info, Archive, Coffee } from 'react-feather';
 
 storiesOf('Forms|Button', module)
-  .add('Example', () => (
+  .add('Basic Styling', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h2>Button</h2>
+        <br/>
+        <p>Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more. Read the <a href="https://getbootstrap.com/docs/4.2/components/buttons/" target="_blank">Official Bootstrap Documentation</a> for a full list of instructions and other options.</p><br/>
+        <h4>Basic Styling</h4>
+        <br/>
+        <p>Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <div>
           <div style={{ marginTop: 30 }}><Button color="primary">primary</Button>{' '}</div>
           <div style={{ marginTop: 30 }}><Button color="secondary">secondary</Button>{' '}</div>
@@ -18,50 +26,95 @@ storiesOf('Forms|Button', module)
           <div style={{ marginTop: 30 }}><Button color="danger">danger</Button>{' '}</div>
           <div style={{ marginTop: 30 }}><Button color="link">link</Button></div>
         </div>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+        {`
+<div>
+  <div style={{ marginTop: 30 }}><Button color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button color="secondary">secondary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button color="success">success</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button color="info">info</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button color="warning">warning</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button color="danger">danger</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button color="link">link</Button></div>
+</div>
+        `}
+        </pre>
       </Col>
     </React.Fragment>
-  )).add('Test disabled', () => (
+  )).add('Outline Buttons', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
-        <div>
-          <div style={{ marginTop: 30 }}><Button disabled color="primary">primary</Button>{' '}</div>
-        </div>
-      </Col>
-    </React.Fragment>
-  )).add('Test outline', () => (
-    <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Outline Buttons</h4>
+        <br/>
+        <p>In need of a button, but not the hefty background colors they bring? Add element with the <code>outline</code> property ones to remove all background images and colors on any button.</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <div>
           <div style={{ marginTop: 30 }}><Button outline color="primary">primary</Button>{' '}</div>
+          <div style={{ marginTop: 30 }}><Button outline color="secondary">secondary</Button>{' '}</div>
+          <div style={{ marginTop: 30 }}><Button outline color="success">success</Button>{' '}</div>
+          <div style={{ marginTop: 30 }}><Button outline color="info">info</Button>{' '}</div>
+          <div style={{ marginTop: 30 }}><Button outline color="warning">warning</Button>{' '}</div>
+          <div style={{ marginTop: 30 }}><Button outline color="danger">danger</Button>{' '}</div>
         </div>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+        {`
+<div>
+  <div style={{ marginTop: 30 }}><Button outline color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="secondary">secondary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="success">success</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="info">info</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="warning">warning</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="danger">danger</Button>{' '}</div>
+</div>
+        `}
+        </pre>
       </Col>
     </React.Fragment>
-  )).add('Test size', () => (
+  )).add('Sizes', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+      <h4>Sizes</h4>
+      <br/>
+      <p>Button can have additional sizes like larger or smaller buttons.</p>
+      <br/>
+      <h6><strong>Example</strong></h6>
+      <hr/>
         <div>
-          <div style={{ marginTop: 30 }}><Button outline size={'lg'} color="primary">primary</Button>{' '}</div>
-          <div style={{ marginTop: 30 }}><Button outline size={'md'} color="primary">primary</Button>{' '}</div>
-          <div style={{ marginTop: 30 }}><Button outline size={'sm'} color="primary">primary</Button>{' '}</div>
+          <div style={{ marginTop: 30 }}><Button size={'lg'} color="primary">primary</Button>{' '}</div>
+          <div style={{ marginTop: 30 }}><Button size={'md'} color="primary">primary</Button>{' '}</div>
+          <div style={{ marginTop: 30 }}><Button size={'sm'} color="primary">primary</Button>{' '}</div>
         </div>
+      <br/>
+      <h6><strong>Code</strong></h6>
+      <hr/>
+      <pre>
+      {`
+<div>
+  <div style={{ marginTop: 30 }}><Button size={'lg'} color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'md'} color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'sm'} color="primary">primary</Button>{' '}</div>
+</div>
+      `}
+      </pre>
       </Col>
     </React.Fragment>
-  )).add('Test block', () => (
+  )).add('Loading Buttons', () => (
     <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
-        <div>
-          <div style={{ marginTop: 30 }}><Button block outline size color="primary">primary</Button>{' '}</div>
-        </div>
-      </Col>
-    </React.Fragment>
-  )).add('Test loading', () => (
-    <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+      <h4>Loading Buttons</h4>
+      <br/>
+      <p>Button can have additional loader along with the size property buttons.</p>
+      <br/>
+      <h6><strong>Example</strong></h6>
+      <hr/>
         <div>
           <div style={{ marginTop: 30 }}><Button size={'lg'} loading={true} color="primary">primary</Button>{' '}</div>
           <div style={{ marginTop: 30 }}><Button size={'md'} loading={true} color="primary">primary</Button>{' '}</div>
@@ -70,12 +123,32 @@ storiesOf('Forms|Button', module)
           <div style={{ marginTop: 30 }}><Button size={'md'} loading={true} color="warning">primary</Button>{' '}</div>
           <div style={{ marginTop: 30 }}><Button size={'sm'} loading={true} color="warning">primary</Button>{' '}</div>
         </div>
+      <br/>
+      <h6><strong>Code</strong></h6>
+      <hr/>
+      <pre>
+      {`
+<div>
+  <div style={{ marginTop: 30 }}><Button size={'lg'} loading={true} color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'md'} loading={true} color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'sm'} loading={true} color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'lg'} loading={true} color="warning">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'md'} loading={true} color="warning">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'sm'} loading={true} color="warning">primary</Button>{' '}</div>
+</div>
+      `}
+      </pre>
       </Col>
     </React.Fragment>
-  )).add('Test with icon left', () => (
+  )).add('Icon Buttons', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+      <h4>Icon Buttons</h4>
+      <br/>
+      <p>Make icon buttons by adding only icon and add property <code>icon</code></p>
+      <br/>
+      <h6><strong>Example</strong></h6>
+      <hr/>
         <div>
           <div style={{ marginTop: 30 }}><Button size={'lg'} icon={<Info />} color="primary">primary</Button>{' '}</div>
           <div style={{ marginTop: 30 }}><Button size={'lg'} icon={<Info />} color="warning">primary</Button>{' '}</div>
@@ -88,6 +161,44 @@ storiesOf('Forms|Button', module)
 
           <div style={{ marginTop: 30 }}><Button size={'sm'} icon={<Info size={18} />} color="primary">primary</Button>{' '}</div>
           <div style={{ marginTop: 30 }}><Button size={'sm'} icon={<Info size={18} />} color="warning">primary</Button>{' '}</div>
+        </div>
+      <br/>
+      <h6><strong>Code</strong></h6>
+      <hr/>
+      <pre>
+      {`
+<div>
+  <div style={{ marginTop: 30 }}><Button size={'lg'} icon={<Info />} color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'lg'} icon={<Info />} color="warning">primary</Button>{' '}</div>
+
+  <div style={{ marginTop: 30 }}><Button size={'md'} outline icon={<Archive size={18} />} color="danger">important</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'sm'} outline icon={<Archive size={18} />} color="danger">important</Button>{' '}</div>
+
+  <div style={{ marginTop: 30 }}><Button size={'md'} icon={<Coffee />} color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'md'} icon={<Coffee />} color="warning">primary</Button>{' '}</div>
+
+  <div style={{ marginTop: 30 }}><Button size={'sm'} icon={<Info size={18} />} color="primary">primary</Button>{' '}</div>
+  <div style={{ marginTop: 30 }}><Button size={'sm'} icon={<Info size={18} />} color="warning">primary</Button>{' '}</div>
+</div>
+      `}
+      </pre>
+      </Col>
+    </React.Fragment>
+  )).add('Test disabled', () => (
+    <React.Fragment>
+      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Button</h4>
+        <div>
+          <div style={{ marginTop: 30 }}><Button disabled color="primary">primary</Button>{' '}</div>
+        </div>
+      </Col>
+    </React.Fragment>
+  )).add('Test block', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Button</h4>
+        <div>
+          <div style={{ marginTop: 30 }}><Button block outline size color="primary">primary</Button>{' '}</div>
         </div>
       </Col>
     </React.Fragment>

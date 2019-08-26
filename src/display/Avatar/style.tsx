@@ -15,8 +15,13 @@ export const StyledImage = styled.span<{ size: AvatarProps['size'] }>`
   overflow: hidden;
   border-radius: ${sizeFunc};;
   border: solid 1px #F2F2F2;
+  margin-right: 15px;
 
   img {
     width: ${sizeFunc};
+  }
+
+  .square {
+    border-radius: 0px !important;
   }
 `;
