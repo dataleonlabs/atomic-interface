@@ -8,7 +8,7 @@ import { ReactNode } from "react";
  *    <TabItem title={"title"}>Quo Action</TabItem>
  * </Tabs>
  */
-export interface TabItem {
+export interface TabItemProps {
     /** String displayed on the nav tab */
     title: string;
     /** Indicate whether this tab is active */

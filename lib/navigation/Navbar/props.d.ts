@@ -14,6 +14,7 @@ import { NavProps as NavPropsBase, NavItemProps as NavItemPropsBase, NavbarProps
 export interface NavbarProps extends NavbarPropsBase {
     /** Children */
     children: NavItemProps;
+    size?: 'md' | 'lg';
 }
 export interface NavbarBrandProps {
     className?: string;

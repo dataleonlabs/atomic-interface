@@ -8,6 +8,8 @@ export const StyledSidebar = styled.div`
   width: 250px;
   border-right: solid 2px #eee;
   position:relative;
+  border-right: solid 1px #eee;
+  height: 100vh;
 
   .icon-nav-left {
     text-align:center
@@ -33,8 +35,13 @@ export const StyledSidebar = styled.div`
   }
 
   .nav-link {
+<<<<<<< HEAD
     padding:0.7rem 0.7rem;
     font-size: 1rem;
+=======
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+>>>>>>> origin/develop
     cursor: pointer;
     border-left: solid 3px #fff;
     &:hover {

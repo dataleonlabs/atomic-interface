@@ -1,4 +1,4 @@
-import { CheckbokProps as Props } from './props';
+import { CheckboxProps as Props } from './props';
 /**
  * CheckBox render element
  */

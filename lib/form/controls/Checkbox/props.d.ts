@@ -4,5 +4,5 @@ import { InputProps } from '../Input/props';
  * @example
  *   <Checkbox name={'firstName'} label={'First Name'}>
  */
-export interface CheckbokProps extends InputProps {
+export interface CheckboxProps extends InputProps {
 }

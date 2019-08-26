@@ -1,4 +1,4 @@
-import { TabItem as Props } from './props';
+import { TabItemProps as Props } from './props';
 /**
  * TabItem render element
  */

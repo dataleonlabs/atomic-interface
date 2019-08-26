@@ -23,8 +23,10 @@ class Form extends React.Component<Props> {
             }
             return (
               <FormBase onSubmit={onSubmit}>
-                {(typeof this.props.children === 'function')
-                  && (this.props.children as /* tslint:disable */ Function /* tslint:enable */)(props)}
+                {(typeof this.props.children === 'function') &&
+                  (this.props.children as /* tslint:disable */ Function /* tslint:enable */)(props)
+                }
+
               </FormBase>
             );
           }}

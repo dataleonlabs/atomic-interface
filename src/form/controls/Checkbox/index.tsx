@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 import { CustomInput, FormText } from 'reactstrap';
-import { CheckbokProps as Props } from './props';
+import { CheckboxProps as Props } from './props';
 import Control from '../../Control';
 
 /**

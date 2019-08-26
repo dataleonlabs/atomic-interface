@@ -1,3 +1,4 @@
+import { QueryProps } from "../../utils/Query/props";
 /**
  * This component using garden.zendesk https://garden.zendesk.com/react-components/tables
  * @example
@@ -11,19 +12,21 @@ export interface Values {
     [column: string]: JSX.Element | string | number | boolean | string[] | number[] | boolean[] | object | object[] | Values;
 }
 export interface TableColumnProps {
+    /** Label field */
+    label?: string;
     /** Width column */
     field: 'name' | 'email' | 'description' | 'email ' | string;
     /** Width column */
     width?: number;
     formatter?: (cell: string, row: any) => JSX.Element;
     /** Header name */
-    children: string | JSX.Element;
+    children?: string | JSX.Element;
     /** Sortable table display */
     sortable?: boolean;
 }
 export interface TableProps {
     /** data rows */
-    data: Values[];
+    data?: Values[];
     /** Display in table */
     children: JSX.Element | JSX.Element[];
     striped?: boolean;
@@ -62,4 +65,7 @@ export interface TableProps {
     };
     /** no content indication */
     noContentIndication?: string;
+}
+export interface TableCollectionProps extends TableProps, QueryProps {
+    children: any | undefined;
 }
