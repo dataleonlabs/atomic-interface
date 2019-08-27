@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CustomInput } from 'reactstrap';
-import { CheckboxCollectionProps as Props } from './props';
+import { RadioCollectionProps as Props } from './props';
 import Control from '../../Control';
 import { APIGatewayFetch } from 'yap-sdk';
 
@@ -74,7 +74,7 @@ const Collection = (props: Props) => {
         loading={loading}
         onClick={onClick}
         checked={value}
-        type='checkbox'
+        type='radio'
       />
       <>{children}</>
     </Control>

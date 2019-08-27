@@ -1,5 +1,5 @@
 import { InputProps } from '../Input/props';
-import { QueryProps } from 'src/utils/Query/props';
+import { QueryProps } from "../../../utils/Query/props";
 
 /**
  * This component using https://reactstrap.github.io/components/form/ : CustomInput
@@ -15,6 +15,9 @@ export interface CheckboxCollectionProps extends QueryProps {
 
     /** Current name form */
     name: string
+
+    /** Label for Checkbox */
+    label: string
 
     /** Id of record in database */
     fieldId: { key: string, value: string }
@@ -33,4 +36,7 @@ export interface CheckboxCollectionProps extends QueryProps {
 
     /** Is required */
     required?: boolean
+
+    /** to display response */
+    children: any;
 }
