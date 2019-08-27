@@ -73,7 +73,7 @@ export interface LoginProps extends AuthProps {
     code?: InputProps
 
     buttonLogin?: ButtonProps // Label is different
-    buttonForgot?: ButtonProps // Label is different
+    buttonForgot?: NavLinkProps // Label is different
     buttonConfirmSignIn?: ButtonProps    
     buttonNewPassword?: ButtonProps /* Set Label Save Password */
 
