@@ -1,5 +1,6 @@
 import { ButtonProps } from "../../form/controls/Button/props";
 import { InputProps } from "src/form/controls/Input/props";
+import { NavLinkProps } from "src/navigation/Navbar/props";
 
 /**
  * Using form component
@@ -72,6 +73,7 @@ export interface LoginProps extends AuthProps {
     code?: InputProps
 
     buttonLogin?: ButtonProps // Label is different
+    buttonForgot?: ButtonProps // Label is different
     buttonConfirmSignIn?: ButtonProps    
     buttonNewPassword?: ButtonProps /* Set Label Save Password */
 

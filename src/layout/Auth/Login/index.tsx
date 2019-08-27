@@ -8,10 +8,12 @@ import AWSCognito from '../../../utils/AuthProvider/AWSCongito/index';
 import * as Yup from 'yup';
 import { StyledFormContainer, StyledContainer } from './style';
 import { Col, Row } from 'reactstrap';
+import { Route } from 'react-router'
 
 interface State {
   // onConfirmSignIn: boolean
   // newPassword: boolean,
+  forgotLinkError: boolean,
   userResponse: any,
   loginError: boolean,
   newPasswordError: boolean,
@@ -45,6 +47,11 @@ class Login extends React.Component<Props, State> {
     buttonLogin: {
       block: true,
       children: "Sign in",
+      color: "primary",
+    },
+    buttonForgot: {
+      block: true,
+      children: "Forgot Password?",
       color: "primary",
     },
     buttonConfirmSignIn: {
@@ -85,6 +92,7 @@ class Login extends React.Component<Props, State> {
   public state = {
     // onConfirmSignIn: false,
     // newPassword: false,
+    forgotLinkError: false,
     userResponse: {},
     validationSchema: {},
     loginError: false,
@@ -96,6 +104,11 @@ class Login extends React.Component<Props, State> {
 
   public componentDidMount() {
     this.setValidation();
+  }
+
+  navigateToforgotPassword = () => {    
+    <Route to='/ForgotPassword' />
+    this.setState({ forgotLinkError: true })
   }
 
   public setValidation() {
@@ -199,6 +212,8 @@ class Login extends React.Component<Props, State> {
                             <Input {...this.props.password} name="password" type="password" />
                             {this.state.loginError === true && <Alert icon={true} color="danger">{this.props.messageWrongLogin}</Alert>}
                             <Button {...this.props.buttonLogin} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonLogin || /* istanbul ignore next  */ {}).children}</Button>
+                            {this.props.displayForgotlink === true && <Button {...this.props.buttonForgot} type="button" style={{ marginTop: 5 }} onClick={this.navigateToforgotPassword}>{(this.props.buttonForgot || /* istanbul ignore next  */ {}).children}</Button>}
+                            {this.state.forgotLinkError === true && <Alert icon={true} color="danger">This button works only in application. It needs component "ForgotPassword".</Alert>}
                           </>}
                         {this.state.status === "MFA" && /* istanbul ignore next  */
                           <>
