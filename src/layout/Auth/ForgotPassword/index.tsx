@@ -93,13 +93,11 @@ class ForgotPassword extends React.Component<Props, State> {
           code: Yup.string()
             .required('Please enter code'),
           newPassword: Yup.string()
-            .min(8, 'Too short!')
-            .required('Please enter new password').matches(
-              /^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$/,
-              "Must contain 8 characters, one uppercase, one lowercase, one number and one special case character"
+            .required('Please enter new password')
+            .matches(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})"),
+              "Must contain minimum 6 characters, atleast contains one uppercase, one lowercase, one number and one special case character from '!@#$%^&*'"
             ),
           confirmPassword: Yup.string()
-            .min(8, 'Too short!')
             .required('Please enter confirm password')
             .oneOf([Yup.ref('newPassword')], 'Passwords must match')
         })

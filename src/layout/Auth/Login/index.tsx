@@ -119,14 +119,11 @@ class Login extends React.Component<Props, State> {
       this.setState({
         validationSchema: Yup.object().shape({
           newPassword: Yup.string()
-            .min(8, 'Too short!')
             .required('Please enter new password')
-            .matches(
-              /^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$/,
-              "Must contain 8 characters, one uppercase, one lowercase, one number and one special case character"
+            .matches(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})"),
+              "Must contain minimum 6 characters, atleast contains one uppercase, one lowercase, one number and one special case character from '!@#$%^&*'"
             ),
           confirmPassword: Yup.string()
-            .min(8, 'Too short!')
             .required('Please enter confirm password')
             .oneOf([Yup.ref('newPassword')], 'Passwords must match')
         })
@@ -141,7 +138,7 @@ class Login extends React.Component<Props, State> {
         const awsCognito = new AWSCognito();
         awsCognito.configure(this.props.provider.credentials);
         if (this.state.status === "LOGIN" || /* istanbul ignore next  */ this.state.status === null) /* istanbul ignore next  */ {
-          const resSignIn = await awsCognito.signIn({ email: event.email, password: event.password });          
+          const resSignIn = await awsCognito.signIn({ email: event.email, password: event.password });
           if (resSignIn && resSignIn.challengeName === 'NEW_PASSWORD_REQUIRED') {
             this.setState({ loading: false, userResponse: resSignIn, status: "NEW_PASSWORD_REQUIRED" }, this.setValidation)
           } else if (resSignIn && resSignIn.challangeName === 'SMS_MFA' ||
@@ -150,7 +147,7 @@ class Login extends React.Component<Props, State> {
           } else {
             if (resSignIn && resSignIn.code) {
               this.setState({ loading: false, loginError: true })
-            } else if (typeof this.props.onCompleted === "function") {              
+            } else if (typeof this.props.onCompleted === "function") {
               this.setState({ loading: false, loginError: false })
               this.props.onCompleted(resSignIn);
             }
