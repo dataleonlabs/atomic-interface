@@ -122,15 +122,33 @@ storiesOf('Forms|Input', module)
         </pre>
       </Col>
     </React.Fragment>
-  )).add('With error', () => (
+  )).add('Input With Error', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Input</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Input With Error</h4>
+        <br/>
+        <p>Add <code>error={`{true}`}</code> property to apply the relevant style.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <Form>
           {(_) => (
             <Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
           )}
         </Form>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Form>
+  {(_) => (
+    <Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+  )}
+</Form>
+          `}
+        </pre>
       </Col>
     </React.Fragment>
   ));
