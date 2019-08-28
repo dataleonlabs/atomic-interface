@@ -118,14 +118,11 @@ class Login extends React.Component<Props, State> {
       this.setState({
         validationSchema: Yup.object().shape({
           newPassword: Yup.string()
-            .min(8, 'Too short!')
             .required('Please enter new password')
-            .matches(
-              /^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$/,
-              "Must contain 8 characters, one uppercase, one lowercase, one number and one special case character"
+            .matches(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})"),
+              "Must contain minimum 6 characters, atleast contains one uppercase, one lowercase, one number and one special case character from '!@#$%^&*'"
             ),
           confirmPassword: Yup.string()
-            .min(8, 'Too short!')
             .required('Please enter confirm password')
             .oneOf([Yup.ref('newPassword')], 'Passwords must match')
         })
