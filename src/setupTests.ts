@@ -22,6 +22,7 @@ const localStorageMock = (() => {
     setItem: (key: string, value: string) => {
       store[key] = value.toString()
     },
+    
   }
 })()
 
@@ -37,8 +38,11 @@ const createRangeMock = () => {
   }
 }
 
+
 Object.defineProperty(window.document, 'createRange', {
   value: createRangeMock,
 })
+
+
 
 enzyme.configure({ adapter: new Adapter() })

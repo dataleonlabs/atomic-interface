@@ -1,4 +1,5 @@
 import { InputProps } from '../Input/props';
+import { ReactDatePickerProps as DatePickerBaseProps } from 'react-datepicker'
 
 /**
  * This component using https://www.npmjs.com/package/react-datepicker
@@ -7,5 +8,7 @@ import { InputProps } from '../Input/props';
  */
 
 export interface DatePickerProps extends InputProps {
-
+    
+    /** Set DatePicker Options*/
+    options?: DatePickerBaseProps
 }
