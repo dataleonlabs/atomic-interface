@@ -120,9 +120,8 @@ class Login extends React.Component<Props, State> {
           newPassword: Yup.string()
             .min(8, 'Too short!')
             .required('Please enter new password')
-            .matches(
-              /^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$/,
-              "Must contain 8 characters, one uppercase, one lowercase, one number and one special case character"
+            .matches(new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})"),
+              "Must contain  minimum 6 characters, atleast one uppercase, atleast one lowercase, atleast one number and atleast one special case character"
             ),
           confirmPassword: Yup.string()
             .min(8, 'Too short!')
