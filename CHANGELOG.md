@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.9.0...v1.10.0) (2019-08-27)
+
+
+### Bug Fixes
+
+* add comment on testcase U-TEST-2 - Test login ([47ebf07](https://bitbucket.org/youngapp/ui-kit/commit/47ebf07))
+
 ## [1.9.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.8.0...v1.9.0) (2019-08-26)
 
 
