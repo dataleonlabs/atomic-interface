@@ -79,6 +79,12 @@ export { default as Checkbox } from './form/controls/Checkbox';
 export { default as CheckBoxCollection } from './form/controls/Checkbox/Collection';
 export { CheckboxProps, CheckboxCollectionProps } from './form/controls/Checkbox/props';
 
+export { default as CodeEditor} from './form/controls/CodeEditor'
+export { CodeEditorProps } from './form/controls/CodeEditor/props'
+
+export { default as DatePicker} from './from/controls/DatePicker'
+export { DatePickerProps } from './form/controls/DatePicker/props'
+
 export { default as FilePicker } from './form/controls/FilePicker';
 export { FilePickerProps } from './form/controls/FilePicker/props';
 
@@ -97,6 +103,9 @@ export { InputProps } from './form/controls/Input/props';
 export { default as Radio } from './form/controls/Radio';
 export { default as RadioCollection } from './form/controls/Radio/Collection';
 export { RadioProps, RadioCollectionProps } from './form/controls/Radio/props';
+
+export { default as RichText } from './form/controls/RichText';
+export { RichTextProps } from './form/controls/RichText/props';
 
 export { default as SearchBar } from './form/controls/SearchBar';
 export { SearchBarProps } from './form/controls/SearchBar/props';
