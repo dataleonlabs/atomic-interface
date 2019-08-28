@@ -59,7 +59,7 @@ export default class AWSCognito implements AuthInterface {
      * Sign out current login
      */
     public signOut() {
-        Auth.signOut();
+        Auth.signOut();        
     };
 
 
