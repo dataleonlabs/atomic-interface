@@ -30,6 +30,9 @@ export interface QueryProps {
     apiUrl: string
 
     /** Model to fetch data */
+    reloadKey?: string
+
+    /** Model to fetch data */
     model: string
 
     /** Type of query */

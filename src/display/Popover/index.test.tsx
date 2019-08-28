@@ -5,7 +5,7 @@ import { UncontrolledPopover as StrapUncontrolledPopover, Button } from 'reactst
 
 describe('<Popover/>', () => {
 
-  it('U-TEST-1 - Popover render', () => {
+  it('U-TEST-1 - Popover', () => {
     const div = document.createElement('div');
     document.body.appendChild(div);
     const wrapper = enzyme.mount(
@@ -26,7 +26,7 @@ describe('<Popover/>', () => {
     expect(wrapper.find(Button).get(0).props.id).toEqual('Popover-');
   })
 
-  it('U-TEST-2 - Popover render with placement right', () => {
+  it('U-TEST-2 - Placement Right', () => {
     const div = document.createElement('div');
     document.body.appendChild(div);
 
@@ -48,6 +48,4 @@ describe('<Popover/>', () => {
     expect(wrapper.find(StrapUncontrolledPopover)).toHaveLength(1);
     expect(wrapper.find(StrapUncontrolledPopover).get(0).props.placement).toEqual('bottom');
   })
-
-
 })

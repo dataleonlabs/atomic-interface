@@ -1,29 +1,34 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Login from './index';
-import Header from '../components/Header/Header';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import HeaderTitle from '../components/Header/Title';
 import HeaderSubTitle from '../components/Header/SubTitle';
-import { Col, Container, Row} from 'reactstrap';
-import { type } from 'os';
-import { placeholder } from '@babel/types';
 
 storiesOf('Layout|Auth', module)
-  .add('Example with Default Props', () => (
+  .add('Login', () => (
     <React.Fragment>
-      <Container fluid={true} style={{backgroundColor: "#f8fafb", height: 850}}>
-        <Row>
-          <Col md={3}></Col>
-          <Col md={6} style={{ margin: 10 }}>
-            <Login>
-              <Header>
-                <HeaderTitle>Sign in</HeaderTitle>
-                <HeaderSubTitle>Please login to account with your credentials</HeaderSubTitle>
-              </Header>
-            </Login>
-          </Col>
-          <Col md={3}></Col>
-        </Row>
-      </Container>
+      <Login
+        provider={{
+          type: "aws-cognito",
+          credentials: {
+            "region": "eu-central-1",
+            "userPoolId": "eu-central-1_5jBnZEuMX",
+            "userPoolWebClientId": "543up50u5glbg9qlpkuhop779t",
+          },
+        }}>
+        <Header>
+          <HeaderTitle>
+            <span>Sign in</span>
+          </HeaderTitle>
+          <HeaderSubTitle>
+            <span>Please login to account with your credentials</span>
+          </HeaderSubTitle>
+        </Header>
+        <Footer>
+          <span>Copyright 2019</span>
+        </Footer>
+      </Login>
     </React.Fragment>
   ));

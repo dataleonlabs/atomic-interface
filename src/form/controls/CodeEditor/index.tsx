@@ -18,8 +18,8 @@ class CodeEditor extends React.PureComponent<Props> {
     colorScheme: "vs"
   }
 
-  Editor: any = {};
-  Node: any = {};
+  public Editor: any = {};
+  public Node: any = {};
 
   public onChange = (newValue: string) => {
     if (this.props.onChange) {
@@ -33,9 +33,8 @@ class CodeEditor extends React.PureComponent<Props> {
 
   public editorDidMount = (editor: any) => {
     setTimeout(function () {
-      alert("hello");
-      editor.trigger('', 'editor.action.formatDocument');
-      //editor.getAction('editor.action.formatDocument').run();
+      alert("hello");      
+      editor.getAction('editor.action.formatDocument').run();
       editor.focus();
     }, 300);
   }
@@ -76,13 +75,12 @@ class CodeEditor extends React.PureComponent<Props> {
     }, 2000));
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     return this.Editor && this.Editor.dispose();
   }
 
-  render() {
-
-    let richTextStyle = {
+  public render() {
+    const richTextStyle = {
       width: this.props.width,
       height: this.props.height,
       border: "solid 1px #eee",

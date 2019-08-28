@@ -16,7 +16,7 @@ class Form extends React.Component<Props> {
       <div>
         <Formik {...this.props}>
           {(props: FormikProps<{}>) => {
-            const onSubmit = (event: any) => {
+            const onSubmit /* istanbul ignore next  */ = (event: any) => {
               event.preventDefault();
               props.handleSubmit(event);
               props.setSubmitting(true);

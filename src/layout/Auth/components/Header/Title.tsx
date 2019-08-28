@@ -1,11 +1,18 @@
+/* istanbul ignore next  */
 import * as React from 'react'
-import { AuthHeaderTitleProps as Props } from '../../../props';
+
+/* istanbul ignore next  */
+import { AuthHeaderTitleProps as Props } from '../../props';
+
+/* istanbul ignore next  */
 import { StyledCardTitle } from './style';
 
-//Login Form Component
-const Header = (props: Props) => {
+// Login Form Component
+/* istanbul ignore next  */
+const Title = (props: Props) => /* istanbul ignore next  */ {
     return (
         <StyledCardTitle>{props.children}</StyledCardTitle>
     )
 }
-export default Header;
+/* istanbul ignore next  */
+export default Title;
