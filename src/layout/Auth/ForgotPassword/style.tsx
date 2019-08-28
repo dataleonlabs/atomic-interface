@@ -19,7 +19,7 @@ export const StyledCard = styled(Card)`
 export const StyledFormContainer = styled.div`
   margin: auto;
   margin-top: 120px;
-  max-width: 300px;  
+  max-width: 300px;
 `;
 export const StyledContainer = styled(Container)`
   background-color: #f8fafb;
