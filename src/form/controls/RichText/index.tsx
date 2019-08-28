@@ -112,4 +112,5 @@ class RichText extends React.PureComponent<Props> {
     )
   }
 }
+
 export default RichText
