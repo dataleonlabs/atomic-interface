@@ -1,140 +1,255 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Col } from 'reactstrap';
 import Column from './Column';
 import Table from './index';
 import faker from 'faker'
+import TableCollection from './Collection'
+import Query from '../../utils/Query';
+import { APIGatewayFetch } from 'yap-sdk';
 
 const assets: any[] = [];
-for (let index = 0; index < 20; index++) {
+for (let index = 0; index < 10; index++) {
   assets.push({
-    id: `usr_${index + 1}`,
+    id: index + 1,
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     email: faker.internet.email(),
   });
 }
-
-const HiddenColumnNames = () => {
-  const [hiddenColumnNames, setHiddenColumnNames] = useState(['email']);
-
-  return (
-    <Table
-      onHiddenColumnNamesChange={setHiddenColumnNames}
-      data={assets}
-      hiddenColumnNames={hiddenColumnNames}
-      searchable={true}
-    >
-      <Column field={'firstName'} togglingEnabled={false}>First Name</Column>
-      <Column field={'lastName'}>Last Name</Column>
-      <Column field={'email'} sortable={false}>Email</Column>
-    </Table>
-  );
-};
-
 storiesOf('UI Elements|Table', module)
   .add('Basic Example', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Getting Started</h4>
-        <p>
-          Table is a component that displays table data from a local or remote source.
-          It supports paging, sorting, filtering, grouping and other data shaping options, row selection, and data editing.
-        </p>
-        <hr />
+        <h2>Table Basic</h2>
+        <br/>
+        <hr/>
+        <p>Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap. Read the <a href="https://getbootstrap.com/docs/4.2/components/spinners/" target="blank">Official Bootstrap Documentation</a> for a full list of instructions and other options.</p>
+        <br/>
+        <h4>Basic Example</h4>
+        <br/>
+        <p>Using the most basic table markup, here’s how <code>.table</code> based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <Table data={assets} striped={false}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'}>Email</Column>
         </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} striped={false}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>
+          `}
+        </pre>
       </Col>
     </React.Fragment>
-  ))
-  .add('Loading', () => (
+  )).add('Sortable', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Loading</h4>
-        <p>
-          The loading property should indicate whether there is an active request. Once the request is completed, pass the loaded data to the Taable plugin’s rows property.
-        </p>
-        <hr />
-        <Table data={assets} selectable={true} loading={true} sortable={true} columnOrdering={[]} fixedLeftColumns={['firstName']}>
+        <h4>Sortable</h4>
+        <br/>
+        <p>Add <code>sortable={`true`}</code> for sortable columns.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Table data={assets} sortable={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'} sortable={false}>Email</Column>
         </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} sortable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>
+          `}
+        </pre>
       </Col>
     </React.Fragment>
-  ))
-  .add('Empty', () => (
+  )).add('Selectable', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Empty</h4>
-        <p>
-          Table allows empty table display
-        </p>
-        <hr />
-        <Table data={[]} selectable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Customize', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Customize the Appearance</h4>
-        <p>
-          Most popular customization tasks are described below with striped.
-        </p>
-        <hr />
-        <Table data={assets} striped={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Column Alignment', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Column Alignment</h4>
-        <p>
-          The Table allows you to specify the column alignment with align on each Column
-        </p>
-        <hr />
-        <Table data={assets} striped={true}>
-          <Column align="right" field={'firstName'}>First Name</Column>
-          <Column align="center" field={'firstName'}>First Name</Column>
-          <Column align="center" field={'lastName'}>Last Name</Column>
-          <Column align="left" field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Selection', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Selection</h4>
-        <p>The Table component supports selecting/deselecting rows programmatically or via the UI.
-          It seamlessly integrates with paging, sorting, filtering, and grouping.</p>
-        <hr />
+        <h4>Selectable</h4>
+        <br/>
+        <p>Add <code>selectable={`true`}</code> to enable the selection checkbox for each row.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <Table data={assets} selectable={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'}>Email</Column>
         </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} selectable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>
+          `}
+        </pre>
       </Col>
+    </React.Fragment>
+  )).add('Draggable', () => (
+    <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Disabled Selected</h4>
-        <p>
-          Table is a component that displays table data from a local or remote source.
-          It supports paging, sorting, filtering, grouping and other data shaping options, row selection, and data editing.
-        </p>
-        <hr />
+        <h4>Selectable</h4>
+        <br/>
+        <p>Add <code>draggable={`true`}</code> to enable the drag and drop functionality.</p>
+        <hr/>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <br/>
+        <h4>Table 1</h4>
+        <Table data={assets} draggable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+        <h4>Table 2</h4>
+        <Table data={assets} draggable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<h4>Table 1</h4>
+<Table data={assets} draggable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>
+<h4>Table 2</h4>
+<Table data={assets} draggable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>
+          `}
+        </pre>
+      </Col>
+    </React.Fragment>
+  )).add('Scrollable', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Selectable</h4>
+        <br/>
+        <p>Add <code>scrollable={150}</code> to enable the scrolling option for the table content.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Table data={assets} sortable={true} scrollable={150}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} sortable={true} scrollable={150}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>
+          `}
+        </pre>
+      </Col>
+    </React.Fragment>
+  )).add('Paginated', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Paginated</h4>
+        <br/>
+        <p>Add <code>pagination={`{{ currentPage: 1, total: 1000 }}`}</code> to enable the pagination at the bottom of table.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>
+          `}
+        </pre>
+      </Col>
+    </React.Fragment>
+  )).add('With striped', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table</h4>
+        <Table data={assets} striped={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('With row size large', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table</h4>
+        <Table data={assets} striped={true} rowSize={'large'}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('With row size small', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table</h4>
+        <Table data={assets} striped={false} rowSize={'small'}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+      </Col>
+    </React.Fragment>
+  )).add('With select row and disabledSelected', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table</h4>
         <Table data={assets} selectable={true} disabledSelected={[4, 6]}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
@@ -142,16 +257,10 @@ storiesOf('UI Elements|Table', module)
         </Table>
       </Col>
     </React.Fragment>
-  ))
-  .add('Hide Header', () => (
+  )).add('With hide header', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Hide Header</h4>
-        <p>
-          Table is a component that displays table data from a local or remote source.
-          It supports paging, sorting, filtering, grouping and other data shaping options, row selection, and data editing.
-        </p>
-        <hr />
+        <h4>Table</h4>
         <Table data={assets} hideHeader={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
@@ -159,119 +268,25 @@ storiesOf('UI Elements|Table', module)
         </Table>
       </Col>
     </React.Fragment>
-  ))
-  .add('Sorting', () => (
+  )).add('With empty table', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Sorting</h4>
-        <p>
-          The Table component supports sorting data by one or several column values. Use the corresponding plugins and UI (column headers and Group Panel) to manage the sorting state and sort data programmatically.
-          Click several columns while holding Shift to sort data by these columns. Clicking a column while holding Ctrl (Cmd for MacOS) cancels sorting by this column.
-        </p>
-        <hr />
-        <Table data={assets} sortable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Column Reordering', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Column Reordering</h4>
-        <p>
-          The Table component allows reordering grid columns programmatically or using the drag-and-drop feature
-        </p>
-        <hr />
-        <Table data={assets} selectable={true} sortable={true} columnOrdering={[]}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Column Visibility', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Column Visibility</h4>
-        <p>A Table component provides the capability to hide or show table columns at runtime.</p>
-        <hr />
-        <HiddenColumnNames />
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Fixed Columns', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Fixed Columns</h4>
-        <p>
-          Table allows you to fix one or more first and last columns.
-          Fixed columns remain at their initial places regardless of the current scrolling position.
-        </p>
-        <hr />
-        <Table data={assets} selectable={true} sortable={true} columnOrdering={[]} fixedLeftColumns={['firstName']}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Paging', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Paging</h4>
-        <p>
-          The Table component supports data paging.
-          You can specify the page size and switch pages programmatically or via the Paging Panel’s UI controls.
-          The paging state management, Paging Panel rendering, and built-in paging logic are implemented in the corresponding plugins.
-          You can also configure the Grid to use server-side paging if your data service supports it.
-        </p>
-        <Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+        <h4>Table</h4>
+        <Table data={[]} selectable={true}>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'}>Email</Column>
         </Table>
       </Col>
     </React.Fragment>
-  ))
-  .add('Searching', () => (
+  )).add('With loading', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Searching</h4>
-        <p>
-          The Table component supports searching data programmatically or using the value an end user types in the corresponding Search Panel editor.
-        </p>
-        <Table searchable={true} showToolbar={true} data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+        <h4>Table</h4>
+        <Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+          <Column field={'id'}>Id</Column>
           <Column field={'firstName'}>First Name</Column>
           <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('Banded Columns', () => (
-    <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Table - Banded Columns</h4>
-        <p>
-          The Table allows you to organize column headers into bands.
-        </p>
-        <Table columnBands={[
-          {
-            title: 'User Profil',
-            children: [
-              { columnName: 'firstName' },
-              { columnName: 'lastName' },
-            ],
-          }
-        ]} searchable={true} showToolbar={true} data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
         </Table>
       </Col>
     </React.Fragment>
