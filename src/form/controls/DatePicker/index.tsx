@@ -18,12 +18,11 @@ class DatePicker extends React.PureComponent<Props> {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-  
 
-  handleChange(date: Date) {
+  public handleChange(date: Date) {
     this.setState({
       startDate: date
-    });    
+    });
     this.handleChange = this.handleChange.bind(this);
   }
 
