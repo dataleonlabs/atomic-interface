@@ -5,10 +5,20 @@ import { Col } from 'reactstrap';
 import Form from '../../index'
 
 storiesOf('Forms|SearchBar', module)
-  .add('Example', () => (
+  .add('Basic Example', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>SearchBar</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h2>Form Elements - SearchBar</h2>
+        <br/>
+        <hr/>
+        <p>Search lets users specify a word or phrase to search for relevant pieces of information. Search can be used as a filter or a primary means of searching some content.</p>
+        <br/>
+        <h4>Basic Example</h4>
+        <br/>
+        <p>The basic style for search component that can be submitted by hitting enter kay or by clicking the search icon on the right side of the bar.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <br />
         <Form>
           {(_) => (
@@ -18,13 +28,33 @@ storiesOf('Forms|SearchBar', module)
             />
           )}
         </Form>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Form>
+  {(_) => (
+    <SearchBar
+      name={'search'}
+      placeholder={'search'}
+    />
+  )}
+</Form>
+          `}
+        </pre>
       </Col>
     </React.Fragment>
-  )).add('For Navbar ', () => (
+  )).add('Navbar', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>SearchBar</h4>
-        <br />
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Navbar</h4>
+        <br/>
+        <p>Add <code>navBar={`{true}`}</code> property to display the search element inside the navigation panel.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <Form>
           {(_) => (
             <SearchBar
@@ -34,6 +64,23 @@ storiesOf('Forms|SearchBar', module)
             />
           )}
         </Form>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+          {`
+<Form>
+  {(_) => (
+    <SearchBar
+      name={'search'}
+      placeholder={'search'}
+      navBar={true}
+    />
+  )}
+</Form>
+          `}
+        </pre>
       </Col>
     </React.Fragment>
   ))

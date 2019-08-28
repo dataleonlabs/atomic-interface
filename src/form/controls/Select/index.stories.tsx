@@ -5,7 +5,7 @@ import { Col } from 'reactstrap';
 import Form from './../../index'
 
 storiesOf('Forms|Select', module)
-  .add('Example', () => {
+  .add('Basic Example', () => {
     const options = [
       { value: 'chocolate', label: 'Chocolate' },
       { value: 'strawberry', label: 'Strawberry' },
@@ -14,7 +14,17 @@ storiesOf('Forms|Select', module)
     return (
       <React.Fragment>
         <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
-          <h4>Select</h4>
+          <h2>Form Elements - Select</h2>
+          <br/>
+          <hr/>
+          <p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
+          <br/>
+          <h4>Basic Example</h4>
+          <br/>
+          <p>Custom select element with different <code>{`options`}</code>.</p>
+          <hr/>
+          <h6><strong>Example</strong></h6>
+          <hr/>
           <Form>
             {(_) => (
               <Select
@@ -26,10 +36,29 @@ storiesOf('Forms|Select', module)
               />
             )}
           </Form>
+          <br/>
+          <br/>
+          <h6><strong>Code</strong></h6>
+          <hr/>
+          <pre>
+            {`
+<Form>
+  {(_) => (
+    <Select
+      isClearable
+      creatable
+      isMulti
+      name={'favorite'}
+      options={options}
+    />
+  )}
+</Form>
+            `}
+          </pre>
         </Col>
       </React.Fragment>
     )
-  }).add('With Group', () => {
+  }).add('Grouped', () => {
     const colourOptions = [
       { value: 'chocolate', label: 'Chocolate' },
       { value: 'strawberry', label: 'Strawberry' },
@@ -55,6 +84,12 @@ storiesOf('Forms|Select', module)
     return (
       <React.Fragment>
         <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
+          <h4>Grouped</h4>
+          <br/>
+          <p>Add <code>options={`{groupedOptions}`}</code> property in which <code>{`groupedOptions`}</code> contain an array of multiple object having different attributes defined.</p>
+          <hr/>
+          <h6><strong>Example</strong></h6>
+          <hr/>
           <h4>Select</h4>
           <Form>
             {(_) => (
@@ -67,6 +102,25 @@ storiesOf('Forms|Select', module)
               />
             )}
           </Form>
+          <br/>
+          <br/>
+          <h6><strong>Code</strong></h6>
+          <hr/>
+          <pre>
+            {`
+<Form>
+  {(_) => (
+    <Select
+      isClearable
+      creatable
+      isMulti
+      name={'favorite'}
+      options={groupedOptions}
+    />
+  )}
+</Form>
+            `}
+          </pre>
         </Col>
       </React.Fragment>
     )
