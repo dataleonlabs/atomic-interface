@@ -64,7 +64,8 @@ export { default as ButtonCollection } from './form/controls/Button/Collection';
 export { ButtonProps, ButtonCollectionProps } from './form/controls/Button/props';
 
 export { default as Checkbox } from './form/controls/Checkbox';
-export { CheckboxProps } from './form/controls/Checkbox/props';
+export { default as CheckBoxCollection } from './form/controls/Checkbox/Collection';
+export { CheckboxProps, CheckboxCollectionProps } from './form/controls/Checkbox/props';
 
 export { default as FilePicker } from './form/controls/FilePicker';
 export { FilePickerProps } from './form/controls/FilePicker/props';
@@ -82,7 +83,8 @@ export { default as Input } from './form/controls/Input';
 export { InputProps } from './form/controls/Input/props';
 
 export { default as Radio } from './form/controls/Radio';
-export { RadioProps } from './form/controls/Radio/props';
+export { default as RadioCollection } from './form/controls/Radio/Collection';
+export { RadioProps, RadioCollectionProps } from './form/controls/Radio/props';
 
 export { default as SearchBar } from './form/controls/SearchBar';
 export { SearchBarProps } from './form/controls/SearchBar/props';
@@ -91,7 +93,8 @@ export { default as Select } from './form/controls/Select';
 export { SelectProps } from './form/controls/Select/props';
 
 export { default as Switch } from './form/controls/Switch';
-export { SwitchProps } from './form/controls/Switch/props';
+export { default as SwitchCollection } from './form/controls/Switch/Collection';
+export { SwitchProps, SwitchCollectionProps } from './form/controls/Switch/props';
 
 export { default as Textarea } from './form/controls/Textarea';
 export { TextareaProps } from './form/controls/Textarea/props';
