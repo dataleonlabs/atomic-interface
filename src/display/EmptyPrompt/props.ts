@@ -1,5 +1,3 @@
-import { ButtonProps } from "src/form/controls/Button/props";
-
 /**
  * This component using bootstrap lib https://reactstrap.github.io/components/cards/
  * @example
@@ -23,12 +21,12 @@ import { ButtonProps } from "src/form/controls/Button/props";
 
 export interface EmptyPromptProps {
 
-     /** set Childrens */
-     children?: JSX.Element[] | JSX.Element
+    /** set Childrens */
+    children?: JSX.Element[] | JSX.Element
 }
 
 export interface ActionButtonProps {
-    
+
     /** set EmptyPrompt action buttons */
     children?: JSX.Element[] | Element[] | JSX.Element | Element
 }

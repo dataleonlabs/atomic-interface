@@ -16,6 +16,16 @@ export { default as Dropdown } from './display/Dropdown';
 export { default as DropdownItem } from './display/Dropdown/DropdownItem';
 export { DropdownProps, DropdownItemProps } from './display/Dropdown/props';
 
+export { default as EmptyPrompt } from './display/EmptyPrompt'
+export { default as Icon } from './display/EmptyPrompt/Icon'
+export { default as BodyText } from './display/EmptyPrompt/BodyText'
+export { default as ActionPanel } from './display/EmptyPrompt/ActionPanel'
+export { default as Title } from './display/EmptyPrompt/Title'
+export { EmptyPromptProps, ActionButtonProps, TitleProps, BodyTextProps, EmptyPromptIconProps } from './display/EmptyPrompt/props'
+
+export { default as Health } from './display/Health'
+export { HealthProps } from './display/Health/props'
+
 export { default as HelpIcon } from './display/HelpIcon';
 export { HelpIconProps } from './display/HelpIcon/props';
 
@@ -29,6 +39,9 @@ export { PopoverProps } from './display/Popover/props';
 export { default as Progress } from './display/Progress';
 export { ProgressProps } from './display/Progress/props';
 
+export { default as Spacer } from './display/Spacer'
+export { SpacerProps } from './display/Spacer/props'
+
 export { default as Spinner } from './display/Spinner';
 export { SpinnerProps } from './display/Spinner/props';
 
@@ -40,7 +53,6 @@ export { TableCollectionProps, TableProps, TableColumnProps } from './display/Ta
 export { default as Tabs } from './display/Tabs';
 export { default as TabItem } from './display/Tabs/TabItem';
 export { TabsProps, TabItemProps } from './display/Tabs/props';
-
 
 export { default as Text } from './display/Text';
 export { TextProps } from './display/Text/props';
