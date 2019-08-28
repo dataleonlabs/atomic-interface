@@ -4,24 +4,24 @@ import { CodeEditorProps as Props } from './props'
 import { Field, FieldProps } from 'formik';
 import Control from '../../Control';
 import { StyledLabel } from './style';
-import monaco = require('monaco-editor');
+const monaco = require('monaco-editor');
 
 class CodeEditor extends React.PureComponent<Props> {
 
-  public static defaultProps: Partial<Props> = {    
+  public static defaultProps: Partial<Props> = {
     mode: 'javascript',
     theme: 'material',
     width: "800px",
     height: "400px",
     name: "codeeditor",
     label: "Code Editor",
-    colorScheme: "vs-dark"
+    colorScheme: "vs"
   }
 
   Editor: any = {};
   Node: any = {};
 
-  onChange = (newValue: string) => {
+  public onChange = (newValue: string) => {
     if (this.props.onChange) {
       this.props.onChange({
         name: this.props.name,
@@ -31,13 +31,26 @@ class CodeEditor extends React.PureComponent<Props> {
     }
   }
 
-  editorDidMount = (editor: any) => {
-    editor.focus();
+  public editorDidMount = (editor: any) => {
+    setTimeout(function () {
+      alert("hello");
+      editor.trigger('', 'editor.action.formatDocument');
+      //editor.getAction('editor.action.formatDocument').run();
+      editor.focus();
+    }, 300);
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     const { value, mode } = this.props;
-    const model = monaco.editor.createModel(typeof value == "string" && value || "", mode);
+
+    import('monaco-themes/themes/Eiffel.json')
+      .then(data => {
+        monaco.editor.defineTheme('eiffel', data);
+      })
+
+
+    const model = monaco.editor.createModel(typeof value === "string" && value || "", mode);
+
     this.Editor = monaco.editor.create(this.Node, {
       selectOnLineNumbers: true,
       automaticLayout: true,
@@ -47,7 +60,8 @@ class CodeEditor extends React.PureComponent<Props> {
       autoIndent: true,
       autoClosingQuotes: "always",
       scrollBeyondLastLine: false,
-      quickSuggestions: true,            
+      quickSuggestions: true,
+      editorDidMount: this.editorDidMount,
       minimap: {
         enabled: false,
       },
@@ -76,7 +90,7 @@ class CodeEditor extends React.PureComponent<Props> {
 
     const renderField = ({ field }: FieldProps<{}>) => (
       <React.Fragment>
-        <>          
+        <>
           {this.props.label && <StyledLabel>{this.props.label}</StyledLabel>}
           <div {...field} ref={c => this.Node = c} style={richTextStyle} />
         </>

@@ -16,17 +16,6 @@ storiesOf('Forms|RichText', module)
         </Form>
       </Col>
     </React.Fragment>
-  )).add('Example with ToolTip', () => (
-    <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>RichText</h4>
-        <Form>
-          {(_) => (
-            <RichText toolTip="This is sample ToolTip for label" name="richText" label="Label with ToolTip" />
-          )}
-        </Form>
-      </Col>
-    </React.Fragment>
   )).add('Example Read Only', () => (
     <React.Fragment>
       <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>

@@ -13,9 +13,12 @@ export const StyledContainer = styled.div`
     /** overwrite quill div class to disabled */
 export const StyledContainerDisabled = styled.div`
     margin-bottom: 15px;
-    .quill {pointer-events: none !important}`;
+    .quill {pointer-events: none !important; background-color: silver}
+    .ql-editor{
+        background-color: silver;
+    }`;
 
     /** overwrite quill toolbar div class to disabled */
 export const StyledContainerToolbarDisable = styled.div`
     margin-bottom: 15px;
-    .ql-toolbar {pointer-events: none !important}`;
+    .ql-toolbar {pointer-events: none !important; background-color: silver}`;
