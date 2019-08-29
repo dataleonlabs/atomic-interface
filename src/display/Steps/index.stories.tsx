@@ -6,6 +6,7 @@ import StepLink from './StepLink';
 import StepTitle from './StepTitle';
 import StepIcon from './StepIcon';
 import StepDesc from './StepDesc';
+import StepContent from './StepContent';
 import { Col } from 'reactstrap';
 import { Book, User, DollarSign } from 'react-feather';
 
@@ -73,28 +74,28 @@ storiesOf('UI Elements|Step', module)
           <StepItem state="complete">
             <StepLink>
               <StepIcon><Book size={18} /></StepIcon>
-              <div>
+              <StepContent>
                 <StepTitle>Personal Information</StepTitle>
                 <StepDesc>Enter your personal details.</StepDesc>
-              </div>
+              </StepContent>
             </StepLink>
           </StepItem>
           <StepItem state="active">
             <StepLink>
               <StepIcon><User size={18} /></StepIcon>
-              <div>
+              <StepContent>
                 <StepTitle>Account Information</StepTitle>
                 <StepDesc>Enter your account details.</StepDesc>
-              </div>
+              </StepContent>
             </StepLink>
           </StepItem>
           <StepItem>
             <StepLink>
               <StepIcon><DollarSign size={18} /></StepIcon>
-              <div>
+              <StepContent>
                 <StepTitle>Payment Information</StepTitle>
                 <StepDesc>Enter your credit card details.</StepDesc>
-              </div>
+              </StepContent>
             </StepLink>
           </StepItem>          
         </Step>
@@ -106,28 +107,28 @@ storiesOf('UI Elements|Step', module)
           <StepItem state="complete">
             <StepLink>
               <StepIcon><Book size={18} /></StepIcon>
-              <div>
+              <StepContent>
                 <StepTitle>Personal Information</StepTitle>
                 <StepDesc>Enter your personal details.</StepDesc>
-              </div>
+              </StepContent>
             </StepLink>
           </StepItem>
           <StepItem state="active">
             <StepLink>
               <StepIcon><User size={18} /></StepIcon>
-              <div>
+              <StepContent>
                 <StepTitle>Account Information</StepTitle>
                 <StepDesc>Enter your account details.</StepDesc>
-              </div>
+              </StepContent>
             </StepLink>
           </StepItem>
           <StepItem>
             <StepLink>
               <StepIcon><DollarSign size={18} /></StepIcon>
-              <div>
+              <StepContent>
                 <StepTitle>Payment Information</StepTitle>
                 <StepDesc>Enter your credit card details.</StepDesc>
-              </div>
+              </StepContent>
             </StepLink>
           </StepItem>
         </Step>

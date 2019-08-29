@@ -6,13 +6,15 @@ import StepLink from './StepLink';
 import StepTitle from './StepTitle';
 import StepIcon from './StepIcon';
 import StepDesc from './StepDesc';
+import StepContent from './StepContent';
 import {
   StyledStep,
   StyledStepItem,
   StyledStepLink,
   StyledStepTitle,
   StyledStepDesc,
-  StyledStepIcon
+  StyledStepIcon,
+  StyledStepContent
 } from './style'
 import { Book, User, DollarSign } from 'react-feather';
 
@@ -44,7 +46,7 @@ describe('<Step />', () => {
     expect(wrapper.find(StyledStepItem)).toHaveLength(3);
     expect(wrapper.find(StyledStepLink)).toHaveLength(3);
     expect(wrapper.find(StyledStepTitle)).toHaveLength(3);
-    expect(wrapper.find(StyledStepIcon)).toHaveLength(3);
+    expect(wrapper.find(StyledStepIcon)).toHaveLength(3);    
   })
 
   it('U-TEST-2 - Test Rendering With Description', () => {
@@ -53,28 +55,28 @@ describe('<Step />', () => {
         <StepItem state="complete">
           <StepLink>
             <StepIcon><Book size={18} /></StepIcon>
-            <div>
+            <StepContent>
               <StepTitle>Personal Information</StepTitle>
               <StepDesc>Enter your personal details.</StepDesc>
-            </div>
+            </StepContent>
           </StepLink>
         </StepItem>
         <StepItem state="active">
           <StepLink>
             <StepIcon><User size={18} /></StepIcon>
-            <div>
+            <StepContent>
               <StepTitle>Account Information</StepTitle>
               <StepDesc>Enter your account details.</StepDesc>
-            </div>
+            </StepContent>
           </StepLink>
         </StepItem>
         <StepItem>
           <StepLink>
             <StepIcon><DollarSign size={18} /></StepIcon>
-            <div>
+            <StepContent>
               <StepTitle>Payment Information</StepTitle>
               <StepDesc>Enter your credit card details.</StepDesc>
-            </div>
+            </StepContent>
           </StepLink>
         </StepItem>
       </Step>
@@ -85,5 +87,6 @@ describe('<Step />', () => {
     expect(wrapper.find(StyledStepTitle)).toHaveLength(3);
     expect(wrapper.find(StyledStepIcon)).toHaveLength(3);
     expect(wrapper.find(StyledStepDesc)).toHaveLength(3);
+    expect(wrapper.find(StyledStepContent)).toHaveLength(3);
   })
 })

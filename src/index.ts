@@ -52,6 +52,7 @@ export { default as StepTitle } from './display/Steps/StepTitle'
 export { default as StepDesc } from './display/Steps/StepDesc'
 export { default as StepIcon } from './display/Steps/StepIcon'
 export { default as StepNumber } from './display/Steps/StepNumber'
+export { default as StepContent } from './display/Steps/StepContent'
 export {
     StepProps,
     StepItemProps,
@@ -59,7 +60,8 @@ export {
     StepTitleProps,
     StepDescProps,
     StepIconProps,
-    StepNumberProps
+    StepNumberProps,
+    StepContentProps
 } from './display/Steps/props'
 
 

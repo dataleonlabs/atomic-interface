@@ -62,6 +62,10 @@ export const StyledStepLink = styled.a`
     }
   `;
 
+export const StyledStepContent = styled.div`
+  
+`;
+
 export const StyledStepNumber = styled.span`
     width: 32px;
     height: 32px;

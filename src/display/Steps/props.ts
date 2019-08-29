@@ -46,6 +46,12 @@ export interface StepIconProps {
     children?: JSX.Element | string;
 }
 
+export interface StepContentProps {
+
+    /** Children */
+    children?: string | JSX.Element[] | Element[] | JSX.Element | Element;
+}
+
 export interface StepLinkProps {
         
     /** Children */
