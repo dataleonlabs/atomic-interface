@@ -60,4 +60,7 @@ export interface InputProps extends InputPropsBase {
 
   /** Is required */
   required?: boolean
+
+  onChange?: any;  
+  
 }

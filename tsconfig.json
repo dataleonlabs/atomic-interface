@@ -22,12 +22,17 @@
     "noUnusedParameters": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "jsx": "react",
+    "paths": {
+      "*": [
+        "*"
+      ]
+    },
     "rootDirs": ["src"]
   },
   "include": [

@@ -47,4 +47,6 @@ export interface CodeEditorProps extends InputProps {
     /** pixel value for font-size */
     fontSize?: number
 
+    colorScheme?: "vs" | "vs-dark"
+
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormikConfig } from 'formik';
-import { QueryProps } from 'src/utils/Query/props';
+import { QueryProps } from '../utils/Query/props';
 
 
 /**
