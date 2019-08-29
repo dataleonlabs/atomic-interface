@@ -67,7 +67,7 @@ export const StyledSidebar = styled.div`
     cursor: pointer;
     margin-right: 0;
     padding-left: 1.95rem;
-    background: #D4E6F1
+    #background: #D4E6F1
   }
   .NavHeader {
     display: block;
@@ -83,7 +83,7 @@ export const StyledSidebar = styled.div`
   .brand-icon-close{
     position: absolute;
     border: 2px solid #007bff;
-    border-radius: 100%;
+    border-radius: 50%;
     background: white;
     color: grey !important;
     padding:2px;
@@ -92,7 +92,7 @@ export const StyledSidebar = styled.div`
   .brand-icon-open{
     position: absolute;
     border: 2px solid #007bff;
-    border-radius: 100%;
+    border-radius: 50%;
     background: white;
     color: grey !important;
     padding:2px;
@@ -100,7 +100,7 @@ export const StyledSidebar = styled.div`
   }
   .sideBarTransition{
     position: absolute;
-    background: #CACFD2;
+    #background: #CACFD2;
     width: inherit;
     height: 40px;
     padding: 3px;
@@ -111,7 +111,7 @@ export const StyledSidebar = styled.div`
     text-align:center !important;
   }
   &.sidebarContainer {
-    .SidebarNav .sidebar-item-text,.icon-nav-right {
+    .SidebarNav .sidebar-item-text,.icon-nav-right{
       display:none;
     }
     .navbar-brand {
@@ -123,6 +123,11 @@ export const StyledSidebar = styled.div`
       font-size: 0 !important;
       color: transparent !important;
       height: 49.58px;
+    }
+    .sc-cvbbAY rect {
+      width: 110px;
+      max-width: 400px;
+      min-width: auto;
     }
   }
 `;
