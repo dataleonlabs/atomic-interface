@@ -63,7 +63,7 @@ class ForgotPassword extends React.Component<Props, State> {
     /* istanbul ignore next  */ onCompleted() /* istanbul ignore next  */ {
       //
     },
-    //** setting validation messages default */
+    // ** setting validation messages default */
     validationMessageRequiredEmail: "Please enter email",
     validationmessageValidEmail: "Please enter valid email address",
     validationMessageRequiredCode: "Please enter code",
