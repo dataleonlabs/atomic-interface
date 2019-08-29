@@ -5,7 +5,7 @@ import { Button as ButtonBase, Spinner } from 'reactstrap';
 import { Info } from 'react-feather';
 
 describe('<Button />', () => {
-  it('U-TEST-1 - test button render disabled', () => {
+  it('U-TEST-1 button render disabled', () => {
     const wrapper = enzyme.mount(
       <>
         <Button>primary</Button>
@@ -15,7 +15,7 @@ describe('<Button />', () => {
     expect(wrapper.find(ButtonBase)).toHaveLength(2)
   })
 
-  it('U-TEST-2 - test button render with loading ', () => {
+  it('U-TEST-2 button render with loading ', () => {
     const wrapper = enzyme.mount(
       <Button loading={true}>primary</Button>
     )
@@ -24,7 +24,7 @@ describe('<Button />', () => {
     expect(wrapper.find(Spinner)).toHaveLength(1)
   })
 
-  it('U-TEST-3 - test button render with icon ', () => {
+  it('U-TEST-3 button render with icon ', () => {
     const wrapper = enzyme.mount(
       <Button icon={<Info size={18} />}>primary</Button>
     )

@@ -20,6 +20,12 @@ class Query extends React.Component<Props, Stats> {
     await this.fetch();
   }
 
+  public async componentDidUpdate(prevProps:Props) {
+    if (prevProps.reloadKey !== this.props.reloadKey) {
+    /* istanbul ignore next */ await this.fetch();
+    }
+  }
+
   public fetch = async () => {
     const { children, ...rest } = this.props;
 
@@ -48,11 +54,14 @@ class Query extends React.Component<Props, Stats> {
           this.setState({ contentRendered, onRendering: true });
         }
       }
-    } catch (error) {
-      if (typeof this.props.onError === 'function') {
+    } catch (error) /* istanbul ignore next */ {
+    /* istanbul ignore if */
+      if (/* istanbul ignore next */ typeof this.props.onError === 'function') {
+      /* istanbul ignore next */
         await this.props.onError(error && error.error ? error.error : error);
       }
 
+    /* istanbul ignore next */
       if (typeof children === 'function') {
         const contentRendered = children({ data: null, error: error && error.error ? error.error : error, onLoading: false, loaded: true });
         if (contentRendered) {

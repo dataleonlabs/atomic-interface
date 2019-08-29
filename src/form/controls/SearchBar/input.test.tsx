@@ -6,7 +6,7 @@ import Form from './../../index'
 
 describe('<SearchBar />', () => {
   
-  it('U-TEST-1 - test SearchBar render with addon', () => {
+  it('U-TEST-1 - Addon', () => {
     const wrapper = enzyme.mount(
       <div>
         <Form>

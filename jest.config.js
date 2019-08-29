@@ -30,7 +30,16 @@ module.exports = {
   ],
   moduleNameMapper: {
     "@/(.*)": "<rootDir>/src/$1",
-    "\\.(css)$": "jest-css-modules"
+    "\\.(css)$": "jest-css-modules",
+    "monaco-editor": "<rootDir>/node_modules/react-monaco-editor"
+  },
+  coverageThreshold: {
+    "global": {
+      "branches": 80,
+      "functions": 95,
+      "lines": 95,
+      "statements": 95
+    }
   },
   testEnvironment: "jsdom",
   globals: {

@@ -5,7 +5,7 @@ import { Spinner as StrapSpinner } from 'reactstrap';
 
 describe('<Spinner/>', () => {
 
-  it('U-TEST-1 - Spinner render', () => {
+  it('U-TEST-1 - Spinner', () => {
     const wrapper = enzyme.mount(
       <Spinner type="grow" color="primary" />
     );

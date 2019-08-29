@@ -5,7 +5,7 @@ import { CustomInput } from 'reactstrap';
 import Form from './../../index'
 
 describe('<Radio />', () => {
-  it('U-TEST-1 - test radio render with label', () => {
+  it('U-TEST-1 - Label', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
@@ -21,7 +21,7 @@ describe('<Radio />', () => {
     expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 
-  it('U-TEST-2 - test input render with disabled ', () => {
+  it('U-TEST-2 - Disabled ', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
@@ -33,7 +33,7 @@ describe('<Radio />', () => {
     expect(wrapper.find(CustomInput)).toHaveLength(1)
   })
 
-  it('U-TEST-3 - test render with tooltip beside label ', () => {
+  it('U-TEST-3 - Tooltip Beside Label ', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (

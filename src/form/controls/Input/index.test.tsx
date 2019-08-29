@@ -5,7 +5,7 @@ import { InputGroup, InputGroupAddon } from 'reactstrap';
 import Form from './../../index'
 
 describe('<Input />', () => {
-  it('U-TEST-1 - test input render with addon', () => {
+  it('U-TEST-1 - Addon', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
@@ -22,7 +22,7 @@ describe('<Input />', () => {
     expect(wrapper.find(InputGroupAddon)).toHaveLength(2)
   })
 
-  it('U-TEST-2 - test input render with addon left ', () => {
+  it('U-TEST-2 - Addon Left ', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
@@ -35,7 +35,7 @@ describe('<Input />', () => {
     expect(wrapper.find(InputGroupAddon)).toHaveLength(1)
   })
 
-  it('U-TEST-3 - test input render without addon ', () => {
+  it('U-TEST-3 - Addon ', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (

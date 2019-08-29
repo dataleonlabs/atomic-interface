@@ -7,6 +7,29 @@ image: node:10.1.0
 
 pipelines:
   branches:
+    AI-*:
+      - step:
+         deployment: test
+         caches:
+          - node
+         script: # Modify the commands below to build your repository.
+          - yarn run global
+          - yarn install
+          - mkdir -p .docs
+          - yarn lint
+          - yarn test:integration
+          - mkdir test-report
+          - mv test-report.html test-report/index.html
+          - apt-get update && apt-get install -y python-dev
+          - apt-get install -y python-dev
+          - curl -O https://bootstrap.pypa.io/get-pip.py
+          - python get-pip.py
+          - pip install awscli
+          - yarn build
+          - yarn build-storybook
+          - aws s3 sync --delete ./coverage s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/coverage --acl bucket-owner-full-control --acl public-read
+          - aws s3 sync --delete ./test-report s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/report --acl bucket-owner-full-control --acl public-read
+          - aws s3 sync --delete ./storybook-static s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/storybook --acl bucket-owner-full-control --acl public-read
     develop:
       - step:
          deployment: test
@@ -17,7 +40,7 @@ pipelines:
           - yarn install
           - mkdir -p .docs
           - yarn lint
-          - yarn test
+          - yarn test:integration
           - mkdir test-report
           - mv test-report.html test-report/index.html
           - apt-get update && apt-get install -y python-dev
@@ -26,8 +49,10 @@ pipelines:
           - python get-pip.py
           - pip install awscli
           - yarn build
-          - aws s3 sync --delete ./coverage s3://reports.qa.youngapp.co/uikit/coverage --acl bucket-owner-full-control --acl public-read
-          - aws s3 sync --delete ./test-report s3://reports.qa.youngapp.co/uikit/report --acl bucket-owner-full-control --acl public-read
+          - yarn build-storybook
+          - aws s3 sync --delete ./coverage s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/coverage --acl bucket-owner-full-control --acl public-read
+          - aws s3 sync --delete ./test-report s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/report --acl bucket-owner-full-control --acl public-read
+          - aws s3 sync --delete ./storybook-static s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/storybook --acl bucket-owner-full-control --acl public-read
     master:
       - step:
          deployment: production
@@ -37,16 +62,18 @@ pipelines:
           - yarn run global
           - yarn install
           - yarn lint
-          - yarn test
-          - apt-get update && apt-get install -y python-dev
-          - apt-get install -y python-dev
-          - curl -O https://bootstrap.pypa.io/get-pip.py
-          - python get-pip.py
-          - pip install awscli
+          - yarn test:integration
           - yarn build
-
-
-## Execute Ghost Inspector suite via API and store results in JSON file
-# curl "https://api.ghostinspector.com/v1/suites/$GHOST_SUITE_ID/execute/?apiKey=$GHOST_API_KEY" > ghostinspector.json
-## Check JSON results for failing tests
-# if [ $(grep -c '"passing":false' ghostinspector.json) -ne 0 ]; then false; else echo "Tests Passed"; fi
+          - yarn release
+          - printf "//`node -p \"require('url').parse(process.env.NPM_REGISTRY_URL || 'https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
+          - export NPM_TOKEN="2e54affd-eb69-4d58-b4ba-4dbe373410ba"
+          - 'echo "//registry.npmjs.org/:_authToken=2e54affd-eb69-4d58-b4ba-4dbe373410ba" > ~/.npmrc'
+          - npm publish
+          - git push --follow-tags origin master
+          - git fetch --unshallow
+          - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+          - git fetch origin
+          - git checkout --track origin/develop
+          - git merge --no-ff master
+          - git commit --amend -m "chore(release) - [skip ci]"
+          - git push origin develop
