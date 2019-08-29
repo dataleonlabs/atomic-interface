@@ -169,5 +169,9 @@ export {
     LoginProps
 } from './layout/Auth/props';
 
+// Layout/Auth/Forgot Password
+export { default as ForgotPassword } from './layout/Auth/ForgotPassword';
+export { ForgotPasswordProps } from './layout/Auth/props';
+
 // Order lib
 export { Container, Row, Col, CustomInput } from 'reactstrap';
