@@ -82,8 +82,8 @@ export { CheckboxProps, CheckboxCollectionProps } from './form/controls/Checkbox
 export { default as CodeEditor} from './form/controls/CodeEditor'
 export { CodeEditorProps } from './form/controls/CodeEditor/props'
 
-export { default as DatePicker} from './from/controls/DatePicker'
-export { DatePickerProps } from './form/controls/DatePicker/props'
+export { default as DatePicker } from './form/controls/DatePicker';
+export { DatePickerProps } from './form/controls/DatePicker/props';
 
 export { default as FilePicker } from './form/controls/FilePicker';
 export { FilePickerProps } from './form/controls/FilePicker/props';

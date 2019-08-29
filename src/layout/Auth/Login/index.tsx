@@ -9,7 +9,6 @@ import AWSCognito from '../../../utils/AuthProvider/AWSCongito/index';
 import * as Yup from 'yup';
 import { StyledFormContainer, StyledContainer } from './style';
 import { Col, Row } from 'reactstrap';
-import { Route } from 'react-router'
 
 interface State {
   // onConfirmSignIn: boolean
@@ -105,8 +104,7 @@ class Login extends React.Component<Props, State> {
     this.setValidation();
   }
 
-  navigateToforgotPassword = () => {
-    <Route to='/ForgotPassword' />
+  public navigateToforgotPassword = () => {
     this.setState({ forgotLinkError: true })
   }
 
@@ -211,7 +209,7 @@ class Login extends React.Component<Props, State> {
                             <Input {...this.props.password} name="password" type="password" />
                             {this.state.loginError === true && <Alert icon={true} color="danger">{this.props.messageWrongLogin}</Alert>}
                             <Button {...this.props.buttonLogin} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonLogin || /* istanbul ignore next  */ {}).children}</Button>
-                            {this.props.displayForgotlink === true && <NavLink {...this.props.buttonForgot} href="#" onClick={this.navigateToforgotPassword}>{this.props.buttonForgot.children}</NavLink>}
+                            {this.props.displayForgotlink === true && <NavLink {...this.props.buttonForgot} href="#" onClick={this.navigateToforgotPassword}>{(this.props.buttonForgot || ({} as any)).children}</NavLink>}
                             {this.state.forgotLinkError === true && <Alert icon={true} color="danger">This button works only in application. It needs component "ForgotPassword".</Alert>}
                           </>}
                         {this.state.status === "MFA" && /* istanbul ignore next  */

@@ -1,5 +1,5 @@
 import { ButtonProps } from "../form/controls/Button/props";
-import { InputProps } from "src/form/controls/Input/props";
+import { InputProps } from "../form/controls/Input/props";
 
 /**
  * Using form component

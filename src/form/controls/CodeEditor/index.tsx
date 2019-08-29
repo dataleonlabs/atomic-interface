@@ -4,7 +4,7 @@ import { CodeEditorProps as Props } from './props'
 import { Field, FieldProps } from 'formik';
 import Control from '../../Control';
 import { StyledLabel } from './style';
-const monaco = require('monaco-editor');
+import * as monaco from 'monaco-editor';
 
 class CodeEditor extends React.PureComponent<Props> {
 
@@ -32,7 +32,7 @@ class CodeEditor extends React.PureComponent<Props> {
   }
 
   public editorDidMount = (editor: any) => {
-    setTimeout(function () {
+    setTimeout(() => {
       alert("hello");      
       editor.getAction('editor.action.formatDocument').run();
       editor.focus();
@@ -44,7 +44,7 @@ class CodeEditor extends React.PureComponent<Props> {
 
     import('monaco-themes/themes/Eiffel.json')
       .then(data => {
-        monaco.editor.defineTheme('eiffel', data);
+        monaco.editor.defineTheme('eiffel', data as any);
       })
 
 
@@ -60,7 +60,7 @@ class CodeEditor extends React.PureComponent<Props> {
       autoClosingQuotes: "always",
       scrollBeyondLastLine: false,
       quickSuggestions: true,
-      editorDidMount: this.editorDidMount,
+      // editorDidMount: this.editorDidMount,
       minimap: {
         enabled: false,
       },

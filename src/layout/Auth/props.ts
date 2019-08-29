@@ -1,6 +1,6 @@
 import { ButtonProps } from "../../form/controls/Button/props";
-import { InputProps } from "src/form/controls/Input/props";
-import { NavLinkProps } from "src/navigation/Navbar/props";
+import { InputProps } from "../../form/controls/Input/props";
+import { NavLinkProps } from "../../navigation/Navbar/props";
 
 /**
  * Using form component

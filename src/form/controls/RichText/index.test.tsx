@@ -3,18 +3,26 @@ import * as enzyme from 'enzyme'
 import RichText from './index';
 import ReactQuill from 'react-quill'
 import Form from './../../index'
-import MutationObserver from 'react-mutation-observer';
+import { StyledContainerDisabled, StyledContainerToolbarDisable } from './style';
+require('./tests-utils/MutationObserver.js');
 
 describe('<RichText />', () => {
   it('U-TEST-1 - Test Example', () => {
+
+    (document as any).getSelection = () => {
+      return {
+        getRangeAt: function() {},
+        addRange: function () { }, 
+        removeAllRanges: () => { }
+      };
+    };
+
     const wrapper = enzyme.mount(
-      <MutationObserver>
-        <Form>
-          {(_) => (
-            <RichText name="richText" label="Enter Your Message" />
-          )}
-        </Form>
-      </MutationObserver>
+      <Form>
+        {(_) => (
+          <RichText name="richText" label="Enter Your Message" />
+        )}
+      </Form>
     )
     expect(wrapper.find(ReactQuill)).toHaveLength(1)
   })
@@ -28,7 +36,7 @@ describe('<RichText />', () => {
       </Form>
     )
     expect(wrapper.find(ReactQuill)).toHaveLength(1)
-    expect(wrapper.find(ReactQuill).get(0).props.disabled).toEqual(true)
+    expect(wrapper.find(StyledContainerDisabled)).toHaveLength(1)
   })
 
   it('U-TEST-3 - Test ReadOnly', () => {
@@ -52,7 +60,7 @@ describe('<RichText />', () => {
       </Form>
     )
     expect(wrapper.find(ReactQuill)).toHaveLength(1)
-    expect(wrapper.find(ReactQuill).get(0).props.toolbarDisable).toEqual(true)
+    expect(wrapper.find(StyledContainerToolbarDisable)).toHaveLength(1)
   })
 
   it('U-TEST-5 - Test Theme Bubble', () => {
