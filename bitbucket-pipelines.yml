@@ -6,8 +6,7 @@
 image: node:10.1.0
 
 pipelines:
-  branches:
-    develop:
+    default:
       - step:
          deployment: test
          caches:
@@ -27,9 +26,10 @@ pipelines:
           - pip install awscli
           - yarn build
           - yarn build-storybook
-          - aws s3 sync --delete ./coverage s3://reports.qa.youngapp.co/uikit/coverage --acl bucket-owner-full-control --acl public-read
-          - aws s3 sync --delete ./test-report s3://reports.qa.youngapp.co/uikit/report --acl bucket-owner-full-control --acl public-read
-          - aws s3 sync --delete ./storybook-static s3://reports.qa.youngapp.co/uikit/storybook --acl bucket-owner-full-control --acl public-read
+          - aws s3 sync --delete ./coverage s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/coverage --acl bucket-owner-full-control --acl public-read
+          - aws s3 sync --delete ./test-report s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/report --acl bucket-owner-full-control --acl public-read
+          - aws s3 sync --delete ./storybook-static s3://reports.qa.youngapp.co/uikit/$BITBUCKET_BRANCH/storybook --acl bucket-owner-full-control --acl public-read
+  branches:
     master:
       - step:
          deployment: production
