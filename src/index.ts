@@ -45,6 +45,26 @@ export { SpacerProps } from './display/Spacer/props'
 export { default as Spinner } from './display/Spinner';
 export { SpinnerProps } from './display/Spinner/props';
 
+export { default as Step } from './display/Steps'
+export { default as StepItem } from './display/Steps/StepItem'
+export { default as StepLink } from './display/Steps/StepLink'
+export { default as StepTitle } from './display/Steps/StepTitle'
+export { default as StepDesc } from './display/Steps/StepDesc'
+export { default as StepIcon } from './display/Steps/StepIcon'
+export { default as StepNumber } from './display/Steps/StepNumber'
+export { default as StepContent } from './display/Steps/StepContent'
+export {
+    StepProps,
+    StepItemProps,
+    StepLinkProps,
+    StepTitleProps,
+    StepDescProps,
+    StepIconProps,
+    StepNumberProps,
+    StepContentProps
+} from './display/Steps/props'
+
+
 export { default as Table } from './display/Table';
 export { default as TableColumn } from './display/Table/Column';
 export { default as TableCollection } from './display/Table/Collection';
@@ -79,11 +99,11 @@ export { default as Checkbox } from './form/controls/Checkbox';
 export { default as CheckBoxCollection } from './form/controls/Checkbox/Collection';
 export { CheckboxProps, CheckboxCollectionProps } from './form/controls/Checkbox/props';
 
-export { default as CodeEditor} from './form/controls/CodeEditor'
+export { default as CodeEditor } from './form/controls/CodeEditor'
 export { CodeEditorProps } from './form/controls/CodeEditor/props'
 
-export { default as DatePicker } from './form/controls/DatePicker';
-export { DatePickerProps } from './form/controls/DatePicker/props';
+export { default as DatePicker } from './form/controls/DatePicker'
+export { DatePickerProps } from './form/controls/DatePicker/props'
 
 export { default as FilePicker } from './form/controls/FilePicker';
 export { FilePickerProps } from './form/controls/FilePicker/props';
