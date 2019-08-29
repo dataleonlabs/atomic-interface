@@ -9,7 +9,6 @@ pipelines:
   branches:
     AI-*:
       - step:
-         deployment: test
          caches:
           - node
          script: # Modify the commands below to build your repository.
