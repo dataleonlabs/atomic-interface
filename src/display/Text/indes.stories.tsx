@@ -38,7 +38,7 @@ storiesOf('UI Elements|Text', module)
   .add('Help', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Disabled State</h4>
+        <h4>Text - Disabled State</h4>
         <br/>
         <p>Add <code>textStyle="help"</code> property to display the content with relevant font style.</p>
         <hr/>
@@ -46,6 +46,18 @@ storiesOf('UI Elements|Text', module)
         <hr/>
         <Text textStyle="help" capitalizeFirstLetter>
           this is demo of help textstyle
+        </Text>
+        <br/>
+        <Text type="date" format="DD MMM">
+          12-03-2014
+        </Text>
+        <br /> Time ago:
+        <Text type="ago">
+          12-03-2018
+        </Text>
+        <br /> Currency:
+        <Text type="currency" format="EUR">
+          12032018
         </Text>
         <br/>
         <br/>
@@ -56,31 +68,20 @@ storiesOf('UI Elements|Text', module)
 <Text textStyle="help" capitalizeFirstLetter>
   this is demo of help textstyle
 </Text>
+<br/>
+<Text type="date" format="DD MMM">
+          12-03-2014
+</Text>
+<br /> Time ago:
+<Text type="ago">
+  12-03-2018
+</Text>
+<br /> Currency:
+<Text type="currency" format="EUR">
+  12032018
+</Text>
           `}
         </pre>
-      </Col>
-    </React.Fragment>
-  ))
-  .add('With help block', () => (
-    <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Text</h4>
-
-        <Text textStyle="help" capitalizeFirstLetter>
-          this is demo of help textstyle with capitalizeFirstLetter
-       </Text>
-         Date:
-        <Text type="date" format="DD MMM">
-          12-03-2014
-       </Text>
-        <br /> Time ago:
-        <Text type="ago">
-          12-03-2018
-       </Text>
-        <br /> Currency:
-        <Text type="currency" format="EUR">
-          12032018
-       </Text>
       </Col>
     </React.Fragment>
   ))

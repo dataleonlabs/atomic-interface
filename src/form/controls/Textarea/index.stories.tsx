@@ -41,7 +41,7 @@ storiesOf('Forms|Textarea', module)
   )).add('Maximum Rows', () => (
     <React.Fragment>
       <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Maximum Rows</h4>
+        <h4>Textarea - Maximum Rows</h4>
         <br/>
         <p>Add <code>maxRows={`{10}`}</code> property to ristrict the textarea content.</p>
         <hr/>

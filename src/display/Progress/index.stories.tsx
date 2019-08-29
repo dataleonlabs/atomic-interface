@@ -38,7 +38,7 @@ storiesOf('UI Elements|Progress', module)
   .add('Labels', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Labels</h4>
+        <h4>Progress - Labels</h4>
         <br/>
         <p>Add labels to your progress bars by placing text within the <code>.progress-bar</code>.</p>
         <hr/>
@@ -64,7 +64,7 @@ storiesOf('UI Elements|Progress', module)
   .add('Height', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Height</h4>
+        <h4>Progress - Height</h4>
         <br/>
         <p>We only set a height value on the progress, so if you change that value the inner progress bar will automatically resize accordingly.</p>
         <hr/>
@@ -98,7 +98,7 @@ storiesOf('UI Elements|Progress', module)
   .add('Background', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Background</h4>
+        <h4>Progress - Background</h4>
         <br/>
         <p>Use background utility classes to change the appearance of individual progress bars.</p>
         <hr/>
@@ -156,7 +156,7 @@ storiesOf('UI Elements|Progress', module)
   .add('Multuiple Bars', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Multuiple Bars</h4>
+        <h4>Progress - Multuiple Bars</h4>
         <br/>
         <p>Include multiple progress bars in a progress component if you need.</p>
         <hr/>
@@ -190,7 +190,7 @@ storiesOf('UI Elements|Progress', module)
   .add('Striped', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Striped</h4>
+        <h4>Progress - Striped</h4>
         <br/>
         <p>Add <code>.progress-bar-striped</code> to any progress bar to apply a stripe via CSS gradient over the progress bar’s background color.</p>
         <hr/>

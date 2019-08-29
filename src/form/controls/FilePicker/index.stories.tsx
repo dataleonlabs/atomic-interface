@@ -4,11 +4,11 @@ import FilePicker from './index';
 import { Col } from 'reactstrap';
 import Form from './../../index'
 
-storiesOf('Forms|FilePicker', module)
-  .add('Basic File Browser', () => (
+storiesOf('Forms|File Browser', module)
+  .add('Basic Example', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Basic File Browser</h4>
+        <h4>File Browser - Basic Example</h4>
         <br/>
         <p>The file input is the most generaly of the bunch and requires additional JavaScript if you’d like to hook them up with functional Picture and selected file name text.</p>
         <hr/>
@@ -62,10 +62,10 @@ storiesOf('Forms|FilePicker', module)
           </pre>
       </Col>
     </React.Fragment>
-  )).add('Multiple File Browser', () => (
+  )).add('Multiple', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Multiple File Browser</h4>
+        <h4>File Browser - Multiple</h4>
         <br/>
         <p>Add property <code>multiple</code> to the FilePicker which will allow to select multiple files for upload.</p>
         <hr/>
@@ -113,10 +113,10 @@ storiesOf('Forms|FilePicker', module)
           </pre>
       </Col>
     </React.Fragment>
-  )).add('Disabled File Browser', () => (
+  )).add('Disabled', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Disabled File Browser</h4>
+        <h4>File Browser - Disabled</h4>
         <br/>
         <p>Add property <code>disabled</code> to the FilePicker which will disable the whole FilePicker element.</p>
         <hr/>
@@ -164,10 +164,10 @@ storiesOf('Forms|FilePicker', module)
           </pre>
       </Col>
     </React.Fragment>
-  )).add('File Browser with Tooltip', () => (
+  )).add('Tooltip', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>File Browser with Tooltip</h4>
+        <h4>File Browser - Tooltip</h4>
         <br/>
         <p>Add property <code>tooltip={`{'select picture'}`}</code> to the FilePicker which display the inside content on hovering the label.</p>
         <hr/>

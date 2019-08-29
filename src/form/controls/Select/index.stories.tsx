@@ -84,7 +84,7 @@ storiesOf('Forms|Select', module)
     return (
       <React.Fragment>
         <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
-          <h4>Grouped</h4>
+          <h4>Select - Grouped</h4>
           <br/>
           <p>Add <code>options={`{groupedOptions}`}</code> property in which <code>{`groupedOptions`}</code> contain an array of multiple object having different attributes defined.</p>
           <hr/>

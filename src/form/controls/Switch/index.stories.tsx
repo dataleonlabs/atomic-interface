@@ -48,7 +48,7 @@ storiesOf('Forms|Switch', module)
   )).add('Disabled', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Disabled</h4>
+        <h4>Switch - Disabled</h4>
         <br/>
         <p>Switches also support the disabled attribute just add <code>disabled={`{true}`}</code> property.</p>
         <hr/>

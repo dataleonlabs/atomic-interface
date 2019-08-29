@@ -47,7 +47,7 @@ storiesOf('Forms|Button', module)
   )).add('Outline Buttons', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Outline Buttons</h4>
+        <h4>Button - Outline Buttons</h4>
         <br/>
         <p>In need of a button, but not the hefty background colors they bring? Add element with the <code>outline</code> property ones to remove all background images and colors on any button.</p>
         <br/>
@@ -81,7 +81,7 @@ storiesOf('Forms|Button', module)
   )).add('Sizes', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Sizes</h4>
+      <h4>Button - Sizes</h4>
       <br/>
       <p>Button can have additional sizes like larger or smaller buttons.</p>
       <br/>
@@ -109,7 +109,7 @@ storiesOf('Forms|Button', module)
   )).add('Loading Buttons', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Loading Buttons</h4>
+      <h4>Button - Loading Buttons</h4>
       <br/>
       <p>Button can have additional loader along with the size property buttons.</p>
       <br/>
@@ -143,7 +143,7 @@ storiesOf('Forms|Button', module)
   )).add('Icon Buttons', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Icon Buttons</h4>
+      <h4>Button - Icon Buttons</h4>
       <br/>
       <p>Make icon buttons by adding only icon and add property <code>icon</code></p>
       <br/>
@@ -184,22 +184,54 @@ storiesOf('Forms|Button', module)
       </pre>
       </Col>
     </React.Fragment>
-  )).add('Test disabled', () => (
+  )).add('Disabled', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Button - Disabled</h4>
+        <br/>
+        <p>Make buttons look inactive by adding the disabled boolean attribute to any button element.</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <div>
           <div style={{ marginTop: 30 }}><Button disabled color="primary">primary</Button>{' '}</div>
         </div>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+        {`
+<div>
+  <div style={{ marginTop: 30 }}><Button disabled color="primary">primary</Button>{' '}</div>
+</div>
+        `}
+        </pre>
       </Col>
     </React.Fragment>
-  )).add('Test block', () => (
+  )).add('Block', () => (
     <React.Fragment>
-      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Button</h4>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Button - Block</h4>
+        <br/>
+        <p>Create block level buttons—those that span the full width of a parent</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <div>
           <div style={{ marginTop: 30 }}><Button block outline size color="primary">primary</Button>{' '}</div>
         </div>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <pre>
+        {`
+<div>
+  <div style={{ marginTop: 30 }}><Button block outline size color="primary">primary</Button>{' '}</div>
+</div>
+        `}
+        </pre>
       </Col>
     </React.Fragment>
   ));

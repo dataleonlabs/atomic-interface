@@ -6,7 +6,7 @@ import { CloudRain } from 'react-feather';
 import Form from '../../..';
 
 
-storiesOf('Forms|FilePicker', module)
+storiesOf('Forms|File Browser', module)
   .add('File Browser - AWS S3', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>

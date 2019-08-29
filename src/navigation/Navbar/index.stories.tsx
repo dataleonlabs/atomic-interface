@@ -61,7 +61,7 @@ storiesOf('Navigation|Navbar', module)
   )).add('Brand Content', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Brand Content</h4>
+        <h4>Navbar - Brand Content</h4>
         <br/>
         <p>The <code>NavbarBrand</code> can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.</p>
         <br/>
@@ -85,7 +85,7 @@ storiesOf('Navigation|Navbar', module)
   )).add('Nav Content', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Nav Content</h4>
+        <h4>Navbar - Nav Content</h4>
         <br/>
         <p>Add any of the below mentioned modifier classes to change the appearance of a badge.</p>
         <br/>
@@ -125,7 +125,7 @@ storiesOf('Navigation|Navbar', module)
   )).add('Form Content', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Form Content</h4>
+        <h4>Navbar - Form Content</h4>
         <br/>
         <p>Place various form controls and components within a navbar.</p>
         <br/>
@@ -146,6 +146,7 @@ storiesOf('Navigation|Navbar', module)
             </Form>
           </div>
         </Navbar>
+        <br/>
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
@@ -170,110 +171,280 @@ storiesOf('Navigation|Navbar', module)
         </pre>
       </Col>
     </React.Fragment>
-  )).add('With breadcrumb loading', () => (
+  )).add('Loading Breadcrumb', () => (
     <React.Fragment>
-      <Navbar>
-        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-        <Breadcrumb loading={true}>
-          <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
-          <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
-          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-        </Breadcrumb>
-        <Nav>
-          <NavItem>
-            <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href={"http://google.com"}>Google</NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Navbar - Loading Breadcrumb</h4>
+        <br/>
+        <p>Place loading bradcrumb inside navigation bar.</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Navbar>
+          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <Breadcrumb loading={true}>
+            <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+            <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          <Nav>
+            <NavItem>
+              <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={"http://google.com"}>Google</NavLink>
+            </NavItem>
+          </Nav>
+        </Navbar>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <pre>
+          {`
+<Navbar>
+  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+  <Breadcrumb loading={true}>
+    <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+    <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+  </Breadcrumb>
+  <Nav>
+    <NavItem>
+      <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+    </NavItem>
+    <NavItem>
+      <NavLink href={"http://google.com"}>Google</NavLink>
+    </NavItem>
+  </Nav>
+</Navbar>
+          `}
+        </pre>
+      </Col>
     </React.Fragment>
-  )).add('With bredcrumb', () => (
+  )).add('Bredcrumb', () => (
     <React.Fragment>
-      <Navbar>
-        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-        <Breadcrumb>
-          <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
-          <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
-          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-        </Breadcrumb>
-        <Nav>
-          <NavItem>
-            <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href={"http://google.com"}>Google</NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Navbar - Breadcrumb</h4>
+        <br/>
+        <p>Place bradcrumb inside navigation bar.</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Navbar>
+          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <Breadcrumb>
+            <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+            <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          <Nav>
+            <NavItem>
+              <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={"http://google.com"}>Google</NavLink>
+            </NavItem>
+          </Nav>
+        </Navbar>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <pre>
+          {`
+<Navbar>
+  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+  <Breadcrumb>
+    <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+    <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+  </Breadcrumb>
+  <Nav>
+    <NavItem>
+      <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+    </NavItem>
+    <NavItem>
+      <NavLink href={"http://google.com"}>Google</NavLink>
+    </NavItem>
+  </Nav>
+</Navbar>
+          `}
+        </pre>
+      </Col>
     </React.Fragment>
-  )).add('With buttons rights', () => (
+  )).add('Button Right', () => (
     <React.Fragment>
-      <Navbar>
-        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-        <Breadcrumb>
-          <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
-          <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
-          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-        </Breadcrumb>
-        <Nav>
-          <NavItem>
-            <Button icon={<User size={18} />} color="primary">Add user</Button>
-          </NavItem>
-          <NavItem>
-            <Button icon={<Save size={18} />} color="warning">Save</Button>
-          </NavItem>
-        </Nav>
-      </Navbar>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Navbar - Button Right</h4>
+        <br/>
+        <p>Place one or more buttons and set its position to right inside the navigation bar.</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Navbar>
+          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <Breadcrumb>
+            <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+            <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          <Nav>
+            <NavItem>
+              <Button icon={<User size={18} />} color="primary">Add user</Button>
+            </NavItem>
+            <NavItem>
+              <Button icon={<Save size={18} />} color="warning">Save</Button>
+            </NavItem>
+          </Nav>
+        </Navbar>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <pre>
+          {`
+<Navbar>
+  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+  <Breadcrumb>
+    <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+    <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+  </Breadcrumb>
+  <Nav>
+    <NavItem>
+      <Button icon={<User size={18} />} color="primary">Add user</Button>
+    </NavItem>
+    <NavItem>
+      <Button icon={<Save size={18} />} color="warning">Save</Button>
+    </NavItem>
+  </Nav>
+</Navbar>
+          `}
+        </pre>
+      </Col>
     </React.Fragment>
-  )).add('Test Navbar With search bar', () => (
+  )).add('Search', () => (
     <React.Fragment>
-      <Navbar>
-        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-        <div style={{ width: '100%' }}>
-          <Form>
-            {(props) => (
-              <SearchBar
-                navBar={true}
-                name={'search'}
-                width={500}
-                placeholder={'Enter keyword search all products in catalog'}
-              />
-            )}
-          </Form>
-        </div>
-        <Nav>
-          <NavItem>
-            <NavLink><Users size={24} /></NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href={"http://google.com"}>Google</NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Navbar - Search</h4>
+        <br/>
+        <p>Place search elements inside the navigation bar.</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Navbar>
+          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <div style={{ width: '100%' }}>
+            <Form>
+              {(props) => (
+                <SearchBar
+                  navBar={true}
+                  name={'search'}
+                  width={500}
+                  placeholder={'Enter keyword search all products in catalog'}
+                />
+              )}
+            </Form>
+          </div>
+          <Nav>
+            <NavItem>
+              <NavLink><Users size={24} /></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={"http://google.com"}>Google</NavLink>
+            </NavItem>
+          </Nav>
+        </Navbar>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <pre>
+          {`
+<Navbar>
+<NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+<div style={{ width: '100%' }}>
+  <Form>
+    {(props) => (
+      <SearchBar
+        navBar={true}
+        name={'search'}
+        width={500}
+        placeholder={'Enter keyword search all products in catalog'}
+      />
+    )}
+  </Form>
+</div>
+<Nav>
+  <NavItem>
+    <NavLink><Users size={24} /></NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink href={"http://google.com"}>Google</NavLink>
+  </NavItem>
+</Nav>
+</Navbar>
+          `}
+        </pre>
+      </Col>
     </React.Fragment>
-  )).add('Test Navbar With big size', () => (
+  )).add('Size', () => (
     <React.Fragment>
-      <Navbar size="lg">
-        <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-        <Breadcrumb>
-          <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
-          <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
-          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-        </Breadcrumb>
-        <Nav>
-          <NavItem>
-            <Button icon={<User size={18} />} color="primary">Add user</Button>
-          </NavItem>
-          <NavItem>
-            <Button icon={<Save size={18} />} color="warning">Save</Button>
-          </NavItem>
-        </Nav>
-      </Navbar>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Navbar - Size</h4>
+        <br/>
+        <p>Add <code>size={`"lg"`}</code> property to apply the size relevant styling to navbar elements.</p>
+        <br/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Navbar size="lg">
+          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <Breadcrumb>
+            <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+            <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          <Nav>
+            <NavItem>
+              <Button icon={<User size={18} />} color="primary">Add user</Button>
+            </NavItem>
+            <NavItem>
+              <Button icon={<Save size={18} />} color="warning">Save</Button>
+            </NavItem>
+          </Nav>
+        </Navbar>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <pre>
+          {`
+<Navbar size="lg">
+  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+  <Breadcrumb>
+    <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
+    <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
+    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+  </Breadcrumb>
+  <Nav>
+    <NavItem>
+      <Button icon={<User size={18} />} color="primary">Add user</Button>
+    </NavItem>
+    <NavItem>
+      <Button icon={<Save size={18} />} color="warning">Save</Button>
+    </NavItem>
+  </Nav>
+</Navbar>
+          `}
+        </pre>
+      </Col>
     </React.Fragment>
   ));
 
