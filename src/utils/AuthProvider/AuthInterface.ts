@@ -42,4 +42,18 @@ export default interface AuthInterface {
      * follow https://aws-amplify.github.io/docs/js/authentication#sign-out
      */
     signOut: () => void;
+
+    /** 
+     * forgot Password
+     */
+    forgotPassword: (p: { username: string }) => false | object;
+
+    /**
+     * forgot password submit
+     */
+    forgotPasswordSubmit: (p: {
+        username: string, // the username/email
+        code: string, // the verification code
+        newPassword: string, // the new password
+    }) => false | object;
 }

@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.9.0...v1.10.0) (2019-08-27)
+
+
+### Bug Fixes
+
+* add comment on testcase U-TEST-2 - Test login ([47ebf07](https://bitbucket.org/youngapp/ui-kit/commit/47ebf07))
+
+## [1.9.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.8.0...v1.9.0) (2019-08-26)
+
+
+### Bug Fixes
+
+* query icon ([93953a4](https://bitbucket.org/youngapp/ui-kit/commit/93953a4))
+* query icon ([210c2c7](https://bitbucket.org/youngapp/ui-kit/commit/210c2c7))
+* query icon ([85cda7c](https://bitbucket.org/youngapp/ui-kit/commit/85cda7c))
+* update code ([cb013c1](https://bitbucket.org/youngapp/ui-kit/commit/cb013c1))
+* update code ([776733a](https://bitbucket.org/youngapp/ui-kit/commit/776733a))
+* update code ([f2a4f10](https://bitbucket.org/youngapp/ui-kit/commit/f2a4f10))
+* update code ([8fb1a07](https://bitbucket.org/youngapp/ui-kit/commit/8fb1a07))
+* update code ([df3c7b0](https://bitbucket.org/youngapp/ui-kit/commit/df3c7b0))
+* update code ([1374276](https://bitbucket.org/youngapp/ui-kit/commit/1374276))
+
+
+### Features
+
+* add loading ([e42ee5d](https://bitbucket.org/youngapp/ui-kit/commit/e42ee5d))
+* add login and sign confirm ([3b08e46](https://bitbucket.org/youngapp/ui-kit/commit/3b08e46))
+* confirm sign in in Layout/Auth ([6092d6d](https://bitbucket.org/youngapp/ui-kit/commit/6092d6d))
+* fix input icon ([05d7c3b](https://bitbucket.org/youngapp/ui-kit/commit/05d7c3b))
+* layout data ([a468859](https://bitbucket.org/youngapp/ui-kit/commit/a468859))
+* table update stories ([3aa6a6f](https://bitbucket.org/youngapp/ui-kit/commit/3aa6a6f))
+
 ## [1.8.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.7.0...v1.8.0) (2019-08-24)
 
 ## [1.7.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.6.0...v1.7.0) (2019-08-24)

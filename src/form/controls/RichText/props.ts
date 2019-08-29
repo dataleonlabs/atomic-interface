@@ -7,5 +7,18 @@ import { InputProps } from '../Input/props';
  */
 
 export interface RichTextProps extends InputProps {
+    /** Editor content */
+    value?: string
 
+    /** set editor to be accessible or not */
+    disabled?: boolean
+
+    /** set toolbar to accessible or not */
+    toolbarDisable?: boolean
+
+    /** set RichText theme */
+    theme?: "snow" | "bubble"    
+
+    /** Function invoked when value is changed by the user  */
+    onChange?: ({ name, value }: { name: string; value: string }) => void
 }

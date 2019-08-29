@@ -6,8 +6,8 @@ import Footer from '../components/Footer';
 import HeaderTitle from '../components/Header/Title';
 import HeaderSubTitle from '../components/Header/SubTitle';
 
-storiesOf('Layout|Auth', module)
-  .add('Login', () => (
+storiesOf('Layout|Login', module)
+  .add('Example', () => (
     <React.Fragment>
       <Login
         provider={{
