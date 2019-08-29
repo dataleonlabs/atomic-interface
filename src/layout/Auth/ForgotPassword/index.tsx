@@ -62,7 +62,15 @@ class ForgotPassword extends React.Component<Props, State> {
     messageNewPasswordError: "Invalid verification code provided, please try again.",
     /* istanbul ignore next  */ onCompleted() /* istanbul ignore next  */ {
       //
-    }
+    },
+    //** setting validation messages default */
+    validationMessageRequiredEmail: "Please enter email",
+    validationmessageValidEmail: "Please enter valid email address",
+    validationMessageRequiredCode: "Please enter code",
+    validationMessageRequiredNewPassword: "Please enter new password",
+    validationMessageValidNewPassword: "Must contain minimum 6 characters, atleast contains one uppercase, one lowercase, one number and one special case character from '!@#$%^&*'",
+    validationMessageRequiredConfirmPassword: "Please enter confirm password",
+    validationMessageValidConfirmPassword: "Passwords does not match"
   }
 
   public state = {
@@ -83,23 +91,23 @@ class ForgotPassword extends React.Component<Props, State> {
       this.setState({
         validationSchema: Yup.object().shape({
           email: Yup.string()
-            .email('Please enter valid email address')
-            .required('Please enter email')
+            .email(this.props.validationmessageValidEmail)
+            .required(this.props.validationMessageRequiredEmail)
         })
       })
     } /* istanbul ignore next  */ else if (this.state.mode === "NEW_PASSWORD") /* istanbul ignore next  */ {
       this.setState({
         validationSchema: Yup.object().shape({
           code: Yup.string()
-            .required('Please enter code'),
+            .required(this.props.validationMessageRequiredCode),
           newPassword: Yup.string()
-            .required('Please enter new password')
+            .required(this.props.validationMessageRequiredNewPassword)
             .matches(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})"),
-              "Must contain minimum 6 characters, atleast contains one uppercase, one lowercase, one number and one special case character from '!@#$%^&*'"
+              this.props.validationMessageValidNewPassword
             ),
           confirmPassword: Yup.string()
-            .required('Please enter confirm password')
-            .oneOf([Yup.ref('newPassword')], 'Passwords must match')
+            .required(this.props.validationMessageRequiredConfirmPassword)
+            .oneOf([Yup.ref('newPassword')], this.props.validationMessageValidConfirmPassword)
         })
       })
     }
