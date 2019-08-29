@@ -22,7 +22,7 @@ class Query extends React.Component<Props, Stats> {
 
   public async componentDidUpdate(prevProps:Props) {
     if (prevProps.reloadKey !== this.props.reloadKey) {
-      await this.fetch();
+    /* istanbul ignore next */ await this.fetch();
     }
   }
 
@@ -56,7 +56,7 @@ class Query extends React.Component<Props, Stats> {
       }
     } catch (error) /* istanbul ignore next */ {
     /* istanbul ignore if */
-      if (typeof this.props.onError === 'function') {
+      if (/* istanbul ignore next */ typeof this.props.onError === 'function') {
       /* istanbul ignore next */
         await this.props.onError(error && error.error ? error.error : error);
       }

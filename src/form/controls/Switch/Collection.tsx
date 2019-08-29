@@ -11,7 +11,7 @@ const Collection = (props: Props) => {
 
   const [loading, setLoading] = useState(false)
   const [value, setValue] = useState(false)
-  const { children, ...rest } = props;
+  const { children, apiKey, apiUrl, fieldId, fieldUpdate, onLoading, onLoaded, ...rest } = props;
 
   useEffect(() => {
     loadValue();
@@ -69,11 +69,11 @@ const Collection = (props: Props) => {
   return (
     <Control {...props} label={undefined} type="text">
       <CustomInput
-        {...props}
+        {...rest}
         id={props.name}
-        loading={loading}
+        loading={String(loading)}
         onClick={onClick}
-        checked={value}
+        defaultChecked={value || false}
         type='switch'
       />
       <>{children}</>

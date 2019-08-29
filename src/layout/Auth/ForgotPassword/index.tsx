@@ -164,7 +164,7 @@ class ForgotPassword extends React.Component<Props, State> {
                         {(this.state.mode === "EMAIL" || /* istanbul ignore next  */ this.state.mode === null) &&
                           <>
                             <Input {...this.props.email} name="email" type="text" />
-                            {this.state.validationError === true && <Alert icon={true} color="danger">{this.props.messageWrongEmail}</Alert>}
+                          {this.state.validationError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">{this.props.messageWrongEmail}</Alert>}
                             <Button {...this.props.buttonRecoverPassword} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonRecoverPassword || /* istanbul ignore next  */ {}).children}</Button>
                           </>}
                         {this.state.mode === "NEW_PASSWORD" && /* istanbul ignore next  */
