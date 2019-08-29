@@ -43,7 +43,7 @@ describe('<Step />', () => {
       </Step>
     )
     expect(wrapper.find(StyledStep)).toHaveLength(1);
-    expect(wrapper.find(StyledStepItem)).toHaveLength(3);
+    expect(wrapper.find(StyledStepItem)).toHaveLength(1);
     expect(wrapper.find(StyledStepLink)).toHaveLength(3);
     expect(wrapper.find(StyledStepTitle)).toHaveLength(3);
     expect(wrapper.find(StyledStepIcon)).toHaveLength(3);    
@@ -82,7 +82,7 @@ describe('<Step />', () => {
       </Step>
     )
     expect(wrapper.find(StyledStep)).toHaveLength(1);
-    expect(wrapper.find(StyledStepItem)).toHaveLength(3);
+    expect(wrapper.find(StyledStepItem)).toHaveLength(1);
     expect(wrapper.find(StyledStepLink)).toHaveLength(3);
     expect(wrapper.find(StyledStepTitle)).toHaveLength(3);
     expect(wrapper.find(StyledStepIcon)).toHaveLength(3);
