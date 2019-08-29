@@ -67,7 +67,7 @@ storiesOf('UI Elements|DropDown', module)
   .add('DropDown Divider', () => (
     <React.Fragment>
         <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-          <h4>DropDown Divider</h4>
+          <h4>DropDown - Divider</h4>
           <br/>
           <p>Separate groups of related menu items with a divider.</p>
           <br/>

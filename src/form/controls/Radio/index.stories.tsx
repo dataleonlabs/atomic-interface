@@ -48,7 +48,7 @@ storiesOf('Forms|Radio', module)
   )).add('Disabled', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Disabled</h4>
+        <h4>Radio - Disabled</h4>
         <br/>
         <p>Add <code>disabled={`{true}`}</code> property.</p>
         <hr/>

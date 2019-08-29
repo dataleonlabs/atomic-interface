@@ -43,7 +43,7 @@ storiesOf('UI Elements|Tabs', module)
   .add('Disabled State', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Disabled State</h4>
+        <h4>Tabs - Disabled State</h4>
         <br/>
         <p>The basic tab component with some item is set to disabled.</p>
         <hr/>

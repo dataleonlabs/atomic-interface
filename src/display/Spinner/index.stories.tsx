@@ -34,7 +34,7 @@ storiesOf('UI Elements|Spinner', module)
   .add('Border Colors', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Border Colors</h4>
+        <h4>Spinner - Border Colors</h4>
         <br/>
         <p>You can use any of our text color utilities on the standard spinner.</p>
         <hr/>
@@ -70,7 +70,7 @@ storiesOf('UI Elements|Spinner', module)
   .add('Growing Spinners', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Growing Spinners</h4>
+        <h4>Spinner - Growing Spinners</h4>
         <br/>
         <p>If you don’t fancy a border spinner, switch to the grow spinner. While it doesn’t technically spin, it does repeatedly grow!</p>
         <hr/>

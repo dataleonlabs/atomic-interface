@@ -49,7 +49,7 @@ storiesOf('Forms|SearchBar', module)
   )).add('Navbar', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Navbar</h4>
+        <h4>SearchBar - Navbar</h4>
         <br/>
         <p>Add <code>navBar={`{true}`}</code> property to display the search element inside the navigation panel.</p>
         <hr/>

@@ -126,7 +126,7 @@ storiesOf('Forms|Form', module)
   )).add('Validation', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Validation</h4>
+        <h4>Form - Validation</h4>
         <br/>
         <p>Add <code>validationSchema</code> property. It helps with feedback on their form submission before sending it to server.</p>
         <hr/>
@@ -215,7 +215,7 @@ storiesOf('Forms|Form', module)
   )).add('Select Field', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Select Field</h4>
+        <h4>Form - Select Field</h4>
         <br/>
         <p>Custom select menus need only a select element with meaningful label and content as an option property.</p>
         <hr/>

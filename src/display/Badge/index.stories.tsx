@@ -47,7 +47,7 @@ storiesOf('UI Elements|Badge', module)
   .add('Pill Badges', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Pill Badges</h4>
+      <h4>Badge - Pill Badges</h4>
       <br/>
       <p>Use the <code>pill</code> property to make badges more rounded.</p>
       <br/>

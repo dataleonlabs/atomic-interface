@@ -20,17 +20,53 @@ class PopoverExample extends React.Component<{ placement?: Popper.Placement }> {
           <hr/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <span>
+          <span style={{marginRight: 30}}>
             <Button color="secondary" id={'Popover-'} type="button">
               show
             </Button>
             <Popover
-              placement={this.props.placement}
+              placement="right"
               target={'Popover-'}
               header='Popover Title'
             >
               Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-        </Popover>
+            </Popover>
+          </span>
+          <span style={{marginRight: 30}}>
+            <Button color="secondary" id={'Popover-3'} type="button">
+              show
+            </Button>
+            <Popover
+              placement="bottom"
+              target={'Popover-3'}
+              header='Popover Title'
+            >
+              Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+            </Popover>
+          </span>
+          <span style={{marginRight: 30}}>
+            <Button color="secondary" id={'Popover-4'} type="button">
+              show
+            </Button>
+            <Popover
+              placement="top"
+              target={'Popover-4'}
+              header='Popover Title'
+            >
+              Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+            </Popover>
+          </span>
+          <span style={{marginRight: 30}}>
+            <Button color="secondary" id={'Popover-2'} type="button">
+              show
+            </Button>
+            <Popover
+              placement="left"
+              target={'Popover-2'}
+              header='Popover Title'
+            >
+              Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+            </Popover>
           </span>
           <br/>
           <br/>
@@ -38,13 +74,49 @@ class PopoverExample extends React.Component<{ placement?: Popper.Placement }> {
           <hr/>
           <pre>
           {`
-<span>
+<span style={{marginRight: 30}}>
   <Button color="secondary" id={'Popover-'} type="button">
     show
   </Button>
   <Popover
-    placement={this.props.placement}
+    placement="right"
     target={'Popover-'}
+    header='Popover Title'
+  >
+    Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+  </Popover>
+</span>
+<span style={{marginRight: 30}}>
+  <Button color="secondary" id={'Popover-3'} type="button">
+    show
+  </Button>
+  <Popover
+    placement="bottom"
+    target={'Popover-3'}
+    header='Popover Title'
+  >
+    Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+  </Popover>
+</span>
+<span style={{marginRight: 30}}>
+  <Button color="secondary" id={'Popover-4'} type="button">
+    show
+  </Button>
+  <Popover
+    placement="top"
+    target={'Popover-4'}
+    header='Popover Title'
+  >
+    Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+  </Popover>
+</span>
+<span style={{marginRight: 30}}>
+  <Button color="secondary" id={'Popover-2'} type="button">
+    show
+  </Button>
+  <Popover
+    placement="left"
+    target={'Popover-2'}
     header='Popover Title'
   >
     Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
