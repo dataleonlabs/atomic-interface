@@ -23,10 +23,12 @@ class DatePicker extends React.PureComponent<Props> {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-  public handleChange(date: Date) {
+  /* istanbul ignore next */
+  public handleChange(date: Date) /* istanbul ignore next */ {
     this.setState({
       startDate: date
     });
+  /* istanbul ignore next */
     this.handleChange = this.handleChange.bind(this);
   }
   public render() {

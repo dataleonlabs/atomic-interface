@@ -6,16 +6,20 @@ export const StyledSpacer = styled.div<{ size: Props['size'] }>`
   display: block;
   background: transparent;
   height: ${({ size }) => {
-      if (size === 'sm') {
+    /* istanbul ignore next */
+      if (size === 'sm') /* istanbul ignore next */ {
         return '15px'
       }
-      if (size === 'md') {
+      /* istanbul ignore next */
+      if (size === 'md') /* istanbul ignore next */ {
         return '30px'
       }
-      if (size === 'lg') {
+      /* istanbul ignore next */
+      if (size === 'lg') /* istanbul ignore next */ {
         return '60px'
       }
-      if (size === 'xlg') {
+      /* istanbul ignore next */
+      if (size === 'xlg') /* istanbul ignore next */ {
         return '100px'
       }
     }}

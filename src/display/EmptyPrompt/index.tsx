@@ -2,10 +2,10 @@ import React from 'react';
 import { EmptyPromptProps as Props } from './props';
 import { StyledEmptyPrompts, StyledContainer } from './style';
 import { Col, Row } from 'reactstrap';
+
 /**
  * EmptyPrompt
  */
-
 const EmptyPrompt = (props: Props) => (
   <StyledContainer fluid={true}>
     <Row>
