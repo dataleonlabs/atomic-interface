@@ -7,8 +7,8 @@ import HeaderTitle from '../components/Header/Title';
 import HeaderSubTitle from '../components/Header/SubTitle';
 import { Col } from 'reactstrap';
 
-storiesOf('Layout|Auth', module)
-  .add('Login', () => (
+storiesOf('Layout|Login', module)
+  .add('Example', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
         <h2>Layout</h2>
