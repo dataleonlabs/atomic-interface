@@ -5,7 +5,7 @@ import Form from '../../..';
 import { CloudRain } from 'react-feather';
 
 describe('<FilePickerS3 />', () => {
-  it('U-TEST-1 - test filepicker render with d  disabled', () => {
+  it('U-TEST-1 filepicker render with d  disabled', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (

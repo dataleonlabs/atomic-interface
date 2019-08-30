@@ -32,6 +32,14 @@ module.exports = {
     "@/(.*)": "<rootDir>/src/$1",
     "\\.(css)$": "jest-css-modules"
   },
+  coverageThreshold: {
+    "global": {
+      "branches": 75,
+      "functions": 90,
+      "lines": 90,
+      "statements": 90
+    }
+  },
   testEnvironment: "jsdom",
   globals: {
     "ts-jest": {

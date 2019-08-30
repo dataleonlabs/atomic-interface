@@ -18,8 +18,8 @@ const Textarea = (props: Props) => {
       placeholder={String(props.placeholder || '')}
       {...field}
     />
-      {submitCount > 0 && (errors[props.name] ? true : false)
-        && <FormText color="danger">{errors[props.name]}</FormText>
+      {submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
+        && /* istanbul ignore next  */ <FormText color="danger">{errors[props.name]}</FormText>
       }
     </>
   );

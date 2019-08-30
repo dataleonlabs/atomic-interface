@@ -6,7 +6,7 @@ import Column from './Column'
 const gb = global as any;
 
 describe('<TableCollection />', () => {
-  it('U-TEST-1 - test simple table', () => {
+  it('U-TEST-1 - Simple table', () => {
 
     gb.fetch = jest.fn().mockImplementation(() => {
       return new Promise((resolve, _) => {

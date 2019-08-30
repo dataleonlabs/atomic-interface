@@ -1,51 +1,31 @@
 
 import styled from 'styled-components'
-const { Row, Cell, HeaderRow } = require('@zendeskgarden/react-tables');
 
-export const DraggableRow = styled(Row)`
-  border-bottom: 1px solid #f6f6f6;
-  ${props =>
-    props.isDraggingOver
-    ?  /* istanbul ignore next */ `
-    :hover {
-      background-color: inherit !important;
-    }
-
-    &:focus > div:first-child {
-    box-shadow: inset 3px 0 0 0 #007bff!important;
-    }
-  `
-      : ''};
-`;
-
-export const DraggableCell = styled(Cell)`
-  ${props =>
-    props.isDragging
-    ?  /* istanbul ignore next */ `
-    display: inline-block !important;
-  `
-      : ''};
-`;
-
-export const DraggableContainer = styled.div`
-  :focus {
-    outline: none;
+export const StyledTable = styled.div<any>`
+  .table thead th {
+    ${props => props.hideHeader ? 'display: none' : ''};
+    /* border-top-color: transparent!important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important; */
   }
-`;
 
-export const StyledNoContent = styled.div`
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-`;
-
-export const StyledRow = styled(Row)`
-  border-bottom: 1px solid #f5f5f5!important;
-  &:focus > div:first-child {
-    box-shadow: inset 3px 0 0 0 #007bff!important;
+  .card-header:first-child {
+    border-radius: 0!important;
+    border-bottom: #fff;
+    margin-bottom: 30px;
   }
-`;
 
-export const StyledHeaderRow = styled(HeaderRow)`
-  border-bottom: 2px solid #f1f1f1!important;
+  .card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+    border-top: solid 2px rgba(0,0,0,.03);
+    background-color: #fff;
+  }
+
+  .d-flex.ml-auto {
+    display: none!important;
+  }
+
+  .Toolbar-custom {
+    margin-left: 15px;
+  }
 `;

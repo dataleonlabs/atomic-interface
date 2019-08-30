@@ -14,7 +14,7 @@ import BrandIcon from './BrandIcon';
 
 
 describe('<Sidebar />', () => {
-  it('U-TEST-1 - rendering sidebar', () => {
+  it('U-TEST-1 - Sidebar', () => {
     const wrapper = enzyme.mount(
       <Sidebar>
         <Brand href="/">reactstrap</Brand>
@@ -65,7 +65,7 @@ describe('<Sidebar />', () => {
 
   })
   
-  it('U-TEST-2 - rendering sidebar with group', () => {
+  it('U-TEST-2 - Group', () => {
     const wrapper = enzyme.mount(
       <Sidebar>
         <Brand href="/">reactstrap</Brand>

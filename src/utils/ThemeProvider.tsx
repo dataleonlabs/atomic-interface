@@ -1,6 +1,7 @@
 import React from 'react';
-import { css, createGlobalStyle, ThemeProvider as ThemeProviderBase } from 'styled-components';
-const bootstrap = require('bootstrap/dist/css/bootstrap.min.css');
+import { createGlobalStyle, ThemeProvider as ThemeProviderBase } from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css';
 
 export interface GlobalStyleProps {
 
@@ -10,11 +11,9 @@ export interface GlobalStyleProps {
     /** Background color on body */
     bodyBackgroundColor?: string
   }
-
 }
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
-${css`${bootstrap}`}
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
   body {
     font-family: 'IBM Plex Sans', sans-serif!important;
