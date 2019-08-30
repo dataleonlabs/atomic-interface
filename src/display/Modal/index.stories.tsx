@@ -2,6 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Col, Button } from 'reactstrap';
 import Modal from './index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 class ModalExample extends React.Component<{ showFooter?: Boolean }> {
 
@@ -64,20 +74,27 @@ class ModalExample extends React.Component<{ showFooter?: Boolean }> {
         <br />
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Button color="info" onClick={this.toggle}>Show Modal</Button>
-<Modal
-  isOpen={this.state.modal}
-  toggle={this.toggle}
-  header="Modal title"
-  {...extraProps}
-
->
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</Modal>
-          `}
-        </pre>
+        <CodeMirror
+          value='<Button color="info" onClick={this.toggle}>Show Modal</Button>
+          <Modal
+            isOpen={this.state.modal}
+            toggle={this.toggle}
+            header="Modal title"
+            {...extraProps}
+          
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </Modal>'
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
         

@@ -2,6 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Col } from 'reactstrap';
 import Panel from './index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 
 storiesOf('UI Elements|Panel', module)
@@ -26,14 +36,21 @@ storiesOf('UI Elements|Panel', module)
         <br />
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Panel title="Header title">
-  Special Title Treatment
-  With supporting text below as a natural lead-in to additional content.
-</Panel>
-          `}
-        </pre>
+        <CodeMirror
+          value='<Panel title="Header title">
+          Special Title Treatment
+          With supporting text below as a natural lead-in to additional content.
+        </Panel>'
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   ))

@@ -3,6 +3,16 @@ import { storiesOf } from '@storybook/react';
 import { Col } from 'reactstrap';
 import DropDown from './index';
 import DropDownItem from './DropdownItem';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 
 class RenderDropDown extends React.Component<{ divider?: Boolean }> {
@@ -50,24 +60,31 @@ storiesOf('UI Elements|DropDown', module)
           </DropDown>
           <br/>
           <h6><strong>Code</strong></h6>
-          <hr />
-          <pre>
-            {`
-<DropDown title="DropDown" caret >
-  <DropDownItem>Item1</DropDownItem>
-  <DropDownItem>Item2</DropDownItem>
-  <DropDownItem>Item3</DropDownItem>
-  <DropDownItem>Item4</DropDownItem>
-</DropDown>
-          `}
-        </pre>
+          <hr />        
+          <CodeMirror
+            value='<DropDown title="DropDown" caret >
+            <DropDownItem>Item1</DropDownItem>
+            <DropDownItem>Item2</DropDownItem>
+            <DropDownItem>Item3</DropDownItem>
+            <DropDownItem>Item4</DropDownItem>
+          </DropDown>'
+            options={{
+              mode: 'jsx',
+              lineNumbers: true,
+              smartIndent: true,
+              readOnly: true            
+            }}
+            editorDidMount={editor => {            
+              reindent(editor);
+            }}
+          />
         </Col>
       </React.Fragment>
   ))
   .add('DropDown Divider', () => (
     <React.Fragment>
         <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-          <h4>DropDown - Divider</h4>
+          <h4>DropDown Divider</h4>
           <br/>
           <p>Separate groups of related menu items with a divider.</p>
           <br/>
@@ -82,18 +99,25 @@ storiesOf('UI Elements|DropDown', module)
           </DropDown>
           <br/>
         <h6><strong>Code</strong></h6>
-        <hr />
-        <pre>
-          {`
-<DropDown title="DropDown" caret >
-  <DropDownItem>Item1</DropDownItem>
-  <DropDownItem>Item2</DropDownItem>
-  <DropDownItem divider />
-  <DropDownItem>Item3</DropDownItem>
-  <DropDownItem>Item4</DropDownItem>
-</DropDown>
-          `}
-        </pre>
+        <hr />        
+          <CodeMirror
+            value='<DropDown title="DropDown" caret >
+            <DropDownItem>Item1</DropDownItem>
+            <DropDownItem>Item2</DropDownItem>
+            <DropDownItem divider />
+            <DropDownItem>Item3</DropDownItem>
+            <DropDownItem>Item4</DropDownItem>
+          </DropDown>'
+            options={{
+              mode: 'jsx',
+              lineNumbers: true,
+              smartIndent: true,
+              readOnly: true            
+            }}
+            editorDidMount={editor => {            
+              reindent(editor);
+            }}
+          />        
         </Col>
       </React.Fragment>
   ))

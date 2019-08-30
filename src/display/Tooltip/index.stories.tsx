@@ -2,7 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Tooltip from './index';
 import { Col, Button } from 'reactstrap';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
 
+var reindent = function (cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 
 storiesOf('UI Elements|Tooltip', module)
@@ -29,18 +38,24 @@ storiesOf('UI Elements|Tooltip', module)
         <br/>
         <br/>
         <h6><strong>Code</strong></h6>
-        <hr/>
-        <pre>
-          {`
-<Button color="primary" id={'Tooltip-'}>
-  Submit button
-</Button>
-<Tooltip target={'Tooltip-'}>
-  Tooltip Content!
-</Tooltip>
-          `}
-        </pre>
+        <hr />
+          <CodeMirror
+            value='<Button color="primary" id={"Tooltip-"}>
+            Submit button
+          </Button>
+          <Tooltip target={"Tooltip-"}>
+            Tooltip Content!
+          </Tooltip>'
+            options={{
+              mode: 'jsx',
+              lineNumbers: true,
+              smartIndent: true,
+              readOnly: true
+            }}
+            editorDidMount={editor => {
+              reindent(editor);
+            }}
+          />
       </Col>
     </React.Fragment>
   ))
-

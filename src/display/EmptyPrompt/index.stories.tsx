@@ -9,6 +9,16 @@ import Spacer from '../Spacer/index';
 import Button from '../../form/controls/Button/index';
 import { Col, Row, Container } from 'reactstrap';
 import { Info } from 'react-feather';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('UI Elements|EmptyPrompt', module)
   .add('Example', () => (
@@ -39,6 +49,43 @@ storiesOf('UI Elements|EmptyPrompt', module)
           <Button color="primary">Button 1</Button>
         </ActionPanel>
       </EmptyPrompt>
+      <Container>
+        <Row>
+          <Col size={10} style={{ marginTop: 30 }}>
+            <h6><strong>Code</strong></h6>        
+            <hr/>         
+            <CodeMirror
+              value='<EmptyPrompt>
+              <Icon>
+                <Info size={60} />
+              </Icon>
+              <Spacer size="sm" />
+              <Title size="large">
+                You have no spice
+                  </Title>
+              <Spacer size="sm" />
+              <BodyText size="small">
+                <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
+                <p>You’ll need spice to rule Arrakis, young Atreides.</p>
+              </BodyText>
+              <Spacer size="sm" />
+              <ActionPanel>
+                <Button color="primary">Button 1</Button>
+              </ActionPanel>
+            </EmptyPrompt>'
+              options={{
+                mode: 'jsx',
+                lineNumbers: true,
+                smartIndent: true,
+                readOnly: true            
+              }}
+              editorDidMount={editor => {            
+                reindent(editor);
+              }}
+            />
+          </Col>
+        </Row>
+      </Container>
     </React.Fragment>
   )).add('Example Custom sizes', () => (
     <React.Fragment>
@@ -68,6 +115,43 @@ storiesOf('UI Elements|EmptyPrompt', module)
           <Button color="primary">Button 1</Button>
         </ActionPanel>
       </EmptyPrompt>
+      <Container>
+        <Row>
+          <Col size={10} style={{ marginTop: 30 }}>
+            <h6><strong>Code</strong></h6>        
+            <hr/>         
+            <CodeMirror
+              value='<EmptyPrompt>
+              <Icon>
+                <Info size={40} />
+              </Icon>
+              <Spacer size="sm" />
+              <Title size="medium">
+                You have no spice
+                  </Title>
+              <Spacer size="sm" />
+              <BodyText size="xsmall">
+                <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
+                <p>You’ll need spice to rule Arrakis, young Atreides.</p>
+              </BodyText>
+              <Spacer size="sm" />
+              <ActionPanel>
+                <Button color="primary">Button 1</Button>
+              </ActionPanel>
+            </EmptyPrompt>'
+              options={{
+                mode: 'jsx',
+                lineNumbers: true,
+                smartIndent: true,
+                readOnly: true            
+              }}
+              editorDidMount={editor => {            
+                reindent(editor);
+              }}
+            />
+          </Col>
+        </Row>
+      </Container>
     </React.Fragment>
   )).add('Example Less Content', () => (
     <React.Fragment>
@@ -89,6 +173,35 @@ storiesOf('UI Elements|EmptyPrompt', module)
           <Button color="primary">Button 1</Button>
         </ActionPanel>
       </EmptyPrompt>
+      <Container>
+        <Row>
+          <Col size={10} style={{ marginTop: 30 }}>
+            <h6><strong>Code</strong></h6>        
+            <hr/>         
+            <CodeMirror
+              value='<EmptyPrompt>
+              <Spacer size="sm" />
+              <Title size="medium">
+                You have no spice
+                  </Title>
+              <Spacer size="sm" />
+              <ActionPanel>
+                <Button color="primary">Button 1</Button>
+              </ActionPanel>
+            </EmptyPrompt>'
+              options={{
+                mode: 'jsx',
+                lineNumbers: true,
+                smartIndent: true,
+                readOnly: true            
+              }}
+              editorDidMount={editor => {            
+                reindent(editor);
+              }}
+            />
+          </Col>
+        </Row>
+      </Container>
     </React.Fragment>
   )).add('Example Button Left & Right', () => (
     <React.Fragment>
@@ -119,6 +232,44 @@ storiesOf('UI Elements|EmptyPrompt', module)
           <span> <Button color="primary">Right</Button></span>
         </ActionPanel>
       </EmptyPrompt>
+      <Container>
+        <Row>
+          <Col size={10} style={{ marginTop: 30 }}>
+            <h6><strong>Code</strong></h6>        
+            <hr/>         
+            <CodeMirror
+              value='<EmptyPrompt>
+              <Icon>
+                <Info size={40} />
+              </Icon>
+              <Spacer size="sm" />
+              <Title size="medium">
+                You have no spice
+                  </Title>
+              <Spacer size="sm" />
+              <BodyText size="xsmall">
+                <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
+                <p>You’ll need spice to rule Arrakis, young Atreides.</p>
+              </BodyText>
+              <Spacer size="sm" />
+              <ActionPanel>
+                <span><Button color="primary">Left</Button> </span>
+                <span> <Button color="primary">Right</Button></span>
+              </ActionPanel>
+            </EmptyPrompt>'
+              options={{
+                mode: 'jsx',
+                lineNumbers: true,
+                smartIndent: true,
+                readOnly: true            
+              }}
+              editorDidMount={editor => {            
+                reindent(editor);
+              }}
+            />
+          </Col>
+        </Row>
+      </Container>
     </React.Fragment>
   ))
 

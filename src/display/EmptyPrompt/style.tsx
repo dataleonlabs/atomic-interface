@@ -96,5 +96,5 @@ export const StyledEmptyPrompts = styled.div`
   `;
 export const StyledContainer = styled(Container)`
   background-color: #f1f1f1;
-  height: 100vh;
+  height: auto;
 `;
