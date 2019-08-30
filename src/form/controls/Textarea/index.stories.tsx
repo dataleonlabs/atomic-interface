@@ -3,6 +3,17 @@ import { storiesOf } from '@storybook/react';
 import Textarea from './index';
 import { Col } from 'reactstrap';
 import Form from './../../index'
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
+
 storiesOf('Forms|Textarea', module)
   .add('Basic Example', () => (
     <React.Fragment>
@@ -27,15 +38,22 @@ storiesOf('Forms|Textarea', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form>
-{(_) => (
-  <Textarea placeholder={'Example content with Textarea'} name='text' />
-)}
-</Form>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Form>
+          {(_) => (
+            <Textarea placeholder={'Example content with Textarea'} name='text' />
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Maximum Rows', () => (
@@ -56,15 +74,22 @@ storiesOf('Forms|Textarea', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form>
-{(_) => (
-  <Textarea placeholder={'Example content with Textarea'} name='text' />
-)}
-</Form>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Form>
+          {(_) => (
+            <Textarea placeholder={'Example content with Textarea'} name='text' />
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ));

@@ -2,7 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Radio from './index';
 import { Col } from 'reactstrap';
-import Form from './../../index'
+import Form from './../../index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('Forms|Radio', module)
   .add('Basic Example', () => (
@@ -31,18 +41,25 @@ storiesOf('Forms|Radio', module)
           <br/>
           <h6><strong>Code</strong></h6>
           <hr/>
-          <pre>
-            {`
-<Form>
-  {(_) => (
-    <>
-      <Radio name='radio' label="Radio Button"/>
-      <Radio name='radio1' checked label="Radio Button"/>
-    </>
-  )}
-</Form>
-            `}
-          </pre>
+          <CodeMirror
+            value="<Form>
+            {(_) => (
+              <>
+                <Radio name='radio' label='Radio Button'/>
+                <Radio name='radio1' checked label='Radio Button'/>
+              </>
+            )}
+          </Form>"
+            options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+            }}
+            editorDidMount={editor => {            
+            reindent(editor);
+            }}
+          />
         </Col>
     </React.Fragment>
   )).add('Disabled', () => (
@@ -67,19 +84,26 @@ storiesOf('Forms|Radio', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form>
-  {(_) => (
-    <Radio
-      name='radio'
-      label="Radio Button"
-      disabled={true}      
-    />
-  )}
-</Form>
-          `}
-        </pre>
+        <CodeMirror
+            value="<Form>
+            {(_) => (
+              <Radio
+                name='radio'
+                label='Radio Button'
+                disabled={true}      
+              />
+            )}
+            </Form>"
+            options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+            }}
+            editorDidMount={editor => {            
+            reindent(editor);
+            }}
+          />
       </Col>
     </React.Fragment>
   ))

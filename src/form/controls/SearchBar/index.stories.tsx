@@ -2,7 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import SearchBar from './index';
 import { Col } from 'reactstrap';
-import Form from '../../index'
+import Form from '../../index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('Forms|SearchBar', module)
   .add('Basic Example', () => (
@@ -32,18 +42,25 @@ storiesOf('Forms|SearchBar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form>
-  {(_) => (
-    <SearchBar
-      name={'search'}
-      placeholder={'search'}
-    />
-  )}
-</Form>
-          `}
-        </pre>
+        <CodeMirror
+            value="<Form>
+            {(_) => (
+              <SearchBar
+                name={'search'}
+                placeholder={'search'}
+              />
+            )}
+            </Form>"
+            options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+            }}
+            editorDidMount={editor => {            
+            reindent(editor);
+            }}
+          />
       </Col>
     </React.Fragment>
   )).add('Navbar', () => (
@@ -68,19 +85,26 @@ storiesOf('Forms|SearchBar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form>
-  {(_) => (
-    <SearchBar
-      name={'search'}
-      placeholder={'search'}
-      navBar={true}
-    />
-  )}
-</Form>
-          `}
-        </pre>
+        <CodeMirror
+            value="<Form>
+            {(_) => (
+              <SearchBar
+                name={'search'}
+                placeholder={'search'}
+                navBar={true}
+              />
+            )}
+            </Form>"
+            options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+            }}
+            editorDidMount={editor => {            
+            reindent(editor);
+            }}
+          />
       </Col>
     </React.Fragment>
   ))

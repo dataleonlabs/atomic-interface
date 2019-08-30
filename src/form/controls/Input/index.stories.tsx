@@ -5,7 +5,16 @@ import { Col } from 'reactstrap';
 import Form from './../../index';
 import Button from './../Button'
 import { User, UserPlus } from 'react-feather';
-// import { User } from 'react-feather';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('Forms|Input', module)
   .add('Basic Example', () => (
@@ -31,15 +40,22 @@ storiesOf('Forms|Input', module)
           <br/>
           <h6><strong>Code</strong></h6>
           <hr/>
-          <pre>
-            {`
-<Form>
-  {(_) => (
-    <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'}/>
-  )}
-</Form>
-            `}
-          </pre>
+          <CodeMirror
+            value="<Form>
+            {(_) => (
+              <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'}/>
+            )}
+            </Form>"
+            options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+            }}
+            editorDidMount={editor => {            
+            reindent(editor);
+            }}
+          />
         </Col>
     </React.Fragment>
   )).add('Addon Inputs', () => (
@@ -71,26 +87,33 @@ storiesOf('Forms|Input', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form>
-{(_) => (
-  <>
-  <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-  <Input
-    name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
-    rightAddon={'@youngapp.co'}
-  />
-    <Input
-      name={'website'} label={'Website'} placeholder={'Your website'}
-      leftAddon={'https://'}
-    />
-    <div style={{ marginTop: 30 }}><Button icon={<User />} size={'md'} color="primary">Submit user</Button>{' '}</div>
-  </>
-)}
-</Form>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Form>
+          {(_) => (
+            <>
+            <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+            <Input
+              name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
+              rightAddon={'@youngapp.co'}
+            />
+              <Input
+                name={'website'} label={'Website'} placeholder={'Your website'}
+                leftAddon={'https://'}
+              />
+              <div style={{ marginTop: 30 }}><Button icon={<User />} size={'md'} color='primary'>Submit user</Button>{' '}</div>
+            </>
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Addon Icon Inputs', () => (
@@ -111,15 +134,22 @@ storiesOf('Forms|Input', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form>
-  {(_) => (
-    <Input leftAddon={<UserPlus />} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-  )}
-</Form>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Form>
+          {(_) => (
+            <Input leftAddon={<UserPlus />} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Input With Error', () => (
@@ -140,15 +170,22 @@ storiesOf('Forms|Input', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form>
-  {(_) => (
-    <Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-  )}
-</Form>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Form>
+          {(_) => (
+            <Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ));

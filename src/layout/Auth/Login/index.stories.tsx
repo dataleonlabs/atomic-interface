@@ -6,6 +6,16 @@ import Footer from '../components/Footer';
 import HeaderTitle from '../components/Header/Title';
 import HeaderSubTitle from '../components/Header/SubTitle';
 import { Col } from 'reactstrap';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('Layout|Login', module)
   .add('Example', () => (
@@ -48,31 +58,38 @@ storiesOf('Layout|Login', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Login
-  provider={{
-    type: "aws-cognito",
-    credentials: {
-      "region": "eu-central-1",
-      "userPoolId": "eu-central-1_5jBnZEuMX",
-      "userPoolWebClientId": "543up50u5glbg9qlpkuhop779t",
-    },
-  }}>
-  <Header>
-    <HeaderTitle>
-      <span>Sign in</span>
-    </HeaderTitle>
-    <HeaderSubTitle>
-      <span>Please login to account with your credentials</span>
-    </HeaderSubTitle>
-  </Header>
-  <Footer>
-    <span>Copyright 2019</span>
-  </Footer>
-</Login>
-            `}
-          </pre>
+        <CodeMirror
+          value="<Login
+          provider={{
+            type: 'aws-cognito',
+            credentials: {
+              'region': 'eu-central-1',
+              'userPoolId': 'eu-central-1_5jBnZEuMX',
+              'userPoolWebClientId': '543up50u5glbg9qlpkuhop779t',
+            },
+          }}>
+          <Header>
+            <HeaderTitle>
+              <span>Sign in</span>
+            </HeaderTitle>
+            <HeaderSubTitle>
+              <span>Please login to account with your credentials</span>
+            </HeaderSubTitle>
+          </Header>
+          <Footer>
+            <span>Copyright 2019</span>
+          </Footer>
+          </Login>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ));

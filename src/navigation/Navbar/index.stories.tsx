@@ -12,6 +12,16 @@ import Button from '../../form/controls/Button';
 import { User, Save, Users } from 'react-feather';
 import SearchBar from '../../form/controls/SearchBar';
 import { Col } from 'reactstrap';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('Navigation|Navbar', module)
   .add('Basic Navbar', () => (
@@ -41,21 +51,28 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar>
-  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-  <Nav>
-    <NavItem>
-      <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href={"http://google.com"}>Google</NavLink>
-    </NavItem>
-  </Nav>
-</Navbar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Navbar>
+          <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          <Nav>
+            <NavItem>
+              <NavLink href={'http://yahoo.com'}>Yahoo</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={'http://google.com'}>Google</NavLink>
+            </NavItem>
+          </Nav>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Brand Content', () => (
@@ -73,13 +90,20 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar>
-  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-</Navbar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Navbar>
+            <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Nav Content', () => (
@@ -105,21 +129,28 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar>
-  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-  <Nav>
-    <NavItem>
-      <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href={"http://google.com"}>Google</NavLink>
-    </NavItem>
-  </Nav>
-</Navbar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Navbar>
+          <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          <Nav>
+            <NavItem>
+              <NavLink href={'http://yahoo.com'}>Yahoo</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={'http://google.com'}>Google</NavLink>
+            </NavItem>
+          </Nav>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Form Content', () => (
@@ -150,25 +181,32 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar>
-  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-  <div style={{ width: '100%' }}>
-    <Form>
-      {(props) => (
-        <SearchBar
-          navBar={true}
-          name={'search'}
-          width={500}
-          placeholder={'Enter keyword search all products in catalog'}
+        <CodeMirror
+          value="<Navbar>
+          <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          <div style={{ width: '100%' }}>
+            <Form>
+              {(props) => (
+                <SearchBar
+                  navBar={true}
+                  name={'search'}
+                  width={500}
+                  placeholder={'Enter keyword search all products in catalog'}
+                />
+              )}
+            </Form>
+          </div>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
         />
-      )}
-    </Form>
-  </div>
-</Navbar>
-          `}
-        </pre>
       </Col>
     </React.Fragment>
   )).add('Loading Breadcrumb', () => (
@@ -200,26 +238,33 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar>
-  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-  <Breadcrumb loading={true}>
-    <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
-    <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
-    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-  </Breadcrumb>
-  <Nav>
-    <NavItem>
-      <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href={"http://google.com"}>Google</NavLink>
-    </NavItem>
-  </Nav>
-</Navbar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Navbar>
+          <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          <Breadcrumb loading={true}>
+            <BreadcrumbItem><a href='#'>Story</a></BreadcrumbItem>
+            <BreadcrumbItem><a href='#'>Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          <Nav>
+            <NavItem>
+              <NavLink href={'http://yahoo.com'}>Yahoo</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={'http://google.com'}>Google</NavLink>
+            </NavItem>
+          </Nav>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Bredcrumb', () => (
@@ -251,26 +296,33 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar>
-  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-  <Breadcrumb>
-    <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
-    <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
-    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-  </Breadcrumb>
-  <Nav>
-    <NavItem>
-      <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href={"http://google.com"}>Google</NavLink>
-    </NavItem>
-  </Nav>
-</Navbar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Navbar>
+          <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          <Breadcrumb>
+            <BreadcrumbItem><a href='#'>Story</a></BreadcrumbItem>
+            <BreadcrumbItem><a href='#'>Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          <Nav>
+            <NavItem>
+              <NavLink href={'http://yahoo.com'}>Yahoo</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={'http://google.com'}>Google</NavLink>
+            </NavItem>
+          </Nav>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Button Right', () => (
@@ -302,26 +354,33 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar>
-  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-  <Breadcrumb>
-    <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
-    <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
-    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-  </Breadcrumb>
-  <Nav>
-    <NavItem>
-      <Button icon={<User size={18} />} color="primary">Add user</Button>
-    </NavItem>
-    <NavItem>
-      <Button icon={<Save size={18} />} color="warning">Save</Button>
-    </NavItem>
-  </Nav>
-</Navbar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Navbar>
+          <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          <Breadcrumb>
+            <BreadcrumbItem><a href='#'>Story</a></BreadcrumbItem>
+            <BreadcrumbItem><a href='#'>Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          <Nav>
+            <NavItem>
+              <Button icon={<User size={18} />} color='primary'>Add user</Button>
+            </NavItem>
+            <NavItem>
+              <Button icon={<Save size={18} />} color='warning'>Save</Button>
+            </NavItem>
+          </Nav>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Search', () => (
@@ -363,36 +422,43 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar>
-<NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-<div style={{ width: '100%' }}>
-  <Form>
-    {(props) => (
-      <SearchBar
-        navBar={true}
-        name={'search'}
-        width={500}
-        placeholder={'Enter keyword search all products in catalog'}
-      />
-    )}
-  </Form>
-</div>
-<Nav>
-  <NavItem>
-    <NavLink><Users size={24} /></NavLink>
-  </NavItem>
-  <NavItem>
-    <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
-  </NavItem>
-  <NavItem>
-    <NavLink href={"http://google.com"}>Google</NavLink>
-  </NavItem>
-</Nav>
-</Navbar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Navbar>
+          <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          <div style={{ width: '100%' }}>
+            <Form>
+              {(props) => (
+                <SearchBar
+                  navBar={true}
+                  name={'search'}
+                  width={500}
+                  placeholder={'Enter keyword search all products in catalog'}
+                />
+              )}
+            </Form>
+          </div>
+          <Nav>
+            <NavItem>
+              <NavLink><Users size={24} /></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={'http://yahoo.com'}>Yahoo</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href={'http://google.com'}>Google</NavLink>
+            </NavItem>
+          </Nav>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Size', () => (
@@ -424,26 +490,33 @@ storiesOf('Navigation|Navbar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Navbar size="lg">
-  <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
-  <Breadcrumb>
-    <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
-    <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
-    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-  </Breadcrumb>
-  <Nav>
-    <NavItem>
-      <Button icon={<User size={18} />} color="primary">Add user</Button>
-    </NavItem>
-    <NavItem>
-      <Button icon={<Save size={18} />} color="warning">Save</Button>
-    </NavItem>
-  </Nav>
-</Navbar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Navbar size='lg'>
+          <NavbarBrand href={'http://google.com'}>Atomic Interface</NavbarBrand>
+          <Breadcrumb>
+            <BreadcrumbItem><a href='#'>Story</a></BreadcrumbItem>
+            <BreadcrumbItem><a href='#'>Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          <Nav>
+            <NavItem>
+              <Button icon={<User size={18} />} color='primary'>Add user</Button>
+            </NavItem>
+            <NavItem>
+              <Button icon={<Save size={18} />} color='warning'>Save</Button>
+            </NavItem>
+          </Nav>
+          </Navbar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ));

@@ -2,7 +2,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import FilePicker from './index';
 import { Col } from 'reactstrap';
-import Form from './../../index'
+import Form from './../../index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
+
 
 storiesOf('Forms|File Browser', module)
   .add('Basic Example', () => (
@@ -37,29 +48,36 @@ storiesOf('Forms|File Browser', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form
-  onSubmit={(values) => {
-    console.log(values);
-  }}
->
-  {(props) => (
-    <>
-      <FilePicker
-        name={'image'}
-        label={'Picture'}
-        onChange={(event) => {
-          if (event.currentTarget.files) {
-            props.setFieldValue('image', event.currentTarget.files[0])
-          }
-        }}
-      />
-    </>
-  )}
-</Form>
-            `}
-          </pre>
+        <CodeMirror
+          value="<Form
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          >
+          {(props) => (
+            <>
+              <FilePicker
+                name={'image'}
+                label={'Picture'}
+                onChange={(event) => {
+                  if (event.currentTarget.files) {
+                    props.setFieldValue('image', event.currentTarget.files[0])
+                  }
+                }}
+              />
+            </>
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Multiple', () => (
@@ -91,26 +109,33 @@ storiesOf('Forms|File Browser', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form
-  onSubmit={(values) => {
-    console.log(values);
-  }}
->
-  {(props) => (
-    <>
-      <FilePicker
-        name={'image'}
-        label={'Picture'}
-        multiple
-        onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
-      />
-    </>
-  )}
-</Form>
-            `}
-          </pre>
+        <CodeMirror
+          value="<Form
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          >
+          {(props) => (
+            <>
+              <FilePicker
+                name={'image'}
+                label={'Picture'}
+                multiple
+                onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
+              />
+            </>
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Disabled', () => (
@@ -142,26 +167,33 @@ storiesOf('Forms|File Browser', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form
-  onSubmit={(values) => {
-    console.log(values);
-  }}
->
-  {(props) => (
-    <>
-      <FilePicker
-        name={'image'}
-        label={'Picture'}
-        disabled
-        onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
-      />
-    </>
-  )}
-</Form>
-            `}
-          </pre>
+        <CodeMirror
+          value="<Form
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          >
+          {(props) => (
+            <>
+              <FilePicker
+                name={'image'}
+                label={'Picture'}
+                disabled
+                onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
+              />
+            </>
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Tooltip', () => (
@@ -193,26 +225,33 @@ storiesOf('Forms|File Browser', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Form
-  onSubmit={(values) => {
-    console.log(values);
-  }}
->
-  {(props) => (
-    <>
-      <FilePicker
-        name={'image'}
-        label={'Here you can choose file'}
-        tooltip={'select picture'}
-        onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
-      />
-    </>
-  )}
-</Form>
-            `}
-          </pre>
+        <CodeMirror
+          value="<Form
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          >
+          {(props) => (
+            <>
+              <FilePicker
+                name={'image'}
+                label={'Here you can choose file'}
+                tooltip={'select picture'}
+                onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
+              />
+            </>
+          )}
+          </Form>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ))

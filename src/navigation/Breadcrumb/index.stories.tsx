@@ -3,6 +3,16 @@ import { storiesOf } from '@storybook/react';
 import { Col } from 'reactstrap';
 import BreadcrumbItem from './BreadcrumbItem';
 import Breadcrumb from './index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('Navigation|Breadcrumb', module)
   .add('Basic Example', () => (
@@ -27,13 +37,25 @@ storiesOf('Navigation|Breadcrumb', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
+        <CodeMirror
+          value="<Breadcrumb>
+          <BreadcrumbItem>Story</BreadcrumbItem>
+          <BreadcrumbItem>Navigation</BreadcrumbItem>
+          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
         <pre>
           {`
-<Breadcrumb>
-  <BreadcrumbItem>Story</BreadcrumbItem>
-  <BreadcrumbItem>Navigation</BreadcrumbItem>
-  <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-</Breadcrumb>
+
           `}
           </pre>
           <hr />
@@ -60,15 +82,27 @@ storiesOf('Navigation|Breadcrumb', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
+        <CodeMirror
+          value="<div>
+          <Breadcrumb loading={true}>
+            <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
+            <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          </div>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
         <pre>
           {`
-<div>
-  <Breadcrumb loading={true}>
-    <BreadcrumbItem> <a href="#">Story</a></BreadcrumbItem>
-    <BreadcrumbItem> <a href="#">Navigation</a></BreadcrumbItem>
-    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-  </Breadcrumb>
-</div>
+
           `}
         </pre>
       </Col>
@@ -94,15 +128,27 @@ storiesOf('Navigation|Breadcrumb', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
+        <CodeMirror
+          value="<div>
+          <Breadcrumb>
+            <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
+            <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
+            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+          </Breadcrumb>
+          </div>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
         <pre>
           {`
-<div>
-  <Breadcrumb>
-    <BreadcrumbItem> <a href="#">Story</a></BreadcrumbItem>
-    <BreadcrumbItem> <a href="#">Navigation</a></BreadcrumbItem>
-    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-  </Breadcrumb>
-</div>
+
           `}
         </pre>
       </Col>

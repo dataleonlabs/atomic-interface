@@ -62,44 +62,51 @@ storiesOf('Navigation|Sidebar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Sidebar>
-  <Brand>Atomic Interface</Brand>
-  <Nav>
-    <NavItem>
-      <NavIcon type="left"><Database size={23} /></NavIcon>
-      <NavText>Dashboard</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Grid size={23} /></NavIcon>
-      <NavText>Transaction</NavText>
-    </NavItem>
-    <NavItem active>
-      <NavIcon type="left"><Folder size={23} /></NavIcon>
-      <NavText>Products</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><GitMerge size={23} /></NavIcon>
-      <NavText>Payments</NavText>
-    </NavItem>
-    <NavHeader>Catalogs</NavHeader>
-    <NavItem>
-      <NavIcon type="left"><Eye size={23} /></NavIcon>
-      <NavText>Stocks</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Watch size={23} /></NavIcon>
-      <NavText>Link</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Linkedin size={23} /></NavIcon>
-      <NavText>UI-Kit</NavText>
-    </NavItem>
-  </Nav>
-</Sidebar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Sidebar>
+          <Brand>Atomic Interface</Brand>
+          <Nav>
+            <NavItem>
+              <NavIcon type='left'><Database size={23} /></NavIcon>
+              <NavText>Dashboard</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Grid size={23} /></NavIcon>
+              <NavText>Transaction</NavText>
+            </NavItem>
+            <NavItem active>
+              <NavIcon type='left'><Folder size={23} /></NavIcon>
+              <NavText>Products</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><GitMerge size={23} /></NavIcon>
+              <NavText>Payments</NavText>
+            </NavItem>
+            <NavHeader>Catalogs</NavHeader>
+            <NavItem>
+              <NavIcon type='left'><Eye size={23} /></NavIcon>
+              <NavText>Stocks</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Watch size={23} /></NavIcon>
+              <NavText>Link</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Linkedin size={23} /></NavIcon>
+              <NavText>UI-Kit</NavText>
+            </NavItem>
+          </Nav>
+        </Sidebar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ))
@@ -154,49 +161,56 @@ storiesOf('Navigation|Sidebar', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Sidebar>
-  <Brand>Atomic Interface</Brand>
-  <Nav>
-    <NavItem>
-      <NavIcon type="left"><Database size={23} /></NavIcon>
-      <NavText>Dashboard</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Grid size={23} /></NavIcon> 
-      <NavText>Transaction</NavText>
-    </NavItem>
-    <NavItem active>
-      <NavIcon type="left"><Folder size={23} /></NavIcon> 
-      <NavText>Products</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><GitMerge size={23} /></NavIcon> 
-      <NavText>Payments</NavText>
-    </NavItem>
-    <NavHeader>Catalogs</NavHeader>
-    <NavItem>
-      <NavIcon type="left"><Eye size={23} /></NavIcon>
-      <NavText>Stocks</NavText>
-      </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Watch size={23} /></NavIcon>
-      <NavText>Link</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Linkedin size={23} /></NavIcon>
-      <NavText>UI-Kit</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><HelpCircle size={23} /></NavIcon>
-      <NavText><a href="https://google.com">Help</a></NavText>
-      <NavIcon type="right"><ExternalLink size={17} /></NavIcon>
-    </NavItem>
-  </Nav>
-</Sidebar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Sidebar>
+          <Brand>Atomic Interface</Brand>
+          <Nav>
+            <NavItem>
+              <NavIcon type='left'><Database size={23} /></NavIcon>
+              <NavText>Dashboard</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Grid size={23} /></NavIcon> 
+              <NavText>Transaction</NavText>
+            </NavItem>
+            <NavItem active>
+              <NavIcon type='left'><Folder size={23} /></NavIcon> 
+              <NavText>Products</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><GitMerge size={23} /></NavIcon> 
+              <NavText>Payments</NavText>
+            </NavItem>
+            <NavHeader>Catalogs</NavHeader>
+            <NavItem>
+              <NavIcon type='left'><Eye size={23} /></NavIcon>
+              <NavText>Stocks</NavText>
+              </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Watch size={23} /></NavIcon>
+              <NavText>Link</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Linkedin size={23} /></NavIcon>
+              <NavText>UI-Kit</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><HelpCircle size={23} /></NavIcon>
+              <NavText><a href='https://google.com'>Help</a></NavText>
+              <NavIcon type='right'><ExternalLink size={17} /></NavIcon>
+            </NavItem>
+          </Nav>
+        </Sidebar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Badged', () => (
@@ -254,57 +268,65 @@ storiesOf('Navigation|Sidebar', module)
           </Nav>
         </Sidebar>
         <br/>
+        <br/>
         <h6><strong>Code</strong></h6>
         <hr />
-        <pre>
-          {`
-<Sidebar>
-  <Brand>Atomic Interface</Brand>
-  <Nav>
-    <NavItem>
-      <NavIcon type="left"><Database size={23} /></NavIcon>
-      <NavText>Dashboard</NavText>
-      <NavIcon type="right">
-        <Badge color="primary" pill={true}>9+</Badge>
-      </NavIcon>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Grid size={23} /></NavIcon>
-      <NavText>Transaction</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Folder size={23} /></NavIcon>
-      <NavText>Products</NavText>
-      <NavIcon type="right">
-        <Badge color="danger">59</Badge>
-      </NavIcon>
-    </NavItem>
-    <NavItem active>
-      <NavIcon type="left"><GitMerge size={23} /></NavIcon>
-      <NavText>Payments</NavText>
-    </NavItem>
-    <NavHeader>Catalogs</NavHeader>
-    <NavItem>
-      <NavIcon type="left"><Eye size={23} /></NavIcon>
-      <NavText>Stocks</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Watch size={23} /></NavIcon>
-      <NavText>Link</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><Linkedin size={23} /></NavIcon>
-      <NavText>UI-Kit</NavText>
-    </NavItem>
-    <NavItem>
-      <NavIcon type="left"><HelpCircle size={23} /></NavIcon>
-      <NavText><a href="https://google.com">Help</a></NavText>
-      <NavIcon type="right"><ExternalLink size={17} /></NavIcon>
-    </NavItem>
-  </Nav>
-</Sidebar>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Sidebar>
+          <Brand>Atomic Interface</Brand>
+          <Nav>
+            <NavItem>
+              <NavIcon type='left'><Database size={23} /></NavIcon>
+              <NavText>Dashboard</NavText>
+              <NavIcon type='right'>
+                <Badge color='primary' pill={true}>9+</Badge>
+              </NavIcon>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Grid size={23} /></NavIcon>
+              <NavText>Transaction</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Folder size={23} /></NavIcon>
+              <NavText>Products</NavText>
+              <NavIcon type='right'>
+                <Badge color='danger'>59</Badge>
+              </NavIcon>
+            </NavItem>
+            <NavItem active>
+              <NavIcon type='left'><GitMerge size={23} /></NavIcon>
+              <NavText>Payments</NavText>
+            </NavItem>
+            <NavHeader>Catalogs</NavHeader>
+            <NavItem>
+              <NavIcon type='left'><Eye size={23} /></NavIcon>
+              <NavText>Stocks</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Watch size={23} /></NavIcon>
+              <NavText>Link</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><Linkedin size={23} /></NavIcon>
+              <NavText>UI-Kit</NavText>
+            </NavItem>
+            <NavItem>
+              <NavIcon type='left'><HelpCircle size={23} /></NavIcon>
+              <NavText><a href='https://google.com'>Help</a></NavText>
+              <NavIcon type='right'><ExternalLink size={17} /></NavIcon>
+            </NavItem>
+          </Nav>
+          </Sidebar>"
+          options={{
+          mode: 'jsx',
+          lineNumbers: true,
+          smartIndent: true,
+          readOnly: true            
+          }}
+          editorDidMount={editor => {            
+          reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ));

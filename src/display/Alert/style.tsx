@@ -36,5 +36,6 @@ export const StyledAlert = styled.div`
       display: inline;
       float: right !important;
     }
+
   }
 `;

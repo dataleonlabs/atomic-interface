@@ -2,7 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Select from './index';
 import { Col } from 'reactstrap';
-import Form from './../../index'
+import Form from './../../index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('Forms|Select', module)
   .add('Basic Example', () => {
@@ -40,21 +50,28 @@ storiesOf('Forms|Select', module)
           <br/>
           <h6><strong>Code</strong></h6>
           <hr/>
-          <pre>
-            {`
-<Form>
-  {(_) => (
-    <Select
-      isClearable
-      creatable
-      isMulti
-      name={'favorite'}
-      options={options}
-    />
-  )}
-</Form>
-            `}
-          </pre>
+          <CodeMirror
+            value="<Form>
+            {(_) => (
+              <Select
+                isClearable
+                creatable
+                isMulti
+                name={'favorite'}
+                options={options}
+              />
+            )}
+            </Form>"
+            options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+            }}
+            editorDidMount={editor => {            
+            reindent(editor);
+            }}
+          />
         </Col>
       </React.Fragment>
     )
@@ -106,21 +123,28 @@ storiesOf('Forms|Select', module)
           <br/>
           <h6><strong>Code</strong></h6>
           <hr/>
-          <pre>
-            {`
-<Form>
-  {(_) => (
-    <Select
-      isClearable
-      creatable
-      isMulti
-      name={'favorite'}
-      options={groupedOptions}
-    />
-  )}
-</Form>
-            `}
-          </pre>
+          <CodeMirror
+            value="<Form>
+            {(_) => (
+              <Select
+                isClearable
+                creatable
+                isMulti
+                name={'favorite'}
+                options={groupedOptions}
+              />
+            )}
+            </Form>"
+            options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+            }}
+            editorDidMount={editor => {            
+            reindent(editor);
+            }}
+          />
         </Col>
       </React.Fragment>
     )
