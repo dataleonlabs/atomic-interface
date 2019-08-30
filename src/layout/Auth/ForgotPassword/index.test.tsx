@@ -19,7 +19,7 @@ describe('<Forgot Password />', () => {
         }}
       />
     )
-    expect(wrapper.find(Input)).toHaveLength(2);
+    expect(wrapper.find(Input)).toHaveLength(1);
     expect(wrapper.find(Input).get(0).props.type).toEqual('text');
     expect(wrapper.find(Input).get(0).props.name).toEqual('email');
     expect(wrapper.find(Button)).toHaveLength(1);
@@ -41,7 +41,7 @@ describe('<Forgot Password />', () => {
         </Footer>
       </ForgotPassword>
     )
-    expect(wrapper.find(Input)).toHaveLength(2);
+    expect(wrapper.find(Input)).toHaveLength(1);
     expect(wrapper.find(Header)).toHaveLength(1);
     expect(wrapper.find(Footer)).toHaveLength(1);
     expect(wrapper.find(Input).get(0).props.type).toEqual('text');

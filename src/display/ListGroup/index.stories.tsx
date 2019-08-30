@@ -4,7 +4,7 @@ import ListGroup from './index'
 import ListGroupItem from './ListGroupItem'
 import ListGroupItemHeading from './ListGroupItemHeading'
 import ListGroupItemText from './ListGroupItemText'
-import Badge from '../../../display/Badge/index';
+import Badge from '../Badge/index';
 import { Col } from 'reactstrap';
 
 storiesOf('Forms|ListGroup', module)

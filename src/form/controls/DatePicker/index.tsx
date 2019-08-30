@@ -11,6 +11,11 @@ class DatePicker extends React.PureComponent<Props> {
     label: "Date Picker",
     dateFormat: "dd/MM/yyyy"
   }
+
+  public state = {
+    startDate: new Date()
+  }
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -18,19 +23,15 @@ class DatePicker extends React.PureComponent<Props> {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-
-  public handleChange(date: Date) {
+  /* istanbul ignore next */
+  public handleChange(date: Date) /* istanbul ignore next */ {
     this.setState({
       startDate: date
     });
+  /* istanbul ignore next */
     this.handleChange = this.handleChange.bind(this);
   }
-
-  public state = {
-    startDate: new Date()
-  }
-
-  render() {
+  public render() {
 
     const renderField = ({ field }: FieldProps<{}>) => (
       <React.Fragment>
