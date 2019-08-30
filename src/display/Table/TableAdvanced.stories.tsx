@@ -3,7 +3,17 @@ import { storiesOf } from '@storybook/react';
 import { Col } from 'reactstrap';
 import Column from './Column';
 import Table from './TableAdvanced';
-import faker from 'faker'
+import faker from 'faker';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 const assets: any[] = [];
 for (let index = 0; index < 10; index++) {
@@ -38,15 +48,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} striped={false}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} striped={false}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ))
@@ -68,15 +85,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
-  <Column field={'id'}>Id</Column>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+          <Column field={'id'}>Id</Column>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />       
       </Col>
     </React.Fragment>
   ))
@@ -98,15 +122,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={[]} selectable={true}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={[]} selectable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   ))
@@ -128,15 +159,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} striped={true}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} striped={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   )).add('Sizing', () => (
@@ -157,15 +195,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} striped={true} rowSize={'large'}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} striped={true} rowSize={'large'}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Table - Sizing</h4>
@@ -183,15 +228,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} striped={true} rowSize={'large'}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} striped={true} rowSize={'large'}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   )).add('Selection', () => (
@@ -212,15 +264,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} selectable={true}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} selectable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Disabled</h4>
@@ -238,15 +297,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} selectable={true} disabledSelected={[4, 6]}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} selectable={true} disabledSelected={[4, 6]}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   )).add('Hide Header', () => (
@@ -267,15 +333,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} hideHeader={true}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} hideHeader={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   )).add('Sorting', () => (
@@ -296,15 +369,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} sortable={true}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'} sortable={false}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} sortable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   )).add('Scrollable', () => (
@@ -325,15 +405,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} sortable={true} scrollable={150}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'} sortable={false}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} sortable={true} scrollable={150}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   )).add('Drag And Drop', () => (
@@ -356,15 +443,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} draggable={true}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'} sortable={false}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} draggable={true}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'} sortable={false}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   )).add('Paging', () => (
@@ -385,15 +479,22 @@ storiesOf('UI Elements|TableAdvanced', module)
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
-        <pre>
-          {`
-<Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
-  <Column field={'firstName'}>First Name</Column>
-  <Column field={'lastName'}>Last Name</Column>
-  <Column field={'email'}>Email</Column>
-</Table>
-          `}
-        </pre>
+        <CodeMirror
+          value="<Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>"
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />        
       </Col>
     </React.Fragment>
   ))

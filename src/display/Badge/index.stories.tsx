@@ -2,6 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Badge from './index';
 import { Col } from 'reactstrap';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('UI Elements|Badge', module)
   .add('Contextual Variations', () => (
@@ -27,27 +37,33 @@ storiesOf('UI Elements|Badge', module)
         <h5><Badge color="dark">Dark</Badge></h5>
         <br/>
         <h6><strong>Code</strong></h6>
-        <hr />
-        <pre>
-          {`
-<h5><Badge color="primary">Primary</Badge></h5>
-<h5><Badge color="secondary">Secondary</Badge></h5>
-<h5><Badge color="success">Success</Badge></h5>
-<h5><Badge color="danger">Danger</Badge></h5>
-<h5><Badge color="warning">Warning</Badge></h5>
-<h5><Badge color="info">Info</Badge></h5>
-<h5><Badge color="light">Light</Badge></h5>
-<h5><Badge color="dark">Dark</Badge></h5>
-          `}
-        </pre>
-        <hr />
+        <hr />           
+        <CodeMirror
+          value='<h5><Badge color="primary">Primary</Badge></h5>
+          <h5><Badge color="secondary">Secondary</Badge></h5>
+          <h5><Badge color="success">Success</Badge></h5>
+          <h5><Badge color="danger">Danger</Badge></h5>
+          <h5><Badge color="warning">Warning</Badge></h5>
+          <h5><Badge color="info">Info</Badge></h5>
+          <h5><Badge color="light">Light</Badge></h5>
+          <h5><Badge color="dark">Dark</Badge></h5>'
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ))
   .add('Pill Badges', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-      <h4>Badge - Pill Badges</h4>
+      <h4>Pill Badges</h4>
       <br/>
       <p>Use the <code>pill</code> property to make badges more rounded.</p>
       <br/>
@@ -62,21 +78,27 @@ storiesOf('UI Elements|Badge', module)
       <h5><Badge color="light" pill>Light</Badge></h5>
       <h5><Badge color="dark" pill>Dark</Badge></h5>
       <br/>
-      <h6><strong>Code</strong></h6>
+      <h6><strong>Code</strong></h6>      
       <hr />
-      <pre>
-        {`
-<h5><Badge color="primary" pill>Primary</Badge></h5>
-<h5><Badge color="secondary" pill>Secondary</Badge></h5>
-<h5><Badge color="success" pill>Success</Badge></h5>
-<h5><Badge color="danger" pill>Danger</Badge></h5>
-<h5><Badge color="warning" pill>Warning</Badge></h5>
-<h5><Badge color="info" pill>Info</Badge></h5>
-<h5><Badge color="light" pill>Light</Badge></h5>
-<h5><Badge color="dark" pill>Dark</Badge></h5>
-        `}
-      </pre>
-      <hr />
+        <CodeMirror
+          value='<h5><Badge color="primary" pill>Primary</Badge></h5>
+          <h5><Badge color="secondary" pill>Secondary</Badge></h5>
+          <h5><Badge color="success" pill>Success</Badge></h5>
+          <h5><Badge color="danger" pill>Danger</Badge></h5>
+          <h5><Badge color="warning" pill>Warning</Badge></h5>
+          <h5><Badge color="info" pill>Info</Badge></h5>
+          <h5><Badge color="light" pill>Light</Badge></h5>
+          <h5><Badge color="dark" pill>Dark</Badge></h5>'
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />
       </Col>
     </React.Fragment>
   ))

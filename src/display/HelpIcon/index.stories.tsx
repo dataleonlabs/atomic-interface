@@ -2,6 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Col } from 'reactstrap';
 import HelpIcon from './index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
+
+var reindent = function(cm) {
+  var lines = cm.lineCount();
+  for (var i = 0; i < lines; i++) {
+    cm.indentLine(i);
+  };
+}
 
 storiesOf('UI Elements|HelpIcon', module)
   .add('Basic Example', () => (
@@ -26,16 +36,23 @@ storiesOf('UI Elements|HelpIcon', module)
       <br/>
         <br/>
         <h6><strong>Code</strong></h6>
-        <hr/>
-        <pre>
-          {`
-<span>
-  <HelpIcon header='Help' target='help'>
-    Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-  </HelpIcon>
-</span>
-          `}
-        </pre>
+        <hr />        
+        <CodeMirror
+          value='<span>
+          <HelpIcon header="Help" target="help">
+            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+          </HelpIcon>
+        </span>'
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        />
     </Col>
   </React.Fragment>
   ))
