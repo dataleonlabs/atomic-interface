@@ -32,22 +32,18 @@ storiesOf('UI Elements|Spacer', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value='<Text> sm: 15px </Text>
-          <Spacer size="sm" />
-          <Text> md: 30px </Text>
-          <Spacer size="md" />
-          <Text> lg: 60px </Text>
-          <Spacer size="lg" />
-          <Text> xlg: 100px </Text>
-          <Spacer size="xlg" />'
+          value={`<Text> sm: 15px </Text>
+<Spacer size="sm" />
+<Text> md: 30px </Text>
+<Spacer size="md" />
+<Text> lg: 60px </Text>
+<Spacer size="lg" />
+<Text> xlg: 100px </Text>
+<Spacer size="xlg" />`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
       </Col>      

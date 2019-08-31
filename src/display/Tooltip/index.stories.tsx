@@ -41,15 +41,14 @@ storiesOf('UI Elements|Tooltip', module)
         <hr />
           <CodeMirror
             value='<Button color="primary" id="Tooltip-">
-            Submit button
-          </Button>
-          <Tooltip target="Tooltip-">
-            Tooltip Content!
-          </Tooltip>'
+  Submit button
+</Button>
+<Tooltip target="Tooltip-">
+  Tooltip Content!
+</Tooltip>'
             options={{
               mode: 'jsx',
-              lineNumbers: true,
-              smartIndent: true,
+              lineNumbers: false,
               readOnly: true
             }}
             editorDidMount={editor => {

@@ -37,18 +37,14 @@ storiesOf('UI Elements|Panel', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value='<Panel title="Header title">
-          Special Title Treatment
-          With supporting text below as a natural lead-in to additional content.
-        </Panel>'
+          value={`<Panel title="Header title">
+  Special Title Treatment
+  With supporting text below as a natural lead-in to additional content.
+</Panel>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>

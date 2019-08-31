@@ -49,19 +49,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={assets} striped={false}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+          value={`<Table data={assets} striped={false}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
       </Col>
@@ -86,19 +82,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
-          <Column field={'id'}>Id</Column>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-        </Table>"
+          value={`<Table loading={true} selectable={true} draggable={true} data={[{ id: 1 }, { id: 2 }]}>
+  <Column field={'id'}>Id</Column>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />       
       </Col>
@@ -123,19 +115,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={[]} selectable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+          value={`<Table data={[]} selectable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -160,19 +148,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={assets} striped={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+          value={`<Table data={assets} striped={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -196,19 +180,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={assets} striped={true} rowSize={'large'}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+          value={`<Table data={assets} striped={true} rowSize={'large'}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -229,19 +209,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={assets} striped={true} rowSize={'large'}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+          value={`<Table data={assets} striped={true} rowSize={'large'}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -265,19 +241,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={assets} selectable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+          value={`<Table data={assets} selectable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -298,19 +270,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={assets} selectable={true} disabledSelected={[4, 6]}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+          value={`<Table data={assets} selectable={true} disabledSelected={[4, 6]}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -334,19 +302,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={assets} hideHeader={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+          value={`<Table data={assets} hideHeader={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -370,19 +334,15 @@ storiesOf('UI Elements|TableAdvanced', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Table data={assets} sortable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>"
+          value={`<Table data={assets} sortable={true}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -407,18 +367,14 @@ storiesOf('UI Elements|TableAdvanced', module)
         <hr/>
         <CodeMirror
           value="<Table data={assets} sortable={true} scrollable={150}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>"
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>"
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -445,18 +401,14 @@ storiesOf('UI Elements|TableAdvanced', module)
         <hr/>
         <CodeMirror
           value="<Table data={assets} draggable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>"
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'} sortable={false}>Email</Column>
+</Table>"
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -481,18 +433,14 @@ storiesOf('UI Elements|TableAdvanced', module)
         <hr/>
         <CodeMirror
           value="<Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'}>Email</Column>
-        </Table>"
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>"
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>

@@ -33,15 +33,11 @@ storiesOf('UI Elements|Spinner', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value='<Spinner color="dark" />'
+          value={`<Spinner color="dark" />`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
       </Col>
@@ -69,22 +65,18 @@ storiesOf('UI Elements|Spinner', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value='<Spinner color="primary" />
-          <Spinner color="secondary" />
-          <Spinner color="success" />
-          <Spinner color="danger" />
-          <Spinner color="warning" />
-          <Spinner color="info" />
-          <Spinner color="light" />
-          <Spinner color="dark" />'
+          value={`<Spinner color="primary" />
+<Spinner color="secondary" />
+<Spinner color="success" />
+<Spinner color="danger" />
+<Spinner color="warning" />
+<Spinner color="info" />
+<Spinner color="light" />
+<Spinner color="dark" />`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
@@ -112,22 +104,18 @@ storiesOf('UI Elements|Spinner', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value='<Spinner type="grow" color="primary" />
-          <Spinner type="grow" color="secondary" />
-          <Spinner type="grow" color="success" />
-          <Spinner type="grow" color="danger" />
-          <Spinner type="grow" color="warning" />
-          <Spinner type="grow" color="info" />
-          <Spinner type="grow" color="light" />
-          <Spinner type="grow" color="dark" />'
+          value={`<Spinner type="grow" color="primary" />
+<Spinner type="grow" color="secondary" />
+<Spinner type="grow" color="success" />
+<Spinner type="grow" color="danger" />
+<Spinner type="grow" color="warning" />
+<Spinner type="grow" color="info" />
+<Spinner type="grow" color="light" />
+<Spinner type="grow" color="dark" />`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
       </Col>

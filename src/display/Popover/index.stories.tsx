@@ -133,12 +133,8 @@ class PopoverExample extends React.Component<{ placement?: Popper.Placement }> {
         </span>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />          
         </Col>

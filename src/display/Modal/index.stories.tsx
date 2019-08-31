@@ -75,24 +75,19 @@ class ModalExample extends React.Component<{ showFooter?: Boolean }> {
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value='<Button color="info" onClick={this.toggle}>Show Modal</Button>
-          <Modal
-            isOpen={this.state.modal}
-            toggle={this.toggle}
-            header="Modal title"
-            {...extraProps}
-          
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </Modal>'
+          value={`<Button color="info" onClick={this.toggle}>Show Modal</Button>
+<Modal
+  isOpen={this.state.modal}
+  toggle={this.toggle}
+  header="Modal title"
+  {...extraProps}
+>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</Modal>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>
