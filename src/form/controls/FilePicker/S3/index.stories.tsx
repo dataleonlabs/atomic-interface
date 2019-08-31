@@ -58,7 +58,7 @@ storiesOf('Forms|File Browser', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
+          value={`<Form>
           {({ values }) => (
             <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
               <h4>FilePicker forAWS S3</h4>
@@ -79,15 +79,11 @@ storiesOf('Forms|File Browser', module)
               <code>values: {JSON.stringify(values)}</code><br />
             </Col>
           )}
-          </Form>"
+          </Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>

@@ -93,48 +93,44 @@ storiesOf('Forms|Form', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form
-          initialValues={{ name: 'Gérard TOKO' }}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
-        >
-          {({ values, errors, touched, isSubmitting, handleSubmit }) => (
-            <>
-              <Col sm={8} style={{ marginTop: 30}}>
-                <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-                <Input
-                  name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
-                  rightAddon={'@youngapp.co'}
-                />
-                <Input
-                  name={'website'} label={'Website'} placeholder={'Your website'}
-                  leftAddon={'https://'}
-                />
-                <Button color='primary' disabled={isSubmitting} loading={isSubmitting}>Submit</Button>
-              </Col>
-              <Col sm={8} style={{ marginTop: 30}}>
-                <hr />
-                <pre>
-                  <code>values: {JSON.stringify(values)}</code><br />
-                  <code>errors: {JSON.stringify(errors)}</code><br />
-                  <code>touched: {JSON.stringify(touched)}</code><br />
-                </pre>
-              </Col>
-            </>
-          )}
-        </Form>"
+          value={`<Form
+  initialValues={{ name: 'Gérard TOKO' }}
+  onSubmit={(values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 400);
+  }}
+>
+  {({ values, errors, touched, isSubmitting, handleSubmit }) => (
+    <>
+      <Col sm={8} style={{ marginTop: 30}}>
+        <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+        <Input
+          name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
+          rightAddon={'@youngapp.co'}
+        />
+        <Input
+          name={'website'} label={'Website'} placeholder={'Your website'}
+          leftAddon={'https://'}
+        />
+        <Button color='primary' disabled={isSubmitting} loading={isSubmitting}>Submit</Button>
+      </Col>
+      <Col sm={8} style={{ marginTop: 30}}>
+        <hr />
+        <pre>
+          <code>values: {JSON.stringify(values)}</code><br />
+          <code>errors: {JSON.stringify(errors)}</code><br />
+          <code>touched: {JSON.stringify(touched)}</code><br />
+        </pre>
+      </Col>
+    </>
+  )}
+</Form>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
       </Col>
@@ -188,49 +184,45 @@ storiesOf('Forms|Form', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form
-          initialValues={{ name: 'Gérard TOKO' }}
-          validationSchema={SignupSchema}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
-        >
-          {({ values, errors, touched }) => (
-            <>
-              <Col sm={8} style={{ marginTop: 30}}>
-                <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-                <Input
-                  name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
-                  rightAddon={'@youngapp.co'}
-                />
-                <Input
-                  name={'website'} label={'Website'} placeholder={'Your website'}
-                  leftAddon={'https://'}
-                />
-                <Button color='primary'>Submit</Button>
-              </Col>
-              <Col sm={8} style={{ marginTop: 30}}>
-                <hr />
-                <pre>
-                  <code>values: {JSON.stringify(values)}</code><br />
-                  <code>errors: {JSON.stringify(errors)}</code><br />
-                  <code>touched: {JSON.stringify(touched)}</code><br />
-                </pre>
-              </Col>
-            </>
-          )}
-        </Form>"
+          value={`<Form
+  initialValues={{ name: 'Gérard TOKO' }}
+  validationSchema={SignupSchema}
+  onSubmit={(values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 400);
+  }}
+>
+  {({ values, errors, touched }) => (
+    <>
+      <Col sm={8} style={{ marginTop: 30}}>
+        <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+        <Input
+          name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
+          rightAddon={'@youngapp.co'}
+        />
+        <Input
+          name={'website'} label={'Website'} placeholder={'Your website'}
+          leftAddon={'https://'}
+        />
+        <Button color='primary'>Submit</Button>
+      </Col>
+      <Col sm={8} style={{ marginTop: 30}}>
+        <hr />
+        <pre>
+          <code>values: {JSON.stringify(values)}</code><br />
+          <code>errors: {JSON.stringify(errors)}</code><br />
+          <code>touched: {JSON.stringify(touched)}</code><br />
+        </pre>
+      </Col>
+    </>
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -290,55 +282,51 @@ storiesOf('Forms|Form', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form
-          initialValues={{ name: 'Gérard TOKO' }}
-          validationSchema={SignupSchema}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
-        >
-          {({ values, errors, touched }) => (
-            <>
-              <Col sm={4} style={{ marginTop: 30 }}>
-                <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-                <Input
-                  name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
-                  rightAddon={'@youngapp.co'}
-                />
-                <Input
-                  name={'website'} label={'Website'} placeholder={'Your website'}
-                  leftAddon={'https://'}
-                />
-                <Select
-                  name={'favorite'}
-                  label={'Favorite'}
-                  placeholder={'Select your favorite...'}
-                  options={options}
-                />
-                <Button color='primary'>Submit</Button>
-              </Col>
-              <Col sm={4} style={{ marginTop: 30 }}>
-                <hr />
-                <pre>
-                  <code>values: {JSON.stringify(values)}</code><br />
-                  <code>errors: {JSON.stringify(errors)}</code><br />
-                  <code>touched: {JSON.stringify(touched)}</code><br />
-                </pre>
-              </Col>
-            </>
-          )}
-        </Form>"
+          value={`<Form
+  initialValues={{ name: 'Gérard TOKO' }}
+  validationSchema={SignupSchema}
+  onSubmit={(values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 400);
+  }}
+>
+  {({ values, errors, touched }) => (
+    <>
+      <Col sm={4} style={{ marginTop: 30 }}>
+        <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+        <Input
+          name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
+          rightAddon={'@youngapp.co'}
+        />
+        <Input
+          name={'website'} label={'Website'} placeholder={'Your website'}
+          leftAddon={'https://'}
+        />
+        <Select
+          name={'favorite'}
+          label={'Favorite'}
+          placeholder={'Select your favorite...'}
+          options={options}
+        />
+        <Button color='primary'>Submit</Button>
+      </Col>
+      <Col sm={4} style={{ marginTop: 30 }}>
+        <hr />
+        <pre>
+          <code>values: {JSON.stringify(values)}</code><br />
+          <code>errors: {JSON.stringify(errors)}</code><br />
+          <code>touched: {JSON.stringify(touched)}</code><br />
+        </pre>
+      </Col>
+    </>
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
         

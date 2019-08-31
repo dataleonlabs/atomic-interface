@@ -39,19 +39,15 @@ storiesOf('Forms|DatePicker', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <DatePicker dateFormat='yyyy/MM/dd' name='datepicker' />
-          )}
-        </Form>"
+          value={`<Form>
+  {(_) => (
+    <DatePicker dateFormat='yyyy/MM/dd' name='datepicker' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -75,19 +71,15 @@ storiesOf('Forms|DatePicker', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <DatePicker disabled={true} dateFormat='yyyy/MM/dd' name='datepicker' />
-          )}
-          </Form>"
+          value={`<Form>
+  {(_) => (
+    <DatePicker disabled={true} dateFormat='yyyy/MM/dd' name='datepicker' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>

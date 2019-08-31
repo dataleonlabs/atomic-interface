@@ -40,23 +40,19 @@ storiesOf('Forms|Button', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value='<div>
-          <div style={{ marginTop: 30 }}><Button color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button color="secondary">secondary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button color="success">success</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button color="info">info</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button color="warning">warning</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button color="danger">danger</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button color="link">link</Button></div>
-        </div>'
+          value={`<div>
+  <div style={{ marginTop: 30 }}><Button color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button color="secondary">secondary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button color="success">success</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button color="info">info</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button color="warning">warning</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button color="danger">danger</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button color="link">link</Button></div>
+</div>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true
-          }}
-          editorDidMount={editor => {
-            reindent(editor);
           }}
         />
       </Col>
@@ -82,22 +78,18 @@ storiesOf('Forms|Button', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value='<div>
-          <div style={{ marginTop: 30 }}><Button outline color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button outline color="secondary">secondary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button outline color="success">success</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button outline color="info">info</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button outline color="warning">warning</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button outline color="danger">danger</Button>{" "}</div>
-        </div>'
+          value={`<div>
+  <div style={{ marginTop: 30 }}><Button outline color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="secondary">secondary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="success">success</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="info">info</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="warning">warning</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button outline color="danger">danger</Button>{" "}</div>
+</div>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true
-          }}
-          editorDidMount={editor => {
-            reindent(editor);
           }}
         />        
       </Col>
@@ -120,19 +112,15 @@ storiesOf('Forms|Button', module)
       <h6><strong>Code</strong></h6>
       <hr/>
       <CodeMirror
-          value='<div>
-          <div style={{ marginTop: 30 }}><Button size="lg" color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="md" color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="sm" color="primary">primary</Button>{" "}</div>
-        </div>'
+          value={`<div>
+  <div style={{ marginTop: 30 }}><Button size="lg" color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="md" color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="sm" color="primary">primary</Button>{" "}</div>
+</div>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true
-          }}
-          editorDidMount={editor => {
-            reindent(editor);
           }}
         />      
       </Col>
@@ -158,22 +146,18 @@ storiesOf('Forms|Button', module)
       <h6><strong>Code</strong></h6>
       <hr/>
       <CodeMirror
-          value='<div>
-          <div style={{ marginTop: 30 }}><Button size="lg" loading={true} color="primary">primary</Button>{""}</div>
-          <div style={{ marginTop: 30 }}><Button size="md" loading={true} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="sm" loading={true} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="lg" loading={true} color="warning">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="md" loading={true} color="warning">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="sm" loading={true} color="warning">primary</Button>{" "}</div>
-        </div>'
+          value={`<div>
+  <div style={{ marginTop: 30 }}><Button size="lg" loading={true} color="primary">primary</Button>{""}</div>
+  <div style={{ marginTop: 30 }}><Button size="md" loading={true} color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="sm" loading={true} color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="lg" loading={true} color="warning">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="md" loading={true} color="warning">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="sm" loading={true} color="warning">primary</Button>{" "}</div>
+</div>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true
-          }}
-          editorDidMount={editor => {
-            reindent(editor);
           }}
         />
       </Col>
@@ -204,27 +188,23 @@ storiesOf('Forms|Button', module)
       <h6><strong>Code</strong></h6>
       <hr/>
       <CodeMirror
-          value='<div>
-          <div style={{ marginTop: 30 }}><Button size="lg" icon={<Info />} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="lg" icon={<Info />} color="warning">primary</Button>{" "}</div>
-        
-          <div style={{ marginTop: 30 }}><Button size="md" outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="sm" outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
-        
-          <div style={{ marginTop: 30 }}><Button size="md" icon={<Coffee />} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="md" icon={<Coffee />} color="warning">primary</Button>{" "}</div>
-        
-          <div style={{ marginTop: 30 }}><Button size="sm" icon={<Info size={18} />} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size="sm" icon={<Info size={18} />} color="warning">primary</Button>{" "}</div>
-        </div>'
+          value={`<div>
+  <div style={{ marginTop: 30 }}><Button size="lg" icon={<Info />} color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="lg" icon={<Info />} color="warning">primary</Button>{" "}</div>
+
+  <div style={{ marginTop: 30 }}><Button size="md" outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="sm" outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
+
+  <div style={{ marginTop: 30 }}><Button size="md" icon={<Coffee />} color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="md" icon={<Coffee />} color="warning">primary</Button>{" "}</div>
+
+  <div style={{ marginTop: 30 }}><Button size="sm" icon={<Info size={18} />} color="primary">primary</Button>{" "}</div>
+  <div style={{ marginTop: 30 }}><Button size="sm" icon={<Info size={18} />} color="warning">primary</Button>{" "}</div>
+</div>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true
-          }}
-          editorDidMount={editor => {
-            reindent(editor);
           }}
         />
       </Col>
@@ -246,17 +226,13 @@ storiesOf('Forms|Button', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value='<div>
-          <div style={{ marginTop: 30 }}><Button disabled color="primary">primary</Button>{" "}</div>
-        </div>'
+          value={`<div>
+  <div style={{ marginTop: 30 }}><Button disabled color="primary">primary</Button>{" "}</div>
+</div>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true
-          }}
-          editorDidMount={editor => {
-            reindent(editor);
           }}
         />
       </Col>
@@ -278,17 +254,13 @@ storiesOf('Forms|Button', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value='<div>
-          <div style={{ marginTop: 30 }}><Button block outline size color="primary">primary</Button>{" "}</div>
-        </div>'
+          value={`<div>
+  <div style={{ marginTop: 30 }}><Button block outline size color="primary">primary</Button>{" "}</div>
+</div>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true
-          }}
-          editorDidMount={editor => {
-            reindent(editor);
           }}
         />        
       </Col>

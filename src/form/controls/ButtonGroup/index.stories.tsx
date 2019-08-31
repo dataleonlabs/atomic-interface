@@ -42,19 +42,15 @@ storiesOf('Forms|ButtonGroup', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<ButtonGroup>
-          <Button>Left</Button>
-          <Button>Middle</Button>
-          <Button>Right</Button>
-          </ButtonGroup>"
+          value={`<ButtonGroup>
+  <Button>Left</Button>
+  <Button>Middle</Button>
+  <Button>Right</Button>
+</ButtonGroup>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -80,24 +76,20 @@ storiesOf('Forms|ButtonGroup', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<ButtonGroup>
-          <Button>1</Button>
-          <Button>2</Button>
-          <DropDown title='DropDown' caret>
-            <DropDownItem>Item1</DropDownItem>
-            <DropDownItem>Item2</DropDownItem>            
-            <DropDownItem>Item3</DropDownItem>
-            <DropDownItem>Item4</DropDownItem>
-          </DropDown>
-          </ButtonGroup>"
+          value={`<ButtonGroup>
+  <Button>1</Button>
+  <Button>2</Button>
+  <DropDown title='DropDown' caret>
+    <DropDownItem>Item1</DropDownItem>
+    <DropDownItem>Item2</DropDownItem>            
+    <DropDownItem>Item3</DropDownItem>
+    <DropDownItem>Item4</DropDownItem>
+  </DropDown>
+</ButtonGroup>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -129,30 +121,26 @@ storiesOf('Forms|ButtonGroup', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<ButtonToolbar>
-          <ButtonGroup>
-            <Button>1</Button>
-            <Button>2</Button>
-            <Button>3</Button>
-          </ButtonGroup>
-          <ButtonGroup>
-            <Button>4</Button>
-            <Button>5</Button>
-            <Button>6</Button>
-          </ButtonGroup>
-          <ButtonGroup>
-            <Button>7</Button>
-            <Button>8</Button>
-          </ButtonGroup>
-          </ButtonToolbar>"
+          value={`<ButtonToolbar>
+  <ButtonGroup>
+    <Button>1</Button>
+    <Button>2</Button>
+    <Button>3</Button>
+  </ButtonGroup>
+  <ButtonGroup>
+    <Button>4</Button>
+    <Button>5</Button>
+    <Button>6</Button>
+  </ButtonGroup>
+  <ButtonGroup>
+    <Button>7</Button>
+    <Button>8</Button>
+  </ButtonGroup>
+</ButtonToolbar>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
