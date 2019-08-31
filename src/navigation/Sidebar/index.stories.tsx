@@ -185,43 +185,28 @@ storiesOf('Navigation|Sidebar', module)
       <Nav>
         <NavItem loading={true}>
           <NavIcon type="left"><Database size={23} /></NavIcon>
-          <NavText>Dashboard</NavText>
-          <NavIcon type="right">
-            <Badge color="primary" pill={true}>9+</Badge>
-          </NavIcon>
         </NavItem>
         <NavItem loading={true}>
           <NavIcon type="left"><Grid size={23} /></NavIcon>
-          <NavText>Transaction</NavText>
         </NavItem>
         <NavItem loading={true}>
           <NavIcon type="left"><Folder size={23} /></NavIcon>
-          <NavText>Products</NavText>
-          <NavIcon type="right">
-            <Badge color="danger">59</Badge>
-          </NavIcon>
         </NavItem>
         <NavItem active loading={true}>
           <NavIcon type="left"><GitMerge size={23} /></NavIcon>
-          <NavText>Payments</NavText>
         </NavItem>
         <NavHeader>Catalogs</NavHeader>
         <NavItem loading={true}>
           <NavIcon type="left"><Eye size={23} /></NavIcon>
-          <NavText>Stocks</NavText>
         </NavItem>
         <NavItem loading={true}>
           <NavIcon type="left"><Watch size={23} /></NavIcon>
-          <NavText>Link</NavText>
         </NavItem>
         <NavItem loading={true}>
           <NavIcon type="left"><Linkedin size={23} /></NavIcon>
-          <NavText>UI-Kit</NavText>
         </NavItem>
         <NavItem loading={true}>
           <NavIcon type="left"><HelpCircle size={23} /></NavIcon>
-          <NavText><a href="https://google.com">Help</a></NavText>
-          <NavIcon type="right"><ExternalLink size={17} /></NavIcon>
         </NavItem>
       </Nav>
     </Sidebar>
@@ -241,7 +226,6 @@ storiesOf('Navigation|Sidebar', module)
         <NavItem>
           <NavIcon type="left"><GitMerge size={23} /></NavIcon>
         </NavItem>
-
         <NavItem>
           <NavIcon type="left"><Eye size={23} /></NavIcon>
         </NavItem>
