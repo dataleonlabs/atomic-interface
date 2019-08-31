@@ -18,7 +18,7 @@ storiesOf('UI Elements|Panel', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h2>Penal</h2>
+        <h2>Panel</h2>
         <br/>
         <p>Add panel along with the content along with relevant title.</p>
         <br/>
