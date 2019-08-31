@@ -33,7 +33,7 @@ storiesOf('Forms|Dropzone', module)
         <hr/>
         <Form>
           {({ values }) => (
-            <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+            <Col sm={4} style={{ marginTop: 30, paddingLeft: 0}}>
               <DropzoneS3
                 name="myfile"
                 s3Url={"http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"}
@@ -57,7 +57,7 @@ storiesOf('Forms|Dropzone', module)
           myfile: 'FE3731BC-4C71-4505-90B3-A705FC6F6F99.png'
         }}>
           {({ values }) => (
-            <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+            <Col sm={4} style={{ marginTop: 30}}>
               <h5>With value</h5>
               <DropzoneS3
                 name="myfile"
