@@ -39,19 +39,15 @@ storiesOf('Forms|Textarea', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <Textarea placeholder={'Example content with Textarea'} name='text' />
-          )}
-          </Form>"
+          value={`<Form>
+  {(_) => (
+    <Textarea placeholder={'Example content with Textarea'} name='text' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -75,19 +71,15 @@ storiesOf('Forms|Textarea', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <Textarea placeholder={'Example content with Textarea'} name='text' />
-          )}
-          </Form>"
+          value={`<Form>
+  {(_) => (
+    <Textarea placeholder={'Example content with Textarea'} name='text' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>

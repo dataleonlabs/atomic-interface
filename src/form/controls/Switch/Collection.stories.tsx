@@ -51,29 +51,25 @@ storiesOf('Forms|Switch', module)
         <hr/>
         <CodeMirror
           value={`<Form>
-          {(_) => (
-            <>
-              <SwitchCollection
-                apiKey="xxx"
-                apiUrl="test"
-                type="update"
-                model="Playlist"
-                label="Switch Collection"
-                name="chk1"
-                fieldId={{ key: "id", value: "1" }}
-                fieldUpdate="active">
-              </SwitchCollection>
-            </>
-          )}
-          </Form>`}
+  {(_) => (
+    <>
+      <SwitchCollection
+        apiKey="xxx"
+        apiUrl="test"
+        type="update"
+        model="Playlist"
+        label="Switch Collection"
+        name="chk1"
+        fieldId={{ key: "id", value: "1" }}
+        fieldUpdate="active">
+      </SwitchCollection>
+    </>
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>

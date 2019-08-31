@@ -42,22 +42,18 @@ storiesOf('Forms|Radio', module)
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-            value="<Form>
-            {(_) => (
-              <>
-                <Radio name='radio' label='Radio Button'/>
-                <Radio name='radio1' checked label='Radio Button'/>
-              </>
-            )}
-          </Form>"
+            value={`<Form>
+  {(_) => (
+    <>
+      <Radio name='radio' label='Radio Button'/>
+      <Radio name='radio1' checked label='Radio Button'/>
+    </>
+  )}
+</Form>`}
             options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-            }}
-            editorDidMount={editor => {            
-            reindent(editor);
             }}
           />
         </Col>
@@ -85,23 +81,19 @@ storiesOf('Forms|Radio', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-            value="<Form>
-            {(_) => (
-              <Radio
-                name='radio'
-                label='Radio Button'
-                disabled={true}      
-              />
-            )}
-            </Form>"
+            value={`<Form>
+  {(_) => (
+    <Radio
+      name='radio'
+      label='Radio Button'
+      disabled={true}      
+    />
+  )}
+</Form>`}
             options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-            }}
-            editorDidMount={editor => {            
-            reindent(editor);
             }}
           />
       </Col>

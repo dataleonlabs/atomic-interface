@@ -51,25 +51,21 @@ storiesOf('Forms|Select', module)
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-            value="<Form>
-            {(_) => (
-              <Select
-                isClearable
-                creatable
-                isMulti
-                name={'favorite'}
-                options={options}
-              />
-            )}
-            </Form>"
+            value={`<Form>
+  {(_) => (
+    <Select
+      isClearable
+      creatable
+      isMulti
+      name={'favorite'}
+      options={options}
+    />
+  )}
+</Form>`}
             options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-            }}
-            editorDidMount={editor => {            
-            reindent(editor);
             }}
           />
         </Col>
@@ -124,25 +120,21 @@ storiesOf('Forms|Select', module)
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-            value="<Form>
-            {(_) => (
-              <Select
-                isClearable
-                creatable
-                isMulti
-                name={'favorite'}
-                options={groupedOptions}
-              />
-            )}
-            </Form>"
+            value={`<Form>
+  {(_) => (
+    <Select
+      isClearable
+      creatable
+      isMulti
+      name={'favorite'}
+      options={groupedOptions}
+    />
+  )}
+</Form>`}
             options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-            }}
-            editorDidMount={editor => {            
-            reindent(editor);
             }}
           />
         </Col>

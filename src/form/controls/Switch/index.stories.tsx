@@ -38,21 +38,17 @@ storiesOf('Forms|Switch', module)
           <hr/>
           <CodeMirror
             value={`<Form>
-            {(_) => (
-              <>
-                <Switch name='switch' label='Turn on this custom switch'/>
-                <Switch name='switch1' checked label='Turn on this custom switch'/>
-              </>
-            )}
-          </Form>`}
+  {(_) => (
+    <>
+      <Switch name='switch' label='Turn on this custom switch'/>
+      <Switch name='switch1' checked label='Turn on this custom switch'/>
+    </>
+  )}
+</Form>`}
             options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-            }}
-            editorDidMount={editor => {            
-            reindent(editor);
             }}
           />
         </Col>
@@ -80,21 +76,17 @@ storiesOf('Forms|Switch', module)
         <hr/>
         <CodeMirror
             value={`<Form>
-            {(_) => (
-              <>
-                <Switch name='switch' label='Can not click this label to turn on!' disabled={true} />
-                <Switch name='switch' label='Can not click this label to turn on!' disabled={true} checked/>
-              </>
-            )}
-           </Form>`}
+  {(_) => (
+    <>
+      <Switch name='switch' label='Can not click this label to turn on!' disabled={true} />
+      <Switch name='switch' label='Can not click this label to turn on!' disabled={true} checked/>
+    </>
+  )}
+</Form>`}
             options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-            }}
-            editorDidMount={editor => {            
-            reindent(editor);
             }}
           />
       </Col>

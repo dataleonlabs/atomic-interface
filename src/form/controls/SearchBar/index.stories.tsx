@@ -43,22 +43,18 @@ storiesOf('Forms|SearchBar', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-            value="<Form>
-            {(_) => (
-              <SearchBar
-                name={'search'}
-                placeholder={'search'}
-              />
-            )}
-            </Form>"
+            value={`<Form>
+  {(_) => (
+    <SearchBar
+      name={'search'}
+      placeholder={'search'}
+    />
+  )}
+</Form>`}
             options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-            }}
-            editorDidMount={editor => {            
-            reindent(editor);
             }}
           />
       </Col>
@@ -86,23 +82,19 @@ storiesOf('Forms|SearchBar', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-            value="<Form>
-            {(_) => (
-              <SearchBar
-                name={'search'}
-                placeholder={'search'}
-                navBar={true}
-              />
-            )}
-            </Form>"
+            value={`<Form>
+  {(_) => (
+    <SearchBar
+      name={'search'}
+      placeholder={'search'}
+      navBar={true}
+    />
+  )}
+</Form>`}
             options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-            }}
-            editorDidMount={editor => {            
-            reindent(editor);
             }}
           />
       </Col>

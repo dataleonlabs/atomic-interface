@@ -42,19 +42,15 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <RichText name='richText' label='Enter Your Message' />
-          )}
-         </Form>"
+          value={`<Form>
+  {(_) => (
+    <RichText name='richText' label='Enter Your Message' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -80,19 +76,15 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <RichText readOnly={true} name='richText' label='This is Read Only RichText' />
-          )}
-          </Form>"
+          value={`<Form>
+  {(_) => (
+    <RichText readOnly={true} name='richText' label='This is Read Only RichText' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -118,19 +110,15 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <RichText readOnly={true} name='richText' label='This is Read Only RichText' />
-          )}
-          </Form>"
+          value={`<Form>
+  {(_) => (
+    <RichText readOnly={true} name='richText' label='This is Read Only RichText' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -156,19 +144,15 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <RichText toolbarDisable={true} name='richText' label='Enter Your Message | Toolbar is Disabled' />
-          )}
-          </Form>"
+          value={`<Form>
+  {(_) => (
+    <RichText toolbarDisable={true} name='richText' label='Enter Your Message | Toolbar is Disabled' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -192,19 +176,15 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <RichText theme='bubble' name='richText' label='Enter Your Message | Select All And Use Bubble Toolbar' />
-          )}
-          </Form>"
+          value={`<Form>
+  {(_) => (
+    <RichText theme='bubble' name='richText' label='Enter Your Message | Select All And Use Bubble Toolbar' />
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
@@ -230,19 +210,15 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Form>
-          {(_) => (
-            <RichText error={true} name='richText' label='RichText with Error' required={true} /> 
-          )}
-          </Form>"
+          value={`<Form>
+  {(_) => (
+    <RichText error={true} name='richText' label='RichText with Error' required={true} /> 
+  )}
+</Form>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
