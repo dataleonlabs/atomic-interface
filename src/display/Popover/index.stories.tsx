@@ -83,7 +83,7 @@ class PopoverExample extends React.Component<{ placement?: Popper.Placement }> {
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-          value='<span style={{marginRight: 30}}>
+          value={`<span style={{marginRight: 30}}>
           <Button color="secondary" id={"Popover-"} type="button">
             show
           </Button>
@@ -130,7 +130,7 @@ class PopoverExample extends React.Component<{ placement?: Popper.Placement }> {
           >
             Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
           </Popover>
-        </span>'
+        </span>`}
           options={{
             mode: 'jsx',
             lineNumbers: true,
@@ -152,6 +152,6 @@ storiesOf('UI Elements|Popover', module)
   .add('Four Directions', () => (
     <PopoverExample />
   ))
-  .add('With placement to Bottom', () => (
+  .add('Placement', () => (
     <PopoverExample placement="bottom" />
   ))

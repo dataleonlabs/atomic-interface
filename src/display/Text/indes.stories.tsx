@@ -36,9 +36,9 @@ storiesOf('UI Elements|Text', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value='<Text tooltip="this is demo of simple text" >
+          value={`<Text tooltip="this is demo of simple text" >
           this is demo of simple text
-        </Text>'
+          </Text>`}
           options={{
             mode: 'jsx',
             lineNumbers: true,
@@ -69,9 +69,9 @@ storiesOf('UI Elements|Text', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value='<Text textStyle="help" capitalizeFirstLetter>
+          value={`<Text textStyle="help" capitalizeFirstLetter>
           this is demo of help textstyle
-        </Text>'
+          </Text>`}
           options={{
             mode: 'jsx',
             lineNumbers: true,
@@ -85,26 +85,60 @@ storiesOf('UI Elements|Text', module)
       </Col>
     </React.Fragment>
   ))
-  .add('With help block', () => (
+  .add('Help Block', () => (
     <React.Fragment>
-      <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Text</h4>
-
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Help Block</h4>
+        <br/>
+        <p>Add <code>textStyle={`"help"`}</code> property to display the content with relevant font style.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
         <Text textStyle="help" capitalizeFirstLetter>
           this is demo of help textstyle with capitalizeFirstLetter
-       </Text>
-         Date:
-        <Text type="date" format="DD MMM">
-          12-03-2014
-       </Text>
-        <br /> Time ago:
-        <Text type="ago">
-          12-03-2018
-       </Text>
-        <br /> Currency:
-        <Text type="currency" format="EUR">
-          12032018
-       </Text>
+        </Text>
+          Date:
+          <Text type="date" format="DD MMM">
+            12-03-2014
+        </Text>
+          <br /> Time ago:
+          <Text type="ago">
+            12-03-2018
+        </Text>
+          <br /> Currency:
+          <Text type="currency" format="EUR">
+            12032018
+        </Text>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <CodeMirror
+          value={`<Text textStyle="help" capitalizeFirstLetter>
+          this is demo of help textstyle with capitalizeFirstLetter
+          </Text>
+            Date:
+            <Text type="date" format="DD MMM">
+              12-03-2014
+          </Text>
+            <br /> Time ago:
+            <Text type="ago">
+              12-03-2018
+          </Text>
+            <br /> Currency:
+            <Text type="currency" format="EUR">
+              12032018
+          </Text>`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: true,
+            smartIndent: true,
+            readOnly: true            
+          }}
+          editorDidMount={editor => {            
+            reindent(editor);
+          }}
+        /> 
       </Col>
     </React.Fragment>
   ))
