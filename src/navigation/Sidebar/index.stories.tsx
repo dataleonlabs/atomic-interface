@@ -10,7 +10,6 @@ import NavIcon from './NavIcon';
 import NavText from './NavText';
 import Badge from '../../display/Badge';
 import { Col, Row } from 'reactstrap';
-
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 require('codemirror/mode/jsx/jsx');
