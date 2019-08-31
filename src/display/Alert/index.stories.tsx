@@ -112,9 +112,6 @@ storiesOf('UI Elements|Alert', module)
             lineNumbers: false,         
             readOnly: true,            
           }}
-          editorDidMount={editor => {            
-            reindent(editor);
-          }}
         />        
       </Col>
     </React.Fragment>

@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     }
 
     .btn {
-        border-radius: 3px!important;
+        border-radius: 0px!important;
     }
 
     .CodeMirror-code {
