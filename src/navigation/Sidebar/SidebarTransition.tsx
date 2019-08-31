@@ -1,3 +1,4 @@
+/* istanbul ignore next */
 import React from 'react';
 import { SidebarProps as Props } from './props';
 import BrandIcon from './BrandIcon';
@@ -7,6 +8,8 @@ interface State {
     hover: boolean;
     collapse: boolean;
 }
+
+/* istanbul ignore next */
 class SidebarTransition extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
@@ -16,12 +19,12 @@ class SidebarTransition extends React.Component<Props, State> {
         };
     }
 
-    toggleSideBar = () => {
+    public toggleSideBar = () => {
         const setCollapseVal = (this.state.collapse) ? false : true
         this.setState({ collapse: setCollapseVal })
     }
 
-    render() {
+    public render() {
         return (
             <div className="sideBarTransition flex-column" onClick={this.toggleSideBar}>
                 <BrandIcon
@@ -44,4 +47,6 @@ class SidebarTransition extends React.Component<Props, State> {
         )
     }
 }
+
+/* istanbul ignore next */
 export default SidebarTransition;

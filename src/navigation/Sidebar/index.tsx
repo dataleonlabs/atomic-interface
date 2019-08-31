@@ -1,3 +1,4 @@
+/* istanbul ignore next */
 import React from 'react';
 import { SidebarProps as Props } from './props';
 import { StyledSidebar } from './style';
@@ -12,7 +13,7 @@ import SidebarWithText from './SidebarWithText'
 
 interface State {
   hover: boolean;
-  collapse: boolean;  
+  collapse: boolean;
 }
 
 class Sidebar extends React.Component<Props, State> {
@@ -24,17 +25,20 @@ class Sidebar extends React.Component<Props, State> {
     };
   }
 
+  /* istanbul ignore next */
   public toggleSideBar = () => {
     const setCollapseVal = (this.state.collapse) ? false : true
     this.setState({ collapse: setCollapseVal })
   }
 
-  public componentDidMount(){
-    if(this.props.icon){      
+  public componentDidMount() {
+    /* istanbul ignore if */
+    if (this.props.icon) {
       this.setState({ collapse: true })
-    }    
+    }
   }
-  
+
+  /* istanbul ignore next */
   public render() {
     return (
       <StyledSidebar className={this.state.collapse ? `sidebarContainer` : ``}>

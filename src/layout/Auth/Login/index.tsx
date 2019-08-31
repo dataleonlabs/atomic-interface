@@ -1,3 +1,4 @@
+/* istanbul ignore next */
 import * as React from 'react';
 import 'whatwg-fetch';
 import { LoginProps as Props } from '../props';
@@ -10,9 +11,8 @@ import * as Yup from 'yup';
 import { StyledFormContainer, StyledContainer } from './style';
 import { Col, Row } from 'reactstrap';
 
-interface State {
-  // onConfirmSignIn: boolean
-  // newPassword: boolean,
+/* istanbul ignore next */
+interface State {  
   forgotLinkError: boolean,
   userResponse: any,
   loginError: boolean,
@@ -26,6 +26,7 @@ interface State {
 /**
  * Login
  */
+/* istanbul ignore next */
 class Login extends React.Component<Props, State> {
   public static defaultProps: Partial<Props> = {
     email: {
@@ -82,14 +83,13 @@ class Login extends React.Component<Props, State> {
     messageConfirmSignIn: "Please verify your account.",
     messageNewPasswordError: "Please check password compatibility.",
     messageConfirmSignInError: "Please enter valid code.",
-    /* istanbul ignore next  */ onCompleted() /* istanbul ignore next  */ {
+    /* istanbul ignore next  */ onCompleted() {
       //
     }
   }
 
-  public state = {
-    // onConfirmSignIn: false,
-    // newPassword: false,
+  /* istanbul ignore next */
+  public state = {    
     forgotLinkError: false,
     userResponse: {},
     validationSchema: {},
@@ -100,6 +100,7 @@ class Login extends React.Component<Props, State> {
     status: 'LOGIN' as "LOGIN" | "MFA" | "NEW_PASSWORD_REQUIRED"
   }
 
+  /* istanbul ignore next */
   public componentDidMount() {
     this.setValidation();
   }
@@ -109,6 +110,7 @@ class Login extends React.Component<Props, State> {
     this.setState({ forgotLinkError: true })
   }
 
+  /* istanbul ignore else  */
   public setValidation() {
     if (this.state.status === "LOGIN" ||/* istanbul ignore next  */  this.state.status === null) /* istanbul ignore next  */ {
       this.setState({
@@ -184,6 +186,7 @@ class Login extends React.Component<Props, State> {
     }
   }
 
+/* istanbul ignore next */
   public render() {
     return (
       <React.Fragment>
@@ -247,4 +250,6 @@ class Login extends React.Component<Props, State> {
     )
   }
 }
+
+/* istanbul ignore next */
 export default Login;
