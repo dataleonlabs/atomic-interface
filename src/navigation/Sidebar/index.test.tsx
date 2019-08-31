@@ -61,7 +61,7 @@ describe('<Sidebar />', () => {
     expect(wrapper.find(NavItem)).toHaveLength(8)
     expect(wrapper.find(NavLink)).toHaveLength(0)
     expect(wrapper.find(HelpCircle)).toHaveLength(1)
-    expect(wrapper.find(BrandIcon)).toHaveLength(1)
+    expect(wrapper.find(BrandIcon)).toHaveLength(2)
 
   })
   
@@ -113,7 +113,7 @@ describe('<Sidebar />', () => {
     expect(wrapper.find(NavItem)).toHaveLength(8)
     expect(wrapper.find(Badge)).toHaveLength(0)
     expect(wrapper.find(NavHeader)).toHaveLength(1)
-    expect(wrapper.find(BrandIcon)).toHaveLength(1)
+    expect(wrapper.find(BrandIcon)).toHaveLength(2)
   })
   it('U-TEST-3 - rendering sidebar with loader', () => {
     const wrapper = enzyme.mount(
@@ -163,7 +163,7 @@ describe('<Sidebar />', () => {
     expect(wrapper.find(NavLink)).toHaveLength(0)
     expect(wrapper.find(HelpCircle)).toHaveLength(0)
     expect(wrapper.find(Loader)).toHaveLength(8)
-    expect(wrapper.find(BrandIcon)).toHaveLength(1)
+    expect(wrapper.find(BrandIcon)).toHaveLength(2)
 
   })
   it('U-TEST-4 - rendering sidebar with icons only', () => {
@@ -213,7 +213,7 @@ describe('<Sidebar />', () => {
     expect(wrapper.find(NavItem)).toHaveLength(8)
     expect(wrapper.find(NavLink)).toHaveLength(0)
     expect(wrapper.find(HelpCircle)).toHaveLength(1)
-    expect(wrapper.find(BrandIcon)).toHaveLength(1)
+    expect(wrapper.find(BrandIcon)).toHaveLength(2)
 
   })
 })
