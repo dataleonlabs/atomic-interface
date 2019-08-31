@@ -14,28 +14,16 @@ import NavItem from '../../navigation/Navbar/NavItem';
 import NavbarBrand from '../../navigation/Navbar/NavbarBrand';
 import NavLink from '../../navigation/Navbar/NavLink';
 
-import { UnControlled as CodeMirror } from 'react-codemirror2'
-import 'codemirror/lib/codemirror.css';
-require('codemirror/mode/jsx/jsx');
-
-var reindent = function(cm) {
-  var lines = cm.lineCount();
-  for (var i = 0; i < lines; i++) {
-    cm.indentLine(i);
-  };
-}
-
-
-storiesOf('Get started|Inroduction', module)
+storiesOf('Get started|Introduction', module)
   .add('Basic', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
         <Breadcrumb>
             <BreadcrumbItem>Introduction</BreadcrumbItem>
-            <BreadcrumbItem><a href="#">Basic</a></BreadcrumbItem>
+            <BreadcrumbItem><a href="/?path=/story/introduction-introduction--basic">Basic</a></BreadcrumbItem>
         </Breadcrumb>
         <br/>
-        <h1>Introduction</h1>
+        <h1>Atomic Interface</h1>
         <br/>
         <br/>
         <p style={{fontSize: 20}}>Get started with over a dozen reusable components built on top of Bootstrap with styles enhancement and additional components and options.</p>
@@ -50,7 +38,7 @@ storiesOf('Get started|Inroduction', module)
               <CardTitle><h6><strong>UI Elements</strong></h6></CardTitle>
               <br/>
               <CardText>UI Elements are those elements that can be found in any page with a single function and that can exist alone.</CardText>
-              <CardLink href="#">View Elements <ArrowRight size={14} /></CardLink>
+              <CardLink href="/?path=/story/ui-elements-abbreviation--basic-example">View Elements <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
           <Card>
@@ -61,7 +49,7 @@ storiesOf('Get started|Inroduction', module)
               <CardTitle><h6><strong>Forms</strong></h6></CardTitle>
               <br/>
               <CardText>Examples and usage guidelines for form control styles, layout options, and custom components...</CardText>
-              <CardLink href="#">View Forms <ArrowRight size={14} /></CardLink>
+              <CardLink href="/?path=/story/forms-form--form-layout">View Forms <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
         </CardDeck>
@@ -76,7 +64,7 @@ storiesOf('Get started|Inroduction', module)
               <CardTitle><h6><strong>Layouts</strong></h6></CardTitle>
               <br/>
               <CardText>Use Bootstrap's powerful mobile-first flexbox grid to build layouts of all shapes and sizes.</CardText>
-              <CardLink href="#">View Layouts <ArrowRight size={14} /></CardLink>
+              <CardLink href="/?path=/story/layout-forgot-password--example">View Layouts <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
           <Card>
@@ -87,7 +75,7 @@ storiesOf('Get started|Inroduction', module)
               <CardTitle><h6><strong>Navigation</strong></h6></CardTitle>
               <br/>
               <CardText>Responsive navigation header, the navbar. Includes support for branding, navigation, and more.</CardText>
-              <CardLink href="#">View Navigation <ArrowRight size={14} /></CardLink>
+              <CardLink href="/?path=/story/navigation-breadcrumb--basic-example">View Navigation <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
         </CardDeck>
@@ -102,7 +90,7 @@ storiesOf('Get started|Inroduction', module)
               <CardTitle><h6><strong>Get Started</strong></h6></CardTitle>
               <br/>
               <CardText>Get started with over a dozen reusable components built on top of Bootstrap with styles enhancement.</CardText>
-              <CardLink href="">View Introduction <ArrowRight size={14} /></CardLink>
+              <CardLink href="/?path=/story/get-started-typography--typography">View Introduction <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
           <Card>
@@ -113,14 +101,14 @@ storiesOf('Get started|Inroduction', module)
               <CardTitle><h6><strong>Others</strong></h6></CardTitle>
               <br/>
               <CardText>For faster mobile-friendly and responsive development, template includes dozens of utility...</CardText>
-              <CardLink href="#">View Utilities <ArrowRight size={14} /></CardLink>
+              <CardLink href="/?path=/story/ui-elements-abbreviation--basic-example">View Utilities <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
         </CardDeck>
         <br/>
         <hr/>
         <Navbar>
-          <footer>© 2019 STORYBOOK V1.0.0.</footer>
+          <footer>© 2019 Young Atomic Interface V1.0.0.</footer>
           <Nav>
             <NavItem>
               <NavLink href="#">Licence</NavLink>
@@ -133,113 +121,7 @@ storiesOf('Get started|Inroduction', module)
             </NavItem>
           </Nav>
         </Navbar>
-        <br/>
-        <br/>
-        <h6><strong>Code</strong></h6>
-        <hr/>
-        <CodeMirror
-          value="<CardDeck>
-          <Card>
-            <CardBody>
-              <Layers size={50} color='#A6ACAF' />
-              <br/>
-              <br/>
-              <CardTitle><h6><strong>UI Elements</strong></h6></CardTitle>
-              <br/>
-              <CardText>UI Elements are those elements that can be found in any page with a single function and that can exist alone.</CardText>
-              <CardLink href='#'>View Elements <ArrowRight size={14} /></CardLink>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <Edit3 size={50} color='#A6ACAF'/>
-              <br/>
-              <br/>
-              <CardTitle><h6><strong>Forms</strong></h6></CardTitle>
-              <br/>
-              <CardText>Examples and usage guidelines for form control styles, layout options, and custom components...</CardText>
-              <CardLink href='#'>View Forms <ArrowRight size={14} /></CardLink>
-            </CardBody>
-          </Card>
-          </CardDeck>
-          <br/>
-          <br/>
-          <CardDeck>
-            <Card>
-              <CardBody>
-                <Layout size={50} color='#A6ACAF'/>
-                <br/>
-                <br/>
-                <CardTitle><h6><strong>Layouts</strong></h6></CardTitle>
-                <br/>
-                <CardText>Use Bootstrap's powerful mobile-first flexbox grid to build layouts of all shapes and sizes.</CardText>
-                <CardLink href='#'>View Layouts <ArrowRight size={14} /></CardLink>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardBody>
-                <Navigation size={50} color='#A6ACAF'/>
-                <br/>
-                <br/>
-                <CardTitle><h6><strong>Navigation</strong></h6></CardTitle>
-                <br/>
-                <CardText>Responsive navigation header, the navbar. Includes support for branding, navigation, and more.</CardText>
-                <CardLink href='#'>View Navigation <ArrowRight size={14} /></CardLink>
-              </CardBody>
-            </Card>
-          </CardDeck>
-          <br/>
-          <br/>
-          <CardDeck>
-            <Card>
-              <CardBody>
-                <PlayCircle size={50} color='#A6ACAF'/>
-                <br/>
-                <br/>
-                <CardTitle><h6><strong>Get Started</strong></h6></CardTitle>
-                <br/>
-                <CardText>Get started with over a dozen reusable components built on top of Bootstrap with styles enhancement.</CardText>
-                <CardLink href=''>View Introduction <ArrowRight size={14} /></CardLink>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardBody>
-                <Package size={50} color='#A6ACAF'/>
-                <br/>
-                <br/>
-                <CardTitle><h6><strong>Others</strong></h6></CardTitle>
-                <br/>
-                <CardText>For faster mobile-friendly and responsive development, template includes dozens of utility...</CardText>
-                <CardLink href='#'>View Utilities <ArrowRight size={14} /></CardLink>
-              </CardBody>
-            </Card>
-          </CardDeck>
-          <br/>
-          <hr/>
-          <Navbar>
-            <footer>© 2019 STORYBOOK V1.0.0.</footer>
-            <Nav>
-              <NavItem>
-                <NavLink href='#'>Licence</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href='#'>Change Log</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href='#'>Get Help</NavLink>
-              </NavItem>
-            </Nav>
-          </Navbar>"
-          options={{
-          mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
-          readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
-          }}
-        />
+        <br></br>
       </Col>
     </React.Fragment>
   ))

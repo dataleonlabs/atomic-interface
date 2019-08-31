@@ -21,11 +21,6 @@ storiesOf('Layout|Login', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h2>Layout</h2>
-        <br/>
-        <p>Use custom form layout styles that can be added to element like cards, modals, sidebars or any other elements. Additional utilities classes can be used to vary this layout.</p>
-        <hr/>
-        <br/>
         <h4>Layout - Login</h4>
         <br/>
         <p>The file input is the most generaly of the bunch and requires additional JavaScript if you’d like to hook them up with functional Picture and selected file name text.</p>
