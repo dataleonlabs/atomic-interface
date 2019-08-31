@@ -43,6 +43,10 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
         border-radius: 3px!important;
     }
 
+    .CodeMirror-code {
+      background-color: #f6f8fa!important;
+      padding: 10px!important;
+    }
   }
 `
 class ThemeProvider extends React.Component {
