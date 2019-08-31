@@ -38,26 +38,17 @@ storiesOf('Navigation|Breadcrumb', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value="<Breadcrumb>
-          <BreadcrumbItem>Story</BreadcrumbItem>
-          <BreadcrumbItem>Navigation</BreadcrumbItem>
-          <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-          </Breadcrumb>"
+          value={`<Breadcrumb>
+  <BreadcrumbItem>Story</BreadcrumbItem>
+  <BreadcrumbItem>Navigation</BreadcrumbItem>
+  <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+</Breadcrumb>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
           }}
-          editorDidMount={editor => {            
-          reindent(editor);
-          }}
         />
-        <pre>
-          {`
-
-          `}
-          </pre>
           <hr />
       </Col>
     </React.Fragment>
@@ -83,28 +74,19 @@ storiesOf('Navigation|Breadcrumb', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<div>
-          <Breadcrumb loading={true}>
-            <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
-            <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
-            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-          </Breadcrumb>
-          </div>"
+          value={`<div>
+  <Breadcrumb loading={true}>
+    <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
+    <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
+    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+  </Breadcrumb>
+</div>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
           }}
-          editorDidMount={editor => {            
-          reindent(editor);
-          }}
         />
-        <pre>
-          {`
-
-          `}
-        </pre>
       </Col>
     </React.Fragment>
   ))
@@ -129,28 +111,19 @@ storiesOf('Navigation|Breadcrumb', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<div>
-          <Breadcrumb>
-            <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
-            <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
-            <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-          </Breadcrumb>
-          </div>"
+          value={`<div>
+  <Breadcrumb>
+    <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
+    <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
+    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+  </Breadcrumb>
+</div>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
           }}
-          editorDidMount={editor => {            
-          reindent(editor);
-          }}
         />
-        <pre>
-          {`
-
-          `}
-        </pre>
       </Col>
     </React.Fragment>
   ))
