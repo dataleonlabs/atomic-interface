@@ -46,6 +46,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     .CodeMirror-code {
       background-color: #f6f8fa!important;
       padding: 10px!important;
+      font-size: 14px!important;
     }
   }
 `
