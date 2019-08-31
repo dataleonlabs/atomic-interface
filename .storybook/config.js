@@ -41,7 +41,7 @@ addParameters({
      * display panel that shows addon configurations
      * @type {Boolean} 
      */
-    showAddonPanel: false,
+    showAddonPanel: true,
     /**
      * display floating search box to search through stories
      * @type {Boolean} 
