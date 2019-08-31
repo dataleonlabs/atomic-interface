@@ -84,48 +84,48 @@ class PopoverExample extends React.Component<{ placement?: Popper.Placement }> {
           <hr/>
           <CodeMirror
           value={`<span style={{marginRight: 30}}>
-          <Button color="secondary" id={"Popover-"} type="button">
+          <Button color="secondary" id="Popover-" type="button">
             show
           </Button>
           <Popover
             placement="right"
-            target={"Popover-"}
+            target="Popover-"
             header="Popover Title"
           >
             Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
           </Popover>
         </span>
         <span style={{marginRight: 30}}>
-          <Button color="secondary" id={"Popover-3"} type="button">
+          <Button color="secondary" id="Popover-3" type="button">
             show
           </Button>
           <Popover
             placement="bottom"
-            target={"Popover-3"}
+            target="Popover-3"
             header="Popover Title"
           >
             Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
           </Popover>
         </span>
         <span style={{marginRight: 30}}>
-          <Button color="secondary" id={"Popover-4"} type="button">
+          <Button color="secondary" id="Popover-4" type="button">
             show
           </Button>
           <Popover
             placement="top"
-            target={"Popover-4"}
+            target="Popover-4"
             header="Popover Title"
           >
             Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
           </Popover>
         </span>
         <span style={{marginRight: 30}}>
-          <Button color="secondary" id={"Popover-2"} type="button">
+          <Button color="secondary" id="Popover-2" type="button">
             show
           </Button>
           <Popover
             placement="left"
-            target={"Popover-2"}
+            target="Popover-2"
             header="Popover Title"
           >
             Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.

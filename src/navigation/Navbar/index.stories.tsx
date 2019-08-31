@@ -38,13 +38,13 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar>
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
           <Nav>
             <NavItem>
-              <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+              <NavLink href="http://yahoo.com">Yahoo</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href={"http://google.com"}>Google</NavLink>
+              <NavLink href="http://google.com">Google</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
@@ -85,7 +85,7 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar>
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
         </Navbar>
         <br/>
         <h6><strong>Code</strong></h6>
@@ -116,13 +116,13 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar>
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
           <Nav>
             <NavItem>
-              <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+              <NavLink href="http://yahoo.com">Yahoo</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href={"http://google.com"}>Google</NavLink>
+              <NavLink href="http://google.com">Google</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
@@ -163,7 +163,7 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar>
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
           <div style={{ width: '100%' }}>
             <Form>
               {(props) => (
@@ -219,7 +219,7 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar>
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
           <Breadcrumb loading={true}>
             <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
             <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
@@ -227,10 +227,10 @@ storiesOf('Navigation|Navbar', module)
           </Breadcrumb>
           <Nav>
             <NavItem>
-              <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+              <NavLink href="http://yahoo.com">Yahoo</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href={"http://google.com"}>Google</NavLink>
+              <NavLink href="http://google.com">Google</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
@@ -277,7 +277,7 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar>
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
           <Breadcrumb>
             <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
             <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
@@ -285,10 +285,10 @@ storiesOf('Navigation|Navbar', module)
           </Breadcrumb>
           <Nav>
             <NavItem>
-              <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+              <NavLink href="http://yahoo.com">Yahoo</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href={"http://google.com"}>Google</NavLink>
+              <NavLink href="http://google.com">Google</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
@@ -335,7 +335,7 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar>
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
           <Breadcrumb>
             <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
             <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>
@@ -393,7 +393,7 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar>
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
           <div style={{ width: '100%' }}>
             <Form>
               {(props) => (
@@ -411,10 +411,10 @@ storiesOf('Navigation|Navbar', module)
               <NavLink><Users size={24} /></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href={"http://yahoo.com"}>Yahoo</NavLink>
+              <NavLink href="http://yahoo.com">Yahoo</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href={"http://google.com"}>Google</NavLink>
+              <NavLink href="http://google.com">Google</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
@@ -471,7 +471,7 @@ storiesOf('Navigation|Navbar', module)
         <h6><strong>Example</strong></h6>
         <hr/>
         <Navbar size="lg">
-          <NavbarBrand href={"http://google.com"}>Atomic Interface</NavbarBrand>
+          <NavbarBrand href="http://google.com">Atomic Interface</NavbarBrand>
           <Breadcrumb>
             <BreadcrumbItem><a href="#">Story</a></BreadcrumbItem>
             <BreadcrumbItem><a href="#">Navigation</a></BreadcrumbItem>

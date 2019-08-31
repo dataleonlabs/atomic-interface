@@ -36,7 +36,7 @@ storiesOf('Forms|Dropzone', module)
             <Col sm={4} style={{ marginTop: 30, paddingLeft: 0}}>
               <DropzoneS3
                 name="myfile"
-                s3Url={"http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"}
+                s3Url="http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"
                 color="primary"
                 size={'md'}
                 multipleFiles={true}
@@ -61,7 +61,7 @@ storiesOf('Forms|Dropzone', module)
               <h5>With value</h5>
               <DropzoneS3
                 name="myfile"
-                s3Url={"http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"}
+                s3Url="http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"
                 color="primary"
                 size={'md'}
                 multipleFiles={true}

@@ -13,21 +13,21 @@ import Nav from '../../navigation/Navbar/Nav';
 import NavItem from '../../navigation/Navbar/NavItem';
 import NavbarBrand from '../../navigation/Navbar/NavbarBrand';
 import NavLink from '../../navigation/Navbar/NavLink';
+const { version } = require('./../../../package.json')
 
 storiesOf('Get started|Introduction', module)
-  .add('Basic', () => (
+  .add('Get started', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
         <Breadcrumb>
             <BreadcrumbItem>Introduction</BreadcrumbItem>
-            <BreadcrumbItem><a href="/?path=/story/introduction-introduction--basic">Basic</a></BreadcrumbItem>
+          <BreadcrumbItem><a href="/?path=/story/get-started-introduction--get-started">Get started</a></BreadcrumbItem>
         </Breadcrumb>
         <br/>
         <h1>Atomic Interface</h1>
         <br/>
-        <br/>
         <p style={{fontSize: 20}}>Get started with over a dozen reusable components built on top of Bootstrap with styles enhancement and additional components and options.</p>
-        <br/>
+        <hr/>
         <br/>
         <CardDeck>
           <Card>
@@ -90,7 +90,7 @@ storiesOf('Get started|Introduction', module)
               <CardTitle><h6><strong>Get Started</strong></h6></CardTitle>
               <br/>
               <CardText>Get started with over a dozen reusable components built on top of Bootstrap with styles enhancement.</CardText>
-              <CardLink href="/?path=/story/get-started-typography--typography">View Introduction <ArrowRight size={14} /></CardLink>
+              <CardLink href="/story/get-started-introduction--typography">View Introduction <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
           <Card>
@@ -108,16 +108,13 @@ storiesOf('Get started|Introduction', module)
         <br/>
         <hr/>
         <Navbar>
-          <footer>© 2019 Young Atomic Interface V1.0.0.</footer>
+          <footer>© 2019 Young Atomic Interface v{version}</footer>
           <Nav>
             <NavItem>
-              <NavLink href="#">Licence</NavLink>
+              <NavLink href="https://youngapp.co">Young App</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Change Log</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">Get Help</NavLink>
+              <NavLink href="https://helpcenter.youngapp.co">Help center</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
