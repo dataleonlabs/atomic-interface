@@ -38,19 +38,15 @@ storiesOf('UI Elements|HelpIcon', module)
         <h6><strong>Code</strong></h6>
         <hr />        
         <CodeMirror
-          value='<span>
-          <HelpIcon header="Help" target="help">
-            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-          </HelpIcon>
-        </span>'
+          value={`<span>
+  <HelpIcon header="Help" target="help">
+    Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+  </HelpIcon>
+</span>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
     </Col>

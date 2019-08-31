@@ -55,32 +55,28 @@ storiesOf('UI Elements|EmptyPrompt', module)
             <h6><strong>Code</strong></h6>        
             <hr/>         
             <CodeMirror
-              value='<EmptyPrompt>
-              <Icon>
-                <Info size={60} />
-              </Icon>
-              <Spacer size="sm" />
-              <Title size="large">
-                You have no spice
-                  </Title>
-              <Spacer size="sm" />
-              <BodyText size="small">
-                <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
-                <p>You’ll need spice to rule Arrakis, young Atreides.</p>
-              </BodyText>
-              <Spacer size="sm" />
-              <ActionPanel>
-                <Button color="primary">Button 1</Button>
-              </ActionPanel>
-            </EmptyPrompt>'
+              value={`<EmptyPrompt>
+  <Icon>
+    <Info size={60} />
+  </Icon>
+  <Spacer size="sm" />
+  <Title size="large">
+    You have no spice
+      </Title>
+  <Spacer size="sm" />
+  <BodyText size="small">
+    <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
+    <p>You’ll need spice to rule Arrakis, young Atreides.</p>
+  </BodyText>
+  <Spacer size="sm" />
+  <ActionPanel>
+    <Button color="primary">Button 1</Button>
+  </ActionPanel>
+</EmptyPrompt>`}
               options={{
                 mode: 'jsx',
-                lineNumbers: true,
-                smartIndent: true,
+                lineNumbers: false,
                 readOnly: true            
-              }}
-              editorDidMount={editor => {            
-                reindent(editor);
               }}
             />
           </Col>
@@ -121,32 +117,28 @@ storiesOf('UI Elements|EmptyPrompt', module)
             <h6><strong>Code</strong></h6>        
             <hr/>         
             <CodeMirror
-              value='<EmptyPrompt>
-              <Icon>
-                <Info size={40} />
-              </Icon>
-              <Spacer size="sm" />
-              <Title size="medium">
-                You have no spice
-                  </Title>
-              <Spacer size="sm" />
-              <BodyText size="xsmall">
-                <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
-                <p>You’ll need spice to rule Arrakis, young Atreides.</p>
-              </BodyText>
-              <Spacer size="sm" />
-              <ActionPanel>
-                <Button color="primary">Button 1</Button>
-              </ActionPanel>
-            </EmptyPrompt>'
+              value={`<EmptyPrompt>
+  <Icon>
+    <Info size={40} />
+  </Icon>
+  <Spacer size="sm" />
+  <Title size="medium">
+    You have no spice
+      </Title>
+  <Spacer size="sm" />
+  <BodyText size="xsmall">
+    <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
+    <p>You’ll need spice to rule Arrakis, young Atreides.</p>
+  </BodyText>
+  <Spacer size="sm" />
+  <ActionPanel>
+    <Button color="primary">Button 1</Button>
+  </ActionPanel>
+</EmptyPrompt>`}
               options={{
                 mode: 'jsx',
-                lineNumbers: true,
-                smartIndent: true,
+                lineNumbers: false,
                 readOnly: true            
-              }}
-              editorDidMount={editor => {            
-                reindent(editor);
               }}
             />
           </Col>
@@ -179,24 +171,20 @@ storiesOf('UI Elements|EmptyPrompt', module)
             <h6><strong>Code</strong></h6>        
             <hr/>         
             <CodeMirror
-              value='<EmptyPrompt>
-              <Spacer size="sm" />
-              <Title size="medium">
-                You have no spice
-                  </Title>
-              <Spacer size="sm" />
-              <ActionPanel>
-                <Button color="primary">Button 1</Button>
-              </ActionPanel>
-            </EmptyPrompt>'
+              value={`<EmptyPrompt>
+  <Spacer size="sm" />
+  <Title size="medium">
+    You have no spice
+      </Title>
+  <Spacer size="sm" />
+  <ActionPanel>
+    <Button color="primary">Button 1</Button>
+  </ActionPanel>
+</EmptyPrompt>`}
               options={{
                 mode: 'jsx',
-                lineNumbers: true,
-                smartIndent: true,
+                lineNumbers: false,
                 readOnly: true            
-              }}
-              editorDidMount={editor => {            
-                reindent(editor);
               }}
             />
           </Col>
@@ -238,33 +226,29 @@ storiesOf('UI Elements|EmptyPrompt', module)
             <h6><strong>Code</strong></h6>        
             <hr/>         
             <CodeMirror
-              value='<EmptyPrompt>
-              <Icon>
-                <Info size={40} />
-              </Icon>
-              <Spacer size="sm" />
-              <Title size="medium">
-                You have no spice
-                  </Title>
-              <Spacer size="sm" />
-              <BodyText size="xsmall">
-                <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
-                <p>You’ll need spice to rule Arrakis, young Atreides.</p>
-              </BodyText>
-              <Spacer size="sm" />
-              <ActionPanel>
-                <span><Button color="primary">Left</Button> </span>
-                <span> <Button color="primary">Right</Button></span>
-              </ActionPanel>
-            </EmptyPrompt>'
+              value={`<EmptyPrompt>
+  <Icon>
+    <Info size={40} />
+  </Icon>
+  <Spacer size="sm" />
+  <Title size="medium">
+    You have no spice
+      </Title>
+  <Spacer size="sm" />
+  <BodyText size="xsmall">
+    <p>Navigators use massive amounts of spice to gain a limited form of prescience. This allows them to safely navigate interstellar space, enabling trade and travel throughout the galaxy.</p>
+    <p>You’ll need spice to rule Arrakis, young Atreides.</p>
+  </BodyText>
+  <Spacer size="sm" />
+  <ActionPanel>
+    <span><Button color="primary">Left</Button> </span>
+    <span> <Button color="primary">Right</Button></span>
+  </ActionPanel>
+</EmptyPrompt>`}
               options={{
                 mode: 'jsx',
-                lineNumbers: true,
-                smartIndent: true,
+                lineNumbers: false,
                 readOnly: true            
-              }}
-              editorDidMount={editor => {            
-                reindent(editor);
               }}
             />
           </Col>

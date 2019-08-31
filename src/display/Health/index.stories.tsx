@@ -37,24 +37,20 @@ storiesOf('UI Elements|Health', module)
         <h6><strong>Code</strong></h6>        
         <hr/>         
         <CodeMirror
-          value='<Spacer size="md" />
-          <Health size="sm" color="failure">Failure</Health>
-          <Spacer size="sm" />
-          <Health size="sm" color="healthy">Healthy</Health>
-          <Spacer size="sm" />
-          <Health size="sm" color="warning">Warning</Health>
-          <Spacer size="sm" />
-          <Health size="sm" color="unknown">Unknown</Health>
-          <Spacer size="sm" />
-          <Health size="sm" color="info">Information</Health>'
+          value={`<Spacer size="md" />
+<Health size="sm" color="failure">Failure</Health>
+<Spacer size="sm" />
+<Health size="sm" color="healthy">Healthy</Health>
+<Spacer size="sm" />
+<Health size="sm" color="warning">Warning</Health>
+<Spacer size="sm" />
+<Health size="sm" color="unknown">Unknown</Health>
+<Spacer size="sm" />
+<Health size="sm" color="info">Information</Health>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />    
       </Col>

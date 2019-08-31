@@ -44,21 +44,17 @@ storiesOf('UI Elements|ListGroup', module)
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value="<ListGroup>
-                    <ListGroupItem>ListGroupItem 1</ListGroupItem>
-                    <ListGroupItem>ListGroupItem 2</ListGroupItem>
-                    <ListGroupItem>ListGroupItem 3</ListGroupItem>
-                    <ListGroupItem>ListGroupItem 4</ListGroupItem>
-                    <ListGroupItem>ListGroupItem 5</ListGroupItem>
-                    </ListGroup>"
+                    value={`<ListGroup>
+    <ListGroupItem>ListGroupItem 1</ListGroupItem>
+    <ListGroupItem>ListGroupItem 2</ListGroupItem>
+    <ListGroupItem>ListGroupItem 3</ListGroupItem>
+    <ListGroupItem>ListGroupItem 4</ListGroupItem>
+    <ListGroupItem>ListGroupItem 5</ListGroupItem>
+</ListGroup>`}
                     options={{
                     mode: 'jsx',
-                    lineNumbers: true,
-                    smartIndent: true,
+                    lineNumbers: false,
                     readOnly: true            
-                    }}
-                    editorDidMount={editor => {            
-                    reindent(editor);
                     }}
                 />
             </Col>
@@ -84,21 +80,17 @@ storiesOf('UI Elements|ListGroup', module)
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value="<ListGroup>
-                    <ListGroupItem>ListGroupItem 1 <Badge pill={true}>5</Badge></ListGroupItem>
-                    <ListGroupItem>ListGroupItem 2 <Badge pill={true}>20</Badge></ListGroupItem>
-                    <ListGroupItem>ListGroupItem 3 <Badge pill={true}>3+</Badge></ListGroupItem>
-                    <ListGroupItem>ListGroupItem 4 <Badge pill={true}>40+</Badge></ListGroupItem>
-                    <ListGroupItem>ListGroupItem 5 <Badge pill={true}>5</Badge></ListGroupItem>
-                    </ListGroup>"
+                    value={`<ListGroup>
+    <ListGroupItem>ListGroupItem 1 <Badge pill={true}>5</Badge></ListGroupItem>
+    <ListGroupItem>ListGroupItem 2 <Badge pill={true}>20</Badge></ListGroupItem>
+    <ListGroupItem>ListGroupItem 3 <Badge pill={true}>3+</Badge></ListGroupItem>
+    <ListGroupItem>ListGroupItem 4 <Badge pill={true}>40+</Badge></ListGroupItem>
+    <ListGroupItem>ListGroupItem 5 <Badge pill={true}>5</Badge></ListGroupItem>
+</ListGroup>`}
                     options={{
                     mode: 'jsx',
-                    lineNumbers: true,
-                    smartIndent: true,
+                    lineNumbers: false,
                     readOnly: true            
-                    }}
-                    editorDidMount={editor => {            
-                    reindent(editor);
                     }}
                 />
             </Col>
@@ -124,21 +116,17 @@ storiesOf('UI Elements|ListGroup', module)
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value="<ListGroup>
-                    <ListGroupItem disabled tag='a' href='#'>ListGroupItem 1</ListGroupItem>
-                    <ListGroupItem tag='a' href='#'> ListGroupItem 2 </ListGroupItem>
-                    <ListGroupItem tag='a' href='#'> ListGroupItem 3 </ListGroupItem>
-                    <ListGroupItem tag='a' href='#'> ListGroupItem 4 </ListGroupItem>
-                    <ListGroupItem tag='a' href='#'> ListGroupItem 5 </ListGroupItem>
-                    </ListGroup>"
+                    value={`<ListGroup>
+    <ListGroupItem disabled tag='a' href='#'>ListGroupItem 1</ListGroupItem>
+    <ListGroupItem tag='a' href='#'> ListGroupItem 2 </ListGroupItem>
+    <ListGroupItem tag='a' href='#'> ListGroupItem 3 </ListGroupItem>
+    <ListGroupItem tag='a' href='#'> ListGroupItem 4 </ListGroupItem>
+    <ListGroupItem tag='a' href='#'> ListGroupItem 5 </ListGroupItem>
+</ListGroup>`}
                     options={{
                     mode: 'jsx',
-                    lineNumbers: true,
-                    smartIndent: true,
+                    lineNumbers: false,
                     readOnly: true            
-                    }}
-                    editorDidMount={editor => {            
-                    reindent(editor);
                     }}
                 />
             </Col>
@@ -164,21 +152,17 @@ storiesOf('UI Elements|ListGroup', module)
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value="<ListGroup>
-                    <ListGroupItem active disabled tag='a' href='#' action>ListGroupItem 1</ListGroupItem>
-                    <ListGroupItem tag='a' href='#' action> ListGroupItem 2 </ListGroupItem>
-                    <ListGroupItem tag='a' href='#' action> ListGroupItem 3 </ListGroupItem>
-                    <ListGroupItem tag='a' href='#' action> ListGroupItem 4 </ListGroupItem>
-                    <ListGroupItem disabled tag='a' href='#' action> ListGroupItem 5 </ListGroupItem>
-                    </ListGroup>"
+                    value={`<ListGroup>
+    <ListGroupItem active disabled tag='a' href='#' action>ListGroupItem 1</ListGroupItem>
+    <ListGroupItem tag='a' href='#' action> ListGroupItem 2 </ListGroupItem>
+    <ListGroupItem tag='a' href='#' action> ListGroupItem 3 </ListGroupItem>
+    <ListGroupItem tag='a' href='#' action> ListGroupItem 4 </ListGroupItem>
+    <ListGroupItem disabled tag='a' href='#' action> ListGroupItem 5 </ListGroupItem>
+</ListGroup>`}
                     options={{
                     mode: 'jsx',
-                    lineNumbers: true,
-                    smartIndent: true,
+                    lineNumbers: false,
                     readOnly: true            
-                    }}
-                    editorDidMount={editor => {            
-                    reindent(editor);
                     }}
                 />
             </Col>
@@ -204,21 +188,17 @@ storiesOf('UI Elements|ListGroup', module)
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value="<ListGroup>
-                    <ListGroupItem active tag='button' action>ListGroupItem 1</ListGroupItem>
-                    <ListGroupItem tag='button' action> ListGroupItem 2 </ListGroupItem>
-                    <ListGroupItem tag='button' action> ListGroupItem 3 </ListGroupItem>
-                    <ListGroupItem tag='button' action> ListGroupItem 4 </ListGroupItem>
-                    <ListGroupItem disabled tag='button' action> ListGroupItem 5 </ListGroupItem>
-                    </ListGroup>"
+                    value={`<ListGroup>
+    <ListGroupItem active tag='button' action>ListGroupItem 1</ListGroupItem>
+    <ListGroupItem tag='button' action> ListGroupItem 2 </ListGroupItem>
+    <ListGroupItem tag='button' action> ListGroupItem 3 </ListGroupItem>
+    <ListGroupItem tag='button' action> ListGroupItem 4 </ListGroupItem>
+    <ListGroupItem disabled tag='button' action> ListGroupItem 5 </ListGroupItem>
+</ListGroup>`}
                     options={{
                     mode: 'jsx',
-                    lineNumbers: true,
-                    smartIndent: true,
+                    lineNumbers: false,
                     readOnly: true            
-                    }}
-                    editorDidMount={editor => {            
-                    reindent(editor);
                     }}
                 />
             </Col>
@@ -243,20 +223,16 @@ storiesOf('UI Elements|ListGroup', module)
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value="<ListGroup>
-                    <ListGroupItem color='success'>ListGroupItem 1</ListGroupItem>
-                    <ListGroupItem color='info'> ListGroupItem 2 </ListGroupItem>
-                    <ListGroupItem color='warning'> ListGroupItem 3 </ListGroupItem>
-                    <ListGroupItem color='danger'> ListGroupItem 4 </ListGroupItem>
-                    </ListGroup>"
+                    value={`<ListGroup>
+    <ListGroupItem color='success'>ListGroupItem 1</ListGroupItem>
+    <ListGroupItem color='info'> ListGroupItem 2 </ListGroupItem>
+    <ListGroupItem color='warning'> ListGroupItem 3 </ListGroupItem>
+    <ListGroupItem color='danger'> ListGroupItem 4 </ListGroupItem>
+</ListGroup>`}
                     options={{
                     mode: 'jsx',
-                    lineNumbers: true,
-                    smartIndent: true,
+                    lineNumbers: false,
                     readOnly: true            
-                    }}
-                    editorDidMount={editor => {            
-                    reindent(editor);
                     }}
                 />
             </Col>
@@ -289,28 +265,24 @@ storiesOf('UI Elements|ListGroup', module)
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value="<ListGroup>
-                    <ListGroupItem active>
-                        <ListGroupItemHeading>ListGroupItem Heading</ListGroupItemHeading>
-                        <ListGroupItemText>ListGroupItem Text</ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                        <ListGroupItemHeading>ListGroupItem Heading</ListGroupItemHeading>
-                        <ListGroupItemText>ListGroupItem Text</ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                        <ListGroupItemHeading>ListGroupItem Heading</ListGroupItemHeading>
-                        <ListGroupItemText>ListGroupItem Text</ListGroupItemText>
-                    </ListGroupItem>
-                    </ListGroup>"
+                    value={`<ListGroup>
+    <ListGroupItem active>
+        <ListGroupItemHeading>ListGroupItem Heading</ListGroupItemHeading>
+        <ListGroupItemText>ListGroupItem Text</ListGroupItemText>
+    </ListGroupItem>
+    <ListGroupItem>
+        <ListGroupItemHeading>ListGroupItem Heading</ListGroupItemHeading>
+        <ListGroupItemText>ListGroupItem Text</ListGroupItemText>
+    </ListGroupItem>
+    <ListGroupItem>
+        <ListGroupItemHeading>ListGroupItem Heading</ListGroupItemHeading>
+        <ListGroupItemText>ListGroupItem Text</ListGroupItemText>
+    </ListGroupItem>
+</ListGroup>`}
                     options={{
                     mode: 'jsx',
-                    lineNumbers: true,
-                    smartIndent: true,
+                    lineNumbers: false,
                     readOnly: true            
-                    }}
-                    editorDidMount={editor => {            
-                    reindent(editor);
                     }}
                 />
             </Col>
@@ -336,21 +308,17 @@ storiesOf('UI Elements|ListGroup', module)
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value="<ListGroup flush>
-                    <ListGroupItem disabled tag='a' href='#'>ListGroupItem 1</ListGroupItem>
-                    <ListGroupItem tag='a' href='#'> ListGroupItem 2 </ListGroupItem>
-                    <ListGroupItem tag='a' href='#'> ListGroupItem 3 </ListGroupItem>
-                    <ListGroupItem tag='a' href='#'> ListGroupItem 4 </ListGroupItem>
-                    <ListGroupItem tag='a' href='#'> ListGroupItem 5 </ListGroupItem>
-                    </ListGroup>"
+                    value={`<ListGroup flush>
+    <ListGroupItem disabled tag='a' href='#'>ListGroupItem 1</ListGroupItem>
+    <ListGroupItem tag='a' href='#'> ListGroupItem 2 </ListGroupItem>
+    <ListGroupItem tag='a' href='#'> ListGroupItem 3 </ListGroupItem>
+    <ListGroupItem tag='a' href='#'> ListGroupItem 4 </ListGroupItem>
+    <ListGroupItem tag='a' href='#'> ListGroupItem 5 </ListGroupItem>
+</ListGroup>`}
                     options={{
                     mode: 'jsx',
-                    lineNumbers: true,
-                    smartIndent: true,
+                    lineNumbers: false,
                     readOnly: true            
-                    }}
-                    editorDidMount={editor => {            
-                    reindent(editor);
                     }}
                 />
             </Col>

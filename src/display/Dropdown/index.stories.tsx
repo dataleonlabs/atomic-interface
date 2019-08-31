@@ -62,20 +62,16 @@ storiesOf('UI Elements|DropDown', module)
           <h6><strong>Code</strong></h6>
           <hr />        
           <CodeMirror
-            value='<DropDown title="DropDown" caret >
-            <DropDownItem>Item1</DropDownItem>
-            <DropDownItem>Item2</DropDownItem>
-            <DropDownItem>Item3</DropDownItem>
-            <DropDownItem>Item4</DropDownItem>
-          </DropDown>'
+            value={`<DropDown title="DropDown" caret >
+  <DropDownItem>Item1</DropDownItem>
+  <DropDownItem>Item2</DropDownItem>
+  <DropDownItem>Item3</DropDownItem>
+  <DropDownItem>Item4</DropDownItem>
+</DropDown>`}
             options={{
               mode: 'jsx',
-              lineNumbers: true,
-              smartIndent: true,
+              lineNumbers: false,
               readOnly: true            
-            }}
-            editorDidMount={editor => {            
-              reindent(editor);
             }}
           />
         </Col>
@@ -101,21 +97,17 @@ storiesOf('UI Elements|DropDown', module)
         <h6><strong>Code</strong></h6>
         <hr />        
           <CodeMirror
-            value='<DropDown title="DropDown" caret >
-            <DropDownItem>Item1</DropDownItem>
-            <DropDownItem>Item2</DropDownItem>
-            <DropDownItem divider />
-            <DropDownItem>Item3</DropDownItem>
-            <DropDownItem>Item4</DropDownItem>
-          </DropDown>'
+            value={`<DropDown title="DropDown" caret >
+  <DropDownItem>Item1</DropDownItem>
+  <DropDownItem>Item2</DropDownItem>
+  <DropDownItem divider />
+  <DropDownItem>Item3</DropDownItem>
+  <DropDownItem>Item4</DropDownItem>
+</DropDown>`}
             options={{
               mode: 'jsx',
-              lineNumbers: true,
-              smartIndent: true,
+              lineNumbers: false,
               readOnly: true            
-            }}
-            editorDidMount={editor => {            
-              reindent(editor);
             }}
           />        
         </Col>

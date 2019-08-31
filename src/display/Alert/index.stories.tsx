@@ -36,12 +36,8 @@ storiesOf('UI Elements|Alert', module)
           value={`<Alert icon={true} color="danger"> Demo Of Alert Box with Icon</Alert>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
       </Col>
@@ -62,17 +58,13 @@ storiesOf('UI Elements|Alert', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value='<Alert icon={false} color="primary">
-                    Demo Of Alert Box without icon
-                </Alert>'
+          value={`<Alert icon={false} color="primary">
+  Demo Of Alert Box without icon
+</Alert>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />        
       </Col>

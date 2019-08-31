@@ -39,22 +39,18 @@ storiesOf('UI Elements|Badge', module)
         <h6><strong>Code</strong></h6>
         <hr />           
         <CodeMirror
-          value='<h5><Badge color="primary">Primary</Badge></h5>
-          <h5><Badge color="secondary">Secondary</Badge></h5>
-          <h5><Badge color="success">Success</Badge></h5>
-          <h5><Badge color="danger">Danger</Badge></h5>
-          <h5><Badge color="warning">Warning</Badge></h5>
-          <h5><Badge color="info">Info</Badge></h5>
-          <h5><Badge color="light">Light</Badge></h5>
-          <h5><Badge color="dark">Dark</Badge></h5>'
+          value={`<h5><Badge color="primary">Primary</Badge></h5>
+<h5><Badge color="secondary">Secondary</Badge></h5>
+<h5><Badge color="success">Success</Badge></h5>
+<h5><Badge color="danger">Danger</Badge></h5>
+<h5><Badge color="warning">Warning</Badge></h5>
+<h5><Badge color="info">Info</Badge></h5>
+<h5><Badge color="light">Light</Badge></h5>
+<h5><Badge color="dark">Dark</Badge></h5>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
       </Col>
@@ -81,22 +77,18 @@ storiesOf('UI Elements|Badge', module)
       <h6><strong>Code</strong></h6>      
       <hr />
         <CodeMirror
-          value='<h5><Badge color="primary" pill>Primary</Badge></h5>
-          <h5><Badge color="secondary" pill>Secondary</Badge></h5>
-          <h5><Badge color="success" pill>Success</Badge></h5>
-          <h5><Badge color="danger" pill>Danger</Badge></h5>
-          <h5><Badge color="warning" pill>Warning</Badge></h5>
-          <h5><Badge color="info" pill>Info</Badge></h5>
-          <h5><Badge color="light" pill>Light</Badge></h5>
-          <h5><Badge color="dark" pill>Dark</Badge></h5>'
+          value={`<h5><Badge color="primary" pill>Primary</Badge></h5>
+<h5><Badge color="secondary" pill>Secondary</Badge></h5>
+<h5><Badge color="success" pill>Success</Badge></h5>
+<h5><Badge color="danger" pill>Danger</Badge></h5>
+<h5><Badge color="warning" pill>Warning</Badge></h5>
+<h5><Badge color="info" pill>Info</Badge></h5>
+<h5><Badge color="light" pill>Light</Badge></h5>
+<h5><Badge color="dark" pill>Dark</Badge></h5>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,
-            smartIndent: true,
+            lineNumbers: false,
             readOnly: true            
-          }}
-          editorDidMount={editor => {            
-            reindent(editor);
           }}
         />
       </Col>
