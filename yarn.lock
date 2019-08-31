@@ -1347,7 +1347,7 @@
     react-inspector "^3.0.2"
     uuid "^3.3.2"
 
-"@storybook/addon-info@^5.1.10":
+"@storybook/addon-info@^5.1.11":
   version "5.1.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-5.1.11.tgz#82cc8e36b20eaac469a171299e64754ebae189c8"
   dependencies:
@@ -1400,6 +1400,14 @@
     global "^4.3.2"
     prop-types "^15.7.2"
     qs "^6.6.0"
+
+"@storybook/addon-options@^5.1.11":
+  version "5.1.11"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-5.1.11.tgz#c93249359f4c3586dc707611392cd342df911125"
+  dependencies:
+    "@storybook/addons" "5.1.11"
+    core-js "^3.0.1"
+    util-deprecate "^1.0.2"
 
 "@storybook/addons@5.1.11", "@storybook/addons@^5.1.10":
   version "5.1.11"
@@ -4139,7 +4147,6 @@ code-point-at@^1.0.0:
 codemirror@^5.48.4:
   version "5.48.4"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.48.4.tgz#4210fbe92be79a88f0eea348fab3ae78da85ce47"
-  integrity sha512-pUhZXDQ6qXSpWdwlgAwHEkd4imA0kf83hINmUEzJpmG80T/XLtDDEzZo8f6PQLuRCcUQhmzqqIo3ZPTRaWByRA==
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -9232,7 +9239,6 @@ react-clientside-effect@^1.2.0:
 react-codemirror2@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-6.0.0.tgz#180065df57a64026026cde569a9708fdf7656525"
-  integrity sha512-D7y9qZ05FbUh9blqECaJMdDwKluQiO3A9xB+fssd5jKM7YAXucRuEOlX32mJQumUvHUkHRHqXIPBjm6g0FW0Ag==
 
 react-color@^2.17.0:
   version "2.17.3"
