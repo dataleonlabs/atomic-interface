@@ -68,11 +68,11 @@ pipelines:
           - export NPM_TOKEN="2e54affd-eb69-4d58-b4ba-4dbe373410ba"
           - 'echo "//registry.npmjs.org/:_authToken=2e54affd-eb69-4d58-b4ba-4dbe373410ba" > ~/.npmrc'
           - npm publish
-          - git push --follow-tags origin master
+          - git push --follow-tags https://youngapp-devops:72%mK9DV@bitbucket.org/youngapp/ui-kit.git master
           - git fetch --unshallow
           - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
           - git fetch origin
           - git checkout --track origin/develop
           - git merge --no-ff master
           - git commit --amend -m "chore(release) - [skip ci]"
-          - git push origin develop
+          - git push https://youngapp-devops:72%mK9DV@bitbucket.org/youngapp/ui-kit.git develop
