@@ -18,11 +18,6 @@ storiesOf('Forms|Checkbox', module)
   .add('Checkbox', () => (
     <React.Fragment>
         <Col sm={8} style={{marginTop: 30, marginLeft: 30 }}>
-          <h2>Form Elements</h2>
-          <br/>
-          <hr/>
-          <p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-          <br/>
           <h4>Checkbox</h4>
           <br/>
           <p>For even more customization and cross browser consistency, use our completely custom checkbox element to replace the browser defaults.</p>
