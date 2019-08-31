@@ -33,7 +33,7 @@ storiesOf('UI Elements|Alert', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value='<Alert icon={true} color="danger"> Demo Of Alert Box with Icon</Alert>'
+          value={`<Alert icon={true} color="danger"> Demo Of Alert Box with Icon</Alert>`}
           options={{
             mode: 'jsx',
             lineNumbers: true,
@@ -47,10 +47,10 @@ storiesOf('UI Elements|Alert', module)
       </Col>
     </React.Fragment>
   ))
-  .add('Without Icon', () => (
+  .add('Icon', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30, marginBottom: 30 }}>
-        <h4>Alert - Without Icon</h4>
+        <h4>Alert - Icon</h4>
         <p>Provide contextual feedback messages for typical user actions. Read the Official Bootstrap Documentation for a full list of instructions and other options.</p>
         <br />
         <h6><strong>Example</strong></h6>
