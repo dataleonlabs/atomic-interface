@@ -13,7 +13,7 @@ const NavItem = (props: Props) => {
     return <StyledLoader><Loader /></StyledLoader>
   }
 
-  return( 
+  return(
     <NavItemBase {...rest}>
       <div className="nav-link">{rest.children}</div>
     </NavItemBase>
