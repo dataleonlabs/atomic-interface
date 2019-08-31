@@ -2,12 +2,8 @@
 import React from 'react'
 import { configure, addParameters, addDecorator }from '@storybook/react';
 const req = require.context('../src', true, /\.stories\.tsx$/);
-
-import { withInfo } from '@storybook/addon-info';
-
 import { GlobalStyle } from "../src/utils/ThemeProvider"
 
-addDecorator(withInfo); 
 
 function withGlobalStyles(storyFn) {
   return (
@@ -45,7 +41,7 @@ addParameters({
      * display panel that shows addon configurations
      * @type {Boolean} 
      */
-    showAddonPanel: true,
+    showAddonPanel: false,
     /**
      * display floating search box to search through stories
      * @type {Boolean} 

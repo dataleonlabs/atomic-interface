@@ -26,7 +26,7 @@ var reindent = function(cm) {
 }
 
 
-storiesOf('Introduction|Inroduction', module)
+storiesOf('Get started|Inroduction', module)
   .add('Basic', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
