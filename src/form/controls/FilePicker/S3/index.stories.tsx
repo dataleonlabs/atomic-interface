@@ -33,7 +33,7 @@ storiesOf('Forms|File Browser', module)
         <hr/>
         <Form>
           {({ values }) => (
-            <Col sm={4} style={{ marginTop: 30, marginLeft: 30 }}>
+            <Col sm={8} style={{ marginTop: 30 }}>
               <h4>FilePicker forAWS S3</h4>
               <FilePickerS3
                 name="myfile"
