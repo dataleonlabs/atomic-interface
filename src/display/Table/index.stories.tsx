@@ -53,9 +53,9 @@ storiesOf('UI Elements|Table', module)
         <hr/>
         <CodeMirror
           value='<Table data={assets} striped={false}>
-          <Column field={"firstName"}>First Name</Column>
-          <Column field={"lastName"}>Last Name</Column>
-          <Column field={"email"}>Email</Column>
+          <Column field="firstName">First Name</Column>
+          <Column field="lastName">Last Name</Column>
+          <Column field="email">Email</Column>
         </Table>'
           options={{
             mode: 'jsx',
@@ -89,9 +89,9 @@ storiesOf('UI Elements|Table', module)
         <hr/>
         <CodeMirror
           value='<Table data={assets} sortable={true}>
-          <Column field={"firstName"}>First Name</Column>
-          <Column field={"lastName"}>Last Name</Column>
-          <Column field={"email"} sortable={false}>Email</Column>
+          <Column field="firstName">First Name</Column>
+          <Column field="lastName">Last Name</Column>
+          <Column field="email" sortable={false}>Email</Column>
         </Table>'
           options={{
             mode: 'jsx',
@@ -125,9 +125,9 @@ storiesOf('UI Elements|Table', module)
         <hr/>
         <CodeMirror
           value='<Table data={assets} selectable={true}>
-          <Column field={"firstName"}>First Name</Column>
-          <Column field={"lastName"}>Last Name</Column>
-          <Column field={"email"}>Email</Column>
+          <Column field="firstName">First Name</Column>
+          <Column field="lastName">Last Name</Column>
+          <Column field="email">Email</Column>
         </Table>'
           options={{
             mode: 'jsx',
@@ -171,15 +171,15 @@ storiesOf('UI Elements|Table', module)
         <CodeMirror
           value='<h4>Table 1</h4>
           <Table data={assets} draggable={true}>
-            <Column field={"firstName"}>First Name</Column>
-            <Column field={"lastName"}>Last Name</Column>
-            <Column field={"email"} sortable={false}>Email</Column>
+            <Column field="firstName">First Name</Column>
+            <Column field="lastName">Last Name</Column>
+            <Column field="email" sortable={false}>Email</Column>
           </Table>
           <h4>Table 2</h4>
           <Table data={assets} draggable={true}>
-            <Column field={"firstName"}>First Name</Column>
-            <Column field={"lastName"}>Last Name</Column>
-            <Column field={"email"} sortable={false}>Email</Column>
+            <Column field="firstName">First Name</Column>
+            <Column field="lastName">Last Name</Column>
+            <Column field="email" sortable={false}>Email</Column>
           </Table>'
           options={{
             mode: 'jsx',
@@ -213,9 +213,9 @@ storiesOf('UI Elements|Table', module)
         <hr/>
         <CodeMirror
           value='<Table data={assets} sortable={true} scrollable={150}>
-          <Column field={"firstName"}>First Name</Column>
-          <Column field={"lastName"}>Last Name</Column>
-          <Column field={"email"} sortable={false}>Email</Column>
+          <Column field="firstName">First Name</Column>
+          <Column field="lastName">Last Name</Column>
+          <Column field="email" sortable={false}>Email</Column>
         </Table>'
           options={{
             mode: 'jsx',
@@ -249,9 +249,9 @@ storiesOf('UI Elements|Table', module)
         <hr/>
         <CodeMirror
           value='<Table data={assets} selectable={true} pagination={{ currentPage: 1, total: 1000 }}>
-          <Column field={"firstName"}>First Name</Column>
-          <Column field={"lastName"}>Last Name</Column>
-          <Column field={"email"}>Email</Column>
+          <Column field="firstName">First Name</Column>
+          <Column field="lastName">Last Name</Column>
+          <Column field="email">Email</Column>
         </Table>'
           options={{
             mode: 'jsx',

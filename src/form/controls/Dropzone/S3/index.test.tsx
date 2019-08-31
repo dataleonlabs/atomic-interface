@@ -11,7 +11,7 @@ describe('<DropzoneS3 />', () => {
         {(_) => (
           <DropzoneS3
             name="image"
-            s3Url={"http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"}
+            s3Url="http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"
             color="primary"
             size={'md'}
             multipleFiles={true}

@@ -121,9 +121,9 @@ storiesOf('Forms|Button', module)
       <hr/>
       <CodeMirror
           value='<div>
-          <div style={{ marginTop: 30 }}><Button size={"lg"} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"md"} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"sm"} color="primary">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="lg" color="primary">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="md" color="primary">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="sm" color="primary">primary</Button>{" "}</div>
         </div>'
           options={{
             mode: 'jsx',
@@ -159,12 +159,12 @@ storiesOf('Forms|Button', module)
       <hr/>
       <CodeMirror
           value='<div>
-          <div style={{ marginTop: 30 }}><Button size={"lg"} loading={true} color="primary">primary</Button>{""}</div>
-          <div style={{ marginTop: 30 }}><Button size={"md"} loading={true} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"sm"} loading={true} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"lg"} loading={true} color="warning">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"md"} loading={true} color="warning">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"sm"} loading={true} color="warning">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="lg" loading={true} color="primary">primary</Button>{""}</div>
+          <div style={{ marginTop: 30 }}><Button size="md" loading={true} color="primary">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="sm" loading={true} color="primary">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="lg" loading={true} color="warning">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="md" loading={true} color="warning">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="sm" loading={true} color="warning">primary</Button>{" "}</div>
         </div>'
           options={{
             mode: 'jsx',
@@ -205,17 +205,17 @@ storiesOf('Forms|Button', module)
       <hr/>
       <CodeMirror
           value='<div>
-          <div style={{ marginTop: 30 }}><Button size={"lg"} icon={<Info />} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"lg"} icon={<Info />} color="warning">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="lg" icon={<Info />} color="primary">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="lg" icon={<Info />} color="warning">primary</Button>{" "}</div>
         
-          <div style={{ marginTop: 30 }}><Button size={"md"} outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"sm"} outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="md" outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="sm" outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
         
-          <div style={{ marginTop: 30 }}><Button size={"md"} icon={<Coffee />} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"md"} icon={<Coffee />} color="warning">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="md" icon={<Coffee />} color="primary">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="md" icon={<Coffee />} color="warning">primary</Button>{" "}</div>
         
-          <div style={{ marginTop: 30 }}><Button size={"sm"} icon={<Info size={18} />} color="primary">primary</Button>{" "}</div>
-          <div style={{ marginTop: 30 }}><Button size={"sm"} icon={<Info size={18} />} color="warning">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="sm" icon={<Info size={18} />} color="primary">primary</Button>{" "}</div>
+          <div style={{ marginTop: 30 }}><Button size="sm" icon={<Info size={18} />} color="warning">primary</Button>{" "}</div>
         </div>'
           options={{
             mode: 'jsx',

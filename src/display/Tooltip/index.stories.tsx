@@ -40,10 +40,10 @@ storiesOf('UI Elements|Tooltip', module)
         <h6><strong>Code</strong></h6>
         <hr />
           <CodeMirror
-            value='<Button color="primary" id={"Tooltip-"}>
+            value='<Button color="primary" id="Tooltip-">
             Submit button
           </Button>
-          <Tooltip target={"Tooltip-"}>
+          <Tooltip target="Tooltip-">
             Tooltip Content!
           </Tooltip>'
             options={{
