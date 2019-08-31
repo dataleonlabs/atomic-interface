@@ -109,7 +109,7 @@ storiesOf('UI Elements|Alert', module)
 </Alert>`}
           options={{
             mode: 'jsx',
-            lineNumbers: false,            
+            lineNumbers: false,         
             readOnly: true,            
           }}
           editorDidMount={editor => {            
