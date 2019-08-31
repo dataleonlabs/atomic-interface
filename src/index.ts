@@ -66,8 +66,6 @@ export { TooltipProps } from './display/Tooltip/props';
 export { default as Panel } from './display/Panel';
 export { PanelProps } from './display/Panel/props';
 
-export { default as Introduction } from './display/Introduction';
-
 // Form
 export { default as Form } from './form';
 export { default as FormCollection } from './form/Collection';
