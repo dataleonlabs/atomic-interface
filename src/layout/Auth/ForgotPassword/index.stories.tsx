@@ -59,35 +59,31 @@ storiesOf('Layout|Forgot Password', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<ForgotPassword
-          provider={{
-            type: 'aws-cognito',
-            credentials: {
-              'region': 'eu-central-1',
-              'userPoolId': 'eu-central-1_5jBnZEuMX',
-              'userPoolWebClientId': '543up50u5glbg9qlpkuhop779t',
-            },
-          }}>
-          <Header>
-            <HeaderTitle>
-              <span>Forgot Password</span>
-            </HeaderTitle>
-            <HeaderSubTitle>
-              <span>Please enter your registered email ID.</span>
-            </HeaderSubTitle>
-          </Header>
-          <Footer>
-            <span>Copyright 2019</span>
-          </Footer>
-          </ForgotPassword>"
+          value={`<ForgotPassword
+  provider={{
+    type: 'aws-cognito',
+    credentials: {
+      'region': 'eu-central-1',
+      'userPoolId': 'eu-central-1_5jBnZEuMX',
+      'userPoolWebClientId': '543up50u5glbg9qlpkuhop779t',
+    },
+  }}>
+  <Header>
+    <HeaderTitle>
+      <span>Forgot Password</span>
+    </HeaderTitle>
+    <HeaderSubTitle>
+      <span>Please enter your registered email ID.</span>
+    </HeaderSubTitle>
+  </Header>
+  <Footer>
+    <span>Copyright 2019</span>
+  </Footer>
+</ForgotPassword>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>

@@ -54,35 +54,31 @@ storiesOf('Layout|Login', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value="<Login
-          provider={{
-            type: 'aws-cognito',
-            credentials: {
-              'region': 'eu-central-1',
-              'userPoolId': 'eu-central-1_5jBnZEuMX',
-              'userPoolWebClientId': '543up50u5glbg9qlpkuhop779t',
-            },
-          }}>
-          <Header>
-            <HeaderTitle>
-              <span>Sign in</span>
-            </HeaderTitle>
-            <HeaderSubTitle>
-              <span>Please login to account with your credentials</span>
-            </HeaderSubTitle>
-          </Header>
-          <Footer>
-            <span>Copyright 2019</span>
-          </Footer>
-          </Login>"
+          value={`<Login
+provider={{
+  type: 'aws-cognito',
+  credentials: {
+    'region': 'eu-central-1',
+    'userPoolId': 'eu-central-1_5jBnZEuMX',
+    'userPoolWebClientId': '543up50u5glbg9qlpkuhop779t',
+  },
+}}>
+  <Header>
+    <HeaderTitle>
+      <span>Sign in</span>
+    </HeaderTitle>
+    <HeaderSubTitle>
+      <span>Please login to account with your credentials</span>
+    </HeaderSubTitle>
+  </Header>
+  <Footer>
+    <span>Copyright 2019</span>
+  </Footer>
+</Login>`}
           options={{
           mode: 'jsx',
-          lineNumbers: true,
-          smartIndent: true,
+          lineNumbers: false,
           readOnly: true            
-          }}
-          editorDidMount={editor => {            
-          reindent(editor);
           }}
         />
       </Col>
