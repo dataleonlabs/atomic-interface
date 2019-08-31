@@ -14,7 +14,7 @@ import NavItem from '../../navigation/Navbar/NavItem';
 import NavbarBrand from '../../navigation/Navbar/NavbarBrand';
 import NavLink from '../../navigation/Navbar/NavLink';
 
-storiesOf('Introduction|Introduction', module)
+storiesOf('Get started|Introduction', module)
   .add('Basic', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
@@ -108,7 +108,7 @@ storiesOf('Introduction|Introduction', module)
         <br/>
         <hr/>
         <Navbar>
-          <footer>© 2019 STORYBOOK V1.0.0.</footer>
+          <footer>© 2019 Young Atomic Interface V1.0.0.</footer>
           <Nav>
             <NavItem>
               <NavLink href="#">Licence</NavLink>

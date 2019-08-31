@@ -98,8 +98,8 @@ storiesOf('UI Elements|Alert', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`
-<Alert icon={false} color="success">
+          value={
+`<Alert icon={false} color="success">
   <React.Fragmant>
     <p>Well done!</p>
     <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
@@ -109,7 +109,7 @@ storiesOf('UI Elements|Alert', module)
 </Alert>`}
           options={{
             mode: 'jsx',
-            lineNumbers: true,            
+            lineNumbers: false,         
             readOnly: true,            
           }}
           editorDidMount={editor => {            
