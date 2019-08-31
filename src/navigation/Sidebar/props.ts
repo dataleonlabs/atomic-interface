@@ -69,3 +69,7 @@ export interface BrandIconProps {
     type: 'open' | 'close'
     icon: string | JSX.Element | JSX.Element[]
 }
+
+export interface LoaderProps {    
+    iconOnly?: boolean;
+}

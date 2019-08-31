@@ -10,7 +10,11 @@ const NavItem = (props: Props) => {
   const { loading, ...rest } = props;
 
   if (loading === true) {
-    return <StyledLoader><Loader /></StyledLoader>
+    if(Array.isArray(rest.children)){
+      return <StyledLoader><Loader iconOnly={false} /></StyledLoader>
+    }else{
+      return <StyledLoader><Loader iconOnly={true} /></StyledLoader>
+    }    
   }
 
   return(

@@ -12,8 +12,7 @@ import SidebarWithText from './SidebarWithText'
 
 interface State {
   hover: boolean;
-  collapse: boolean;
-  icon: boolean;
+  collapse: boolean;  
 }
 
 class Sidebar extends React.Component<Props, State> {
@@ -21,8 +20,7 @@ class Sidebar extends React.Component<Props, State> {
     super(props);
     this.state = {
       collapse: false,
-      hover: false,
-      icon: false
+      hover: false
     };
   }
 
@@ -32,8 +30,8 @@ class Sidebar extends React.Component<Props, State> {
   }
 
   public componentDidMount(){
-    if(this.props.icon){
-      this.setState({ icon: true })
+    if(this.props.icon){      
+      this.setState({ collapse: true })
     }    
   }
   

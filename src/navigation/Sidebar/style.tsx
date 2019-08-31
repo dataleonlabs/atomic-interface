@@ -80,26 +80,37 @@ export const StyledSidebar = styled.div`
     color: #777;
   }
 
-  .brand-icon-close{
-    position: absolute;
-    border: 2px solid #007bff;
+  .brand-icon-close{    
+    cursor: pointer;
+    position: absolute;    
     border-radius: 50%;
     background: white;
     color: grey !important;
     padding:2px;
     right: 25px;
   }
-  .brand-icon-open{
-    position: absolute;
-    border: 2px solid #007bff;
+
+  .brand-icon-close:hover{        
+    color: #007bff !important;    
+  }
+
+  .brand-icon-open{    
+    cursor: pointer;
+    position: absolute;    
     border-radius: 50%;
     background: white;
     color: grey !important;
     padding:2px;
     right: 25px;
   }
+
+  .brand-icon-open:hover{
+    color: #007bff !important;    
+  }
+
   .sideBarTransition{
     position: absolute;
+    bottom: 10px;
     #background: #CACFD2;
     width: inherit;
     height: 40px;
