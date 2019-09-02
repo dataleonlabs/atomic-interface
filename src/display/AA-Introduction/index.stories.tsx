@@ -90,7 +90,7 @@ storiesOf('Get started|Introduction', module)
               <CardTitle><h6><strong>Get Started</strong></h6></CardTitle>
               <br/>
               <CardText>Get started with over a dozen reusable components built on top of Bootstrap with styles enhancement.</CardText>
-              <CardLink href="/story/get-started-introduction--typography">View Introduction <ArrowRight size={14} /></CardLink>
+              <CardLink href="?path=/story/get-started-introduction--get-started">View Introduction <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
           <Card>
