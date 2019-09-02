@@ -41,11 +41,9 @@ storiesOf('Forms|Input', module)
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'}/>
-  )}
-</Form>`}
+            value={`
+<Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'}/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -84,22 +82,18 @@ storiesOf('Forms|Input', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <>
-    <Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-    <Input
-      name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
-      rightAddon={'@youngapp.co'}
-    />
-      <Input
-        name={'website'} label={'Website'} placeholder={'Your website'}
-        leftAddon={'https://'}
-      />
-      <div style={{ marginTop: 30 }}><Button icon={<User />} size={'md'} color='primary'>Submit user</Button>{' '}</div>
-    </>
-  )}
-</Form>`}
+          value={`
+<Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+<Input
+  name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
+  rightAddon={'@youngapp.co'}
+/>
+<Input
+  name={'website'} label={'Website'} placeholder={'Your website'}
+  leftAddon={'https://'}
+/>
+<div style={{ marginTop: 30 }}><Button icon={<User />} size={'md'} color='primary'>Submit user</Button>{' '}</div>
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -127,11 +121,9 @@ storiesOf('Forms|Input', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <Input leftAddon={<UserPlus />} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-  )}
-</Form>`}
+          value={`
+<Input leftAddon={<UserPlus />} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -159,11 +151,9 @@ storiesOf('Forms|Input', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-  )}
-</Form>`}
+          value={`
+<Input error={true} name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,

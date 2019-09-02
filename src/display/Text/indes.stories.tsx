@@ -106,21 +106,23 @@ storiesOf('UI Elements|Text', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Text textStyle="help" capitalizeFirstLetter>
-this is demo of help textstyle with capitalizeFirstLetter
+          value={`
+<Text textStyle="help" capitalizeFirstLetter>
+  this is demo of help textstyle with capitalizeFirstLetter
 </Text>
-  Date:
-  <Text type="date" format="DD MMM">
+Date:
+<Text type="date" format="DD MMM">
     12-03-2014
 </Text>
-  Time ago:
+Time ago:
 <Text type="ago">
     12-03-2018
 </Text>
 Currency:
 <Text type="currency" format="EUR">
     12032018
-</Text>`}
+</Text>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

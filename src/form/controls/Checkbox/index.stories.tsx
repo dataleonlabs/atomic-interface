@@ -39,16 +39,12 @@ storiesOf('Forms|Checkbox', module)
           <h6><strong>Code</strong></h6>
           <hr />
           <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <>
-      <Checkbox name='gender' label={'Check this custom checkbox'}/>
-      <Checkbox disabled name='gender2' label={'Or this one (disabled)'} />
-      <Checkbox checked name='gender3' label={'Check this custom checkbox (checked)'}/>
-      <Checkbox disabled checked name='gender4' label={'Or this one (checked and disabled)'} />
-    </>
-  )}
-</Form>`}
+            value={`
+<Checkbox name='gender' label={'Check this custom checkbox'}/>
+<Checkbox disabled name='gender2' label={'Or this one (disabled)'} />
+<Checkbox checked name='gender3' label={'Check this custom checkbox (checked)'}/>
+<Checkbox disabled checked name='gender4' label={'Or this one (checked and disabled)'} />
+`}
             options={{
               mode: 'jsx',
               lineNumbers: false,

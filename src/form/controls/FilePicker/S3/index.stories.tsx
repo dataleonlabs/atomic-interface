@@ -58,28 +58,24 @@ storiesOf('Forms|File Browser', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {({ values }) => (
-    <Col sm={8} style={{ marginTop: 30}}>
-      <h4>FilePicker forAWS S3</h4>
-      <FilePickerS3
-        name='myfile'
-        color='primary'
-        size={'md'}
-        multipleFiles={true}
-        icon={<CloudRain size={15} />}
-        label='Files'
-        outline={true}
-        onUploadFinish={(data) => { }}
-        server='https://3dgzy3koke.execute-api.eu-west-3.amazonaws.com'
-        signingUrl='/dev/test-signed'
-        signingUrlMethod='PUT'
-        XAmzAcl='public-read'
-      ><span>Upload your files with S3</span></FilePickerS3>
-      <code>values: {JSON.stringify(values)}</code><br />
-    </Col>
-  )}
-</Form>`}
+          value={`
+<h4>FilePicker forAWS S3</h4>
+<FilePickerS3
+  name='myfile'
+  color='primary'
+  size={'md'}
+  multipleFiles={true}
+  icon={<CloudRain size={15} />}
+  label='Files'
+  outline={true}
+  onUploadFinish={(data) => { }}
+  server='https://3dgzy3koke.execute-api.eu-west-3.amazonaws.com'
+  signingUrl='/dev/test-signed'
+  signingUrlMethod='PUT'
+  XAmzAcl='public-read'
+><span>Upload your files with S3</span></FilePickerS3>
+<code>values: {JSON.stringify(values)}</code><br />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,

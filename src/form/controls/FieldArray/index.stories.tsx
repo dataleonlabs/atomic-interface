@@ -79,51 +79,47 @@ storiesOf('Forms|FieldArray', module)
           <hr/>
           <h6>Code</h6>
           <CodeMirror
-            value={`<Form
-initialValues={{ friends: [] }}
->
-{({ values }: any) => (
-  <FieldArray name='friends'>
-    {(arrayHelpers) => (
-      <>
-        {values.friends.map((_: any, index: number) => (
-          <Row>
-            <Col sm={4}>
-              <Input inline={true}
-                name={'friends[\${index}].name'}
-                placeholder='First Name and Last Name'
-                help='Example: Gérard TOKO'
-              />
-            </Col>
-            <Col sm={4}>
-              <Input
-                inline={true}
-                name={'friends[\${index}].email'}
-                placeholder='Enter your Young App email'
-                rightAddon='@youngapp.co'
-              />
-            </Col>
-            <Col sm={4}>
-              <Button color='primary' onClick={() => arrayHelpers.remove(index)}>Remove</Button>
-            </Col>
-          </Row>
-        ))}
+            value={`
+<FieldArray name='friends'>
+  {(arrayHelpers) => (
+    <>
+      {values.friends.map((_: any, index: number) => (
         <Row>
-          <Col sm={12} style={{ marginTop: 30 }}>
-            <Button color='primary'
-              onClick={() => arrayHelpers.push({ name: '', age: '' })}
-            >Add</Button>
-            <hr />
-            <pre>
-              <code>values: {JSON.stringify(values)}</code><br />
-            </pre>
+          <Col sm={4}>
+            <Input inline={true}
+              name={'friends[\${index}].name'}
+              placeholder='First Name and Last Name'
+              help='Example: Gérard TOKO'
+            />
+          </Col>
+          <Col sm={4}>
+            <Input
+              inline={true}
+              name={'friends[\${index}].email'}
+              placeholder='Enter your Young App email'
+              rightAddon='@youngapp.co'
+            />
+          </Col>
+          <Col sm={4}>
+            <Button color='primary' onClick={() => arrayHelpers.remove(index)}>Remove</Button>
           </Col>
         </Row>
-      </>
-    )}
-  </FieldArray>
-)}
-</Form>`}
+      ))}
+      <Row>
+        <Col sm={12} style={{ marginTop: 30 }}>
+          <Button color='primary'
+            onClick={() => arrayHelpers.push({ name: '', age: '' })}
+          >Add</Button>
+          <hr />
+          <pre>
+            <code>values: {JSON.stringify(values)}</code><br />
+          </pre>
+        </Col>
+      </Row>
+    </>
+  )}
+</FieldArray>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,

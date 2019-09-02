@@ -43,14 +43,12 @@ storiesOf('Forms|SearchBar', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <SearchBar
-      name={'search'}
-      placeholder={'search'}
-    />
-  )}
-</Form>`}
+            value={`
+<SearchBar
+  name={'search'}
+  placeholder={'search'}
+/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -82,15 +80,13 @@ storiesOf('Forms|SearchBar', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <SearchBar
-      name={'search'}
-      placeholder={'search'}
-      navBar={true}
-    />
-  )}
-</Form>`}
+            value={`
+<SearchBar
+  name={'search'}
+  placeholder={'search'}
+  navBar={true}
+/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,

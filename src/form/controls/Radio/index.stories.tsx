@@ -42,14 +42,10 @@ storiesOf('Forms|Radio', module)
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <>
-      <Radio name='radio' label='Radio Button'/>
-      <Radio name='radio1' checked label='Radio Button'/>
-    </>
-  )}
-</Form>`}
+            value={`
+<Radio name='radio' label='Radio Button'/>
+<Radio name='radio1' checked label='Radio Button'/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -81,15 +77,13 @@ storiesOf('Forms|Radio', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <Radio
-      name='radio'
-      label='Radio Button'
-      disabled={true}      
-    />
-  )}
-</Form>`}
+            value={`
+<Radio
+  name='radio'
+  label='Radio Button'
+  disabled={true}      
+/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,

@@ -37,14 +37,10 @@ storiesOf('Forms|Switch', module)
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <>
-      <Switch name='switch' label='Turn on this custom switch'/>
-      <Switch name='switch1' checked label='Turn on this custom switch'/>
-    </>
-  )}
-</Form>`}
+            value={`
+<Switch name='switch' label='Turn on this custom switch'/>
+<Switch name='switch1' checked label='Turn on this custom switch'/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -75,14 +71,10 @@ storiesOf('Forms|Switch', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <>
-      <Switch name='switch' label='Can not click this label to turn on!' disabled={true} />
-      <Switch name='switch' label='Can not click this label to turn on!' disabled={true} checked/>
-    </>
-  )}
-</Form>`}
+            value={`
+<Switch name='switch' label='Can not click this label to turn on!' disabled={true} />
+<Switch name='switch' label='Can not click this label to turn on!' disabled={true} checked/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,

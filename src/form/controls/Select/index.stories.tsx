@@ -51,17 +51,15 @@ storiesOf('Forms|Select', module)
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <Select
-      isClearable
-      creatable
-      isMulti
-      name={'favorite'}
-      options={options}
-    />
-  )}
-</Form>`}
+            value={`
+<Select
+  isClearable
+  creatable
+  isMulti
+  name={'favorite'}
+  options={options}
+/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -120,17 +118,15 @@ storiesOf('Forms|Select', module)
           <h6><strong>Code</strong></h6>
           <hr/>
           <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <Select
-      isClearable
-      creatable
-      isMulti
-      name={'favorite'}
-      options={groupedOptions}
-    />
-  )}
-</Form>`}
+            value={`
+<Select
+  isClearable
+  creatable
+  isMulti
+  name={'favorite'}
+  options={groupedOptions}
+/>
+`}
             options={{
             mode: 'jsx',
             lineNumbers: false,

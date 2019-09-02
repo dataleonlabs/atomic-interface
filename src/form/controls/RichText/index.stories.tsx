@@ -42,11 +42,9 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <RichText name='richText' label='Enter Your Message' />
-  )}
-</Form>`}
+          value={`
+<RichText name='richText' label='Enter Your Message' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -76,11 +74,9 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <RichText readOnly={true} name='richText' label='This is Read Only RichText' />
-  )}
-</Form>`}
+          value={`
+<RichText readOnly={true} name='richText' label='This is Read Only RichText' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -110,11 +106,9 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <RichText readOnly={true} name='richText' label='This is Read Only RichText' />
-  )}
-</Form>`}
+          value={`
+<RichText readOnly={true} name='richText' label='This is Read Only RichText' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -144,11 +138,9 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <RichText toolbarDisable={true} name='richText' label='Enter Your Message | Toolbar is Disabled' />
-  )}
-</Form>`}
+          value={`
+<RichText toolbarDisable={true} name='richText' label='Enter Your Message | Toolbar is Disabled' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -176,11 +168,9 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <RichText theme='bubble' name='richText' label='Enter Your Message | Select All And Use Bubble Toolbar' />
-  )}
-</Form>`}
+          value={`
+<RichText theme='bubble' name='richText' label='Enter Your Message | Select All And Use Bubble Toolbar' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -210,11 +200,9 @@ storiesOf('Forms|RichText', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <RichText error={true} name='richText' label='RichText with Error' required={true} /> 
-  )}
-</Form>`}
+          value={`
+<RichText error={true} name='richText' label='RichText with Error' required={true} /> 
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,

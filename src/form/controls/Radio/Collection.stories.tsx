@@ -51,22 +51,18 @@ storiesOf('Forms|Radio', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <>
-      <RadioCollection
-        apiKey='xxx'
-        apiUrl='test'
-        type='update'
-        model='Playlist'
-        label='Radio Collection'
-        name='chk1'
-        fieldId={{ key: 'id', value: '1' }}
-        fieldUpdate='active'>
-      </RadioCollection>
-    </>
-  )}
-</Form>`}
+          value={`
+<RadioCollection
+  apiKey='xxx'
+  apiUrl='test'
+  type='update'
+  model='Playlist'
+  label='Radio Collection'
+  name='chk1'
+  fieldId={{ key: 'id', value: '1' }}
+  fieldUpdate='active'>
+</RadioCollection>
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,

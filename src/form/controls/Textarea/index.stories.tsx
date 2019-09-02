@@ -39,11 +39,9 @@ storiesOf('Forms|Textarea', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <Textarea placeholder={'Example content with Textarea'} name='text' />
-  )}
-</Form>`}
+          value={`
+<Textarea placeholder={'Example content with Textarea'} name='text' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -71,11 +69,9 @@ storiesOf('Forms|Textarea', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <Textarea placeholder={'Example content with Textarea'} name='text' />
-  )}
-</Form>`}
+          value={`
+<Textarea placeholder={'Example content with Textarea'} name='text' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,

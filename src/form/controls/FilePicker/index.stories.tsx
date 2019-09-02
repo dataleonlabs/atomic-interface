@@ -49,25 +49,17 @@ storiesOf('Forms|File Browser', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form
-onSubmit={(values) => {
-  console.log(values);
-}}
->
-{(props) => (
-  <>
-    <FilePicker
-      name={'image'}
-      label={'Picture'}
-      onChange={(event) => {
-        if (event.currentTarget.files) {
-          props.setFieldValue('image', event.currentTarget.files[0])
-        }
-      }}
-    />
-  </>
-)}
-</Form>`}
+          value={`
+<FilePicker
+  name={'image'}
+  label={'Picture'}
+  onChange={(event) => {
+    if (event.currentTarget.files) {
+      props.setFieldValue('image', event.currentTarget.files[0])
+    }
+  }}
+/>
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -106,22 +98,14 @@ onSubmit={(values) => {
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form
-onSubmit={(values) => {
-  console.log(values);
-}}
->
-{(props) => (
-  <>
-    <FilePicker
-      name={'image'}
-      label={'Picture'}
-      multiple
-      onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
-    />
-  </>
-)}
-</Form>`}
+          value={`
+<FilePicker
+  name={'image'}
+  label={'Picture'}
+  multiple
+  onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
+/>
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -160,22 +144,14 @@ onSubmit={(values) => {
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form
-onSubmit={(values) => {
-  console.log(values);
-}}
->
-{(props) => (
-  <>
-    <FilePicker
-      name={'image'}
-      label={'Picture'}
-      disabled
-      onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
-    />
-  </>
-)}
-</Form>`}
+          value={`
+<FilePicker
+  name={'image'}
+  label={'Picture'}
+  disabled
+  onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
+/>
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -214,22 +190,14 @@ onSubmit={(values) => {
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form
-onSubmit={(values) => {
-  console.log(values);
-}}
->
-{(props) => (
-  <>
-    <FilePicker
-      name={'image'}
-      label={'Here you can choose file'}
-      tooltip={'select picture'}
-      onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
-    />
-  </>
-)}
-</Form>`}
+          value={`
+<FilePicker
+  name={'image'}
+  label={'Here you can choose file'}
+  tooltip={'select picture'}
+  onChange={(event) => { props.setFieldValue('image', event.currentTarget.files) }}
+/>
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,

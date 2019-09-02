@@ -39,11 +39,9 @@ storiesOf('Forms|DatePicker', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <DatePicker dateFormat='yyyy/MM/dd' name='datepicker' />
-  )}
-</Form>`}
+          value={`
+<DatePicker dateFormat='yyyy/MM/dd' name='datepicker' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -71,11 +69,9 @@ storiesOf('Forms|DatePicker', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Form>
-  {(_) => (
-    <DatePicker disabled={true} dateFormat='yyyy/MM/dd' name='datepicker' />
-  )}
-</Form>`}
+          value={`
+<DatePicker disabled={true} dateFormat='yyyy/MM/dd' name='datepicker' />
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,

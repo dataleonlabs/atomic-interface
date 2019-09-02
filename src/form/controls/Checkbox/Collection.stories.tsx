@@ -51,22 +51,18 @@ storiesOf('Forms|Checkbox', module)
           <h6><strong>Code</strong></h6>
           <hr />
           <CodeMirror
-            value={`<Form>
-  {(_) => (
-    <>
-      <CheckboxCollection
-        apiKey="xxx"
-        apiUrl="test"
-        type="update"
-        model="Playlist"
-        label="Checkbox Collection"
-        name="chk1"
-        fieldId={{ key: "id", value: "1" }}
-        fieldUpdate="active">                
-    </CheckboxCollection>
-    </>
-  )}
-</Form>`}
+            value={`
+<CheckboxCollection
+  apiKey="xxx"
+  apiUrl="test"
+  type="update"
+  model="Playlist"
+  label="Checkbox Collection"
+  name="chk1"
+  fieldId={{ key: "id", value: "1" }}
+  fieldUpdate="active">                
+</CheckboxCollection>
+    `}
             options={{
               mode: 'jsx',
               lineNumbers: false,
