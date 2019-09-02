@@ -21,7 +21,7 @@ storiesOf('Forms|DatePicker', module)
         <br /><br />
         <h6><strong>Code</strong></h6>
         <hr />
-        <CodeMirror
+        <CodeMirror          
           value={`<Form>
   {(_) => (
     <DatePicker dateFormat="yyyy/MM/dd" name="datepicker" />

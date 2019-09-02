@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 
-export const StyledReactDatePickerContainer = styled.div`
+export const StyledReactDatePickerContainer = styled.div`  
   .react-datepicker{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 0.8rem;
@@ -16,25 +16,11 @@ export const StyledReactDatePickerContainer = styled.div`
     box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
     font-family: 'IBM Plex Sans',sans-serif!important;
   }
+  .react-datepicker-popper {
+    z-index: 3;
+  }
   .react-datepicker-ignore-onclickoutside {
     border: 2px solid #dfe3e9;
-  }
-  .CodeMirror, CodeMirror-line, CodeMirror-line-like {
-    border-radius: 0;
-    border-width: 0;
-    background: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    margin: 0;
-    white-space: pre;
-    word-wrap: normal;
-    line-height: inherit;
-    color: inherit;
-    z-index: 0 !important;
-    position: relative;
-    overflow: visible;
-    -webkit-tap-highlight-color: transparent;
-    font-variant-ligatures: contextual;
   }
   input{
     display: block;
@@ -78,5 +64,6 @@ export const StyledReactDatePickerContainer = styled.div`
   }
   .react-datepicker__triangle{
     border-bottom-color: #fff !important;
-  }  
+  }
+  
 `
