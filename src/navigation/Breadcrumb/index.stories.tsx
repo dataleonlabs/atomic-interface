@@ -74,13 +74,13 @@ storiesOf('Navigation|Breadcrumb', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<div>
-  <Breadcrumb loading={true}>
-    <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
-    <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
-    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-  </Breadcrumb>
-</div>`}
+          value={`
+<Breadcrumb loading={true}>
+  <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
+  <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
+  <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+</Breadcrumb>
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,
@@ -111,13 +111,13 @@ storiesOf('Navigation|Breadcrumb', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<div>
-  <Breadcrumb>
-    <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
-    <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
-    <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
-  </Breadcrumb>
-</div>`}
+          value={`
+<Breadcrumb>
+  <BreadcrumbItem> <a href='#'>Story</a></BreadcrumbItem>
+  <BreadcrumbItem> <a href='#'>Navigation</a></BreadcrumbItem>
+  <BreadcrumbItem active>Breadcrumb</BreadcrumbItem>
+</Breadcrumb>
+`}
           options={{
           mode: 'jsx',
           lineNumbers: false,

@@ -59,7 +59,6 @@ storiesOf('Forms|File Browser', module)
         <hr/>
         <CodeMirror
           value={`
-<h4>FilePicker forAWS S3</h4>
 <FilePickerS3
   name='myfile'
   color='primary'
