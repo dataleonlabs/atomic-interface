@@ -10,6 +10,7 @@ export const StyledSidebar = styled.div<{ className: props['size'] }>`
   border-right: solid 2px #eee;
   position:relative;
   height: 100vh;
+  transition: 0.2s;
 
   .icon-nav-left {
     text-align:center
