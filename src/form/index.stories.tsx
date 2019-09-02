@@ -156,7 +156,7 @@ storiesOf('Forms|Form', module)
         >
           {({ values, errors, touched }) => (
             <>
-              <Col sm={8} style={{ marginTop: 30}}>
+              <Col sm={8} style={{ marginTop: 30, paddingLeft: 0}}>
                 <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
                 <Input
                   name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
@@ -168,7 +168,7 @@ storiesOf('Forms|Form', module)
                 />
                 <Button color="primary">Submit</Button>
               </Col>
-              <Col sm={8} style={{ marginTop: 30}}>
+              <Col sm={8} style={{ marginTop: 30, paddingLeft: 0}}>
                 <hr />
                 <pre>
                   <code>values: {JSON.stringify(values)}</code><br />
@@ -196,7 +196,7 @@ storiesOf('Forms|Form', module)
 >
   {({ values, errors, touched }) => (
     <>
-      <Col sm={8} style={{ marginTop: 30}}>
+      <Col sm={8} style={{ marginTop: 30, paddingLeft: 0}}>
         <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
         <Input
           name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
@@ -208,7 +208,7 @@ storiesOf('Forms|Form', module)
         />
         <Button color='primary'>Submit</Button>
       </Col>
-      <Col sm={8} style={{ marginTop: 30}}>
+      <Col sm={8} style={{ marginTop: 30, paddingLeft: 0}}>
         <hr />
         <pre>
           <code>values: {JSON.stringify(values)}</code><br />
@@ -248,7 +248,7 @@ storiesOf('Forms|Form', module)
         >
           {({ values, errors, touched }) => (
             <>
-              <Col sm={8} style={{ marginTop: 30}}>
+              <Col sm={8} style={{ marginTop: 30, paddingLeft: 0}}>
                 <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
                 <Input
                   name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
@@ -266,7 +266,7 @@ storiesOf('Forms|Form', module)
                 />
                 <Button color="primary">Submit</Button>
               </Col>
-              <Col sm={8} style={{ marginTop: 30 }}>
+              <Col sm={8} style={{ marginTop: 30, paddingLeft: 0 }}>
                 <hr />
                 <pre>
                   <code>values: {JSON.stringify(values)}</code><br />
@@ -294,7 +294,7 @@ storiesOf('Forms|Form', module)
 >
   {({ values, errors, touched }) => (
     <>
-      <Col sm={4} style={{ marginTop: 30 }}>
+      <Col sm={4} style={{ marginTop: 30, paddingLeft: 0 }}>
         <Input name={'name'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
         <Input
           name={'email'} label={'Email'} placeholder={'Enter your Young App email'}
@@ -312,7 +312,7 @@ storiesOf('Forms|Form', module)
         />
         <Button color='primary'>Submit</Button>
       </Col>
-      <Col sm={4} style={{ marginTop: 30 }}>
+      <Col sm={4} style={{ marginTop: 30, paddingLeft: 0 }}>
         <hr />
         <pre>
           <code>values: {JSON.stringify(values)}</code><br />
