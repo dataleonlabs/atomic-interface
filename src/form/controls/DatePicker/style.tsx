@@ -8,21 +8,25 @@ export const StyledReactDatePickerContainer = styled.div`
     font-size: 0.8rem;
     background-color: #fff;
     color: #000;
-    border: 0px solid #aeaeae;
+    border: 1px solid rgba(0,0,0,.1);
     border-radius: 0px;
     display: inline-block;
     position: relative;
-    box-shadow: 1px 1px 7px #000;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
+    font-family: 'IBM Plex Sans',sans-serif!important;
+  }
+  .react-datepicker-ignore-onclickoutside {
+    border: 1px solid rgba(0,0,0,.1);
   }
   .react-datepicker div{
     border-radius: 0px;
   }
-  .react-datepicker__day--selected{
+  .react-datepicker__day--selected, .react-datepicker__day--in-range{
     background-color: #fff;
-    border: 1px solid #007bff;    
+    border: 1px solid #007bff;
     color: #007bff;
   }
-  .react-datepicker__day--selected:hover{
+  .react-datepicker__day--selected:hover,  .react-datepicker__day--in-range:hover{
     background-color: #007bff;
     color: #fff;
   }
@@ -31,5 +35,5 @@ export const StyledReactDatePickerContainer = styled.div`
   }
   .react-datepicker__triangle{
     border-bottom-color: #fff !important;
-  }
+  }  
 `
