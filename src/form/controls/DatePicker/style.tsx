@@ -16,7 +16,33 @@ export const StyledReactDatePickerContainer = styled.div`
     font-family: 'IBM Plex Sans',sans-serif!important;
   }
   .react-datepicker-ignore-onclickoutside {
-    border: 1px solid rgba(0,0,0,.1);
+    border: 2px solid #dfe3e9;
+  }
+  input{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    border-radius: 0px!important;
+    border: 2px solid #dfe3e9;
+    border-radius: 0px;
+    font-size: 0.9rem;
+    height: calc(1.5em + .75rem + 6px);
+
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
   }
   .react-datepicker div{
     border-radius: 0px;

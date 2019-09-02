@@ -3,6 +3,9 @@ import { storiesOf } from '@storybook/react';
 import DatePicker from './index';
 import { Col, Button } from 'reactstrap';
 import Form from './../../index';
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+import 'codemirror/lib/codemirror.css';
+require('codemirror/mode/jsx/jsx');
 
 storiesOf('Forms|DatePicker', module)
   .add('Example', () => (
@@ -15,6 +18,22 @@ storiesOf('Forms|DatePicker', module)
             <DatePicker dateFormat="yyyy/MM/dd" name="datepicker" />
           )}
         </Form>
+        <br /><br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`<Form>
+  {(_) => (
+    <DatePicker dateFormat="yyyy/MM/dd" name="datepicker" />
+  )}
+</Form>`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            smartIndent: true,
+            readOnly: true
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Example Disabled', () => (
@@ -27,6 +46,22 @@ storiesOf('Forms|DatePicker', module)
             <DatePicker disabled={true} dateFormat="yyyy/MM/dd" name="datepicker" />
           )}
         </Form>
+        <br /><br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`<Form>
+  {(_) => (
+    <DatePicker disabled={true} dateFormat="yyyy/MM/dd" name="datepicker" />
+  )}
+</Form>`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            smartIndent: true,
+            readOnly: true
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Example DateRange', () => (
@@ -47,6 +82,30 @@ storiesOf('Forms|DatePicker', module)
             />
           )}
         </Form>
+        <br /><br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`<Form>
+  {(_) => (
+    <DatePicker
+      options={{
+        onChange: date => new Date("2019/09/08"),
+        selected: new Date("2019/09/02"),
+        startDate: new Date("2019/09/02"),
+        endDate: new Date("2019/09/5")
+      }}
+      name="datepicker"
+    />
+  )}
+</Form>`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            smartIndent: true,
+            readOnly: true
+          }}
+        />
       </Col>
     </React.Fragment>
   ));
