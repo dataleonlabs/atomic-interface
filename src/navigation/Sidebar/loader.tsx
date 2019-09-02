@@ -13,7 +13,7 @@ const Loader = (props: Props) => (
   >
     <circle cx="73" cy="45" r="28" />
     {props.iconOnly === false &&
-      <rect x="115" y="30" rx="3" ry="3" width="400" height="30" />
+      <rect className="rectBar" x="115" y="30" rx="3" ry="3" width="400" height="30" />
     }
   </ContentLoader>
 )

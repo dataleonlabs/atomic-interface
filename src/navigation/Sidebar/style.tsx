@@ -1,9 +1,10 @@
 
 import styled from 'styled-components'
+import { SidebarProps as props } from './props';
 
 
 
-export const StyledSidebar = styled.div`
+export const StyledSidebar = styled.div<{ className: props['size'] }>`
   flex-direction: column;
   width: 250px;
   border-right: solid 2px #eee;
@@ -62,15 +63,24 @@ export const StyledSidebar = styled.div`
   }
 
   .navbar-brand {
-    display: block;
     padding: 1.2rem 1rem;
     cursor: pointer;
     margin-right: 0;
     padding-left: 1.95rem;
-    #background: #D4E6F1
+    #background: #D4E6F1;
+    display: ${({ className }) => {
+    /* istanbul ignore next */
+    if (className === '') /* istanbul ignore next */ {
+      return 'block;'
+    }
+    /* istanbul ignore next */
+    if (className === 'sidebarContainer') /* istanbul ignore next */ {
+      return 'none;'
+    }
   }
-  .NavHeader {
-    display: block;
+  }    
+  }
+  .NavHeader {    
     padding: 1.2rem 1rem;
     cursor: pointer;
     margin-right: 0;
@@ -78,6 +88,17 @@ export const StyledSidebar = styled.div`
     font-size: 1rem;
     padding-bottom: 0.4rem;
     color: #777;
+    display: ${({ className }) => {
+    /* istanbul ignore next */
+    if (className === '') /* istanbul ignore next */ {
+      return 'block;'
+    }
+    /* istanbul ignore next */
+    if (className === 'sidebarContainer') /* istanbul ignore next */ {
+      return 'none;'
+    }
+  }
+  }
   }
 
   .brand-icon-close{    
@@ -140,5 +161,19 @@ export const StyledSidebar = styled.div`
       max-width: 400px;
       min-width: auto;
     }
+  }
+
+  .SidebarNav svg rect{
+    width: ${({ className }) => {
+    /* istanbul ignore next */
+    if (className === '') /* istanbul ignore next */ {
+      return '400px;'
+    }
+    /* istanbul ignore next */
+    if (className === 'sidebarContainer') /* istanbul ignore next */ {
+      return '100px;'
+    }
+  }
+  }
   }
 `;

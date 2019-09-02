@@ -421,7 +421,7 @@ storiesOf('Navigation|Sidebar', module)
   )).add('Loader icon only', () => (
     <React.Fragment>
       <Row>
-        <Col sm={2}>
+        <Col sm={3}>
           <Sidebar icon={true}>
             <Nav>
               <NavItem loading={true}>
@@ -497,7 +497,7 @@ storiesOf('Navigation|Sidebar', module)
   .add('with only icon', () => (
     <React.Fragment>
       <Row>
-        <Col sm={2}>
+        <Col sm={3}>
           <Sidebar icon={true}>
             <Nav>
               <NavItem>
