@@ -146,29 +146,18 @@ storiesOf('UI Elements|Table', module)
           <Column field={'lastName'}>Last Name</Column>
           <Column field={'email'} sortable={false}>Email</Column>
         </Table>
-        <h4>Table 2</h4>
-        <Table data={assets} draggable={true}>
-          <Column field={'firstName'}>First Name</Column>
-          <Column field={'lastName'}>Last Name</Column>
-          <Column field={'email'} sortable={false}>Email</Column>
-        </Table>
         <br/>
         <br/>
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<h4>Table 1</h4>
+          value={`
 <Table data={assets} draggable={true}>
   <Column field="firstName">First Name</Column>
   <Column field="lastName">Last Name</Column>
   <Column field="email" sortable={false}>Email</Column>
 </Table>
-<h4>Table 2</h4>
-<Table data={assets} draggable={true}>
-  <Column field="firstName">First Name</Column>
-  <Column field="lastName">Last Name</Column>
-  <Column field="email" sortable={false}>Email</Column>
-</Table>`}
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

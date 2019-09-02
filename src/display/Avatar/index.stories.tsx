@@ -36,11 +36,11 @@ storiesOf('UI Elements|Avatar', module)
         <h6><strong>Code</strong></h6>
         <hr />        
         <CodeMirror
-          value={`<div style={{ width: "300px", textAlign:"left"}}>
-  <Avatar size="sm" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-  <Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-  <Avatar size="lg" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-</div>`}
+          value={`
+<Avatar size="sm" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+<Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+<Avatar size="lg" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -67,10 +67,10 @@ storiesOf('UI Elements|Avatar', module)
         <h6><strong>Code</strong></h6>
         <hr />        
         <CodeMirror
-          value={`<div style={{ width: "300px", textAlign:"left"}}>
-  <Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-  <Avatar size="md" className="square" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-</div>`}
+          value={`
+<Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+<Avatar size="md" className="square" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -98,11 +98,11 @@ storiesOf('UI Elements|Avatar', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`<div style={{ width: "300px", textAlign:"left"}}>
-  <Avatar size="sm" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-  <Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-  <Avatar size="lg" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-</div>`}
+          value={`
+<Avatar size="sm" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+<Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+<Avatar size="lg" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -129,10 +129,10 @@ storiesOf('UI Elements|Avatar', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`<div style={{ width: "300px", textAlign:"left"}}>
-  <Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-  <Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
-</div>`}
+          value={`
+<Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+<Avatar size="md" src="https://cdn.pixabay.com/photo/2019/07/30/08/11/fiat-4372246_960_720.jpg" />
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

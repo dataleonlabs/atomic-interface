@@ -40,15 +40,15 @@ storiesOf('Forms|Button', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`<div>
-  <div style={{ marginTop: 30 }}><Button color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button color="secondary">secondary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button color="success">success</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button color="info">info</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button color="warning">warning</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button color="danger">danger</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button color="link">link</Button></div>
-</div>`}
+          value={`
+<Button color="primary">primary</Button>
+<Button color="secondary">secondary</Button>
+<Button color="success">success</Button>
+<Button color="info">info</Button>
+<Button color="warning">warning</Button>
+<Button color="danger">danger</Button>
+<Button color="link">link</Button>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -78,14 +78,14 @@ storiesOf('Forms|Button', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`<div>
-  <div style={{ marginTop: 30 }}><Button outline color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button outline color="secondary">secondary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button outline color="success">success</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button outline color="info">info</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button outline color="warning">warning</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button outline color="danger">danger</Button>{" "}</div>
-</div>`}
+          value={`
+<Button outline color="primary">primary</Button>
+<Button outline color="secondary">secondary</Button>
+<Button outline color="success">success</Button>
+<Button outline color="info">info</Button>
+<Button outline color="warning">warning</Button>
+<Button outline color="danger">danger</Button>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -112,11 +112,11 @@ storiesOf('Forms|Button', module)
       <h6><strong>Code</strong></h6>
       <hr/>
       <CodeMirror
-          value={`<div>
-  <div style={{ marginTop: 30 }}><Button size="lg" color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="md" color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="sm" color="primary">primary</Button>{" "}</div>
-</div>`}
+          value={`
+<Button size="lg" color="primary">primary</Button>
+<Button size="md" color="primary">primary</Button>
+<Button size="sm" color="primary">primary</Button>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -146,14 +146,14 @@ storiesOf('Forms|Button', module)
       <h6><strong>Code</strong></h6>
       <hr/>
       <CodeMirror
-          value={`<div>
-  <div style={{ marginTop: 30 }}><Button size="lg" loading={true} color="primary">primary</Button>{""}</div>
-  <div style={{ marginTop: 30 }}><Button size="md" loading={true} color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="sm" loading={true} color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="lg" loading={true} color="warning">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="md" loading={true} color="warning">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="sm" loading={true} color="warning">primary</Button>{" "}</div>
-</div>`}
+          value={`
+<Button size="lg" loading={true} color="primary">primary</Button>
+<Button size="md" loading={true} color="primary">primary</Button>
+<Button size="sm" loading={true} color="primary">primary</Button>
+<Button size="lg" loading={true} color="warning">primary</Button>
+<Button size="md" loading={true} color="warning">primary</Button>
+<Button size="sm" loading={true} color="warning">primary</Button>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -188,19 +188,19 @@ storiesOf('Forms|Button', module)
       <h6><strong>Code</strong></h6>
       <hr/>
       <CodeMirror
-          value={`<div>
-  <div style={{ marginTop: 30 }}><Button size="lg" icon={<Info />} color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="lg" icon={<Info />} color="warning">primary</Button>{" "}</div>
+          value={`
+<Button size="lg" icon={<Info />} color="primary">primary</Button>
+<Button size="lg" icon={<Info />} color="warning">primary</Button>
 
-  <div style={{ marginTop: 30 }}><Button size="md" outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="sm" outline icon={<Archive size={18} />} color="danger">important</Button>{" "}</div>
+<Button size="md" outline icon={<Archive size={18} />} color="danger">important</Button>
+<Button size="sm" outline icon={<Archive size={18} />} color="danger">important</Button>
 
-  <div style={{ marginTop: 30 }}><Button size="md" icon={<Coffee />} color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="md" icon={<Coffee />} color="warning">primary</Button>{" "}</div>
+<Button size="md" icon={<Coffee />} color="primary">primary</Button>
+<Button size="md" icon={<Coffee />} color="warning">primary</Button>
 
-  <div style={{ marginTop: 30 }}><Button size="sm" icon={<Info size={18} />} color="primary">primary</Button>{" "}</div>
-  <div style={{ marginTop: 30 }}><Button size="sm" icon={<Info size={18} />} color="warning">primary</Button>{" "}</div>
-</div>`}
+<Button size="sm" icon={<Info size={18} />} color="primary">primary</Button>
+<Button size="sm" icon={<Info size={18} />} color="warning">primary</Button>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -226,9 +226,9 @@ storiesOf('Forms|Button', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<div>
-  <div style={{ marginTop: 30 }}><Button disabled color="primary">primary</Button>{" "}</div>
-</div>`}
+          value={`
+<Button disabled color="primary">primary</Button>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -254,9 +254,9 @@ storiesOf('Forms|Button', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<div>
-  <div style={{ marginTop: 30 }}><Button block outline size color="primary">primary</Button>{" "}</div>
-</div>`}
+          value={`
+<Button block outline size color="primary">primary</Button>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

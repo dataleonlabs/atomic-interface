@@ -113,12 +113,12 @@ this is demo of help textstyle with capitalizeFirstLetter
   <Text type="date" format="DD MMM">
     12-03-2014
 </Text>
-  <br /> Time ago:
-  <Text type="ago">
+  Time ago:
+<Text type="ago">
     12-03-2018
 </Text>
-  <br /> Currency:
-  <Text type="currency" format="EUR">
+Currency:
+<Text type="currency" format="EUR">
     12032018
 </Text>`}
           options={{

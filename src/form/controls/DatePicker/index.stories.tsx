@@ -31,7 +31,7 @@ storiesOf('Forms|DatePicker', module)
         <hr/>
         <Form>
           {(_) => (
-            <DatePicker dateFormat="yyyy/MM/dd" name="datepicker" />
+            <DatePicker dateFormat="yyyy/MM/dd" name="datepicker"  />
           )}
         </Form>
         <br/>

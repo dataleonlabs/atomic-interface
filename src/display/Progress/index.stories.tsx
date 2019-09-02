@@ -36,9 +36,11 @@ storiesOf('UI Elements|Progress', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Progress multi>
+          value={`
+<Progress multi>
   <Progress bar value="60" />
-</Progress>`}
+</Progress>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -65,9 +67,11 @@ storiesOf('UI Elements|Progress', module)
         <h6><strong>Code</strong></h6>        
         <hr/>
         <CodeMirror
-          value={`<Progress multi>
+          value={`
+<Progress multi>
   <Progress bar value="25">25%</Progress>
-</Progress>`}
+</Progress>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -98,13 +102,14 @@ storiesOf('UI Elements|Progress', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Progress multi>
+          value={`
+<Progress multi>
   <Progress bar value="25" />
 </Progress>
-<br/>
 <Progress multi>
   <Progress bar value="50" />
-</Progress>`}
+</Progress>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -147,25 +152,23 @@ storiesOf('UI Elements|Progress', module)
         <h6><strong>Code</strong></h6>
         <hr/>
         <CodeMirror
-          value={`<Progress multi>
+          value={`
+<Progress multi>
   <Progress bar value="25" />
 </Progress>
-<br/>
 <Progress multi>
   <Progress bar color="success" value="50" />
 </Progress>
-<br/>
 <Progress multi>
   <Progress bar color="info" value="70" />
 </Progress>
-<br/>
 <Progress multi>
   <Progress bar color="warning" value="30" />
 </Progress>
-<br/>
 <Progress multi>
   <Progress bar color="danger" value="50" />
-</Progress>`}
+</Progress>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -196,13 +199,15 @@ storiesOf('UI Elements|Progress', module)
         <h6><strong>Code</strong></h6>
         <hr/>        
         <CodeMirror
-          value={`<Progress multi>
+          value={`
+<Progress multi>
   <Progress bar value="15" />
   <Progress bar color="success" value="30" />
   <Progress bar color="info" value="25" />
   <Progress bar color="warning" value="20" />
   <Progress bar color="danger" value="5" />
-</Progress>`}
+</Progress>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -233,13 +238,14 @@ storiesOf('UI Elements|Progress', module)
         <h6><strong>Code</strong></h6>
         <hr/>        
         <CodeMirror
-          value='<Progress multi>
+          value={`
+<Progress multi>
   <Progress bar className="progress-bar-striped" value="45" />
 </Progress>
-<br/>
 <Progress multi>
   <Progress bar className="progress-bar-striped progress-bar-animated" color="success" value="35" />
-</Progress>'
+</Progress>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

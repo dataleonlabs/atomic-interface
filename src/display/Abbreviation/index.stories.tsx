@@ -35,9 +35,9 @@ storiesOf('UI Elements|Abbreviation', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`<p><Abbreviation>Demo Of Alert</Abbreviation></p>
-<p><Abbreviation>Demo Box</Abbreviation></p>
-<p><Abbreviation>Demo Alert</Abbreviation></p>`}
+          value={`<Abbreviation>Demo Of Alert</Abbreviation>
+<Abbreviation>Demo Box</Abbreviation>
+<Abbreviation>Demo Alert</Abbreviation>`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

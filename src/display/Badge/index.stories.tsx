@@ -39,14 +39,16 @@ storiesOf('UI Elements|Badge', module)
         <h6><strong>Code</strong></h6>
         <hr />           
         <CodeMirror
-          value={`<h5><Badge color="primary">Primary</Badge></h5>
-<h5><Badge color="secondary">Secondary</Badge></h5>
-<h5><Badge color="success">Success</Badge></h5>
-<h5><Badge color="danger">Danger</Badge></h5>
-<h5><Badge color="warning">Warning</Badge></h5>
-<h5><Badge color="info">Info</Badge></h5>
-<h5><Badge color="light">Light</Badge></h5>
-<h5><Badge color="dark">Dark</Badge></h5>`}
+          value={`
+<Badge color="primary">Primary</Badge>
+<Badge color="secondary">Secondary</Badge>
+<Badge color="success">Success</Badge>
+<Badge color="danger">Danger</Badge>
+<Badge color="warning">Warning</Badge>
+<Badge color="info">Info</Badge>
+<Badge color="light">Light</Badge>
+<Badge color="dark">Dark</Badge>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,
@@ -77,14 +79,16 @@ storiesOf('UI Elements|Badge', module)
       <h6><strong>Code</strong></h6>      
       <hr />
         <CodeMirror
-          value={`<h5><Badge color="primary" pill>Primary</Badge></h5>
-<h5><Badge color="secondary" pill>Secondary</Badge></h5>
-<h5><Badge color="success" pill>Success</Badge></h5>
-<h5><Badge color="danger" pill>Danger</Badge></h5>
-<h5><Badge color="warning" pill>Warning</Badge></h5>
-<h5><Badge color="info" pill>Info</Badge></h5>
-<h5><Badge color="light" pill>Light</Badge></h5>
-<h5><Badge color="dark" pill>Dark</Badge></h5>`}
+          value={`
+<Badge color="primary" pill>Primary</Badge>
+<Badge color="secondary" pill>Secondary</Badge>
+<Badge color="success" pill>Success</Badge>
+<Badge color="danger" pill>Danger</Badge>
+<Badge color="warning" pill>Warning</Badge>
+<Badge color="info" pill>Info</Badge>
+<Badge color="light" pill>Light</Badge>
+<Badge color="dark" pill>Dark</Badge>
+`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

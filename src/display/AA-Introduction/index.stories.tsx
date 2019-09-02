@@ -38,7 +38,7 @@ storiesOf('Get started|Introduction', module)
               <CardTitle><h6><strong>UI Elements</strong></h6></CardTitle>
               <br/>
               <CardText>UI Elements are those elements that can be found in any page with a single function and that can exist alone.</CardText>
-              <CardLink href="/?path=/story/ui-elements-abbreviation--basic-example">View Elements <ArrowRight size={14} /></CardLink>
+              <CardLink href="?path=/story/ui-elements-abbreviation--basic-example">View Elements <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
           <Card>
@@ -49,7 +49,7 @@ storiesOf('Get started|Introduction', module)
               <CardTitle><h6><strong>Forms</strong></h6></CardTitle>
               <br/>
               <CardText>Examples and usage guidelines for form control styles, layout options, and custom components...</CardText>
-              <CardLink href="/?path=/story/forms-form--form-layout">View Forms <ArrowRight size={14} /></CardLink>
+              <CardLink href="?path=/story/forms-form--form-layout">View Forms <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
         </CardDeck>
@@ -64,7 +64,7 @@ storiesOf('Get started|Introduction', module)
               <CardTitle><h6><strong>Layouts</strong></h6></CardTitle>
               <br/>
               <CardText>Use Bootstrap's powerful mobile-first flexbox grid to build layouts of all shapes and sizes.</CardText>
-              <CardLink href="/?path=/story/layout-forgot-password--example">View Layouts <ArrowRight size={14} /></CardLink>
+              <CardLink href="?path=/story/layout-forgot-password--example">View Layouts <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
           <Card>
@@ -75,7 +75,7 @@ storiesOf('Get started|Introduction', module)
               <CardTitle><h6><strong>Navigation</strong></h6></CardTitle>
               <br/>
               <CardText>Responsive navigation header, the navbar. Includes support for branding, navigation, and more.</CardText>
-              <CardLink href="/?path=/story/navigation-breadcrumb--basic-example">View Navigation <ArrowRight size={14} /></CardLink>
+              <CardLink href="?path=/story/navigation-breadcrumb--basic-example">View Navigation <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
         </CardDeck>
@@ -101,7 +101,7 @@ storiesOf('Get started|Introduction', module)
               <CardTitle><h6><strong>Others</strong></h6></CardTitle>
               <br/>
               <CardText>For faster mobile-friendly and responsive development, template includes dozens of utility...</CardText>
-              <CardLink href="/?path=/story/ui-elements-abbreviation--basic-example">View Utilities <ArrowRight size={14} /></CardLink>
+              <CardLink href="?path=/story/ui-elements-abbreviation--basic-example">View Utilities <ArrowRight size={14} /></CardLink>
             </CardBody>
           </Card>
         </CardDeck>
