@@ -11,14 +11,15 @@ export const StyledReactDatePickerContainer = styled.div`
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 0px;
     display: inline-block;
-    position: relative;    
+    position: relative;   
+    z-index: 9 !important; 
     box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
     font-family: 'IBM Plex Sans',sans-serif!important;
   }
   .react-datepicker-ignore-onclickoutside {
     border: 2px solid #dfe3e9;
   }
-  .CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like {
+  .CodeMirror, CodeMirror-line, CodeMirror-line-like {
     border-radius: 0;
     border-width: 0;
     background: transparent;
@@ -29,7 +30,7 @@ export const StyledReactDatePickerContainer = styled.div`
     word-wrap: normal;
     line-height: inherit;
     color: inherit;
-    z-index: 0;
+    z-index: 0 !important;
     position: relative;
     overflow: visible;
     -webkit-tap-highlight-color: transparent;
