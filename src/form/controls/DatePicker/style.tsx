@@ -65,5 +65,4 @@ export const StyledReactDatePickerContainer = styled.div`
   .react-datepicker__triangle{
     border-bottom-color: #fff !important;
   }
-  
 `
