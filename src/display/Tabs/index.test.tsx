@@ -10,9 +10,9 @@ describe('<Tabs/>', () => {
   it('U-TEST-1 - Tabs', () => {
     const wrapper = enzyme.mount(
       <Tabs >
-        <TabItem title={"One"}>Foo Action</TabItem>
-        <TabItem title={"Two"}>Bar Action</TabItem>
-        <TabItem title={"Three"}>Quo Action</TabItem>
+        <TabItem title="One">Foo Action</TabItem>
+        <TabItem title="Two">Bar Action</TabItem>
+        <TabItem title="Three">Quo Action</TabItem>
       </Tabs>
     );
 
@@ -24,9 +24,9 @@ describe('<Tabs/>', () => {
   it('U-TEST-2 - Disable Tab', () => {
     const wrapper = enzyme.mount(
       <Tabs >
-        <TabItem title={"One"}>Foo Action</TabItem>
-        <TabItem title={"Two"} disabled>Bar Action</TabItem>
-        <TabItem title={"Three"}>Quo Action</TabItem>
+        <TabItem title="One">Foo Action</TabItem>
+        <TabItem title="Two" disabled>Bar Action</TabItem>
+        <TabItem title="Three">Quo Action</TabItem>
       </Tabs>
     );
 
