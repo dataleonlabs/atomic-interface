@@ -27,29 +27,29 @@ import { NavLinkProps } from "../../navigation/Navbar/props";
 
 /** Provider for login, logout, or confirm password */
 export interface AuthProps {
-   /** Children is added directly in respective component */   
-   children: JSX.Element | JSX.Element[]
+    /** Children is added directly in respective component */
+    children: JSX.Element | JSX.Element[]
 
-   provider: {
-       /** Type of provider login */
-       type: 'aws-cognito',
+    provider: {
+        /** Type of provider login */
+        type: 'aws-cognito',
 
-       /**
-        * Credentials of provider example for aws-cognito
-        * @example
-        *  {
-        *     userPoolId: poolId,
-        *     userPoolWebClientId: poolWebClientId,
-        *     region: regionName,
-        *  }
-        */
-       credentials: { [key: string]: number | string | boolean }
-   }
+        /**
+         * Credentials of provider example for aws-cognito
+         * @example
+         *  {
+         *     userPoolId: poolId,
+         *     userPoolWebClientId: poolWebClientId,
+         *     region: regionName,
+         *  }
+         */
+        credentials: { [key: string]: number | string | boolean }
+    }
 
-   /**
-    * Function called when user logged
-    */
-   onCompleted: (user: any) => void
+    /**
+     * Function called when user logged
+     */
+    onCompleted: (user: any) => void
 }
 
 export interface AuthHeaderProps {
@@ -57,9 +57,9 @@ export interface AuthHeaderProps {
     children: string | JSX.Element | JSX.Element[]
 }
 
-export interface AuthHeaderTitleProps extends AuthHeaderProps {}
-export interface AuthHeaderSubTitleProps extends AuthHeaderProps {}
-export interface AuthFooterProps extends AuthHeaderProps {}
+export interface AuthHeaderTitleProps extends AuthHeaderProps { }
+export interface AuthHeaderSubTitleProps extends AuthHeaderProps { }
+export interface AuthFooterProps extends AuthHeaderProps { }
 
 export interface LoginProps extends AuthProps {
 
@@ -74,7 +74,7 @@ export interface LoginProps extends AuthProps {
 
     buttonLogin?: ButtonProps // Label is different
     buttonForgot?: NavLinkProps // Label is different
-    buttonConfirmSignIn?: ButtonProps    
+    buttonConfirmSignIn?: ButtonProps
     buttonNewPassword?: ButtonProps /* Set Label Save Password */
 
     /* Set new password */
@@ -99,14 +99,14 @@ export interface LoginProps extends AuthProps {
     messageConfirmSignInError: string
 
     /* display forgot password link */
-    displayForgotlink?: true|false
+    displayForgotlink?: true | false
 }
 
 
 export interface ForgotPasswordProps extends AuthProps {
 
     /* Set Username */
-    email?: InputProps    
+    email?: InputProps
 
     /* Set code */
     code?: InputProps
@@ -126,8 +126,29 @@ export interface ForgotPasswordProps extends AuthProps {
     /* Set New Password Info Message */
     messageNewPasswordRequired: string
 
-    /* Set New Password Error Message */
+    /* Set Validation Message */
     messageNewPasswordError: string
+
+    /* Set Validation Message */
+    validationMessageRequiredEmail?: string
+
+    /* Set Validation Message */
+    validationmessageValidEmail?: string
+
+    /* Set Validation Message */
+    validationMessageRequiredCode?: string
+
+    /* Set Validation Message */
+    validationMessageValidConfirmPassword?: string
+
+    /* Set Validation Message */
+    validationMessageRequiredConfirmPassword?: string
+
+    /* Set Validation Message */
+    validationMessageValidNewPassword?: string
+
+    /* Set Validation Message */
+    validationMessageRequiredNewPassword?: string
 }
 
 export interface NewPasswordProps extends AuthProps {
