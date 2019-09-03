@@ -9,11 +9,11 @@ import { StyledAlert } from './style';
  */
 
 const Alert = (props: Props) => (
-  <StyledAlert>
+  <StyledAlert >
     <StrapAlert color={props.color} {...props} icon={undefined}>
       <>
-        {props.icon === true && <Info size={20} style={{ marginRight: '5px' }} />}
-        <span className="Text">{props.children}</span>
+          {props.icon === true && <Info size={20} style={{ marginRight: '5px' }} className="alertIcon"/>}
+          <span className="Text">{props.children}</span>
       </>
     </StrapAlert>
   </StyledAlert>
