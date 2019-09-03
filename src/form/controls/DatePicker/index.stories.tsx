@@ -80,4 +80,50 @@ storiesOf('Forms|DatePicker', module)
         />
       </Col>
     </React.Fragment>
+  )).add('DateRange', () => (
+    <React.Fragment>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>DatePicker - DateRange</h4>
+        <br/>
+        <p>Add <code>startDate</code>, <code>endDate</code>, <code>selected</code> property to use date range.</p>
+        <hr/>
+        <h6><strong>Example</strong></h6>
+        <hr/>
+        <Form>
+          {(_) => (
+            <DatePicker
+              options={{
+                onChange: date => new Date("2019/09/08"),
+                selected: new Date("2019/09/02"),
+                startDate: new Date("2019/09/02"),
+                endDate: new Date("2019/09/5")
+              }}
+              name="datepicker"
+            />
+          )}
+        </Form>
+        <br/>
+        <br/>
+        <h6><strong>Code</strong></h6>
+        <hr/>
+        <CodeMirror
+          value={`
+<DatePicker
+  options={{
+    onChange: date => new Date("2019/09/08"),
+    selected: new Date("2019/09/02"),
+    startDate: new Date("2019/09/02"),
+    endDate: new Date("2019/09/5")
+  }}
+  name="datepicker"
+/>
+`}
+          options={{
+          mode: 'jsx',
+          lineNumbers: false,
+          readOnly: true            
+          }}
+        />
+      </Col>
+    </React.Fragment>
   ));
