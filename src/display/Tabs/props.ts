@@ -4,9 +4,9 @@ import { ReactNode } from "react";
  * This component using bootstrap lib https://reactstrap.github.io/components/tabs/
  * @example
  * <Tabs onChange={props.onChange}>
- *    <TabItem title={"title"}>Foo Action</TabItem>
- *    <TabItem title={"title"}>Bar Action</TabItem>
- *    <TabItem title={"title"}>Quo Action</TabItem>
+ *    <TabItem title="title">Foo Action</TabItem>
+ *    <TabItem title="title">Bar Action</TabItem>
+ *    <TabItem title="title">Quo Action</TabItem>
  * </Tabs>
  */
 

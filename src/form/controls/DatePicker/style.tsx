@@ -2,7 +2,10 @@
 import styled from 'styled-components';
 
 
-export const StyledReactDatePickerContainer = styled.div`  
+export const StyledReactDatePickerContainer = styled.div`
+  .react-datepicker-popper {
+    z-index: 3;
+  }
   .react-datepicker{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 0.8rem;
