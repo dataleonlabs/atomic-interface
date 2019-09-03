@@ -12,6 +12,7 @@ export const StyledAlert = styled.div`
           vertical-align: top;
           padding:10px 12px;
           display:inline-block;
+          width: calc(100% - 48px );
       }
       
       .alertIcon {
@@ -19,7 +20,7 @@ export const StyledAlert = styled.div`
         left: 0;
         width: 40px;
         height: 100%;
-        background: #f6f9fc;
+        #background: #f6f9fc;
         top: 0;
         display: inline-flex;
         align-items: center;
