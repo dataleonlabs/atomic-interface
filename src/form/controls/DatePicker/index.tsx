@@ -1,9 +1,10 @@
-import * as React from 'react'
-import ReactDatePicker from "react-datepicker";
+import * as React from 'react';
 import { DatePickerProps as Props } from './props'
 import { Field, FieldProps } from 'formik';
 import Control from '../../Control';
 import "react-datepicker/dist/react-datepicker.css";
+import { StyledReactDatePickerContainer } from "./style";
+import ReactDatePicker from "react-datepicker";
 
 class DatePicker extends React.PureComponent<Props> {
 
@@ -23,19 +24,26 @@ class DatePicker extends React.PureComponent<Props> {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
+  public componentDidMount() {
+  }
+
+
   /* istanbul ignore next */
   public handleChange(date: Date) /* istanbul ignore next */ {
     this.setState({
       startDate: date
     });
-  /* istanbul ignore next */
+    /* istanbul ignore next */
     this.handleChange = this.handleChange.bind(this);
   }
   public render() {
 
     const renderField = ({ field }: FieldProps<{}>) => (
       <React.Fragment>
-        <ReactDatePicker {...this.props.options} disabled={this.props.disabled} dateFormat={this.props.dateFormat} selected={this.state.startDate} {...field} onChange={this.handleChange} />
+        <StyledReactDatePickerContainer>
+          <ReactDatePicker  {...this.props.options} disabled={this.props.disabled} dateFormat={this.props.dateFormat} selected={this.state.startDate} {...field} onChange={this.handleChange} />
+        </StyledReactDatePickerContainer>
       </React.Fragment>
     );
     return (
