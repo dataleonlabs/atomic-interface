@@ -4141,10 +4141,6 @@ code-point-at@^1.0.0:
 codemirror@^5.48.4:
   version "5.48.4"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.48.4.tgz#4210fbe92be79a88f0eea348fab3ae78da85ce47"
-<<<<<<< HEAD
-  integrity sha512-pUhZXDQ6qXSpWdwlgAwHEkd4imA0kf83hINmUEzJpmG80T/XLtDDEzZo8f6PQLuRCcUQhmzqqIo3ZPTRaWByRA==
-=======
->>>>>>> origin/develop
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -9239,10 +9235,6 @@ react-clientside-effect@^1.2.0:
 react-codemirror2@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-6.0.0.tgz#180065df57a64026026cde569a9708fdf7656525"
-<<<<<<< HEAD
-  integrity sha512-D7y9qZ05FbUh9blqECaJMdDwKluQiO3A9xB+fssd5jKM7YAXucRuEOlX32mJQumUvHUkHRHqXIPBjm6g0FW0Ag==
-=======
->>>>>>> origin/develop
 
 react-color@^2.17.0:
   version "2.17.3"
