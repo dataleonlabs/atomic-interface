@@ -111,7 +111,7 @@ describe('AWSCognitoLoginProvier', () => {
       const resetPasswordInputDetails = { user: resLogin, newPassword: "8NL9:@x&W-Zs[q}]" }
       await awsCognitoLoginProvier.completeNewPassword(resetPasswordInputDetails);
     }
-  })
+  })  
 
   it('U-TEST-6 - Test confirmSignIn', async () => {
     const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
@@ -128,8 +128,8 @@ describe('AWSCognitoLoginProvier', () => {
       const signInCredentials = { email: 'gerard@youngapp.co', password: "Tµtij5fXY77€/5" }
       resLogin = await awsCognitoLoginProvier.signIn(signInCredentials)
     } finally {
-      if(resLogin && resLogin.challangeName === 'SMS_MFA' ||
-      resLogin.challengeName === 'SOFTWARE_TOKEN_MFA'){
+      if (resLogin && resLogin.challangeName === 'SMS_MFA' ||
+        resLogin.challengeName === 'SOFTWARE_TOKEN_MFA') {
         const confirmSignInInputDetails = { user: resLogin, code: "1234" };
         await awsCognitoLoginProvier.confirmSignIn(confirmSignInInputDetails);
       }

@@ -40,9 +40,14 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     }
 
     .btn {
-        border-radius: 3px!important;
+        border-radius: 0px!important;
     }
 
+    .CodeMirror-code {
+      background-color: #f6f8fa!important;
+      padding: 10px!important;
+      font-size: 14px!important;
+    }
   }
 `
 class ThemeProvider extends React.Component {
