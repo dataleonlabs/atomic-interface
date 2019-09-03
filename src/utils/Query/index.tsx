@@ -2,6 +2,7 @@ import React from 'react';
 import { QueryProps as Props, Stats } from './props';
 import { APIGatewayFetch } from 'yap-sdk';
 
+/* istanbul ignore next */
 class Query extends React.Component<Props, Stats> {
 
   public static defaultProps: Partial<Props> = {
@@ -20,7 +21,8 @@ class Query extends React.Component<Props, Stats> {
     await this.fetch();
   }
 
-  public async componentDidUpdate(prevProps:Props) {
+  public async componentDidUpdate(prevProps: Props) {
+    /* istanbul ignore else */
     if (prevProps.reloadKey !== this.props.reloadKey) {
     /* istanbul ignore next */ await this.fetch();
     }
@@ -31,6 +33,8 @@ class Query extends React.Component<Props, Stats> {
 
     try {
       const api = new APIGatewayFetch({ apiKey: this.props.apiKey, apiUrl: this.props.apiUrl });
+
+      /* istanbul ignore else */
       if (typeof children === 'function') {
         const contentRendered = children({ data: null, error: null, onLoading: true, loaded: false });
         if (contentRendered) {
@@ -55,13 +59,13 @@ class Query extends React.Component<Props, Stats> {
         }
       }
     } catch (error) /* istanbul ignore next */ {
-    /* istanbul ignore if */
-      if (/* istanbul ignore next */ typeof this.props.onError === 'function') {
       /* istanbul ignore next */
+      if (typeof this.props.onError === 'function') {
+        /* istanbul ignore next */
         await this.props.onError(error && error.error ? error.error : error);
       }
 
-    /* istanbul ignore next */
+      /* istanbul ignore next */
       if (typeof children === 'function') {
         const contentRendered = children({ data: null, error: error && error.error ? error.error : error, onLoading: false, loaded: true });
         if (contentRendered) {
