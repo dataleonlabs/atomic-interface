@@ -99,7 +99,7 @@ export interface LoginProps extends AuthProps {
     messageConfirmSignInError: string
 
     /* display forgot password link */
-    displayForgotlink?: true | false
+    displayForgotlink?: boolean
 }
 
 
@@ -111,7 +111,7 @@ export interface ForgotPasswordProps extends AuthProps {
     /* Set code */
     code?: InputProps
 
-    buttonRecoverPassword?: ButtonProps // Label is different       
+    buttonRecoverPassword?: ButtonProps // Label is different
     buttonSubmitPassword?: ButtonProps /* Set Label Save Password */
 
     /* Set new password */

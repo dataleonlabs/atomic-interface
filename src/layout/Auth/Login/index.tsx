@@ -104,7 +104,7 @@ class Login extends React.Component<Props, State> {
     this.setValidation();
   }
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public navigateToforgotPassword = () => {
     this.setState({ forgotLinkError: true })
   }
@@ -208,10 +208,10 @@ class Login extends React.Component<Props, State> {
                           <>
                             <Input {...this.props.email} name="email" type="text" />
                             <Input {...this.props.password} name="password" type="password" />
-                          {this.state.loginError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">{this.props.messageWrongLogin}</Alert>}
+                            {this.state.loginError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">{this.props.messageWrongLogin}</Alert>}
                             <Button {...this.props.buttonLogin} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonLogin || /* istanbul ignore next  */ {}).children}</Button>
                             {this.props.displayForgotlink === true && <NavLink {...this.props.buttonForgot} href="#" onClick={this.navigateToforgotPassword}>{(this.props.buttonForgot || ({} as any)).children}</NavLink>}
-                          {this.state.forgotLinkError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">This button works only in application. It needs component "ForgotPassword".</Alert>}
+                            {this.state.forgotLinkError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">This button works only in application. It needs component "ForgotPassword".</Alert>}
                           </>}
                         {this.state.status === "MFA" && /* istanbul ignore next  */
                           <>
