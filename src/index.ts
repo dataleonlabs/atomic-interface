@@ -178,7 +178,8 @@ export {
     LoginProps
 } from './layout/Auth/props';
 
-// Layout/Auth/Forgot Password
+
+// Layout/Auth/Forgot Password //component headers and rest can be used of login
 export { default as ForgotPassword } from './layout/Auth/ForgotPassword';
 export { ForgotPasswordProps } from './layout/Auth/props';
 
