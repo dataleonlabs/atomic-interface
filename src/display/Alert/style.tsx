@@ -25,7 +25,6 @@ export const StyledAlert = styled.div`
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid #eaeaea;
         padding:8px;
       }
       
