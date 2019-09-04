@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.11.0...v1.12.0) (2019-09-04)
+
+
+### Bug Fixes
+
+* added in intex ([757319d](https://bitbucket.org/youngapp/ui-kit/commit/757319d))
+* forgotpassword button in login ([514d49f](https://bitbucket.org/youngapp/ui-kit/commit/514d49f))
+
 ## [1.11.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.10.0...v1.11.0) (2019-09-03)
 
 
