@@ -58,8 +58,8 @@ storiesOf('Layout|Signup', module)
     type: "aws-cognito",
     credentials: {
       "region": "eu-central-1",
-      "userPoolId": "eu-central-1_5jBnZEuMX",
-      "userPoolWebClientId": "543up50u5glbg9qlpkuhop779t",
+      'userPoolId': 'eu-central-1_*******X',
+      'userPoolWebClientId': '543up************779t',
     },
   }}>
   <Header>

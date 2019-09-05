@@ -62,10 +62,10 @@ class Signup extends React.Component<Props, State> {
     newPassword: {
       label: "New password",
       name: "newPassword",
-      placeholder: "Enter Password",
+      placeholder: "Enter New Password",
     },
     confirmNewPassword: {
-      label: "Confirm password",
+      label: "Re-Enter password",
       name: "confirmPassword",
       placeholder: "Re-Enter Password",
     },
@@ -84,7 +84,7 @@ class Signup extends React.Component<Props, State> {
     validationMessageRequiredCode: "Please enter code",
     validationMessageRequiredNewPassword: "Please enter new password",
     validationMessageValidNewPassword: "Must contain minimum 6 characters, atleast contains one uppercase, one lowercase, one number and one special case character from '!@#$%^&*'",
-    validationMessageRequiredConfirmPassword: "Please enter confirm password",
+    validationMessageRequiredConfirmPassword: "Please re-enter password",
     validationMessageValidConfirmPassword: "Passwords does not match"
   }
 
