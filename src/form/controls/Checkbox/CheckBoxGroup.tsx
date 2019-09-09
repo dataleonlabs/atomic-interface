@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { ChangeEvent } from 'react';
 import { Field, FieldProps } from 'formik';
 import { CustomInput, FormText } from 'reactstrap';
 import { CheckboxProps as Props } from './props';
@@ -10,7 +10,7 @@ const CheckBoxGroup = (props: Props) => {
   const renderField = ({ field, form: { submitCount, errors, setFieldValue, } }: FieldProps<{}>) => {
     const { name, onBlur, value = [] } = field;
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       const checked = value.some(item => item === e.target.id)
       if (checked) {
         setFieldValue(name, value.filter(item => item !== e.target.id))
@@ -19,7 +19,7 @@ const CheckBoxGroup = (props: Props) => {
       }
     }
 
-    const handleAllChange = (e) => {
+    const handleAllChange = () => {
       if (JSON.stringify(props.options) === JSON.stringify(value)) {
         setFieldValue(name, [])
       } else {
