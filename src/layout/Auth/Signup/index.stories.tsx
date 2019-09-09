@@ -20,7 +20,7 @@ storiesOf('Layout|Signup', module)
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Layout - Signup</h4>
         <br />
-        <p>The file input is the most generaly of the bunch and requires additional JavaScript if you’d like to hook them up with functional Picture and selected file name text.</p>
+        <p>Add Signup feature and relevant styles with following component. Customize the content like header and subtitle content.</p>
         <hr />
         <br />
         <h6><strong>Example</strong></h6>
