@@ -5,6 +5,7 @@ import { Col } from 'reactstrap';
 import Form from './../../index';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
+import CheckBoxGroup from './CheckBoxGroup';
 require('codemirror/mode/jsx/jsx');
 
 var reindent = function (cm) {
@@ -17,40 +18,43 @@ var reindent = function (cm) {
 storiesOf('Forms|Checkbox', module)
   .add('Checkbox', () => (
     <React.Fragment>
-        <Col sm={8} style={{marginTop: 30, marginLeft: 30 }}>
-          <h4>Checkbox</h4>
-          <br/>
-          <p>For even more customization and cross browser consistency, use our completely custom checkbox element to replace the browser defaults.</p>
-          <hr/>
-          <h6><strong>Example</strong></h6>
-          <hr/>
-          <Form>
-            {(_) => (
-              <>
-                <Checkbox name='gender' label={'Check this custom checkbox'}/>
-                <Checkbox disabled name='gender2' label={'Or this one (disabled)'} />
-                <Checkbox checked name='gender3' label={'Check this custom checkbox (checked)'}/>
-                <Checkbox disabled checked name='gender4' label={'Or this one (checked and disabled)'} />
-              </>
-            )}
-          </Form>
-          <br/>
-          <br/>
-          <h6><strong>Code</strong></h6>
-          <hr />
-          <CodeMirror
-            value={`
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Checkbox</h4>
+        <br />
+        <p>For even more customization and cross browser consistency, use our completely custom checkbox element to replace the browser defaults.</p>
+        <hr />
+        <h6><strong>Example</strong></h6>
+        <hr />
+        <Form>
+          {(_) => (
+            <>
+              <Checkbox name='gender' label={'Check this custom checkbox'} />
+              <Checkbox disabled name='gender2' label={'Or this one (disabled)'} />
+              <Checkbox checked name='gender3' label={'Check this custom checkbox (checked)'} />
+              <Checkbox disabled checked name='gender4' label={'Or this one (checked and disabled)'} />
+              <br />
+              <span> Demo of CheckBox Group</span>
+              <CheckBoxGroup name="stories" label='this is demo' options={['demo1', 'demo2', 'demo3']} />
+            </>
+          )}
+        </Form>
+        <br />
+        <br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`
 <Checkbox name='gender' label={'Check this custom checkbox'}/>
 <Checkbox disabled name='gender2' label={'Or this one (disabled)'} />
 <Checkbox checked name='gender3' label={'Check this custom checkbox (checked)'}/>
 <Checkbox disabled checked name='gender4' label={'Or this one (checked and disabled)'} />
 `}
-            options={{
-              mode: 'jsx',
-              lineNumbers: false,
-              readOnly: true
-            }}
-          />          
-        </Col>
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            readOnly: true
+          }}
+        />
+      </Col>
     </React.Fragment>
   ))
