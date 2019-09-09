@@ -19,16 +19,16 @@ storiesOf('Forms|Checkbox', module)
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
         <h2>Form Elements</h2>
-        <br/>
-        <hr/>
+        <br />
+        <hr />
         <p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-        <br/>
+        <br />
         <h4>Checkbox Collection</h4>
-        <br/>
+        <br />
         <p>Using checkbox collection one can make API calls on selection of checkbox.</p>
-        <hr/>
+        <hr />
         <h6><strong>Example</strong></h6>
-        <hr/>
+        <hr />
         <h4>Checkbox Collection</h4>
         <Form>
           {(_) => (
@@ -41,17 +41,17 @@ storiesOf('Forms|Checkbox', module)
                 label="Checkbox Collection"
                 name="chk1"
                 fieldId={{ key: "id", value: "1" }}
-                fieldUpdate="active">                
-            </CheckboxCollection>
+                fieldUpdate="active">
+              </CheckboxCollection>
             </>
           )}
         </Form>
-        <br/>
-          <br/>
-          <h6><strong>Code</strong></h6>
-          <hr />
-          <CodeMirror
-            value={`
+        <br />
+        <br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`
 <CheckboxCollection
   apiKey="xxx"
   apiUrl="test"
@@ -63,12 +63,12 @@ storiesOf('Forms|Checkbox', module)
   fieldUpdate="active">                
 </CheckboxCollection>
     `}
-            options={{
-              mode: 'jsx',
-              lineNumbers: false,
-              readOnly: true
-            }}
-          />  
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            readOnly: true
+          }}
+        />
       </Col>
     </React.Fragment>
   ))
