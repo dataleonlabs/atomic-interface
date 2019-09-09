@@ -26,7 +26,7 @@ const CheckBoxGroup = (props: Props) => {
     }
     /* istanbul ignore next */
     const handleAllChange = () => {
-      if (JSON.stringify(props.options) === JSON.stringify(value)) {
+      if (JSON.stringify(props.options.sort()) === JSON.stringify(value.sort())) {
         setFieldValue(name, [])
       } else {
         setFieldValue(name, props.options)
@@ -42,7 +42,7 @@ const CheckBoxGroup = (props: Props) => {
               type='checkbox'
               id='all'
               label={'all'}
-              checked={JSON.stringify(props.options) === JSON.stringify(value)}
+              checked={JSON.stringify(props.options.sort()) === JSON.stringify(value.sort())}
               onChange={handleAllChange}
               onBlur={onBlur}
             />
