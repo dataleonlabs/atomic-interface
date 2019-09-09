@@ -10,22 +10,21 @@ export const StyledAlert = styled.div`
 
       .Text {
           vertical-align: top;
-          padding:10px 12px;
+          padding:10px 10px;
           display:inline-block;
-          width: calc(100% - 48px );
+          width: calc(100% - 30px );
       }
       
       .alertIcon {
         position: relative;
         left: 0;
-        width: 40px;
         height: 100%;
         #background: #f6f9fc;
         top: 0;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding:8px;
+        margin: 11px 0 10px 10px;
       }
       
 
