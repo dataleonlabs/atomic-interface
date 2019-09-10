@@ -5,8 +5,26 @@
 
 export default interface AuthInterface {
 
+    /**
+     * When signup with user name and password,
+     * you will either be asked to pass some challenges like code verification
+     * after getting signed up.
+     */
+    signUp: (p: {
+        username: string, // Account login username
+        password: string, // Account new password
+        attributes?: any, // optional { email: string, phone_number: string }
+        validationData?: any //optional
+    }) => false | object;
+
+    /** Confirm signup asks after doing signup */
+    confirmSignUp: (p: { username: string, code: string, options: any }) => false | object;
+
+    /** Resend verification code to username after signup */
+    resendSignUp: (p: { username: string }) => false | object;
+
     /** Configure object */
-    configure: (options: any) => false | object;
+    configure: (options: any) => void;
 
     /**
      * When signing in with user name and password,

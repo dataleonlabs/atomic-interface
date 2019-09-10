@@ -93,7 +93,7 @@ describe('AWSCognitoLoginProvier', () => {
     }
   })
 
-  it('U-TEST-5 - Test completeNewPassword', async () => {
+  it('U-TEST-6 - Test completeNewPassword', async () => {
     const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
     awsCognitoLoginProvier.configure({
       // OPTIONAL - Amazon Cognito User Pool ID
@@ -113,7 +113,7 @@ describe('AWSCognitoLoginProvier', () => {
     }
   })  
 
-  it('U-TEST-6 - Test confirmSignIn', async () => {
+  it('U-TEST-7 - Test confirmSignIn', async () => {
     const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
     awsCognitoLoginProvier.configure({
       // OPTIONAL - Amazon Cognito User Pool ID
@@ -134,5 +134,22 @@ describe('AWSCognitoLoginProvier', () => {
         await awsCognitoLoginProvier.confirmSignIn(confirmSignInInputDetails);
       }
     }
+  })
+
+  it('U-TEST-8 - Test Signup', async () => {
+    const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
+    awsCognitoLoginProvier.configure({
+      // OPTIONAL - Amazon Cognito User Pool ID
+      userPoolId: poolId,
+      userPoolWebClientId: poolWebClientId,
+
+      // REQUIRED - Amazon Cognito Region
+      region: regionName,
+    });
+
+     const signUpCredentials = { username: 'jaydeep@samcomtechnobrains.com', password: "C.G9be7\M!r$W5_K" }
+     const signUpResult = await awsCognitoLoginProvier.signUp(signUpCredentials);
+     
+     expect(JSON.stringify(signUpResult)).toContain('UsernameExistsException');     
   })
 });
