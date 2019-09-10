@@ -15,15 +15,15 @@ var reindent = function (cm) {
 }
 
 storiesOf('Forms|Checkbox', module)
-  .add('Checkbox Collection', () => (
+  .add('Collection', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h2>Form Elements</h2>
+        <h2>CheckBox</h2>
         <br/>
         <hr/>
-        <p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
+        <p>Easily extend form controls by adding checkboxes to the form and further customize the same.</p>
         <br/>
-        <h4>Checkbox Collection</h4>
+        <h4>Collection</h4>
         <br/>
         <p>Using checkbox collection one can make API calls on selection of checkbox.</p>
         <hr/>
