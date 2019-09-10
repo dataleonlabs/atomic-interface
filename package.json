@@ -84,6 +84,7 @@
     "react-dom": "^16.8.6",
     "react-dropzone-s3-uploader": "^1.1.0",
     "react-feather": "^2.0.3",
+    "react-from-json": "^0.4.0",
     "react-monaco-editor": "^0.30.1",
     "react-mutation-observer": "^1.1.0",
     "react-quill": "^1.3.3",

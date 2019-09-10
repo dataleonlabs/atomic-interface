@@ -17,8 +17,8 @@ export interface ConnectorProps {
     /** Children is added directly in respective component */
     definition: {
         /** type of component */
-        type: 'trigger' | 'action', 
-        
+        type: 'trigger' | 'action',
+
         /** Header content to top */
         header: {
             title: {
@@ -29,7 +29,7 @@ export interface ConnectorProps {
                 en: string
                 fr?: string
             },
-            badges: Array<{  
+            badges: Array<{
                 color: BadgeProps['color'],
                 content: {
                     en: string,
@@ -51,13 +51,13 @@ export interface ConnectorProps {
         body: Array<{ [key: string]: any }>
 
         /** Tabs content to top */
-        tabs: {
+        tabs?: Array<{
             name: {
                 en: string,
                 fr?: string
             },
             content: Array<{ [key: string]: any }>
-        },
+        }>,
 
         /** Footer content to top */
         footer: {
@@ -81,10 +81,10 @@ export interface ConnectorProps {
     /**
      * Initial values for form data
      */
-    initialValues: any
+    initialValues?: any
 
     /**
      * Function called when user submit form
      */
-    onSubmit: (values: FormikValues) => void;
+    onSubmit?: (values: FormikValues) => void;
 }
