@@ -204,6 +204,10 @@ export {
 export { default as ForgotPassword } from './layout/Auth/ForgotPassword';
 export { ForgotPasswordProps } from './layout/Auth/props';
 
+// Layout/Auth/Signup //component headers and rest can be used of login
+export { default as Signup } from './layout/Auth/Signup';
+export { SignupProps } from './layout/Auth/props';
+
 // Order lib
 export { Container, Row, Col, CustomInput } from 'reactstrap';
 

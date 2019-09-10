@@ -9,6 +9,7 @@ import AWSCognito from '../../../utils/AuthProvider/AWSCongito/index';
 import * as Yup from 'yup';
 import { StyledFormContainer, StyledContainer } from './style';
 import { Col, Row } from 'reactstrap';
+import NavLink from '../../../navigation/Navbar/NavLink';
 
 /* istanbul ignore next */
 interface State {
@@ -41,6 +42,9 @@ class ForgotPassword extends React.Component<Props, State> {
       children: "Submit",
       color: "primary",
     },
+    buttonLogin: {
+      children: "Back To Login",
+    },
     buttonSubmitPassword: {
       block: true,
       children: "Save Password",
@@ -60,6 +64,7 @@ class ForgotPassword extends React.Component<Props, State> {
       credentials: {},
       type: "aws-cognito",
     },
+    displayLoginlink: true,
     messageWrongEmail: "Invalid username.",
     messageNewPasswordRequired: "Please setup your new password.",
     messageNewPasswordError: "Invalid verification code provided, please try again.",
@@ -171,8 +176,9 @@ class ForgotPassword extends React.Component<Props, State> {
                         {(this.state.mode === "EMAIL" || /* istanbul ignore next  */ this.state.mode === null) &&
                           <>
                             <Input {...this.props.email} name="email" type="text" />
-                          {this.state.validationError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">{this.props.messageWrongEmail}</Alert>}
+                            {this.state.validationError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">{this.props.messageWrongEmail}</Alert>}
                             <Button {...this.props.buttonRecoverPassword} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonRecoverPassword || /* istanbul ignore next  */ {}).children}</Button>
+                            {this.props.displayLoginlink === true && <NavLink {...this.props.buttonLogin} href="#" onClick={this.props.loginLinkEventMethod}>{(this.props.buttonLogin || ({} as any)).children}</NavLink>}
                           </>}
                         {this.state.mode === "NEW_PASSWORD" && /* istanbul ignore next  */
                           <>
