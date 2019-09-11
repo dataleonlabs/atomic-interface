@@ -8,11 +8,12 @@ export const StyledLabel = styled(ControlLabel)`
     font-size: 15px;`;
 
 export const StyledContainer = styled.div`
-    margin-bottom: 15px;`;
-
+    margin-bottom: 15px;
+    padding-bottom: 70px;`;
     /** overwrite quill div class to disabled */
 export const StyledContainerDisabled = styled.div`
     margin-bottom: 15px;
+    padding-bottom: 70px;
     .quill {pointer-events: none !important; background-color: silver}
     .ql-editor{
         background-color: silver;
@@ -21,4 +22,5 @@ export const StyledContainerDisabled = styled.div`
     /** overwrite quill toolbar div class to disabled */
 export const StyledContainerToolbarDisable = styled.div`
     margin-bottom: 15px;
+    padding-bottom: 70px;
     .ql-toolbar {pointer-events: none !important; background-color: silver}`;
