@@ -81,8 +81,8 @@ class Table extends React.Component<Props, State> {
 
   public state = {
     selected: [],
-    sortDirection: 'asc' as State['sortDirection'],
-    sortField: ''
+    sortDirection: this.props.orderWay || 'asc' as State['sortDirection'],
+    sortField: this.props.orderBy||''
   }
 
   /**
@@ -170,7 +170,7 @@ class Table extends React.Component<Props, State> {
           const childProps = child.props as any;
           if (childProps && childProps.field) {
             let cellValue = row[childProps.field];
-            
+
             // format cell value
             if ((typeof childProps.formatter === 'function') && (typeof row[childProps.field] === 'string')) /* istanbul ignore next */ {
               cellValue = childProps.formatter(cellValue, row);

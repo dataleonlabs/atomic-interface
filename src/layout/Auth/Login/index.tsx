@@ -13,7 +13,6 @@ import { Col, Row } from 'reactstrap';
 
 /* istanbul ignore next */
 interface State {  
-  forgotLinkError: boolean,
   userResponse: any,
   loginError: boolean,
   newPasswordError: boolean,
@@ -90,7 +89,6 @@ class Login extends React.Component<Props, State> {
 
   /* istanbul ignore next */
   public state = {    
-    forgotLinkError: false,
     userResponse: {},
     validationSchema: {},
     loginError: false,
@@ -103,12 +101,7 @@ class Login extends React.Component<Props, State> {
   /* istanbul ignore next */
   public componentDidMount() {
     this.setValidation();
-  }
-
-  /* istanbul ignore next */
-  public navigateToforgotPassword = () => {
-    this.setState({ forgotLinkError: true })
-  }
+  }  
 
   /* istanbul ignore else  */
   public setValidation() {
@@ -186,7 +179,7 @@ class Login extends React.Component<Props, State> {
     }
   }
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public render() {
     return (
       <React.Fragment>
@@ -213,8 +206,7 @@ class Login extends React.Component<Props, State> {
                             <Input {...this.props.password} name="password" type="password" />
                             {this.state.loginError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">{this.props.messageWrongLogin}</Alert>}
                             <Button {...this.props.buttonLogin} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonLogin || /* istanbul ignore next  */ {}).children}</Button>
-                            {this.props.displayForgotlink === true && <NavLink {...this.props.buttonForgot} href="#" onClick={this.navigateToforgotPassword}>{(this.props.buttonForgot || ({} as any)).children}</NavLink>}
-                            {this.state.forgotLinkError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">This button works only in application. It needs component "ForgotPassword".</Alert>}
+                            {this.props.displayForgotlink === true && <NavLink {...this.props.buttonForgot} href="#" onClick={this.props.forgotPasswordEventMethod}>{(this.props.buttonForgot || ({} as any)).children}</NavLink>}                            
                           </>}
                         {this.state.status === "MFA" && /* istanbul ignore next  */
                           <>

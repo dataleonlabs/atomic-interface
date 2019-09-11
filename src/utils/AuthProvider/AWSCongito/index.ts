@@ -16,6 +16,45 @@ export default class AWSCognito implements AuthInterface {
     }
 
     /**
+     * signUp
+     * @param p.username username user
+     * @param p.password password user
+     */
+    public async signUp(p: { username: string, password: string, attributes?: any, validationData?: any }) {
+        try {
+            return await Auth.signUp(p.username, p.password, p.attributes, p.validationData);
+        } catch (e) {
+            return e;
+        }
+    }
+
+    /**
+     * confirmSignUp
+     * @param p.username username user
+     * @param p.code verification code
+     * @param p.options confirm Optional. { forceAliasCreation: true } Force user confirmation irrespective of existing alias. By default set to True. { forceAliasCreation: true }
+     */
+    public async confirmSignUp(p: { username: string, code: string, options?: any }) {
+        try {
+            return await Auth.confirmSignUp(p.username, p.code, p.options);
+        } catch (e) {
+            return e;
+        }
+    }
+
+    /**
+     * resendSignUp
+     * @param p.username account usenrame    
+     */
+    public async resendSignUp(p: { username: string }) {
+        try {
+            return await Auth.resendSignUp(p.username);
+        } catch (e) {
+            return e;
+        }
+    }
+
+    /**
      * signIn
      * @param p.email email user
      * @param p.password password user
@@ -59,7 +98,7 @@ export default class AWSCognito implements AuthInterface {
      * Sign out current login
      */
     public signOut() {
-        Auth.signOut();        
+        Auth.signOut();
     };
 
 
