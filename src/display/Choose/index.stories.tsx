@@ -13,7 +13,6 @@ var reindent = function(cm) {
   };
 }
 
-
 storiesOf('UI Elements|Choose', module)
   .add('Basic Example', () => (
     <React.Fragment>
@@ -29,8 +28,8 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={true} >
-              <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+          <Choose className='customCheck' name='connect' title='Connectors' icon={false}>
+            <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
           <h6><strong>Code</strong></h6>
@@ -60,7 +59,7 @@ storiesOf('UI Elements|Choose', module)
           <h6><strong>Example</strong></h6>
           <hr/>
           <Choose className='customCheck' name='connect' title='Connectors' icon={true} >
-              <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+            <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
         <h6><strong>Code</strong></h6>
@@ -90,7 +89,7 @@ storiesOf('UI Elements|Choose', module)
           <h6><strong>Example</strong></h6>
           <hr/>
           <Choose className='customCheck' name='connect' title='Connectors' icon={true} >
-              <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+            <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
         <h6><strong>Code</strong></h6>
@@ -119,7 +118,7 @@ storiesOf('UI Elements|Choose', module)
           <h6><strong>Example</strong></h6>
           <hr/>
           <Choose className='customCheck' name='connect' title='Connectors' icon={true} >
-              <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+            <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
         <h6><strong>Code</strong></h6>
