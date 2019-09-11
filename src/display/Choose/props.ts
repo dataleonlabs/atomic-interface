@@ -1,3 +1,5 @@
+import { InputProps } from '../../form/controls/Input/props';
+
 /**
  * Follow documentation
  * @example
@@ -5,23 +7,23 @@
  *      This is a secondary alert — check it out!
  *  </Choose>
  */
-export interface ChooseProps {
+export interface ChooseProps extends InputProps{
 
     /** Add icon to left: feathericons info for custom icon when true */
     icon: boolean | JSX.Element
 
-    /** Title to display top */
-    title: string | JSX.Element
+    // /** Title to display top */
+    title: string
 
-    /** Is active */
-    active: boolean
+    // /** Is active */
+    // active: boolean
 
-    /** Background color used for hover color */
-    backgroundColorOnHover: string
+    // /** Background color used for hover color */
+    // backgroundColorOnHover: string
 
-    /** Background color used for hover color */
-    backgroundColorOnActive: string
+    // /** Background color used for hover color */
+    // backgroundColorOnActive: string
 
-    // Content display 
+    // // Content display 
     children: string | JSX.Element
 }
