@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.15.0...v1.16.0) (2019-09-11)
+
+
+### Bug Fixes
+
+* added the codemirror to newly added component - step ([c7030e2](https://bitbucket.org/youngapp/ui-kit/commit/c7030e2))
+* changed name to collection from checkbox collection ([169bec2](https://bitbucket.org/youngapp/ui-kit/commit/169bec2))
+* documentation updated for signup - login - forgot password and applied documentation to new forgot password components ([a6af681](https://bitbucket.org/youngapp/ui-kit/commit/a6af681))
+* fixed alert icon design - AI-83 and AI-90 covered ([8051b84](https://bitbucket.org/youngapp/ui-kit/commit/8051b84))
+* minor fixes ([534aa77](https://bitbucket.org/youngapp/ui-kit/commit/534aa77))
+* removed gray color from alert icon border AI-83 ([18b3e7a](https://bitbucket.org/youngapp/ui-kit/commit/18b3e7a))
+* stories ccollection ([31ea158](https://bitbucket.org/youngapp/ui-kit/commit/31ea158))
+
+
+### Features
+
+* add stats informations props ([a3b3a22](https://bitbucket.org/youngapp/ui-kit/commit/a3b3a22))
+* signup component ([a8f6157](https://bitbucket.org/youngapp/ui-kit/commit/a8f6157))
+
 ## [1.15.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.14.0...v1.15.0) (2019-09-09)
 
 
