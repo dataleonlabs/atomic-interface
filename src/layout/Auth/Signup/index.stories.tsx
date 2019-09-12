@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Login from './index';
+import Signup from './index';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import HeaderTitle from '../components/Header/Title';
@@ -14,19 +14,19 @@ var handleRedirect = function () {
   alert("Component not available");
 }
 
-storiesOf('Layout|Login', module)
+storiesOf('Layout|Signup', module)
   .add('Example', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Layout - Login</h4>
+        <h4>Layout - Signup</h4>
         <br />
-        <p>Add Login feature and relevant styles with following component. Customize the content like header and subtitle content.</p>
+        <p>Add Signup feature and relevant styles with following component. Customize the content like header and subtitle content.</p>
         <hr />
         <br />
         <h6><strong>Example</strong></h6>
         <hr />
-        <Login
-          forgotPasswordEventMethod={handleRedirect}
+        <Signup
+          loginEventMethod={handleRedirect}
           provider={{
             type: "aws-cognito",
             credentials: {
@@ -37,42 +37,43 @@ storiesOf('Layout|Login', module)
           }}>
           <Header>
             <HeaderTitle>
-              <span>Sign in</span>
+              <span>Signup</span>
             </HeaderTitle>
             <HeaderSubTitle>
-              <span>Please login to account with your credentials</span>
+              <span>Please register to AI</span>
             </HeaderSubTitle>
           </Header>
           <Footer>
             <span>Copyright 2019</span>
           </Footer>
-        </Login>
+        </Signup>
         <br />
         <br />
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`<Login
-provider={{
-  type: 'aws-cognito',
-  credentials: {
-    'region': 'eu-central-1',
-    'userPoolId': 'eu-central-1_*******X',
-    'userPoolWebClientId': '543up************779t',
-  },
-}}>
+          value={`<Signup
+  loginEventMethod={handleRedirect}
+  provider={{
+    type: "aws-cognito",
+    credentials: {
+      "region": "eu-central-1",
+      'userPoolId': 'eu-central-1_*******X',
+      'userPoolWebClientId': '543up************779t',
+    },
+  }}>
   <Header>
     <HeaderTitle>
-      <span>Sign in</span>
+      <span>Signup</span>
     </HeaderTitle>
     <HeaderSubTitle>
-      <span>Please login to account with your credentials</span>
+      <span>Please register to AI</span>
     </HeaderSubTitle>
   </Header>
   <Footer>
     <span>Copyright 2019</span>
   </Footer>
-</Login>`}
+</Signup>`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

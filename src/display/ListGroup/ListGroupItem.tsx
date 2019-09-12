@@ -9,17 +9,17 @@ import { ListGroupItem as ListGroupItemBase } from 'reactstrap'
  */
 const ListGroupItem = (props: Props) /* istanbul ignore next */ => {
 
-/* istanbul ignore next */
-    const onClick = () /* istanbul ignore next */ => {
     /* istanbul ignore next */
+    const onClick = () /* istanbul ignore next */ => {
+        /* istanbul ignore next */
         if (props.tag === "button") /* istanbul ignore next */ {
             alert(props.children);
         }
     }
 
-/* istanbul ignore next */
+    /* istanbul ignore next */
     return (
-        <ListGroupItemBase {...props} onClick={onClick}>
+        <ListGroupItemBase onClick={onClick} {...props}>
             {/* {props.children} */}
         </ListGroupItemBase>
     )

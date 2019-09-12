@@ -1,6 +1,6 @@
 import * as React from 'react'
 import moment from 'moment';
-import { FormText, Label } from 'reactstrap';
+import { FormText } from 'reactstrap';
 import { TextProps as Props } from './props'
 import Tooltip from '../Tooltip';
 import { makeId } from '../../utils';
@@ -113,9 +113,9 @@ export default class Text extends React.Component<Props> {
   }
 
   public render() {
-    const TextStyle: React.ReactType = this.props.textStyle === 'help' ? FormText : Label;
+    const TextStyle: React.ReactType = this.props.textStyle === 'help' ? FormText : 'span';
     const id = `${makeId()}`;
-  
+
     return (
       <>
         <TextStyle id={id}>

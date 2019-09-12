@@ -81,8 +81,8 @@ class Table extends React.Component<Props, State> {
 
   public state = {
     selected: [],
-    sortDirection: 'asc' as State['sortDirection'],
-    sortField: ''
+    sortDirection: this.props.orderWay || 'asc' as State['sortDirection'],
+    sortField: this.props.orderBy||''
   }
 
   /**
@@ -123,7 +123,7 @@ class Table extends React.Component<Props, State> {
     return columns;
   }
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public SortingIcon = ({ direction }: any) /* istanbul ignore next */ => {
     return (
       <span style={{ paddingLeft: '5px' }}>
@@ -132,7 +132,7 @@ class Table extends React.Component<Props, State> {
     )
   };
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public SortLabel = ({ onSort, children, direction }: any) /* istanbul ignore next */ => (
     <div onClick={onSort} style={{ cursor: 'pointer' }} className={`${direction ? /* istanbul ignore next */ 'text-primary' :/* istanbul ignore next */  ''}`}>
       {children}
@@ -140,7 +140,7 @@ class Table extends React.Component<Props, State> {
     </div>
   );
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public Toolbar = ({ children }: any) /* istanbul ignore next */ => (
     <div className="card-header py-2 d-flex position-relative dx-g-bs4-toolbar">
       {children}
@@ -172,7 +172,7 @@ class Table extends React.Component<Props, State> {
             let cellValue = row[childProps.field];
 
             // format cell value
-            if ((typeof childProps.formatter === 'function')) /* istanbul ignore next */ {
+            if ((typeof childProps.formatter === 'function') && (typeof row[childProps.field] === 'string')) /* istanbul ignore next */ {
               cellValue = childProps.formatter(cellValue, row);
             }
 
@@ -189,9 +189,9 @@ class Table extends React.Component<Props, State> {
   }
 
   /* istanbul ignore next */
-  public onSortingChange = (sorting: Sorting[]) /* istanbul ignore next */  => {
-  /* istanbul ignore next */
-    if (typeof this.props.onSorted === 'function') /* istanbul ignore next */  {
+  public onSortingChange = (sorting: Sorting[]) /* istanbul ignore next */ => {
+    /* istanbul ignore next */
+    if (typeof this.props.onSorted === 'function') /* istanbul ignore next */ {
       this.props.onSorted({
         direction: sorting[0].direction,
         field: sorting[0].columnName
@@ -205,10 +205,10 @@ class Table extends React.Component<Props, State> {
     });
   }
 
-/* istanbul ignore next */
-  public setSelection = (items: any[]) /* istanbul ignore next */  => {
   /* istanbul ignore next */
-    if (typeof this.props.onSelected === 'function') /* istanbul ignore next */  {
+  public setSelection = (items: any[]) /* istanbul ignore next */ => {
+    /* istanbul ignore next */
+    if (typeof this.props.onSelected === 'function') /* istanbul ignore next */ {
       const ids: string[] = [];
       (items || /* istanbul ignore next  */[]).map((index: number) => {
         ids.push((this.props.data || [])[index][this.props.id || 'id'] as string);
@@ -218,8 +218,8 @@ class Table extends React.Component<Props, State> {
     this.setState({ selected: items });
   }
 
-/* istanbul ignore next */
-  public getRemoteRows = () => /* istanbul ignore next */  {
+  /* istanbul ignore next */
+  public getRemoteRows = () => /* istanbul ignore next */ {
     //
   }
 
@@ -227,7 +227,7 @@ class Table extends React.Component<Props, State> {
 
     if (this.props.draggable === true) {
       return (
-        <TableAdvanced {...this.props } />
+        <TableAdvanced {...this.props} />
       )
     }
 
@@ -239,28 +239,28 @@ class Table extends React.Component<Props, State> {
           rows={this.props.loading ? [] : this.rows()}
           columns={this.columns()}
         >
-          {this.props.sortable && /* istanbul ignore next */  <SortingState
+          {this.props.sortable && /* istanbul ignore next */ <SortingState
             defaultSorting={[{ columnName: columnExtensions[0].columnName, direction: 'asc' }]}
             sorting={[{ columnName: this.state.sortField, direction: this.state.sortDirection }]}
             onSortingChange={this.onSortingChange}
           />}
-          {this.props.sortable && /* istanbul ignore next */  <IntegratedSorting />}
+          {this.props.sortable && /* istanbul ignore next */ <IntegratedSorting />}
 
-          {this.props.pagination && /* istanbul ignore next */  <PagingState
+          {this.props.pagination && /* istanbul ignore next */ <PagingState
             currentPage={this.props.pagination.currentPage || /* istanbul ignore next */  0}
             onCurrentPageChange={this.props.pagination.onChange}
             pageSize={this.props.pagination.pageSize}
             onPageSizeChange={this.props.pagination.onSizeChange}
           />}
-          {this.props.pagination && /* istanbul ignore next */  <IntegratedPaging />}
+          {this.props.pagination && /* istanbul ignore next */ <IntegratedPaging />}
 
-          {this.props.selectable && /* istanbul ignore next */  <SelectionState
+          {this.props.selectable && /* istanbul ignore next */ <SelectionState
             selection={this.state.selected}
             onSelectionChange={this.setSelection}
           />}
-          {this.props.selectable && /* istanbul ignore next */  <IntegratedSelection />}
+          {this.props.selectable && /* istanbul ignore next */ <IntegratedSelection />}
 
-          {this.props.columnOrdering && /* istanbul ignore next */  <DragDropProvider />}
+          {this.props.columnOrdering && /* istanbul ignore next */ <DragDropProvider />}
 
           {this.props.loading && <VirtualTableState
             loading={this.props.loading}
@@ -271,7 +271,7 @@ class Table extends React.Component<Props, State> {
             infiniteScrolling={false}
           />}
 
-          {this.props.searchable && /* istanbul ignore next */  <SearchState
+          {this.props.searchable && /* istanbul ignore next */ <SearchState
             onValueChange={this.props.onSearch}
           />}
 
@@ -281,12 +281,12 @@ class Table extends React.Component<Props, State> {
             <TableBase columnExtensions={columnExtensions} />
           }
 
-          {this.props.columnResizing && /* istanbul ignore next */  <TableColumnResizing
+          {this.props.columnResizing && /* istanbul ignore next */ <TableColumnResizing
             columnWidths={columnExtensions}
             onColumnWidthsChange={this.props.onColumnResizing}
           />}
 
-          {this.props.columnOrdering && /* istanbul ignore next */  <TableColumnReordering
+          {this.props.columnOrdering && /* istanbul ignore next */ <TableColumnReordering
             defaultOrder={this.props.columnOrdering.length === 0 ? columnNamesExtensions : this.props.columnOrdering}
             onOrderChange={this.props.onColumnOrdering}
           />}
@@ -296,31 +296,31 @@ class Table extends React.Component<Props, State> {
             sortLabelComponent={this.SortLabel}
           />
 
-          {this.props.hiddenColumnNames && /* istanbul ignore next */  <TableColumnVisibility
+          {this.props.hiddenColumnNames && /* istanbul ignore next */ <TableColumnVisibility
             hiddenColumnNames={this.props.hiddenColumnNames}
             onHiddenColumnNamesChange={this.props.onHiddenColumnNamesChange}
             columnExtensions={columnNamesExtensions as any}
           />}
 
-          {this.props.pagination && /* istanbul ignore next */  <PagingPanel pageSizes={this.props.pagination.pageSizes || [10, 30, 100]} />}
-          {this.props.selectable && /* istanbul ignore next */  <TableSelection
+          {this.props.pagination && /* istanbul ignore next */ <PagingPanel pageSizes={this.props.pagination.pageSizes || [10, 30, 100]} />}
+          {this.props.selectable && /* istanbul ignore next */ <TableSelection
             selectByRowClick={this.props.selectByRowClick}
             showSelectAll={this.props.showSelectAll}
             highlightRow={true}
           />}
 
-          {this.props.columnBands && /* istanbul ignore next */  <TableBandHeader
+          {this.props.columnBands && /* istanbul ignore next */ <TableBandHeader
             columnBands={this.props.columnBands}
           />}
 
-          {(this.props.fixedLeftColumns || this.props.fixedRightColumns) && /* istanbul ignore next */  <TableFixedColumns
+          {(this.props.fixedLeftColumns || this.props.fixedRightColumns) && /* istanbul ignore next */ <TableFixedColumns
             leftColumns={this.props.fixedLeftColumns}
             rightColumns={this.props.fixedRightColumns}
           />}
 
-          {this.props.showToolbar && (this.props.hiddenColumnNames || this.props.searchable) && /* istanbul ignore next */  <Toolbar rootComponent={this.Toolbar}/>}
-          {this.props.showToolbar && this.props.hiddenColumnNames && /* istanbul ignore next */  <ColumnChooser />}
-          {this.props.showToolbar && this.props.searchable && /* istanbul ignore next */  <SearchPanel />}
+          {this.props.showToolbar && (this.props.hiddenColumnNames || this.props.searchable) && /* istanbul ignore next */ <Toolbar rootComponent={this.Toolbar} />}
+          {this.props.showToolbar && this.props.hiddenColumnNames && /* istanbul ignore next */ <ColumnChooser />}
+          {this.props.showToolbar && this.props.searchable && /* istanbul ignore next */ <SearchPanel />}
         </Grid>
       </StyledTable>
     );
