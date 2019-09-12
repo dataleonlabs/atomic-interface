@@ -25,154 +25,94 @@ import Switch from '../../form/controls/Switch/index';
 import Textarea from '../../form/controls/Textarea/index';
 import ButtonGroup from '../../form/controls/ButtonGroup/index';
 
-/* istanbul ignore next */
-interface State {
-  temp: string,
-}
-
 /**
  * Connector
  */
 /* istanbul ignore next */
-class Connector extends React.Component<Props, State> {
+class Connector extends React.Component<Props> {  
 
-  /* istanbul ignore next */
-  public state = {
-    temp: "",
+  public createComponent = {
+
+    Button: (item) => {
+      return <Button {...item.props}>{item.children}</Button>
+    },
+    ButtonGroup: (item) => (
+      <ButtonGroup {...item.props}>
+        {item.children.map((_item) => {
+          return <Button {..._item.props}>{_item.children}</Button>
+        })}
+      </ButtonGroup >
+    ),
+    Checkbox: (item) => {
+      return <Checkbox {...item.props} />
+    },
+    DatePicker: (item) => {
+      return <DatePicker {...item.props} />
+    },
+    DropzoneS3: (item) => {
+      return <DropzoneS3 {...item.props}><span>{item.children}</span></DropzoneS3>
+    },
+    FilePickerS3: (item) => {
+      return <FilePickerS3 {...item.props}>{item.children}</FilePickerS3>
+    },
+    FilePicker: (item) => {
+      return <FilePicker {...item.props} />
+    },
+    Radio: (item) => {
+      return <Radio {...item.props} />
+    },
+    RichText: (item) => {
+      return <RichText {...item.props} />
+    },
+    SearchBar: (item) => {
+      return <SearchBar {...item.props} />
+    },
+    Switch: (item) => {
+      return <Switch {...item.props} />
+    },
+    Textarea: (item) => {
+      return <Textarea {...item.props} />
+    },
+    Input: (item) => {
+      return <Input {...item.props} />
+    },
+    Select: (item) => {
+      return <Select {...item.props} />
+    },
+    H1: (item) => {
+      return <h1>{item.content}</h1>;
+    },
+    H2: (item) => {
+      return <h2>{item.content}</h2>;
+    },
+    H3: (item) => {
+      return <h3>{item.content}</h3>;
+    }
   }
 
   /* istanbul ignore next */
-  public render() {
+  public createTabItems = (item) => (
+    <TabItem title={item.name.en}>
+      {
+        item.content.map((content_item) => {
+          if (content_item.props && content_item.props.placeholder) {
+            content_item.props.placeholder = content_item.props.placeholder[this.props.language] ?
+              content_item.props.placeholder[this.props.language] : ""
+          }
 
-    /* istanbul ignore next */
-    const button = (item) => (
-      <Button {...item.props}>{item.children}</Button>
-    );
-
-    /* istanbul ignore next */
-    const buttonGroup = (item) => (
-      <ButtonGroup {...item.props}>
-        {item.children.map((_item) => {
-          return button(_item);
-        })}
-      </ButtonGroup >
-    );
-
-    /* istanbul ignore next */
-    const checkbox = (item) => (
-      <Checkbox {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const datePicker = (item) => (
-      <DatePicker {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const dropZoneS3 = (item) => (
-      <DropzoneS3 {...item.props}><span>{item.children}</span></DropzoneS3>
-    );
-
-    /* istanbul ignore next */
-    const filePickerS3 = (item) => (
-      <FilePickerS3 {...item.props}>{item.children}</FilePickerS3>
-    );
-
-    /* istanbul ignore next */
-    const filePicker = (item) => (
-      <FilePicker {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const radio = (item) => (
-      <Radio {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const richText = (item) => (
-      <RichText {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const searchBar = (item) => (
-      <SearchBar {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const switchBase = (item) => (
-      <Switch {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const textArea = (item) => (
-      <Textarea {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const input = (item) => (
-      <Input {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const select = (item) => (
-      <Select {...item.props} />
-    );
-
-    /* istanbul ignore next */
-    const tabitems = (item) => (
-      <TabItem title={item.name.en}>
-        {
-          item.content.map((content_item) => {
-            if (content_item.props && content_item.props.placeholder) {
-              content_item.props.placeholder = content_item.props.placeholder[this.props.language] ?
-                content_item.props.placeholder[this.props.language] : ""
-            }
-
-            if (content_item.props && content_item.props.label) {
-              content_item.props.label = content_item.props.label[this.props.language] ?
+          if (content_item.props && content_item.props.label) {
+            content_item.props.label = content_item.props.label[this.props.language] ?
               content_item.props.label[this.props.language] : ""
-            }
+          }
 
-            switch (content_item.component) {
-              case 'Button':
-                return button(content_item);
-              case 'Input':
-                return input(content_item);
-              case 'Select':
-                return select(content_item);
-              case 'Checkbox':
-                return checkbox(content_item);
-              case 'DatePicker':
-                return datePicker(content_item);
-              case 'DropzoneS3':
-                return dropZoneS3(content_item);
-              case 'FilePickerS3':
-                return filePickerS3(content_item);
-              case 'FilePicker':
-                return filePicker(content_item);
-              case 'Radio':
-                return radio(content_item);
-              case 'RichText':
-                return richText(content_item);
-              case 'SearchBar':
-                return searchBar(content_item);
-              case 'Switch':
-                return switchBase(content_item);
-              case 'Textarea':
-                return textArea(content_item);
-              case 'ButtonGroup':
-                return buttonGroup(content_item);
-              case 'H1':
-                return <h1>{content_item.content}</h1>;
-              case 'H2':
-                return <h2>{content_item.content}</h2>;
-              case 'H3':
-                return <h3>{content_item.content}</h3>
-            }
-          })}
-      </TabItem>
-    );
+          return this.createComponent[content_item.component](content_item);
+        })}
+    </TabItem>
+  );
 
+  /* istanbul ignore next */
+  public render() {
+  
     return (
       <React.Fragment>
         <StyledContainer fluid={true}>
@@ -206,59 +146,21 @@ class Connector extends React.Component<Props, State> {
                     <div>
                       {this.props.definition.body &&
                         this.props.definition.body.map((item) => {
-
                           if (item.props && item.props.placeholder) {
                             item.props.placeholder = item.props.placeholder[this.props.language] ?
-                            item.props.placeholder[this.props.language] : ""
+                              item.props.placeholder[this.props.language] : ""
                           }
-
                           if (item.props && item.props.label) {
                             item.props.label = item.props.label[this.props.language] ?
-                            item.props.label[this.props.language] : ""
+                              item.props.label[this.props.language] : ""
                           }
-
-                          switch (item.component) {
-                            case 'Button':
-                              return button(item);
-                            case 'Input':
-                              return input(item);
-                            case 'Select':
-                              return select(item);
-                            case 'Checkbox':
-                              return checkbox(item);
-                            case 'DatePicker':
-                              return datePicker(item);
-                            case 'DropzoneS3':
-                              return dropZoneS3(item);
-                            case 'FilePickerS3':
-                              return filePickerS3(item);
-                            case 'FilePicker':
-                              return filePicker(item);
-                            case 'Radio':
-                              return radio(item);
-                            case 'RichText':
-                              return richText(item);
-                            case 'SearchBar':
-                              return searchBar(item);
-                            case 'Switch':
-                              return switchBase(item);
-                            case 'Textarea':
-                              return textArea(item);
-                            case 'ButtonGroup':
-                              return buttonGroup(item);
-                            case 'H1':
-                              return <h1>{item.content}</h1>;
-                            case 'H2':
-                              return <h2>{item.content}</h2>;
-                            case 'H3':
-                              return <h3>{item.content}</h3>
-                          }
+                          return this.createComponent[item.component](item);                          
                         })}
 
                       {this.props.definition.tabs &&
                         <Tabs activeTab={0} onChange={(i) => i}>
                           {this.props.definition.tabs.map((item) => {
-                            return tabitems(item);
+                            return this.createTabItems(item);
                           })}
                         </Tabs>
                       }
