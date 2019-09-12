@@ -123,10 +123,16 @@ class Connector extends React.Component<Props, State> {
       <TabItem title={item.name.en}>
         {
           item.content.map((content_item) => {
-            if (content_item.props.placeholder) {
+            if (content_item.props && content_item.props.placeholder) {
               content_item.props.placeholder = content_item.props.placeholder[this.props.language] ?
                 content_item.props.placeholder[this.props.language] : ""
             }
+
+            if (content_item.props && content_item.props.label) {
+              content_item.props.label = content_item.props.label[this.props.language] ?
+              content_item.props.label[this.props.language] : ""
+            }
+
             switch (content_item.component) {
               case 'Button':
                 return button(content_item);
@@ -156,6 +162,12 @@ class Connector extends React.Component<Props, State> {
                 return textArea(content_item);
               case 'ButtonGroup':
                 return buttonGroup(content_item);
+              case 'H1':
+                return <h1>{content_item.content}</h1>;
+              case 'H2':
+                return <h2>{content_item.content}</h2>;
+              case 'H3':
+                return <h3>{content_item.content}</h3>
             }
           })}
       </TabItem>
@@ -194,6 +206,17 @@ class Connector extends React.Component<Props, State> {
                     <div>
                       {this.props.definition.body &&
                         this.props.definition.body.map((item) => {
+
+                          if (item.props && item.props.placeholder) {
+                            item.props.placeholder = item.props.placeholder[this.props.language] ?
+                            item.props.placeholder[this.props.language] : ""
+                          }
+
+                          if (item.props && item.props.label) {
+                            item.props.label = item.props.label[this.props.language] ?
+                            item.props.label[this.props.language] : ""
+                          }
+
                           switch (item.component) {
                             case 'Button':
                               return button(item);
@@ -223,6 +246,12 @@ class Connector extends React.Component<Props, State> {
                               return textArea(item);
                             case 'ButtonGroup':
                               return buttonGroup(item);
+                            case 'H1':
+                              return <h1>{item.content}</h1>;
+                            case 'H2':
+                              return <h2>{item.content}</h2>;
+                            case 'H3':
+                              return <h3>{item.content}</h3>
                           }
                         })}
 
