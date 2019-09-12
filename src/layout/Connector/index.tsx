@@ -29,7 +29,7 @@ import ButtonGroup from '../../form/controls/ButtonGroup/index';
  * Connector
  */
 /* istanbul ignore next */
-class Connector extends React.Component<Props> {  
+class Connector extends React.Component<Props> {
 
   public createComponent = {
 
@@ -104,15 +104,16 @@ class Connector extends React.Component<Props> {
             content_item.props.label = content_item.props.label[this.props.language] ?
               content_item.props.label[this.props.language] : ""
           }
-
-          return this.createComponent[content_item.component](content_item);
+          if (this.createComponent[content_item.component]) {
+            return this.createComponent[content_item.component](content_item);
+          }
         })}
     </TabItem>
   );
 
   /* istanbul ignore next */
   public render() {
-  
+
     return (
       <React.Fragment>
         <StyledContainer fluid={true}>
@@ -154,7 +155,9 @@ class Connector extends React.Component<Props> {
                             item.props.label = item.props.label[this.props.language] ?
                               item.props.label[this.props.language] : ""
                           }
-                          return this.createComponent[item.component](item);                          
+                          if (this.createComponent[item.component]) {
+                            return this.createComponent[item.component](item);
+                          }
                         })}
 
                       {this.props.definition.tabs &&
