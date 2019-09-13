@@ -11,16 +11,16 @@ export interface InputProps extends InputPropsBase {
 
   /** Type of input default value is text */
   type?:
-    | 'text'
-    | 'email'
-    | 'url'
-    | 'number'
-    | 'password'
-    | 'datetime'
-    | 'date'
-    | 'time'
-    | 'color'
-    | 'search'
+  | 'text'
+  | 'email'
+  | 'url'
+  | 'number'
+  | 'password'
+  | 'datetime'
+  | 'date'
+  | 'time'
+  | 'color'
+  | 'search'
 
   /** Current label displayed */
   label?: string | JSX.Element
@@ -61,8 +61,8 @@ export interface InputProps extends InputPropsBase {
   /** Is required */
   required?: boolean
 
-  onChange?: any; 
-  
+  onChange?: any;
+
   /**
    * Check of current values if you have field with same conditionnals values.
    * @example values
@@ -77,6 +77,6 @@ export interface InputProps extends InputPropsBase {
    * }
    * 
    */
-  conditionnals?: { [key: string]: any }; 
-  
+  conditionnals?: { [key: string]: any };
+
 }

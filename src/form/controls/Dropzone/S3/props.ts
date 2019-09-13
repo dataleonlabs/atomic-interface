@@ -36,4 +36,20 @@ export interface DropzoneS3Props extends FilePickerS3Props {
 
   /** onDisplay */
   onDiplay?: (name: string) => string
+
+  /**
+    * Check of current values if you have field with same conditionnals values.
+    * @example values
+    * {
+    *   firstName: "Gerard",
+    *   email: "example@example.com",
+    *   gender: "woman"
+    * }
+    * @example conditionnals, then display field because gender is equal woman in values
+    * {
+    *   gender: "woman"
+    * }
+    * 
+    */
+  conditionnals?: { [key: string]: any };
 }
