@@ -1,6 +1,10 @@
 import styled from 'styled-components'
-import { Container } from 'reactstrap';
 
-export const StyledContainer = styled(Container)`
-  background-color: #fff;  
+export const StyledContainer = styled.div`
+  background-color: #fff;
+    header {
+    p {
+      margin-bottom: 10px;
+    }
+  }  
 `;

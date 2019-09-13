@@ -3,7 +3,6 @@ import * as React from 'react';
 import 'whatwg-fetch';
 import { ConnectorProps as Props } from './props';
 import { StyledContainer } from './style';
-import { Col, Row } from 'reactstrap';
 import Badge from '../../display/Badge/index';
 import Alert from '../../display/Alert/index';
 import Spacer from '../../display/Spacer/index';
@@ -24,6 +23,7 @@ import SearchBar from '../../form/controls/SearchBar/index';
 import Switch from '../../form/controls/Switch/index';
 import Textarea from '../../form/controls/Textarea/index';
 import ButtonGroup from '../../form/controls/ButtonGroup/index';
+import { makeId } from './../../utils';
 
 /**
  * Connector
@@ -38,8 +38,8 @@ class Connector extends React.Component<Props> {
     },
     ButtonGroup: (item) => (
       <ButtonGroup {...item.props}>
-        {item.children.map((_item) => {
-          return <Button {..._item.props}>{_item.children}</Button>
+        {item.children.map((i) => {
+          return <Button key={makeId()} {...i.props}>{i.children}</Button>
         })}
       </ButtonGroup >
     ),
@@ -94,18 +94,18 @@ class Connector extends React.Component<Props> {
   public createTabItems = (item) => (
     <TabItem title={item.name.en}>
       {
-        item.content.map((content_item) => {
-          if (content_item.props && content_item.props.placeholder) {
-            content_item.props.placeholder = content_item.props.placeholder[this.props.language] ?
-              content_item.props.placeholder[this.props.language] : ""
+        item.content.map((content) => {
+          if (content.props && content.props.placeholder) {
+            content.props.placeholder = content.props.placeholder[this.props.language] ?
+              content.props.placeholder[this.props.language] : ""
           }
 
-          if (content_item.props && content_item.props.label) {
-            content_item.props.label = content_item.props.label[this.props.language] ?
-              content_item.props.label[this.props.language] : ""
+          if (content.props && content.props.label) {
+            content.props.label = content.props.label[this.props.language] ?
+              content.props.label[this.props.language] : ""
           }
-          if (this.createComponent[content_item.component]) {
-            return this.createComponent[content_item.component](content_item);
+          if (this.createComponent[content.component]) {
+            return this.createComponent[content.component](content);
           }
         })}
     </TabItem>
@@ -116,32 +116,30 @@ class Connector extends React.Component<Props> {
 
     return (
       <React.Fragment>
-        <StyledContainer fluid={true}>
-          <Row>
-            <Col md={10}>
+        <StyledContainer>
+
               <div>
                 <header>
-                  <h1>{this.props.definition.header.title[this.props.language] ?
-                    this.props.definition.header.title[this.props.language] : ""}</h1>
+                  <h5>{this.props.definition.header.title[this.props.language] ?
+                    this.props.definition.header.title[this.props.language] : ""}</h5>
 
                   <p>{this.props.definition.header.description[this.props.language] ?
                     this.props.definition.header.description[this.props.language] : ""}</p>
 
                   {this.props.definition.header.badges &&
                     this.props.definition.header.badges.map((item) =>
-                      <Badge color={item.color}>
+                      <Badge {...item} key={makeId()}>
                         {item.content[this.props.language] ? item.content[this.props.language] : ""}
                       </Badge>
                     )}
-                  <Spacer size="sm" />
-                  {this.props.definition.header.infos &&
-                    this.props.definition.header.infos.map((item) =>
-                      <Alert color={item.color}>
-                        {item.content[this.props.language] && item.content[this.props.language] || ""}
-                      </Alert>
-                    )}
                 </header>
                 <hr />
+                {this.props.definition.header.infos &&
+                  this.props.definition.header.infos.map((item) =>
+                    <Alert {...item} key={makeId()}>
+                      {item.content[this.props.language] && item.content[this.props.language] || ""}
+                    </Alert>
+                  )}
                 <Form>
                   {(_) => (
                     <div>
@@ -176,16 +174,14 @@ class Connector extends React.Component<Props> {
                 <footer>
                   {this.props.definition.footer.infos &&
                     this.props.definition.footer.infos.map((item) =>
-                      <Alert color={item.color}>
+                      <Alert color={item.color} key={makeId()}>
                         {item.content[this.props.language] && item.content[this.props.language] || ""}
                       </Alert>
                     )}
                 </footer>
               </div>
-            </Col>
-          </Row>
         </StyledContainer>
-      </React.Fragment >
+      </React.Fragment>
     )
   }
 }
