@@ -8,7 +8,7 @@ describe('<Well />', () => {
         const wrapper = enzyme.mount(
             <Well heading="Well">Demo Of Well</Well>
         )        
-        expect(wrapper.props()heading).toEqual(true);        
+        expect(wrapper.props().heading).toEqual(true);        
     })
 
 })
