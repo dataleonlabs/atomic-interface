@@ -5,7 +5,7 @@ import { StyledUncontrolledChoose } from './style';
 
 const Choose = (props: Props) => {
   return (
-    <StyledUncontrolledChoose backgroundColorOnHover={props.backgroundColorOnHover || '#f5f6fd'} active={props.active} backgroundColorOnActive={props.backgroundColorOnActive || '#fff'}>
+    <StyledUncontrolledChoose icon={props.icon} backgroundColorOnHover={props.backgroundColorOnHover || '#f5f6fd'} active={props.active} backgroundColorOnActive={props.backgroundColorOnActive || '#fff'}>
       <div className="choose-content">
         {props.icon}
         {props.title && (
@@ -13,6 +13,7 @@ const Choose = (props: Props) => {
             {props.title}
           </Label>
         )}
+        {props.badge && <span className="choose-content-badge">{props.badge}</span>}
         {props.children}
       </div>
     </StyledUncontrolledChoose>

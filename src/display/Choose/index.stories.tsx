@@ -30,18 +30,21 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={<CloudRain size={23} className="checkIcon"/>} >
-            <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
-            <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+        <Choose name='connect' title='Connectors' badge={<Badge color="primary">9+</Badge>} icon={<CloudRain size={23}/>} >
+            <span>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
           <h6><strong>Code</strong></h6>
           <hr />        
           <CodeMirror
             value={`
-<Choose className='customCheck' name='connect' title='Connectors' icon={<CloudRain size={23} className="checkIcon"/>} >
-  <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
-  <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+<Choose
+  name='connect'
+  title='Connectors'
+  icon={<CloudRain size={23}/>}
+  badge={<Badge color="primary">9+</Badge>}
+>
+  <span>Add new connectors to apply treatments to your running data in current process</span>
 </Choose>
           `}
             options={{
@@ -62,16 +65,20 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={<Info size={23} className="checkIcon"/>} >
-            <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+          <Choose name='connect' title='Connectors' icon={<Info size={23}/>} >
+            <span>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
         <h6><strong>Code</strong></h6>
         <hr />        
           <CodeMirror
             value={`
-<Choose className='customCheck' name='connect' title='Connectors' icon={<Info size={23} className="checkIcon"/>} >
-  <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+<Choose
+  name='connect'
+  title='Connectors'
+  icon={<Info size={23}/>}
+>
+  <span>Add new connectors to apply treatments to your running data in current process</span>
 </Choose>
             `}
             options={{
@@ -92,18 +99,20 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={false} >
-            <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
-            <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+        <Choose name='connect' title='Connectors' badge={<Badge pill color="primary">9+</Badge>}>
+            <span>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
         <h6><strong>Code</strong></h6>
         <hr />        
           <CodeMirror
             value={`
-<Choose className='customCheck' name='connect' title='Connectors' icon={false} >
-  <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
-  <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+<Choose
+  name='connect'
+  title='Connectors'
+  badge={<Badge color="primary">9+</Badge>}
+>
+  <span>Add new connectors to apply treatments to your running data in current process</span>
 </Choose>
             `}
             options={{
@@ -124,16 +133,22 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={false} active={true} backgroundColorOnActive='lightblue' backgroundColorOnHover='skyblue'>
-            <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+          <Choose name='connect' title='Connectors' active={true} backgroundColorOnActive='lightblue' backgroundColorOnHover='skyblue'>
+            <span>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
         <h6><strong>Code</strong></h6>
         <hr />        
           <CodeMirror
             value={`
-<Choose className='customCheck' name='connect' title='Connectors' icon={false} active={true} backgroundColorOnActive='lightblue' backgroundColorOnHover='skyblue'>
-  <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+<Choose
+  name='connect'
+  title='Connectors' 
+  active={true}
+  backgroundColorOnActive='lightblue'
+  backgroundColorOnHover='skyblue'
+>
+  <span>Add new connectors to apply treatments to your running data in current process</span>
 </Choose>          
             `}
             options={{

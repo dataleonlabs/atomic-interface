@@ -2,11 +2,16 @@
 import styled from 'styled-components'
 import { ChooseProps as Props } from './props'
 
-export const StyledUncontrolledChoose = styled.div<{ backgroundColorOnHover: Props['backgroundColorOnHover'], active: Props['active'], backgroundColorOnActive: Props['backgroundColorOnActive'] }>`
+export const StyledUncontrolledChoose = styled.div < { icon: Props['icon'], backgroundColorOnHover: Props['backgroundColorOnHover'], active: Props['active'], backgroundColorOnActive: Props['backgroundColorOnActive'] }>`
   .choose-content {
-    padding: 25px 20px 35px 55px;
+    padding: 20px 20px 35px ${({ icon }) => {
+      if (!icon) {
+        return "20px"
+      }
+      return "55px"
+  }};
     cursor: pointer;
-    max-width: 365px;
+    max-width: 300px;
     width: 100%;
     position: relative;
     background-color: ${({ backgroundColorOnActive, active }) => {
@@ -18,10 +23,10 @@ export const StyledUncontrolledChoose = styled.div<{ backgroundColorOnHover: Pro
   .choose-content .custom-control-label::before {
     opacity: 0;
   }
-  .badge-pill {
+  .choose-content-badge {
     position: absolute;
-    top: 27px;
-    right: 21px;
+    top: 16px;
+    right: 16px;
     padding: 5px 9px;
   }
   .choose-content label {

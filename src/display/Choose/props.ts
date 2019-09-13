@@ -10,7 +10,10 @@ import { InputProps } from '../../form/controls/Input/props';
 export interface ChooseProps extends InputProps{
 
     /** Add icon to left: feathericons info for custom icon when true */
-    icon ?: boolean | string | JSX.Element
+    icon?: JSX.Element
+
+    /** Add icon to right: feathericons info for custom icon when true */
+    badge?: JSX.Element
 
     // /** Title to display top */
     title: string

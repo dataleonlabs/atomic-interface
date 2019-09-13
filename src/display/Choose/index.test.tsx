@@ -8,8 +8,7 @@ describe('<Choose />', () => {
     it('U-TEST-1 - Basic Example', () => {
         const wrapper = enzyme.mount(
             <Choose className='customCheck' name='connect' title='Connectors' icon={<CloudRain size={23} className="checkIcon"/>} >
-                <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
-                <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+                <span>Add new connectors to apply treatments to your running data in current process</span>
             </Choose>
         )
         expect(wrapper.find(Choose)).toHaveLength(1);
@@ -18,7 +17,7 @@ describe('<Choose />', () => {
     it('U-TEST-2 - Icon', () => {
         const wrapper = enzyme.mount(
             <Choose className='customCheck' name='connect' title='Connectors' icon={<Info size={23} className="checkIcon"/>} >
-                <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+                <span>Add new connectors to apply treatments to your running data in current process</span>
             </Choose>
         )
         expect(wrapper.find(Choose)).toHaveLength(1);
@@ -27,9 +26,8 @@ describe('<Choose />', () => {
     })
     it('U-TEST-3 - Badge', () => {
         const wrapper = enzyme.mount(
-            <Choose className='customCheck' name='connect' title='Connectors' icon={false} >
-                <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
-                <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+            <Choose className='customCheck' name='connect' title='Connectors' badge={<Badge color="primary" pill={true}>9+</Badge>}>
+                <span>Add new connectors to apply treatments to your running data in current process</span>
             </Choose>
         )
         expect(wrapper.find(Choose)).toHaveLength(1);
@@ -37,8 +35,8 @@ describe('<Choose />', () => {
     })
     it('U-TEST-4 - Color', () => {
         const wrapper = enzyme.mount(
-            <Choose className='customCheck' name='connect' title='Connectors' icon={false} active={true} backgroundColorOnActive='lightblue' backgroundColorOnHover='skyblue'>
-                <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+            <Choose className='customCheck' name='connect' title='Connectors' active={true} backgroundColorOnActive='lightblue' backgroundColorOnHover='skyblue'>
+                <span>Add new connectors to apply treatments to your running data in current process</span>
             </Choose>
         )
         expect(wrapper.find(Choose)).toHaveLength(1);
