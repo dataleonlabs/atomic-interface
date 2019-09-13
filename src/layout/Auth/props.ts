@@ -99,9 +99,61 @@ export interface LoginProps extends AuthProps {
     messageConfirmSignInError: string
 
     /* display forgot password link */
-    displayForgotlink?: true | false
+    displayForgotlink?: boolean
+
+    /* Forgot Password Link method name on click event */
+    forgotPasswordEventMethod?: any
 }
 
+export interface SignupProps extends AuthProps {
+
+    /* Set Username */
+    email?: InputProps
+
+    /* Set new password */
+    newPassword: InputProps
+
+    /* Set Confrim New Password Label */
+    confirmNewPassword: InputProps
+
+    /* Set code */
+    code?: InputProps
+
+    /* Set Validation Message */
+    validationMessageRequiredEmail?: string
+
+    /* Set Validation Message */
+    validationmessageValidEmail?: string
+
+    /* Set Validation Message */
+    validationMessageRequiredCode?: string
+
+    /* Set Validation Message */
+    validationMessageValidConfirmPassword?: string
+
+    /* Set Validation Message */
+    validationMessageRequiredConfirmPassword?: string
+
+    /* Set Validation Message */
+    validationMessageValidNewPassword?: string
+
+    /* Set Validation Message */
+    validationMessageRequiredNewPassword?: string
+
+    buttonSignup?: ButtonProps // Label is different
+    linkLogin?: NavLinkProps // Label is different
+    buttonResend?: ButtonProps // Label is different
+    buttonConfirmSignUp?: ButtonProps // Label is different            
+
+    /* Set Confirm Sign In Info Message */
+    messageConfirmSignUp: string
+
+    /* display login link */
+    displayLoginlink?: boolean
+
+    /* Login Link method name on click event */
+    loginEventMethod?: any
+}
 
 export interface ForgotPasswordProps extends AuthProps {
 
@@ -111,7 +163,8 @@ export interface ForgotPasswordProps extends AuthProps {
     /* Set code */
     code?: InputProps
 
-    buttonRecoverPassword?: ButtonProps // Label is different       
+    buttonLogin?: NavLinkProps // Label is different
+    buttonRecoverPassword?: ButtonProps // Label is different
     buttonSubmitPassword?: ButtonProps /* Set Label Save Password */
 
     /* Set new password */
@@ -149,6 +202,12 @@ export interface ForgotPasswordProps extends AuthProps {
 
     /* Set Validation Message */
     validationMessageRequiredNewPassword?: string
+
+    /* display Login link */
+    displayLoginlink?: boolean
+
+    /* Login Link method name on click event */
+    loginLinkEventMethod?: any
 }
 
 export interface NewPasswordProps extends AuthProps {

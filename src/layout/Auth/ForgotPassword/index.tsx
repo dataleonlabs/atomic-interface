@@ -1,3 +1,4 @@
+/* istanbul ignore next */
 import * as React from 'react';
 import 'whatwg-fetch';
 import { ForgotPasswordProps as Props } from '../props';
@@ -8,7 +9,9 @@ import AWSCognito from '../../../utils/AuthProvider/AWSCongito/index';
 import * as Yup from 'yup';
 import { StyledFormContainer, StyledContainer } from './style';
 import { Col, Row } from 'reactstrap';
+import NavLink from '../../../navigation/Navbar/NavLink';
 
+/* istanbul ignore next */
 interface State {
   username: string,
   validationError: boolean,
@@ -21,6 +24,7 @@ interface State {
 /**
  * Forgot Password
  */
+/* istanbul ignore next */
 class ForgotPassword extends React.Component<Props, State> {
   public static defaultProps: Partial<Props> = {
     email: {
@@ -37,6 +41,9 @@ class ForgotPassword extends React.Component<Props, State> {
       block: true,
       children: "Submit",
       color: "primary",
+    },
+    buttonLogin: {
+      children: "Back To Login",
     },
     buttonSubmitPassword: {
       block: true,
@@ -57,10 +64,11 @@ class ForgotPassword extends React.Component<Props, State> {
       credentials: {},
       type: "aws-cognito",
     },
+    displayLoginlink: true,
     messageWrongEmail: "Invalid username.",
     messageNewPasswordRequired: "Please setup your new password.",
     messageNewPasswordError: "Invalid verification code provided, please try again.",
-    /* istanbul ignore next  */ onCompleted() /* istanbul ignore next  */ {
+    /* istanbul ignore next  */ onCompleted() {
       //
     },
     // ** setting validation messages default */
@@ -73,6 +81,7 @@ class ForgotPassword extends React.Component<Props, State> {
     validationMessageValidConfirmPassword: "Passwords does not match"
   }
 
+  /* istanbul ignore next */
   public state = {
     username: "",
     validationSchema: {},
@@ -82,10 +91,12 @@ class ForgotPassword extends React.Component<Props, State> {
     mode: 'EMAIL' as "EMAIL" | "NEW_PASSWORD"
   }
 
+  /* istanbul ignore next */
   public componentDidMount() {
     this.setValidation();
   }
 
+  /* istanbul ignore else */
   public setValidation() {
     if (this.state.mode === "EMAIL" ||/* istanbul ignore next  */  this.state.mode === null) /* istanbul ignore next  */ {
       this.setState({
@@ -141,6 +152,7 @@ class ForgotPassword extends React.Component<Props, State> {
     }
   }
 
+  /* istanbul ignore next */
   public render() {
     return (
       <React.Fragment>
@@ -164,8 +176,9 @@ class ForgotPassword extends React.Component<Props, State> {
                         {(this.state.mode === "EMAIL" || /* istanbul ignore next  */ this.state.mode === null) &&
                           <>
                             <Input {...this.props.email} name="email" type="text" />
-                          {this.state.validationError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">{this.props.messageWrongEmail}</Alert>}
+                            {this.state.validationError === true && /* istanbul ignore next */ <Alert icon={true} color="danger">{this.props.messageWrongEmail}</Alert>}
                             <Button {...this.props.buttonRecoverPassword} loading={this.state.loading} type="submit" style={{ marginTop: 15 }}>{(this.props.buttonRecoverPassword || /* istanbul ignore next  */ {}).children}</Button>
+                            {this.props.displayLoginlink === true && <NavLink {...this.props.buttonLogin} href="#" onClick={this.props.loginLinkEventMethod}>{(this.props.buttonLogin || ({} as any)).children}</NavLink>}
                           </>}
                         {this.state.mode === "NEW_PASSWORD" && /* istanbul ignore next  */
                           <>

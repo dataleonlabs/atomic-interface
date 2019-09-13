@@ -2,6 +2,169 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.15.0...v1.16.0) (2019-09-11)
+
+
+### Bug Fixes
+
+* added the codemirror to newly added component - step ([c7030e2](https://bitbucket.org/youngapp/ui-kit/commit/c7030e2))
+* changed name to collection from checkbox collection ([169bec2](https://bitbucket.org/youngapp/ui-kit/commit/169bec2))
+* documentation updated for signup - login - forgot password and applied documentation to new forgot password components ([a6af681](https://bitbucket.org/youngapp/ui-kit/commit/a6af681))
+* fixed alert icon design - AI-83 and AI-90 covered ([8051b84](https://bitbucket.org/youngapp/ui-kit/commit/8051b84))
+* minor fixes ([534aa77](https://bitbucket.org/youngapp/ui-kit/commit/534aa77))
+* removed gray color from alert icon border AI-83 ([18b3e7a](https://bitbucket.org/youngapp/ui-kit/commit/18b3e7a))
+* stories ccollection ([31ea158](https://bitbucket.org/youngapp/ui-kit/commit/31ea158))
+
+
+### Features
+
+* add stats informations props ([a3b3a22](https://bitbucket.org/youngapp/ui-kit/commit/a3b3a22))
+* signup component ([a8f6157](https://bitbucket.org/youngapp/ui-kit/commit/a8f6157))
+
+## [1.15.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.14.0...v1.15.0) (2019-09-09)
+
+
+### Bug Fixes
+
+* avoid table on extra render while using formate ([53e7409](https://bitbucket.org/youngapp/ui-kit/commit/53e7409))
+
+## [1.14.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.13.0...v1.14.0) (2019-09-09)
+
+
+### Bug Fixes
+
+* text component issue ([16cda83](https://bitbucket.org/youngapp/ui-kit/commit/16cda83))
+
+## [1.13.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.12.0...v1.13.0) (2019-09-09)
+
+
+### Bug Fixes
+
+* checkbox issue ([878ef32](https://bitbucket.org/youngapp/ui-kit/commit/878ef32))
+* improve code ([5c47eb2](https://bitbucket.org/youngapp/ui-kit/commit/5c47eb2))
+
+## [1.12.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.11.0...v1.12.0) (2019-09-04)
+
+
+### Bug Fixes
+
+* added in intex ([757319d](https://bitbucket.org/youngapp/ui-kit/commit/757319d))
+* forgotpassword button in login ([514d49f](https://bitbucket.org/youngapp/ui-kit/commit/514d49f))
+
+## [1.11.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.10.0...v1.11.0) (2019-09-03)
+
+
+### Bug Fixes
+
+* added documentation to newly added component checkbox collection ([6b43c1a](https://bitbucket.org/youngapp/ui-kit/commit/6b43c1a))
+* added template string to components listed under layout section ([e362f67](https://bitbucket.org/youngapp/ui-kit/commit/e362f67))
+* added template string to navigation components ([ef70d11](https://bitbucket.org/youngapp/ui-kit/commit/ef70d11))
+* alert styling fixed AI-80 ([18afd3c](https://bitbucket.org/youngapp/ui-kit/commit/18afd3c))
+* applied changes to the code content fixed AI-67, AI-68, AI-69, AI-70, AI-72, AI-78 ([019ed8f](https://bitbucket.org/youngapp/ui-kit/commit/019ed8f))
+* applied changes to the template string done with AI-69, AI-73, AI-74, AI-75, AI-76, AI-77, AI-81 ([a60d619](https://bitbucket.org/youngapp/ui-kit/commit/a60d619))
+* applied template string to code part of all components listed under display ([eb600db](https://bitbucket.org/youngapp/ui-kit/commit/eb600db))
+* applied template string to the component listed under forms section ([eea82e3](https://bitbucket.org/youngapp/ui-kit/commit/eea82e3))
+* applying the template string to code in forms section ([601e24c](https://bitbucket.org/youngapp/ui-kit/commit/601e24c))
+* as per review on ai-13 ([e480eb5](https://bitbucket.org/youngapp/ui-kit/commit/e480eb5))
+* as per review on ai-13 ([3749720](https://bitbucket.org/youngapp/ui-kit/commit/3749720))
+* code from develop ([7c8d300](https://bitbucket.org/youngapp/ui-kit/commit/7c8d300))
+* code from develop ([25ae9e0](https://bitbucket.org/youngapp/ui-kit/commit/25ae9e0))
+* code from develop ([5493e91](https://bitbucket.org/youngapp/ui-kit/commit/5493e91))
+* code from develop ([f4d3ed8](https://bitbucket.org/youngapp/ui-kit/commit/f4d3ed8))
+* conflict ([a293839](https://bitbucket.org/youngapp/ui-kit/commit/a293839))
+* conflict ([6d1e3f9](https://bitbucket.org/youngapp/ui-kit/commit/6d1e3f9))
+* conflict again ([643651c](https://bitbucket.org/youngapp/ui-kit/commit/643651c))
+* conflict in destination ([aa758aa](https://bitbucket.org/youngapp/ui-kit/commit/aa758aa))
+* coverage ([9fdef76](https://bitbucket.org/youngapp/ui-kit/commit/9fdef76))
+* destination conflict ([fa54244](https://bitbucket.org/youngapp/ui-kit/commit/fa54244))
+* error introduction page ([0f0890d](https://bitbucket.org/youngapp/ui-kit/commit/0f0890d))
+* error introduction page ([f6b39d6](https://bitbucket.org/youngapp/ui-kit/commit/f6b39d6))
+* fix code view ([b7ba988](https://bitbucket.org/youngapp/ui-kit/commit/b7ba988))
+* fixed alert icon background ([da021a7](https://bitbucket.org/youngapp/ui-kit/commit/da021a7))
+* fixed as per comment ([f92df2c](https://bitbucket.org/youngapp/ui-kit/commit/f92df2c))
+* fixed codemirror content template string ([418f78c](https://bitbucket.org/youngapp/ui-kit/commit/418f78c))
+* fixed content position for file browser of aws s3 ([43f009c](https://bitbucket.org/youngapp/ui-kit/commit/43f009c))
+* fixed datepicker design issue AI-71 ([710a93d](https://bitbucket.org/youngapp/ui-kit/commit/710a93d))
+* fixed link to the get started card part on introduction page ([e995620](https://bitbucket.org/youngapp/ui-kit/commit/e995620))
+* loader sidebar icon only ([d218c56](https://bitbucket.org/youngapp/ui-kit/commit/d218c56))
+* module codemirror2 ([444bf14](https://bitbucket.org/youngapp/ui-kit/commit/444bf14))
+* overlap issue resolved in datepicker ([0528c3c](https://bitbucket.org/youngapp/ui-kit/commit/0528c3c))
+* package.json packages ([45b22ea](https://bitbucket.org/youngapp/ui-kit/commit/45b22ea))
+* password regex in ai-21 ([fbd2e68](https://bitbucket.org/youngapp/ui-kit/commit/fbd2e68))
+* pipeline ([191dadd](https://bitbucket.org/youngapp/ui-kit/commit/191dadd))
+* pipeline request again ([a8d7b83](https://bitbucket.org/youngapp/ui-kit/commit/a8d7b83))
+* removed space from form layout AI-78 ([a0f73f0](https://bitbucket.org/youngapp/ui-kit/commit/a0f73f0))
+* sidebar ([fe91a1e](https://bitbucket.org/youngapp/ui-kit/commit/fe91a1e))
+* sidebar design issues ([863edd6](https://bitbucket.org/youngapp/ui-kit/commit/863edd6))
+* sidebar stories ([507be47](https://bitbucket.org/youngapp/ui-kit/commit/507be47))
+* sidebar testcase ([845093e](https://bitbucket.org/youngapp/ui-kit/commit/845093e))
+* test case error ([3163251](https://bitbucket.org/youngapp/ui-kit/commit/3163251))
+* update config ([1e8aeae](https://bitbucket.org/youngapp/ui-kit/commit/1e8aeae))
+* update config ([d3d6824](https://bitbucket.org/youngapp/ui-kit/commit/d3d6824))
+* update config ([63f507b](https://bitbucket.org/youngapp/ui-kit/commit/63f507b))
+* update config ([5f39c63](https://bitbucket.org/youngapp/ui-kit/commit/5f39c63))
+* update config ([ac8d831](https://bitbucket.org/youngapp/ui-kit/commit/ac8d831))
+* update config ([1fd593b](https://bitbucket.org/youngapp/ui-kit/commit/1fd593b))
+* update config ([fcae76c](https://bitbucket.org/youngapp/ui-kit/commit/fcae76c))
+* update config ([0e82ee0](https://bitbucket.org/youngapp/ui-kit/commit/0e82ee0))
+* update config ([1c07ac2](https://bitbucket.org/youngapp/ui-kit/commit/1c07ac2))
+* update config ([1dd196c](https://bitbucket.org/youngapp/ui-kit/commit/1dd196c))
+* z-index up ([42d94f7](https://bitbucket.org/youngapp/ui-kit/commit/42d94f7))
+
+
+### Features
+
+* add deploy by branch ([197668a](https://bitbucket.org/youngapp/ui-kit/commit/197668a))
+* add deploy by branch ([028c428](https://bitbucket.org/youngapp/ui-kit/commit/028c428))
+* add sample for checkbox ai-44 ([8f9eff8](https://bitbucket.org/youngapp/ui-kit/commit/8f9eff8))
+* added components in index.ts ai-44 ([f50f485](https://bitbucket.org/youngapp/ui-kit/commit/f50f485))
+* added documentation for the introduction page ([576882f](https://bitbucket.org/youngapp/ui-kit/commit/576882f))
+* added documentation till filepicker form component ([2500afe](https://bitbucket.org/youngapp/ui-kit/commit/2500afe))
+* added react-codemirror2 to the package dependency ([33505b2](https://bitbucket.org/youngapp/ui-kit/commit/33505b2))
+* added validation props ([aad585b](https://bitbucket.org/youngapp/ui-kit/commit/aad585b))
+* all 3 component completed ([cfe747c](https://bitbucket.org/youngapp/ui-kit/commit/cfe747c))
+* applied the suggested fixes to the sidebar ([e3474d4](https://bitbucket.org/youngapp/ui-kit/commit/e3474d4))
+* applying template string to code part ([eff38fd](https://bitbucket.org/youngapp/ui-kit/commit/eff38fd))
+* buttongroup ([17eaa7d](https://bitbucket.org/youngapp/ui-kit/commit/17eaa7d))
+* committing the package-lock.json ([570eb5f](https://bitbucket.org/youngapp/ui-kit/commit/570eb5f))
+* component added in index.ts on ai-13 ([330ae90](https://bitbucket.org/youngapp/ui-kit/commit/330ae90))
+* datepicker style ([9a3387b](https://bitbucket.org/youngapp/ui-kit/commit/9a3387b))
+* documentation ([1da9685](https://bitbucket.org/youngapp/ui-kit/commit/1da9685))
+* documentation with codemirror added to forms, navigation, layout, introduction section ([7140ef3](https://bitbucket.org/youngapp/ui-kit/commit/7140ef3))
+* done with adding the documentation ([a7dec47](https://bitbucket.org/youngapp/ui-kit/commit/a7dec47))
+* done with adding the documentation to form controls ([7d86322](https://bitbucket.org/youngapp/ui-kit/commit/7d86322))
+* done with AI-41 AI-45 and AI-23 ([96b4002](https://bitbucket.org/youngapp/ui-kit/commit/96b4002))
+* forgot password added ([d42062b](https://bitbucket.org/youngapp/ui-kit/commit/d42062b))
+* forgot password button in login page ([906eeaf](https://bitbucket.org/youngapp/ui-kit/commit/906eeaf))
+* health,spacer,emptyprompt ([b8bec23](https://bitbucket.org/youngapp/ui-kit/commit/b8bec23))
+* listgroup component added ([6fc7c19](https://bitbucket.org/youngapp/ui-kit/commit/6fc7c19))
+* merged with AI-23 ([9c1831a](https://bitbucket.org/youngapp/ui-kit/commit/9c1831a))
+* merged with AI-45 ([44d9de2](https://bitbucket.org/youngapp/ui-kit/commit/44d9de2))
+* merged with develop ([2e5cc89](https://bitbucket.org/youngapp/ui-kit/commit/2e5cc89))
+* radio, checkbox, switch collection added ([aae7480](https://bitbucket.org/youngapp/ui-kit/commit/aae7480))
+* react live view ([8613378](https://bitbucket.org/youngapp/ui-kit/commit/8613378))
+* removed the left margin from form elements ([b12440f](https://bitbucket.org/youngapp/ui-kit/commit/b12440f))
+* replaced row col with CardDeck in introdution component ([842543d](https://bitbucket.org/youngapp/ui-kit/commit/842543d))
+* resolved conflicts ([d91a1c1](https://bitbucket.org/youngapp/ui-kit/commit/d91a1c1))
+* resolved conflicts in index.tsx ([65a81d9](https://bitbucket.org/youngapp/ui-kit/commit/65a81d9))
+* resolving conflicts ([0cfdb89](https://bitbucket.org/youngapp/ui-kit/commit/0cfdb89))
+* resolving conflicts ([735e98a](https://bitbucket.org/youngapp/ui-kit/commit/735e98a))
+* resolving conflicts after merging with develop ([8297cc8](https://bitbucket.org/youngapp/ui-kit/commit/8297cc8))
+* resolving the conflicts after merging with the develop ([6de49f1](https://bitbucket.org/youngapp/ui-kit/commit/6de49f1))
+* resolving the conflicts after merging with the develop ([28c5ffe](https://bitbucket.org/youngapp/ui-kit/commit/28c5ffe))
+* sidebar toggle animation ([552db43](https://bitbucket.org/youngapp/ui-kit/commit/552db43))
+* stepconent added ([4679017](https://bitbucket.org/youngapp/ui-kit/commit/4679017))
+* steps ([be53850](https://bitbucket.org/youngapp/ui-kit/commit/be53850))
+* trying to resolve conflict of index.ts ([e67e969](https://bitbucket.org/youngapp/ui-kit/commit/e67e969))
+* trying to resolve conflict of index.ts ([20d0826](https://bitbucket.org/youngapp/ui-kit/commit/20d0826))
+* update bug ([dd886b5](https://bitbucket.org/youngapp/ui-kit/commit/dd886b5))
+* update package.json ([cedac7a](https://bitbucket.org/youngapp/ui-kit/commit/cedac7a))
+* update pipeline deploy ([ceb9854](https://bitbucket.org/youngapp/ui-kit/commit/ceb9854))
+* update playlist sidebar ([211bfb7](https://bitbucket.org/youngapp/ui-kit/commit/211bfb7))
+* update slidebar related changes done ([ca0f562](https://bitbucket.org/youngapp/ui-kit/commit/ca0f562))
+* updated sidebar style related changes ([e23e565](https://bitbucket.org/youngapp/ui-kit/commit/e23e565))
+* updated sidebar style related changes ([c97eae0](https://bitbucket.org/youngapp/ui-kit/commit/c97eae0))
+
 ## [1.10.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.9.0...v1.10.0) (2019-08-27)
 
 

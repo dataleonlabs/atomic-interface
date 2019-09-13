@@ -25,7 +25,7 @@ export interface SidebarProps extends NavbarPropsBase {
     icon?: boolean
 
     /** children content in Sidebar */
-    children: string | JSX.Element | JSX.Element[]
+    children: string | JSX.Element | JSX.Element[]    
 }
 
 export interface BrandProps extends NavbarBrandPropsBase {
@@ -62,4 +62,14 @@ export interface NavIconProps {
 
 export interface NavTextProps extends React.HTMLAttributes<HTMLElement> {
     children: any
+    icon?: boolean
+}
+
+export interface BrandIconProps {
+    type: 'open' | 'close'
+    icon: string | JSX.Element | JSX.Element[]
+}
+
+export interface LoaderProps {    
+    iconOnly?: boolean;
 }

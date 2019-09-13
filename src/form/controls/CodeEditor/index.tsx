@@ -1,3 +1,4 @@
+/* istanbul ignore next */
 import * as React from 'react'
 import { debounce } from 'ts-debounce'
 import { CodeEditorProps as Props } from './props'
@@ -6,8 +7,10 @@ import Control from '../../Control';
 import { StyledLabel } from './style';
 import * as monaco from 'monaco-editor';
 
+/* istanbul ignore next */
 class CodeEditor extends React.PureComponent<Props> {
 
+  /* istanbul ignore next */
   public static defaultProps: Partial<Props> = {
     mode: 'javascript',
     theme: 'material',
@@ -20,10 +23,10 @@ class CodeEditor extends React.PureComponent<Props> {
 
   /* istanbul ignore next */
   public Editor: any = {};
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public Node: any = {};
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public onChange = (newValue: string) /* istanbul ignore next */ /* istanbul ignore next */ => {
     if (this.props.onChange) {
       this.props.onChange({
@@ -34,30 +37,30 @@ class CodeEditor extends React.PureComponent<Props> {
     }
   }
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public editorDidMount = (editor: any) /* istanbul ignore next */ => {
     setTimeout(() /* istanbul ignore next */ => {
-      alert("hello");      
+      alert("hello");
       editor.getAction('editor.action.formatDocument').run();
       editor.focus();
     }, 300);
   }
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public componentDidMount() {
     const { value, mode } = this.props;
 
-  /* istanbul ignore next */
+    /* istanbul ignore next */
     import('monaco-themes/themes/Eiffel.json')
       .then(data /* istanbul ignore next */ => {
         monaco.editor.defineTheme('eiffel', data as any);
       })
 
 
-  /* istanbul ignore next */
+    /* istanbul ignore next */
     const model = monaco.editor.createModel(typeof value === "string" && value || "", mode);
 
-  /* istanbul ignore next */
+    /* istanbul ignore next */
     this.Editor = monaco.editor.create(this.Node, {
       selectOnLineNumbers: true,
       automaticLayout: true,
@@ -83,12 +86,12 @@ class CodeEditor extends React.PureComponent<Props> {
     }, 2000));
   }
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public componentWillUnmount() {
     return this.Editor && this.Editor.dispose();
   }
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public render() {
     const richTextStyle = /* istanbul ignore next */ {
       width: this.props.width,
@@ -96,7 +99,7 @@ class CodeEditor extends React.PureComponent<Props> {
       border: "solid 1px #eee",
     };
 
-  /* istanbul ignore next */
+    /* istanbul ignore next */
     const renderField = ({ field }: FieldProps<{}>) /* istanbul ignore next */ => (
       <React.Fragment>
         <>
@@ -106,7 +109,7 @@ class CodeEditor extends React.PureComponent<Props> {
       </React.Fragment>
     );
 
-  /* istanbul ignore next */
+    /* istanbul ignore next */
     return (
       <Control {...this.props} label={undefined}>
         <Field
@@ -119,4 +122,5 @@ class CodeEditor extends React.PureComponent<Props> {
   }
 }
 
+/* istanbul ignore next */
 export default CodeEditor

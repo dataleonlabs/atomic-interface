@@ -1,6 +1,6 @@
 {
   "name": "@youngapp/atomic-interface",
-  "version": "1.10.0",
+  "version": "1.16.0",
   "main": "lib/index.js",
   "scripts": {
     "lint": "tslint --project ./",
@@ -114,7 +114,6 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-macros": "^2.6.1",
-    "babel-plugin-require-context-hook": "^1.0.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
