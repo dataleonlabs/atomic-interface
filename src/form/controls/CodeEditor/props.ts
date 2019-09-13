@@ -48,5 +48,4 @@ export interface CodeEditorProps extends InputProps {
     fontSize?: number
 
     colorScheme?: "vs" | "vs-dark"
-
 }

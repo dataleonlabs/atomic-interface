@@ -6,6 +6,7 @@ import { RichTextProps as Props } from './props'
 import { Field, FieldProps } from 'formik';
 import Control from '../../Control';
 import { StyledLabel, StyledContainer, StyledContainerDisabled, StyledContainerToolbarDisable } from './style';
+import { FormControlHelper } from '../../formControlHelper'
 const modules = {
   toolbar: [
     [{ header: [1, 2, false] }],
@@ -32,7 +33,7 @@ class RichText extends React.PureComponent<Props> {
     toolbarDisable: false
   }
 
-/* istanbul ignore next */
+  /* istanbul ignore next */
   public handleChange = /* istanbul ignore next */ (value: string, source: any) /* istanbul ignore next */ => {
     /* istanbul ignore next */
     if (source === 'user' && this.props.onChange) /* istanbul ignore next */ {
@@ -49,69 +50,78 @@ class RichText extends React.PureComponent<Props> {
       height: this.props.height,
       border: this.props.theme === "bubble" && "solid 1px #ccc" || "solid 0px #ccc"
     };
-    const renderField = ({ field }: FieldProps<{}>) => (
-      <React.Fragment>
-        {this.props.disabled === false && this.props.toolbarDisable === false &&
-          <StyledContainer>
-          {(this.props.label || /* istanbul ignore next */ this.props.label !== '') && (
-                <StyledLabel>{this.props.label}</StyledLabel>
-            )}
-            <ReactQuill
-              {...field}
-            id={this.props.id || /* istanbul ignore next */ this.props.name}
-              readOnly={this.props.readOnly}
-              style={richTextStyle}
-              value={this.props.value || ''}
-              theme={this.props.theme}
-              modules={modules}
-              onChange={this.handleChange}
-            />
-          </StyledContainer>
-        }
-        {this.props.disabled && this.props.disabled === true &&
-          <StyledContainerDisabled>
-          {(this.props.label || /* istanbul ignore next */ this.props.label !== '') && (
-              <StyledLabel>{this.props.label}</StyledLabel>
-            )}
-            <ReactQuill
-              {...field}
-            id={this.props.id || /* istanbul ignore next */ this.props.name}
-              readOnly={this.props.readOnly}
-              style={richTextStyle}
-              value={this.props.value || ''}
-              theme={this.props.theme}
-              modules={modules}
-              onChange={this.handleChange}
-            />
-          </StyledContainerDisabled>
-        }
-        {this.props.disabled === false && this.props.toolbarDisable === true &&
-          <StyledContainerToolbarDisable>
-          {(this.props.label || /* istanbul ignore next */ this.props.label !== '') && (
-              <StyledLabel>{this.props.label}</StyledLabel>
-            )}
-            <ReactQuill
-              {...field}
-            id={this.props.id || /* istanbul ignore next */ this.props.name}
-              readOnly={this.props.readOnly}
-              style={richTextStyle}
-              value={this.props.value || ''}
-              theme={this.props.theme}
-              modules={modules}
-              onChange={this.handleChange}
-            />
-          </StyledContainerToolbarDisable>
-        }
-      </React.Fragment>
-    );
+    const renderField = ({ field, form: { values } }: FieldProps<{}>) => {
+
+      const objFormControlHelper = new FormControlHelper();
+      if (objFormControlHelper.checkConditional(this.props.conditionnals, values)) {
+        return <></>;
+      }
+
+      return (
+        <Control {...this.props} label={undefined}>
+          <React.Fragment>
+            {this.props.disabled === false && this.props.toolbarDisable === false &&
+              <StyledContainer>
+                {(this.props.label || /* istanbul ignore next */ this.props.label !== '') && (
+                  <StyledLabel>{this.props.label}</StyledLabel>
+                )}
+                <ReactQuill
+                  {...field}
+                  id={this.props.id || /* istanbul ignore next */ this.props.name}
+                  readOnly={this.props.readOnly}
+                  style={richTextStyle}
+                  value={this.props.value || ''}
+                  theme={this.props.theme}
+                  modules={modules}
+                  onChange={this.handleChange}
+                />
+              </StyledContainer>
+            }
+            {this.props.disabled && this.props.disabled === true &&
+              <StyledContainerDisabled>
+                {(this.props.label || /* istanbul ignore next */ this.props.label !== '') && (
+                  <StyledLabel>{this.props.label}</StyledLabel>
+                )}
+                <ReactQuill
+                  {...field}
+                  id={this.props.id || /* istanbul ignore next */ this.props.name}
+                  readOnly={this.props.readOnly}
+                  style={richTextStyle}
+                  value={this.props.value || ''}
+                  theme={this.props.theme}
+                  modules={modules}
+                  onChange={this.handleChange}
+                />
+              </StyledContainerDisabled>
+            }
+            {this.props.disabled === false && this.props.toolbarDisable === true &&
+              <StyledContainerToolbarDisable>
+                {(this.props.label || /* istanbul ignore next */ this.props.label !== '') && (
+                  <StyledLabel>{this.props.label}</StyledLabel>
+                )}
+                <ReactQuill
+                  {...field}
+                  id={this.props.id || /* istanbul ignore next */ this.props.name}
+                  readOnly={this.props.readOnly}
+                  style={richTextStyle}
+                  value={this.props.value || ''}
+                  theme={this.props.theme}
+                  modules={modules}
+                  onChange={this.handleChange}
+                />
+              </StyledContainerToolbarDisable>
+            }
+          </React.Fragment>
+        </Control>
+      )
+    }
+
     return (
-      <Control {...this.props} label={undefined}>
-        <Field
-          {...this.props}
-          id={this.props.name}
-          render={renderField}
-        />
-      </Control>
+      <Field
+        {...this.props}
+        id={this.props.name}
+        render={renderField}
+      />
     )
   }
 }

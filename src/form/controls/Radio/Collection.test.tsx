@@ -3,6 +3,7 @@ import * as React from 'react'
 import * as enzyme from 'enzyme'
 import RadioCollection from './Collection'
 import sinon from 'sinon';
+import Form from './../../index'
 
 const gb = global as any;
 
@@ -22,19 +23,23 @@ describe('<RadioCollection />', () => {
     });
 
     const wrapper = enzyme.mount(
-      <RadioCollection
-        apiKey="xxx"
-        apiUrl="test"
-        type="update"
-        model="Playlist"
-        label="Radio Collection"
-        name="radio1"
-        fieldId={{ key: "id", value: "1" }}
-        fieldUpdate="active"
-        onLoading={event}
-        onLoaded={event}
-        onError={event}>
-      </RadioCollection>
+      <Form>
+        {(_) => (
+          <RadioCollection
+            apiKey="xxx"
+            apiUrl="test"
+            type="update"
+            model="Playlist"
+            label="Radio Collection"
+            name="radio1"
+            fieldId={{ key: "id", value: "1" }}
+            fieldUpdate="active"
+            onLoading={event}
+            onLoaded={event}
+            onError={event}>
+          </RadioCollection>
+        )}
+      </Form>
     )
 
     expect(wrapper.find(RadioCollection)).toHaveLength(1);
