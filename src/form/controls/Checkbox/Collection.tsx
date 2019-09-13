@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { CustomInput } from 'reactstrap';
+import { CustomInput, FormText } from 'reactstrap';
 import { CheckboxCollectionProps as Props } from './props';
 import Control from '../../Control';
 import { APIGatewayFetch } from 'yap-sdk';
+import { FieldProps, Field } from 'formik';
+import { FormControlHelper } from '../../formControlHelper';
 
 /**
  * Collection render element
@@ -66,18 +68,39 @@ const Collection = (props: Props) => {
     }
   }
 
+  const renderField = ({ field, form: { values, submitCount, errors } }: FieldProps<{}>) => {
+    
+    const objFormControlHelper=new FormControlHelper();
+    if(objFormControlHelper.checkConditional(props.conditionnals, values)){
+      return <></>;
+    }
+
+    return (
+      <Control {...props} label={undefined} type="text">
+        <CustomInput
+          {...field}
+          {...rest}
+          id={props.name}
+          loading={String(loading)}
+          onClick={onClick}
+          defaultChecked={value || false}
+          invalid={submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)}
+          type='checkbox'
+        />
+        {submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
+          && <FormText color="danger">{errors[props.name]}</FormText>
+        }
+        <>{children}</>
+      </Control>
+    )
+  }
+
   return (
-    <Control {...props} label={undefined} type="text">
-      <CustomInput
-        {...rest}
-        id={props.name}
-        loading={String(loading)}
-        onClick={onClick}
-        defaultChecked={value || false}
-        type='checkbox'
-      />
-      <>{children}</>
-    </Control>
+    <Field
+      {...props}
+      id={props.name}
+      render={renderField}
+    />
   )
 }
 

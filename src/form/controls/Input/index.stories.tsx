@@ -166,17 +166,17 @@ storiesOf('Forms|Input', module)
   )).add('Input Conditionnal Control', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Input With Error</h4>
+        <h4>Input With Conditionnal</h4>
         <br />
-        <p>Add <code>error={`{true}`}</code> property to apply the relevant style.</p>
+        <p>Add <code>conditonal</code> property to apply the relevant behavior.</p>
         <hr />
         <h6><strong>Example</strong></h6>
         <hr />
         <Form>
-          {(_, { values }) => (
+          {(values) => (
             <>
-              <Radio value="company" name='account' label="Iam a company" />
-              <Radio value="person" name='account' label="Iam a person" />
+              <Radio value="company" id="company" name='account' label="Iam a company" />
+              <Radio value="person" id="person" name='account' label="Iam a person" />
               <Input
                 name="company"
                 label="Company Name"
@@ -195,9 +195,7 @@ storiesOf('Forms|Input', module)
                   account: 'person'
                 }}
               />
-              <pre>
-                <code>values: {JSON.stringify(values)}</code><br />
-              </pre>
+              <code>values: {JSON.stringify(values.values)}</code><br />              
             </>
           )}
         </Form>
@@ -206,9 +204,26 @@ storiesOf('Forms|Input', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`
-<Input name={'fullName'} label={'Full Name'} placeholder={'First Name and Last Name'} help={'Example: Gérard TOKO'} />
-`}
+          value={`<Radio value="company" id="company" name='account' label="Iam a company" />
+<Radio value="person" id="person" name='account' label="Iam a person" />
+<Input
+  name="company"
+  label="Company Name"
+  placeholder="Company Name"
+  help="Example: Young App"
+  conditionnals={{
+    account: 'company'
+  }}
+/>
+<Input
+  name="fullName"
+  label="Full Name"
+  placeholder="First Name and Last Name"
+  help="Example: Gérard TOKO"
+  conditionnals={{
+    account: 'person'
+  }}
+/>`}
           options={{
             mode: 'jsx',
             lineNumbers: false,

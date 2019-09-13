@@ -7,6 +7,7 @@ import { FormText } from 'reactstrap';
 import uuidv4 from 'uuidv4';
 import UploadDisplay from './UploadDisplay';
 import { StyledDropzoneS3Uploader } from './style';
+import { FormControlHelper } from '../../../formControlHelper';
 
 /* istanbul ignore next  */
 export function getHeaders() {
@@ -36,7 +37,7 @@ class DropzoneS3 extends React.PureComponent<Props> {
     uploaded: false,
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public getSignedUrl = (file: any, callback: any) => {
 
     let fileName = file.name;
@@ -57,22 +58,22 @@ class DropzoneS3 extends React.PureComponent<Props> {
     })
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onClick = () => {
     // onClick button
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onSignedUrl = () => {
     this.setState({ loading: true })
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onUploadProgress = (progress: number) => {
     this.setState({ progress })
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onUploadError = (e: any) => {
     this.setState({
       error: true,
@@ -81,7 +82,7 @@ class DropzoneS3 extends React.PureComponent<Props> {
     })
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onUploadFinish = (setFieldValue: FieldProps<{}>['form']['setFieldValue']) => async () => {
     try {
       this.setState({ loading: false, uploaded: true, progress: 0 }, () => {
@@ -99,10 +100,16 @@ class DropzoneS3 extends React.PureComponent<Props> {
     }
   }
 
-/* istanbul ignore next  */
-  public renderField = ({ field, form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
+  /* istanbul ignore next  */
+  public renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
+
+    const objFormControlHelper=new FormControlHelper();
+    if(objFormControlHelper.checkConditional(this.props.conditionnals, values)){
+      return <></>;
+    }
+    
     return (
-      <>
+      <Control {...this.props}>
         <StyledDropzoneS3Uploader
           s3Url={this.props.s3Url}
           maxSize={this.props.maxSize || 1024 * 1024 * 5}
@@ -119,15 +126,13 @@ class DropzoneS3 extends React.PureComponent<Props> {
         {/* istanbul ignore next  */ submitCount > 0 && (errors[this.props.name] ? true : false)
           && <FormText color="danger">{errors[this.props.name]}</FormText>
         }
-      </>
+      </Control>
     )
   }
 
   public render() {
     return (
-      <Control {...this.props}>
-        <Field id={this.props.name} render={this.renderField} />
-      </Control>
+      <Field id={this.props.name} render={this.renderField} />
     )
   }
 }

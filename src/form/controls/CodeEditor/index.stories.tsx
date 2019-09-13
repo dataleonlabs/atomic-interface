@@ -5,6 +5,7 @@ import { Col, Button } from 'reactstrap';
 import Form from './../../index';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
+import Radio from '../Radio';
 require('codemirror/mode/jsx/jsx');
 
 var reindent = function(cm) {

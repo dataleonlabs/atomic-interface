@@ -3,6 +3,7 @@ import { Field, FieldProps } from 'formik';
 import { InputGroup, FormGroup, FormText } from 'reactstrap';
 import { InputProps as Props } from './props';
 import Control from '../../Control';
+import { FormControlHelper } from '../../formControlHelper';
 import { StyledInputBootstrap, StyledInputGroupAddonRight, StyledInputGroupAddonLeft } from './style';
 
 /**
@@ -31,15 +32,9 @@ const Input = (props: Props) => {
   const renderField = ({ field, form: { values, submitCount, errors } }: FieldProps<{}>) => {
     const { leftAddon, rightAddon, maxRows, inline, ...rest } = props;
 
-    if (props.conditionnals) {
-      for (const key in props.conditionnals) {
-        if (props.conditionnals.hasOwnProperty(key)) {
-          const element = props.conditionnals[key];
-          if (values[key] !== element) {
-            return <></>;
-          }
-        }
-      }
+    const objFormControlHelper=new FormControlHelper();
+    if(objFormControlHelper.checkConditional(props.conditionnals, values)){
+      return <></>;
     }
 
     return (
