@@ -21,12 +21,12 @@ storiesOf('UI Elements|Choose', module)
         <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
           <h2>Choose</h2>
           <br/>
-          <p>Box Component allow checkbox with display component.</p>
+          <p>Choose component is really helpful component.</p>
           <br/>
           <hr/>
           <h4>Basic Example</h4>
           <br/>
-          <p>add </p>
+          <p>One can add customized component using the below mentioned sample code.</p>
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
@@ -58,7 +58,7 @@ storiesOf('UI Elements|Choose', module)
         <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
           <h4>Choose - Icon</h4>
           <br/>
-          <p>Add icon={`{'icon'}`} property to display icon along with the component.</p>
+          <p>Add <code>icon</code> property to display icon along with the component.</p>
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
@@ -88,7 +88,7 @@ storiesOf('UI Elements|Choose', module)
         <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
           <h4>Choose - Badge</h4>
           <br/>
-          <p>Add icon={`{'icon'}`} property to display icon along with the component.</p>
+          <p>Add <code>badge</code> property to display icon along with the coose component.</p>
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
@@ -120,7 +120,7 @@ storiesOf('UI Elements|Choose', module)
         <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
           <h4>Choose - Color</h4>
           <br/>
-          <p>Add icon={`{'icon'}`} property to display icon along with the component.</p>
+          <p>By defining the properties <code>active, backgroundColorOnActive</code> one can set the desired background color to component. Also by adding the <code>backgroundColorOnHover</code> property one can apply the desire color for component hover.</p>
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
