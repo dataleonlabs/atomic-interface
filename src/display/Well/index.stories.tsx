@@ -15,7 +15,7 @@ storiesOf('UI Elements|Well', module)
                 <br />
                 <h6><strong>Example</strong></h6>
                 <hr />
-                <Well heading="Well">Demo Of Well</Well>
+                <Well>Demo Of Well</Well>
                 <br />
                 <h6><strong>Code</strong></h6>
                 <hr />
