@@ -8,7 +8,6 @@ require('codemirror/mode/jsx/jsx');
 
 storiesOf('UI Elements|Well', module)
     .add('Default Functionality', () => (
-
         <React.Fragment>
             <Col sm={8} style={{ marginTop: 30, marginLeft: 30, marginBottom: 30 }}>
                 <h4>Well</h4>
@@ -16,12 +15,12 @@ storiesOf('UI Elements|Well', module)
                 <br />
                 <h6><strong>Example</strong></h6>
                 <hr />
-                <Well heading="Well"> Demo Of Well </Well>
+                <Well heading="Well">Demo Of Well</Well>
                 <br />
                 <h6><strong>Code</strong></h6>
                 <hr />
                 <CodeMirror
-                    value={`<Well> Demo Of Well </Well>`}
+                    value={`<Well>Demo Of Well</Well>`}
                     options={{
                         mode: 'jsx',
                         lineNumbers: false,

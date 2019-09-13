@@ -4,15 +4,10 @@ import { StyledWell } from './style';
 
 
 /* istanbul ignore next */
-const Well = (props: Props) => {
-    return (
-        <div>
-            <h2>{props.heading}</h2>
-            <StyledWell >
-                {props.children}
-            </StyledWell>
-        </div>
-    )
-}
+const Well = (props: Props) => (
+    <StyledWell >
+        {props.children}
+    </StyledWell>
+)
 
 export default Well;
