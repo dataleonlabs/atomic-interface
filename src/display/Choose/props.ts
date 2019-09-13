@@ -4,26 +4,26 @@ import { InputProps } from '../../form/controls/Input/props';
  * Follow documentation
  * @example
  *  <Choose title="Connectors" icon={Icon}>
- *      This is a secondary alert — check it out!
+ *      This is a content description
  *  </Choose>
  */
 export interface ChooseProps extends InputProps{
 
     /** Add icon to left: feathericons info for custom icon when true */
-    icon: boolean | JSX.Element
+    icon ?: boolean | string | JSX.Element
 
     // /** Title to display top */
     title: string
 
     // /** Is active */
-    // active: boolean
+    active?: boolean
 
     // /** Background color used for hover color */
-    // backgroundColorOnHover: string
+    backgroundColorOnHover?: string
 
     // /** Background color used for hover color */
-    // backgroundColorOnActive: string
+    backgroundColorOnActive?: string
 
     // // Content display 
-    children: string | JSX.Element
+    children: string | JSX.Element | JSX.Element[]
 }

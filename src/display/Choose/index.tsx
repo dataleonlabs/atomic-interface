@@ -1,21 +1,20 @@
 import React from 'react';
-import { CloudRain } from 'react-feather';
 import { ChooseProps as Props } from './props';
-import { CustomInput } from 'reactstrap';
+import { Label } from 'reactstrap';
 import { StyledUncontrolledChoose } from './style';
 
 const Choose = (props: Props) => {
   return (
-    <StyledUncontrolledChoose>
-      <CustomInput
-        {...props}
-        id={props.id || props.name}
-        label={props.title}
-        type='checkbox'
-      >
-        {props.icon === true && <CloudRain size={23} className="checkIcon"/>}
+    <StyledUncontrolledChoose backgroundColorOnHover={props.backgroundColorOnHover || '#f5f6fd'} active={props.active} backgroundColorOnActive={props.backgroundColorOnActive || '#fff'}>
+      <div className="choose-content">
+        {props.icon}
+        {props.title && (
+          <Label id={props.id || props.name} sm={props.labelSize || 12}>
+            {props.title}
+          </Label>
+        )}
         {props.children}
-      </CustomInput>
+      </div>
     </StyledUncontrolledChoose>
   )
 }

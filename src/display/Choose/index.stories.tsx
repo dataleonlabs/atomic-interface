@@ -5,6 +5,8 @@ import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 require('codemirror/mode/jsx/jsx');
 import Choose from './index'
+import { CloudRain, Info } from 'react-feather';
+import Badge from '../Badge';
 
 var reindent = function(cm) {
   var lines = cm.lineCount();
@@ -28,7 +30,8 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={false}>
+          <Choose className='customCheck' name='connect' title='Connectors' icon={<CloudRain size={23} className="checkIcon"/>} >
+            <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
             <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
@@ -36,8 +39,9 @@ storiesOf('UI Elements|Choose', module)
           <hr />        
           <CodeMirror
             value={`
-<Choose className='customCheck' name='connect' title='Connectors' icon={true} >
-    <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+<Choose className='customCheck' name='connect' title='Connectors' icon={<CloudRain size={23} className="checkIcon"/>} >
+  <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
+  <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
 </Choose>
           `}
             options={{
@@ -58,7 +62,7 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={true} >
+          <Choose className='customCheck' name='connect' title='Connectors' icon={<Info size={23} className="checkIcon"/>} >
             <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
@@ -66,8 +70,8 @@ storiesOf('UI Elements|Choose', module)
         <hr />        
           <CodeMirror
             value={`
-<Choose className='customCheck' name='connect' title='Connectors' icon={true} >
-    <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
+<Choose className='customCheck' name='connect' title='Connectors' icon={<Info size={23} className="checkIcon"/>} >
+  <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
 </Choose>
             `}
             options={{
@@ -88,7 +92,8 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={true} >
+          <Choose className='customCheck' name='connect' title='Connectors' icon={false} >
+            <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
             <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
@@ -96,9 +101,11 @@ storiesOf('UI Elements|Choose', module)
         <hr />        
           <CodeMirror
             value={`
-<Choose className='customCheck' name='connect' title='Connectors' icon={true} >
+<Choose className='customCheck' name='connect' title='Connectors' icon={false} >
+  <Badge color="primary" pill={true} className='checkBadge'>9+</Badge>
   <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
-</Choose>`}
+</Choose>
+            `}
             options={{
               mode: 'jsx',
               lineNumbers: false,
@@ -117,7 +124,7 @@ storiesOf('UI Elements|Choose', module)
           <br/>
           <h6><strong>Example</strong></h6>
           <hr/>
-          <Choose className='customCheck' name='connect' title='Connectors' icon={true} >
+          <Choose className='customCheck' name='connect' title='Connectors' icon={false} active={true} backgroundColorOnActive='lightblue' backgroundColorOnHover='skyblue'>
             <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
           </Choose>
           <br/>
@@ -125,9 +132,9 @@ storiesOf('UI Elements|Choose', module)
         <hr />        
           <CodeMirror
             value={`
-<Choose className='customCheck' name='connect' title='Connectors' icon={true} >
+<Choose className='customCheck' name='connect' title='Connectors' icon={false} active={true} backgroundColorOnActive='lightblue' backgroundColorOnHover='skyblue'>
   <span className='customCheckContent'>Add new connectors to apply treatments to your running data in current process</span>
-</Choose>            
+</Choose>          
             `}
             options={{
               mode: 'jsx',
