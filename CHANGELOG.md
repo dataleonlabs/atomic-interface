@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.17.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.16.0...v1.17.0) (2019-09-17)
+
+
+### Bug Fixes
+
+* coverage test integration error ([28931f8](https://bitbucket.org/youngapp/ui-kit/commit/28931f8))
+* fixed the test case related issue ([567a347](https://bitbucket.org/youngapp/ui-kit/commit/567a347))
+* fixed the test case related issue ([ddafe44](https://bitbucket.org/youngapp/ui-kit/commit/ddafe44))
+* test case ([7412914](https://bitbucket.org/youngapp/ui-kit/commit/7412914))
+* update choose info ([3a2a2d9](https://bitbucket.org/youngapp/ui-kit/commit/3a2a2d9))
+* update choose info ([682d923](https://bitbucket.org/youngapp/ui-kit/commit/682d923))
+* well and table stories ([b5b9c78](https://bitbucket.org/youngapp/ui-kit/commit/b5b9c78))
+
+
+### Features
+
+* add basic conditionnals values ([1235551](https://bitbucket.org/youngapp/ui-kit/commit/1235551))
+* add props for choose component ([45901a4](https://bitbucket.org/youngapp/ui-kit/commit/45901a4))
+* add well and choose in index ([fadd7dc](https://bitbucket.org/youngapp/ui-kit/commit/fadd7dc))
+* added choose component working to add the test cases for the same ([86fc580](https://bitbucket.org/youngapp/ui-kit/commit/86fc580))
+* added the missing documentation to the choose component ([1c09110](https://bitbucket.org/youngapp/ui-kit/commit/1c09110))
+* conditional field in form controls ([b5ccc62](https://bitbucket.org/youngapp/ui-kit/commit/b5ccc62))
+* done with implementing the choose component along with relevant test cases ([0a09ca0](https://bitbucket.org/youngapp/ui-kit/commit/0a09ca0))
+* headtitle props ([0fadf6a](https://bitbucket.org/youngapp/ui-kit/commit/0fadf6a))
+* remove heading in well ([c5c9f2f](https://bitbucket.org/youngapp/ui-kit/commit/c5c9f2f))
+* well component ([12f54cc](https://bitbucket.org/youngapp/ui-kit/commit/12f54cc))
+* working to add the test cases for choose component ([6702961](https://bitbucket.org/youngapp/ui-kit/commit/6702961))
+
 ## [1.16.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.15.0...v1.16.0) (2019-09-11)
 
 
