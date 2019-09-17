@@ -5,6 +5,7 @@ import Control from '../../Control';
 import "react-datepicker/dist/react-datepicker.css";
 import { StyledReactDatePickerContainer } from "./style";
 import ReactDatePicker from "react-datepicker";
+import { FormControlHelper } from '../../formControlHelper';
 
 class DatePicker extends React.PureComponent<Props> {
 
@@ -39,13 +40,24 @@ class DatePicker extends React.PureComponent<Props> {
   }
   public render() {
 
-    const renderField = ({ field }: FieldProps<{}>) => (
-      <React.Fragment>
-        <StyledReactDatePickerContainer>
-          <ReactDatePicker  {...this.props.options} disabled={this.props.disabled} dateFormat={this.props.dateFormat} selected={this.state.startDate} {...field} onChange={this.handleChange} />
-        </StyledReactDatePickerContainer>
-      </React.Fragment>
-    );
+    const renderField = ({ field, form: { values } }: FieldProps<{}>) => {
+
+      const objFormControlHelper = new FormControlHelper();
+      if (objFormControlHelper.checkConditional(this.props.conditionnals, values)) {
+        return <></>;
+      }
+
+      return (
+        <Control {...this.props} label={undefined}>
+          <React.Fragment>
+            <StyledReactDatePickerContainer>
+              <ReactDatePicker  {...this.props.options} disabled={this.props.disabled} dateFormat={this.props.dateFormat} selected={this.state.startDate} {...field} onChange={this.handleChange} />
+            </StyledReactDatePickerContainer>
+          </React.Fragment>
+        </Control>
+      )
+    }
+
     return (
       <Control {...this.props} label={undefined}>
         <Field

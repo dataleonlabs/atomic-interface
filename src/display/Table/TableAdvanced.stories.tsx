@@ -283,6 +283,70 @@ storiesOf('UI Elements|TableAdvanced', module)
         />        
       </Col>
     </React.Fragment>
+  )).add('Large Sized Row', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Large Sized Row</h4>
+        <br />
+        <p>Add <code>rowSize={`{large}`}</code> property to display the large sized rows.</p>
+        <hr />
+        <h6><strong>Example</strong></h6>
+        <hr />
+        <Table data={assets} striped={true} draggable={true} rowSize={'large'}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+        <br />
+        <br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`<Table data={assets} striped={true} rowSize={'large'}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            readOnly: true
+          }}
+        />
+      </Col>
+    </React.Fragment>
+  )).add('Small Sized Row', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Small Sized Row</h4>
+        <br />
+        <p>Add <code>rowSize={`{small}`}</code> property to display the small sized rows.</p>
+        <hr />
+        <h6><strong>Example</strong></h6>
+        <hr />
+        <Table data={assets} striped={false} draggable={true} rowSize={'small'}>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+          <Column field={'email'}>Email</Column>
+        </Table>
+        <br />
+        <br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`<Table data={assets} striped={false} rowSize={'small'}>
+  <Column field={'firstName'}>First Name</Column>
+  <Column field={'lastName'}>Last Name</Column>
+  <Column field={'email'}>Email</Column>
+</Table>`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            readOnly: true
+          }}
+        />
+      </Col>
+    </React.Fragment>
   )).add('Hide Header', () => (
     <React.Fragment>
       <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>

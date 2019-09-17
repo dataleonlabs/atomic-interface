@@ -5,9 +5,10 @@ import { Col } from 'reactstrap';
 import Form from './../../index';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
+import Radio from '../Radio';
 require('codemirror/mode/jsx/jsx');
 
-var reindent = function(cm) {
+var reindent = function (cm) {
   var lines = cm.lineCount();
   for (var i = 0; i < lines; i++) {
     cm.indentLine(i);
@@ -25,16 +26,16 @@ storiesOf('Forms|Select', module)
       <React.Fragment>
         <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
           <h2>Form Elements - Select</h2>
-          <br/>
-          <hr/>
+          <br />
+          <hr />
           <p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-          <br/>
+          <br />
           <h4>Basic Example</h4>
-          <br/>
+          <br />
           <p>Custom select element with different <code>{`options`}</code>.</p>
-          <hr/>
+          <hr />
           <h6><strong>Example</strong></h6>
-          <hr/>
+          <hr />
           <Form>
             {(_) => (
               <Select
@@ -46,10 +47,10 @@ storiesOf('Forms|Select', module)
               />
             )}
           </Form>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <h6><strong>Code</strong></h6>
-          <hr/>
+          <hr />
           <CodeMirror
             value={`
 <Select
@@ -61,9 +62,9 @@ storiesOf('Forms|Select', module)
 />
 `}
             options={{
-            mode: 'jsx',
-            lineNumbers: false,
-            readOnly: true            
+              mode: 'jsx',
+              lineNumbers: false,
+              readOnly: true
             }}
           />
         </Col>
@@ -96,11 +97,11 @@ storiesOf('Forms|Select', module)
       <React.Fragment>
         <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
           <h4>Select - Grouped</h4>
-          <br/>
+          <br />
           <p>Add <code>options={`{groupedOptions}`}</code> property in which <code>{`groupedOptions`}</code> contain an array of multiple object having different attributes defined.</p>
-          <hr/>
+          <hr />
           <h6><strong>Example</strong></h6>
-          <hr/>
+          <hr />
           <h4>Select</h4>
           <Form>
             {(_) => (
@@ -113,10 +114,10 @@ storiesOf('Forms|Select', module)
               />
             )}
           </Form>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <h6><strong>Code</strong></h6>
-          <hr/>
+          <hr />
           <CodeMirror
             value={`
 <Select
@@ -128,12 +129,108 @@ storiesOf('Forms|Select', module)
 />
 `}
             options={{
-            mode: 'jsx',
-            lineNumbers: false,
-            readOnly: true            
+              mode: 'jsx',
+              lineNumbers: false,
+              readOnly: true
             }}
           />
         </Col>
       </React.Fragment>
     )
-  })
+  }).add('Conditional Example', () => {
+
+    const drinkOptions = [
+      { value: 'pepsi', label: 'Pepsi' },
+      { value: 'cola', label: 'Coca-Cola' },
+      { value: 'thumsup', label: 'Thums Up' },
+    ];
+    const fruitsOptions = [
+      { value: 'apple', label: 'Apple' },
+      { value: 'orange', label: 'Orange' },
+      { value: 'mango', label: 'Mango' },
+    ];
+
+    return (
+      <React.Fragment>
+        <Col sm={6} style={{ marginTop: 30, marginLeft: 30, marginBottom: 30 }}>
+          <h2>Form Elements - Select</h2>
+          <br />
+          <hr />
+          <p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
+          <br />
+          <h4>Conditional Example</h4>
+          <br />
+          <p>Custom select element with different <code>{`options`}</code>.</p>
+          <hr />
+          <h6><strong>Example</strong></h6>
+          <hr />
+          <Form>
+            {(values) => (
+              <>
+                <Radio value="drinks" id="drinks" name='type' label="Drinks" />
+                <Radio value="fruits" id="fruits" name='type' label="Fruits" />
+                <Select
+                  isClearable
+                  creatable
+                  isMulti
+                  label="Drinks"
+                  name={'drink'}
+                  options={drinkOptions}
+                  conditionnals={{
+                    type: 'drinks'
+                  }}
+                />
+                <Select
+                  isClearable
+                  creatable
+                  isMulti
+                  label="Fruits"
+                  name={'fruit'}
+                  options={fruitsOptions}
+                  conditionnals={{
+                    type: 'fruits'
+                  }}
+                />
+                <br /><code>values: {JSON.stringify(values.values)}</code><br />
+              </>
+            )}
+          </Form>
+          <br />
+          <br />
+          <h6><strong>Code</strong></h6>
+          <hr />
+          <CodeMirror
+            value={`<Radio value="drinks" id="drinks" name='type' label="Drinks" />
+<Radio value="fruits" id="fruits" name='type' label="Fruits" />
+<Select
+  isClearable
+  creatable
+  isMulti
+  label="Drinks"
+  name={'drink'}
+  options={drinkOptions}
+  conditionnals={{
+    type: 'drinks'
+  }}
+/>
+<Select
+  isClearable
+  creatable
+  isMulti
+  label="Fruits"
+  name={'fruit'}
+  options={fruitsOptions}
+  conditionnals={{
+    type: 'fruits'
+  }}
+/>`}
+            options={{
+              mode: 'jsx',
+              lineNumbers: false,
+              readOnly: true
+            }}
+          />
+        </Col>
+      </React.Fragment>
+    )
+  });
