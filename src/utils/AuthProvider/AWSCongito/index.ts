@@ -1,5 +1,6 @@
 import AuthInterface from '../AuthInterface';
 import Amplify, { Auth } from 'aws-amplify';
+import CookieStorage from './CookieStorage';
 
 /**
  * AWSCognito
@@ -11,9 +12,43 @@ export default class AWSCognito implements AuthInterface {
      * @param options optons aws
      */
     public configure(options: any) {
-        Amplify.configure({ options });
-        return Auth.configure(options);
+        Amplify.configure({ ...options });
+        return Auth.configure({
+            ...options,
+
+            // OPTIONAL - Configuration for cookie storage
+            // Note: if the secure flag is set to true, then the cookie transmission requires a secure protocol
+            cookieStorage: {
+                // REQUIRED - Cookie domain (only required if cookieStorage is provided)
+                domain: '.yourdomain.com', // get domain hear
+                // OPTIONAL - Cookie path
+                path: '/',
+                // OPTIONAL - Cookie expiration in days
+                expires: 365,
+                // OPTIONAL - Cookie secure flag
+                // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
+                secure: true
+            },
+
+            storage: new CookieStorage({ secure: false, domain: "example.com" }),
+        });
     }
+
+    // let cognitoUser = userPool.getCurrentUser();
+    // if (cognitoUser != null) {
+    //   return Observable.create((observer: Observer<boolean>) => {
+    //     cognitoUser.getSession((error, session) => {
+    //       if (error) {
+    //         console.error(error);
+    //         observer.next(false);
+    //         observer.complete();
+    //       }
+    //       console.log(session, session.isValid(), session.isAuthenticated);
+    //       observer.next(session.isValid());
+    //       observer.complete();
+    //     });
+    //   })
+    // return true or false
 
     /**
      * signUp
