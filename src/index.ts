@@ -6,6 +6,12 @@ export { AbbreviationProps } from './display/Abbreviation/props';
 export { default as Alert } from './display/Alert';
 export { AlertProps } from './display/Alert/props';
 
+export { default as Choose } from './display/Choose';
+export { ChooseProps } from './display/Choose/props';
+
+export { default as Well } from './display/Well';
+export { WellProps } from './display/Well/props';
+
 export { default as Avatar } from './display/Avatar/index';
 export { AvatarProps } from './display/Avatar/props';
 
