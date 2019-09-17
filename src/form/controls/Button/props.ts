@@ -22,7 +22,6 @@ export interface ButtonProps extends ButtonPropsBase {
     onClick?: React.MouseEventHandler<any>;
 }
 
-
 export interface ButtonCollectionProps extends QueryProps {
     outline?: boolean;
     active?: boolean;

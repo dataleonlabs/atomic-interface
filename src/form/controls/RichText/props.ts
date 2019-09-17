@@ -17,8 +17,24 @@ export interface RichTextProps extends InputProps {
     toolbarDisable?: boolean
 
     /** set RichText theme */
-    theme?: "snow" | "bubble"    
+    theme?: "snow" | "bubble"
 
     /** Function invoked when value is changed by the user  */
     onChange?: ({ name, value }: { name: string; value: string }) => void
+
+    /**
+    * Check of current values if you have field with same conditionnals values.
+    * @example values
+    * {
+    *   firstName: "Gerard",
+    *   email: "example@example.com",
+    *   gender: "woman"
+    * }
+    * @example conditionnals, then display field because gender is equal woman in values
+    * {
+    *   gender: "woman"
+    * }
+    * 
+    */
+    conditionnals?: { [key: string]: any };
 }
