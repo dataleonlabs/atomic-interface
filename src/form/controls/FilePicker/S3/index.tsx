@@ -10,6 +10,7 @@ import { FormText } from 'reactstrap';
 import uuidv4 from 'uuidv4';
 import Text from '../../../../display/Text';
 import Button from '../../../../form/controls/Button';
+import { FormControlHelper } from '../../../formControlHelper';
 
 /* istanbul ignore next  */
 export function getHeaders() {
@@ -38,17 +39,17 @@ class FilePickerS3 extends React.PureComponent<Props> {
     progress: 0,
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public getSignedUrl = (file: any, callback: any) /* istanbul ignore next  */ => {
 
     let fileName = file.name;
-  /* istanbul ignore next  */
+    /* istanbul ignore next  */
     if (this.props.uuid === true) {
       const ext = file.name.split('.').pop();
       fileName = `${uuidv4().toLocaleUpperCase()}.${ext}`;
     }
 
-  /* istanbul ignore next  */
+    /* istanbul ignore next  */
     this.setState({ fileName }, () /* istanbul ignore next  */ => {
       fetch(`${this.props.server}${this.props.signingUrl}?key=${fileName}&contentType=${file.type}&type=put&acl=${this.props.XAmzAcl}`)
         .then(data => data.json())
@@ -61,22 +62,22 @@ class FilePickerS3 extends React.PureComponent<Props> {
     })
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onClick = () /* istanbul ignore next  */ => {
     // onClick button
   }
 
-/* istanbul ignore next  */
-  public onSignedUrl = () /* istanbul ignore next  */  => {
+  /* istanbul ignore next  */
+  public onSignedUrl = () /* istanbul ignore next  */ => {
     this.setState({ loading: true })
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onUploadProgress = (progress: number) /* istanbul ignore next  */ => {
     this.setState({ progress })
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onUploadError = (e: any) /* istanbul ignore next  */ => {
     this.setState({
       error: true,
@@ -85,7 +86,7 @@ class FilePickerS3 extends React.PureComponent<Props> {
     })
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public onUploadFinish = (setFieldValue: FieldProps<{}>['form']['setFieldValue']) => async () /* istanbul ignore next  */ => {
     try {
       this.setState({ loading: false, progress: 0 }, () => {
@@ -103,8 +104,14 @@ class FilePickerS3 extends React.PureComponent<Props> {
     }
   }
 
-/* istanbul ignore next  */
-  public renderField = ({ field, form: { submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
+  /* istanbul ignore next  */
+  public renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
+
+    const objFormControlHelper=new FormControlHelper();
+    if(objFormControlHelper.checkConditional(this.props.conditionnals, values)){
+      return <></>;
+    }
+
     const {
       outline,
       block,
@@ -117,65 +124,65 @@ class FilePickerS3 extends React.PureComponent<Props> {
     const { value, ...rest } = field;
     return (
       <>
-        <StyledImageUploader>
-          <StyledUploadBtnWrapper label={this.props.label}>
-            <Button
-              loading={this.state.loading}
-              outline={outline}
-              block={block}
-              color={color}
-              disabled={(this.state.loading || 0) > 0 ? /* istanbul ignore next  */ true : false}
-              size={size}
-              icon={icon}
-              id={id}
-              style={style}
-              type={'button'}
-            >
-              <>
-                {this.props.children} {this.state.progress ? `- ${this.state.progress}%` : ''}
-              </>
-            </Button>
-            <ReactS3Uploader
-              {...rest}
-              multiple={this.props.multipleFiles}
-              signingUrl={this.props.signingUrl}
-              signingUrlMethod="PUT"
-              getSignedUrl={this.getSignedUrl}
-              accept={this.props.accept}
-              s3path="/"
-              onSignedUrl={this.onSignedUrl}
-              onProgress={this.onUploadProgress}
-              onError={this.onUploadError}
-              onFinish={this.onUploadFinish(setFieldValue)}
-              signingUrlHeaders={{ ...getHeaders() }}
-              signingUrlQueryParams={{ type: 'PUT' }}
-              uploadRequestHeaders={{ 'x-amz-acl': this.props.XAmzAcl }} // this is the default
-              contentDisposition="auto"
-              server={this.props.server}
-              autoUpload={true}
-            />
-          </StyledUploadBtnWrapper>
-          {this.state.error === true && /* istanbul ignore next  */ (
-            <Text>
-              {this.state.errorMessage}
-            </Text>
-          )}
+        <Control {...this.props}>
+          <StyledImageUploader>
+            <StyledUploadBtnWrapper label={this.props.label}>
+              <Button
+                loading={this.state.loading}
+                outline={outline}
+                block={block}
+                color={color}
+                disabled={(this.state.loading || 0) > 0 ? /* istanbul ignore next  */ true : false}
+                size={size}
+                icon={icon}
+                id={id}
+                style={style}
+                type={'button'}
+              >
+                <>
+                  {this.props.children} {this.state.progress ? `- ${this.state.progress}%` : ''}
+                </>
+              </Button>
+              <ReactS3Uploader
+                {...rest}
+                multiple={this.props.multipleFiles}
+                signingUrl={this.props.signingUrl}
+                signingUrlMethod="PUT"
+                getSignedUrl={this.getSignedUrl}
+                accept={this.props.accept}
+                s3path="/"
+                onSignedUrl={this.onSignedUrl}
+                onProgress={this.onUploadProgress}
+                onError={this.onUploadError}
+                onFinish={this.onUploadFinish(setFieldValue)}
+                signingUrlHeaders={{ ...getHeaders() }}
+                signingUrlQueryParams={{ type: 'PUT' }}
+                uploadRequestHeaders={{ 'x-amz-acl': this.props.XAmzAcl }} // this is the default
+                contentDisposition="auto"
+                server={this.props.server}
+                autoUpload={true}
+              />
+            </StyledUploadBtnWrapper>
+            {this.state.error === true && /* istanbul ignore next  */ (
+              <Text>
+                {this.state.errorMessage}
+              </Text>
+            )}
 
-          {submitCount > 0 && /* istanbul ignore next  */ (errors[this.props.name] ? true : false)
-            && <FormText color="danger">{errors[this.props.name]}</FormText>
-          }
+            {submitCount > 0 && /* istanbul ignore next  */ (errors[this.props.name] ? true : false)
+              && <FormText color="danger">{errors[this.props.name]}</FormText>
+            }
 
-        </StyledImageUploader>
+          </StyledImageUploader>
+        </Control>
       </>
     )
   }
 
-/* istanbul ignore next  */
+  /* istanbul ignore next  */
   public render() /* istanbul ignore next  */ {
     return (
-      <Control {...this.props}>
-        <Field id={this.props.name} render={this.renderField} />
-      </Control>
+      <Field id={this.props.name} render={this.renderField} />
     )
   }
 }

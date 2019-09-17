@@ -100,24 +100,27 @@ class CodeEditor extends React.PureComponent<Props> {
     };
 
     /* istanbul ignore next */
-    const renderField = ({ field }: FieldProps<{}>) /* istanbul ignore next */ => (
-      <React.Fragment>
-        <>
-          {this.props.label && <StyledLabel>{this.props.label}</StyledLabel>}
-          <div {...field} ref={c /* istanbul ignore next */ => this.Node = c} style={richTextStyle} />
-        </>
-      </React.Fragment>
-    );
+    const renderField = ({ field }: FieldProps<{}>) /* istanbul ignore next */ => {
+
+      return (
+        <Control {...this.props} label={undefined}>
+          <React.Fragment>
+            <>
+              {this.props.label && <StyledLabel>{this.props.label}</StyledLabel>}
+              <div {...field} ref={c /* istanbul ignore next */ => this.Node = c} style={richTextStyle} />
+            </>
+          </React.Fragment>
+        </Control>
+      )
+    }
 
     /* istanbul ignore next */
     return (
-      <Control {...this.props} label={undefined}>
-        <Field
-          {...this.props}
-          id={this.props.name}
-          render={renderField}
-        />
-      </Control>
+      <Field
+        {...this.props}
+        id={this.props.name}
+        render={renderField}
+      />
     )
   }
 }
