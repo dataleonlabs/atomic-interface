@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.17.0...v1.18.0) (2019-09-19)
+
+
+### Bug Fixes
+
+* component undefined ([2ef82bc](https://bitbucket.org/youngapp/ui-kit/commit/2ef82bc))
+* improve code ([75dc10a](https://bitbucket.org/youngapp/ui-kit/commit/75dc10a))
+* lint error ([ae3bbb5](https://bitbucket.org/youngapp/ui-kit/commit/ae3bbb5))
+* test case error ([2ebcc4f](https://bitbucket.org/youngapp/ui-kit/commit/2ebcc4f))
+
+
+### Features
+
+* add connector props ([7b5df42](https://bitbucket.org/youngapp/ui-kit/commit/7b5df42))
+* add cookieeStorage ([48b6f60](https://bitbucket.org/youngapp/ui-kit/commit/48b6f60))
+* connector ([95f3b04](https://bitbucket.org/youngapp/ui-kit/commit/95f3b04))
+* get user session and data ([491980c](https://bitbucket.org/youngapp/ui-kit/commit/491980c))
+* getUserSession ([b344474](https://bitbucket.org/youngapp/ui-kit/commit/b344474))
+* update task ([5a0b627](https://bitbucket.org/youngapp/ui-kit/commit/5a0b627))
+
 ## [1.17.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.16.0...v1.17.0) (2019-09-17)
 
 

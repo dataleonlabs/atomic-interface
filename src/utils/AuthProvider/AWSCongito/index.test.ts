@@ -37,7 +37,7 @@ describe('AWSCognitoLoginProvier', () => {
     expect(typeof signInResult.username).toEqual('string');
     expect(typeof signInResult.signInUserSession.refreshToken.token).toEqual('string');
     expect(typeof signInResult.signInUserSession.accessToken.jwtToken).toEqual('string');
-  })  
+  })
 
   it('U-TEST-3 - Test error NotAuthorizedException', async () => {
     const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
