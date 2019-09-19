@@ -8,10 +8,34 @@ import HeaderSubTitle from '../components/Header/SubTitle';
 import { Col } from 'reactstrap';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
+import Button from '../../../form/controls/Button';
+import AWSCognitoLoginProvier from '../../../utils/AuthProvider/AWSCongito/index';
 require('codemirror/mode/jsx/jsx');
 
 var handleRedirect = function () {
   alert("Component not available");
+}
+
+var detectUser = async function () {
+  const awsCognito = new AWSCognitoLoginProvier();
+  awsCognito.configure({
+    "region": "eu-central-1",
+    "userPoolId": "eu-central-1_5jBnZEuMX",
+    "userPoolWebClientId": "543up50u5glbg9qlpkuhop779t",
+  });  
+  let res = await awsCognito.isLogged();  
+  document.getElementById("result").innerHTML = JSON.stringify(res);
+}
+
+var detectSession = async function () {
+  const awsCognito = new AWSCognitoLoginProvier();
+  awsCognito.configure({
+    "region": "eu-central-1",
+    "userPoolId": "eu-central-1_5jBnZEuMX",
+    "userPoolWebClientId": "543up50u5glbg9qlpkuhop779t",
+  });  
+  let res = await awsCognito.getCurrentUser();  
+  document.getElementById("result").innerHTML = JSON.stringify(res);
 }
 
 storiesOf('Layout|Login', module)
@@ -79,6 +103,22 @@ provider={{
             readOnly: true
           }}
         />
+      </Col>
+    </React.Fragment>
+  )).add('Example Detect user', () => (
+    <React.Fragment>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Layout - Login</h4>
+        <br />
+        <p>Add Login feature and relevant styles with following component. Customize the content like header and subtitle content.</p>
+        <hr />
+        <br />
+        <h6><strong>Example</strong></h6>
+        <hr />
+        <Button color="primary" onClick={detectUser}>Detect User</Button>        
+        <Button color="success" onClick={detectSession}>Get Current User Seesion</Button>
+        <div id="result">
+        </div>
       </Col>
     </React.Fragment>
   ));
