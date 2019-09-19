@@ -11,7 +11,7 @@ export default class AWSCognito implements AuthInterface {
      * Configure function
      * @param options optons aws
      */
-    public configure(options: any) {
+    public configure(options: any) {        
         Amplify.configure({ ...options });
         return Auth.configure({
             ...options,
@@ -20,35 +20,31 @@ export default class AWSCognito implements AuthInterface {
             // Note: if the secure flag is set to true, then the cookie transmission requires a secure protocol
             cookieStorage: {
                 // REQUIRED - Cookie domain (only required if cookieStorage is provided)
-                domain: '.yourdomain.com', // get domain hear
+                domain: window.location, // get domain hear
                 // OPTIONAL - Cookie path
                 path: '/',
                 // OPTIONAL - Cookie expiration in days
                 expires: 365,
                 // OPTIONAL - Cookie secure flag
                 // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
-                secure: true
+                secure: false
             },
-
-            storage: new CookieStorage({ secure: false, domain: "example.com" }),
+            storage: new CookieStorage({ secure: false, domain: window.location }),
         });
     }
 
-    // let cognitoUser = userPool.getCurrentUser();
-    // if (cognitoUser != null) {
-    //   return Observable.create((observer: Observer<boolean>) => {
-    //     cognitoUser.getSession((error, session) => {
-    //       if (error) {
-    //         console.error(error);
-    //         observer.next(false);
-    //         observer.complete();
-    //       }
-    //       console.log(session, session.isValid(), session.isAuthenticated);
-    //       observer.next(session.isValid());
-    //       observer.complete();
-    //     });
-    //   })
-    // return true or false
+    /**
+     * get current user session
+     */
+    public async getCurrentUser() {
+        return await Auth.currentSession().then(data => {
+            console.log('data', data);
+            return data;
+        }).catch(err => {
+            console.log('err', err);
+            return false;
+        });        
+    }
 
     /**
      * signUp

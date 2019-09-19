@@ -32,11 +32,30 @@ describe('AWSCognitoLoginProvier', () => {
       region: regionName,
     });
 
-    // const signInCredentials = { email: 'gerard@youngapp.co', password: "Tµtij5fXY77€/5" }
-    // const signInResult = await awsCognitoLoginProvier.signIn(signInCredentials);
-    // expect(typeof signInResult.username).toEqual('string');
-    // expect(typeof signInResult.signInUserSession.refreshToken.token).toEqual('string');
-    // expect(typeof signInResult.signInUserSession.accessToken.jwtToken).toEqual('string');
+    const signInCredentials = { email: 'shruti@samcomtechnobrains.com', password: "C.G9be7M!r$W5_W" }
+    const signInResult = await awsCognitoLoginProvier.signIn(signInCredentials);
+    expect(typeof signInResult.username).toEqual('string');
+    expect(typeof signInResult.signInUserSession.refreshToken.token).toEqual('string');
+    expect(typeof signInResult.signInUserSession.accessToken.jwtToken).toEqual('string');
+  })
+
+  it.only('U-TEST-2 - Test Session', async () => {
+    const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
+    awsCognitoLoginProvier.configure({
+      // OPTIONAL - Amazon Cognito User Pool ID
+      userPoolId: poolId,
+      userPoolWebClientId: poolWebClientId,
+
+      // REQUIRED - Amazon Cognito Region
+      region: regionName,
+    });
+
+    const signInCredentials = { email: 'shruti@samcomtechnobrains.com', password: 'C.G9be7M!r$W5_W' }
+    const signInResult = await awsCognitoLoginProvier.signIn(signInCredentials);    
+    
+    console.log("signInResult",signInResult);
+    console.log("res", await awsCognitoLoginProvier.getCurrentUser());
+    //expect(await awsCognitoLoginProvier.getCurrentUser()).toContain('token');
   })
 
   it('U-TEST-3 - Test error NotAuthorizedException', async () => {
@@ -111,7 +130,7 @@ describe('AWSCognitoLoginProvier', () => {
       const resetPasswordInputDetails = { user: resLogin, newPassword: "8NL9:@x&W-Zs[q}]" }
       await awsCognitoLoginProvier.completeNewPassword(resetPasswordInputDetails);
     }
-  })  
+  })
 
   it('U-TEST-7 - Test confirmSignIn', async () => {
     const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
@@ -147,9 +166,9 @@ describe('AWSCognitoLoginProvier', () => {
       region: regionName,
     });
 
-     const signUpCredentials = { username: 'jaydeep@samcomtechnobrains.com', password: "C.G9be7\M!r$W5_K" }
-     const signUpResult = await awsCognitoLoginProvier.signUp(signUpCredentials);
-     
-     expect(JSON.stringify(signUpResult)).toContain('UsernameExistsException');     
+    const signUpCredentials = { username: 'jaydeep@samcomtechnobrains.com', password: "C.G9be7\M!r$W5_K" }
+    const signUpResult = await awsCognitoLoginProvier.signUp(signUpCredentials);
+
+    expect(JSON.stringify(signUpResult)).toContain('UsernameExistsException');
   })
 });

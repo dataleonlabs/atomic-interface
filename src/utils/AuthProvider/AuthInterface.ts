@@ -26,6 +26,9 @@ export default interface AuthInterface {
     /** Configure object */
     configure: (options: any) => void;
 
+    /** get current user settings object */
+    getCurrentUser: () => false | object;   
+
     /**
      * When signing in with user name and password,
      * you will either sign in directly or be asked to pass some challenges
