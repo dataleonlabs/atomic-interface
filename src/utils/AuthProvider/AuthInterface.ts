@@ -26,10 +26,10 @@ export default interface AuthInterface {
     /** Configure object */
     configure: (options: any) => void;
 
-    /** get current user settings object */
+    /** get current user session object */
     getCurrentUser: () => false | object;
 
-    /** get current user settings object */
+    /** get current authenticated user object */
     isLogged: () => false | object;
 
     /**
