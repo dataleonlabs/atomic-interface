@@ -37,28 +37,7 @@ describe('AWSCognitoLoginProvier', () => {
     expect(typeof signInResult.username).toEqual('string');
     expect(typeof signInResult.signInUserSession.refreshToken.token).toEqual('string');
     expect(typeof signInResult.signInUserSession.accessToken.jwtToken).toEqual('string');
-  })
-
-  it.only('U-TEST-2 - Test Session & User', async () => {
-    const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
-    awsCognitoLoginProvier.configure({
-      // OPTIONAL - Amazon Cognito User Pool ID
-      userPoolId: poolId,
-      userPoolWebClientId: poolWebClientId,
-
-      // REQUIRED - Amazon Cognito Region
-      region: regionName,
-    });
-
-    const signInCredentials = { email: 'shruti@samcomtechnobrains.com', password: 'C.G9be7M!r$W5_W' }
-    const signInResult = await awsCognitoLoginProvier.signIn(signInCredentials);    
-    const currentSession = await awsCognitoLoginProvier.getCurrentUser();
-    const currentUser = await awsCognitoLoginProvier.isLogged();
-    console.log("signInResult",signInResult);
-    console.log("current Session", currentSession);
-    console.log("current User", currentUser);
-    expect(currentSession).toContain('token');
-  })
+  })  
 
   it('U-TEST-3 - Test error NotAuthorizedException', async () => {
     const awsCognitoLoginProvier = new AWSCognitoLoginProvier();
