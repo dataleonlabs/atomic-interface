@@ -1,6 +1,6 @@
 import AuthInterface from '../AuthInterface';
 import Amplify, { Auth } from 'aws-amplify';
-import CookieStorage from './CookieStorage';
+//import CookieStorage from './CookieStorage';
 
 /**
  * AWSCognito
