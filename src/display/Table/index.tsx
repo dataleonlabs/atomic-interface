@@ -90,7 +90,7 @@ class Table extends React.Component<Props, State> {
    */
   public columns = () => {
     const columns: Column[] = [];
-    if (this.props.orderingColumns && this.props.orderingColumns.length) {
+    if (this.props.orderingColumns && this.props.orderingColumns.length) /* istanbul ignore next */ {
       for (const orderingColumn of this.props.orderingColumns) {
         React.Children.map(this.props.children, (child) => {
           if (React.isValidElement(child)) {
