@@ -24,7 +24,7 @@ storiesOf('Forms|DatePicker', module)
         <hr />
         <Form>
           {(_) => (
-            <DatePicker dateFormat="yyyy/MM/dd" name="datepicker" />
+            <DatePicker label="Choose Date" dateFormat="yyyy/MM/dd" name="datepicker" />
           )}
         </Form>
         <br />
@@ -33,7 +33,7 @@ storiesOf('Forms|DatePicker', module)
         <hr />
         <CodeMirror
           value={`
-<DatePicker dateFormat='yyyy/MM/dd' name='datepicker' />
+<DatePicker label="Choose Date" dateFormat="yyyy/MM/dd" name="datepicker" />
 `}
           options={{
             mode: 'jsx',
@@ -54,7 +54,7 @@ storiesOf('Forms|DatePicker', module)
         <hr />
         <Form>
           {(_) => (
-            <DatePicker disabled={true} dateFormat="yyyy/MM/dd" name="datepicker" />
+            <DatePicker label="Choose Date" disabled={true} dateFormat="yyyy/MM/dd" name="datepicker" />
           )}
         </Form>
         <br />
@@ -63,7 +63,7 @@ storiesOf('Forms|DatePicker', module)
         <hr />
         <CodeMirror
           value={`
-<DatePicker disabled={true} dateFormat='yyyy/MM/dd' name='datepicker' />
+<DatePicker label="Choose Date" disabled={true} dateFormat='yyyy/MM/dd' name='datepicker' />
 `}
           options={{
             mode: 'jsx',
@@ -85,6 +85,7 @@ storiesOf('Forms|DatePicker', module)
         <Form>
           {(_) => (
             <DatePicker
+              label="Choose Date"
               options={{
                 onChange: date => new Date("2019/09/08"),
                 selected: new Date("2019/09/02"),
@@ -102,6 +103,7 @@ storiesOf('Forms|DatePicker', module)
         <CodeMirror
           value={`
 <DatePicker
+  label="Choose Date"
   options={{
     onChange: date => new Date("2019/09/08"),
     selected: new Date("2019/09/02"),
@@ -141,6 +143,7 @@ storiesOf('Forms|DatePicker', module)
               <Radio value="range" id="range" name='type' label="Date Range" />
 
               <DatePicker
+                label="Standard DatePicker"
                 dateFormat="yyyy/MM/dd"
                 conditionnals={{
                   type: 'standard'
@@ -148,6 +151,7 @@ storiesOf('Forms|DatePicker', module)
                 name="datepicker" />
 
               <DatePicker
+                label="Disabled DatePicker"
                 disabled={true}
                 dateFormat="yyyy/MM/dd"
                 conditionnals={{
@@ -156,6 +160,7 @@ storiesOf('Forms|DatePicker', module)
                 name="datepicker" />
 
               <DatePicker
+                label="Range DatePicker"
                 options={{
                   onChange: date => new Date("2019/09/08"),
                   selected: new Date("2019/09/02"),
@@ -177,23 +182,40 @@ storiesOf('Forms|DatePicker', module)
         <hr />
         <CodeMirror
           value={`
-<Radio value="standard" id="standard" name='type' label="Standard" />
-<Radio value="disabled" id="disabled" name='type' label="Disabled" />
+  <Radio value="standard" id="standard" name='type' label="Standard" />
+  <Radio value="disabled" id="disabled" name='type' label="Disabled" />
+  <Radio value="range" id="range" name='type' label="Date Range" />
 
-<DatePicker
-  dateFormat="yyyy/MM/dd"
-  conditionnals={{
-    type: 'standard'
-  }}
-  name="datepicker" />
+  <DatePicker
+    label="Standard DatePicker"
+    dateFormat="yyyy/MM/dd"
+    conditionnals={{
+      type: 'standard'
+    }}
+    name="datepicker" />
 
-<DatePicker
-  disabled={true}
-  dateFormat="yyyy/MM/dd"
-  conditionnals={{
-    type: 'disabled'
-  }}
-  name="datepicker" />
+  <DatePicker
+    label="Disabled DatePicker"
+    disabled={true}
+    dateFormat="yyyy/MM/dd"
+    conditionnals={{
+      type: 'disabled'
+    }}
+    name="datepicker" />
+
+  <DatePicker
+    label="Range DatePicker"
+    options={{
+      onChange: date => new Date("2019/09/08"),
+      selected: new Date("2019/09/02"),
+      startDate: new Date("2019/09/02"),
+      endDate: new Date("2019/09/5")
+    }}
+    conditionnals={{
+      type: 'range'
+    }}
+    name="datepicker"
+  />
 `}
           options={{
             mode: 'jsx',
