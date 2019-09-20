@@ -90,17 +90,41 @@ class Table extends React.Component<Props, State> {
    */
   public columns = () => {
     const columns: Column[] = [];
-    React.Children.map(this.props.children, (child) => {
-      if (React.isValidElement(child)) {
-        const childProps = child.props as any;
-        if (childProps && childProps.field) {
-          columns.push({
-            title: childProps.children,
-            name: childProps.field,
-          });
-        }
+    if (this.props.orderingColumns && this.props.orderingColumns.length) /* istanbul ignore next */ {
+      for (const orderingColumn of this.props.orderingColumns) {
+        React.Children.map(this.props.children, (child) => {
+          if (React.isValidElement(child)) {
+            const childProps = child.props as any;
+            if (orderingColumn === childProps.field) {
+              // Check hidden column
+              if (childProps.hide !== true) {
+                if (childProps && childProps.field) {
+                  columns.push({
+                    title: childProps.children,
+                    name: childProps.field,
+                  });
+                }
+              }
+            }
+          }
+        }); 
       }
-    });
+    } else {
+      React.Children.map(this.props.children, (child) => {
+        if (React.isValidElement(child)) {
+          const childProps = child.props as any;
+          // Check hidden column
+          if (childProps.hide !== true) {
+            if (childProps && childProps.field) {
+              columns.push({
+                title: childProps.children,
+                name: childProps.field,
+              });
+            }
+          }
+        }
+      });
+    }
     return columns;
   }
 

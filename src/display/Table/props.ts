@@ -29,6 +29,9 @@ export interface TableColumnProps {
   /** Width column */
   width?: number
 
+  /** No dislay column when enable */
+  hide?: boolean
+
   togglingEnabled?: boolean
 
   /* tslint:disable */
@@ -65,6 +68,9 @@ export interface TableProps {
 
   /** Display in table */
   children: JSX.Element | JSX.Element[]
+
+  /** Overide ordering columns display */
+  orderingColumns?: string[]
 
   // Add striped css
   striped?: boolean

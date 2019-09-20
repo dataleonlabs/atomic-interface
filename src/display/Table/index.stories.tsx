@@ -365,4 +365,41 @@ storiesOf('UI Elements|Table', module)
         />
       </Col>
     </React.Fragment>
+  )).add('Controlled Ordering and Hidden column', () => (
+    <React.Fragment>
+      <Col sm={10} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h4>Table - Loading</h4>
+        <br />
+        <p>Add <code>loading={`{true}`}</code> property to display the loader.</p>
+        <hr />
+        <h6><strong>Example</strong></h6>
+        <hr />
+        <Table selectable={true} data={[{ id: 1 }, { id: 2 }]}>
+          <Column field={'id'}>Id</Column>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'} hide>Last Name</Column>
+        </Table>
+        <Table orderingColumns={['lastName', 'firstName', 'id']} selectable={true} data={[{ id: 1 }, { id: 2 }]}>
+          <Column field={'id'}>Id</Column>
+          <Column field={'firstName'}>First Name</Column>
+          <Column field={'lastName'}>Last Name</Column>
+        </Table>
+        <br />
+        <br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`<Table loading data={[{ id: 1 }, { id: 2 }]}>
+  <Column field="id">Id</Column>
+  <Column field="firstName" hide>First Name</Column>
+  <Column field="lastName">Last Name</Column>
+</Table>`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            readOnly: true
+          }}
+        />
+      </Col>
+    </React.Fragment>
   ))
