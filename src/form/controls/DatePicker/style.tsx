@@ -12,12 +12,12 @@ export const StyledReactDatePickerContainer = styled.div`
     background-color: #fff;
     color: #000;
     border: 1px solid rgba(0,0,0,.1);
-    border-radius: 0px;
+    border-radius: 3px;
     display: inline-block;
     position: relative;   
     z-index: 9 !important; 
     box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
-    font-family: 'IBM Plex Sans',sans-serif!important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
   .react-datepicker-popper {
     z-index: 3;
@@ -39,9 +39,8 @@ export const StyledReactDatePickerContainer = styled.div`
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
-    border-radius: 0px!important;
     border: 2px solid #dfe3e9;
-    border-radius: 0px;
+    border-radius: 3px;
     font-size: 0.9rem;
     height: calc(1.5em + .75rem + 6px);
 
@@ -51,7 +50,7 @@ export const StyledReactDatePickerContainer = styled.div`
     line-height: inherit;
   }
   .react-datepicker div{
-    border-radius: 0px;
+    border-radius: 3px;
   }
   .react-datepicker__day--selected, .react-datepicker__day--in-range{
     background-color: #fff;
