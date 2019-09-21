@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.22.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.21.0...v1.22.0) (2019-09-21)
+
+
+### Bug Fixes
+
+* add isomorphic-fetch ([3f87159](https://bitbucket.org/youngapp/ui-kit/commit/3f87159))
+* update css ([08b9701](https://bitbucket.org/youngapp/ui-kit/commit/08b9701))
+
 ## [1.21.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.20.0...v1.21.0) (2019-09-20)
 
 
