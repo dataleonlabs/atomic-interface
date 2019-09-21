@@ -2,13 +2,13 @@
 import React from 'react'
 import { configure, addParameters, addDecorator }from '@storybook/react';
 const req = require.context('../src', true, /\.stories\.tsx$/);
-import { GlobalStyle } from "../src/utils/ThemeProvider"
+
+import './../dist/style.css';
 
 
 function withGlobalStyles(storyFn) {
   return (
     <React.Fragment>
-      <GlobalStyle />
       {storyFn()}
     </React.Fragment>
   );

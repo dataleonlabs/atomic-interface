@@ -7,13 +7,13 @@ export const StyledSelectBase = styled(SelectBase)`
     * {       
       border-radius: 0px!important;
     }
-  border-radius: 0px!important;
+  border-radius: 3px!important;
   > div:first-child {
-      border: 1px solid #dfe3e9;
+      border: 2px solid #dfe3e9;
       border-radius: 0px; 
       font-size: 0.9rem;
       &:focus {
-        border: 1px solid #dfe3e9;
+        border: 2px solid #dfe3e9;
         outline: none !important;
         box-shadow: none;
         border-color: #80bdff;
