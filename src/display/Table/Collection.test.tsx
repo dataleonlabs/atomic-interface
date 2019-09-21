@@ -1,4 +1,5 @@
-import 'whatwg-fetch';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import * as React from 'react'
 import * as enzyme from 'enzyme'
 import TableCollection from './Collection'

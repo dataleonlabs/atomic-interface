@@ -1,6 +1,7 @@
 /* istanbul ignore next */
 import * as React from 'react';
-import 'whatwg-fetch';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import { ConnectorProps as Props } from './props';
 import { StyledContainer } from './style';
 import Badge from '../../display/Badge/index';
