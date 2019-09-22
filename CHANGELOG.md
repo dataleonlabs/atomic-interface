@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.23.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.22.0...v1.23.0) (2019-09-22)
+
+
+### Bug Fixes
+
+* sideserver ([6b96ff4](https://bitbucket.org/youngapp/ui-kit/commit/6b96ff4))
+
 ## [1.22.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.21.0...v1.22.0) (2019-09-21)
 
 
