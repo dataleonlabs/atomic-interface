@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.24.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.23.0...v1.24.0) (2019-09-23)
+
+
+### Bug Fixes
+
+* login story ([9421b4f](https://bitbucket.org/youngapp/ui-kit/commit/9421b4f))
+* test integration ([dfac251](https://bitbucket.org/youngapp/ui-kit/commit/dfac251))
+
+
+### Features
+
+* added component awscognito in index.ts ([d8c988c](https://bitbucket.org/youngapp/ui-kit/commit/d8c988c))
+
 ## [1.23.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.22.0...v1.23.0) (2019-09-22)
 
 
