@@ -22,4 +22,20 @@ export interface TextareaProps extends InputProps {
    * This is forced to true when `maxRows` is set.
    */
   async?: boolean;
+
+  /**
+    * Check of current values if you have field with same conditionnals values.
+    * @example values
+    * {
+      *   firstName: "Gerard",
+      *   email: "example@example.com",
+      *   gender: "woman"
+      * }
+      * @example conditionnals, then display field because gender is equal woman in values
+      * {
+      *   gender: "woman"
+      * }
+      * 
+      */
+      conditionnals?: { [key: string]: any };
 }

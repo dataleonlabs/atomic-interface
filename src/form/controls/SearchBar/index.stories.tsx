@@ -5,9 +5,10 @@ import { Col } from 'reactstrap';
 import Form from '../../index';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
+import Radio from '../Radio';
 require('codemirror/mode/jsx/jsx');
 
-var reindent = function(cm) {
+var reindent = function (cm) {
   var lines = cm.lineCount();
   for (var i = 0; i < lines; i++) {
     cm.indentLine(i);
@@ -19,16 +20,16 @@ storiesOf('Forms|SearchBar', module)
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
         <h2>Form Elements - SearchBar</h2>
-        <br/>
-        <hr/>
+        <br />
+        <hr />
         <p>Search lets users specify a word or phrase to search for relevant pieces of information. Search can be used as a filter or a primary means of searching some content.</p>
-        <br/>
+        <br />
         <h4>Basic Example</h4>
-        <br/>
+        <br />
         <p>The basic style for search component that can be submitted by hitting enter kay or by clicking the search icon on the right side of the bar.</p>
-        <hr/>
+        <hr />
         <h6><strong>Example</strong></h6>
-        <hr/>
+        <hr />
         <br />
         <Form>
           {(_) => (
@@ -38,34 +39,34 @@ storiesOf('Forms|SearchBar', module)
             />
           )}
         </Form>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <h6><strong>Code</strong></h6>
-        <hr/>
+        <hr />
         <CodeMirror
-            value={`
+          value={`
 <SearchBar
   name={'search'}
   placeholder={'search'}
 />
 `}
-            options={{
+          options={{
             mode: 'jsx',
             lineNumbers: false,
-            readOnly: true            
-            }}
-          />
+            readOnly: true
+          }}
+        />
       </Col>
     </React.Fragment>
   )).add('Navbar', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>SearchBar - Navbar</h4>
-        <br/>
+        <br />
         <p>Add <code>navBar={`{true}`}</code> property to display the search element inside the navigation panel.</p>
-        <hr/>
+        <hr />
         <h6><strong>Example</strong></h6>
-        <hr/>
+        <hr />
         <Form>
           {(_) => (
             <SearchBar
@@ -75,24 +76,95 @@ storiesOf('Forms|SearchBar', module)
             />
           )}
         </Form>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <h6><strong>Code</strong></h6>
-        <hr/>
+        <hr />
         <CodeMirror
-            value={`
+          value={`
 <SearchBar
   name={'search'}
   placeholder={'search'}
   navBar={true}
 />
 `}
-            options={{
+          options={{
             mode: 'jsx',
             lineNumbers: false,
-            readOnly: true            
-            }}
-          />
+            readOnly: true
+          }}
+        />
+      </Col>
+    </React.Fragment>
+  )).add('Example Conditional', () => (
+    <React.Fragment>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h2>Form Elements - SearchBar</h2>
+        <br />
+        <hr />
+        <p>Search lets users specify a word or phrase to search for relevant pieces of information. Search can be used as a filter or a primary means of searching some content.</p>
+        <br />
+        <h4>Conditional Example</h4>
+        <br />
+        <p>The basic style for search component that can be submitted by hitting enter kay or by clicking the search icon on the right side of the bar.</p>
+        <hr />
+        <h6><strong>Example</strong></h6>
+        <hr />
+        <br />
+        <Form>
+          {(values) => (
+            <>
+              <Radio value="default" id="default" name='type' label="Default" />
+              <Radio value="navbar" id="navbar" name='type' label="Navbar" />
+              <SearchBar
+                name={'search'}
+                placeholder={'search'}
+                conditionnals={{
+                  type: 'default'
+                }}
+              />
+              <SearchBar
+                name={'search'}
+                placeholder={'search'}
+                navBar={true}
+                conditionnals={{
+                  type: 'navbar'
+                }}
+              />
+              <br /><code>values: {JSON.stringify(values.values)}</code><br />
+            </>
+          )}
+        </Form>
+        <br />
+        <br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`
+<Radio value="default" id="default" name='type' label="Default" />
+<Radio value="navbar" id="navbar" name='type' label="Navbar" />
+<SearchBar
+  name={'search'}
+  placeholder={'search'}
+  conditionnals={{
+    type: 'default'
+  }}
+/>
+<SearchBar
+  name={'search'}
+  placeholder={'search'}
+  navBar={true}
+  conditionnals={{
+    type: 'navbar'
+  }}
+/>
+`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            readOnly: true
+          }}
+        />
       </Col>
     </React.Fragment>
   ))

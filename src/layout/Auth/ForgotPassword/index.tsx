@@ -1,6 +1,7 @@
 /* istanbul ignore next */
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import * as React from 'react';
-import 'whatwg-fetch';
 import { ForgotPasswordProps as Props } from '../props';
 import { Form, Alert } from '../../../index';
 import Input from '../../../form/controls/Input/index';

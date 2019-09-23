@@ -1,7 +1,6 @@
 import React, { Children } from 'react';
 import { storiesOf } from '@storybook/react';
 import Connector from './index';
-import ConnectorJSON from './index2';
 import { Col } from 'reactstrap';
 import { CloudRain } from 'react-feather';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
@@ -43,8 +42,8 @@ storiesOf('Layout|Connector', module)
                 component: "Input",
                 props: {
                   type: "text",
-                  label: "Test Input",
-                  placeholder: "Enter a unique name associated to your webhook link.",
+                  label: { en: "Test Input" },
+                  placeholder: { en: "Enter a unique name associated to your webhook link." },
                   name: "test",
                   size: 12,
                 }
@@ -59,10 +58,22 @@ storiesOf('Layout|Connector', module)
                 children: "Submit"
               },
               {
+                component: "H1",
+                content: "Test H1 Content"
+              },
+              {
+                component: "H2",
+                content: "Test H2 Content"
+              },
+              {
+                component: "H3",
+                content: "Test H3 Content"
+              },
+              {
                 component: "Checkbox",
                 props: {
                   name: "reading",
-                  label: "Reading",
+                  label: { en: "Reading" },
                 }
               },
               {
@@ -81,7 +92,7 @@ storiesOf('Layout|Connector', module)
                   size: 'md',
                   multipleFiles: true,
                   icon: <CloudRain size={15} />,
-                  label: "S3 Dropzone",
+                  label: { en: "S3 Dropzone" },
                   outline: true,
                   onUploadFinish: (data) => { },
                   server: "https://3dgzy3koke.execute-api.eu-west-3.amazonaws.com",
@@ -99,7 +110,7 @@ storiesOf('Layout|Connector', module)
                   size: 'md',
                   multipleFiles: true,
                   icon: <CloudRain size={15} />,
-                  label: "S3 Filepicker",
+                  label: { en: "S3 Filepicker" },
                   outline: true,
                   onUploadFinish: (data) => { },
                   server: "https://3dgzy3koke.execute-api.eu-west-3.amazonaws.com",
@@ -113,36 +124,36 @@ storiesOf('Layout|Connector', module)
                 component: "FilePicker",
                 props: {
                   name: "myfile3",
-                  label: "Basic Filepicker",
+                  label: { en: "Basic Filepicker" },
                 }
               },
               {
                 component: "Radio",
                 props: {
                   name: "gender",
-                  label: "Male",
+                  label: { en: "Male" },
                 }
               },
               {
                 component: "Radio",
                 props: {
                   name: "gender",
-                  label: "Female",
+                  label: { en: "Female" },
                 }
               },
               {
                 component: "RichText",
                 props: {
                   name: "richtext1",
-                  label: "Enter Your Text in RichText",
+                  label: { en: "Enter Your Text in RichText" },
                 }
               },
               {
                 component: "SearchBar",
                 props: {
                   name: "search1",
-                  label: "Search Box",
-                  placeholder: "Search keyword",
+                  label: { en: "Search Box" },
+                  placeholder: { en: "Search keyword" },
                 }
               },
               {
@@ -184,14 +195,14 @@ storiesOf('Layout|Connector', module)
                 component: "Switch",
                 props: {
                   name: "switch1",
-                  label: "Switch"
+                  label: { en: "Switch" }
                 }
               },
               {
                 component: "Textarea",
                 props: {
                   name: "textarea1",
-                  label: "Textarea"
+                  label: { en: "Textarea" }
                 }
               }
             ],
@@ -204,12 +215,12 @@ storiesOf('Layout|Connector', module)
                   component: "Input",
                   props: {
                     type: "text",
-                    label: "Test Input",
-                    placeholder: "Enter a unique name associated to your webhook link.",
+                    label: { en: "Test Input" },
+                    placeholder: { en: "Enter a unique name associated to your webhook link." },
                     name: "test",
                     size: 12,
                   }
-                },
+                }
               ]
             },
             {
@@ -220,20 +231,32 @@ storiesOf('Layout|Connector', module)
                 {
                   component: "Select",
                   props: {
-                    label: "Favorite",
+                    label: { en: "Favorite" },
                     name: "favorite",
                     options: [
-                      { value: 'chocolate', label: 'Chocolate' },
-                      { value: 'strawberry', label: 'Strawberry' },
-                      { value: 'vanilla', label: 'Vanilla' },
+                      { value: 'chocolate', label: { en: 'Chocolate' } },
+                      { value: 'strawberry', label: { en: 'Strawberry' } },
+                      { value: 'vanilla', label: { en: 'Vanilla' } },
                     ]
                   }
+                },
+                {
+                  component: "H1",
+                  content: "Test H1 Content"
+                },
+                {
+                  component: "H2",
+                  content: "Test H2 Content"
+                },
+                {
+                  component: "H3",
+                  content: "Test H3 Content"
                 },
                 {
                   component: "Checkbox",
                   props: {
                     name: "writing",
-                    label: "Writing",
+                    label: { en: "Writing" },
                   }
                 },
                 {
@@ -251,7 +274,7 @@ storiesOf('Layout|Connector', module)
                     color: "primary",
                   },
                   children: "Submit"
-                }
+                },
               ]
             }],
             footer: {
@@ -294,8 +317,8 @@ storiesOf('Layout|Connector', module)
         component: "Input",
         props: {
           type: "text",
-          label: "Test Input",
-          placeholder: "Enter a unique name associated to your webhook link.",
+          label: { en: "Test Input" },
+          placeholder: { en: "Enter a unique name associated to your webhook link." },
           name: "test",
           size: 12,
         }
@@ -310,10 +333,22 @@ storiesOf('Layout|Connector', module)
         children: "Submit"
       },
       {
+        component: "H1",
+        content: "Test H1 Content"
+      },
+      {
+        component: "H2",
+        content: "Test H2 Content"
+      },
+      {
+        component: "H3",
+        content: "Test H3 Content"
+      },
+      {
         component: "Checkbox",
         props: {
           name: "reading",
-          label: "Reading",
+          label: { en: "Reading" },
         }
       },
       {
@@ -332,7 +367,7 @@ storiesOf('Layout|Connector', module)
           size: 'md',
           multipleFiles: true,
           icon: <CloudRain size={15} />,
-          label: "S3 Dropzone",
+          label: { en: "S3 Dropzone" },
           outline: true,
           onUploadFinish: (data) => { },
           server: "https://3dgzy3koke.execute-api.eu-west-3.amazonaws.com",
@@ -350,7 +385,7 @@ storiesOf('Layout|Connector', module)
           size: 'md',
           multipleFiles: true,
           icon: <CloudRain size={15} />,
-          label: "S3 Filepicker",
+          label: { en: "S3 Filepicker" },
           outline: true,
           onUploadFinish: (data) => { },
           server: "https://3dgzy3koke.execute-api.eu-west-3.amazonaws.com",
@@ -364,52 +399,87 @@ storiesOf('Layout|Connector', module)
         component: "FilePicker",
         props: {
           name: "myfile3",
-          label: "Basic Filepicker",
+          label: { en: "Basic Filepicker" },
         }
       },
       {
         component: "Radio",
         props: {
           name: "gender",
-          label: "Male",
+          label: { en: "Male" },
         }
       },
       {
         component: "Radio",
         props: {
           name: "gender",
-          label: "Female",
+          label: { en: "Female" },
         }
       },
       {
         component: "RichText",
         props: {
           name: "richtext1",
-          label: "Enter Your Text in RichText",
+          label: { en: "Enter Your Text in RichText" },
         }
       },
       {
         component: "SearchBar",
         props: {
           name: "search1",
-          label: "Search Box",
-          placeholder: "Search keyword",
+          label: { en: "Search Box" },
+          placeholder: { en: "Search keyword" },
         }
+      },
+      {
+        component: "ButtonGroup",
+        props: {
+          name: "test"
+        },
+        children: [
+          {
+            component: "Button",
+            props: {
+              type: "button",
+              name: "btn1",
+              color: "primary",
+            },
+            children: "Left"
+          },
+          {
+            component: "Button",
+            props: {
+              type: "button",
+              name: "btn2",
+              color: "primary",
+            },
+            children: "Middle"
+          },
+          {
+            component: "Button",
+            props: {
+              type: "button",
+              name: "btn3",
+              color: "primary",
+            },
+            children: "Right"
+          }
+        ]
       },
       {
         component: "Switch",
         props: {
           name: "switch1",
-          label: "Switch"
+          label: { en: "Switch" }
         }
       },
       {
         component: "Textarea",
         props: {
           name: "textarea1",
-          label: "Textarea"
+          label: { en: "Textarea" }
         }
-      }              
+      }
     ],
     tabs: [{
       name: {
@@ -420,12 +490,12 @@ storiesOf('Layout|Connector', module)
           component: "Input",
           props: {
             type: "text",
-            label: "Test Input",
-            placeholder: "Enter a unique name associated to your webhook link.",
+            label: { en: "Test Input" },
+            placeholder: { en: "Enter a unique name associated to your webhook link." },
             name: "test",
             size: 12,
           }
-        },                
+        }
       ]
     },
     {
@@ -436,20 +506,32 @@ storiesOf('Layout|Connector', module)
         {
           component: "Select",
           props: {
-            label: "Favorite",
+            label: { en: "Favorite" },
             name: "favorite",
             options: [
-              { value: 'chocolate', label: 'Chocolate' },
-              { value: 'strawberry', label: 'Strawberry' },
-              { value: 'vanilla', label: 'Vanilla' },
+              { value: 'chocolate', label: { en: 'Chocolate' } },
+              { value: 'strawberry', label: { en: 'Strawberry' } },
+              { value: 'vanilla', label: { en: 'Vanilla' } },
             ]
           }
+        },
+        {
+          component: "H1",
+          content: "Test H1 Content"
+        },
+        {
+          component: "H2",
+          content: "Test H2 Content"
+        },
+        {
+          component: "H3",
+          content: "Test H3 Content"
         },
         {
           component: "Checkbox",
           props: {
             name: "writing",
-            label: "Writing",
+            label: { en: "Writing" },
           }
         },
         {
@@ -467,7 +549,7 @@ storiesOf('Layout|Connector', module)
             color: "primary",
           },
           children: "Submit"
-        }
+        },
       ]
     }],
     footer: {
@@ -487,19 +569,6 @@ storiesOf('Layout|Connector', module)
             readOnly: true
           }}
         />
-      </Col>
-    </React.Fragment >
-  )).add('Example React From JOSN', () => (
-    <React.Fragment>
-      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>Layout - Connector</h4>
-        <br />
-        <p>This is layout connector.</p>
-        <hr />
-        <br />
-        <h6><strong>Example</strong></h6>
-        <hr />
-        <ConnectorJSON></ConnectorJSON>
       </Col>
     </React.Fragment >
   ));

@@ -31,6 +31,7 @@ export interface ConnectorProps {
             },
             badges: Array<{
                 color: BadgeProps['color'],
+                pill?: BadgeProps['pill'],
                 content: {
                     en: string,
                     fr?: string

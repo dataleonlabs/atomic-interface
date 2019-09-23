@@ -29,6 +29,9 @@ export interface TableColumnProps {
   /** Width column */
   width?: number
 
+  /** No dislay column when enable */
+  hide?: boolean
+
   togglingEnabled?: boolean
 
   /* tslint:disable */
@@ -56,7 +59,7 @@ export interface TableAdvancedColumnProps extends TableColumnProps {
 }
 
 export interface TableProps {
-  
+
   // id
   id?: string
 
@@ -65,6 +68,9 @@ export interface TableProps {
 
   /** Display in table */
   children: JSX.Element | JSX.Element[]
+
+  /** Overide ordering columns display */
+  orderingColumns?: string[]
 
   // Add striped css
   striped?: boolean
@@ -129,7 +135,7 @@ export interface TableProps {
 
   /** Add for advanced */
   rowSize?: 'default' | 'small' | 'large'
-  
+
   /* Pagination */
   pagination?: false | {
 
@@ -169,6 +175,12 @@ export interface TableProps {
 
   /** Banded Columns */
   columnBands?: any[]
+
+  /* sort direction */
+  orderWay?: 'asc' | 'desc'
+
+  /* sort by */
+  orderBy?: string
 }
 
 export interface TableCollectionProps extends TableProps, QueryProps {

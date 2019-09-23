@@ -2,6 +2,128 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.24.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.23.0...v1.24.0) (2019-09-23)
+
+
+### Bug Fixes
+
+* login story ([9421b4f](https://bitbucket.org/youngapp/ui-kit/commit/9421b4f))
+* test integration ([dfac251](https://bitbucket.org/youngapp/ui-kit/commit/dfac251))
+
+
+### Features
+
+* added component awscognito in index.ts ([d8c988c](https://bitbucket.org/youngapp/ui-kit/commit/d8c988c))
+
+## [1.23.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.22.0...v1.23.0) (2019-09-22)
+
+
+### Bug Fixes
+
+* sideserver ([6b96ff4](https://bitbucket.org/youngapp/ui-kit/commit/6b96ff4))
+
+## [1.22.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.21.0...v1.22.0) (2019-09-21)
+
+
+### Bug Fixes
+
+* add isomorphic-fetch ([3f87159](https://bitbucket.org/youngapp/ui-kit/commit/3f87159))
+* update css ([08b9701](https://bitbucket.org/youngapp/ui-kit/commit/08b9701))
+
+## [1.21.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.20.0...v1.21.0) (2019-09-20)
+
+
+### Bug Fixes
+
+* update code ([32ae0c2](https://bitbucket.org/youngapp/ui-kit/commit/32ae0c2))
+* update code ([0874f2f](https://bitbucket.org/youngapp/ui-kit/commit/0874f2f))
+
+## [1.20.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.19.0...v1.20.0) (2019-09-20)
+
+
+### Bug Fixes
+
+* label added in datepicker ([9bd4677](https://bitbucket.org/youngapp/ui-kit/commit/9bd4677))
+
+## [1.19.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.18.0...v1.19.0) (2019-09-19)
+
+
+### Bug Fixes
+
+* add template crm ([7fa3aca](https://bitbucket.org/youngapp/ui-kit/commit/7fa3aca))
+
+
+### Features
+
+* without cros domain ([ccc25a4](https://bitbucket.org/youngapp/ui-kit/commit/ccc25a4))
+
+## [1.18.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.17.0...v1.18.0) (2019-09-19)
+
+
+### Bug Fixes
+
+* component undefined ([2ef82bc](https://bitbucket.org/youngapp/ui-kit/commit/2ef82bc))
+* improve code ([75dc10a](https://bitbucket.org/youngapp/ui-kit/commit/75dc10a))
+* lint error ([ae3bbb5](https://bitbucket.org/youngapp/ui-kit/commit/ae3bbb5))
+* test case error ([2ebcc4f](https://bitbucket.org/youngapp/ui-kit/commit/2ebcc4f))
+
+
+### Features
+
+* add connector props ([7b5df42](https://bitbucket.org/youngapp/ui-kit/commit/7b5df42))
+* add cookieeStorage ([48b6f60](https://bitbucket.org/youngapp/ui-kit/commit/48b6f60))
+* connector ([95f3b04](https://bitbucket.org/youngapp/ui-kit/commit/95f3b04))
+* get user session and data ([491980c](https://bitbucket.org/youngapp/ui-kit/commit/491980c))
+* getUserSession ([b344474](https://bitbucket.org/youngapp/ui-kit/commit/b344474))
+* update task ([5a0b627](https://bitbucket.org/youngapp/ui-kit/commit/5a0b627))
+
+## [1.17.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.16.0...v1.17.0) (2019-09-17)
+
+
+### Bug Fixes
+
+* coverage test integration error ([28931f8](https://bitbucket.org/youngapp/ui-kit/commit/28931f8))
+* fixed the test case related issue ([567a347](https://bitbucket.org/youngapp/ui-kit/commit/567a347))
+* fixed the test case related issue ([ddafe44](https://bitbucket.org/youngapp/ui-kit/commit/ddafe44))
+* test case ([7412914](https://bitbucket.org/youngapp/ui-kit/commit/7412914))
+* update choose info ([3a2a2d9](https://bitbucket.org/youngapp/ui-kit/commit/3a2a2d9))
+* update choose info ([682d923](https://bitbucket.org/youngapp/ui-kit/commit/682d923))
+* well and table stories ([b5b9c78](https://bitbucket.org/youngapp/ui-kit/commit/b5b9c78))
+
+
+### Features
+
+* add basic conditionnals values ([1235551](https://bitbucket.org/youngapp/ui-kit/commit/1235551))
+* add props for choose component ([45901a4](https://bitbucket.org/youngapp/ui-kit/commit/45901a4))
+* add well and choose in index ([fadd7dc](https://bitbucket.org/youngapp/ui-kit/commit/fadd7dc))
+* added choose component working to add the test cases for the same ([86fc580](https://bitbucket.org/youngapp/ui-kit/commit/86fc580))
+* added the missing documentation to the choose component ([1c09110](https://bitbucket.org/youngapp/ui-kit/commit/1c09110))
+* conditional field in form controls ([b5ccc62](https://bitbucket.org/youngapp/ui-kit/commit/b5ccc62))
+* done with implementing the choose component along with relevant test cases ([0a09ca0](https://bitbucket.org/youngapp/ui-kit/commit/0a09ca0))
+* headtitle props ([0fadf6a](https://bitbucket.org/youngapp/ui-kit/commit/0fadf6a))
+* remove heading in well ([c5c9f2f](https://bitbucket.org/youngapp/ui-kit/commit/c5c9f2f))
+* well component ([12f54cc](https://bitbucket.org/youngapp/ui-kit/commit/12f54cc))
+* working to add the test cases for choose component ([6702961](https://bitbucket.org/youngapp/ui-kit/commit/6702961))
+
+## [1.16.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.15.0...v1.16.0) (2019-09-11)
+
+
+### Bug Fixes
+
+* added the codemirror to newly added component - step ([c7030e2](https://bitbucket.org/youngapp/ui-kit/commit/c7030e2))
+* changed name to collection from checkbox collection ([169bec2](https://bitbucket.org/youngapp/ui-kit/commit/169bec2))
+* documentation updated for signup - login - forgot password and applied documentation to new forgot password components ([a6af681](https://bitbucket.org/youngapp/ui-kit/commit/a6af681))
+* fixed alert icon design - AI-83 and AI-90 covered ([8051b84](https://bitbucket.org/youngapp/ui-kit/commit/8051b84))
+* minor fixes ([534aa77](https://bitbucket.org/youngapp/ui-kit/commit/534aa77))
+* removed gray color from alert icon border AI-83 ([18b3e7a](https://bitbucket.org/youngapp/ui-kit/commit/18b3e7a))
+* stories ccollection ([31ea158](https://bitbucket.org/youngapp/ui-kit/commit/31ea158))
+
+
+### Features
+
+* add stats informations props ([a3b3a22](https://bitbucket.org/youngapp/ui-kit/commit/a3b3a22))
+* signup component ([a8f6157](https://bitbucket.org/youngapp/ui-kit/commit/a8f6157))
+
 ## [1.15.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.14.0...v1.15.0) (2019-09-09)
 
 

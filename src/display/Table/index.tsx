@@ -81,8 +81,8 @@ class Table extends React.Component<Props, State> {
 
   public state = {
     selected: [],
-    sortDirection: 'asc' as State['sortDirection'],
-    sortField: ''
+    sortDirection: this.props.orderWay || 'asc' as State['sortDirection'],
+    sortField: this.props.orderBy||''
   }
 
   /**
@@ -90,17 +90,41 @@ class Table extends React.Component<Props, State> {
    */
   public columns = () => {
     const columns: Column[] = [];
-    React.Children.map(this.props.children, (child) => {
-      if (React.isValidElement(child)) {
-        const childProps = child.props as any;
-        if (childProps && childProps.field) {
-          columns.push({
-            title: childProps.children,
-            name: childProps.field,
-          });
-        }
+    if (this.props.orderingColumns && this.props.orderingColumns.length) /* istanbul ignore next */ {
+      for (const orderingColumn of this.props.orderingColumns) {
+        React.Children.map(this.props.children, (child) => {
+          if (React.isValidElement(child)) {
+            const childProps = child.props as any;
+            if (orderingColumn === childProps.field) {
+              // Check hidden column
+              if (childProps.hide !== true) {
+                if (childProps && childProps.field) {
+                  columns.push({
+                    title: childProps.children,
+                    name: childProps.field,
+                  });
+                }
+              }
+            }
+          }
+        }); 
       }
-    });
+    } else {
+      React.Children.map(this.props.children, (child) => {
+        if (React.isValidElement(child)) {
+          const childProps = child.props as any;
+          // Check hidden column
+          if (childProps.hide !== true) {
+            if (childProps && childProps.field) {
+              columns.push({
+                title: childProps.children,
+                name: childProps.field,
+              });
+            }
+          }
+        }
+      });
+    }
     return columns;
   }
 
@@ -170,7 +194,7 @@ class Table extends React.Component<Props, State> {
           const childProps = child.props as any;
           if (childProps && childProps.field) {
             let cellValue = row[childProps.field];
-            
+
             // format cell value
             if ((typeof childProps.formatter === 'function') && (typeof row[childProps.field] === 'string')) /* istanbul ignore next */ {
               cellValue = childProps.formatter(cellValue, row);

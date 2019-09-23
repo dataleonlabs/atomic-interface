@@ -1,5 +1,6 @@
 import AuthInterface from '../AuthInterface';
 import Amplify, { Auth } from 'aws-amplify';
+//import CookieStorage from './CookieStorage';
 
 /**
  * AWSCognito
@@ -11,8 +12,43 @@ export default class AWSCognito implements AuthInterface {
      * @param options optons aws
      */
     public configure(options: any) {
-        Amplify.configure({ options });
-        return Auth.configure(options);
+        Amplify.configure({ ...options });
+        return Auth.configure({
+            ...options,
+
+            // // OPTIONAL - Configuration for cookie storage
+            // // Note: if the secure flag is set to true, then the cookie transmission requires a secure protocol
+            // cookieStorage: {
+            //     // REQUIRED - Cookie domain (only required if cookieStorage is provided)
+            //     domain: window.location, // get domain hear
+            //     // OPTIONAL - Cookie path
+            //     path: '/',
+            //     // OPTIONAL - Cookie expiration in days
+            //     expires: 365,
+            //     // OPTIONAL - Cookie secure flag
+            //     // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
+            //     secure: false
+            // },
+            // storage: new CookieStorage({ secure: false, domain: window.location }),
+        });
+    }
+
+    /**
+     * get current user session
+     */
+    public async getCurrentUser() {
+        return await Auth.currentSession().then(data => {
+            return data;
+        }).catch(() => { return false; })
+    }
+
+    /**
+     * get current authenticated user
+     */
+    public async isLogged() {
+        return await Auth.currentAuthenticatedUser().then(data => {
+            return data;
+        }).catch(() => { return false; })
     }
 
     /**

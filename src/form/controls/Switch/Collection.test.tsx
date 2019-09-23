@@ -1,8 +1,10 @@
-import 'whatwg-fetch';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import * as React from 'react'
 import * as enzyme from 'enzyme'
 import SwitchCollection from './Collection'
 import sinon from 'sinon';
+import Form from './../../index'
 
 const gb = global as any;
 
@@ -22,19 +24,23 @@ describe('<SwitchCollection />', () => {
     });
 
     const wrapper = enzyme.mount(
-      <SwitchCollection
-        apiKey="xxx"
-        apiUrl="test"
-        type="update"
-        model="Playlist"
-        name="switch1"
-        label="Switch Collection"
-        fieldId={{key: "id", value: "1"}}
-        fieldUpdate="active"        
-        onLoading={event}
-        onLoaded={event}
-        onError={event}>
-      </SwitchCollection>
+      <Form>
+        {(_) => (
+          <SwitchCollection
+            apiKey="xxx"
+            apiUrl="test"
+            type="update"
+            model="Playlist"
+            name="switch1"
+            label="Switch Collection"
+            fieldId={{ key: "id", value: "1" }}
+            fieldUpdate="active"
+            onLoading={event}
+            onLoaded={event}
+            onError={event}>
+          </SwitchCollection>
+        )}
+      </Form>
     )
 
     expect(wrapper.find(SwitchCollection)).toHaveLength(1);

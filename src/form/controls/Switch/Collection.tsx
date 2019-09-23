@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { CustomInput } from 'reactstrap';
+import { CustomInput, FormText } from 'reactstrap';
 import { SwitchCollectionProps as Props } from './props';
 import Control from '../../Control';
 import { APIGatewayFetch } from 'yap-sdk';
+import { Field, FieldProps } from 'formik';
+import { FormControlHelper } from '../../formControlHelper';
 
 /**
  * Collection render element
@@ -66,18 +68,40 @@ const Collection = (props: Props) => {
     }
   }
 
+  const renderField = ({ field, form: { values, submitCount, errors } }: FieldProps<{}>) => {
+
+    const objFormControlHelper=new FormControlHelper();
+    if(objFormControlHelper.checkConditional(props.conditionnals, values)){
+      return <></>;
+    }
+
+    return (
+      <Control {...props} label={undefined} type="text">
+        <CustomInput
+          {...rest}
+          {...field}
+          id={props.name}
+          loading={String(loading)}
+          onClick={onClick}
+          invalid={submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)}
+          defaultChecked={value || false}
+          type='switch'
+        />
+        {submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
+          && <FormText color="danger">{errors[props.name]}</FormText>
+        }
+        <>{children}</>
+      </Control>
+    )
+  }
+
   return (
-    <Control {...props} label={undefined} type="text">
-      <CustomInput
-        {...rest}
-        id={props.name}
-        loading={String(loading)}
-        onClick={onClick}
-        defaultChecked={value || false}
-        type='switch'
-      />
-      <>{children}</>
-    </Control>
+    <Field
+      {...props}
+      id={props.name}
+      render={renderField}
+    />
+
   )
 }
 

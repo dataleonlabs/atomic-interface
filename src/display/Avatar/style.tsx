@@ -22,6 +22,6 @@ export const StyledImage = styled.span<{ size: AvatarProps['size'] }>`
   }
 
   .square {
-    border-radius: 0px !important;
+    border-radius: 3px !important;
   }
 `;
