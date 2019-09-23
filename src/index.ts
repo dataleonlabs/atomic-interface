@@ -189,6 +189,7 @@ export { makeId } from './utils';
 export { default as Query } from './utils/Query';
 export { QueryProps } from './utils/Query/props';
 export { default as AuthInterface } from './utils/AuthProvider/AuthInterface';
+export { default as AWSCognito } from './utils/AuthProvider/AWSCongito';
 
 // Layout
 export { default as Login } from './layout/Auth/Login';

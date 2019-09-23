@@ -10,13 +10,6 @@ import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 require('codemirror/mode/jsx/jsx');
 
-var reindent = function(cm) {
-  var lines = cm.lineCount();
-  for (var i = 0; i < lines; i++) {
-    cm.indentLine(i);
-  };
-}
-
 storiesOf('Layout|Forgot Password', module)
   .add('Example', () => (
     <React.Fragment>

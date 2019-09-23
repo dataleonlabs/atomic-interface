@@ -22,8 +22,8 @@ var detectUser = async function () {
     "region": "eu-central-1",
     "userPoolId": "eu-central-1_5jBnZEuMX",
     "userPoolWebClientId": "543up50u5glbg9qlpkuhop779t",
-  });  
-  let res = await awsCognito.isLogged();  
+  });
+  let res = await awsCognito.isLogged();
   document.getElementById("result").innerHTML = JSON.stringify(res);
 }
 
@@ -33,8 +33,8 @@ var detectSession = async function () {
     "region": "eu-central-1",
     "userPoolId": "eu-central-1_5jBnZEuMX",
     "userPoolWebClientId": "543up50u5glbg9qlpkuhop779t",
-  });  
-  let res = await awsCognito.getCurrentUser();  
+  });
+  let res = await awsCognito.getCurrentUser();
   document.getElementById("result").innerHTML = JSON.stringify(res);
 }
 
@@ -110,12 +110,12 @@ provider={{
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
         <h4>Layout - Login</h4>
         <br />
-        <p>Add Login feature and relevant styles with following component. Customize the content like header and subtitle content.</p>
+        <p>Detecting existing login sessio and user.</p>
         <hr />
         <br />
-        <h6><strong>Example</strong></h6>
+        <h6><strong>Example | Detect Authenticated User and Retrive Session</strong></h6>
         <hr />
-        <Button color="primary" onClick={detectUser}>Detect User</Button>        
+        <Button color="primary" onClick={detectUser}>Detect Authenticated User</Button>
         <Button color="success" onClick={detectSession}>Get Current User Seesion</Button>
         <div id="result">
         </div>
