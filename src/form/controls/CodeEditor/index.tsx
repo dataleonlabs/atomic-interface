@@ -1,11 +1,11 @@
 /* istanbul ignore next */
 import * as React from 'react'
 import { debounce } from 'ts-debounce'
-import { CodeEditorProps as Props } from './props'
 import { Field, FieldProps } from 'formik';
 import Control from '../../Control';
 import { StyledLabel } from './style';
-import * as monaco from 'monaco-editor';
+import  * as monaco  from 'monaco-editor';
+import { CodeEditorProps as Props } from './props'
 
 /* istanbul ignore next */
 class CodeEditor extends React.PureComponent<Props> {
