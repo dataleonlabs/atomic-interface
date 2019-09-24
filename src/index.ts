@@ -106,9 +106,6 @@ export { default as CheckBoxGroup } from './form/controls/Checkbox/CheckBoxGroup
 export { default as CheckBoxCollection } from './form/controls/Checkbox/Collection';
 export { CheckboxProps, CheckboxCollectionProps } from './form/controls/Checkbox/props';
 
-export { default as CodeEditor } from './form/controls/CodeEditor'
-export { CodeEditorProps } from './form/controls/CodeEditor/props'
-
 export { default as DatePicker } from './form/controls/DatePicker'
 export { DatePickerProps } from './form/controls/DatePicker/props'
 
