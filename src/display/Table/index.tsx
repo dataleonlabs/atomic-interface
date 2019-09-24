@@ -31,7 +31,8 @@ import {
   IntegratedSelection,
   SelectionState,
   VirtualTableState,
-  SearchState
+  SearchState,
+  CustomPaging
 } from "@devexpress/dx-react-grid";
 import { ArrowUp, ArrowDown } from "react-feather";
 import TableAdvanced from "./TableAdvanced";
@@ -82,7 +83,7 @@ class Table extends React.Component<Props, State> {
   public state = {
     selected: [],
     sortDirection: this.props.orderWay || 'asc' as State['sortDirection'],
-    sortField: this.props.orderBy||''
+    sortField: this.props.orderBy || ''
   }
 
   /**
@@ -107,7 +108,7 @@ class Table extends React.Component<Props, State> {
               }
             }
           }
-        }); 
+        });
       }
     } else {
       React.Children.map(this.props.children, (child) => {
@@ -327,6 +328,7 @@ class Table extends React.Component<Props, State> {
           />}
 
           {this.props.pagination && /* istanbul ignore next */ <PagingPanel pageSizes={this.props.pagination.pageSizes || [10, 30, 100]} />}
+          {this.props.pagination && /* istanbul ignore next */ <CustomPaging totalCount={this.props.pagination.total || 0} />}
           {this.props.selectable && /* istanbul ignore next */ <TableSelection
             selectByRowClick={this.props.selectByRowClick}
             showSelectAll={this.props.showSelectAll}
