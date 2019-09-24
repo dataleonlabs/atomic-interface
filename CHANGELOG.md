@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.25.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.24.0...v1.25.0) (2019-09-24)
+
+
+### Bug Fixes
+
+* coverage ([be04ba9](https://bitbucket.org/youngapp/ui-kit/commit/be04ba9))
+* remove code-editor on src/index.ts ([ea12b2b](https://bitbucket.org/youngapp/ui-kit/commit/ea12b2b))
+
 ## [1.24.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.23.0...v1.24.0) (2019-09-23)
 
 
