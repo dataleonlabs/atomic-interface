@@ -48,7 +48,7 @@ class DatePicker extends React.PureComponent<Props> {
       }
 
       return (
-        <Control {...this.props}>
+        <Control {...this.props} label={undefined}>
           <React.Fragment>
             <StyledReactDatePickerContainer>
               <ReactDatePicker  {...this.props.options} disabled={this.props.disabled} dateFormat={this.props.dateFormat} selected={this.state.startDate} {...field} onChange={this.handleChange} />
@@ -59,13 +59,11 @@ class DatePicker extends React.PureComponent<Props> {
     }
 
     return (
-      <Control {...this.props} label={undefined}>
-        <Field
-          {...this.props}
-          id={this.props.name}
-          render={renderField}
-        />
-      </Control>
+      <Field
+        {...this.props}
+        id={this.props.name}
+        render={renderField}
+      />
     )
   }
 }

@@ -6,7 +6,10 @@ import Form from './../../index';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 import Radio from '../Radio';
+import Input from '../Input';
+import Button from '../Button';
 require('codemirror/mode/jsx/jsx');
+
 storiesOf('Forms|DatePicker', module)
   .add('Example', () => (
     <React.Fragment>
@@ -172,7 +175,7 @@ storiesOf('Forms|DatePicker', module)
                 }}
                 name="datepicker"
               />
-              <br /><code>values: {JSON.stringify(values.values)}</code><br />
+              <br /><code>values: {JSON.stringify(values)}</code><br />
             </>
           )}
         </Form>
@@ -225,4 +228,60 @@ storiesOf('Forms|DatePicker', module)
         />
       </Col>
     </React.Fragment>
+  )).add('Example Form Value', () => (
+    <React.Fragment>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h2>DatePicker</h2>
+        <br />
+        <hr />
+        <p>The datepicker is tied to a standard form input field. Focus on the input (click, or use the tab key) to open an interactive calendar in a small overlay. Read the <a href="https://jqueryui.com/datepicker/" target="_blank">Official jQuery UI Datepicker Documentation</a> for a full list of instructions and other options.</p>
+        <br />
+        <h4>Basic Example</h4>
+        <br />
+        <p>Choose a date, click elsewhere on the page (blur the input), or hit the Esc key to close. If a date is chosen, feedback is shown as the input's value.</p>
+        <hr />
+        <h6><strong>Example</strong></h6>
+        <hr />
+        <Form
+          onSubmit={(values) => {
+            var datePicker = document.getElementsByName('datepicker')[0];
+            const newVal = { ...values, datepicker: datePicker['value'] }
+            alert(JSON.stringify(newVal));
+          }}>
+          {(_) => (
+            <>
+              <Input name="name" type="text" label="Sample Input" />
+              <DatePicker id="dp" label="Choose Date" dateFormat="yyyy/MM/dd" name="datepicker" /><br />
+              <Button type="submit">Display Value</Button>
+            </>
+          )}
+        </Form>
+        <br />
+        <br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`<Form
+  onSubmit={(values) => {
+    var datePicker=document.getElementsByName('datepicker')[0];
+    const newVal={...values, datepicker: datePicker['value']}
+    alert(JSON.stringify(newVal));
+  }}>
+  {(_) => (
+    <>
+      <Input name="name" type="text" label="Sample Input" />
+      <DatePicker id="dp" label="Choose Date" dateFormat="yyyy/MM/dd" name="datepicker" /><br />
+      <Button type="submit">Display Value</Button>
+    </>
+  )}
+  </Form>`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            readOnly: true
+          }}
+        />
+      </Col>
+    </React.Fragment>
   ));
+
