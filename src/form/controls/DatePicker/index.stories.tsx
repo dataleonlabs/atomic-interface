@@ -6,6 +6,8 @@ import Form from './../../index';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 import Radio from '../Radio';
+import Input from '../Input';
+import Button from '../Button';
 require('codemirror/mode/jsx/jsx');
 storiesOf('Forms|DatePicker', module)
   .add('Example', () => (
@@ -22,9 +24,18 @@ storiesOf('Forms|DatePicker', module)
         <hr />
         <h6><strong>Example</strong></h6>
         <hr />
-        <Form>
-          {(_) => (
-            <DatePicker label="Choose Date" dateFormat="yyyy/MM/dd" name="datepicker" />
+        <Form
+        initialValues={{ datepicker: new Date() }}
+          onSubmit={(values) => {
+            alert(JSON.stringify(values));
+          }}
+        >
+          {(values) => (
+            <>              
+              <DatePicker label="Choose Date" dateFormat="yyyy/MM/dd" name="date" />
+              <Button type="submit">Submit</Button><br />
+              <code>values: {JSON.stringify(values.values)}</code><br />
+            </>
           )}
         </Form>
         <br />
@@ -32,8 +43,21 @@ storiesOf('Forms|DatePicker', module)
         <h6><strong>Code</strong></h6>
         <hr />
         <CodeMirror
-          value={`
-<DatePicker label="Choose Date" dateFormat="yyyy/MM/dd" name="datepicker" />
+          value={`<Form
+  initialValues={{ datepicker: new Date() }}
+    onSubmit={(values) => {
+      alert(JSON.stringify(values));
+    }}
+  >
+    {(values) => (
+      <>
+        <Input name="test" id="test" />
+        <DatePicker label="Choose Date" dateFormat="yyyy/MM/dd" name="date" />
+        <Button type="submit">Submit</Button>
+        <code>values: {JSON.stringify(values.values)}</code><br />
+      </>
+    )}
+</Form>
 `}
           options={{
             mode: 'jsx',

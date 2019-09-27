@@ -19,28 +19,27 @@ class DatePicker extends React.PureComponent<Props> {
   }
 
   constructor(props: Props) {
-    super(props);
-    this.state = {
-      startDate: new Date()
-    };
-    this.handleChange = this.handleChange.bind(this);
+    super(props);    
+    this.handleChange.bind(this);
   }
 
-  public componentDidMount() {
+  componentDidMount(){
+    this.handleChange.bind(this);
   }
-
 
   /* istanbul ignore next */
-  public handleChange(date: Date) /* istanbul ignore next */ {
+  public handleChange = (setFieldValue: FieldProps<{}>['form']['setFieldValue']) => async (date: Date) /* istanbul ignore next  */ => {
+    setFieldValue(this.props.name, date);
     this.setState({
       startDate: date
     });
     /* istanbul ignore next */
     this.handleChange = this.handleChange.bind(this);
   }
+
   public render() {
 
-    const renderField = ({ field, form: { values } }: FieldProps<{}>) => {
+    const renderField = ({ field, form: { values, setFieldValue } }: FieldProps<{}>) => {
 
       const objFormControlHelper = new FormControlHelper();
       if (objFormControlHelper.checkConditional(this.props.conditionnals, values)) {
@@ -48,10 +47,10 @@ class DatePicker extends React.PureComponent<Props> {
       }
 
       return (
-        <Control {...this.props}>
+        <Control {...this.props} label={undefined}>
           <React.Fragment>
             <StyledReactDatePickerContainer>
-              <ReactDatePicker  {...this.props.options} disabled={this.props.disabled} dateFormat={this.props.dateFormat} selected={this.state.startDate} {...field} onChange={this.handleChange} />
+              <ReactDatePicker  {...this.props.options} disabled={this.props.disabled} dateFormat={this.props.dateFormat} selected={this.state.startDate} {...field} onChange={this.handleChange(setFieldValue)} />
             </StyledReactDatePickerContainer>
           </React.Fragment>
         </Control>
