@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.28.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.27.0...v1.28.0) (2019-09-27)
+
+
+### Bug Fixes
+
+* select multi select ([6f1aeb3](https://bitbucket.org/youngapp/ui-kit/commit/6f1aeb3))
+
 ## [1.27.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.26.0...v1.27.0) (2019-09-27)
 
 
