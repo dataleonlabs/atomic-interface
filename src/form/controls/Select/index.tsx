@@ -13,13 +13,29 @@ import { FormControlHelper } from '../../formControlHelper';
 const Select = (props: Props) => {
   const CustomSelect: React.ReactType = props.creatable ? StyledCreatableSelect : StyledSelectBase;
   const renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) /* istanbul ignore next  */ => {
-    /* istanbul ignore next  */
-    const onChange = (option: Option) /* istanbul ignore next  */ => /* istanbul ignore next  */ setFieldValue(field.name, option.value);
 
-    const objFormControlHelper=new FormControlHelper();
-    if(objFormControlHelper.checkConditional(props.conditionnals, values)){
+
+    /* istanbul ignore next  */
+    const onChange = (option: Option) /* istanbul ignore next  */ => {
+
+      /* istanbul ignore next  */
+      if (Array.isArray(option)) {                
+        let items: string[]; items=[];
+        option.map((item) => {
+          items.push(item.value);
+        });
+        setFieldValue(field.name, items);
+      } else {        
+        setFieldValue(field.name, option.value);
+      }
+    }
+
+    const objFormControlHelper = new FormControlHelper();
+    if (objFormControlHelper.checkConditional(props.conditionnals, values)) {
       return <></>;
     }
+
+    console.info(field);
 
     return (
       <Control {...props}>
