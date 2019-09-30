@@ -55,6 +55,8 @@ class CodeEditor extends React.PureComponent<Props> {
 
       editor.languages.registerCodeLensProvider(this.props.mode, {
         provideCodeLenses: function (model, token) {
+          console.log("model", model);
+          console.log("token", token);
           return [
             {
               range: {
@@ -72,6 +74,8 @@ class CodeEditor extends React.PureComponent<Props> {
           ];
         },
         resolveCodeLens: function (model, codeLens, token) {
+          console.log("model", model);
+          console.log("token", token);
           return codeLens;
         }
       });
