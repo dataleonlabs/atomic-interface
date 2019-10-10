@@ -23,6 +23,8 @@ export interface CheckboxProps extends InputProps {
     * 
     */
     conditionnals?: { [key: string]: any };
+
+    allText?: string
 }
 
 export interface CheckboxCollectionProps extends QueryProps {

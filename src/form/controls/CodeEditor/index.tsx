@@ -4,7 +4,7 @@ import { debounce } from 'ts-debounce'
 import { Field, FieldProps } from 'formik';
 import Control from '../../Control';
 import { StyledLabel } from './style';
-import  * as monaco  from 'monaco-editor';
+import * as monaco from 'monaco-editor';
 import { CodeEditorProps as Props } from './props'
 
 /* istanbul ignore next */
@@ -18,7 +18,8 @@ class CodeEditor extends React.PureComponent<Props> {
     height: "400px",
     name: "codeeditor",
     label: "Code Editor",
-    colorScheme: "vs"
+    colorScheme: "vs",
+    codeLense: true
   }
 
   /* istanbul ignore next */
@@ -28,7 +29,7 @@ class CodeEditor extends React.PureComponent<Props> {
 
   /* istanbul ignore next */
   public onChange = (newValue: string) /* istanbul ignore next */ /* istanbul ignore next */ => {
-    if (this.props.onChange) {
+    if (typeof this.props.onChange === "function") {
       this.props.onChange({
         name: this.props.name,
         value: newValue,
@@ -37,13 +38,48 @@ class CodeEditor extends React.PureComponent<Props> {
     }
   }
 
-  /* istanbul ignore next */
-  public editorDidMount = (editor: any) /* istanbul ignore next */ => {
-    setTimeout(() /* istanbul ignore next */ => {
+  public editorDidMount = (editor: any) => {
+    setTimeout(() => {
       alert("hello");
       editor.getAction('editor.action.formatDocument').run();
       editor.focus();
     }, 300);
+
+    if (this.props.codeLens && this.props.mode) {
+
+      var commandId = editor.addCommand(0, function () {
+        // services available in `ctx`
+        alert('my command is executing!');
+
+      }, '');
+
+      editor.languages.registerCodeLensProvider(this.props.mode, {
+        provideCodeLenses: function (model, token) {
+          console.log("model", model);
+          console.log("token", token);
+          return [
+            {
+              range: {
+                startLineNumber: 1,
+                startColumn: 1,
+                endLineNumber: 2,
+                endColumn: 1
+              },
+              id: "First Line",
+              command: {
+                id: commandId,
+                title: "First Line",
+              }
+            }
+          ];
+        },
+        resolveCodeLens: function (model, codeLens, token) {
+          console.log("model", model);
+          console.log("token", token);
+          return codeLens;
+        }
+      });
+    }
   }
 
   /* istanbul ignore next */
@@ -77,13 +113,17 @@ class CodeEditor extends React.PureComponent<Props> {
       },
     });
     this.Editor.setModel(model);
+
     model.onDidChangeContent(debounce(() /* istanbul ignore next */ => {
-      this.props.onChange({
-        name: this.props.name,
-        value: model.getValue(),
-        error: false,
-      })
+      if (typeof this.props.onChange === "function") {
+        this.props.onChange({
+          name: this.props.name,
+          value: model.getValue(),
+          error: false,
+        })
+      }
     }, 2000));
+
   }
 
   /* istanbul ignore next */
