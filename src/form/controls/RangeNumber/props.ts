@@ -6,9 +6,12 @@ import { InputProps as InputPropsBase } from 'reactstrap';
  *   <Input name={'firstName'} label={'First Name'}>
  */
 
-export interface AutoSuggestProps extends InputPropsBase {    
+export interface RangeNumberProps extends InputPropsBase {
+  name: string
 
-  name: string  
+  /** Type of input default value is text */
+  type:
+  | 'number'
 
   /** Current label displayed */
   label?: string | JSX.Element
@@ -35,7 +38,13 @@ export interface AutoSuggestProps extends InputPropsBase {
   controlSize?: number
 
   /** Hide current input */
-  hide?: boolean  
+  hide?: boolean
+
+  /** Input Group left with InputGroupAddon */
+  leftAddon?: string | JSX.Element
+
+  /** Input Group right with InputGroupAddon */
+  rightAddon?: string | JSX.Element
 
   /** Disabled field */
   disabled?: boolean
@@ -61,6 +70,9 @@ export interface AutoSuggestProps extends InputPropsBase {
    */
   conditionnals?: { [key: string]: any };
 
-  suggesions?: any;
+  /** set minimum range value */
+  min: number
 
+  /** set maximum range value */
+  max: number
 }
