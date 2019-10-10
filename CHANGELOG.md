@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.29.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.28.0...v1.29.0) (2019-10-10)
+
+
+### Bug Fixes
+
+* build error codeLense ([0082fc5](https://bitbucket.org/youngapp/ui-kit/commit/0082fc5))
+* checkboxgroup error fix ([2407d69](https://bitbucket.org/youngapp/ui-kit/commit/2407d69))
+
+
+### Features
+
+* codelense in codeeditor ([0472d42](https://bitbucket.org/youngapp/ui-kit/commit/0472d42))
+
 ## [1.28.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.27.0...v1.28.0) (2019-09-27)
 
 
