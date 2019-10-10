@@ -33,9 +33,7 @@ const Select = (props: Props) => {
     const objFormControlHelper = new FormControlHelper();
     if (objFormControlHelper.checkConditional(props.conditionnals, values)) {
       return <></>;
-    }
-
-    console.info(field);
+    }    
 
     return (
       <Control {...props}>
@@ -43,6 +41,7 @@ const Select = (props: Props) => {
           <CustomSelect
             {...props}
             {...field}
+            readonly={props.readOnly}
             className='react-select-container'
             classNamePrefix="react-select"
             options={props.options}
