@@ -30,7 +30,7 @@ storiesOf('Forms|Select', module)
           <hr />
           <h6><strong>Example</strong></h6>
           <hr />
-          <Form            
+          <Form
             onSubmit={(values) => {
               alert(JSON.stringify(values));
             }}
@@ -39,7 +39,7 @@ storiesOf('Forms|Select', module)
               <>
                 <Select
                   isClearable
-                  creatable                  
+                  creatable
                   name={'favorite'}
                   options={options}
                 />
@@ -100,7 +100,7 @@ storiesOf('Forms|Select', module)
           <hr />
           <h6><strong>Example</strong></h6>
           <hr />
-          <Form            
+          <Form
             onSubmit={(values) => {
               alert(JSON.stringify(values));
             }}
@@ -306,6 +306,77 @@ storiesOf('Forms|Select', module)
     type: 'fruits'
   }}
 />`}
+            options={{
+              mode: 'jsx',
+              lineNumbers: false,
+              readOnly: true
+            }}
+          />
+        </Col>
+      </React.Fragment>
+    )
+  }).add('readOnly Example ', () => {
+    const options = [
+      { value: 'chocolate', label: 'Chocolate' },
+      { value: 'strawberry', label: 'Strawberry' },
+      { value: 'vanilla', label: 'Vanilla' },
+    ];
+    return (
+      <React.Fragment>
+        <Col sm={6} style={{ marginTop: 30, marginLeft: 30 }}>
+          <h2>Form Elements - Select</h2>
+          <br />
+          <hr />
+          <p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
+          <br />
+          <h4>readOnly Example</h4>
+          <br />
+          <p>Custom select element with different <code>{`options`}</code>.</p>
+          <hr />
+          <h6><strong>Example</strong></h6>
+          <hr />
+          <Form
+            onSubmit={(values) => {
+              alert(JSON.stringify(values));
+            }}
+          >
+            {(values) => (
+              <>
+                <Select
+                  readOnly={true}                  
+                  isClearable
+                  creatable
+                  name={'favorite'}
+                  options={options}
+                />
+                <Button type="submit">Submit</Button><br />
+                <code>values: {JSON.stringify(values.values)}</code><br />
+              </>
+            )}
+          </Form>
+          <br />
+          <br />
+          <h6><strong>Code</strong></h6>
+          <hr />
+          <CodeMirror
+            value={`<Form            
+  onSubmit={(values) => {
+    alert(JSON.stringify(values));
+  }}
+  >
+  {(values) => (
+    <>
+      <Select
+        isClearable
+        creatable                  
+        name={'favorite'}
+        options={options}
+      />
+      <Button type="submit">Submit</Button><br />
+      <code>values: {JSON.stringify(values.values)}</code><br />
+    </>
+  )}
+</Form>`}
             options={{
               mode: 'jsx',
               lineNumbers: false,

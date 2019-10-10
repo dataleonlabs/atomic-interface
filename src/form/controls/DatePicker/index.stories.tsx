@@ -70,15 +70,15 @@ storiesOf('Forms|DatePicker', module)
   )).add('Disabled', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
-        <h4>DatePicker - Disabled</h4>
+        <h4>DatePicker - readOnly</h4>
         <br />
-        <p>Add <code>disabled={`{true}`}</code> property to make datepicker component disbale.</p>
+        <p>Add <code>readOnly={`{true}`}</code> property to make datepicker component disbale.</p>
         <hr />
         <h6><strong>Example</strong></h6>
         <hr />
         <Form>
           {(_) => (
-            <DatePicker label="Choose Date" disabled={true} dateFormat="yyyy/MM/dd" name="datepicker" />
+            <DatePicker label="Choose Date" readOnly={true} dateFormat="yyyy/MM/dd" name="datepicker" />
           )}
         </Form>
         <br />
@@ -87,7 +87,7 @@ storiesOf('Forms|DatePicker', module)
         <hr />
         <CodeMirror
           value={`
-<DatePicker label="Choose Date" disabled={true} dateFormat='yyyy/MM/dd' name='datepicker' />
+<DatePicker label="Choose Date" readOnly={true} dateFormat='yyyy/MM/dd' name='datepicker' />
 `}
           options={{
             mode: 'jsx',
@@ -176,7 +176,7 @@ storiesOf('Forms|DatePicker', module)
 
               <DatePicker
                 label="Disabled DatePicker"
-                disabled={true}
+                readOnly={true}
                 dateFormat="yyyy/MM/dd"
                 conditionnals={{
                   type: 'disabled'

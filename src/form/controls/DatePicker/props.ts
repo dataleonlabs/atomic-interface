@@ -27,4 +27,6 @@ export interface DatePickerProps extends InputProps {
     * 
     */
     conditionnals?: { [key: string]: any };
+
+    readOnly?: boolean
 }
