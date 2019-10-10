@@ -40,8 +40,8 @@ const CheckBoxGroup = (props: Props) => {
           <>
             <CustomInput
               type='checkbox'
-              id='all'
-              label={'all'}
+              id={name}
+              label={props.allText || 'all'}
               checked={JSON.stringify(props.options.sort()) === JSON.stringify(value.sort())}
               onChange={handleAllChange}
               onBlur={onBlur}
