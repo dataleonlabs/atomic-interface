@@ -41,6 +41,7 @@ const Select = (props: Props) => {
           <CustomSelect
             {...props}
             {...field}
+            readonly={props.readOnly}
             className='react-select-container'
             classNamePrefix="react-select"
             options={props.options}

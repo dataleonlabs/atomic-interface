@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import RangeNumber from './index';
+import RangeInput from './index';
 import { Col } from 'reactstrap';
-import Form from './../../index';
+import Form from '../../index';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 require('codemirror/mode/jsx/jsx');
 
-storiesOf('Forms|RangeNumber', module)
+storiesOf('Forms|RangeInput', module)
   .add('Basic Example', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
@@ -24,7 +24,7 @@ storiesOf('Forms|RangeNumber', module)
         <hr />
         <Form>
           {(_) => (
-            <RangeNumber type="number" min={0} max={125} name={'age'} label={'Enter Your Age'} placeholder={'Enter Number Only'} />
+            <RangeInput type="number" min={0} max={125} name={'age'} label={'Enter Your Age'} placeholder={'Enter Number Only'} />
           )}
         </Form>
         <br />
@@ -33,7 +33,7 @@ storiesOf('Forms|RangeNumber', module)
         <hr />
         <CodeMirror
           value={`
-<RangeNumber type="number" min="0" max="125" name={'age'} label={'Enter Your Age'} placeholder={'Enter Number Only'} />
+<RangeInput type="number" min="0" max="125" name={'age'} label={'Enter Your Age'} placeholder={'Enter Number Only'} />
 `}
           options={{
             mode: 'jsx',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 import { InputGroup, FormGroup, FormText } from 'reactstrap';
-import { RangeNumberProps as Props } from './props';
+import { RangeInputProps as Props } from './props';
 import Control from '../../Control';
 import { FormControlHelper } from '../../formControlHelper';
 import { StyledInputBootstrap, StyledInputGroupAddonRight, StyledInputGroupAddonLeft } from './style';
@@ -28,7 +28,7 @@ const wrapperInputGroup = (component: JSX.Element, field: Props) => {
 /**
  * Input render element
  */
-const RangeNumber = (props: Props) => {
+const RangeInput = (props: Props) => {
   const renderField = ({ field, form: { values, submitCount, errors } }: FieldProps<{}>) => {
     const { leftAddon, rightAddon, maxRows, inline, ...rest } = props;
 
@@ -67,4 +67,4 @@ const RangeNumber = (props: Props) => {
   )
 }
 
-export default RangeNumber;
+export default RangeInput;

@@ -21,6 +21,9 @@ export interface SelectProps extends InputProps {
     /** Is the select value clearable */
     isClearable?: boolean
 
+    /** Is the select component readOnly */
+    readOnly?: boolean
+
     /**
     * Check of current values if you have field with same conditionnals values.
     * @example values

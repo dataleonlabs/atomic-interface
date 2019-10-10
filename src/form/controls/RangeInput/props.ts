@@ -6,7 +6,7 @@ import { InputProps as InputPropsBase } from 'reactstrap';
  *   <Input name={'firstName'} label={'First Name'}>
  */
 
-export interface RangeNumberProps extends InputPropsBase {
+export interface RangeInputProps extends InputPropsBase {
   name: string
 
   /** Type of input default value is text */
