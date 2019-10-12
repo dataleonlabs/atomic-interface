@@ -4,18 +4,16 @@ import RangeInput from './index'
 import { Input } from 'reactstrap';
 import Form from './../../index'
 
-describe('<RangeNumber />', () => {
-  it('U-TEST-1 - Addon', () => {
+describe('<RangeInput />', () => {
+  it('U-TEST-1 - Range Input Number', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
-          <RangeInput
-            type="number"
-            min={0}
-            max={125}
-            name={'age'}
-            label={'Enter Your Age'}
-            placeholder={'Enter Number Only'}
+          <RangeInput            
+            name={'number_range'}
+            label={'Enter Number Range'}
+            minPlaceholder='Start Range'
+            maxPlaceholder='End Range'
           />
         )}
       </Form>

@@ -19,13 +19,13 @@ const Select = (props: Props) => {
     const onChange = (option: Option) /* istanbul ignore next  */ => {
 
       /* istanbul ignore next  */
-      if (Array.isArray(option)) {                
+      if (Array.isArray(option)) {
         let items: string[]; items=[];
         option.map((item) => {
           items.push(item.value);
         });
         setFieldValue(field.name, items);
-      } else {        
+      } else {
         setFieldValue(field.name, option.value);
       }
     }
