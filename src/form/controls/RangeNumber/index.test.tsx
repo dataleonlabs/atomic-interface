@@ -9,7 +9,7 @@ describe('<RangeInput />', () => {
     const wrapper = enzyme.mount(
       <Form>
         {(_) => (
-          <RangeInput            
+          <RangeInput
             name={'number_range'}
             label={'Enter Number Range'}
             minPlaceholder='Start Range'
@@ -19,6 +19,26 @@ describe('<RangeInput />', () => {
       </Form>
     )
 
-    expect(wrapper.find(Input)).toHaveLength(1);
+    expect(wrapper.find(Input)).toHaveLength(2);
+  })
+
+  it('U-TEST-1 - Initial value', () => {
+    const wrapper = enzyme.mount(
+      <Form
+        initialValues={{ number_range: { min: 100, max: 250 } }} >
+        {(_) => (
+          <RangeInput
+            name={'number_range'}
+            label={'Enter Number Range'}
+            minPlaceholder='Start Range'
+            maxPlaceholder='End Range'
+          />
+        )}
+      </Form >
+    )
+
+    expect(wrapper.find(Input)).toHaveLength(2);
+    expect(wrapper.find(Input).get(0).props.name).toContain('min');
+    expect(wrapper.find(Input).get(0).props.value).toEqual(100);
   })
 })

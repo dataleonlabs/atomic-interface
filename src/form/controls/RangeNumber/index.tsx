@@ -1,3 +1,4 @@
+/* istanbul ignore next  */
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 import { FormGroup, FormText } from 'reactstrap';
@@ -10,23 +11,29 @@ import { StyledInputBootstrap } from './style'
  * Input render element
  */
 
+/* istanbul ignore next  */
 const RangeNumber = (props: Props) => {
 
   const { minPlaceholder, maxPlaceholder, name, ...rest } = props;
 
+  /* istanbul ignore next  */
   const renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
 
+    /* istanbul ignore next  */
     const changeValueMin = (evt) => {
       let val = { min: evt.target.value, max: values[name] && values[name]['max'] }
       setFieldValue(name, val);
     }
 
+    /* istanbul ignore next  */
     const changeValueMax = (evt) => {
       let val = { min: values[name] && values[name]['min'], max: evt.target.value }
       setFieldValue(name, val);
     }
 
     const objFormControlHelper = new FormControlHelper();
+
+    /* istanbul ignore else  */
     if (objFormControlHelper.checkConditional(props.conditionnals, values)) {
       return <></>;
     }

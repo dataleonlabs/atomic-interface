@@ -1,3 +1,4 @@
+/* istanbul ignore next  */
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 import { FormGroup, FormText } from 'reactstrap';
@@ -11,6 +12,7 @@ import { StyledReactDatePickerContainer } from '../DatePicker/style';
  * RangeDate render element
  */
 
+/* istanbul ignore next  */
 class RangeDate extends React.PureComponent<Props> {
 
   public state = {
@@ -18,13 +20,16 @@ class RangeDate extends React.PureComponent<Props> {
     dateMax: null
   }
 
+  /* istanbul ignore next  */
   public defaultProps: Partial<Props> = {
     dateFormat: "dd/MM/yyyy",
   }  
 
+  /* istanbul ignore next  */
   public renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
     const { minPlaceholder, maxPlaceholder, name, label, ...rest } = this.props;
 
+    /* istanbul ignore next  */
     const changeValueMin = (date: Date) => {
       const val = { min: date, max: values[name] && values[name].max }
       setFieldValue(name, val);
@@ -33,6 +38,7 @@ class RangeDate extends React.PureComponent<Props> {
       });
     }
 
+    /* istanbul ignore next  */
     const changeValueMax = (date: Date) => {
       const val = { min: values[name] && values[name].min, max: date }
       setFieldValue(name, val);
@@ -42,6 +48,8 @@ class RangeDate extends React.PureComponent<Props> {
     }
 
     const objFormControlHelper = new FormControlHelper();
+
+    /* istanbul ignore else  */
     if (objFormControlHelper.checkConditional(this.props.conditionnals, values)) {
       return <></>;
     }
@@ -57,7 +65,7 @@ class RangeDate extends React.PureComponent<Props> {
                 id={"min"}              
                 disabled={this.props.readOnly}
                 dateFormat={this.props.dateFormat}
-                selected={this.state.dateMin || values[name].min}
+                selected={this.state.dateMin || values[name] && values[name].min}
                 {...field}
                 onChange={changeValueMin}
                 placeholderText={minPlaceholder}
@@ -72,7 +80,7 @@ class RangeDate extends React.PureComponent<Props> {
                 id={"max"}
                 disabled={this.props.readOnly}
                 dateFormat={this.props.dateFormat}
-                selected={this.state.dateMax || values[name].max}
+                selected={this.state.dateMax ||  values[name] && values[name].max}
                 {...field}
                 onChange={changeValueMax}
                 placeholderText={maxPlaceholder}
