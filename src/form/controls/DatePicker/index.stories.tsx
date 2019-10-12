@@ -6,9 +6,10 @@ import Form from './../../index';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 import Radio from '../Radio';
-import Input from '../Input';
 import Button from '../Button';
+import { stat } from 'fs';
 require('codemirror/mode/jsx/jsx');
+
 storiesOf('Forms|DatePicker', module)
   .add('Example', () => (
     <React.Fragment>
@@ -25,13 +26,13 @@ storiesOf('Forms|DatePicker', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form
-        initialValues={{ datepicker: new Date() }}
+          initialValues={{ date: new Date() }}
           onSubmit={(values) => {
             alert(JSON.stringify(values));
           }}
         >
           {(values) => (
-            <>              
+            <>
               <DatePicker label="Choose Date" dateFormat="yyyy/MM/dd" name="date" />
               <Button type="submit">Submit</Button><br />
               <code>values: {JSON.stringify(values.values)}</code><br />
@@ -107,18 +108,53 @@ storiesOf('Forms|DatePicker', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form>
-          {(_) => (
-            <DatePicker
-              label="Choose Date"
-              options={{
-                onChange: date => new Date("2019/09/08"),
-                selected: new Date("2019/09/02"),
-                startDate: new Date("2019/09/02"),
-                endDate: new Date("2019/09/5")
-              }}
-              name="datepicker"
-            />
-          )}
+          {(state, setState) => {
+
+            state = {
+              startDate: new Date("2014/02/08"),
+              endDate: new Date("2014/02/23")
+            }
+
+            const setStartDate = (date: Date) => {
+              setState({ startDate: date });
+              console.log("setStartDate: startDate", state.startDate);
+              console.log("setStartDate: endDate", state.endDate);
+            }
+
+            const setEndDate = (date: Date) => {                                                                                                      
+              console.log("setEndDate: date", date);
+              setState({ endDate: date });
+              console.log("setEndDate: startDate", state.startDate);
+              console.log("setEndDate: endDate", state.endDate);
+            }
+
+            return (
+              <>
+                <DatePicker
+                  label="Choose Date"
+                  options={{
+                    onChange: date => setStartDate(date),
+                    selectsStart: true,
+                    selected: state.startDate,
+                    startDate: state.startDate,
+                    endDate: state.endDate
+                  }}
+                  name="datepicker"
+                />
+                <DatePicker
+                  label="Choose Date"
+                  options={{
+                    onChange: date => setEndDate(date),
+                    selectsEnd: true,
+                    selected: state.endDate,
+                    endDate: state.endDate,
+                    minDate: state.startDate
+                  }}
+                  name="datepicker1"
+                />
+              </>
+            )
+          }}
         </Form>
         <br />
         <br />
