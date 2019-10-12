@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.32.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.31.0...v1.32.0) (2019-10-12)
+
+
+### Bug Fixes
+
+* index.ts component add issue ([daa2693](https://bitbucket.org/youngapp/ui-kit/commit/daa2693))
+
+
+### Features
+
+* fix date picker range ([bcedd3b](https://bitbucket.org/youngapp/ui-kit/commit/bcedd3b))
+* rangeNumber and rangeDate ([865b2e2](https://bitbucket.org/youngapp/ui-kit/commit/865b2e2))
+* test case for rangedate and range number ([2043639](https://bitbucket.org/youngapp/ui-kit/commit/2043639))
+
 ## [1.31.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.30.0...v1.31.0) (2019-10-10)
 
 ## [1.30.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.29.0...v1.30.0) (2019-10-10)
