@@ -26,7 +26,7 @@ storiesOf('Forms|DatePicker', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form
-          initialValues={{ datepicker: new Date() }}
+          initialValues={{ date: new Date() }}
           onSubmit={(values) => {
             alert(JSON.stringify(values));
           }}

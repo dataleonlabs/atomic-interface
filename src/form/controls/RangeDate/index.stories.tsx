@@ -70,12 +70,13 @@ storiesOf('Forms|RangeDate', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form
-          initialValues={{ date_range: { min: new Date("10/09/2019"), max: new Date("10/12/2019") } }}
+          initialValues={{ date_range: { min: new Date("2019-09-30T13:38:28.000Z"), max: new Date("10/12/2019") } }}
         >
           {(values) => (
             <>
               <RangeDate                
                 name={'date_range'}
+                dateFormat="yyyy/MM/dd"
                 label={'Enter Number Range'}
                 minPlaceholder='Start Range'
                 maxPlaceholder='End Range'

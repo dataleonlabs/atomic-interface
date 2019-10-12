@@ -14,7 +14,7 @@ class DatePicker extends React.PureComponent<Props> {
   }
 
   public state = {
-    startDate: new Date()
+    date: new Date()
   }
 
   constructor(props: Props) {
@@ -22,11 +22,11 @@ class DatePicker extends React.PureComponent<Props> {
     this.handleChange.bind(this);
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     this.handleChange.bind(this);
     if (this.props.options && this.props.options.selected) {
       this.setState({
-        startDate: this.props.options && this.props.options.selected
+        date: this.props.options && this.props.options.selected
       });
     }
   }
@@ -36,7 +36,7 @@ class DatePicker extends React.PureComponent<Props> {
     setFieldValue(this.props.name, date);
 
     this.setState({
-      startDate: date
+      date
     });
 
     /* istanbul ignore next */
@@ -60,7 +60,7 @@ class DatePicker extends React.PureComponent<Props> {
                 {...this.props.options}
                 disabled={this.props.readOnly}
                 dateFormat={this.props.dateFormat}
-                selected={this.state.startDate}
+                selected={this.state.date || field.value}
                 {...field}
                 placeholderText={this.props.placeholder}
                 onChange={this.handleChange(setFieldValue)} />

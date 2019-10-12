@@ -6,6 +6,7 @@ import Control from '../../Control';
 import { FormControlHelper } from '../../formControlHelper';
 import { StyledDivContainer } from './style';
 import ReactDatePicker from "react-datepicker";
+import { StyledReactDatePickerContainer } from '../DatePicker/style';
 /**
  * RangeDate render element
  */
@@ -13,32 +14,30 @@ import ReactDatePicker from "react-datepicker";
 class RangeDate extends React.PureComponent<Props> {
 
   public state = {
-    startDateMin: new Date(),
-    startDateMax: new Date()
+    dateMin: null,
+    dateMax: null
   }
 
-  public static defaultProps: Partial<Props> = {
+  public defaultProps: Partial<Props> = {
     dateFormat: "dd/MM/yyyy",
   }  
 
-  renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
-
+  public renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
     const { minPlaceholder, maxPlaceholder, name, label, ...rest } = this.props;
 
-    const changeValueMin = (date) => {
-      console.log("date", date);
-      let val = { min: date, max: values[name] && values[name]['max'] }
+    const changeValueMin = (date: Date) => {
+      const val = { min: date, max: values[name] && values[name].max }
       setFieldValue(name, val);
       this.setState({
-        startDateMin: date
+        dateMin: date
       });
     }
 
-    const changeValueMax = (date) => {
-      let val = { min: values[name] && values[name]['min'], max: date }
+    const changeValueMax = (date: Date) => {
+      const val = { min: values[name] && values[name].min, max: date }
       setFieldValue(name, val);
       this.setState({
-        startDateMax: date
+        dateMax: date
       });
     }
 
@@ -51,30 +50,34 @@ class RangeDate extends React.PureComponent<Props> {
       <FormGroup>
         <Control label={label} name={"default_" + name} {...rest}>
           <StyledDivContainer>
-            <ReactDatePicker
-              name={"min"}
-              {...field}              
-              id={"min"}              
-              disabled={this.props.readOnly}
-              dateFormat={this.props.dateFormat}
-              selected={this.state.startDateMin}
-              {...field}
-              onChange={date => changeValueMin(date)}
-              placeholderText={minPlaceholder}
-            />
+            <StyledReactDatePickerContainer>
+              <ReactDatePicker
+                name={"min"}
+                {...field}              
+                id={"min"}              
+                disabled={this.props.readOnly}
+                dateFormat={this.props.dateFormat}
+                selected={this.state.dateMin || values[name].min}
+                {...field}
+                onChange={changeValueMin}
+                placeholderText={minPlaceholder}
+              />
+            </StyledReactDatePickerContainer>
           </StyledDivContainer>
           <StyledDivContainer>
-            <ReactDatePicker
-              name={"max"}
-              {...field}              
-              id={"max"}
-              disabled={this.props.readOnly}
-              dateFormat={this.props.dateFormat}
-              selected={this.state.startDateMax}
-              {...field}
-              onChange={date => changeValueMax(date)}
-              placeholderText={maxPlaceholder}
-            />
+            <StyledReactDatePickerContainer>
+              <ReactDatePicker
+                name={"max"}
+                {...field}              
+                id={"max"}
+                disabled={this.props.readOnly}
+                dateFormat={this.props.dateFormat}
+                selected={this.state.dateMax || values[name].max}
+                {...field}
+                onChange={changeValueMax}
+                placeholderText={maxPlaceholder}
+              />
+            </StyledReactDatePickerContainer>
           </StyledDivContainer>
           {
             submitCount > 0 && /* istanbul ignore next  */ (errors["default_" + name] ? true : false)
@@ -88,7 +91,6 @@ class RangeDate extends React.PureComponent<Props> {
   public render() {
 
     const { minPlaceholder, maxPlaceholder, name, label, ...rest } = this.props;
-
     return (
       <Field
         {...rest}
