@@ -228,6 +228,9 @@ export {
     ListGroupItemHeadingProps,
 } from './display/ListGroup/props';
 
-export { default as RangeInput } from './form/controls/RangeInput'
-export { default as RangeInputProps } from './form/controls/RangeInput/props'
+export { default as RangeNumber } from './form/controls/RangeNumber'
+export { default as RangeNumberProps } from './form/controls/RangeNumber/props'
+
+export { default as RangeDate } from './form/controls/RangeDate'
+export { default as RangeDateProps } from './form/controls/RangeDate/props'
 
