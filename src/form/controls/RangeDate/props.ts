@@ -9,6 +9,12 @@ export interface RangeDateProps {
   /** component name */
   name: string;
 
+  /** set component min key  */
+  nameMin: string
+
+  /** set component max key */
+  nameMax: string
+
   /** set datepicker date format */
   dateFormat?: string;
 

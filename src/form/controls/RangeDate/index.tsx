@@ -23,15 +23,15 @@ class RangeDate extends React.PureComponent<Props> {
   /* istanbul ignore next  */
   public defaultProps: Partial<Props> = {
     dateFormat: "dd/MM/yyyy",
-  }  
+  }
 
   /* istanbul ignore next  */
   public renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
-    const { minPlaceholder, maxPlaceholder, name, label, ...rest } = this.props;
+    const { minPlaceholder, maxPlaceholder, name, nameMin, nameMax, label, ...rest } = this.props;
 
     /* istanbul ignore next  */
     const changeValueMin = (date: Date) => {
-      const val = { min: date, max: values[name] && values[name].max }
+      const val = { [nameMin]: date, [nameMax]: values[name] && values[name][nameMax] }
       setFieldValue(name, val);
       this.setState({
         dateMin: date
@@ -40,7 +40,7 @@ class RangeDate extends React.PureComponent<Props> {
 
     /* istanbul ignore next  */
     const changeValueMax = (date: Date) => {
-      const val = { min: values[name] && values[name].min, max: date }
+      const val = { [nameMin]: values[name] && values[name][nameMin], [nameMax]: date }
       setFieldValue(name, val);
       this.setState({
         dateMax: date
@@ -60,9 +60,9 @@ class RangeDate extends React.PureComponent<Props> {
           <StyledDivContainer>
             <StyledReactDatePickerContainer>
               <ReactDatePicker
-                name={"min"}
-                {...field}              
-                id={"min"}              
+                name={nameMin}
+                {...field}
+                id={nameMin}
                 disabled={this.props.readOnly}
                 dateFormat={this.props.dateFormat}
                 selected={this.state.dateMin || values[name] && values[name].min}
@@ -75,12 +75,12 @@ class RangeDate extends React.PureComponent<Props> {
           <StyledDivContainer>
             <StyledReactDatePickerContainer>
               <ReactDatePicker
-                name={"max"}
-                {...field}              
-                id={"max"}
+                name={nameMax}
+                {...field}
+                id={nameMax}
                 disabled={this.props.readOnly}
                 dateFormat={this.props.dateFormat}
-                selected={this.state.dateMax ||  values[name] && values[name].max}
+                selected={this.state.dateMax || values[name] && values[name].max}
                 {...field}
                 onChange={changeValueMax}
                 placeholderText={maxPlaceholder}
