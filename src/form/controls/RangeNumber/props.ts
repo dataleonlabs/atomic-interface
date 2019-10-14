@@ -9,6 +9,12 @@ export interface RangeNumberProps {
   /** component name */
   name: string;
 
+  /** set component min key  */
+  nameMin: string
+
+  /** set component max key */
+  nameMax: string
+
   /** component onChange */
   onChange?: (value: Range | number) => void;
 

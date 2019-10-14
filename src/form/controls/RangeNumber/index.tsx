@@ -14,20 +14,20 @@ import { StyledInputBootstrap } from './style'
 /* istanbul ignore next  */
 const RangeNumber = (props: Props) => {
 
-  const { minPlaceholder, maxPlaceholder, name, ...rest } = props;
+  const { minPlaceholder, maxPlaceholder, name,nameMin,nameMax, ...rest } = props;
 
   /* istanbul ignore next  */
   const renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
 
     /* istanbul ignore next  */
     const changeValueMin = (evt) => {
-      let val = { min: evt.target.value, max: values[name] && values[name]['max'] }
+      let val = { [nameMin]: evt.target.value, [nameMax]: values[name] && values[name][nameMax] }
       setFieldValue(name, val);
     }
 
     /* istanbul ignore next  */
     const changeValueMax = (evt) => {
-      let val = { min: values[name] && values[name]['min'], max: evt.target.value }
+      let val = { [nameMin]: values[name] && values[name][nameMin], [nameMax]: evt.target.value }
       setFieldValue(name, val);
     }
 
@@ -46,9 +46,9 @@ const RangeNumber = (props: Props) => {
             {...rest}
             type="number"
             onChange={changeValueMin}
-            name={"min"}
-            id={"min"}
-            value={values[name] && values[name]['min']}
+            name={nameMin}
+            id={nameMin}
+            value={values[name] && values[name][nameMin]}
             placeholder={minPlaceholder}
           />
           <StyledInputBootstrap
@@ -56,9 +56,9 @@ const RangeNumber = (props: Props) => {
             {...rest}
             type="number"
             onChange={changeValueMax}
-            name={"max"}
-            id={"max"}
-            value={values[name] && values[name]['max']}
+            name={nameMax}
+            id={nameMax}
+            value={values[name] && values[name][nameMax]}
             placeholder={maxPlaceholder}
           />
           {

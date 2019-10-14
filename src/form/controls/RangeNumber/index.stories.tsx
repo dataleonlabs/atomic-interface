@@ -27,6 +27,8 @@ storiesOf('Forms|RangeNumber', module)
             <>
               <RangeNumber                
                 name={'number_range'}
+                nameMin={'min1'}
+                nameMax={'max1'}
                 label={'Enter Number Range'}
                 minPlaceholder='Start Range'
                 maxPlaceholder='End Range'
@@ -76,6 +78,8 @@ storiesOf('Forms|RangeNumber', module)
             <>
               <RangeNumber                
                 name={'number_range'}
+                nameMin={'min1'}
+                nameMax={'max1'}
                 label={'Enter Number Range'}
                 minPlaceholder='Start Range'
                 maxPlaceholder='End Range'
@@ -131,6 +135,8 @@ storiesOf('Forms|RangeNumber', module)
             <>
               <RangeNumber                
                 name={'date_range'}
+                nameMin={'min1'}
+                nameMax={'max1'}
                 label={'Enter Date Range'}
                 minPlaceholder='Start Date'
                 maxPlaceholder='End Date'
