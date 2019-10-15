@@ -234,3 +234,6 @@ export { default as RangeNumberProps } from './form/controls/RangeNumber/props'
 export { default as RangeDate } from './form/controls/RangeDate'
 export { default as RangeDateProps } from './form/controls/RangeDate/props'
 
+export { default as AsyncSelect } from './form/controls/AsyncSelect'
+export { default as AsyncSelectProps } from './form/controls/AsyncSelect/props'
+

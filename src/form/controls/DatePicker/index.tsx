@@ -7,21 +7,26 @@ import { StyledReactDatePickerContainer } from "./style";
 import ReactDatePicker from "react-datepicker";
 import { FormControlHelper } from '../../formControlHelper';
 
+/* istanbul ignore next */
 class DatePicker extends React.PureComponent<Props> {
 
+  /* istanbul ignore next */
   public static defaultProps: Partial<Props> = {
     dateFormat: "dd/MM/yyyy",
   }
 
+  /* istanbul ignore next */
   public state = {
     date: new Date()
   }
 
+  /* istanbul ignore next */
   constructor(props: Props) {
     super(props);
     this.handleChange.bind(this);
   }
 
+  /* istanbul ignore next */
   public componentDidMount() {
     this.handleChange.bind(this);
     if (this.props.options && this.props.options.selected) {
@@ -35,6 +40,7 @@ class DatePicker extends React.PureComponent<Props> {
   public handleChange = (setFieldValue: FieldProps<{}>['form']['setFieldValue']) => async (date: Date) /* istanbul ignore next  */ => {
     setFieldValue(this.props.name, date);
 
+    /* istanbul ignore next */
     this.setState({
       date
     });
@@ -43,15 +49,21 @@ class DatePicker extends React.PureComponent<Props> {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  /* istanbul ignore next */
   public render() {
 
+    /* istanbul ignore next */
     const renderField = ({ field, form: { values, setFieldValue } }: FieldProps<{}>) => {
 
+      /* istanbul ignore next */
       const objFormControlHelper = new FormControlHelper();
+
+      /* istanbul ignore next */
       if (objFormControlHelper.checkConditional(this.props.conditionnals, values)) {
         return <></>;
       }
 
+      /* istanbul ignore next */
       return (
         <Control {...this.props}>
           <React.Fragment>
@@ -70,6 +82,7 @@ class DatePicker extends React.PureComponent<Props> {
       )
     }
 
+    /* istanbul ignore next */
     return (
       <Field
         {...this.props}
@@ -80,4 +93,5 @@ class DatePicker extends React.PureComponent<Props> {
   }
 }
 
+/* istanbul ignore next */
 export default DatePicker
