@@ -8,14 +8,19 @@ import { FormControlHelper } from '../../formControlHelper';
 /**
  * CheckBox render element
  */
+/* istanbul ignore next */
 const Switch = (props: Props) => {
   const renderField = ({ field, form: { values, submitCount, errors } }: FieldProps<{}>) => {
 
+    /* istanbul ignore next */
     const objFormControlHelper=new FormControlHelper();
+
+    /* istanbul ignore next */
     if(objFormControlHelper.checkConditional(props.conditionnals, values)){
       return <></>;
     }
 
+    /* istanbul ignore next */
     return (
       <Control {...props} label={undefined}>
         <React.Fragment>
@@ -34,6 +39,7 @@ const Switch = (props: Props) => {
       </Control>
     )
   }
+  /* istanbul ignore next */
   return (
     <Field
       {...props}
@@ -43,4 +49,5 @@ const Switch = (props: Props) => {
   )
 }
 
+/* istanbul ignore next */
 export default Switch;
