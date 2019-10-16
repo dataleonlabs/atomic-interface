@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.33.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.32.0...v1.33.0) (2019-10-16)
+
+
+### Bug Fixes
+
+* async select ([29ccfc7](https://bitbucket.org/youngapp/ui-kit/commit/29ccfc7))
+* async select values ([b9842bc](https://bitbucket.org/youngapp/ui-kit/commit/b9842bc))
+* initial value for multi select ([e5df30a](https://bitbucket.org/youngapp/ui-kit/commit/e5df30a))
+* testcase error ([44a194b](https://bitbucket.org/youngapp/ui-kit/commit/44a194b))
+
+
+### Features
+
+* add key min and max in rangenumber and rangedate ([63245f6](https://bitbucket.org/youngapp/ui-kit/commit/63245f6))
+* asyncselect ([0464e72](https://bitbucket.org/youngapp/ui-kit/commit/0464e72))
+
 ## [1.32.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.31.0...v1.32.0) (2019-10-12)
 
 
