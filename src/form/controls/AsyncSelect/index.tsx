@@ -14,25 +14,38 @@ import { FormControlHelper } from '../../formControlHelper';
 /* istanbul ignore next */
 const AsyncSelect = (props: Props) => {
 
-  //const { name, rest } = props;
+  const { name, ...rest } = props;
 
   /* istanbul ignore next */
   const renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) /* istanbul ignore next  */ => {
+
+
+    if (values[field.name]) {
+      if (Array.isArray(values)) {
+        let items = {};
+        values.map((item) => {
+          let pre = { "value": item.value, "label": item.value }
+          items = pre;
+        });
+        setFieldValue(field.name, items);
+      } else {
+        let pre = { "value": values, "label": values }
+        setFieldValue(field.name, pre);
+      }
+    }
+
+
     /* istanbul ignore next  */
     const onChangeValue = (evt) => {
-
-      setFieldValue(field.name, evt);
-
-      // if (Array.isArray(evt)) {
-      //   let items: string[]; items = [];
-      //   evt.map((item) => {
-      //     items.push(item.value);
-      //   });
-      //   setFieldValue(field.name, items);
-      // } else {
-      //   setFieldValue(field.name, evt.value);
-      // }
-
+      if (Array.isArray(evt)) {
+        let items: string[]; items = [];
+        evt.map((item) => {
+          items.push(item.value);
+        });
+        setFieldValue(name, items);
+      } else {
+        setFieldValue(name, evt.value);
+      }
     }
 
     /* istanbul ignore else */
@@ -43,17 +56,17 @@ const AsyncSelect = (props: Props) => {
 
     /* istanbul ignore next */
     return (
-      <Control {...props}>
+      <Control name={"as_" + name} {...rest}>
         <React.Fragment>
           <StyledAsyncSelectBase
-            //{...rest}
-            {...props}
+            name={"as_" + name}
+            {...rest}            
             {...field}
             isDisabled={props.readOnly}
             onChange={onChangeValue}
           />
-          {/* istanbul ignore next  */ submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)
-            && /* istanbul ignore next  */ <FormText color="danger">{errors[props.name]}</FormText>
+          {/* istanbul ignore next  */ submitCount > 0 && /* istanbul ignore next  */ (errors["as_" + name] ? true : false)
+            && /* istanbul ignore next  */ <FormText color="danger">{errors["as_" + name]}</FormText>
           }
         </React.Fragment>
       </Control>
@@ -61,9 +74,9 @@ const AsyncSelect = (props: Props) => {
   }
   return (
     <Field
-      //{...rest}
-      {...props}
-      id={props.name}
+      name={"as_" + name}
+      {...rest}      
+      id={"as_" + name}
       render={renderField}
     />
   )

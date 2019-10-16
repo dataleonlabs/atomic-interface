@@ -43,7 +43,9 @@ storiesOf('Forms|AsyncSelect', module)
                     <hr />
                     <h6><strong>Example</strong></h6>
                     <hr />
-                    <Form>
+                    <Form
+                        initialValues={{ "favorite": "chocolate" }}
+                    >
                         {(values) => (
                             <>
                                 <AsyncSelect
