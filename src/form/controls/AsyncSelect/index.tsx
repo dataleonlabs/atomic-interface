@@ -39,8 +39,18 @@ const AsyncSelect = (props: Props) => {
     }
 
     let value = field.value;
-    if (Object.keys(touched).length === 0) {
-      value = (props.defaultOptions ? /* istanbul ignore next  */ props.defaultOptions.find(/* istanbul ignore next  */(option: any) => /* istanbul ignore next  */ option.value === values[name]) : '') as any
+    
+    if (Object.keys(touched).length === 0) {      
+      if (Array.isArray(values[name])) {
+        let val: string[]; val = [];
+        values[name].map((item) => {
+          value = (props.defaultOptions ? /* istanbul ignore next  */ props.defaultOptions.find(/* istanbul ignore next  */(option: any) => /* istanbul ignore next  */ option.value === item) : '') as any
+          val.push(value);
+        });
+        value = val;
+      }else{
+        value = (props.defaultOptions ? /* istanbul ignore next  */ props.defaultOptions.find(/* istanbul ignore next  */(option: any) => /* istanbul ignore next  */ option.value === values[name]) : '') as any
+      }
     }
 
     /* istanbul ignore next */
@@ -65,7 +75,7 @@ const AsyncSelect = (props: Props) => {
   return (
     <Field
       name={"as_" + name}
-      {...rest}      
+      {...rest}
       id={"as_" + name}
       render={renderField}
     />
