@@ -17,23 +17,7 @@ const AsyncSelect = (props: Props) => {
   const { name, ...rest } = props;
 
   /* istanbul ignore next */
-  const renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) /* istanbul ignore next  */ => {
-
-
-    if (values[field.name]) {
-      if (Array.isArray(values)) {
-        let items = {};
-        values.map((item) => {
-          let pre = { "value": item.value, "label": item.value }
-          items = pre;
-        });
-        setFieldValue(field.name, items);
-      } else {
-        let pre = { "value": values, "label": values }
-        setFieldValue(field.name, pre);
-      }
-    }
-
+  const renderField = ({ field, form: { touched, values, submitCount, errors, setFieldValue } }: FieldProps<{}>) /* istanbul ignore next  */ => {
 
     /* istanbul ignore next  */
     const onChangeValue = (evt) => {
@@ -54,14 +38,20 @@ const AsyncSelect = (props: Props) => {
       return <></>;
     }
 
+    let value = field.value;
+    if (Object.keys(touched).length === 0) {
+      value = (props.defaultOptions ? /* istanbul ignore next  */ props.defaultOptions.find(/* istanbul ignore next  */(option: any) => /* istanbul ignore next  */ option.value === values[name]) : '') as any
+    }
+
     /* istanbul ignore next */
     return (
       <Control name={"as_" + name} {...rest}>
         <React.Fragment>
           <StyledAsyncSelectBase
             name={"as_" + name}
-            {...rest}            
             {...field}
+            value={value}
+            {...rest}
             isDisabled={props.readOnly}
             onChange={onChangeValue}
           />
