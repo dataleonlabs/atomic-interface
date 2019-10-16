@@ -14,15 +14,25 @@ import { FormControlHelper } from '../../formControlHelper';
 /* istanbul ignore next */
 const AsyncSelect = (props: Props) => {
 
+  //const { name, rest } = props;
+
   /* istanbul ignore next */
   const renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) /* istanbul ignore next  */ => {
     /* istanbul ignore next  */
     const onChangeValue = (evt) => {
-      if (Array.isArray(evt)) {
-        setFieldValue(field.name, evt);
-      } else {
-        setFieldValue(field.name, evt);
-      }
+
+      setFieldValue(field.name, evt);
+
+      // if (Array.isArray(evt)) {
+      //   let items: string[]; items = [];
+      //   evt.map((item) => {
+      //     items.push(item.value);
+      //   });
+      //   setFieldValue(field.name, items);
+      // } else {
+      //   setFieldValue(field.name, evt.value);
+      // }
+
     }
 
     /* istanbul ignore else */
@@ -36,6 +46,7 @@ const AsyncSelect = (props: Props) => {
       <Control {...props}>
         <React.Fragment>
           <StyledAsyncSelectBase
+            //{...rest}
             {...props}
             {...field}
             isDisabled={props.readOnly}
@@ -50,6 +61,7 @@ const AsyncSelect = (props: Props) => {
   }
   return (
     <Field
+      //{...rest}
       {...props}
       id={props.name}
       render={renderField}
