@@ -43,7 +43,9 @@ storiesOf('Forms|AsyncSelect', module)
                     <hr />
                     <h6><strong>Example</strong></h6>
                     <hr />
-                    <Form>
+                    <Form
+                        initialValues={{ "favorite": "chocolate" }}
+                    >
                         {(values) => (
                             <>
                                 <AsyncSelect
@@ -63,7 +65,9 @@ storiesOf('Forms|AsyncSelect', module)
                     <h6><strong>Code</strong></h6>
                     <hr />
                     <CodeMirror
-                        value={`<Form>
+                        value={`<Form
+    initialValues={{ "favorite": "chocolate" }}
+>
     {(values) => (
         <>
             <AsyncSelect
@@ -121,7 +125,9 @@ storiesOf('Forms|AsyncSelect', module)
                     <hr />
                     <h6><strong>Example</strong></h6>
                     <hr />
-                    <Form>
+                    <Form
+                        initialValues={{ "favorite": ["strawberry", "chocolate", "vanilla"] }}
+                    >
                         {(values) => (
                             <>
                                 <AsyncSelect
@@ -142,7 +148,9 @@ storiesOf('Forms|AsyncSelect', module)
                     <h6><strong>Code</strong></h6>
                     <hr />
                     <CodeMirror
-                        value={`<Form>
+                        value={`<Form
+    initialValues={{ "favorite": ["strawberry", "chocolate", "vanilla"] }}
+>
     {(values) => (
         <>
             <AsyncSelect
