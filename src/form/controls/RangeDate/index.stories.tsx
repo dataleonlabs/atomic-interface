@@ -27,6 +27,8 @@ storiesOf('Forms|RangeDate', module)
             <>
               <RangeDate                
                 name={'date_range'}
+                nameMin={'min1'}
+                nameMax={'max1'}
                 label={'Enter Number Range'}
                 minPlaceholder='Start Range'
                 maxPlaceholder='End Range'
@@ -43,6 +45,8 @@ storiesOf('Forms|RangeDate', module)
         <CodeMirror
           value={`<RangeDate          
   name={'date_range'}
+  nameMin={'min1'}
+  nameMax={'max1'}
   label={'Enter Number Range'}
   minPlaceholder='Start Range'
   maxPlaceholder='End Range'
@@ -76,6 +80,8 @@ storiesOf('Forms|RangeDate', module)
             <>
               <RangeDate                
                 name={'date_range'}
+                nameMin={'min1'}
+                nameMax={'max1'}
                 dateFormat="yyyy/MM/dd"
                 label={'Enter Number Range'}
                 minPlaceholder='Start Range'
@@ -97,6 +103,8 @@ storiesOf('Forms|RangeDate', module)
     <>
       <RangeNumber        
         name={'date_range'}
+        nameMin={'min1'}
+        nameMax={'max1'}
         label={'Enter Number Range'}
         minPlaceholder='Start Range'
         maxPlaceholder='End Range'
@@ -132,6 +140,8 @@ storiesOf('Forms|RangeDate', module)
             <>
               <RangeDate                
                 name={'date_range'}
+                nameMin={'min1'}
+                nameMax={'max1'}
                 label={'Enter Date Range'}
                 minPlaceholder='Start Date'
                 maxPlaceholder='End Date'
@@ -149,6 +159,8 @@ storiesOf('Forms|RangeDate', module)
         <CodeMirror
           value={`<RangeDate  
   name={'date_range'}
+  nameMin={'min1'}
+  nameMax={'max1'}
   label={'Enter Date Range'}
   minPlaceholder='Start Date'
   maxPlaceholder='End Date'

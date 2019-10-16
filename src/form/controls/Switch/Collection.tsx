@@ -9,12 +9,15 @@ import { FormControlHelper } from '../../formControlHelper';
 /**
  * Collection render element
  */
+/* istanbul ignore next */
 const Collection = (props: Props) => {
 
+  /* istanbul ignore next */
   const [loading, setLoading] = useState(false)
   const [value, setValue] = useState(false)
   const { children, apiKey, apiUrl, fieldId, fieldUpdate, onLoading, onLoaded, ...rest } = props;
 
+  /* istanbul ignore next */
   useEffect(() => {
     loadValue();
   }, [loadValue])
@@ -68,13 +71,18 @@ const Collection = (props: Props) => {
     }
   }
 
+  /* istanbul ignore next */
   const renderField = ({ field, form: { values, submitCount, errors } }: FieldProps<{}>) => {
 
+    /* istanbul ignore next */
     const objFormControlHelper=new FormControlHelper();
+
+    /* istanbul ignore next */
     if(objFormControlHelper.checkConditional(props.conditionnals, values)){
       return <></>;
     }
 
+    /* istanbul ignore next */
     return (
       <Control {...props} label={undefined} type="text">
         <CustomInput
@@ -95,6 +103,7 @@ const Collection = (props: Props) => {
     )
   }
 
+  /* istanbul ignore next */
   return (
     <Field
       {...props}
@@ -105,4 +114,5 @@ const Collection = (props: Props) => {
   )
 }
 
+/* istanbul ignore next */
 export default Collection;
