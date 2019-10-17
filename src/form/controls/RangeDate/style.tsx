@@ -3,5 +3,5 @@ import styled from 'styled-components'
 
 export const StyledDivContainer = styled.div`            
     display: inline-block !important;
-    width: auto
+    width: 50%;
 `;

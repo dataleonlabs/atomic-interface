@@ -40,7 +40,7 @@ const AsyncSelect = (props: Props) => {
 
     let value = field.value;
     
-    if (Object.keys(touched).length === 0) {      
+    if (Object.keys(touched).length === 0) {
       if (Array.isArray(values[name])) {
         let val: string[]; val = [];
         values[name].map((item) => {
