@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.34.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.33.0...v1.34.0) (2019-10-17)
+
+
+### Bug Fixes
+
+* async select issue ([ee9a4c1](https://bitbucket.org/youngapp/ui-kit/commit/ee9a4c1))
+
 ## [1.33.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.32.0...v1.33.0) (2019-10-16)
 
 
