@@ -14,7 +14,6 @@ const Select = (props: Props) => {
   const CustomSelect: React.ReactType = props.creatable ? StyledCreatableSelect : StyledSelectBase;
   const renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) /* istanbul ignore next  */ => {
 
-
     /* istanbul ignore next  */
     const onChange = (option: Option) /* istanbul ignore next  */ => {
 
@@ -26,7 +25,11 @@ const Select = (props: Props) => {
         });
         setFieldValue(field.name, items);
       } else {
-        setFieldValue(field.name, option.value);
+        if (option) {
+          setFieldValue(field.name, option.value);
+        } else {
+          setFieldValue(field.name, undefined);
+        }
       }
     }
 
