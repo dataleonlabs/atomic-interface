@@ -2283,12 +2283,18 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@zendeskgarden/container-utilities/-/container-utilities-0.2.0.tgz#bd5fd14c7d0159fa095882c5995e55db64abed8a"
 
-"@zendeskgarden/react-pagination@^6.3.1":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-pagination/-/react-pagination-6.5.0.tgz#ed03f28bc58b3c8aa017ef424d1f55de44a1a8ca"
+"@zendeskgarden/container-utilities@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/container-utilities/-/container-utilities-0.3.0.tgz#9af748ef4b29f8a57f082852d039b9aaa98cf0d3"
+  integrity sha512-oZLNiJoHLznZBIASScfxanxylvczTm06HRWBqcdiiGDMSJYW0HySSlEUQFlaQqsvTwzrm02hWKGnr5cdWWtE0w==
+
+"@zendeskgarden/react-pagination@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-pagination/-/react-pagination-7.0.0.tgz#0b62fcc9b4b1bd176b8f5c029a0d8e0cc79d8499"
+  integrity sha512-4rkawxgTOEoGsdFu7Ax/mjWM3xBjBmPmQCBqpWj7yzi+T1oVSqgXEPg9V0FsmokmKQULA9/I4F5FlyzDaMj+mQ==
   dependencies:
     "@zendeskgarden/container-pagination" "^0.1.10"
-    "@zendeskgarden/react-selection" "^6.5.0"
+    "@zendeskgarden/container-utilities" "^0.3.0"
     classnames "^2.2.5"
 
 "@zendeskgarden/react-selection@^6.5.0":
