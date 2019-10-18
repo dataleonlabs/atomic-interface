@@ -2297,20 +2297,14 @@
     "@zendeskgarden/container-utilities" "^0.3.0"
     classnames "^2.2.5"
 
-"@zendeskgarden/react-selection@^6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-selection/-/react-selection-6.5.0.tgz#76df6e67ca15203ca32872905060eeee9701228b"
+"@zendeskgarden/react-tables@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-tables/-/react-tables-7.0.0.tgz#2fa00cdf853a0051985d09ee8963dd409f57e4e0"
+  integrity sha512-yggwm4m5kksZRA6jhZpDAw7n9Woxoe5FpNr4hdnsXDejMy/0jocyNliu5IqHI1MS7rJhPQ8HAHScLTFeOFrPRg==
   dependencies:
+    "@zendeskgarden/container-utilities" "^0.3.0"
     classnames "^2.2.5"
-    dom-helpers "^3.3.1"
-
-"@zendeskgarden/react-tables@^6.3.1":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-tables/-/react-tables-6.5.0.tgz#446d0a607810aa4ea8ade1e5548569965b52ddb8"
-  dependencies:
-    "@zendeskgarden/react-selection" "^6.5.0"
-    classnames "^2.2.5"
-    dom-helpers "^3.3.1"
+    dom-helpers "^5.1.0"
 
 "@zendeskgarden/react-theming@^7.0.0":
   version "7.0.0"
@@ -5046,15 +5040,16 @@ dom-converter@^0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.3.1, dom-helpers@^3.4.0:
+dom-helpers@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
   dependencies:
     "@babel/runtime" "^7.1.2"
 
-dom-helpers@^5.0.1:
+dom-helpers@^5.0.1, dom-helpers@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-5.1.0.tgz#57a726de04abcc2a8bbfe664b3e21c584bde514e"
+  integrity sha512-zRRYDhpiKuAJHasOqCm7lBnsd22nrM4+OYI4ASWCxen+ocTMl7BIAKgGag97TlLiTl6rrau5aPe1VGUm9jQBng==
   dependencies:
     "@babel/runtime" "^7.5.5"
     csstype "^2.6.6"
