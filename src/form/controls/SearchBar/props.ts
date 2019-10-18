@@ -13,6 +13,12 @@ export interface SearchBarProps extends InputProps {
 
     /** Disable close icon */
     closeIcon?: boolean
+
+    /** set Label for Left Addon icon */
+    leftAddonString?: string;
+
+    /** set if to display Label for Left Addon icon */
+    hideLeftAddonLabel?: boolean;
     
     /**
     * Check of current values if you have field with same conditionnals values.
