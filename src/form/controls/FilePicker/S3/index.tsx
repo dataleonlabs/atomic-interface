@@ -11,6 +11,7 @@ import uuidv4 from 'uuidv4';
 import Text from '../../../../display/Text';
 import Button from '../../../../form/controls/Button';
 import { FormControlHelper } from '../../../formControlHelper';
+import NavLink from '../../../../navigation/Navbar/NavLink'
 
 /* istanbul ignore next  */
 export function getHeaders() {
@@ -28,15 +29,34 @@ class FilePickerS3 extends React.PureComponent<Props> {
     XAmzAcl: 'private',
     multipleFiles: false,
     signingUrlMethod: 'PUT',
-    uuid: true
+    uuid: true,
+    converseOriginalFileName: false,
+    displayLinks: false
   }
 
   public state: State = {
     error: false,
     errorMessage: '',
     fileName: '',
+    fileNames: [],
     loading: false,
     progress: 0,
+    originalValues: {
+      key: '',
+      fileName: '',
+      size: '',
+      type: ''
+    },
+    originalValuesForMultiple: [{
+      key: '',
+      fileName: '',
+      size: '',
+      type: ''
+    }],
+    fileLinks: [{
+      link: '',
+      name: ''
+    }]
   }
 
   /* istanbul ignore next  */
@@ -49,11 +69,49 @@ class FilePickerS3 extends React.PureComponent<Props> {
       fileName = `${uuidv4().toLocaleUpperCase()}.${ext}`;
     }
 
+    if (this.props.multipleFiles) {
+      let val: string[] = [];
+      val = this.state.fileNames;
+      val.push(fileName);
+      this.setState({ fileNames: val });
+
+      let oriVal: object[] = [];
+      oriVal = this.state.originalValuesForMultiple;
+      const current_val = {
+        key: fileName,
+        fileName: file.name,
+        size: file.size,
+        type: file.type
+      }
+      oriVal.push(current_val);
+      this.setState({
+        originalValuesForMultiple: oriVal
+      });
+
+    } else {
+      const current_val = {
+        key: fileName,
+        fileName: file.name,
+        size: file.size,
+        type: file.type
+      }
+      this.setState({
+        originalValues: current_val
+      });
+    }
+
     /* istanbul ignore next  */
     this.setState({ fileName }, () /* istanbul ignore next  */ => {
       fetch(`${this.props.server}${this.props.signingUrl}?key=${fileName}&contentType=${file.type}&type=put&acl=${this.props.XAmzAcl}`)
         .then(data => data.json())
         .then(data => {
+          
+          let val: object[] = [];
+          val = this.state.fileLinks;
+          let curVal = { link: data.data, name: file.name }
+          val.push(curVal);
+          this.setState({ fileLinks: val })
+
           callback({ signedUrl: data.data });
         })
         .catch(error => {
@@ -90,7 +148,19 @@ class FilePickerS3 extends React.PureComponent<Props> {
   public onUploadFinish = (setFieldValue: FieldProps<{}>['form']['setFieldValue']) => async () /* istanbul ignore next  */ => {
     try {
       this.setState({ loading: false, progress: 0 }, () => {
-        setFieldValue(this.props.name, this.state.fileName);
+        if (this.props.multipleFiles) {
+          if (this.props.converseOriginalFileName) {
+            setFieldValue(this.props.name, this.state.originalValuesForMultiple);
+          } else {
+            setFieldValue(this.props.name, this.state.fileNames);
+          }
+        } else {
+          if (this.props.converseOriginalFileName) {
+            setFieldValue(this.props.name, this.state.originalValues);
+          } else {
+            setFieldValue(this.props.name, this.state.fileName);
+          }
+        }
         if (typeof this.props.onUploadFinish === 'function') {
           this.props.onUploadFinish(this.state.fileName);
         }
@@ -107,8 +177,11 @@ class FilePickerS3 extends React.PureComponent<Props> {
   /* istanbul ignore next  */
   public renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
 
-    const objFormControlHelper=new FormControlHelper();
-    if(objFormControlHelper.checkConditional(this.props.conditionnals, values)){
+
+
+
+    const objFormControlHelper = new FormControlHelper();
+    if (objFormControlHelper.checkConditional(this.props.conditionnals, values)) {
       return <></>;
     }
 
@@ -163,6 +236,17 @@ class FilePickerS3 extends React.PureComponent<Props> {
                 autoUpload={true}
               />
             </StyledUploadBtnWrapper>
+
+            {this.props.displayLinks &&
+              this.state.fileLinks.map((item) => {
+                return (
+                  <NavLink href={item.link}>
+                    {item.name}
+                  </NavLink>
+                )
+              })
+            }
+
             {this.state.error === true && /* istanbul ignore next  */ (
               <Text>
                 {this.state.errorMessage}
