@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.35.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.34.0...v1.35.0) (2019-10-18)
+
+
+### Features
+
+* props in search bar ([ad99098](https://bitbucket.org/youngapp/ui-kit/commit/ad99098))
+
 ## [1.34.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.33.0...v1.34.0) (2019-10-17)
 
 
