@@ -60,7 +60,7 @@
     "@types/styled-components": "^4.1.18",
     "@types/uuidv4": "^2.0.0",
     "@types/yup": "^0.26.22",
-    "@zendeskgarden/react-pagination": "^6.3.1",
+    "@zendeskgarden/react-pagination": "^7.0.0",
     "@zendeskgarden/react-tables": "^6.3.1",
     "@zendeskgarden/react-theming": "^6.2.0",
     "amazon-cognito-identity-js": "^3.0.15",
