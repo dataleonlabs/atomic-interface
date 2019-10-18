@@ -15,37 +15,45 @@ import { FormControlHelper } from '../../formControlHelper';
 /**
  * SearchBar render element
  */
-const SearchBar = (props: Props) => {
-  const PrependIcon = props.leftAddonIcon || <Search />
-  const PrependString = props.leftAddonString || 'search'
+class SearchBar extends React.PureComponent<Props> {
 
-  const renderField = ({ field, form: { values } }: FieldProps<{}>) => {
+  public static defaultProps: Partial<Props> = {
+    hideLeftAddonLabel: false,
+  }
 
-    const objFormControlHelper=new FormControlHelper();
-    if(objFormControlHelper.checkConditional(props.conditionnals, values)){
-      return <></>;
+  public render() {
+
+    const PrependIcon = this.props.leftAddonIcon || <Search />
+    const PrependString = this.props.leftAddonString ? this.props.leftAddonString : 'search';
+
+    const renderField = ({ field, form: { values } }: FieldProps<{}>) => {
+
+      const objFormControlHelper = new FormControlHelper();
+      if (objFormControlHelper.checkConditional(this.props.conditionnals, values)) {
+        return <></>;
+      }
+
+      return (
+        <React.Fragment>
+          <InputGroup>
+            <StyledInputSearchGroupAddonLeft addonType="prepend" navbar={this.props.navBar}>
+              <div className="input-group-text"><span style={{ marginRight: '5px' }}>{PrependIcon}</span>{!this.props.hideLeftAddonLabel && PrependString}</div>
+            </StyledInputSearchGroupAddonLeft>
+            <StyledInputSearchBootstrap placeholder={this.props.placeholder} {...field} navbar={this.props.navBar} type={this.props.closeIcon ? "search" : "input"} />
+          </InputGroup>
+        </React.Fragment>
+      )
     }
 
     return (
-      <React.Fragment>
-        <InputGroup>
-          <StyledInputSearchGroupAddonLeft addonType="prepend" navbar={props.navBar}>
-            <div className="input-group-text"><span style={{ marginRight: '5px' }}>{PrependIcon}</span>{PrependString}</div>
-          </StyledInputSearchGroupAddonLeft>
-          <StyledInputSearchBootstrap placeholder={props.placeholder} {...field} navbar={props.navBar} type={props.closeIcon ? "search" : "input"} />
-        </InputGroup>
-      </React.Fragment>
+      <Field
+        {...this.props}
+        id={this.props.name}
+        bsSize={this.props.controlSize || 'md'}
+        render={renderField}
+      />
     )
   }
-
-  return (
-    <Field
-      {...props}
-      id={props.name}
-      bsSize={props.controlSize || 'md'}
-      render={renderField}
-    />
-  )
 }
 
 export default SearchBar;

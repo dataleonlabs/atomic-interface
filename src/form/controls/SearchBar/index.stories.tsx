@@ -58,6 +58,77 @@ storiesOf('Forms|SearchBar', module)
         />
       </Col>
     </React.Fragment>
+  )).add('Set Lable for Left Addon', () => (
+    <React.Fragment>
+      <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
+        <h2>Form Elements - SearchBar</h2>
+        <br />
+        <hr />
+        <p>Search lets users specify a word or phrase to search for relevant pieces of information. Search can be used as a filter or a primary means of searching some content.</p>
+        <br />
+        <h4>Set Lable for Left Addon</h4>
+        <br />
+        <p>The basic style for search component that can be submitted by hitting enter kay or by clicking the search icon on the right side of the bar.</p>
+        <hr />
+        <h6><strong>Example</strong></h6>
+        <hr />
+        <br />
+        <Form>
+          {(_) => (
+            <>
+              <strong>Default</strong>
+              <SearchBar                
+                name={'search_brands'}
+                placeholder={'search'}
+              />
+              <hr />
+              <strong>Custom Label</strong>
+              <SearchBar
+                leftAddonString={"Brands"}
+                name={'search_brands'}
+                placeholder={'search brands'}
+              />
+              <hr />
+              <strong>Hide Label</strong>
+              <SearchBar
+                hideLeftAddonLabel
+                name={'search'}
+                placeholder={'search'}
+              />
+            </>
+          )}
+        </Form>
+        <br />
+        <br />
+        <h6><strong>Code</strong></h6>
+        <hr />
+        <CodeMirror
+          value={`
+<SearchBar                
+  name={'search_brands'}
+  placeholder={'search'}
+/>
+
+<SearchBar
+  leftAddonString={"Brands"}
+  name={'search_brands'}
+  placeholder={'search brands'}
+/>
+
+<SearchBar
+  hideLeftAddonLabel
+  name={'search'}
+  placeholder={'search'}
+/>
+`}
+          options={{
+            mode: 'jsx',
+            lineNumbers: false,
+            readOnly: true
+          }}
+        />
+      </Col>
+    </React.Fragment>
   )).add('Navbar', () => (
     <React.Fragment>
       <Col sm={8} style={{ marginTop: 30, marginLeft: 30 }}>
