@@ -20,7 +20,28 @@ export interface State {
   error: boolean
 
   /** Error message */
-  errorMessage: string
+  errorMessage: string,
+
+  fileNames: [],
+
+  originalValues: {
+    key: string,
+    fileName: string,
+    size: string,
+    type: string
+  },
+
+  originalValuesForMultiple: [{
+    key: string,
+    fileName: string,
+    size: string,
+    type: string
+  }],
+
+  fileLinks: [{
+    link: string,
+    name: string
+  }]
 }
 
 export interface FilePickerS3Props extends FilePickerProps {
@@ -66,6 +87,12 @@ export interface FilePickerS3Props extends FilePickerProps {
   icon?: JSX.Element
 
   children: string | JSX.Element | JSX.Element[] | Element
+
+  /** set values to converseOriginalFilename */
+  converseOriginalFileName?: boolean
+
+  /** set true if want to see links of uploaded files */
+  displayLinks?: boolean
 
   /**
     * Check of current values if you have field with same conditionnals values.
