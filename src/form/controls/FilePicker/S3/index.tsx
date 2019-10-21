@@ -52,16 +52,11 @@ class FilePickerS3 extends React.PureComponent<Props> {
       fileName: '',
       size: '',
       type: ''
-    }],
-    fileLinks: [{
-      link: '',
-      name: ''
     }]
   }
 
   /* istanbul ignore next  */
   public getSignedUrl = (file: any, callback: any) /* istanbul ignore next  */ => {
-
     let fileName = file.name;
     /* istanbul ignore next  */
     if (this.props.uuid === true) {
@@ -105,12 +100,12 @@ class FilePickerS3 extends React.PureComponent<Props> {
       fetch(`${this.props.server}${this.props.signingUrl}?key=${fileName}&contentType=${file.type}&type=put&acl=${this.props.XAmzAcl}`)
         .then(data => data.json())
         .then(data => {
-          
-          let val: object[] = [];
-          val = this.state.fileLinks;
-          let curVal = { link: data.data, name: file.name }
-          val.push(curVal);
-          this.setState({ fileLinks: val })
+
+          // let val: object[] = [];
+          // val = this.state.fileLinks;
+          // let curVal = { link: data.data, name: file.name }
+          // val.push(curVal);
+          // this.setState({ fileLinks: val })
 
           callback({ signedUrl: data.data });
         })
@@ -122,7 +117,7 @@ class FilePickerS3 extends React.PureComponent<Props> {
 
   /* istanbul ignore next  */
   public onClick = () /* istanbul ignore next  */ => {
-    // onClick button
+    // onClick button    
   }
 
   /* istanbul ignore next  */
@@ -176,9 +171,6 @@ class FilePickerS3 extends React.PureComponent<Props> {
 
   /* istanbul ignore next  */
   public renderField = ({ field, form: { values, submitCount, errors, setFieldValue } }: FieldProps<{}>) => {
-
-
-
 
     const objFormControlHelper = new FormControlHelper();
     if (objFormControlHelper.checkConditional(this.props.conditionnals, values)) {
@@ -237,11 +229,43 @@ class FilePickerS3 extends React.PureComponent<Props> {
               />
             </StyledUploadBtnWrapper>
 
-            {this.props.displayLinks &&
-              this.state.fileLinks.map((item) => {
+            {!this.props.converseOriginalFileName
+              && this.props.displayLinks
+              && !Array.isArray(values[this.props.name])
+              &&
+              <NavLink href={this.props.s3Url + '/' + values[this.props.name]}>
+                {values[this.props.name]}
+              </NavLink>
+            }
+
+            {this.props.converseOriginalFileName
+              && this.props.displayLinks
+              && !Array.isArray(values[this.props.name])
+              &&
+              <NavLink href={this.props.s3Url + '/' + values[this.props.name].key}>
+                {values[this.props.name].key}
+              </NavLink>
+            }
+
+            {!this.props.converseOriginalFileName
+              && this.props.displayLinks
+              && Array.isArray(values[this.props.name])
+              && values[this.props.name].map((item) => {
                 return (
-                  <NavLink href={item.link}>
-                    {item.name}
+                  <NavLink href={this.props.s3Url + '/' + item}>
+                    {item}
+                  </NavLink>
+                )
+              })
+            }
+
+            {this.props.converseOriginalFileName
+              && this.props.displayLinks
+              && Array.isArray(values[this.props.name])
+              && values[this.props.name].map((item) => {
+                return (
+                  <NavLink href={this.props.s3Url + '/' + item.key}>
+                    {item.key}
                   </NavLink>
                 )
               })
@@ -256,7 +280,6 @@ class FilePickerS3 extends React.PureComponent<Props> {
             {submitCount > 0 && /* istanbul ignore next  */ (errors[this.props.name] ? true : false)
               && <FormText color="danger">{errors[this.props.name]}</FormText>
             }
-
           </StyledImageUploader>
         </Control>
       </>
