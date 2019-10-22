@@ -10,6 +10,7 @@ describe('<FilePickerS3 />', () => {
       <Form>
         {(_) => (
           <FilePickerS3
+            s3Url="http://test-storage.qa.youngapp.co.s3-website-us-east-1.amazonaws.com"
             name="image"
             color="primary"
             size={'md'}

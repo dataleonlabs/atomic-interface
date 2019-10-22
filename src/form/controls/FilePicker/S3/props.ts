@@ -31,17 +31,7 @@ export interface State {
     type: string
   },
 
-  originalValuesForMultiple: [{
-    key: string,
-    fileName: string,
-    size: string,
-    type: string
-  }],
-
-  fileLinks: [{
-    link: string,
-    name: string
-  }]
+  originalValuesForMultiple: [],  
 }
 
 export interface FilePickerS3Props extends FilePickerProps {
@@ -93,6 +83,9 @@ export interface FilePickerS3Props extends FilePickerProps {
 
   /** set true if want to see links of uploaded files */
   displayLinks?: boolean
+
+  /** Get S3 URL */
+  s3Url: string
 
   /**
     * Check of current values if you have field with same conditionnals values.
