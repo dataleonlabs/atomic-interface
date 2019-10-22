@@ -116,16 +116,11 @@ storiesOf('Forms|DatePicker', module)
             }
 
             const setStartDate = (date: Date) => {
-              setState({ startDate: date });
-              console.log("setStartDate: startDate", state.startDate);
-              console.log("setStartDate: endDate", state.endDate);
+              setState({ startDate: date });              
             }
 
-            const setEndDate = (date: Date) => {                                                                                                      
-              console.log("setEndDate: date", date);
-              setState({ endDate: date });
-              console.log("setEndDate: startDate", state.startDate);
-              console.log("setEndDate: endDate", state.endDate);
+            const setEndDate = (date: Date) => {                                                                                                                    
+              setState({ endDate: date });              
             }
 
             return (
