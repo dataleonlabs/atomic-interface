@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.37.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.36.0...v1.37.0) (2019-10-22)
+
+
+### Features
+
+* filepicker s3 initial values ([1ab4fc4](https://bitbucket.org/youngapp/ui-kit/commit/1ab4fc4))
+
 ## [1.36.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.35.0...v1.36.0) (2019-10-18)
 
 
