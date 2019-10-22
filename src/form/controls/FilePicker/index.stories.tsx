@@ -27,8 +27,7 @@ storiesOf('Forms|File Browser', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form
-          onSubmit={(values) => {
-            console.log(values);
+          onSubmit={(values) => {            
           }}
         >
           {(props) => (
@@ -79,8 +78,7 @@ storiesOf('Forms|File Browser', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form
-          onSubmit={(values) => {
-            console.log(values);
+          onSubmit={(values) => {            
           }}
         >
           {(props) => (
@@ -125,8 +123,7 @@ storiesOf('Forms|File Browser', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form
-          onSubmit={(values) => {
-            console.log(values);
+          onSubmit={(values) => {            
           }}
         >
           {(props) => (
@@ -171,8 +168,7 @@ storiesOf('Forms|File Browser', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form
-          onSubmit={(values) => {
-            console.log(values);
+          onSubmit={(values) => {            
           }}
         >
           {(props) => (
@@ -217,8 +213,7 @@ storiesOf('Forms|File Browser', module)
         <h6><strong>Example</strong></h6>
         <hr />
         <Form
-          onSubmit={(values) => {
-            console.log(values);
+          onSubmit={(values) => {            
           }}
         >
           {(props) => (

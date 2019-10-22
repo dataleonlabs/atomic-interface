@@ -31,12 +31,7 @@ export interface State {
     type: string
   },
 
-  originalValuesForMultiple: [{
-    key: string,
-    fileName: string,
-    size: string,
-    type: string
-  }],  
+  originalValuesForMultiple: [],  
 }
 
 export interface FilePickerS3Props extends FilePickerProps {

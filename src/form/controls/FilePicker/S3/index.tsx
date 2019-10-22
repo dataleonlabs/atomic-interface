@@ -47,12 +47,7 @@ class FilePickerS3 extends React.PureComponent<Props> {
       size: '',
       type: ''
     },
-    originalValuesForMultiple: [{
-      key: '',
-      fileName: '',
-      size: '',
-      type: ''
-    }]
+    originalValuesForMultiple: []
   }
 
   /* istanbul ignore next  */
@@ -77,12 +72,14 @@ class FilePickerS3 extends React.PureComponent<Props> {
         fileName: file.name,
         size: file.size,
         type: file.type
-      }
-      oriVal.push(current_val);
-      this.setState({
-        originalValuesForMultiple: oriVal
-      });
+      }      
 
+      if (current_val.key !== "") {
+        oriVal.push(current_val);
+        this.setState({
+          originalValuesForMultiple: oriVal
+        });
+      }
     } else {
       const current_val = {
         key: fileName,
@@ -242,8 +239,8 @@ class FilePickerS3 extends React.PureComponent<Props> {
               && this.props.displayLinks
               && !Array.isArray(values[this.props.name])
               &&
-              <NavLink href={this.props.s3Url + '/' + values[this.props.name].key}>
-                {values[this.props.name].key}
+              <NavLink href={this.props.s3Url + '/' + (values[this.props.name].key || values[this.props.name])}>
+                {values[this.props.name].key || values[this.props.name]}
               </NavLink>
             }
 
@@ -264,8 +261,8 @@ class FilePickerS3 extends React.PureComponent<Props> {
               && Array.isArray(values[this.props.name])
               && values[this.props.name].map((item) => {
                 return (
-                  <NavLink href={this.props.s3Url + '/' + item.key}>
-                    {item.key}
+                  <NavLink href={this.props.s3Url + '/' + (item.key || item)}>
+                    {item.key || item}
                   </NavLink>
                 )
               })
