@@ -17,7 +17,7 @@ class DatePicker extends React.PureComponent<Props> {
 
   /* istanbul ignore next */
   public state = {
-    date: new Date()
+    date: undefined
   }
 
   /* istanbul ignore next */
@@ -28,7 +28,6 @@ class DatePicker extends React.PureComponent<Props> {
 
   /* istanbul ignore next */
   public componentDidMount() {
-    this.handleChange.bind(this);
     if (this.props.options && this.props.options.selected) {
       this.setState({
         date: this.props.options && this.props.options.selected
@@ -44,9 +43,6 @@ class DatePicker extends React.PureComponent<Props> {
     this.setState({
       date
     });
-
-    /* istanbul ignore next */
-    this.handleChange = this.handleChange.bind(this);
   }
 
   /* istanbul ignore next */
