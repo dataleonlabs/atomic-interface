@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.40.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.39.0...v1.40.0) (2019-10-25)
+
+
+### Bug Fixes
+
+* improve in datepicker component ([bc82540](https://bitbucket.org/youngapp/ui-kit/commit/bc82540))
+
 ## [1.39.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.38.0...v1.39.0) (2019-10-25)
 
 ## [1.38.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.37.0...v1.38.0) (2019-10-25)
