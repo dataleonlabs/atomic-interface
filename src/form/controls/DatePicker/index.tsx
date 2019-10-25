@@ -17,7 +17,7 @@ class DatePicker extends React.PureComponent<Props> {
 
   /* istanbul ignore next */
   public state = {
-    date: undefined
+    date: null
   }
 
   /* istanbul ignore next */
@@ -38,11 +38,8 @@ class DatePicker extends React.PureComponent<Props> {
   /* istanbul ignore next */
   public handleChange = (setFieldValue: FieldProps<{}>['form']['setFieldValue']) => async (date: Date) /* istanbul ignore next  */ => {
     setFieldValue(this.props.name, date);
-
     /* istanbul ignore next */
-    this.setState({
-      date
-    });
+    this.setState({ date });
   }
 
   /* istanbul ignore next */
@@ -50,7 +47,6 @@ class DatePicker extends React.PureComponent<Props> {
 
     /* istanbul ignore next */
     const renderField = ({ field, form: { values, setFieldValue } }: FieldProps<{}>) => {
-
       /* istanbul ignore next */
       const objFormControlHelper = new FormControlHelper();
 
@@ -68,7 +64,7 @@ class DatePicker extends React.PureComponent<Props> {
                 {...this.props.options}
                 disabled={this.props.readOnly}
                 dateFormat={this.props.dateFormat}
-                selected={this.state.date || field.value}
+                selected={this.state.date}
                 {...field}
                 placeholderText={this.props.placeholder}
                 onChange={this.handleChange(setFieldValue)} />
