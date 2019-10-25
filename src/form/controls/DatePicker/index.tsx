@@ -17,7 +17,7 @@ class DatePicker extends React.PureComponent<Props> {
 
   /* istanbul ignore next */
   public state = {
-    date: new Date()
+    date: undefined
   }
 
   /* istanbul ignore next */
