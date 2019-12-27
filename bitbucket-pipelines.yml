@@ -66,9 +66,6 @@ pipelines:
           - yarn test:integration
           - yarn build
           - yarn release
-          - printf "//`node -p \"require('url').parse(process.env.NPM_REGISTRY_URL || 'https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
-          - export NPM_TOKEN="2e54affd-eb69-4d58-b4ba-4dbe373410ba"
-          - 'echo "//registry.npmjs.org/:_authToken=2e54affd-eb69-4d58-b4ba-4dbe373410ba" > ~/.npmrc'
           - npm publish
           - git push --follow-tags https://youngapp-devops:72%mK9DV@bitbucket.org/youngapp/ui-kit.git master
           - git fetch --unshallow
