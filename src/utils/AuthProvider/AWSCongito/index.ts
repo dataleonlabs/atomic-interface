@@ -161,4 +161,17 @@ export default class AWSCognito implements AuthInterface {
             return e;
         }
     }
+
+    /**
+     * @param p.oldPassword old password to change password
+     * @param p.newPassword new password to change password
+     */
+    public async changePassword(p: { oldPassword: string, newPassword: string }) {
+        try {
+            const user = await Auth.currentAuthenticatedUser();
+            return await Auth.changePassword(user, p.oldPassword, p.newPassword);
+        } catch (e) {
+            return e;
+        }
+    }
 }
