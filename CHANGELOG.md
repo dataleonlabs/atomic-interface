@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.54.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.51.0...v1.54.0) (2020-01-15)
+
 ## [1.51.0](https://bitbucket.org/youngapp/ui-kit/compare/v1.41.0...v1.51.0) (2019-12-28)
 
 
