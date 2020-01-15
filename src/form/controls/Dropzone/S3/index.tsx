@@ -118,6 +118,7 @@ class DropzoneS3 extends React.PureComponent<Props> {
           onError={this.onUploadError}
           onProgress={this.onUploadProgress}
           key={1}
+          {...this.props}
         >
           <UploadDisplay {...this.props} uploaded={this.state.uploaded} fileName={this.state.fileName} value={field.value[this.props.name]} progress={this.state.progress}>
             {this.props.children}
