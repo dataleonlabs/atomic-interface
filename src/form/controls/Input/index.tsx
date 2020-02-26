@@ -43,8 +43,8 @@ const Input = (props: Props) => {
           {wrapperInputGroup(
             <StyledInputBootstrap
               placeholder={props.placeholder}
-              {...rest}
               {...field}
+              {...rest}
               invalid={submitCount > 0 && /* istanbul ignore next  */ (errors[props.name] ? true : false)}
             />
             , props)}
